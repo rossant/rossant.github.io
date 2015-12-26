@@ -9,4 +9,9 @@ install:
 - git clone --recursive https://github.com/getpelican/pelican-plugins
 - pip install pelican ghp-import
 script:
+- ls
+- ls content
+- make publish
+- ls
+- ls content
 - make publish github
