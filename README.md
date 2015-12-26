@@ -1,6 +1,7 @@
-To build with:
+## Sources of the website
 
-* pelican `master`
-* `pelican-plugins`, `rossant` fork, `ipynb` branch (to add IPython notebook reader that converts a notebook to Markdown, by keeping or not the input code with `keep_input` metadata field)
-* need `pelican_plugin-render_math`
-* `Python-Markdown`, `rossant` fork, `codehilite-lang-param` branch (to set Python as default language for code highliting)
+* This is in the `sources` branch of `rossant.github.io`.
+* The `master` branch contains the generated output.
+* The `pelican-plugins` must be recursive-cloned here.
+* We build with `make publish`.
+* We use `gh-import` to push `output` to the `master` branch and we push this to GitHub via travis.
