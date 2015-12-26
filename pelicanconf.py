@@ -47,6 +47,9 @@ AUTHOR_SAVE_AS = ''
 CATEGORY_URL = ''
 CATEGORY_SAVE_AS = ''
 TWITTER_USERNAME = 'cyrillerossant'
+GITHUB_USERNAME = 'rossant'
+LINKEDIN_USERNAME = 'crossant'
+STATCOUNTER = '7297581'
 MENUITEMS = [('Home', '/'),
              ('Projects', '/projects/'),
              ('Books', '/books/'),
