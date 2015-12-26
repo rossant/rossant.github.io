@@ -1,0 +1,54 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>NumPy in the browser</title>
+
+    <link rel="stylesheet" href="lib/jquery-ui.min.css">
+    <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.5.0/pure-min.css">
+    <link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,500" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="lib/styles.css">
+</head>
+
+<body>
+
+    <form class="pure-form">
+        <fieldset>
+            <input type="text" id="my_arg1" value="1 2 3 4 5" style="width: 200px;" placeholder="10 numbers max">
+            <input type="text" id="my_output" value="" disabled="true" style="width: 120px; color: black;" placeholder="">
+        </fieldset>
+    </form>
+
+    <script src="lib/jquery-1.11.2.min.js"></script>
+    <script src="lib/emscripten-wrapper.js"></script>
+    <script src="lib/emscripten-array.js"></script>
+
+    <script>
+
+    var sum = wrap(['int[:]']);
+
+    function go() {
+        var arg1 = $('#my_arg1').val();
+        var n = 10;
+        var arr = new Int32Array(n);
+        var numbers = arg1.split(/[ ,]+/);
+
+        for (var i = 0; i < Math.min(n, numbers.length); i++) {
+            arr[i] = parseInt(numbers[i]);
+        }
+
+        var result = new Int32Array([0]);
+        result = sum(result, arr);
+
+        $('#my_output').val(result[0]);
+    }
+
+    $('#my_arg1').keyup(function () { go(); });
+
+    go();
+    </script>
+
+</body>
+</html>

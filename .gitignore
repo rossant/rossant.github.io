@@ -1,0 +1,6 @@
+__pycache__/
+_old/
+cache/
+output/
+wpimport/
+pelicanconf_*.py
