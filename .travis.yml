@@ -12,8 +12,4 @@ install:
 - git clone --recursive https://github.com/getpelican/pelican-plugins
 - pelican --version
 script:
-- make publish
-- ls
-- ls content
-- ls output
 - make publish github
