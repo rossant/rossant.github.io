@@ -1,9 +1,9 @@
 Title: Moving away from HDF5
 Tags: python
 
-In the research lab where I work, we've been developing a data processing pipeline for several years. This includes not only a program but also a new file format based on **HDF5** for a specific type of data. While the choice of HDF5 was looking compelling on paper, we found many issues with it. **Recently, we decided to move away permanently from this format in our software**.
+In the research lab where I work, we've been developing a data processing pipeline for several years. This includes not only a program but also a new file format based on **HDF5** for a specific type of data. While the choice of HDF5 was looking compelling on paper, we found many issues with it. **Recently, despite the high costs, we decided to abandon this format in our software**.
 
-In this post, I'll describe what is HDF5 and what are the issues that made us abandon it.
+In this post, I'll describe what is HDF5 and what are the issues that made us move away from it.
 
 <!-- PELICAN_END_SUMMARY -->
 
@@ -13,15 +13,15 @@ For those who haven't come across it, [**Hierarchical Data Format**](https://en.
 
 ### What's in an HDF5 file?
 
-An HDF5 file contains a POSIX-like hierarchy of numerical arrays (aka **datasets**) organized within folders (aka **groups**).
+An HDF5 file contains a POSIX-like hierarchy of numerical arrays (aka **datasets**) organized within **groups**.
 
-Datasets can be stored in two ways: **contiguously or chunked**. If the former, the dataset is stored in a contiguous buffer in the file. If the latter, the dataset is split uniformly in rectangular chunks organized in a B-tree.
+A dataset can be stored in two ways: **contiguously or chunked**. If the former, the dataset is stored in a contiguous buffer in the file. If the latter, it is split uniformly in rectangular chunks organized in a B-tree.
 
 HDF5 also supports lossless compression of datasets.
 
 ### File system within a file
 
-Effectively, you can see HDF5 as **a file system within a file**, although the [HDF Group doesn't seem to like this comparison](https://www.hdfgroup.org/HDF5/faq/whyhdf5.html). The major differences are as follows:
+Effectively, you can see HDF5 as **a file system within a file**, where files are datasets and folders are groups. However, the [HDF Group doesn't seem to like this comparison](https://www.hdfgroup.org/HDF5/faq/whyhdf5.html). The major differences are as follows:
 
 * **An HDF5 file is portable**: the entire structure is contained in the file and doesn't depend on the underlying file system. However it does depend on the HDF5 library.
 * **HDF5 datasets have a rigid structure**: they are all homogeneous (hyper)rectangular numerical arrays, whereas files in a file system can be anything.
@@ -31,6 +31,8 @@ Effectively, you can see HDF5 as **a file system within a file**, although the [
 ## A short story
 
 Many neuroscience labs working on extracellular recordings had been using a file format for almost two decades. This was meant to be a temporary file format and no one expected that it would become so widely used. For this reason, not much thought had been given to it. The format mixed text and binary files, metadata was stored in poorly-specified XML file. There were some quirks like off-by-one discrepancies between files. It could happen that scientific results were wrong because the experimenter was confused by the format. There were also serious performance problems, and the format wouldn't have scaled to modern recording devices.
+
+These files were used in a suite of graphical programs that had also been developed a while ago, and that wouldn't have scaled to these new devices.
 
 As we worked on a new version of the processing software, we decided to also design a **new version of this file format that would be based on HDF5**.
 
@@ -52,7 +54,7 @@ That's when we started to see several practical problems, which also made us awa
 * Bugs and crashes in the HDF5 library and in the wrappers
 * Poor performance in some situations
 * Limited support for parallel access
-* Impossibility to explore datasets with standard UNIX/Windows tools
+* Impossibility to explore datasets with standard Unix/Windows tools
 * Hard dependence on a single implementation of the library
 * High complexity of the specification and the implementation
 * Opacity of the development and slow reactivity of the development team
@@ -67,7 +69,7 @@ At some point, we said stop. For us, **HDF5 was too much trouble, and we estimat
 
 What has gone wrong? **The first mistake we did was to design a file format in the first place**. This is an extremely hard problem, and the slightest mistake has huge and expensive consequences. This is better left off to dedicated working groups.
 
-Let's now see the disadvantages in detail.
+Let's now see the disadvantages of HDF5 in detail.
 
 ### Single implementation
 
@@ -105,7 +107,7 @@ We essentially used uncompressed contiguous datasets in our software. Recently, 
 
 **This trick can lead to staggering performance improvements: in the example above, using memmap instead of HDF5 leads to a 100x speed increase for read access**. In other words, in this particular situation, HDF5 seems to be two orders of magnitude slower than it should. I'd be curious to understand why.
 
-This corresponds to what we've observed while we were using HDF5 extensively: **HDF5 can be particularly slow and, as such, it doesn't appear to be a good choice in performance-critical applications.**
+This corresponds to what we've observed while we were using HDF5 extensively in Python: **HDF5 can be particularly slow and, as such, it doesn't appear to be a good choice in performance-critical applications.**
 
 ### Poor support on distributed architectures
 
@@ -119,7 +121,7 @@ By contrast, flat binary files are natively supported on Spark.
 
 **You depend on the HDF5 library to do anything with an HDF5 file**. What is in a file? How many arrays there are? What are their paths, shapes, data types? What is the metadata? Without the HDF5 library, you can't answer any of these questions. Even when HDF5 is installed, you need dedicated tools or, worse, you need to write your own script. This adds considerable cognitive overhead when working with scientific data in HDF5.
 
-You can't use standard UNIX/Windows tools like `awk`, `wc`, `grep`, Windows Explorer, text editors, and so on, because the structure of HDF5 files is hidden in a binary blob that only the standard libhdf5 understands. There is a Windows-Explorer-like [*HDFView*](https://www.hdfgroup.org/products/java/hdfview/) tool written in Java that allows you to look inside HDF5 files, but it is very limited compared to the tools you find in modern operating systems.
+You can't use standard Unix/Windows tools like `awk`, `wc`, `grep`, Windows Explorer, text editors, and so on, because the structure of HDF5 files is hidden in a binary blob that only the standard libhdf5 understands. There is a Windows-Explorer-like [*HDFView*](https://www.hdfgroup.org/products/java/hdfview/) tool written in Java that allows you to look inside HDF5 files, but it is very limited compared to the tools you find in modern operating systems.
 
 A simpler and roughly equivalent alternative to HDF5 would be to store each array in its own file, within a sensible file hierarchy, and with the metadata stored in JSON or YAML files. For the file format of the individual arrays, one can choose for example a raw binary format without a header (`arr.tofile()` in NumPy), or the [NumPy format `.npy`](http://docs.scipy.org/doc/numpy-dev/neps/npy-format.html) which is just a flat binary file with a fixed-length ASCII header. [Note the paragraph about HDF5 in the page linked above] These files can be easily memory-mapped with very good performance since the file system and the OS are in charge in that case.
 
@@ -129,12 +131,27 @@ This leads to a self-documenting format that anyone can immediately explore with
 
 **HDF5 encourages you to put within a single file many data arrays corresponding to a given experiment or trial**. These arrays are organized in a POSIX-like structure.
 
-Modern file systems are particularly complex. They have been designed, refined, battle-tested, and optimized over decades. As such, despite their complexity, they're now generally very robust. They're also highly efficient, and they implement advanced caching strategies. HDF5 is just more limited and slower. Perhaps things were different when HDF5 was originally developed.
+One can wonder why not just use a hierarchy of files within a directory.
+
+Modern file systems are particularly complex. They have been designed, refined, battle-tested, and optimized over decades. As such, despite their complexity, they're now very robust. They're also highly efficient, and they implement advanced caching strategies. HDF5 is just more limited and slower. Perhaps things were different when HDF5 was originally developed.
 
 If you replace your HDF5 file by a hierarchy of flat binary files and text files, as described in the previous section, you obtain a file format that is more robust, more powerful, more efficient, more maintainable, more transparent, and more amenable to distributed systems than HDF5.
 
 The only disadvantage of this more rudimentary container format I can think of is portability. You can always zip up the archive, but this is generally slow, especially with huge datasets. That being said, today's datasets are so big that they don't tend to move a lot. Rather than sharing huge datasets, it might be a better idea to fire up a [Jupyter server](http://jupyter.org/) and serve analysis notebooks.
 
 When datasets are really too big to fit on a single computer, distributed architectures like Spark are preferred, and we saw that these architectures don't support HDF5 well.
+
+
+## Conclusion
+
+We've learned our lesson. **Designing, maintaining, and promoting a file format within a community is hard**. It cannot be reasonably done by a small group of people who also need to write software, develop algorithms, and do research.
+
+I don't think we could have predicted all of our problems with HDF5, since we had only heard enthusiast opinions. Maybe HDF5 was great a decade ago, and it just became outdated.
+
+What I do know is that **we wouldn't have had these problems if we hadn't tried to develop a file format in the first place**.
+
+We've now rewritten our software to make it modular and completely agnostic to file formats. **We've moved from writing a monolithic application to writing a library**. We're encouraging our users to adapt these components to whatever file format they're already using. The APIs we provide make this straightforward.
+
+There is always a tension, in that many of our users are biologists without a computer science background [to simplify, they're using Windows, Word, and MATLAB instead of Unix, vim/emacs, and Python] and they expect an integrated single-click graphical program. The solution we've found is to develop the library *first*, and *then* write separately an integrated solution based on this library.
 
 *Thanks to Max Hunter and others for their comments on this post.*
