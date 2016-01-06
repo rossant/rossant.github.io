@@ -48,7 +48,7 @@ I've conducted data analysis and modeling investigations of locomotor trajectori
 
 ## Publications and conferences
 
-### International peer-reviewed scientific journals
+### Articles in international peer-reviewed scientific journals
 
   * **Rossant C**, Kadir S, Goodman D, Schulman J, Hunter M, Saleem A, Grosmark A, Belluscio M, Denfield G, Ecker A, Tolias A, Solomon S, Buzsaki G, Carandini M, Harris D. (2016, in revision) *Spike sorting for large, dense electrode arrays*.
   * **Rossant C**, Harris KD (2013). [Hardware-accelerated interactive data visualization for neuroscience in Python]({filename}/pdfs/RossantHardware2013.pdf). Frontiers in Neuroinformatics, 7(36); doi:10.3389/fninf.2013.00036
@@ -106,7 +106,8 @@ I've conducted data analysis and modeling investigations of locomotor trajectori
 
 ### Workshops and tutorials
 
-* **Rossant C**, Rougier N, Klein A, Campagnola L, Larson E, Zaid I, Hunter M (2015). VisPy sprint, Collège de France, Paris (organization and participation to the sprint)
+* **Rossant C**, Rougier N, Zaid I, Hunter M (October 2015). VisPy sprint, Collège de France, Paris (organization and participation to the sprint)
+* **Rossant C**, Rougier N, Klein A, Campagnola L, Larson E, Zaid I, Hunter M (March 2015). VisPy sprint, Collège de France, Paris (organization and participation to the sprint)
 * **Rossant C**, Harris K (2014). File formats for large-scale electrophysiology. Janelia Workshop, Janelia Farm Research Campus, Ashburn, USA (invited talk)
 * **Rossant C** (2014). [The new interactive features of the IPython 2 notebook](https://www.euroscipy.org/2014/schedule/presentation/60/), EuroSciPy, Cambridge, UK (advanced tutorial)
 * Rougier N, Klein A, **Rossant C** (2014). VisPy sprint, EuroSciPy, Cambridge, UK (sprint)
