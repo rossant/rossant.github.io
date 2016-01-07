@@ -48,15 +48,15 @@
         <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.5.0/grids-responsive-old-ie-min.css">
     <![endif]-->
     <!--[if gt IE 8]><!-->
-        <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.5.0/grids-responsive-min.css">
+        <link rel="stylesheet" href="/theme/css/grids-responsive-min.css">
     <!--<![endif]-->
-    <link rel="stylesheet" href="{{ SITEURL }}/theme/css/styles.css">
-    <link rel="stylesheet" href="{{ SITEURL }}/theme/css/pygments.css">
+    <link rel="stylesheet" href="/theme/css/styles.css">
+    <link rel="stylesheet" href="/theme/css/pygments.css">
     <!-- <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'> -->
-    <link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,500" rel="stylesheet" type="text/css">
-    <link href='http://fonts.googleapis.com/css?family=Ubuntu+Mono' rel='stylesheet' type='text/css'>
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,500" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Ubuntu+Mono' rel='stylesheet' type='text/css'>
     {% block head_css %}{% endblock %}
-    
+
 
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
     {% block head_js %}{% endblock %}
@@ -82,9 +82,9 @@
             </div>
         </div>
     </header>
-       
 
-    
+
+
     <div id="layout" class="pure-g">
         <section id="content" class="pure-u-1 pure-u-md-3-4">
             <div class="l-box">
@@ -92,13 +92,13 @@
                 {% endblock %}
             </div>
         </section>
-        
+
         <nav id="sidebar" class="pure-u-1 pure-u-md-1-4">
             <div class="l-box">
                 {% include 'sidebar.html' %}
             </div>
         </nav>
-        
+
         <footer id="footer" class="pure-u-1 pure-u-md-3-4">
             <div class="l-box">
                 <div>
@@ -109,9 +109,9 @@
                 </div>
             </div>
         </footer>
-        
+
     </div>
-    
+
     {% include 'sc.html' %}
 
 </body>
