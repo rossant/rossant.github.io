@@ -51,6 +51,7 @@ TWITTER_USERNAME = 'cyrillerossant'
 GITHUB_USERNAME = 'rossant'
 LINKEDIN_USERNAME = 'crossant'
 STATCOUNTER = '7297581'
+DISQUS_SITENAME = 'rossant'
 MENUITEMS = [('Home', '/'),
              ('Projects', '/projects/'),
              ('Books', '/books/'),
