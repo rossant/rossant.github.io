@@ -103,11 +103,9 @@ Since HDF5 is a sort of file system within a file, it cannot benefit from the sm
 
 If you use chunking, you need to be very careful with the [chunk size](http://www.speedup.ch/workshops/w37_2008/HDF5-Tutorial-PDF/HDF5-Cach-Buf.pdf) and your CPU cache size, otherwise you might end up with terrible performance. Optimizing performance with HDF5 is a [rather complicated topic](http://www.pytables.org/usersguide/optimization.html).
 
-We essentially used uncompressed contiguous datasets in our software. Recently, I found out a simple trick to improve performance considerably with this type of data. [Here is an actual example](https://gist.github.com/rossant/7b4704e8caeb8f173084). When you have an uncompressed contiguous dataset, you can obtain the address of the first byte of the array in the file with a special HDF5 API call. If you know the shape and data type of the dataset, you can use NumPy to memory-map that buffer directly. By contrast, if you use h5py, the HDF5 library will be used to access all or part of the data.
+We essentially used uncompressed contiguous datasets in our software. Recently, I found out a simple trick to improve read access times with HDF5 data. [Here is an actual example](https://gist.github.com/rossant/7b4704e8caeb8f173084). When you have an uncompressed contiguous dataset, you can obtain the address of the first byte of the array in the file with a special HDF5 API call. If you know the shape and data type of the dataset, you can use NumPy to memory-map that buffer directly. By contrast, if you use h5py, the HDF5 library will be used to access all or part of the data. In the example above, using memory mapping instead of HDF5 seems to be several times faster.
 
-**This trick can lead to staggering performance improvements: in the example above, using memmap instead of HDF5 leads to a 20x speed increase for read access**. In other words, in this particular situation, HDF5 seems to be more than one order of magnitude slower than it should. I'd be curious to understand why. [UPDATE: there was a mistake in an earlier version of the benchmark that led me to incorrectly claim a 100x speed increase]
-
-This corresponds to what we've observed while we were using HDF5 extensively in Python: **HDF5 can be particularly slow and, as such, it doesn't appear to be a good choice in performance-critical applications.**
+This corresponds to what we've observed while we were using HDF5 extensively in Python: **HDF5 can be slow and it isn't always a good choice in performance-critical applications.**
 
 ### Poor support on distributed architectures
 
