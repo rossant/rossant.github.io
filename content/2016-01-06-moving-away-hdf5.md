@@ -103,9 +103,19 @@ Since HDF5 is a sort of file system within a file, it cannot benefit from the sm
 
 If you use chunking, you need to be very careful with the [chunk size](http://www.speedup.ch/workshops/w37_2008/HDF5-Tutorial-PDF/HDF5-Cach-Buf.pdf) and your CPU cache size, otherwise you might end up with terrible performance. Optimizing performance with HDF5 is a [rather complicated topic](http://www.pytables.org/usersguide/optimization.html).
 
-We essentially used uncompressed contiguous datasets in our software. Recently, I found out a simple trick to improve read access times with HDF5 data. [Here is an actual example](https://gist.github.com/rossant/7b4704e8caeb8f173084). When you have an uncompressed contiguous dataset, you can obtain the address of the first byte of the array in the file with a special HDF5 API call. If you know the shape and data type of the dataset, you can use NumPy to memory-map that buffer directly. By contrast, if you use h5py, the HDF5 library will be used to access all or part of the data. In the example above, using memory mapping instead of HDF5 seems to be several times faster.
+In our application, we have a particular use-case where we have a large contiguous array with, say, 100,000 lines and 1000 columns (in reality these numbers may be much larger than that), and we need to access a small number of lines quickly. Unfortunately, there is no locality in our access patterns. We found out that using h5py led to very slow access times, but it's due to a [known weakness of the implementation of fancy indexing in h5py](https://gist.github.com/rossant/7b4704e8caeb8f173084#gistcomment-1665072).
 
-This corresponds to what we've observed while we were using HDF5 extensively in Python: **HDF5 can be slow and it isn't always a good choice in performance-critical applications.**
+When we perform a regular selection with slices, we also found that h5py is several times slower than memory-mapping a file with NumPy, but it's unclear if this is due to h5py or HDF5 itself.
+
+We also found that **we can actually bypass libhdf5 when reading an HDF5 file**, provided that we use uncompressed contiguous datasets. All we have to do is find the address of the first byte of the array in the file, and memory-map the buffer with NumPy. This also leads to faster access times.
+
+Overall, **in this situation, using memory-mapping instead of h5py/HDF5 leads to read access times that are significantly faster**.
+
+[You'll find a standalone benchmark as a Jupyter notebook here.](https://gist.github.com/rossant/7b4704e8caeb8f173084)
+
+**Update**: note that an earlier version of this paragraph mentioned a 100x speed increase, but it's been pointed out in the comments below that the benchmark was not comparing the right thing. The paragraph above and the benchmark have been updated accordingly. Earlier versions of the benchmark can be found in the notebook history.
+
+In conclusion, we found out the hard way that **HDF5 may be quite slower than simpler container formats, and as such, it is not always a good choice in performance-critical applications.** This was quite surprising as we (wrongly) expected HDF5 to be particularly fast in most situations. Note that performance might be good enough in other use-cases. If you consider using HDF5 or another format, be sure to run detailed benchmarks in challenging situations before you commit to it.
 
 ### Poor support on distributed architectures
 
