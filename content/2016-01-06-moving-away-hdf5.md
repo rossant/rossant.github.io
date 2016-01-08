@@ -113,9 +113,9 @@ Overall, **in this situation, using memory-mapping instead of h5py/HDF5 leads to
 
 [You'll find a standalone benchmark as a Jupyter notebook here.](https://gist.github.com/rossant/7b4704e8caeb8f173084)
 
-**Update**: note that an earlier version of this paragraph mentioned a 100x speed increase, but it's been pointed out in the comments below that the benchmark was not comparing the right thing. The paragraph above and the benchmark have been updated accordingly. Earlier versions of the benchmark can be found in the notebook history.
-
 In conclusion, we found out the hard way that **HDF5 may be quite slower than simpler container formats, and as such, it is not always a good choice in performance-critical applications.** This was quite surprising as we (wrongly) expected HDF5 to be particularly fast in most situations. Note that performance might be good enough in other use-cases. If you consider using HDF5 or another format, be sure to run detailed benchmarks in challenging situations before you commit to it.
+
+[**Update**: note that an earlier version of this paragraph mentioned a 100x speed increase, but it's been pointed out in the comments below that the benchmark was not comparing the right thing. The paragraph above and the benchmark have been updated accordingly. Earlier versions of the benchmark can be found in the notebook history.]
 
 ### Poor support on distributed architectures
 
