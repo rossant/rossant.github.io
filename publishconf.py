@@ -13,6 +13,7 @@ from pelicanconf import *
 SITEURL = 'http://cyrille.rossant.net'
 RELATIVE_URLS = False
 
+FEED_ATOM = 'feeds/atom.xml'
 FEED_ALL_ATOM = 'feeds/all.atom.xml'
 CATEGORY_FEED_ATOM = 'feeds/%s.atom.xml'
 
