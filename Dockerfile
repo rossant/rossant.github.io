@@ -7,7 +7,7 @@ RUN apt-get update
 RUN apt-get -y upgrade
 
 # Install dependencies
-RUN apt-get install make git texlive-xetex pandoc -y
+RUN apt-get install make git tex-common texlive pandoc -y
 #RUN easy_install pip
 RUN pip install pelican Markdown ghp-import
 RUN pip install --upgrade pelican Markdown ghp-import

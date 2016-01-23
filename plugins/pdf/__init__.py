@@ -29,4 +29,4 @@ def generate_pdf(p):
 
 
 def register():
-    signals.finalized.connect(generate_pdf)
+    signals.initialized.connect(generate_pdf)
