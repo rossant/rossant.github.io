@@ -8,7 +8,7 @@
                 &nbsp;
             {% endif %}
         </div>
-        <span>Page {{ articles_page.number }} / {{ articles_paginator.num_pages }}</span>
+        <span>Page {{ articles_page.number }} / {{ articles_paginator.num_pages }} &nbsp; (<a href="{{ SITEURL }}/archives/">all</a>)</span>
         <div class="pagination-right">
             {% if articles_page.has_next() %}
                 <a href="{{ SITEURL }}/{{ articles_next_page.url }}">next&nbsp;&rarr;</a>

@@ -16,6 +16,9 @@ FILENAME_METADATA = '(?P<date>\d{4}-\d{2}-\d{2})-(?P<slug>.*)'
 STATIC_PATHS = ['images', 'pdfs', 'widgets']
 PAGE_EXCLUDES = ['widgets', '.ipynb_checkpoints']
 ARTICLE_EXCLUDES = ['widgets', '.ipynb_checkpoints']
+EXTRA_PATH_METADATA = {
+    'images/favicon.png': {'path': 'favicon.png'},
+}
 THEME = 'themes/pure'
 MD_EXTENSIONS = ['codehilite(css_class=highlight,'
                  'guess_lang=False,linenums=False)',

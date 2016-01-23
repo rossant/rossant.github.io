@@ -2,11 +2,12 @@
 
 {% block content %}
     <h1 class="content-subhead">All posts</h1>
+    <ul>
     {% for article in dates %}
-        <div class="archive-item">
-            <h5 class="archive-date">{{ article.date|strftime('%Y') }}</h5>
-            <h4 class="archive-date">{{ article.date|strftime('%d %B') }}</h4>
-            <div class="archive-post"><a href="{{ article.url }}">{{ article.title }}</a></div>
-        </div>
+        <li class="archive-item">
+            <em>{{ article.date|strftime('%Y-%m-%d') }}</em> &nbsp;&nbsp;
+            <a href="{{ SITEURL }}/{{ article.url }}">{{ article.title }}</a>
+        </li>
     {% endfor %}
+    </ul>
 {% endblock %}
