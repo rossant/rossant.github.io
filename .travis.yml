@@ -1,16 +1,24 @@
 language: python
 python:
   - "3.5"
+sudo: required
+services:
+  - docker
 branches:
   only:
   - sources
+env:
+  global:
+    secure: "R00A9bK1kY46EjJHvftO0N3RKcELVaeb0EnGPdJ00Iqd4ltd9LhrJHR5FuQIX8rV3H78w99AScM6CeU4Rp1MJ9yV0fN+84HFLa+zkLPzLUZXC3ViZEkd5AjhTV5cjm+ZrJIBHCkD2Jwe08pmcNqjKdO0sBRuhkwAJq01fhe1FgA="
+before_install:
+- docker pull carlad/sinatra
+- docker run -d -p 127.0.0.1:80:4567 carlad/sinatra /bin/sh -c "cd /root/sinatra; bundle exec foreman start;"
+- docker ps -a
+- docker run carlad/sinatra /bin/sh -c "cd /root/sinatra; bundle exec rake test"
 addons:
   apt_packages:
     - pandoc
     - texlive-full
-env:
-  global:
-    secure: "R00A9bK1kY46EjJHvftO0N3RKcELVaeb0EnGPdJ00Iqd4ltd9LhrJHR5FuQIX8rV3H78w99AScM6CeU4Rp1MJ9yV0fN+84HFLa+zkLPzLUZXC3ViZEkd5AjhTV5cjm+ZrJIBHCkD2Jwe08pmcNqjKdO0sBRuhkwAJq01fhe1FgA="
 install:
 - pip install markdown pelican ghp-import
 - git clone --recursive https://github.com/getpelican/pelican-plugins
