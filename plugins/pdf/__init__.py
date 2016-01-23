@@ -28,5 +28,5 @@ def generate_pdf(p):
         os.system(CMD.format(fn=fn))
 
 
-def register():
-    signals.finalized.connect(generate_pdf)
+# def register():
+#     signals.finalized.connect(generate_pdf)
