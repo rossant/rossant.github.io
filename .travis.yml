@@ -7,7 +7,7 @@ branches:
 addons:
   apt_packages:
     - pandoc
-    - texlive-xetex
+    - texlive-full
 env:
   global:
     secure: "R00A9bK1kY46EjJHvftO0N3RKcELVaeb0EnGPdJ00Iqd4ltd9LhrJHR5FuQIX8rV3H78w99AScM6CeU4Rp1MJ9yV0fN+84HFLa+zkLPzLUZXC3ViZEkd5AjhTV5cjm+ZrJIBHCkD2Jwe08pmcNqjKdO0sBRuhkwAJq01fhe1FgA="
