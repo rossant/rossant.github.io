@@ -91,21 +91,33 @@ iframe {
     margin: 0 0 .5em 0;
 
     vertical-align: center;
-    /*margin: auto 2em;*/
     overflow: hidden
 }
 #sidebar .portrait img {
-/*    width: 100%;
-    max-width: 250px;*/
     margin: -5% 0;
     width: 100%;
     vertical-align: middle;
 }
 
 
+#sidebar .name-cv {
+    width: 100%;
+    max-width: 250px;
+    max-height: 200px;
+    margin: 0 0 .5em 0;
+}
 
 #sidebar .name {
+    float: left;
     font-weight: bold;
+}
+
+#sidebar .cv {
+    float: right;
+}
+
+#sidebar .clear {
+    clear: both;
 }
 
 #sidebar .sub-name {

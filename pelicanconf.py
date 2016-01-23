@@ -29,11 +29,11 @@ PAGINATION_PATTERNS = (
     (1, '{base_name}/', '{base_name}/index.html'),
     (2, '{base_name}/page/{number}/', '{base_name}/page/{number}/index.html'),
 )
-PLUGIN_PATHS = [op.expanduser('pelican-plugins')]
+PLUGIN_PATHS = [op.expanduser('pelican-plugins'), 'plugins']
 PLUGINS = ['render_math',
            'summary',
            'neighbors',
-           # 'ipynb',
+           'pdf',
            ]
 DISPLAY_CATEGORIES_ON_MENU = False
 DISPLAY_PAGES_ON_MENU = False

@@ -1,4 +1,6 @@
+---
 Title: About
+---
 
 **Research software engineer specialized in big data and computational modeling.**
 
@@ -7,7 +9,6 @@ Strong background in **mathematics** and **computer science** as a former studen
 Author of **several books on Python for data science**.
 
 **Specialties**: machine learning, signal processing, software engineering, scientific computing, parallel computing, data visualization, Python, NumPy, GPU (CUDA, OpenCL, OpenGL), MATLAB, C#, C++, front-end development (web, mobile, Qt)
-
 
 ## Professional experience
 
