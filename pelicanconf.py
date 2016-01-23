@@ -58,7 +58,7 @@ DISQUS_SITENAME = 'rossant'
 MENUITEMS = [('Home', '/'),
              ('Projects', '/projects/'),
              ('Books', '/books/'),
-             ('Resume', '/resume/'),
+             ('About', '/about/'),
              ]
 DATE_FORMATS = {
     'en': '%Y-%m-%d',
