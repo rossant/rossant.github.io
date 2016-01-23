@@ -14,13 +14,13 @@ Author of **several books on Python for data science**.
 * 2012-now: **Postdoc at [University College London](http://www.ucl.ac.uk/), [Cortical Processing Laboratory](http://www.ucl.ac.uk/cortexlab)** with [Kenneth D. Harris](https://iris.ucl.ac.uk/iris/browse/profile?upi=KDHAR02). *Spike sorting for large dense arrays*.
 * 2009-2012: **PhD at [&Eacute;cole Normale Supérieure](http://www.ens.fr/)** with [Romain Brette](http://romainbrette.fr/). *Correlations in neural coding*.
 * 2008: **Undergraduate internship at [Princeton University](http://www.princeton.edu/main/)** with [Michael Berry](http://molbio.princeton.edu/faculty/molbio-faculty/95-berry). *Statistics of retinal spiking activity*.
-* 2007: **Undergraduate internship at the [Collège de France](http://www.college-de-france.fr/site/college/index.htm)** with [Alain Berthoz](http://www.lppa.college-de-france.fr/equipes/people/Berthoz/). *Analysis of human locomotor trajectories*.
+* 2007: **Undergraduate internship at the [Collège de France](http://www.college-de-france.fr/site/college/index.htm)** with [Alain Berthoz](http://www.college-de-france.fr/site/alain-berthoz/). *Analysis of human locomotor trajectories*.
 
 
 ## Education and diplomas
 
 * 2012: **PhD in neuroinformatics** at the ENS and UPMC with highest honors
-* 2008: **Master's Degree in computer science** (MPRI) at the ENS with highest honors
+* 2008: **Master's Degree in computer science** ([MPRI](https://wikimpri.dptinfo.ens-cachan.fr/doku.php)) at the ENS with highest honors
 * 2005: **Bachelor's Degree in mathematics** ([FIMFA](https://www.math.ens.fr/enseignement/Presentation,7.html)) at the ENS with highest honors
 * 2005: Entry to the **&Eacute;cole Normale Supérieure** (ENS) through competitive examinations in maths and physics
 * 2002: Preparatory classes (MPSI/MP*) at Lycée Masséna, Nice
@@ -51,16 +51,16 @@ Author of **several books on Python for data science**.
 
 ### Articles in Linux Magazine (French edition)
 
-* **Rossant C** (2015). Visualization of large datasets with VisPy. Linux Magazine, Big Data special issue
-* **Rossant C** (2015). Introduction to scikit-learn. Linux Magazine, Big Data special issue
-* **Rossant C** (2014). [VisPy: visualisation interactive haute performance](http://boutique.ed-diamond.com/gnulinux-magazine-hors-series/597-gnulinux-magazine-hs-73.html). Linux Magazine, Scientific Python special issue
+* **Rossant C** (2015). [Visualization of large datasets with VisPy](https://boutique.ed-diamond.com/home/860-gnulinux-magazine-hs-78.html#/format_du_magazine-magazine_papier). Big Data special issue
+* **Rossant C** (2015). [Introduction to scikit-learn](https://boutique.ed-diamond.com/home/860-gnulinux-magazine-hs-78.html#/format_du_magazine-magazine_papier). Big Data special issue
+* **Rossant C** (2014). [VisPy: high-performance interactive visualization](http://boutique.ed-diamond.com/gnulinux-magazine-hors-series/597-gnulinux-magazine-hs-73.html). Scientific Python special issue
 
 
 ## Publications and conferences
 
 ### Articles in international peer-reviewed scientific journals
 
-* **Rossant C**, Kadir S, Goodman D, Schulman J, Hunter M, Saleem A, Grosmark A, Belluscio M, Denfield G, Ecker A, Tolias A, Solomon S, Buzsaki G, Carandini M, Harris D. (2016) *Spike sorting for large, dense electrode arrays*. Nature Neuroscience.
+* **Rossant C**, Kadir S, Goodman D, Schulman J, Hunter M, Saleem A, Grosmark A, Belluscio M, Denfield G, Ecker A, Tolias A, Solomon S, Buzsaki G, Carandini M, Harris D. (2016, in press) *Spike sorting for large, dense electrode arrays*. Nature Neuroscience.
 * **Rossant C**, Harris KD (2013). [Hardware-accelerated interactive data visualization for neuroscience in Python]({filename}/pdfs/RossantHardware2013.pdf). Frontiers in Neuroinformatics, 7(36); doi:10.3389/fninf.2013.00036
 * **Rossant C**, Fontaine B, Goodman DF (2013). [Playdoh: a lightweight Python library for distributed computing and optimisation]({filename}/pdfs/RossantPlaydoh2013.pdf). Journal of Computational Science, 4(5): 352–359; doi:10.1016/j.jocs.2011.06.002
 * **Rossant C**, Fontaine B, Magnusson AK, Brette R (2012). [A calibration-free electrode compensation method]({filename}/pdfs/RossantCalibration2012.pdf). Journal of Neurophysiology, 108(9): 2629-2639; doi: 10.1152/jn.01122.2011
