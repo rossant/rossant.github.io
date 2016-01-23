@@ -6,7 +6,9 @@ import tempfile
 
 from pelican import signals
 
-CMD = 'pandoc {fn} -o content/pdfs/cv.pdf -V geometry:margin=1in'
+CMD = ('pandoc {fn} -o content/pdfs/cv.pdf '
+       '-V geometry:margin=1in '
+       '--template=template.tex')
 
 
 def generate_pdf(p):
