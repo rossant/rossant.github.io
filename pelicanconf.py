@@ -33,7 +33,7 @@ PLUGIN_PATHS = [op.expanduser('pelican-plugins'), 'plugins']
 PLUGINS = ['render_math',
            'summary',
            'neighbors',
-           'pdf',
+           # 'pdf',
            ]
 DISPLAY_CATEGORIES_ON_MENU = False
 DISPLAY_PAGES_ON_MENU = False
