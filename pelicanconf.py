@@ -29,7 +29,7 @@ PAGINATION_PATTERNS = (
     (1, '{base_name}/', '{base_name}/index.html'),
     (2, '{base_name}/page/{number}/', '{base_name}/page/{number}/index.html'),
 )
-PLUGIN_PATHS = [op.expanduser('pelican-plugins'), 'plugins']
+PLUGIN_PATHS = ['pelican-plugins', 'plugins']
 PLUGINS = ['render_math',
            'summary',
            'neighbors',
