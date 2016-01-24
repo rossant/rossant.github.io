@@ -1,34 +1,76 @@
 Title: Projects
 
-## Platform for large-scale electrophysiological data analysis
+Here are my current projects:
 
-Next-generation electrophysiological recording devices require scalable data analysis platforms. I'm leading the development of a new [Python-based platform](http://klusta-team.github.io/) that will let scientists analyze their terabytes of data remotely and effectively in the Web browser (thanks to the [IPython notebook](http://ipython.org/notebook.html)).
+* [Open-source Python libraries](#open-source-python-libraries): tools for numerical computing and technical writing
+* [Technical writings](#technical-writings): books and blog posts
+* [Open data](#open-data): analysis and visualization of public datasets
 
-I'm focusing on raw data visualization and extraction of spike trains from raw extracellular recordings (spike sorting).
+## Open-source Python libraries
+
+### phy: spike sorting for large dense arrays
+
+I'm leading the development of [**phy**](https://github.com/kwikteam/phy/), a Python library for large-scale electrophysiological data analysis. This library is being used by dozens of experimental labs around the world.
+
+**Features**:
+
+* Spike detection algorithms
+* Bindings to clustering algorithms
+* Manual clustering
+* Fast and scalable visualization with VisPy
+* Modular GUIs with Qt
 
 
-## High-performance big data visualization
+### VisPy: high-performance interactive data visualization
 
-I've developed a [technology for high-performance interactive visualization of big data]({filename}/pdfs/RossantHardware2013.pdf) based on optimal use of the graphics processing unit (GPU). It is based on modern OpenGL (GLSL shaders) and it uses techniques originally created for 3D video games.
+I'm part of the core development team of [VisPy](http://vispy.org), a data visualization library based on OpenGL.
 
-I'm now a core developer of [Vispy](http://vispy.org/), a collaborative project in Python that aims at bringing to scientists high-level, user-friendly visualization facilities based on this technology.
+**Features**:
 
-I'm also interested in bringing Vispy to the browser. This will let scientists visualize huge volumes of data remotely thanks to [WebGL](http://en.wikipedia.org/wiki/WebGL), a browser-based implementation of OpenGL.
+* Display millions of points efficiently
+* 3D visualization
 
 
-## Python for data science
+### podoc: conversion of markup documents in pure Python
 
-I've written [two books on Python for data science and interactive computing]({filename}/pages/books.md).
+I'm currently working on a [library](https://github.com/podoc/podoc) for converting documents between different markup formats. This library is fully compatible with [pandoc](http://pandoc.org/) but the most common conversion paths don't require it. This library will eventually supersede the older [ipymd library](https://github.com/rossant/ipymd).
 
-The first book is a beginner-level introduction to Python for data analysis and numerical computing.
+**Features**:
 
-The second book is an advanced-level guide to data science with Python, covering technical aspects of interactive and high-performance computing as well as applied mathematics topics such as statistics, machine learning, signal processing, computer vision, numerical optimization, network data analysis, and mathematical modeling for data science. The book contains more than 100 hands-on recipes applied on real-world examples.
+* Edit Markdown or OpenDocument files in the Jupyter Notebook.
+* Convert between Markdown, Jupyter Notebook, and other formats *without* pandoc.
+* Convert between many other formats with pandoc.
+* Easily parse, filter, and transform documents.
+
+
+## Technical writings
+
+### Books
+
+I've written [several books on Python for data science and numerical computing](/books).
+
+
+### Posts on O'Reilly Learning
+
+I've written [an interactive tutorial on the t-SNE algorithm](https://www.oreilly.com/learning/an-illustrated-introduction-to-the-t-sne-algorithm) on the **O'Reilly Learning** platform.
+
+More interactive tutorials to be coming soon!
+
+
+### Awesome Math
+
+I maintain the curated [Awesome Math](https://github.com/rossant/awesome-math) page, which contains many references to high-quality, freely-available mathematics courses.
+
+
+### Blog posts
+
+I've written [a few tutorials on my blog](/archives).
 
 
 ## Open data
 
 I analyze public datasets with Python and I make data visualizations.
 
-* [Map of all road accidents in France in 2012](/opendata-interior-hackathon/), realized with [Rue89](http://rue89.nouvelobs.com/2014/06/25/carte-presque-tous-les-accidents-route-2012-253113) journalists during an [Open Data Hackathon organized by the French Minister of the Interior](http://fr.okfn.org/2014/08/09/retour-sur-le-premier-hackathon-sur-les-donnees-du-ministere-de-linterieur/). I gathered several data sources with IPython and pandas to create the final dataset of all accidents.
-* [Vélib' in Paris](/velib-open-data/)
-* First names of students taking their high-school diplomas (in French, based on an [original study by Baptiste Coulmont](http://coulmont.com/blog/2012/07/08/prenoms-mentions-bac-2012/)): [post 1](/prenoms-et-reussite-au-bac/) and [post 2](/frequence-des-prenoms-des-candidats-au-bac-2012/)
+* [Map of all road accidents in France in 2012](/opendata-interior-hackathon), realized with [Rue89](http://rue89.nouvelobs.com/2014/06/25/carte-presque-tous-les-accidents-route-2012-253113) journalists during an [Open Data Hackathon organized by the French Minister of the Interior](http://fr.okfn.org/2014/08/09/retour-sur-le-premier-hackathon-sur-les-donnees-du-ministere-de-linterieur/). I gathered several data sources with IPython and pandas to create the final dataset of all accidents.
+* [Vélib' in Paris](/velib-open-data)
+* First names of students taking their high-school diplomas (in French, based on an [original study by Baptiste Coulmont](http://coulmont.com/blog/2012/07/08/prenoms-mentions-bac-2012/)): [post 1](/prenoms-et-reussite-au-bac) and [post 2](/frequence-des-prenoms-des-candidats-au-bac-2012)
