@@ -414,7 +414,7 @@ Final notes
 
 Here are some interesting related links.
 
-*   [Another tutorial in Python](http://enja.org/2011/03/22/adventures-in-pyopencl-part-2-particles-with-pyopengl/index.html)
+*   [Another tutorial in Python](http://enja.org/2011/03/22/adventures-in-pyopencl-part-2-particles-with-pyopengl/)
 *   [Another tutorial in C++](http://www.codeproject.com/Articles/201263/Part-6-Primitive-Restart-and-OpenGL-Interoperabili)
 *   [Tutorial in C#](http://www.cmsoft.com.br/index.php?option=com_content&view=category&id=99&layout=blog&Itemid=150)
 *   [A cool example of what one can do with OpenGL+OpenCL!](http://www.youtube.com/watch?v=Tv1lrjA9UvA)
