@@ -133,4 +133,4 @@ Text files. Markdown. Distributed version control systems. Diff and merge. These
 
 I won't start any new project if I'm forced to use Word, and you should do the same.
 
-Recently, I read [this](https://medium.com/@chacon/living-the-future-of-technical-writing-2f368bd0a272). I also stumbled over [this](https://atlas.oreilly.com/) and [this](https://www.gitbook.io/). Integrating the IPython notebook in these toolchains should be doable. I can't imagine working with anything else from now on.
+Recently, I read [this](https://medium.com/@chacon/living-the-future-of-technical-writing-2f368bd0a272). I also stumbled over [this](https://atlas.oreilly.com/) and [this](https://www.gitbook.com/). Integrating the IPython notebook in these toolchains should be doable. I can't imagine working with anything else from now on.

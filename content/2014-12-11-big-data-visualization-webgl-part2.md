@@ -1,7 +1,7 @@
 Title: Big Data visualization with WebGL, part 2: VisPy
 Tags: dataviz, gpu
 
-In this post series, I'm describing the [big data visualization platform I'm currently developing with WebGL](http://collaborate.mozillascience.org/projects/hpdataVis). I'll detail in this second post the [VisPy library](http://vispy.org) which is the basis of the project.
+In this post series, I'm describing the big data visualization platform I'm currently developing with WebGL. I'll detail in this second post the [VisPy library](http://vispy.org) which is the basis of the project.
 
 <!-- PELICAN_END_SUMMARY -->
 

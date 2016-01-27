@@ -84,7 +84,7 @@ does just that:
         return ctx, queue
 
 This code comes
-[from this blog post](http://enja.org/2011/03/22/adventures-in-pyopencl-part-2-particles-with-pyopengl/index.html).
+[from this blog post](http://enja.org/2011/03/22/adventures-in-pyopencl-part-2-particles-with-pyopengl/).
 
 This function returns an OpenCL context object, and a command queue used for
 compiling and executing kernels, and for initializing OpenCL buffers.
@@ -415,7 +415,6 @@ Final notes
 Here are some interesting related links.
 
 *   [Another tutorial in Python](http://enja.org/2011/03/22/adventures-in-pyopencl-part-2-particles-with-pyopengl/index.html)
-*   [Tutorial in C++](http://www.dyn-lab.com/articles/cl-gl.html)
 *   [Another tutorial in C++](http://www.codeproject.com/Articles/201263/Part-6-Primitive-Restart-and-OpenGL-Interoperabili)
 *   [Tutorial in C#](http://www.cmsoft.com.br/index.php?option=com_content&view=category&id=99&layout=blog&Itemid=150)
 *   [A cool example of what one can do with OpenGL+OpenCL!](http://www.youtube.com/watch?v=Tv1lrjA9UvA)

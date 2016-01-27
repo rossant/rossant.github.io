@@ -124,7 +124,7 @@ I think there's a whole body of evidence showing that scientific Python will eve
 
 We'll probably make baby steps at first. For instance, executing simple NumPy-based pure functions from Python to Javascript.
 
-The IPython notebook will provide the perfect platform for these experiments. In particular, the interactive API in IPython 2.0+ could be extended to support Javascript callback functions instead of Python functions. Right now, the [`@interact`](http://nbviewer.ipython.org/github/ipython/ipython/blob/master/examples/widgets/Interact.ipynb) function decorator allows you to generate a set of widgets to control the input arguments of a function. This is a wonderful idea in my opinion, because it's fundamentally *functional*. Converting such decorated Python function to Javascript would directly enable purely offline interactive widgets with the existing infrastructure.
+The IPython notebook will provide the perfect platform for these experiments. In particular, the interactive API in IPython 2.0+ could be extended to support Javascript callback functions instead of Python functions. Right now, the `@interact` function decorator allows you to generate a set of widgets to control the input arguments of a function. This is a wonderful idea in my opinion, because it's fundamentally *functional*. Converting such decorated Python function to Javascript would directly enable purely offline interactive widgets with the existing infrastructure.
 
 There's some really exciting and challenging work down the road, and I can't wait to see what the community will bring to life.
 

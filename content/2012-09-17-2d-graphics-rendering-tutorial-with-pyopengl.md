@@ -97,30 +97,30 @@ Painting with VBOs
 
 OpenGL can render primitives like points, lines, and convex polygons.
 The
-[`glEnableClientState`](http://www.opengl.org/sdk/docs/man/xhtml/glEnableClientState.xml)
+[`glEnableClientState`](https://www.opengl.org/sdk/docs/man2/xhtml/glEnableClientState.xml)
 and
-[`glVertexPointer`](http://www.opengl.org/sdk/docs/man/xhtml/glVertexPointer.xml)
+[`glVertexPointer`](https://www.opengl.org/sdk/docs/man2/xhtml/glVertexPointer.xml)
 functions configure the VBO
 for rendering, and the
-[`glDrawArrays`](http://www.opengl.org/sdk/docs/man/xhtml/glDrawArrays.xml)
+[`glDrawArrays`](https://www.opengl.org/sdk/docs/man2/xhtml/glDrawArrays.xml)
 function draws primitives from the
 buffer stored in GPU memory. Other drawing commands that can be used with
 a VBO include
-[`glMultiDrawArrays`](http://www.opengl.org/sdk/docs/man/xhtml/glMultiDrawArrays.xml)
+[`glMultiDrawArrays`](https://www.opengl.org/sdk/docs/man2/xhtml/glMultiDrawArrays.xml)
 for plotting several independent primitives
 from a single VBO (which is more efficient, but less flexible, than using
 several VBOs). Indexed drawing is also possible and allows to use vertices
 in arbitrary order, and to reuse vertices several times during rendering.
 The relevant functions are
-[`glDrawElements`](http://www.opengl.org/sdk/docs/man/xhtml/glDrawElements.xml) and
-[`glMultiDrawElements`](http://www.opengl.org/sdk/docs/man/xhtml/glMultiDrawElements.xml).
+[`glDrawElements`](https://www.opengl.org/sdk/docs/man2/xhtml/glDrawElements.xml) and
+[`glMultiDrawElements`](https://www.opengl.org/sdk/docs/man2/xhtml/glMultiDrawElements.xml).
 
 Color can be specified either before calling the rendering commands, with
 the function
-[`glColor`](http://www.opengl.org/sdk/docs/man/xhtml/glColor.xml),
+[`glColor`](https://www.opengl.org/sdk/docs/man2/xhtml/glColor.xml),
 or by creating a special VBO for colors, containing
 the colors of every point. The relevant functions are
-[`glColorPointer`](http://www.opengl.org/sdk/docs/man/xhtml/glColorPointer.xml)
+[`glColorPointer`](https://www.opengl.org/sdk/docs/man2/xhtml/glColorPointer.xml)
 and `glEnableClientState(GL_COLOR_ARRAY)`. A variant consists in packing the
 colors with the vertices, i.e. having 5 numbers per point in a single VBO
 (x, y coordinates and R, V, B color components).
@@ -155,9 +155,9 @@ The `resizeGL` method sets the geometric projection used for
 Since we're only interested in 2D rendering in this article, we're using
 [orthographic projection](http://en.wikipedia.org/wiki/Orthographic_projection)
 with the
-[`glOrtho`](http://www.opengl.org/sdk/docs/man/xhtml/glOrtho.xml) function.
+[`glOrtho`](https://www.opengl.org/sdk/docs/man2/xhtml/glOrtho.xml) function.
 The
-[`glViewport`](http://www.opengl.org/sdk/docs/man/xhtml/glViewport.xml)
+[`glViewport`](https://www.opengl.org/sdk/docs/man2/xhtml/glViewport.xml)
 function
 allows to specify the part of the screen used for the subsequent rendering
 commands. Here we just tell OpenGL to draw within the entire window.
@@ -292,11 +292,10 @@ Final notes
 Here are some related interesting links:
 
 *   [Official PyOpenGL documentation](http://pyopengl.sourceforge.net/documentation/index.html)
-*   [Official OpenGL documentation](http://www.opengl.org/sdk/docs/man/)
+*   [Official OpenGL documentation](https://www.opengl.org/sdk/docs/man2/)
 *   [A PyOpenGL tutorial](http://pyopengl.sourceforge.net/context/tutorials/index.xhtml)
 *   [A PyQt4 tutorial](http://zetcode.com/tutorials/pyqt4/)
 *   [PyOpenGL tips and tricks](http://www.siafoo.net/article/58)
-*   [A PyOpenGL and PyGame tutorial](http://disruption.ca/gutil/introduction.html)
 *   [Introduction to VBOs (C++)](http://www.songho.ca/opengl/gl_vbo.html)
 *   [Vertex Specification Best Practices](http://www.opengl.org/wiki/Vertex_Specification_Best_Practices)
 

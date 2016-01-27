@@ -317,7 +317,7 @@ Finally, here is the full Python script that displays a sinewave function
 using shaders. PyQt4 or PySide and PyOpenGL are necessary. If you use PySide,
 you should simply replace `PyQt4` by `PySide` in the imports. The
 `create_window` function has already been explained
-[in a previous post](cyrille.rossant.net/making-pyqt4-pyside-and-ipython-work-together/).
+[in a previous post](/making-pyqt4-pyside-and-ipython-work-together/).
 
     :::python
     # PyQt4 imports

@@ -40,7 +40,7 @@ It should be noted that [Continuum Analytics](http://continuum.io/) is already w
 
 More precisely, the Python scientific stack (notably NumPy, SciPy, matplotlib...) tries to mimic some of the functionality and API of Matlab. This is actually not a bad idea: regular Matlab users have a chance to move to Python more easily. However, mimicking part of Matlab also means mimicking part of its weaknesses, including unpleasant or inconsistent API. The example of the Matlab shortcut `rand(10, 10)` being much more used than the original NumPy function `numpy.random.random_sample((10, 10))` is interesting.
 
-Think also about the habit that many Python users (and potentially ex-Matlab users like me!) have taken, which consists in putting `from pylab import *` at the top of a script, or running IPython in `%pylab` mode. I've done that for years (not anymore). [The IPython core developers are desperately trying to prevent people from doing that now](http://carreau.github.io/posts/10-No-PyLab-Thanks.ipynb.html). The core of Matlab has no notion of namespaces: all function names are defined in a global, huge namespace. This is obviously not how Python is working, so the `pylab` mode imports everything in the interactive namespace. I understand that it makes life easier to people coming from Matlab, but that's really not a good habit to take.
+Think also about the habit that many Python users (and potentially ex-Matlab users like me!) have taken, which consists in putting `from pylab import *` at the top of a script, or running IPython in `%pylab` mode. I've done that for years (not anymore). The IPython core developers are desperately trying to prevent people from doing that now. The core of Matlab has no notion of namespaces: all function names are defined in a global, huge namespace. This is obviously not how Python is working, so the `pylab` mode imports everything in the interactive namespace. I understand that it makes life easier to people coming from Matlab, but that's really not a good habit to take.
 
 This is a double-edged sword: Python needs to depart from Matlab's weaknesses, but it should also attract Matlab users with a very similar API. I'm not really sure what the best answer to this is.
 
@@ -113,7 +113,7 @@ Once again, things are slowly getting better. The official solutions are improvi
 
 ## A glance at the future
 
-I hope this post did not sound too much like a rant. It is not. I'm pretty happy with Python. I'm [developing and maintaining software in Python](http://klusta-team.github.io/). I even wrote [a book on scientific Python](http://ipython.rossant.net/)! For sure, I don't plan to leave this platform anytime soon. And, in any case, what I would leave it for? I don't think there is a better alternative as of today.
+I hope this post did not sound too much like a rant. It is not. I'm pretty happy with Python. I'm [developing and maintaining software in Python](http://klusta-team.github.io/). I even wrote [a book on scientific Python](http://ipython-books.github.io/minibook/)! For sure, I don't plan to leave this platform anytime soon. And, in any case, what I would leave it for? I don't think there is a better alternative as of today.
 
 Things could be better. They always can. And, they *are* getting better. I'm quite confident that scientific Python is going to be stronger and stronger in the years to come.
 

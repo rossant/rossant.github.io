@@ -21,7 +21,7 @@ Several people have written about why they chose Python over Matlab:
     Reasons it
     Doesn’t)](http://www.stat.washington.edu/~hoytak/blog/whypython.html)
 
-I also found this [short text](http://nipy.org/nipy/stable/faq/why.html) in the documentation of [nipy](http://nipy.org/), a neuroimaging Python library. I reproduce it here as is.
+I also found this [short text](https://github.com/nipy/nipy/blob/master/doc/faq/why.rst) in the documentation of [nipy](http://nipy.org/), a neuroimaging Python library. I reproduce it here as is.
 
 > The choice of programming language has many scientific and practical consequences. Matlab is an example of a high-level language. Languages are considered high level if they are able to express a large amount of functionality per line of code; other examples of high level languages are Python, Perl, Octave, R and IDL. In contrast, C is a low-level language. Low level languages can achieve higher execution speed, but at the cost of code that is considerably more difficult to read. C++ and Java occupy the middle ground sharing the advantages and the disadvantages of both levels.
 

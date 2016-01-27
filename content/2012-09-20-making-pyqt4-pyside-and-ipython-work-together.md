@@ -41,8 +41,6 @@ Importing Qt in Python
 The
 [python_qt_binding](https://github.com/ros-visualization/python_qt_binding/tree/master/src/python_qt_binding)
 package allows to use either PyQt4 or PySide, depending on which is installed.
-<a href='http://cyrille.rossant.net/wp-content/uploads/2012/09/python_qt_binding.zip'>You
-can also download a slightly modified version here (ZIP file)</a>.
 Priority is given to PyQt4, but it can be changed in the code.
 I prefer to use PyQt for now, since it seems more stable (especially when
 used in conjunction with IPython), but that will probably change at some point.

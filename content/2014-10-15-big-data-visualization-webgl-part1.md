@@ -1,7 +1,7 @@
 Title: Big Data visualization with WebGL, part 1: Overview
 Tags: dataviz, gpu
 
-In this post series, I'll talk about the [big data visualization platform I'm currently developing with WebGL](http://collaborate.mozillascience.org/projects/hpdataVis). I'll give in this first post the main motivations for this project. The next posts will contain the technical details.
+In this post series, I'll talk about the big data visualization platform I'm currently developing with WebGL. I'll give in this first post the main motivations for this project. The next posts will contain the technical details.
 
 <!-- PELICAN_END_SUMMARY -->
 
@@ -31,7 +31,7 @@ This is not only true in experimental neuroscience, but also in virtually any ac
 
 ### Cloud computing
 
-In more and more disciplines, datasets are becoming too big for our computers. Cloud computing architectures let networks of computers process huge datasets in parallel. These platforms have been used by large Internet companies for many years. Academia is now trying to [embrace this trend](http://thefreemanlab.com/pdf/freeman-2014-nature-methods.pdf).
+In more and more disciplines, datasets are becoming too big for our computers. Cloud computing architectures let networks of computers process huge datasets in parallel. These platforms have been used by large Internet companies for many years. Academia is now trying to embrace this trend.
 
 Another thing to consider is **big data inertia**. A huge, multi-terabytes dataset is going to be stored in a computer, a network drive, or in the cloud. You're not going to move it around in order to analyze and visualize it. Data transfers at this scale come at a huge cost, so you'll have to **bring your code to the data rather than the other way around**.
 
@@ -49,7 +49,7 @@ Because of this, *sharing* and *diffusing* data analysis reports in Python conta
 
 One of the most popular features of the scientific Python platform is the [IPython notebook](http://ipython.org/notebook.html) (now also called [Jupyter](https://speakerdeck.com/fperez/project-jupyter) notebook). This tool lets scientists write code, text, and create figures in a single document, all within their Web browser. This document can be tracked by a version control system, shared, and converted to HTML, PDF, and other formats.
 
-[Collaborative work on notebooks is becoming possible](https://colaboratory.jupyter.org). Notebooks now support non-Python languages (R, Julia, Haskell, and many others). Finally, interactive graphical applications can be built in the notebook thanks to [IPython widgets](http://nbviewer.ipython.org/github/ipython/ipython/blob/master/examples/Interactive%20Widgets/Index.ipynb).
+[Collaborative work on notebooks is becoming possible](https://colaboratory.jupyter.org). Notebooks now support non-Python languages (R, Julia, Haskell, and many others). Finally, interactive graphical applications can be built in the notebook thanks to IPython widgets.
 
 
 ### The modern Web platform
