@@ -132,7 +132,7 @@ Concrete example of shaders in OpenGL
 
 I will now give an example of using shaders in PyOpenGL, by
 extending
-[my previous tutorial on PyOpenGL](cyrille.rossant.net/2d-graphics-rendering-tutorial-with-pyopengl/).
+[my previous tutorial on PyOpenGL](/2d-graphics-rendering-tutorial-with-pyopengl/).
 In OpenGL, shaders are
 written in
 [GLSL](http://en.wikipedia.org/wiki/GLSL).
