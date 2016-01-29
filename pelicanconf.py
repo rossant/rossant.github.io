@@ -11,7 +11,7 @@ SITEURL = ''
 PATH = 'content'
 
 DEFAULT_DATE = 'fs'
-WITH_FUTURE_DATES = False
+WITH_FUTURE_DATES = True
 FILENAME_METADATA = '(?P<date>\d{4}-\d{2}-\d{2})-(?P<slug>.*)'
 STATIC_PATHS = ['images', 'pdfs', 'widgets']
 PAGE_EXCLUDES = ['widgets', '.ipynb_checkpoints']

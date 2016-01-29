@@ -12,6 +12,7 @@ from pelicanconf import *
 
 SITEURL = 'http://cyrille.rossant.net'
 RELATIVE_URLS = False
+WITH_FUTURE_DATES = False
 
 FEED_ATOM = 'feeds/atom.xml'
 FEED_ALL_ATOM = 'feeds/all.atom.xml'
