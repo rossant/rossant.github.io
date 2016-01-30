@@ -1,6 +1,8 @@
 Title: Moving away from HDF5
 Tags: python
 
+**Update [2016-01-30]: [I wrote a follow-up here](/should-you-use-hdf5/)**
+
 In the research lab where I work, we've been developing a data processing pipeline for several years. This includes not only a program but also a new file format based on **HDF5** for a specific type of data. While the choice of HDF5 was looking compelling on paper, we found many issues with it. **Recently, despite the high costs, we decided to abandon this format in our software**.
 
 In this post, I'll describe what is HDF5 and what are the issues that made us move away from it.
