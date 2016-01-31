@@ -1,6 +1,7 @@
 Title: Setting up a blog with Pelican and GitHub Pages
+Tags: python
 
-I describe how I set up my static blog/website in Python with Pelican, pandoc, docker, GitHub pages, and Travis CI.
+I describe how I set up my static blog/website in Python with [Pelican](http://blog.getpelican.com/), [pandoc](http://pandoc.org/), [Docker](https://www.docker.com/), [Dockerhub](http://www.dockerhub.com/), [GitHub pages](https://pages.github.com/), and [Travis CI](https://travis-ci.org/).
 
 <!-- PELICAN_END_SUMMARY -->
 
@@ -8,7 +9,7 @@ Here is the workflow I wanted to have:
 
 1. I write new contents in Markdown files.
 2. I commit and push the sources to my GitHub repository.
-3. That's it. The website is automatically updated after a two minutes, thanks to **Travis CI** and **Docker**. My CV is also automatically converted from Markdown to PDF via LaTeX.
+3. That's it. The website is automatically updated after two minutes, thanks to **Travis CI** and **Docker**. My CV is also automatically converted from Markdown to PDF via LaTeX.
 
 Setting this up was not straightforward and it did require significant upfront investment.
 
@@ -53,7 +54,7 @@ publishconf.py
 
 I write pages and posts in Markdown files within the `contents/` subdirectory. I can use the Jupyter Notebook to edit Markdown files with the [ipymd](http://github.com/rossant/ipymd) package. This is convenient when my posts contain a lot of code.
 
-The theme's files (jinja templates, CSS and JS files) are in `themes/pure/` ([pure](http://purecss.io/) is the name of the CSS framework I'm using). I use a few Pelican plugins, which are in the `pelican-plugins/` subdirectory, which is in fact a cloned repo. I also have a custom plugin in `plugins/` (see later in this post).
+The theme's files (jinja templates, CSS and JS files) are in `themes/pure/` ([pure](http://purecss.io/) is the name of the CSS framework I'm using). I use a few Pelican plugins, which are in the `pelican-plugins/` subdirectory (a [cloned repo](https://github.com/getpelican/pelican-plugins)). I also have a custom plugin in `plugins/` (see later in this post).
 
 When Pelican generates the website, the HTML files are saved in the `output/` subfolder which is *not* tracked by git.
 
@@ -175,9 +176,9 @@ A few things to note:
 * I put an encrypted version of an authentication key to allow Travis to push to the `master` branch of the repo. Refer to [this page](http://blog.mathieu-leplatre.info/publish-your-pelican-blog-on-github-pages-via-travis-ci.html) to see how to generate and encrypt an authentication key.
 * I use the [`ghp-import` tool](https://github.com/davisp/ghp-import) to push the generated website to the `master` branch. **Note that this tool is destructive: here it will destroy your `master` branch every time**. You will always have a single commit in `master` with the latest version of your website.
 * The build process occurs in `make publish github` which is readily provided by the default `Makefile`. What this command does is:
-  * Generate your website in `output/`.
-  * Commit the `output/` to the `master` branch.
-  * Push force that branch to GitHub. GitHub Pages takes care of the rest and updates your website automatically at `http://yourname.github.io`.
+    * Generate your website in `output/`.
+    * Commit the `output/` to the `master` branch.
+    * Push force that branch to GitHub. GitHub Pages takes care of the rest and updates your website automatically at `http://yourname.github.io`.
 
 
 ## Setting up Docker
@@ -214,7 +215,7 @@ Starting from a Python 3 image, we add LaTeX, pandoc, Pelican, Markdown, and ghp
 
 When you'll run a container based on this image, you'll have to mount your repository as a data volume so that the Docker container has access to it.
 
-Build your container with `docker build -t yourname/pelican .`. This will download the Python 3 image and build an image with your Dockerfile instructions.
+Build your container with `docker build -t yourname/pelican .` (note the trailing dot!). This will download the Python 3 image and build an image with your Dockerfile instructions.
 
 Next step is to [upload the image to your Dockerhub account](https://docs.docker.com/engine/userguide/dockerrepos/) with `docker login` and `docker push yourname/pelican`. Travis CI will download it and use it to build your website.
 
