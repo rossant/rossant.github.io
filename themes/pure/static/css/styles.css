@@ -113,7 +113,7 @@ iframe {
 
 #sidebar .name {
     float: left;
-    font-weight: bold;
+    font-weight: 500;
 }
 
 #sidebar .cv {
