@@ -61,13 +61,13 @@ Author of **several books on Python for data science**.
 
 ### Articles in international peer-reviewed scientific journals
 
-* **Rossant C, Kadir S**, Goodman D, Schulman J, Hunter M, Saleem A, Grosmark A, Belluscio M, Denfield G, Ecker A, Tolias A, Solomon S, Buzsaki G, Carandini M, Harris D. (2016, in press, joint first authors) *Spike sorting for large, dense electrode arrays*. Nature Neuroscience.
-* **Rossant C**, Harris KD (2013). [Hardware-accelerated interactive data visualization for neuroscience in Python]({filename}/pdfs/RossantHardware2013.pdf). Frontiers in Neuroinformatics, 7(36); doi:10.3389/fninf.2013.00036
-* **Rossant C**, Fontaine B, Goodman DF (2013). [Playdoh: a lightweight Python library for distributed computing and optimisation]({filename}/pdfs/RossantPlaydoh2013.pdf). Journal of Computational Science, 4(5): 352–359; doi:10.1016/j.jocs.2011.06.002
-* **Rossant C**, Fontaine B, Magnusson AK, Brette R (2012). [A calibration-free electrode compensation method]({filename}/pdfs/RossantCalibration2012.pdf). Journal of Neurophysiology, 108(9): 2629-2639; doi: 10.1152/jn.01122.2011
-* **Rossant C**, Leijon S, Magnusson AK, Brette R (2011). [Sensitivity of noisy neurons to coincident inputs]({filename}/pdfs/RossantSensitivity2011.pdf). Journal of Neuroscience, 31(47): 17193-17206; doi: 10.1523/JNEUROSCI.2482-11.2011
-* **Rossant C**, Goodman DF, Fontaine B, Platkiewicz J, Magnusson A, Brette B (2011). [Fitting neuron models to spike trains]({filename}/pdfs/RossantFitting2011.pdf). Frontiers in Neuroscience, 5:9. doi:10.3389/fnins.2011.00009
-* **Rossant C**, Goodman D, Platkiewicz J, Brette R (2010). [Automatic fitting of spiking neuron models to electrophysiological recordings]({filename}/pdfs/RossantAutomatic2010.pdf). Frontiers in Neuroinformatics, 4:2. doi:10.3389/neuro.11.002.2010
+* **Rossant C, Kadir S**, Goodman D, Schulman J, Hunter M, Saleem A, Grosmark A, Belluscio M, Denfield G, Ecker A, Tolias A, Solomon S, Buzsaki G, Carandini M, Harris D. (2016, in press, joint first authors) *Spike sorting for large, dense electrode arrays*. **Nature Neuroscience**.
+* **Rossant C**, Harris KD (2013). [Hardware-accelerated interactive data visualization for neuroscience in Python]({filename}/pdfs/RossantHardware2013.pdf). **Frontiers in Neuroinformatics**, 7(36); doi:10.3389/fninf.2013.00036
+* **Rossant C**, Fontaine B, Goodman DF (2013). [Playdoh: a lightweight Python library for distributed computing and optimisation]({filename}/pdfs/RossantPlaydoh2013.pdf). **Journal of Computational Science**, 4(5): 352–359; doi:10.1016/j.jocs.2011.06.002
+* **Rossant C**, Fontaine B, Magnusson AK, Brette R (2012). [A calibration-free electrode compensation method]({filename}/pdfs/RossantCalibration2012.pdf). **Journal of Neurophysiology**, 108(9): 2629-2639; doi: 10.1152/jn.01122.2011
+* **Rossant C**, Leijon S, Magnusson AK, Brette R (2011). [Sensitivity of noisy neurons to coincident inputs]({filename}/pdfs/RossantSensitivity2011.pdf). **Journal of Neuroscience**, 31(47): 17193-17206; doi: 10.1523/JNEUROSCI.2482-11.2011
+* **Rossant C**, Goodman DF, Fontaine B, Platkiewicz J, Magnusson A, Brette B (2011). [Fitting neuron models to spike trains]({filename}/pdfs/RossantFitting2011.pdf). **Frontiers in Neuroscience**, 5:9. doi:10.3389/fnins.2011.00009
+* **Rossant C**, Goodman D, Platkiewicz J, Brette R (2010). [Automatic fitting of spiking neuron models to electrophysiological recordings]({filename}/pdfs/RossantAutomatic2010.pdf). **Frontiers in Neuroinformatics**, 4:2. doi:10.3389/neuro.11.002.2010
 
 
 ### Dissertations
