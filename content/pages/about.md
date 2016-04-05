@@ -61,7 +61,7 @@ Author of **several books on Python for data science**.
 
 ### Articles in international peer-reviewed scientific journals
 
-* **Rossant C, Kadir S**, Goodman D, Schulman J, Hunter M, Saleem A, Grosmark A, Belluscio M, Denfield G, Ecker A, Tolias A, Solomon S, Buzsaki G, Carandini M, Harris D. (2016, in press, joint first authors) *Spike sorting for large, dense electrode arrays*. **Nature Neuroscience**.
+* **Rossant C, Kadir S**, Goodman D, Schulman J, Hunter M, Saleem A, Grosmark A, Belluscio M, Denfield G, Ecker A, Tolias A, Solomon S, Buzsaki G, Carandini M, Harris D. (2016, joint first authors) [Spike sorting for large, dense electrode arrays]({filename}/pdfs/RossantLarge2016.pdf). **Nature Neuroscience**, 19, 634-641; doi:10.1038/nn.4268
 * **Rossant C**, Harris KD (2013). [Hardware-accelerated interactive data visualization for neuroscience in Python]({filename}/pdfs/RossantHardware2013.pdf). **Frontiers in Neuroinformatics**, 7(36); doi:10.3389/fninf.2013.00036
 * **Rossant C**, Fontaine B, Goodman DF (2013). [Playdoh: a lightweight Python library for distributed computing and optimisation]({filename}/pdfs/RossantPlaydoh2013.pdf). **Journal of Computational Science**, 4(5): 352–359; doi:10.1016/j.jocs.2011.06.002
 * **Rossant C**, Fontaine B, Magnusson AK, Brette R (2012). [A calibration-free electrode compensation method]({filename}/pdfs/RossantCalibration2012.pdf). **Journal of Neurophysiology**, 108(9): 2629-2639; doi: 10.1152/jn.01122.2011
