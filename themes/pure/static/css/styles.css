@@ -79,8 +79,25 @@ iframe {
 }
 
 
-
 /****** SIDEBAR ******/
+
+
+#sidebar .baby {
+    font-weight: bold;
+    color: red;
+    font-size: 125%;
+    margin: 10px 0 40px 0px;
+    text-align: center;
+    padding: 8px;
+
+    border-color: red;
+    border-width: 3px;
+    border-style: solid;
+}
+
+#sidebar .baby a {
+    color: red;
+}
 
 #sidebar .l-box {
     margin: 0;
