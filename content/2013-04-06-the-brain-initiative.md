@@ -1,5 +1,5 @@
 Title: The BRAIN initiative
-Tags: neuroinformatics
+Tags: neuroscience
 
 The [*Brain Research through Advancing Innovative Neurotechnologies*](http://en.wikipedia.org/wiki/BRAIN_Initiative) initiative has been [officially unveiled on April 2, 2013 by the President Obama](http://www.whitehouse.gov/the-press-office/2013/04/02/fact-sheet-brain-initiative). There had been quite excitement and interrogations in the few weeks before [as the President had mentioned a large-scale research project about the brain](http://www.nytimes.com/2013/02/18/science/project-seeks-to-build-map-of-human-brain.html?pagewanted=all&_r=0) in his [State of the Union](http://www.nytimes.com/2013/02/13/us/politics/obamas-2013-state-of-the-union-address.html). Very few details were given before the official announcement, and it was reported that this would be a decade-long, multi-billion dollars project seeking to *map the (eventually human) brain's activity by recording every single spike from every single neuron*. When presented like that, this project's goals did not seem more realistic than the EU-funded [Human Brain Project](http://en.wikipedia.org/wiki/Human_Brain_Project_(EU)) which aims at simulating the human brain at all spatiotemporal levels within ten years.
 

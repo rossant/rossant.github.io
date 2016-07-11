@@ -4,11 +4,11 @@ Title: About
 
 **Research software engineer specialized in big data and computational modeling for neuroscience.**
 
-Strong background in **mathematics** and **computer science** as a former student of the [&Eacute;cole Normale Supérieure](http://www.ens.fr), PhD in neuroinformatics, 20+ years of programming experience.
+Strong background in **mathematics** and **computer science** as a former student of the [&Eacute;cole Normale Supérieure](http://www.ens.fr), PhD in neuroscience, 20+ years of programming experience.
 
 Author of **several books on Python for data science**.
 
-**Specialties**: computational neuroscience, spiking neural networks, machine learning, signal processing, software engineering, scientific computing, parallel computing, data visualization, Python, NumPy, GPU (CUDA, OpenCL, OpenGL), MATLAB, C#, C++, front-end development (web, mobile, Qt)
+**Specialties**: neuroscience, neuroinformatics, spiking neural networks, machine learning, signal processing, software engineering, scientific computing, parallel computing, data visualization, Python, NumPy, GPU (CUDA, OpenCL, OpenGL), MATLAB, C#, C++, front-end development (web, mobile, Qt)
 
 ## Professional experience
 
@@ -117,4 +117,4 @@ Author of **several books on Python for data science**.
 
 ## Grants and awards
 
-* **Research grant** (2014-2015). Cooperation between Paris-Sciences-Lettres (PSL) and University College London.
+* **Research grant** (2014-2015). Cooperation between **Collège de France** and **University College London**, via Paris-Sciences-Lettres (PSL).
