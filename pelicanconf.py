@@ -10,6 +10,18 @@ SITENAME = 'Cyrille Rossant'
 SITEURL = ''
 PATH = 'content'
 
+SIDEBAR_NAME = 'Cyrille Rossant, PhD'
+SIDEBAR_SUBNAME = 'data | software | neuroscience'
+SIDEBAR_EMAIL = '<i>firstname</i>.<i>lastname</i>@gmail.com'
+SIDEBAR_LOCATION = 'Paris, France'
+SIDEBAR_TAGS = ['neuroscience',
+                'python',
+                'dataviz',
+                'maths',
+                'gpu',
+                'opendata',
+                ]
+
 DEFAULT_DATE = 'fs'
 WITH_FUTURE_DATES = True
 FILENAME_METADATA = '(?P<date>\d{4}-\d{2}-\d{2})-(?P<slug>.*)'
