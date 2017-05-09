@@ -25,11 +25,12 @@ SIDEBAR_TAGS = ['neuroscience',
 DEFAULT_DATE = 'fs'
 WITH_FUTURE_DATES = True
 FILENAME_METADATA = '(?P<date>\d{4}-\d{2}-\d{2})-(?P<slug>.*)'
-STATIC_PATHS = ['images', 'pdfs', 'widgets']
+STATIC_PATHS = ['images', 'pdfs', 'widgets', 'extra']
 PAGE_EXCLUDES = ['widgets', '.ipynb_checkpoints']
 ARTICLE_EXCLUDES = ['widgets', '.ipynb_checkpoints']
 EXTRA_PATH_METADATA = {
     'images/favicon.png': {'path': 'favicon.png'},
+    'extra/CNAME': {'path': 'CNAME'},
 }
 THEME = 'themes/pure'
 MD_EXTENSIONS = ['codehilite(css_class=highlight,'
