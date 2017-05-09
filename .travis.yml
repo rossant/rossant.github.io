@@ -9,7 +9,7 @@ branches:
   - sources
 env:
   global:
-  - secure: "bAHWTnuavAetVZOWw+ze2sKNYz8v1mV04NQEp83wnGMIuWRIDBSFMgf29hdKd47NHD/3Jw5yfLq0XcnvQDMB5YWYhCCT+L7QNNi6+LCcvxujEIXPjcc96i5X4lnk6lU9hS32CS+P8Xex4x2kZv+TO3KY9egQSHfGmRRDhIRVgGU="
+  - secure: "gYGETPMdL08dkNcli92QEr3iaFBTDMyal7C2rOpgVNxz/pRq94xkoKLUom8cY+Q31NPL5Kfvkow32YYzJVVQWWh4ldZ68WZjhN9B0Y+uTFI2WvqRhLWqqb3KZvJjcEr30/03iajB6puj17EXN5HHpLFWwdxdP919qATxq3QIRmM="
 install:
 - pip install ghp-import
 - git clone https://github.com/getpelican/pelican-plugins
