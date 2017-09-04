@@ -33,21 +33,33 @@ EXTRA_PATH_METADATA = {
     'extra/CNAME': {'path': 'CNAME'},
 }
 THEME = 'themes/pure'
-MD_EXTENSIONS = ['codehilite(css_class=highlight,'
-                 'guess_lang=False,linenums=False)',
-                 'headerid',
-                 'extra']
+
+MARKDOWN = {
+    'extension_configs': {
+        'markdown.extensions.codehilite': {'css_class': 'highlight',
+                                           'guess_lang': False,
+                                           'linenums': False,
+                                           },
+        'markdown.extensions.extra': {},
+        'markdown.extensions.meta': {},
+        'markdown.extensions.headerid': {},
+    },
+}
+
+
 DEFAULT_PAGINATION = 5
 PAGINATION_PATTERNS = (
     (1, '{base_name}/', '{base_name}/index.html'),
     (2, '{base_name}/page/{number}/', '{base_name}/page/{number}/index.html'),
 )
 PLUGIN_PATHS = ['pelican-plugins', 'plugins']
-PLUGINS = ['render_math',
+PLUGINS = [
            'summary',
            'neighbors',
            'pdf',
+           'render_math',
            ]
+SUMMARY_USE_FIRST_PARAGRAPH = True
 DISPLAY_CATEGORIES_ON_MENU = False
 DISPLAY_PAGES_ON_MENU = False
 DIRECT_TEMPLATES = ('index', 'archives')
