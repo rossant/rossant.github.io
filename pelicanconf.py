@@ -59,7 +59,7 @@ PLUGINS = [
            'pdf',
            'render_math',
            ]
-SUMMARY_USE_FIRST_PARAGRAPH = True
+# SUMMARY_USE_FIRST_PARAGRAPH = True
 DISPLAY_CATEGORIES_ON_MENU = False
 DISPLAY_PAGES_ON_MENU = False
 DIRECT_TEMPLATES = ('index', 'archives')
