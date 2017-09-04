@@ -2,7 +2,7 @@ __pycache__/
 _old/
 _*
 cache/
-output/
+output*/
 wpimport/
 pelicanconf_*.py
 pelican-plugins
