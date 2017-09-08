@@ -22,6 +22,7 @@ SIDEBAR_TAGS = ['neuroscience',
                 'opendata',
                 ]
 
+LOCALE = 'en_US'
 DEFAULT_DATE = 'fs'
 WITH_FUTURE_DATES = True
 FILENAME_METADATA = '(?P<date>\d{4}-\d{2}-\d{2})-(?P<slug>.*)'
