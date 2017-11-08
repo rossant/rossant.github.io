@@ -10,7 +10,7 @@ PATH = 'content'
 SIDEBAR_NAME = 'Cyrille Rossant, PhD'
 SIDEBAR_SUBNAME = 'Neuroscience researcher and software engineer, University College London'
 SIDEBAR_EMAIL = '<i>firstname</i>.<i>lastname</i>@gmail.com'
-# SIDEBAR_LOCATION = 'Paris, France'
+SIDEBAR_LOCATION = 'Paris, France'
 SIDEBAR_TAGS = ['neuroscience',
                 'python',
                 'dataviz',

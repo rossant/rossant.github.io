@@ -20,7 +20,7 @@ Author of **several books on Python for data science**.
 
 ## Education and diplomas
 
-* 2012: **PhD in neuroinformatics** at the ENS and UPMC with highest honors
+* 2012: **PhD in neuroscience** at the ENS and UPMC with highest honors
 * 2008: **Master's Degree in computer science** ([MPRI](https://wikimpri.dptinfo.ens-cachan.fr/doku.php)) at the ENS with highest honors
 * 2005: **Bachelor's Degree in mathematics** ([FIMFA](https://www.math.ens.fr/enseignement/Presentation,7.html)) at the ENS with highest honors
 * 2005: Entry to the **&Eacute;cole Normale Supérieure** (ENS) through competitive examinations in maths and physics
