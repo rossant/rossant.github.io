@@ -2,7 +2,7 @@
 Title: About
 ---
 
-**Researcher and software engineer in neuroscience.**
+**Neuroscience researcher and software engineer.**
 
 Strong background in **mathematics** and **computer science** as a former student of the [&Eacute;cole Normale Supérieure](http://www.ens.fr), PhD in **neuroscience**, 20+ years of experience in **software development**.
 
@@ -27,40 +27,11 @@ Author of **several books on Python for data science**.
 * 2002: Preparatory classes (MPSI/MP*) at Lycée Masséna, Nice
 * 2002: High school diploma (A-level equivalent) with highest honors
 
-
-## Teaching
-
-* 2009-2012: **Teacher assistant** in mathematics and computer science at ENS and UPMC (Bachelor and Master levels): probability theory, measure theory, statistics, calculus, real analysis, dynamical systems, signal processing, scientific Python
-* 2009-2012: Private lessons in mathematics to students in high school and preparatory classes
-* 2008-2009: Voluntary teaching to high school students at [TALENS](http://pesu.ens.fr/talens/) association
-
-
-## Technical writings
-
-### Books
-
-* **Rossant C** (2015). [Learning IPython for Interactive Computing and Data Visualization, second edition](https://www.packtpub.com/big-data-and-business-intelligence/learning-ipython-interactive-computing-and-data-visualization-sec). Packt Publishing, 200 pages, ISBN 9781783986989
-* **Rossant C** and Klein A (2015). [WebGL Insights](https://www.crcpress.com/WebGL-Insights/Cozzi/9781498716079). CRC Press (chapter of a community book), ISBN 9781498716079
-* **Rossant C** (2014). [IPython Interactive Computing and Visualization Cookbook](http://www.packtpub.com/ipython-interactive-computing-and-visualization-cookbook/book). Packt Publishing, 520 pages, ISBN 9781783284818
-* **Rossant C** (2013). [Learning IPython for Interactive Computing and Data Visualization](http://www.packtpub.com/learning-ipython-for-interactive-computing-and-data-visualization/book). Packt Publishing, 138 pages, ISBN 9781782169932
-
-
-### Articles on O'Reilly Learning
-
-* **Rossant C** (2015). [An illustrated introduction to the t-SNE algorithm](https://www.oreilly.com/learning/an-illustrated-introduction-to-the-t-sne-algorithm).
-
-
-### Articles in Linux Magazine (French edition)
-
-* **Rossant C** (2015). [Visualization of large datasets with VisPy](https://boutique.ed-diamond.com/home/860-gnulinux-magazine-hs-78.html#/format_du_magazine-magazine_papier). Big Data special issue
-* **Rossant C** (2015). [Introduction to scikit-learn](https://boutique.ed-diamond.com/home/860-gnulinux-magazine-hs-78.html#/format_du_magazine-magazine_papier). Big Data special issue
-* **Rossant C** (2014). [VisPy: high-performance interactive visualization](http://boutique.ed-diamond.com/gnulinux-magazine-hors-series/597-gnulinux-magazine-hs-73.html). Scientific Python special issue
-
-
 ## Publications and conferences
 
 ### Articles in international peer-reviewed scientific journals
 
+* James J. Jun, Nicholas A. Steinmetz, Joshua H. Siegle, Daniel J. Denman, Marius Bauza, Brian Barbarits, Albert K. Lee, Costas A. Anastassiou, Alexandru Andrei, Çağatay Aydın, Mladen Barbic, Timothy J. Blanche, Vincent Bonin, João Couto, Barundeb Dutta, Sergey L. Gratiy, Diego A. Gutnisky, Michael Häusser, Bill Karsh, Peter Ledochowitsch, Carolina Mora Lopez, Catalin Mitelut, Silke Musa, Michael Okun, Marius Pachitariu, Jan Putzeys, P. Dylan Rich, **Cyrille Rossant**, Wei-lung Sun, Karel Svoboda, Matteo Carandini, Kenneth D. Harris, Christof Koch, John O’Keefe & Timothy D. Harris (2017). [Fully integrated silicon probes for high-density recording of neural activity](https://www.nature.com/articles/nature24636). **Nature**, 551, 232-236; doi:10.1038/nature24636
 * **Rossant C, Kadir S**, Goodman D, Schulman J, Hunter M, Saleem A, Grosmark A, Belluscio M, Denfield G, Ecker A, Tolias A, Solomon S, Buzsaki G, Carandini M, Harris D. (2016, joint first authors) [Spike sorting for large, dense electrode arrays]({filename}/pdfs/RossantLarge2016.pdf). **Nature Neuroscience**, 19, 634-641; doi:10.1038/nn.4268
 * **Rossant C**, Harris KD (2013). [Hardware-accelerated interactive data visualization for neuroscience in Python]({filename}/pdfs/RossantHardware2013.pdf). **Frontiers in Neuroinformatics**, 7(36); doi:10.3389/fninf.2013.00036
 * **Rossant C**, Fontaine B, Goodman DF (2013). [Playdoh: a lightweight Python library for distributed computing and optimisation]({filename}/pdfs/RossantPlaydoh2013.pdf). **Journal of Computational Science**, 4(5): 352–359; doi:10.1016/j.jocs.2011.06.002
@@ -115,6 +86,35 @@ Author of **several books on Python for data science**.
 * **Rossant C**, Harris K (2013). Next-generation software for spike sorting with large multi-electrode probes. Janelia Spike Sorting Workshop, Janelia Farm Research Campus, Ashburn, USA (invited talk)
 
 
+## Technical writings
+
+### Books
+
+* **Rossant C** (2015). [Learning IPython for Interactive Computing and Data Visualization, second edition](https://www.packtpub.com/big-data-and-business-intelligence/learning-ipython-interactive-computing-and-data-visualization-sec). Packt Publishing, 200 pages, ISBN 9781783986989
+* **Rossant C** and Klein A (2015). [WebGL Insights](https://www.crcpress.com/WebGL-Insights/Cozzi/9781498716079). CRC Press (chapter of a community book), ISBN 9781498716079
+* **Rossant C** (2014). [IPython Interactive Computing and Visualization Cookbook](http://www.packtpub.com/ipython-interactive-computing-and-visualization-cookbook/book). Packt Publishing, 520 pages, ISBN 9781783284818
+* **Rossant C** (2013). [Learning IPython for Interactive Computing and Data Visualization](http://www.packtpub.com/learning-ipython-for-interactive-computing-and-data-visualization/book). Packt Publishing, 138 pages, ISBN 9781782169932
+
+
+### Articles on O'Reilly Learning
+
+* **Rossant C** (2015). [An illustrated introduction to the t-SNE algorithm](https://www.oreilly.com/learning/an-illustrated-introduction-to-the-t-sne-algorithm).
+
+
+### Articles in Linux Magazine (French edition)
+
+* **Rossant C** (2015). [Visualization of large datasets with VisPy](https://boutique.ed-diamond.com/home/860-gnulinux-magazine-hs-78.html#/format_du_magazine-magazine_papier). Big Data special issue
+* **Rossant C** (2015). [Introduction to scikit-learn](https://boutique.ed-diamond.com/home/860-gnulinux-magazine-hs-78.html#/format_du_magazine-magazine_papier). Big Data special issue
+* **Rossant C** (2014). [VisPy: high-performance interactive visualization](http://boutique.ed-diamond.com/gnulinux-magazine-hors-series/597-gnulinux-magazine-hs-73.html). Scientific Python special issue
+
+
 ## Grants and awards
 
 * **Research grant** (2014-2015). Cooperation between **Collège de France** and **University College London**, via Paris-Sciences-Lettres (PSL).
+
+
+## Teaching
+
+* 2009-2012: **Teacher assistant** in mathematics and computer science at ENS and UPMC (Bachelor and Master levels): probability theory, measure theory, statistics, calculus, real analysis, dynamical systems, signal processing, scientific Python
+* 2009-2012: Private lessons in mathematics to students in high school and preparatory classes
+* 2008-2009: Voluntary teaching to high school students at [TALENS](http://pesu.ens.fr/talens/) association

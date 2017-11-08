@@ -2,18 +2,15 @@
 # -*- coding: utf-8 -*- #
 from __future__ import unicode_literals
 
-import os.path as op
-
-
 AUTHOR = 'Cyrille Rossant'
 SITENAME = 'Cyrille Rossant'
 SITEURL = ''
 PATH = 'content'
 
 SIDEBAR_NAME = 'Cyrille Rossant, PhD'
-SIDEBAR_SUBNAME = 'data | software | neuroscience'
+SIDEBAR_SUBNAME = 'Neuroscience researcher and software engineer, University College London'
 SIDEBAR_EMAIL = '<i>firstname</i>.<i>lastname</i>@gmail.com'
-SIDEBAR_LOCATION = 'Paris, France'
+# SIDEBAR_LOCATION = 'Paris, France'
 SIDEBAR_TAGS = ['neuroscience',
                 'python',
                 'dataviz',
