@@ -54,8 +54,6 @@ I've written [several books on Python for data science and numerical computing](
 
 I've written [an interactive tutorial on the t-SNE algorithm](https://www.oreilly.com/learning/an-illustrated-introduction-to-the-t-sne-algorithm) on the **O'Reilly Learning** platform.
 
-More interactive tutorials to be coming soon!
-
 
 ### Awesome Math
 

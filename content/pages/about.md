@@ -31,6 +31,7 @@ Author of **several books on Python for data science**.
 
 ### Articles in international peer-reviewed scientific journals
 
+* Rougier NP, Hinsen K, Alexandre F, Arildsen T, Barba LA, Benureau FCY, Brown CT, de Buyl P, Caglayan O, Davison AP, Delsuc M, Detorakis G, Diem AK, Drix D, Enel P, Girard B, Guest O, Hall MG, Henriques RN, Hinaut X, Jaron KS, Khamassi M, Klein A, Manninen T, Marchesi P, McGlinn D, Metzner C, Petchey O, Plesser HE, Poisot T, Ram K, Ram Y, Roesch E, **Rossant C**, Rostami V, Shifman A, Stachelek J, Stimberg M, Stollmeier F, Vaggi F, Viejo G, Vitay J, Vostinar AE, Yurchak R, Zito T. (2017). [Sustainable computational science: the ReScience initiative](https://peerj.com/articles/cs-142/). **PeerJ Computer Science**, 3:e142, doi.org/10.7717/peerj-cs.142
 * James J. Jun, Nicholas A. Steinmetz, Joshua H. Siegle, Daniel J. Denman, Marius Bauza, Brian Barbarits, Albert K. Lee, Costas A. Anastassiou, Alexandru Andrei, Çağatay Aydın, Mladen Barbic, Timothy J. Blanche, Vincent Bonin, João Couto, Barundeb Dutta, Sergey L. Gratiy, Diego A. Gutnisky, Michael Häusser, Bill Karsh, Peter Ledochowitsch, Carolina Mora Lopez, Catalin Mitelut, Silke Musa, Michael Okun, Marius Pachitariu, Jan Putzeys, P. Dylan Rich, **Cyrille Rossant**, Wei-lung Sun, Karel Svoboda, Matteo Carandini, Kenneth D. Harris, Christof Koch, John O’Keefe & Timothy D. Harris (2017). [Fully integrated silicon probes for high-density recording of neural activity](https://www.nature.com/articles/nature24636). **Nature**, 551, 232-236; doi:10.1038/nature24636
 * **Rossant C, Kadir S**, Goodman D, Schulman J, Hunter M, Saleem A, Grosmark A, Belluscio M, Denfield G, Ecker A, Tolias A, Solomon S, Buzsaki G, Carandini M, Harris D. (2016, joint first authors) [Spike sorting for large, dense electrode arrays]({filename}/pdfs/RossantLarge2016.pdf). **Nature Neuroscience**, 19, 634-641; doi:10.1038/nn.4268
 * **Rossant C**, Harris KD (2013). [Hardware-accelerated interactive data visualization for neuroscience in Python]({filename}/pdfs/RossantHardware2013.pdf). **Frontiers in Neuroinformatics**, 7(36); doi:10.3389/fninf.2013.00036
@@ -90,10 +91,11 @@ Author of **several books on Python for data science**.
 
 ### Books
 
-* **Rossant C** (2015). [Learning IPython for Interactive Computing and Data Visualization, second edition](https://www.packtpub.com/big-data-and-business-intelligence/learning-ipython-interactive-computing-and-data-visualization-sec). Packt Publishing, 200 pages, ISBN 9781783986989
+* **Rossant C** (2018). [IPython Interactive Computing and Visualization Cookbook, Second Edition](https://packtpub.com/big-data-and-business-intelligence/ipython-interactive-computing-and-visualization-cookbook-second-e). Packt Publishing, 548 pages, ISBN 9781785888632
+* **Rossant C** (2015). [Learning IPython for Interactive Computing and Data Visualization, Second Edition](https://www.packtpub.com/big-data-and-business-intelligence/learning-ipython-interactive-computing-and-data-visualization-sec). Packt Publishing, 200 pages, ISBN 9781783986989
 * **Rossant C** and Klein A (2015). [WebGL Insights](https://www.crcpress.com/WebGL-Insights/Cozzi/9781498716079). CRC Press (chapter of a community book), ISBN 9781498716079
-* **Rossant C** (2014). [IPython Interactive Computing and Visualization Cookbook](http://www.packtpub.com/ipython-interactive-computing-and-visualization-cookbook/book). Packt Publishing, 520 pages, ISBN 9781783284818
-* **Rossant C** (2013). [Learning IPython for Interactive Computing and Data Visualization](http://www.packtpub.com/learning-ipython-for-interactive-computing-and-data-visualization/book). Packt Publishing, 138 pages, ISBN 9781782169932
+* **Rossant C** (2014). [IPython Interactive Computing and Visualization Cookbook](https://www.packtpub.com/ipython-interactive-computing-and-visualization-cookbook/book). Packt Publishing, 520 pages, ISBN 9781783284818
+* **Rossant C** (2013). [Learning IPython for Interactive Computing and Data Visualization](https://www.packtpub.com/learning-ipython-for-interactive-computing-and-data-visualization/book). Packt Publishing, 138 pages, ISBN 9781782169932
 
 
 ### Articles on O'Reilly Learning
