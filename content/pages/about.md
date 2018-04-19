@@ -44,7 +44,7 @@ Author of **several books on Python for data science**.
 
 ### Dissertations
 
-* **Rossant C**, 2012. [Computational role of neural correlactions]({filename}/pdfs/RossantPhD.pdf). PhD dissertation.
+* **Rossant C**, 2012. [Computational role of neural correlations]({filename}/pdfs/RossantPhD.pdf). PhD dissertation.
 * **Rossant C**, 2008. [Statistics of retinal spiking activity]({filename}/pdfs/RossantMasterThesis.pdf). Master dissertation.
 
 
