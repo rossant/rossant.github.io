@@ -7,7 +7,7 @@ There is currently a manifest trend in the scientific Python ecosystem: Python i
 
 ## Why it's a good thing
 
-**Python is becoming [one of the most popular open source platforms for scientific computing and data analysis](http://cyrille.rossant.net/why-using-python-for-scientific-computing/)**. The language is easy-to-use, expressive, open to the rest of the universe, and the scientific ecosystem is quite solid.
+**Python is becoming [one of the most popular open source platforms for scientific computing and data analysis](https://cyrille.rossant.net/why-using-python-for-scientific-computing/)**. The language is easy-to-use, expressive, open to the rest of the universe, and the scientific ecosystem is quite solid.
 
 On the other hand, the Web is today the [platform of choice](https://blog.mozilla.org/blog/2012/02/27/mozilla-in-mobile-the-web-is-the-platform/) for client-side applications. What we called *Web 2.0* some time ago is now just the *Web*. Social networks have pervaded our lives and sharing things on the Web with our acquaintances is now entirely natural. The Web is also becoming a solid mobile platform, maybe not quite as powerful as native platforms yet, but it should eventually get there (at least that's my hope).
 

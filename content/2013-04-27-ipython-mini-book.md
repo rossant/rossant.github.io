@@ -1,7 +1,7 @@
 Title: IPython mini-book: Learning IPython for Interactive Computing and Data Visualization
 Tags: python
 
-I'm glad to present my new book, [Learning IPython for Interactive Computing and Data Visualization](http://ipython-books.github.io/minibook/), Packt
+I'm glad to present my new book, [Learning IPython for Interactive Computing and Data Visualization](https://ipython-books.github.io/minibook/), Packt
 Publishing.
 
 This book is a **beginner-level introduction to IPython** for

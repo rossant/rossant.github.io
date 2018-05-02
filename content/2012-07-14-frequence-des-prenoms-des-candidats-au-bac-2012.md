@@ -2,7 +2,7 @@ Title: Fréquence des prénoms des candidats au bac 2012
 Tags: opendata
 
 Je poursuis mon analyse des prénoms des candidats au bac cette année (voir
-[billet précédent](http://cyrille.rossant.net/prenoms-et-reussite-au-bac/)) en
+[billet précédent](https://cyrille.rossant.net/prenoms-et-reussite-au-bac/)) en
 m'intéressant cette fois à la fréquence des différents prénoms portés
 par les candidats, indépendamment de leurs résultats. Les 346 581
 candidats portent 18 473 prénoms différents. **Le prénom le plus porté

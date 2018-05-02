@@ -13,4 +13,4 @@ regular Numpy users rather than pure beginners.
 
 <!-- PELICAN_END_SUMMARY -->
 
-[**A new version of this post can be found here.**](http://ipython-books.github.io/featured-01.html)
+[**A new version of this post can be found here.**](https://ipython-books.github.io/featured-01.html)

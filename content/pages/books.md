@@ -9,11 +9,11 @@ I've written two books on Python for data science.
 
 <div class="pure-g">
     <div class="book-cover pure-u-1 pure-u-sm-1-3">
-        <a href="http://ipython-books.github.io/"><img src="/images/cookbook.png" class="book-cover" alt="IPython Cookbook, Second Edition" /></a>
+        <a href="https://ipython-books.github.io/"><img src="/images/cookbook.png" class="book-cover" alt="IPython Cookbook, Second Edition" /></a>
     </div>
 
     <div class="book-descr pure-u-1 pure-u-sm-2-3">
-        <h3><a href="http://ipython-books.github.io/">IPython Interactive Computing and Visualization Cookbook, Second Edition</a></h3>
+        <h3><a href="https://ipython-books.github.io/">IPython Interactive Computing and Visualization Cookbook, Second Edition</a></h3>
         <div class="sub-header-3">Packt Publishing (548 pages, 30$)</div>
 
         <p>

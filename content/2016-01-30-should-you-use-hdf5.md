@@ -4,7 +4,7 @@ This is a follow-up on my post [*Moving away from HDF5*](/moving-away-hdf5/) (se
 
 <!-- PELICAN_END_SUMMARY -->
 
-First, others have pointed out alternative implementations of the HDF5 specification (complete or not), notably in [Julia](http://cyrille.rossant.net/moving-away-hdf5/#comment-2445619778) and [Java](https://www.unidata.ucar.edu/software/thredds/current/netcdf-java/CDM/). I haven't tried them so I don't know how good they are. I don't know of any alternative implementation in Python. It would be interesting to see a Python implementation of a subset of HDF5 that doesn't depend on libhdf5.
+First, others have pointed out alternative implementations of the HDF5 specification (complete or not), notably in [Julia](https://cyrille.rossant.net/moving-away-hdf5/#comment-2445619778) and [Java](https://www.unidata.ucar.edu/software/thredds/current/netcdf-java/CDM/). I haven't tried them so I don't know how good they are. I don't know of any alternative implementation in Python. It would be interesting to see a Python implementation of a subset of HDF5 that doesn't depend on libhdf5.
 
 Now about use cases. While HDF5 didn't appear to be the right tool for us, others reported that they were happy with it. For example, [Konrad Hinsen uses HDF5 with lots of tiny arrays](http://blog.khinsen.net/posts/2016/01/07/on-hdf5-and-the-future-of-data-management/), whereas we had no more than a few huge arrays. Also, we have large volumes of experimental data, whereas his data comes from numerical simulations. These are quite different use cases. HDF5 was probably overkill for us, whereas it may well be the best option in Konrad's case. The file system alternative I mention in my post may not be a good idea with zillions of small files.
 

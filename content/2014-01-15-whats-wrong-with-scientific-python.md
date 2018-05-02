@@ -1,7 +1,7 @@
 Title: What's wrong with scientific Python?
 Tags: python
 
-tl;dr: Although not perfect, Python is today one of the best platforms for scientific computing. It's getting even better everyday thanks to the amazing work of a vibrant and growing community. [I reviewed Python's strengths in a previous post](http://cyrille.rossant.net/why-using-python-for-scientific-computing/). Here, I cover the more sensitive issue of its weaknesses.
+tl;dr: Although not perfect, Python is today one of the best platforms for scientific computing. It's getting even better everyday thanks to the amazing work of a vibrant and growing community. [I reviewed Python's strengths in a previous post](https://cyrille.rossant.net/why-using-python-for-scientific-computing/). Here, I cover the more sensitive issue of its weaknesses.
 
 <!-- PELICAN_END_SUMMARY -->
 
@@ -9,7 +9,7 @@ Don't get me wrong. I love Python. I use it everyday. I think that, as of today,
 
 That being said, nobody's perfect. While Python is mostly an excellent platform, it has some weaknesses. Sadly, those may prevent many people from jumping from Matlab & co to Python. I'd like to review them here. Note that these are my own opinions and many might disagree.
 
-**Update** (24/01/2014): this updated version contains a few clarifications and additions compared to the original version from 15/01/2014. See also in the comments a [very good summary and perspective by Konrad Hinsen](http://cyrille.rossant.net/whats-wrong-with-scientific-python/#comment-1603524572).
+**Update** (24/01/2014): this updated version contains a few clarifications and additions compared to the original version from 15/01/2014. See also in the comments a [very good summary and perspective by Konrad Hinsen](https://cyrille.rossant.net/whats-wrong-with-scientific-python/#comment-1603524572).
 
 
 ## A good general-purpose language, but not that good for scientific computing
@@ -25,7 +25,7 @@ A few things in NumPy are slightly odd and often confuse beginners. Off the top 
 
 * To concatenate arrays with, say, `hstack`, you end up using double parentheses: `hstack((a, b))`. How are you explaining this to beginners?
 
-* Fancy indexing is slow: `x[indices]`, where `indices` is an arbitrary array of integers, can be up to *four times* slower than Matlab. Now, if you use [`take()`](http://docs.scipy.org/doc/numpy/reference/generated/numpy.take.html), you can achieve Matlab's speed. If you don't know [this trick](http://cyrille.rossant.net/numpy-performance-tricks/) (and why would you, if you're a Matlab user considering switching to Python?), you might just think that Python is *four times* slower than Matlab (this very situation actually happened to a colleague). Ouch...
+* Fancy indexing is slow: `x[indices]`, where `indices` is an arbitrary array of integers, can be up to *four times* slower than Matlab. Now, if you use [`take()`](http://docs.scipy.org/doc/numpy/reference/generated/numpy.take.html), you can achieve Matlab's speed. If you don't know [this trick](https://cyrille.rossant.net/numpy-performance-tricks/) (and why would you, if you're a Matlab user considering switching to Python?), you might just think that Python is *four times* slower than Matlab (this very situation actually happened to a colleague). Ouch...
 
 * Let's create a matrix full of zeros: `x = zeros((10, 10))`. Now a random matrix: `x = rand(10, 10)`. First case: you *need* double parentheses or you get an error. Second case, you *need* single parentheses or you get an error. *Why?!* **Update**: someone pointed out in the comments that there's a really good reason for that: the `rand(10, 10)` function is a Matlab-friendly shortcut for `numpy.random.random_sample((10, 10))`. This little-known function *is* consistent with the rest of the NumPy API! This brings an additional point I'll tackle below (about Python trying to be Matlab).
 
@@ -106,14 +106,14 @@ This is another tough one, probably even tougher than Python 3. In layman's term
 
 Solutions exist. They are all *terrible*. I won't go into the details. [Others](http://lucumr.pocoo.org/2012/6/22/hate-hate-hate-everywhere/) [have](http://python-packaging-user-guide.readthedocs.org/en/latest/) [done](http://python-notes.boredomandlaziness.org/en/latest/pep_ideas/core_packaging_api.html) [it](http://www.aosabook.org/en/packaging.html) better than I could.
 
-It's even worse when it comes to Python programs with GUIs that you need to distribute to non-technical users (been there). You can't expect them to have a Python distribution, so you need to somehow [ship Python with your program](http://cyrille.rossant.net/create-a-standalone-windows-installer-for-your-python-application/). In my experience, it can be a nightmare. I have yet to find a good cross-platform solution that *just works*.
+It's even worse when it comes to Python programs with GUIs that you need to distribute to non-technical users (been there). You can't expect them to have a Python distribution, so you need to somehow [ship Python with your program](https://cyrille.rossant.net/create-a-standalone-windows-installer-for-your-python-application/). In my experience, it can be a nightmare. I have yet to find a good cross-platform solution that *just works*.
 
 Once again, things are slowly getting better. The official solutions are improving. Also, Continuum Analytics appears to be doing some [really](https://binstar.org/) [good](http://technicaldiscovery.blogspot.fr/2013/12/why-i-promote-conda.html) job in this respect, with their own conda/binstar system.
 
 
 ## A glance at the future
 
-I hope this post did not sound too much like a rant. It is not. I'm pretty happy with Python. I'm [developing and maintaining software in Python](http://klusta-team.github.io/). I even wrote [a book on scientific Python](http://ipython-books.github.io/minibook/)! For sure, I don't plan to leave this platform anytime soon. And, in any case, what I would leave it for? I don't think there is a better alternative as of today.
+I hope this post did not sound too much like a rant. It is not. I'm pretty happy with Python. I'm [developing and maintaining software in Python](http://klusta-team.github.io/). I even wrote [a book on scientific Python](https://ipython-books.github.io/minibook/)! For sure, I don't plan to leave this platform anytime soon. And, in any case, what I would leave it for? I don't think there is a better alternative as of today.
 
 Things could be better. They always can. And, they *are* getting better. I'm quite confident that scientific Python is going to be stronger and stronger in the years to come.
 

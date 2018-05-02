@@ -1,7 +1,7 @@
 Title: Twelve Tips about Starting a New Open-Source Project
 
 Here are some tips targeting developers who want to create an open-source
-project. They reflect my personal opinion and may not be all adapted to 
+project. They reflect my personal opinion and may not be all adapted to
 every situation.
 
 <!-- PELICAN_END_SUMMARY -->
@@ -11,14 +11,14 @@ Meet a need
 
 So, you want to create a new [open-source project](http://en.wikipedia.org/wiki/Open_source)? That's a good idea, but you need to understand very early why you want to do that. "Because it's fun"is not always a sufficient answer. Well, you can always learn by writing some software that will only be used by yourself and which will give you some experience, but at some point, you'll want your stuff to be used by other people.
 
-  * So, what is new about your project? 
+  * So, what is new about your project?
   * Why do you need to create a new project instead of using or improving existing
     projects?
   * What does it offer that is not brought by other projects?
   * Why would people be interested in your project?
-  * Who are you targetting? Other developers with a new programming library, 
+  * Who are you targetting? Other developers with a new programming library,
     consumers, etc.?
-  * Are you confident that you'll be able to devote to that project an 
+  * Are you confident that you'll be able to devote to that project an
     important part of your time for the next few months or years?
   * Do you have sufficient experience and knowledge to be able to write your very
     own software?
@@ -30,7 +30,7 @@ Be an expert in your language
 
 So, you've chosen the programming language you'll be using for your project. Do you consider yourself as an expert in that language? Needless to say that you should already be experienced enough in the tools you'll be using. You'll need to know about all aspects of your language. If you're using [object-oriented programming](http://en.wikipedia.org/wiki/Object-oriented_programming), make sure you know about all its subtleties.
 
-For example, I've recently started a project using [Python](http://en.wikipedia.org/wiki/Python_(programming_language)) and [OpenGL](http://en.wikipedia.org/wiki/OpenGL). Whereas at the time I started this project, I considered myself sufficiently aknowledged about Python, I clearly was not about OpenGL. So, I learnt OpenGL while I was developing my software. At some point, I realized I could use newer techniques that were much more powerful. More importantly, [the techniques I was using then were in fact totally obsolete](http://cyrille.rossant.net/shaders-opengl/). My sources of documentation were simply completely outdated. I had to make important changes in my code in order to use the newer techniques. Had I be sufficiently aware about OpenGL before, I could have made the right decisions early on.
+For example, I've recently started a project using [Python](http://en.wikipedia.org/wiki/Python_(programming_language)) and [OpenGL](http://en.wikipedia.org/wiki/OpenGL). Whereas at the time I started this project, I considered myself sufficiently aknowledged about Python, I clearly was not about OpenGL. So, I learnt OpenGL while I was developing my software. At some point, I realized I could use newer techniques that were much more powerful. More importantly, [the techniques I was using then were in fact totally obsolete](https://cyrille.rossant.net/shaders-opengl/). My sources of documentation were simply completely outdated. I had to make important changes in my code in order to use the newer techniques. Had I be sufficiently aware about OpenGL before, I could have made the right decisions early on.
 
 Write only in English
 ---------------------
@@ -95,7 +95,7 @@ You should write unit tests sooner rather than later.
 Profile and optimize
 --------------------
 
-Code readibility is more important than [premature optimization](http://en.wikipedia.org/wiki/Program_optimization). Yet, no one uses slow software or libraries. Make sure you [profile and optimize](http://cyrille.rossant.net/profiling-and-optimizing-python-code/) your code regularly. When you code, think about design and readibility first, but do not overlook performance either, especially if you're in a time critical section (e.g. in a loop). When you code in a [garbage-collected](http://en.wikipedia.org/wiki/Garbage_collection_(computer_science)) language like Python or .NET, make sure you don't create many temporary objects on the [heap](http://en.wikipedia.org/wiki/Dynamic_memory_allocation) when you don't absolutely need them. Relatedly, use native structures instead of custom types as much as you can.
+Code readibility is more important than [premature optimization](http://en.wikipedia.org/wiki/Program_optimization). Yet, no one uses slow software or libraries. Make sure you [profile and optimize](https://cyrille.rossant.net/profiling-and-optimizing-python-code/) your code regularly. When you code, think about design and readibility first, but do not overlook performance either, especially if you're in a time critical section (e.g. in a loop). When you code in a [garbage-collected](http://en.wikipedia.org/wiki/Garbage_collection_(computer_science)) language like Python or .NET, make sure you don't create many temporary objects on the [heap](http://en.wikipedia.org/wiki/Dynamic_memory_allocation) when you don't absolutely need them. Relatedly, use native structures instead of custom types as much as you can.
 
 Don't overlook code quality
 ---------------------------

@@ -2,9 +2,9 @@ Title: A tutorial on OpenGL/OpenCL interoperability in Python
 Tags: python, gpu
 
 In the last two posts, I've shown
-[how to use OpenCL for GPGPU](http://cyrille.rossant.net/pyopencl-on-windows-without-a-gpu/),
+[how to use OpenCL for GPGPU](https://cyrille.rossant.net/pyopencl-on-windows-without-a-gpu/),
 and
-[OpenGL for graphics rendering](http://cyrille.rossant.net/2d-graphics-rendering-tutorial-with-pyopengl/),
+[OpenGL for graphics rendering](https://cyrille.rossant.net/2d-graphics-rendering-tutorial-with-pyopengl/),
 with Python. Here I'll show how both OpenCL and OpenGL
 can be used at the same time with Python. It's called OpenCL-OpenGL
 interoperability. What is it about?

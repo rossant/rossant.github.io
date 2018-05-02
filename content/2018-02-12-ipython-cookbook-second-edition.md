@@ -1,7 +1,7 @@
 title: Writing the IPython Cookbook, Second Edition
 tags: python
 
-<a href="http://ipython-books.github.io/"><img src="/images/cookbook.png" alt="IPython Cookbook, Second Edition" align="left" style="width: 140px; margin-right: 10px;" /></a> I'm pleased to announce the release of the [IPython Cookbook, Second Edition](http://ipython-books.github.io/), more than three years after the first edition. All 100+ recipes have been updated to the latest versions of Python, IPython, Jupyter, and all of the scientific packages.
+<a href="https://ipython-books.github.io/"><img src="/images/cookbook.png" alt="IPython Cookbook, Second Edition" align="left" style="width: 140px; margin-right: 10px;" /></a> I'm pleased to announce the release of the [IPython Cookbook, Second Edition](https://ipython-books.github.io/), more than three years after the first edition. All 100+ recipes have been updated to the latest versions of Python, IPython, Jupyter, and all of the scientific packages.
 
 There are a few new recipes introducing recent libraries such as [Dask](https://dask.pydata.org/en/latest/), [Altair](https://altair-viz.github.io/), and [JupyterLab](https://github.com/jupyterlab/jupyterlab). As usual, [all of the code is available on GitHub as Jupyter notebooks](https://github.com/ipython-books/cookbook-2nd-code).
 
@@ -86,7 +86,7 @@ In practice, for every chapter, I sent Packt one exported Word document per reci
 
 ## Website
 
-Beyond the GitHub repository with the Markdown sources, I also wanted to make a little website for the freely-available recipes of the book. I used the [Pelican](http://docs.getpelican.com/en/stable/) static site generator written in Python. This is what I use for [my own website](http://cyrille.rossant.net/). I also reused the same CSS theme. The website is served on [GitHub pages](https://pages.github.com/).
+Beyond the GitHub repository with the Markdown sources, I also wanted to make a little website for the freely-available recipes of the book. I used the [Pelican](http://docs.getpelican.com/en/stable/) static site generator written in Python. This is what I use for [my own website](https://cyrille.rossant.net/). I also reused the same CSS theme. The website is served on [GitHub pages](https://pages.github.com/).
 
 Even if Pelican supports Markdown contents out of the box, I wrote a Python script to make minor modifications to the sources (adding a header with the book cover image, a link to the book, the license), and to add redirections with [pelican_alias](https://github.com/Nitron/pelican-alias). I had to use a patched version of [Python-markdown](https://github.com/rossant/Python-Markdown/tree/codehilite-css) to [add the code block language name into the CSS classes](https://blog.liang2.tw/posts/2016/02/markdown-codehilite-lang/). This was necessary to have a nice styling of the Jupyter code cells.
 
