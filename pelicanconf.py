@@ -8,7 +8,10 @@ SITEURL = ''
 PATH = 'content'
 
 SIDEBAR_NAME = 'Cyrille Rossant, PhD'
-SIDEBAR_SUBNAME = 'Neuroscience researcher and software engineer, University College London'
+SIDEBAR_SUBNAME = '''Neuroscience researcher and <br>
+software engineer at IBL and UCL<br>
+&nbsp;▸ IBL: <a href="https://www.internationalbrainlab.com/">International Brain Laboratory</a><br>
+&nbsp;▸ UCL: <a href="https://www.ucl.ac.uk/cortexlab">University College London</a>'''
 SIDEBAR_EMAIL = '<i>firstname</i>.<i>lastname</i>@gmail.com'
 SIDEBAR_LOCATION = 'Paris, France'
 SIDEBAR_TAGS = ['neuroscience',

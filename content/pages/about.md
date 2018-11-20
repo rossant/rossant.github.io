@@ -2,20 +2,26 @@
 Title: About
 ---
 
-**Neuroscience researcher and software engineer.**
+**Neuroscience researcher and software engineer at the [International Brain Laboratory](https://internationalbrainlab.com).**
 
-Strong background in **mathematics** and **computer science** as a former student of the [&Eacute;cole Normale Supérieure](http://www.ens.fr), PhD in **neuroscience**, 20+ years of experience in **software development**.
-
-Author of **several books on Python for data science**.
+* Strong background in **pure and applied mathematics** and **computer science**
+* PhD in **neuroscience**
+* Former student of the **[&Eacute;cole Normale Supérieure](http://www.ens.fr)**, Paris
+* 25+ years of experience in **software development**
+* Author of **several books on Python for data science**
 
 **Specialties**: neuroscience, spiking neural networks, machine learning, signal processing, software engineering, scientific computing, parallel computing, data visualization, Python, NumPy, GPU (CUDA, OpenCL, OpenGL), MATLAB, C#, C++, front-end development (web, mobile, Qt)
 
 ## Professional experience
 
-* 2012-now: **Research associate at [University College London](http://www.ucl.ac.uk/), [Cortical Processing Laboratory](http://www.ucl.ac.uk/cortexlab)** with [Kenneth D. Harris](https://iris.ucl.ac.uk/iris/browse/profile?upi=KDHAR02). *Spike sorting for large dense arrays*.
-* 2009-2012: **PhD at [&Eacute;cole Normale Supérieure](http://www.ens.fr/)** with [Romain Brette](http://romainbrette.fr/). *Correlations in neural coding*.
-* 2008: **Undergraduate internship at [Princeton University](http://www.princeton.edu/main/)** with [Michael Berry](http://molbio.princeton.edu/faculty/molbio-faculty/95-berry). *Statistics of retinal spiking activity*.
-* 2007: **Undergraduate internship at the [Collège de France](http://www.college-de-france.fr/site/college/index.htm)** with [Alain Berthoz](http://www.college-de-france.fr/site/alain-berthoz/). *Analysis of human locomotor trajectories*.
+* 2018-now: **Senior research software engineer at the [International Brain Laboratory](https://internationalbrainlab.com)**
+* 2012-2018: **Research associate at [University College London](http://www.ucl.ac.uk/), [Cortical Processing Laboratory](http://www.ucl.ac.uk/cortexlab)** with [Kenneth D. Harris](https://iris.ucl.ac.uk/iris/browse/profile?upi=KDHAR02). *Spike sorting for large dense arrays*.
+* 2009-2012: **PhD at [&Eacute;cole Normale Supérieure](http://www.ens.fr/)** with [Romain Brette](http://romainbrette.fr/).
+*Correlations in neural coding*.
+* 2008: **Undergraduate internship at [Princeton University](http://www.princeton.edu/main/)** with [Michael Berry](http://molbio.princeton.edu/faculty/molbio-faculty/95-berry).
+*Statistics of retinal spiking activity*.
+* 2007: **Undergraduate internship at the [Collège de France](http://www.college-de-france.fr/site/college/index.htm)** with [Alain Berthoz](http://www.college-de-france.fr/site/alain-berthoz/).
+*Analysis of human locomotor trajectories*.
 
 
 ## Education and diplomas
