@@ -6,7 +6,7 @@ In this post series, I'll talk about the big data visualization platform I'm cur
 <!-- PELICAN_END_SUMMARY -->
 
 * Part 1: Overview
-* [Part 2: Vispy]({static}2014-12-11-big-data-visualization-webgl-part2.md)
+* [Part 2: Vispy]({filename}2014-12-11-big-data-visualization-webgl-part2.md)
 
 ## Overview
 

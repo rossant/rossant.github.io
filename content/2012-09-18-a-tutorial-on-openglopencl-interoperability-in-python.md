@@ -406,7 +406,7 @@ Here is the full script.
         app.exec_()
 
 
-![GL-CL interop]({static}images/glcl.png)
+![GL-CL interop]({filename}images/glcl.png)
 
 
 Final notes

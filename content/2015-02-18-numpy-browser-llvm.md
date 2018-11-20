@@ -1,7 +1,7 @@
 Title: NumPy in the browser: proof of concept with Numba, LLVM, and emscripten
 Tags: python
 
-It's been a while since I wanted to try to bring some of NumPy to the browser. I've already discussed the motivations for this [in a previous post last year]({static}2014-03-31-scientific-python-in-the-browser-its-coming.md). As far as I'm concerned, the main use case would be to enable interactive data visualization in offline notebooks (including nbviewer), which often require client-based array operations for interactivity. In this post, I'll describe a proof-of-concept of compiling NumPy-aware Python functions to JavaScript using Numba, LLVM, and emscripten.
+It's been a while since I wanted to try to bring some of NumPy to the browser. I've already discussed the motivations for this [in a previous post last year]({filename}2014-03-31-scientific-python-in-the-browser-its-coming.md). As far as I'm concerned, the main use case would be to enable interactive data visualization in offline notebooks (including nbviewer), which often require client-based array operations for interactivity. In this post, I'll describe a proof-of-concept of compiling NumPy-aware Python functions to JavaScript using Numba, LLVM, and emscripten.
 
 <!-- PELICAN_END_SUMMARY -->
 

@@ -55,7 +55,7 @@ premier écrit ne sont pas inclus dans les données. Le deuxième biais
 concerne le fait que seuls les candidats ayant accepté de diffuser
 publiquement leurs résultats sont inclus.
 
-![Prénoms]({static}images/prenoms-all.png)
+![Prénoms]({filename}images/prenoms-all.png)
 
 Maintenant, nous nous intéressants à l'influence du prénom sur le
 résultat au bac. Nous allons utiliser deux approches mathématiques: la
@@ -97,7 +97,7 @@ moyenne des candidats, comparé à *une mention au-dessus* pour une
 Gaëtane**. Voici le profil de résultat des six prénoms les plus
 en-dessous de la moyenne:
 
-![Moyenne]({static}images/prenoms-mean.png)
+![Moyenne]({filename}images/prenoms-mean.png)
 
 Voici les résultats complets pour les 30 prénoms les plus en-dessous,
 avec l'écart à la moyenne.
@@ -137,7 +137,7 @@ avec l'écart à la moyenne.
 Du côté des prénoms avec l'écart le plus au-dessus de la moyenne, voici
 les profils de résultats.
 
-![Moyenne]({static}images/prenoms-mean2.png)
+![Moyenne]({filename}images/prenoms-mean2.png)
 
     :::text
     Gaetane        2,13
@@ -209,7 +209,7 @@ différents de la moyenne, mais pas la direction de cette différence, qui
 peut être meilleure (plus de bonnes mentions) ou moins bonne (plus de
 mauvais résultats).
 
-![Divergence]({static}images/prenoms-kl2.png)
+![Divergence]({filename}images/prenoms-kl2.png)
 
 Voici les 30 prénoms associés à la divergence la plus élevée.
 
@@ -254,7 +254,7 @@ des résultats très différents de la moyenne. Ainsi, un Valentin ou une
 Emilie a un profil de résultat tout à fait comparable à la moyenne
 globale.
 
-![Divergence]({static}images/prenoms-kl1.png)
+![Divergence]({filename}images/prenoms-kl1.png)
 
     :::text
     Valentin

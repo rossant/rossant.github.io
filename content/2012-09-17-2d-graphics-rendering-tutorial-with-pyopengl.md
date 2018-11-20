@@ -284,7 +284,7 @@ Here is the full script.
         window.show()
         app.exec_()
 
-![PyOpenGL tutorial]({static}images/gl.png)
+![PyOpenGL tutorial]({filename}images/gl.png)
 
 Final notes
 -----------
