@@ -39,19 +39,19 @@ Title: About
 
 * Rougier NP, Hinsen K, Alexandre F, Arildsen T, Barba LA, Benureau FCY, Brown CT, de Buyl P, Caglayan O, Davison AP, Delsuc M, Detorakis G, Diem AK, Drix D, Enel P, Girard B, Guest O, Hall MG, Henriques RN, Hinaut X, Jaron KS, Khamassi M, Klein A, Manninen T, Marchesi P, McGlinn D, Metzner C, Petchey O, Plesser HE, Poisot T, Ram K, Ram Y, Roesch E, **Rossant C**, Rostami V, Shifman A, Stachelek J, Stimberg M, Stollmeier F, Vaggi F, Viejo G, Vitay J, Vostinar AE, Yurchak R, Zito T. (2017). [Sustainable computational science: the ReScience initiative](https://peerj.com/articles/cs-142/). **PeerJ Computer Science**, 3:e142, doi.org/10.7717/peerj-cs.142
 * James J. Jun, Nicholas A. Steinmetz, Joshua H. Siegle, Daniel J. Denman, Marius Bauza, Brian Barbarits, Albert K. Lee, Costas A. Anastassiou, Alexandru Andrei, Çağatay Aydın, Mladen Barbic, Timothy J. Blanche, Vincent Bonin, João Couto, Barundeb Dutta, Sergey L. Gratiy, Diego A. Gutnisky, Michael Häusser, Bill Karsh, Peter Ledochowitsch, Carolina Mora Lopez, Catalin Mitelut, Silke Musa, Michael Okun, Marius Pachitariu, Jan Putzeys, P. Dylan Rich, **Cyrille Rossant**, Wei-lung Sun, Karel Svoboda, Matteo Carandini, Kenneth D. Harris, Christof Koch, John O’Keefe & Timothy D. Harris (2017). [Fully integrated silicon probes for high-density recording of neural activity](https://www.nature.com/articles/nature24636). **Nature**, 551, 232-236; doi:10.1038/nature24636
-* **Rossant C, Kadir S**, Goodman D, Schulman J, Hunter M, Saleem A, Grosmark A, Belluscio M, Denfield G, Ecker A, Tolias A, Solomon S, Buzsaki G, Carandini M, Harris D. (2016, joint first authors) [Spike sorting for large, dense electrode arrays]({filename}/pdfs/RossantLarge2016.pdf). **Nature Neuroscience**, 19, 634-641; doi:10.1038/nn.4268
-* **Rossant C**, Harris KD (2013). [Hardware-accelerated interactive data visualization for neuroscience in Python]({filename}/pdfs/RossantHardware2013.pdf). **Frontiers in Neuroinformatics**, 7(36); doi:10.3389/fninf.2013.00036
-* **Rossant C**, Fontaine B, Goodman DF (2013). [Playdoh: a lightweight Python library for distributed computing and optimisation]({filename}/pdfs/RossantPlaydoh2013.pdf). **Journal of Computational Science**, 4(5): 352–359; doi:10.1016/j.jocs.2011.06.002
-* **Rossant C**, Fontaine B, Magnusson AK, Brette R (2012). [A calibration-free electrode compensation method]({filename}/pdfs/RossantCalibration2012.pdf). **Journal of Neurophysiology**, 108(9): 2629-2639; doi: 10.1152/jn.01122.2011
-* **Rossant C**, Leijon S, Magnusson AK, Brette R (2011). [Sensitivity of noisy neurons to coincident inputs]({filename}/pdfs/RossantSensitivity2011.pdf). **Journal of Neuroscience**, 31(47): 17193-17206; doi: 10.1523/JNEUROSCI.2482-11.2011
-* **Rossant C**, Goodman DF, Fontaine B, Platkiewicz J, Magnusson A, Brette B (2011). [Fitting neuron models to spike trains]({filename}/pdfs/RossantFitting2011.pdf). **Frontiers in Neuroscience**, 5:9. doi:10.3389/fnins.2011.00009
-* **Rossant C**, Goodman D, Platkiewicz J, Brette R (2010). [Automatic fitting of spiking neuron models to electrophysiological recordings]({filename}/pdfs/RossantAutomatic2010.pdf). **Frontiers in Neuroinformatics**, 4:2. doi:10.3389/neuro.11.002.2010
+* **Rossant C, Kadir S**, Goodman D, Schulman J, Hunter M, Saleem A, Grosmark A, Belluscio M, Denfield G, Ecker A, Tolias A, Solomon S, Buzsaki G, Carandini M, Harris D. (2016, joint first authors) [Spike sorting for large, dense electrode arrays]({static}/pdfs/RossantLarge2016.pdf). **Nature Neuroscience**, 19, 634-641; doi:10.1038/nn.4268
+* **Rossant C**, Harris KD (2013). [Hardware-accelerated interactive data visualization for neuroscience in Python]({static}/pdfs/RossantHardware2013.pdf). **Frontiers in Neuroinformatics**, 7(36); doi:10.3389/fninf.2013.00036
+* **Rossant C**, Fontaine B, Goodman DF (2013). [Playdoh: a lightweight Python library for distributed computing and optimisation]({static}/pdfs/RossantPlaydoh2013.pdf). **Journal of Computational Science**, 4(5): 352–359; doi:10.1016/j.jocs.2011.06.002
+* **Rossant C**, Fontaine B, Magnusson AK, Brette R (2012). [A calibration-free electrode compensation method]({static}/pdfs/RossantCalibration2012.pdf). **Journal of Neurophysiology**, 108(9): 2629-2639; doi: 10.1152/jn.01122.2011
+* **Rossant C**, Leijon S, Magnusson AK, Brette R (2011). [Sensitivity of noisy neurons to coincident inputs]({static}/pdfs/RossantSensitivity2011.pdf). **Journal of Neuroscience**, 31(47): 17193-17206; doi: 10.1523/JNEUROSCI.2482-11.2011
+* **Rossant C**, Goodman DF, Fontaine B, Platkiewicz J, Magnusson A, Brette B (2011). [Fitting neuron models to spike trains]({static}/pdfs/RossantFitting2011.pdf). **Frontiers in Neuroscience**, 5:9. doi:10.3389/fnins.2011.00009
+* **Rossant C**, Goodman D, Platkiewicz J, Brette R (2010). [Automatic fitting of spiking neuron models to electrophysiological recordings]({static}/pdfs/RossantAutomatic2010.pdf). **Frontiers in Neuroinformatics**, 4:2. doi:10.3389/neuro.11.002.2010
 
 
 ### Dissertations
 
-* **Rossant C**, 2012. [Computational role of neural correlations]({filename}/pdfs/RossantPhD.pdf). PhD dissertation.
-* **Rossant C**, 2008. [Statistics of retinal spiking activity]({filename}/pdfs/RossantMasterThesis.pdf). Master dissertation.
+* **Rossant C**, 2012. [Computational role of neural correlations]({static}/pdfs/RossantPhD.pdf). PhD dissertation.
+* **Rossant C**, 2008. [Statistics of retinal spiking activity]({static}/pdfs/RossantMasterThesis.pdf). Master dissertation.
 
 
 ### Conferences

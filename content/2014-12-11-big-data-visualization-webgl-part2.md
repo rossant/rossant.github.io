@@ -5,14 +5,14 @@ In this post series, I'm describing the big data visualization platform I'm curr
 
 <!-- PELICAN_END_SUMMARY -->
 
-* [Part 1: Overview]({filename}2014-10-15-big-data-visualization-webgl-part1.md)
+* [Part 1: Overview]({static}2014-10-15-big-data-visualization-webgl-part1.md)
 * Part 2: VisPy
 
 ## Birth of the project
 
 I started to be interested in high-performance data visualization technologies three years ago. I was left unsatisfied by existing visualization libraries in Python like matplotlib. Although rich and powerful, matplotlib is slow when it comes to interactive visualization, particularly with datasets containing more than a few thousands of points. Yet, I was often dealing with digital time-dependent signals containing millions of points or more. It struck me to find out that no existing library would let me pan and zoom in a plot containing a long signal. More generally, there was no way to visualize interactively a large dataset.
 
-Being familiar with graphics processing units (GPUs) for general-purpose computing, I started to investigate the possibility to leverage the hardware acceleration offered by these devices for interactive data visualization. I ended up releasing an experimental visualization toolkit named Galry for this purpose. With Galry, I was able to interactively explore plots containing tens to hundreds of millions of points. I've already detailed this work in previous posts ([here]({filename}2012-10-24-introducing-galry.md), [here]({filename}2012-11-05-shaders-opengl.md), [here]({filename}2012-11-30-galrys-story-or-the-quest-of-multi-million-plots.md), and [here]({filename}2013-04-04-hardware-accelerated-interactive-data-visualization-in-python.md)).
+Being familiar with graphics processing units (GPUs) for general-purpose computing, I started to investigate the possibility to leverage the hardware acceleration offered by these devices for interactive data visualization. I ended up releasing an experimental visualization toolkit named Galry for this purpose. With Galry, I was able to interactively explore plots containing tens to hundreds of millions of points. I've already detailed this work in previous posts ([here]({static}2012-10-24-introducing-galry.md), [here]({static}2012-11-05-shaders-opengl.md), [here]({static}2012-11-30-galrys-story-or-the-quest-of-multi-million-plots.md), and [here]({static}2013-04-04-hardware-accelerated-interactive-data-visualization-in-python.md)).
 
 In late 2012, other developers of similar libraries and I decided to join forces to create a brand new visualization library that would scale to very big datasets. The VisPy library was born.
 
@@ -20,7 +20,7 @@ In late 2012, other developers of similar libraries and I decided to join forces
 
 [VisPy](http://vispy.org) is a scientific visualization library in Python that focuses on scalability and performance. It is based on OpenGL, an open industry-standard visualization library that can leverage the hardware acceleration of graphics processing units.
 
-![VisPy examples]({filename}images/vispy-examples.png)
+![VisPy examples]({static}images/vispy-examples.png)
 
 VisPy focuses on *modern* OpenGL. Whereas legacy OpenGL uses a fixed function pipeline with a limited predefined list of rendering features, modern OpenGL lets users customize all aspects of the rendering pipeline. This is done through through small programs named **shaders**. These programs are written in a low-level C-like language called GLSL. Shaders run on the GPU and benefit from the massively parallel architecture of GPUs.
 

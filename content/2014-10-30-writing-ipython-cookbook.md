@@ -108,19 +108,19 @@ Later in the process, it was decided that all equations would be reformatted by 
 
 Still, look at the life cycle of this little equation. As any self-respecting equation, it started its life as LaTeX code.
 
-![Original LaTeX equation]({filename}/images/eq1.png)
+![Original LaTeX equation]({static}/images/eq1.png)
 
 The conversion to Word resulted to a few minor mutilations.
 
-![Word equation]({filename}/images/eq2.png)
+![Word equation]({static}/images/eq2.png)
 
 For an unkown reason, it suffered a lot during its conversion to PDF.
 
-![Conversion to PDF... waaat?!]({filename}/images/eq3.png)
+![Conversion to PDF... waaat?!]({static}/images/eq3.png)
 
 Fortunately I spotted out the problem and had it corrected.
 
-![Final version]({filename}/images/eq4.png)
+![Final version]({static}/images/eq4.png)
 
 
 ## Conclusion
