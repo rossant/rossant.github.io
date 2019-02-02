@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Cyrille Rossant, ">
+    <link href="/favicon.png" rel="icon">
+
+        <link rel="alternate"  href="https://cyrille.rossant.net/feeds/all.atom.xml" type="application/atom+xml" title="Cyrille Rossant Full Atom Feed"/>
+        <link rel="alternate" href="https://cyrille.rossant.net/feeds/atom.xml" type="application/atom+xml" title="Cyrille Rossant Atom Feed"/>
+
+        <title>Cyrille Rossant - Projects</title>
+
+    <link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/pure/0.3.0/pure-min.css">
+    <!--[if lte IE 8]>
+        <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.5.0/grids-responsive-old-ie-min.css">
+    <![endif]-->
+    <!--[if gt IE 8]><!-->
+        <link rel="stylesheet" href="/theme/css/grids-responsive-min.css">
+    <!--<![endif]-->
+    <link rel="stylesheet" href="/theme/css/styles.css">
+    <link rel="stylesheet" href="/theme/css/pygments.css">
+    <!-- <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'> -->
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,500" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Ubuntu+Mono' rel='stylesheet' type='text/css'>
+
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+</head>
+
+<body>
+
+
+    <header id="header" class="pure-g">
+        <div class="pure-u-1 pure-u-md-3-4">
+             <div id="menu">
+                 <div class="pure-menu pure-menu-open pure-menu-horizontal">
+<ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/projects/">Projects</a></li>
+        <li><a href="/books/">Books</a></li>
+        <li><a href="/about/">About</a></li>
+</ul>                </div>
+            </div>
+        </div>
+
+        <div class="pure-u-1 pure-u-md-1-4">
+            <div id="social">
+                <div class="pure-menu pure-menu-open pure-menu-horizontal">
+<ul>
+        <li><a href="https://twitter.com/cyrillerossant"><i class="fa fa-twitter"></i></a></li>
+        <li><a href="https://github.com/rossant"><i class="fa fa-github"></i></a></li>
+        <li><a href="https://www.linkedin.com/in/crossant"><i class="fa fa-linkedin"></i></a></li>
+        <li><a href="https://cyrille.rossant.net/feeds/all.atom.xml"><i class="fa fa-rss"></i></a></li>
+</ul>                </div>
+            </div>
+        </div>
+    </header>
+
+
+
+    <div id="layout" class="pure-g">
+        <section id="content" class="pure-u-1 pure-u-md-3-4">
+            <div class="l-box">
+
+    <header id="page-header">
+        <h1>Projects</h1>
+    </header>
+
+    <section id="page">
+        <p>Here are my current projects:</p>
+<ul>
+<li><a href="#open-source-python-libraries">Open-source Python libraries</a>: tools for numerical computing and technical writing</li>
+<li><a href="#technical-writings">Technical writings</a>: books and blog posts</li>
+<li><a href="#open-data">Open data</a>: analysis and visualization of public datasets</li>
+</ul>
+<h2>Open-source Python libraries</h2>
+<h3>phy: spike sorting for large dense arrays</h3>
+<p>I'm leading the development of <a href="https://github.com/kwikteam/phy/"><strong>phy</strong></a>, a Python library for large-scale electrophysiological data analysis. This library is being used by dozens of experimental labs around the world.</p>
+<p><strong>Features</strong>:</p>
+<ul>
+<li>Spike detection algorithms</li>
+<li>Bindings to clustering algorithms</li>
+<li>Manual clustering</li>
+<li>Fast and scalable visualization with VisPy</li>
+<li>Modular GUIs with Qt</li>
+</ul>
+<h3>VisPy: high-performance interactive data visualization</h3>
+<p>I'm part of the core development team of <a href="http://vispy.org">VisPy</a>, a data visualization library based on OpenGL.</p>
+<p><strong>Features</strong>:</p>
+<ul>
+<li>Display millions of points efficiently</li>
+<li>3D visualization</li>
+</ul>
+<h3>podoc: conversion of markup documents in pure Python</h3>
+<p>I'm currently working on a <a href="https://github.com/podoc/podoc">library</a> for converting documents between different markup formats. This library is fully compatible with <a href="http://pandoc.org/">pandoc</a> but the most common conversion paths don't require it. This library will eventually supersede the older <a href="https://github.com/rossant/ipymd">ipymd library</a>.</p>
+<p><strong>Features</strong>:</p>
+<ul>
+<li>Edit Markdown or OpenDocument files in the Jupyter Notebook.</li>
+<li>Convert between Markdown, Jupyter Notebook, and other formats <em>without</em> pandoc.</li>
+<li>Convert between many other formats with pandoc.</li>
+<li>Easily parse, filter, and transform documents.</li>
+</ul>
+<h2>Technical writings</h2>
+<h3>Books</h3>
+<p>I've written <a href="/books">several books on Python for data science and numerical computing</a>.</p>
+<h3>Posts on O'Reilly Learning</h3>
+<p>I've written <a href="https://www.oreilly.com/learning/an-illustrated-introduction-to-the-t-sne-algorithm">an interactive tutorial on the t-SNE algorithm</a> on the <strong>O'Reilly Learning</strong> platform.</p>
+<h3>Awesome Math</h3>
+<p>I maintain the curated <a href="https://github.com/rossant/awesome-math">Awesome Math</a> page, which contains many references to high-quality, freely-available mathematics courses.</p>
+<h3>Blog posts</h3>
+<p>I've written <a href="/archives">a few tutorials on my blog</a>.</p>
+<h2>Open data</h2>
+<p>I analyze public datasets with Python and I make data visualizations.</p>
+<ul>
+<li><a href="/opendata-interior-hackathon">Map of all road accidents in France in 2012</a>, realized with <a href="http://rue89.nouvelobs.com/2014/06/25/carte-presque-tous-les-accidents-route-2012-253113">Rue89</a> journalists during an <a href="http://fr.okfn.org/2014/08/09/retour-sur-le-premier-hackathon-sur-les-donnees-du-ministere-de-linterieur/">Open Data Hackathon organized by the French Minister of the Interior</a>. I gathered several data sources with IPython and pandas to create the final dataset of all accidents.</li>
+<li><a href="/velib-open-data">Vélib' in Paris</a></li>
+<li>First names of students taking their high-school diplomas (in French, based on an <a href="http://coulmont.com/blog/2012/07/08/prenoms-mentions-bac-2012/">original study by Baptiste Coulmont</a>): <a href="/prenoms-et-reussite-au-bac">post 1</a> and <a href="/frequence-des-prenoms-des-candidats-au-bac-2012">post 2</a></li>
+</ul>
+    </section>
+
+            </div>
+        </section>
+
+        <nav id="sidebar" class="pure-u-1 pure-u-md-1-4">
+            <div class="l-box">
+<section>
+    <div class="portrait">
+            <img src="/theme/images/cr.jpg" />
+    </div>
+    <div class="name-cv">
+        <div class="name">Cyrille Rossant, PhD</div>
+        <div class="cv">
+            <a href="/pdfs/cv.pdf"><i class="fa fa-file-pdf-o"></i> CV</a>
+        </div>
+    </div>
+    <div class="clear"></div>
+    <div class="sub-name">Neuroscience researcher and <br>
+software engineer at IBL and UCL<br>
+&nbsp;▸ IBL: <a href="https://www.internationalbrainlab.com/">International Brain Laboratory</a><br>
+&nbsp;▸ UCL: <a href="https://www.ucl.ac.uk/cortexlab">University College London</a></div>
+    <div class="contact"><i>firstname</i>.<i>lastname</i>@gmail.com</div>
+</section>
+
+<section class="tags">
+    <span class="tag"><a href="/tag/neuroscience/">#neuroscience</a></span>
+    <span class="tag"><a href="/tag/python/">#python</a></span>
+    <span class="tag"><a href="/tag/dataviz/">#dataviz</a></span>
+    <span class="tag"><a href="/tag/maths/">#maths</a></span>
+    <span class="tag"><a href="/tag/gpu/">#gpu</a></span>
+    <span class="tag"><a href="/tag/opendata/">#opendata</a></span>
+</section>
+
+
+<section class="books">
+    <header><h3>books</h3></header>
+    <div class="sub-header">Two books on <strong>Python for data science</strong></div>
+    <div class="book-1"><a href="/books/#minibook"><img src="/images/minibook.png"/></a></div>
+    <div class="book-2"><a href="/books/#cookbook"><img src="/images/cookbook.png"/></a></div>
+</section>
+
+
+<!-- <section class="search">
+    <script>
+  (function() {
+    var cx = '006027474294305969173:cpp1rvft78s';
+    var gcse = document.createElement('script');
+    gcse.type = 'text/javascript';
+    gcse.async = true;
+    gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+        '//www.google.com/cse/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(gcse, s);
+  })();
+</script>
+<gcse:search></gcse:search>
+</section> -->            </div>
+        </nav>
+
+        <footer id="footer" class="pure-u-1 pure-u-md-3-4">
+            <div class="l-box">
+                <div>
+                    <p>&copy; <a href="https://cyrille.rossant.net">Cyrille Rossant</a> &ndash;
+                        Built with <a href="https://github.com/PurePelicanTheme/pure-single">Pure Theme</a>
+                        for <a href="http://blog.getpelican.com/">Pelican</a>
+                    </p>
+                </div>
+            </div>
+        </footer>
+
+    </div>
+
+<!-- Start of StatCounter Code for Default Guide -->
+<script type="text/javascript">
+var sc_project=7297581;
+var sc_invisible=1;
+var sc_security="e9e753f7";
+var scJsHost = (("https:" == document.location.protocol) ?
+"https://secure." : "http://www.");
+document.write("<sc"+"ript type='text/javascript' src='" +
+scJsHost+
+"statcounter.com/counter/counter.js'></"+"script>");
+</script>
+<noscript><div class="statcounter"><a title="shopify site
+analytics" href="http://statcounter.com/shopify/"
+target="_blank"><img class="statcounter"
+src="http://c.statcounter.com/7297581/0/e9e753f7/1/"
+alt="shopify site analytics"></a></div></noscript>
+<!-- End of StatCounter Code for Default Guide -->
+</body>
+</html>
+

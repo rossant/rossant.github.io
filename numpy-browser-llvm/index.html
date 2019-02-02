@@ -1,0 +1,705 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Cyrille Rossant, ">
+    <link href="/favicon.png" rel="icon">
+
+        <link rel="alternate"  href="https://cyrille.rossant.net/feeds/all.atom.xml" type="application/atom+xml" title="Cyrille Rossant Full Atom Feed"/>
+        <link rel="alternate" href="https://cyrille.rossant.net/feeds/atom.xml" type="application/atom+xml" title="Cyrille Rossant Atom Feed"/>
+
+        <title>Cyrille Rossant - NumPy in the browser: proof of concept with Numba, LLVM, and emscripten</title>
+
+    <link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/pure/0.3.0/pure-min.css">
+    <!--[if lte IE 8]>
+        <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.5.0/grids-responsive-old-ie-min.css">
+    <![endif]-->
+    <!--[if gt IE 8]><!-->
+        <link rel="stylesheet" href="/theme/css/grids-responsive-min.css">
+    <!--<![endif]-->
+    <link rel="stylesheet" href="/theme/css/styles.css">
+    <link rel="stylesheet" href="/theme/css/pygments.css">
+    <!-- <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'> -->
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,500" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Ubuntu+Mono' rel='stylesheet' type='text/css'>
+
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/fitvids/1.0.1/jquery.fitvids.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $(".content").fitVids();
+        });
+    </script>
+</head>
+
+<body>
+
+
+    <header id="header" class="pure-g">
+        <div class="pure-u-1 pure-u-md-3-4">
+             <div id="menu">
+                 <div class="pure-menu pure-menu-open pure-menu-horizontal">
+<ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/projects/">Projects</a></li>
+        <li><a href="/books/">Books</a></li>
+        <li><a href="/about/">About</a></li>
+</ul>                </div>
+            </div>
+        </div>
+
+        <div class="pure-u-1 pure-u-md-1-4">
+            <div id="social">
+                <div class="pure-menu pure-menu-open pure-menu-horizontal">
+<ul>
+        <li><a href="https://twitter.com/cyrillerossant"><i class="fa fa-twitter"></i></a></li>
+        <li><a href="https://github.com/rossant"><i class="fa fa-github"></i></a></li>
+        <li><a href="https://www.linkedin.com/in/crossant"><i class="fa fa-linkedin"></i></a></li>
+        <li><a href="https://cyrille.rossant.net/feeds/all.atom.xml"><i class="fa fa-rss"></i></a></li>
+</ul>                </div>
+            </div>
+        </div>
+    </header>
+
+
+
+    <div id="layout" class="pure-g">
+        <section id="content" class="pure-u-1 pure-u-md-3-4">
+            <div class="l-box">
+
+    <header id="post-header">
+        <h1>NumPy in the browser: proof of concept with Numba, LLVM, and emscripten</h1>
+            <div class="post-meta">
+                February 18, 2015
+            </div>
+            <div class="post-tags">
+                <ul>
+                    <li>tags:</li>
+                    <li><a href="/tag/python/">python</a></li>
+                </ul>
+            </div>
+    </header>
+
+    <section id="post">
+        <p>It's been a while since I wanted to try to bring some of NumPy to the browser. I've already discussed the motivations for this <a href="https://cyrille.rossant.net/scientific-python-in-the-browser-its-coming/">in a previous post last year</a>. As far as I'm concerned, the main use case would be to enable interactive data visualization in offline notebooks (including nbviewer), which often require client-based array operations for interactivity. In this post, I'll describe a proof-of-concept of compiling NumPy-aware Python functions to JavaScript using Numba, LLVM, and emscripten.</p>
+
+
+<h2>How to bring NumPy to the browser?</h2>
+<p>There are at least two quite different approaches.</p>
+<p>The first approach consists of reimplementing a tiny subset of NumPy in JavaScript. Many computations can be implemented with a minimum feature set of NumPy:</p>
+<ul>
+<li>the ndarray structure</li>
+<li>array creation functions</li>
+<li>indexing</li>
+<li>universal functions (ufuncs)</li>
+<li>a few shape manipulation routines</li>
+</ul>
+<p>Good performance can be expected in JavaScript by using <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Typed_arrays">TypedArrays</a>: these structures represent data in contiguous segments of memory. The JIT compilers of modern browsers should be smart enough to compile regular loops on these arrays quite efficiently.</p>
+<p>Although only a small subset of NumPy would be sufficient for most purposes, this approach does represent quite some work. There is no fundamental challenge behind it: it just necessitates quite a bit of slightly boring work. Yet, I think there can be some interest in having a lightweight "numpy.js" JavaScript library.</p>
+<p>The other approach is radically different and much more sophisticated. Starting from a Python function operating on NumPy arrays, compile it to LLVM, and then compile the LLVM code to JavaScript. The road from Python/NumPy to LLVM already exists: it's called <a href="http://numba.pydata.org/"><strong>Numba</strong></a>. As for LLVM -&gt; JavaScript, there's <a href="http://kripken.github.io/emscripten-site/"><strong>emscripten</strong></a>. In theory, it should be possible to connect the LLVM output of Numba to the LLVM input of emscripten. That sounds easy, right?</p>
+<p>Not so fast. A while ago, <a href="https://groups.google.com/a/continuum.io/d/msg/numba-users/ELAzQPFl6Ec/dbq6eQK134sJ">I had asked the Numba developers about the feasibility of this approach</a>. A major problem is that Python functions that are JIT-compiled with Numba use CPython under the hood. So some of CPython would have to be compiled to JavaScript as well. That sounds overly complicated, especially when it comes to small, self-contained Python functions operating exclusively on NumPy arrays. So I let it go.</p>
+<p>Recently, I heard about a new release of Numba, and I had another look. I discovered the <a href="http://numba.pydata.org/numba-doc/0.17.0/glossary.html#term-nopython-mode"><strong>nopython mode</strong></a>, which appeared to have been around for some time. This mode sounds like something interesting for our purposes: if Python functions are compiled to LLVM without relying on CPython at all, maybe they can be successfully compiled to JavaScript?</p>
+<p>Since I had long wanted to play with LLVM, I decided to have a go.</p>
+<h2>What is LLVM?</h2>
+<p>But first, what is LLVM exactly? It is a modular compiler architecture. The core of LLVM is a machine-independent assembly-like language called the <strong>LLVM Intermediate Representation</strong> (IR). Think of it as a strongly-typed instruction set for a virtual machine (even if <em>the scope of the project is not limited to the creation of virtual machines</em>, <a href="http://en.wikipedia.org/wiki/LLVM">tells us Wikipedia</a>).</p>
+<p>The IR abstracts away details of the compilation target. As such, it is common target for various language frontends (C, C++, Haskell, Python, and many others) and microarchitecture backends (x86, ARM, Nvidia PTX which is used in CUDA-enabled GPUs, etc.). LLVM also comes with a powerful and modular architecture for optimization passes.</p>
+<p>LLVM seems to be quite popular these days, with a strong industrial support, notably by Apple. For example, Apple's <strong>Clang</strong> is a LLVM-based C/C++/Objective C compiler that aims at replacing GCC's compilers for these languages. The compilers of modern languages like Julia and Rust are also built with LLVM.</p>
+<h2>What is Numba?</h2>
+<p>Now, the idea of Numba is the following. Take a Python function performing numerical operations on NumPy arrays. Normally, this function is interpreted by CPython. It performs Python and NumPy C API calls to execute these operations efficiently.</p>
+<p>With Numba, things happen quite differently. At runtime, the function bytecode is analyzed, types are inferred, and LLVM IR is generated before being compiled to machine code. In <em>nopython mode</em>, the LLVM IR doesn't make Python C API calls. There are many situations where a Python function cannot be compiled in nopython mode because it uses non-trivial Python features or data structures. In this case, the <em>object mode</em> is activated and the LLVM IR makes many Python C API calls.</p>
+<p>That's it for the theory. Now let's get our hands dirty.</p>
+<h2>Getting the LLVM IR of a Python function with Numba</h2>
+<p>Let's first import Numba (I installed the latest stable release with conda):</p>
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">llvmlite.binding</span> <span class="kn">as</span> <span class="nn">ll</span>
+<span class="kn">import</span> <span class="nn">llvmlite.ir</span> <span class="kn">as</span> <span class="nn">llvmir</span>
+<span class="kn">import</span> <span class="nn">numba</span>
+<span class="kn">from</span> <span class="nn">numba</span> <span class="kn">import</span> <span class="n">jit</span>
+<span class="kn">from</span> <span class="nn">numba</span> <span class="kn">import</span> <span class="n">int32</span>
+</pre></div>
+
+
+<p>It seems that there is an easy way to get the LLVM IR of a JIT'ed function in the development version of Numba, but this version didn't work for me, so here is a custom function doing the same thing (we'll make extensive use of unstable API in this post so most things are likely to break with different versions of Numba and other libraries...):</p>
+<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">llvm</span><span class="p">(</span><span class="n">func</span><span class="p">,</span> <span class="n">sig</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Return the LLVM IR of a @jit&#39;ed function.&quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">sig</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+        <span class="n">sig</span> <span class="o">=</span> <span class="n">func</span><span class="o">.</span><span class="n">signatures</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="k">return</span> <span class="nb">str</span><span class="p">(</span><span class="n">func</span><span class="o">.</span><span class="n">_compileinfos</span><span class="p">[</span><span class="n">sig</span><span class="p">]</span><span class="o">.</span><span class="n">library</span><span class="o">.</span><span class="n">_final_module</span><span class="p">)</span>
+</pre></div>
+
+
+<p>Let's define a trivial function operating on scalars:</p>
+<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span>
+</pre></div>
+
+
+<div class="highlight"><pre><span></span><span class="n">f</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="mi">3</span>
+</pre></div>
+
+
+<p>Now, let's compile it in nopython mode:</p>
+<div class="highlight"><pre><span></span><span class="nd">@jit</span><span class="p">(</span><span class="n">int32</span><span class="p">(</span><span class="n">int32</span><span class="p">,</span> <span class="n">int32</span><span class="p">),</span> <span class="n">nopython</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span>
+</pre></div>
+
+
+<p>For simplicity, we have specified the input and output types explicitely. Numba can compile several overloaded versions of the same function at runtime, depending on the types of the arguments.</p>
+<p>Let's have a look at the generated LLVM IR:</p>
+<div class="highlight"><pre><span></span><span class="k">print</span><span class="p">(</span><span class="n">llvm</span><span class="p">(</span><span class="n">f</span><span class="p">))</span>
+</pre></div>
+
+
+<div class="highlight"><pre><span></span><span class="p">[...]</span>
+
+<span class="c">; Function Attrs: nounwind</span>
+<span class="k">define</span> <span class="k">i32</span> <span class="vg">@__main__.f.int32.int32</span><span class="p">(</span><span class="k">i32</span><span class="p">*</span> <span class="k">nocapture</span> <span class="nv">%ret</span><span class="p">,</span> <span class="k">i8</span><span class="p">*</span> <span class="k">nocapture</span> <span class="k">readnone</span> <span class="nv">%env</span><span class="p">,</span> <span class="k">i32</span> <span class="nv">%arg.x</span><span class="p">,</span> <span class="k">i32</span> <span class="nv">%arg.y</span><span class="p">)</span> <span class="vg">#0</span> <span class="p">{</span>
+<span class="nl">entry:</span>
+  <span class="nv">%.15</span> <span class="p">=</span> <span class="k">add</span> <span class="k">i32</span> <span class="nv">%arg.y</span><span class="p">,</span> <span class="nv">%arg.x</span>
+  <span class="k">store</span> <span class="k">i32</span> <span class="nv">%.15</span><span class="p">,</span> <span class="k">i32</span><span class="p">*</span> <span class="nv">%ret</span><span class="p">,</span> <span class="k">align</span> <span class="m">4</span>
+  <span class="k">ret</span> <span class="k">i32</span> <span class="m">0</span>
+<span class="p">}</span>
+
+<span class="p">[...]</span>
+
+<span class="k">define</span> <span class="k">i8</span><span class="p">*</span> <span class="vg">@wrapper.__main__.f.int32.int32</span><span class="p">(</span><span class="k">i8</span><span class="p">*</span> <span class="k">nocapture</span> <span class="k">readnone</span> <span class="nv">%py_closure</span><span class="p">,</span> <span class="k">i8</span><span class="p">*</span> <span class="nv">%py_args</span><span class="p">,</span> <span class="k">i8</span><span class="p">*</span> <span class="nv">%py_kws</span><span class="p">)</span> <span class="p">{</span>
+<span class="nl">entry:</span>
+  <span class="nv">%.4</span> <span class="p">=</span> <span class="k">alloca</span> <span class="k">i8</span><span class="p">*,</span> <span class="k">align</span> <span class="m">8</span>
+  <span class="nv">%.5</span> <span class="p">=</span> <span class="k">alloca</span> <span class="k">i8</span><span class="p">*,</span> <span class="k">align</span> <span class="m">8</span>
+  <span class="nv">%.6</span> <span class="p">=</span> <span class="k">call</span> <span class="k">i32</span> <span class="p">(</span><span class="k">i8</span><span class="p">*,</span> <span class="k">i8</span><span class="p">*,</span> <span class="k">i8</span><span class="p">*,</span> <span class="k">i8</span><span class="p">**,</span> <span class="p">...)*</span> <span class="vg">@PyArg_ParseTupleAndKeywords</span><span class="p">(</span><span class="k">i8</span><span class="p">*</span> <span class="nv">%py_args</span><span class="p">,</span> <span class="k">i8</span><span class="p">*</span> <span class="nv">%py_kws</span><span class="p">,</span> <span class="k">i8</span><span class="p">*</span> <span class="k">getelementptr</span> <span class="k">inbounds</span> <span class="p">([</span><span class="m">3</span> <span class="k">x</span> <span class="k">i8</span><span class="p">]*</span> <span class="vg">@.const.OO</span><span class="p">,</span> <span class="k">i64</span> <span class="m">0</span><span class="p">,</span> <span class="k">i64</span> <span class="m">0</span><span class="p">),</span> <span class="k">i8</span><span class="p">**</span> <span class="k">getelementptr</span> <span class="k">inbounds</span> <span class="p">([</span><span class="m">3</span> <span class="k">x</span> <span class="k">i8</span><span class="p">*]*</span> <span class="vg">@.kwlist</span><span class="p">,</span> <span class="k">i64</span> <span class="m">0</span><span class="p">,</span> <span class="k">i64</span> <span class="m">0</span><span class="p">),</span> <span class="k">i8</span><span class="p">**</span> <span class="nv">%.4</span><span class="p">,</span> <span class="k">i8</span><span class="p">**</span> <span class="nv">%.5</span><span class="p">)</span>
+  <span class="nv">%.7</span> <span class="p">=</span> <span class="k">icmp</span> <span class="k">eq</span> <span class="k">i32</span> <span class="nv">%.6</span><span class="p">,</span> <span class="m">0</span>
+  <span class="k">br</span> <span class="k">i1</span> <span class="nv">%.7</span><span class="p">,</span> <span class="kt">label</span> <span class="nv">%entry.if</span><span class="p">,</span> <span class="kt">label</span> <span class="nv">%entry.endif</span><span class="p">,</span> <span class="nv">!prof</span> <span class="nv nv-Anonymous">!0</span>
+
+<span class="nl">entry.if:</span>                                         <span class="c">; preds = %entry.endif1.1.endif, %entry.endif1.1, %entry.endif, %entry</span>
+  <span class="nv">%merge</span> <span class="p">=</span> <span class="k">phi</span> <span class="k">i8</span><span class="p">*</span> <span class="p">[</span> <span class="k">null</span><span class="p">,</span> <span class="nv">%entry.endif1.1</span> <span class="p">],</span> <span class="p">[</span> <span class="k">null</span><span class="p">,</span> <span class="nv">%entry.endif</span> <span class="p">],</span> <span class="p">[</span> <span class="k">null</span><span class="p">,</span> <span class="nv">%entry</span> <span class="p">],</span> <span class="p">[</span> <span class="nv">%.57</span><span class="p">,</span> <span class="nv">%entry.endif1.1.endif</span> <span class="p">]</span>
+  <span class="k">ret</span> <span class="k">i8</span><span class="p">*</span> <span class="nv">%merge</span>
+
+<span class="nl">entry.endif:</span>                                      <span class="c">; preds = %entry</span>
+  <span class="nv">%.11</span> <span class="p">=</span> <span class="k">load</span> <span class="k">i8</span><span class="p">**</span> <span class="nv">%.4</span><span class="p">,</span> <span class="k">align</span> <span class="m">8</span>
+  <span class="nv">%.12</span> <span class="p">=</span> <span class="k">call</span> <span class="k">i8</span><span class="p">*</span> <span class="vg">@PyNumber_Long</span><span class="p">(</span><span class="k">i8</span><span class="p">*</span> <span class="nv">%.11</span><span class="p">)</span>
+  <span class="nv">%.13</span> <span class="p">=</span> <span class="k">call</span> <span class="k">i64</span> <span class="vg">@PyLong_AsLongLong</span><span class="p">(</span><span class="k">i8</span><span class="p">*</span> <span class="nv">%.12</span><span class="p">)</span>
+  <span class="k">call</span> <span class="kt">void</span> <span class="vg">@Py_DecRef</span><span class="p">(</span><span class="k">i8</span><span class="p">*</span> <span class="nv">%.12</span><span class="p">)</span>
+  <span class="nv">%.16</span> <span class="p">=</span> <span class="k">call</span> <span class="k">i8</span><span class="p">*</span> <span class="vg">@PyErr_Occurred</span><span class="p">()</span>
+  <span class="nv">%.17</span> <span class="p">=</span> <span class="k">icmp</span> <span class="k">eq</span> <span class="k">i8</span><span class="p">*</span> <span class="nv">%.16</span><span class="p">,</span> <span class="k">null</span>
+  <span class="k">br</span> <span class="k">i1</span> <span class="nv">%.17</span><span class="p">,</span> <span class="kt">label</span> <span class="nv">%entry.endif1.1</span><span class="p">,</span> <span class="kt">label</span> <span class="nv">%entry.if</span><span class="p">,</span> <span class="nv">!prof</span> <span class="nv nv-Anonymous">!1</span>
+
+<span class="nl">entry.endif1.1:</span>                                   <span class="c">; preds = %entry.endif</span>
+  <span class="nv">%.21</span> <span class="p">=</span> <span class="k">load</span> <span class="k">i8</span><span class="p">**</span> <span class="nv">%.5</span><span class="p">,</span> <span class="k">align</span> <span class="m">8</span>
+  <span class="nv">%.22</span> <span class="p">=</span> <span class="k">call</span> <span class="k">i8</span><span class="p">*</span> <span class="vg">@PyNumber_Long</span><span class="p">(</span><span class="k">i8</span><span class="p">*</span> <span class="nv">%.21</span><span class="p">)</span>
+  <span class="nv">%.23</span> <span class="p">=</span> <span class="k">call</span> <span class="k">i64</span> <span class="vg">@PyLong_AsLongLong</span><span class="p">(</span><span class="k">i8</span><span class="p">*</span> <span class="nv">%.22</span><span class="p">)</span>
+  <span class="k">call</span> <span class="kt">void</span> <span class="vg">@Py_DecRef</span><span class="p">(</span><span class="k">i8</span><span class="p">*</span> <span class="nv">%.22</span><span class="p">)</span>
+  <span class="nv">%.26</span> <span class="p">=</span> <span class="k">call</span> <span class="k">i8</span><span class="p">*</span> <span class="vg">@PyErr_Occurred</span><span class="p">()</span>
+  <span class="nv">%.27</span> <span class="p">=</span> <span class="k">icmp</span> <span class="k">eq</span> <span class="k">i8</span><span class="p">*</span> <span class="nv">%.26</span><span class="p">,</span> <span class="k">null</span>
+  <span class="k">br</span> <span class="k">i1</span> <span class="nv">%.27</span><span class="p">,</span> <span class="kt">label</span> <span class="nv">%entry.endif1.1.endif</span><span class="p">,</span> <span class="kt">label</span> <span class="nv">%entry.if</span><span class="p">,</span> <span class="nv">!prof</span> <span class="nv nv-Anonymous">!1</span>
+
+<span class="nl">entry.endif1.1.endif:</span>                             <span class="c">; preds = %entry.endif1.1</span>
+  <span class="nv">%.15.i</span> <span class="p">=</span> <span class="k">add</span> <span class="k">i64</span> <span class="nv">%.23</span><span class="p">,</span> <span class="nv">%.13</span>
+  <span class="nv">%sext</span> <span class="p">=</span> <span class="k">shl</span> <span class="k">i64</span> <span class="nv">%.15.i</span><span class="p">,</span> <span class="m">32</span>
+  <span class="nv">%.51</span> <span class="p">=</span> <span class="k">ashr</span> <span class="k">exact</span> <span class="k">i64</span> <span class="nv">%sext</span><span class="p">,</span> <span class="m">32</span>
+  <span class="nv">%.57</span> <span class="p">=</span> <span class="k">call</span> <span class="k">i8</span><span class="p">*</span> <span class="vg">@PyInt_FromLong</span><span class="p">(</span><span class="k">i64</span> <span class="nv">%.51</span><span class="p">)</span>
+  <span class="k">br</span> <span class="kt">label</span> <span class="nv">%entry.if</span>
+<span class="p">}</span>
+</pre></div>
+
+
+<p>That's a lot of code for such a simple function! And yet I have only kept the most relevant bits.</p>
+<p>Two LLVM functions are defined here (<code>define</code> instruction):</p>
+<ul>
+<li><code>@__main__.f.int32.int32</code></li>
+<li><code>@wrapper.__main__.f.int32.int32</code></li>
+</ul>
+<p>In LLVM, the names of global variables and functions start with a <code>@</code>. Names can contain many non-alphanumerical characters, including dots <code>.</code> and quotes <code>"</code>. Comments start with a semi-colon <code>;</code>. <a href="http://llvm.org/docs/LangRef.html">The LLVM Language Reference Manual</a> is a great source of documentation.</p>
+<p>LLVM IR is a strongly-typed language. As we can see in the function definitions, the first function takes four parameters (<code>i32*</code>, <code>i8*</code>, <code>i32</code>, <code>i32</code>) and returns a <code>i32</code> value. <code>i8</code> and <code>i32</code> are 8-bit (=byte) and 32-bit integer types, respectively.</p>
+<p>Let's try to reverse-engineer this function. The return value of this LLVM value is a success/failure output value. The actual value returned by our Python function is set in the pointer passed as a first argument. I'm not quite clear about the purpose of the second <code>i8*</code> argument; it might be related to the CPython environment and it doesn't seem important for what we're doing here. The last two <code>i32</code> arguments are our actual arguments <code>x</code> and <code>y</code>.</p>
+<p>The body of that function seems to do what we expect:</p>
+<div class="highlight"><pre><span></span><span class="nv">%.15</span> <span class="p">=</span> <span class="k">add</span> <span class="k">i32</span> <span class="nv">%arg.y</span><span class="p">,</span> <span class="nv">%arg.x</span>
+<span class="k">store</span> <span class="k">i32</span> <span class="nv">%.15</span><span class="p">,</span> <span class="k">i32</span><span class="p">*</span> <span class="nv">%ret</span><span class="p">,</span> <span class="k">align</span> <span class="m">4</span>
+</pre></div>
+
+
+<p>The <code>add</code> instructions adds our two input numbers and saves them into a local variable <code>%.15</code>. Then, the <code>store</code> instruction puts that value into the <code>%ret</code> pointer passed as input: that's the return value of the function.</p>
+<p>The <code>@wrapper.__main__.f.int32.int32</code> function is more complicated and we won't detail it at all here. This function wraps the core LLVM function <code>@__main__.f.int32.int32</code> and exposes it to the Python interpreter. For example, our input numbers are actually Python objects. Some works needs to be done with the Python C API to extract the actual numbers from these objects and pass them to the core LLVM function.</p>
+<p>Since our ultimate goal is to compile <code>f()</code> in JavaScript where there's no such thing as a CPython interpreter, we only need the <code>@__main__.f.int32.int32</code> function here.</p>
+<p>Now, let's try to compile this to JavaScript with emscripten!</p>
+<h2>Compiling the LLVM IR to JavaScript with emscripten</h2>
+<p>Emscripten is an impressive piece of software. It can compile C/C++ code, even large projects like game engines (<a href="https://blog.mozilla.org/blog/2014/03/12/mozilla-and-epic-preview-unreal-engine-4-running-in-firefox/">Unreal Engine</a> for example), to JavaScript. Emscripten uses Clang to compile C/C++ to LLVM, and a custom LLVM backend named <em>Fastcomp</em> to compile LLVM IR to JavaScript/<strong>asm.js</strong> (<em>an extraordinarily optimizable, low-level subset of JavaScript</em> <a href="http://asmjs.org/">according to the project page</a>).</p>
+<p>Let's get started. I first tried to use the SDK installer, but I had some issues and I had to compile emscripten from source (note: I'm using Ubuntu 14.04 64-bit). <a href="http://kripken.github.io/emscripten-site/docs/building_from_source/building_emscripten_from_source_on_linux.html#building-emscripten-on-linux">Here are the installation instructions</a>. Also, I ended up using the <code>merge-3.5/merge-pnacl-3.5</code> branches of emscripten and fastcomp, but using <code>master</code> may work as well. The point was to ensure the same version of LLVM is used in Numba and emscripten, to avoid compatibility issues.</p>
+<p>For some reasons, fastcomp appears to share code with <a href="http://en.wikipedia.org/wiki/Google_Native_Client">PNaCl</a>, a project by Google that brings native applications to the Chrome browser through a sandboxing technology based on LLVM. It's a bit unclear to me how the two projects are related exactly.</p>
+<p>Here is a little function returning the LLVM library of a Python JIT'ed function. We'll use it later.</p>
+<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">get_lib</span><span class="p">(</span><span class="n">func</span><span class="p">,</span> <span class="n">sig_index</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
+    <span class="n">sig</span> <span class="o">=</span> <span class="n">func</span><span class="o">.</span><span class="n">signatures</span><span class="p">[</span><span class="n">sig_index</span><span class="p">]</span>
+    <span class="n">compiled</span> <span class="o">=</span> <span class="n">func</span><span class="o">.</span><span class="n">_compileinfos</span><span class="p">[</span><span class="n">sig</span><span class="p">]</span>
+    <span class="n">lib</span> <span class="o">=</span> <span class="n">compiled</span><span class="o">.</span><span class="n">library</span>
+    <span class="k">return</span> <span class="n">lib</span>
+</pre></div>
+
+
+<p>Now, we save the LLVM IR code to a <code>.ll</code> file (the extension for files containing LLVM IR code), and we call <code>emcc</code> (the emscripten compiler):</p>
+<div class="highlight"><pre><span></span><span class="n">lib</span> <span class="o">=</span> <span class="n">get_lib</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;scalar.ll&#39;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">fh</span><span class="p">:</span>
+    <span class="n">fh</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">lib</span><span class="o">.</span><span class="n">_final_module</span><span class="p">))</span>
+<span class="n">os</span><span class="o">.</span><span class="n">system</span><span class="p">(</span><span class="s1">&#39;./emscripten/emcc scalar.ll -o scalar.js -O3 -s NO_EXIT_RUNTIME=1&#39;</span><span class="p">)</span>
+<span class="mi">0</span>
+</pre></div>
+
+
+<div class="highlight"><pre><span></span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">getsize</span><span class="p">(</span><span class="s1">&#39;scalar.js&#39;</span><span class="p">)</span>
+<span class="mi">138022</span>
+</pre></div>
+
+
+<div class="highlight"><pre><span></span><span class="err">!</span><span class="n">cut</span> <span class="o">-</span><span class="n">c</span><span class="o">-</span><span class="mi">80</span> <span class="n">scalar</span><span class="o">.</span><span class="n">js</span> <span class="o">|</span> <span class="n">head</span> <span class="o">-</span><span class="n">n5</span>
+<span class="n">var</span> <span class="n">Module</span><span class="p">;</span><span class="k">if</span><span class="p">(</span><span class="err">!</span><span class="n">Module</span><span class="p">)</span><span class="n">Module</span><span class="o">=</span><span class="p">(</span><span class="n">typeof</span> <span class="n">Module</span><span class="o">!==</span><span class="s2">&quot;undefined&quot;</span><span class="err">?</span><span class="n">Module</span><span class="p">:</span><span class="n">null</span><span class="p">)</span><span class="o">||</span><span class="p">{};</span><span class="n">var</span> <span class="n">m</span>
+<span class="n">var</span> <span class="n">asm</span><span class="o">=</span><span class="p">(</span><span class="n">function</span><span class="p">(</span><span class="k">global</span><span class="p">,</span><span class="n">env</span><span class="p">,</span><span class="nb">buffer</span><span class="p">)</span> <span class="p">{</span>
+<span class="s2">&quot;use asm&quot;</span><span class="p">;</span><span class="n">var</span> <span class="n">a</span><span class="o">=</span><span class="n">new</span> <span class="k">global</span><span class="o">.</span><span class="n">Int8Array</span><span class="p">(</span><span class="nb">buffer</span><span class="p">);</span><span class="n">var</span> <span class="n">b</span><span class="o">=</span><span class="n">new</span> <span class="k">global</span><span class="o">.</span><span class="n">Int16Array</span><span class="p">(</span><span class="nb">buffer</span><span class="p">)</span>
+<span class="o">//</span> <span class="n">EMSCRIPTEN_START_FUNCS</span>
+<span class="n">function</span> <span class="n">ma</span><span class="p">(</span><span class="n">a</span><span class="p">){</span><span class="n">a</span><span class="o">=</span><span class="n">a</span><span class="o">|</span><span class="mi">0</span><span class="p">;</span><span class="n">var</span> <span class="n">b</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">b</span><span class="o">=</span><span class="n">i</span><span class="p">;</span><span class="n">i</span><span class="o">=</span><span class="n">i</span><span class="o">+</span><span class="n">a</span><span class="o">|</span><span class="mi">0</span><span class="p">;</span><span class="n">i</span><span class="o">=</span><span class="n">i</span><span class="o">+</span><span class="mi">15</span><span class="o">&amp;-</span><span class="mi">16</span><span class="p">;</span><span class="k">return</span> <span class="n">b</span><span class="o">|</span><span class="mi">0</span><span class="p">}</span><span class="n">function</span> <span class="n">na</span><span class="p">(){</span><span class="n">ret</span>
+</pre></div>
+
+
+<p>We now have a JavaScript file that supposedly implements our function. How do we call it from JavaScript? After all, what we have here is a sort of function compiled for a virtual machine in JavaScript. With Numba, we had a LLVM wrapper for Python that let us call the function from Python. Here, we have nothing, and we need to write our own wrapper.</p>
+<p>A few more details:</p>
+<ul>
+<li>Programs compiled with emscripten are generally regular C programs with a main loop. However, what we want is an interactive access to our LLVM function from JavaScript. The <code>NO_EXIT_RUNTIME=1</code> option prevents the runtime exit at the end of the function execution.</li>
+<li>According to the documentation of emscripten, there is a way to access the LLVM functions from JavaScript. However, I must have done something wrong because I only managed to access the <code>main</code> entry point function (which actually doesn't exist).</li>
+<li>So I ended up creating a <code>main()</code> function in LLVM wrapping <code>@__main__.f.int32.int32()</code>.</li>
+</ul>
+<p>There are surely better ways to do it, but here is a little Python function adding this wrapper:</p>
+<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">add_wrapper</span><span class="p">(</span><span class="n">lib</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Add a main entry point calling the function.&quot;&quot;&quot;</span>
+<span class="o">...</span>
+    <span class="n">main</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">    define i32 @main(i64* %arg0, i8* %arg1, i32 %arg2, i32 %arg3)</span>
+<span class="s2">    {</span>
+<span class="s2">        </span><span class="si">%o</span><span class="s2">ut = call i32 @__main__.add.int32.int32(i64* %arg0, i8* %arg1, i32 %arg2, i32 %arg3)</span>
+<span class="s2">        ret i32 </span><span class="si">%o</span><span class="s2">ut</span>
+<span class="s2">    }</span>
+<span class="s2">    declare i32 @__main__.add.int32.int32(i64*, i8*, i32, i32)</span>
+<span class="s2">    &quot;&quot;&quot;</span>
+<span class="o">...</span>
+    <span class="n">ll_module</span> <span class="o">=</span> <span class="n">ll</span><span class="o">.</span><span class="n">parse_assembly</span><span class="p">(</span><span class="n">main</span><span class="p">)</span>
+    <span class="n">ll_module</span><span class="o">.</span><span class="n">verify</span><span class="p">()</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">lib</span><span class="o">.</span><span class="n">add_llvm_module</span><span class="p">(</span><span class="n">ll_module</span><span class="p">)</span>
+    <span class="k">except</span> <span class="ne">RuntimeError</span><span class="p">:</span>
+        <span class="k">print</span><span class="p">(</span><span class="s2">&quot;Warning: the module as already been added.&quot;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">lib</span>
+</pre></div>
+
+
+<p>It's a bit ugly because the wrapper is hard-coded with the function's signature.</p>
+<p>Once we have this <code>main()</code> function, we can finally access it from JavaScript. But we're not done yet, because we need a way to retrieve the result. Recall that the result is stored via a pointer passed as a first argument to our LLVM function.</p>
+<p>After a bit of googling, I implemented a quick-and-dirty JavaScript wrapper:</p>
+<div class="highlight"><pre><span></span><span class="kd">function</span> <span class="nx">Buffer</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// see http://kapadia.github.io/emscripten/2013/09/13/emscripten-pointers-and-pointers.html</span>
+    <span class="c1">// data must be a TypedArray.</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">_typed_array</span> <span class="o">=</span> <span class="nx">data</span><span class="p">;</span>
+    <span class="c1">// Get data byte size, allocate memory on Emscripten heap, and get pointer</span>
+    <span class="kd">var</span> <span class="nx">nDataBytes</span> <span class="o">=</span> <span class="nx">data</span><span class="p">.</span><span class="nx">length</span> <span class="o">*</span> <span class="nx">data</span><span class="p">.</span><span class="nx">BYTES_PER_ELEMENT</span><span class="p">;</span>
+    <span class="kd">var</span> <span class="nx">dataPtr</span> <span class="o">=</span> <span class="nx">Module</span><span class="p">.</span><span class="nx">_malloc</span><span class="p">(</span><span class="nx">nDataBytes</span><span class="p">);</span>
+    <span class="c1">// Copy data to Emscripten heap (directly accessed from Module.HEAPU8)</span>
+    <span class="kd">var</span> <span class="nx">dataHeap</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Uint8Array</span><span class="p">(</span><span class="nx">Module</span><span class="p">.</span><span class="nx">HEAPU8</span><span class="p">.</span><span class="nx">buffer</span><span class="p">,</span> <span class="nx">dataPtr</span><span class="p">,</span> <span class="nx">nDataBytes</span><span class="p">);</span>
+    <span class="nx">dataHeap</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="k">new</span> <span class="nx">Uint8Array</span><span class="p">(</span><span class="nx">data</span><span class="p">.</span><span class="nx">buffer</span><span class="p">));</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">_data_heap</span> <span class="o">=</span> <span class="nx">dataHeap</span><span class="p">;</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">pointer</span> <span class="o">=</span> <span class="nx">dataHeap</span><span class="p">.</span><span class="nx">byteOffset</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nx">Buffer</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">get</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="k">new</span> <span class="k">this</span><span class="p">.</span><span class="nx">_typed_array</span><span class="p">.</span><span class="nx">constructor</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">_data_heap</span><span class="p">.</span><span class="nx">buffer</span><span class="p">,</span>
+                                             <span class="k">this</span><span class="p">.</span><span class="nx">_data_heap</span><span class="p">.</span><span class="nx">byteOffset</span><span class="p">,</span>
+                                             <span class="k">this</span><span class="p">.</span><span class="nx">_typed_array</span><span class="p">.</span><span class="nx">length</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="nx">Buffer</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">free</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+    <span class="nx">Module</span><span class="p">.</span><span class="nx">_free</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">_data_heap</span><span class="p">.</span><span class="nx">byteOffset</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kd">function</span> <span class="nx">is_array</span><span class="p">(</span><span class="nx">tp</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="p">(</span><span class="nx">tp</span><span class="p">.</span><span class="nx">indexOf</span><span class="p">(</span><span class="s1">&#39;:&#39;</span><span class="p">)</span> <span class="o">&gt;</span> <span class="o">-</span><span class="mi">1</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="c1">// wrap the main() LLVM function</span>
+<span class="kd">function</span> <span class="nx">wrap</span><span class="p">(</span><span class="nx">args</span><span class="p">)</span> <span class="p">{</span>
+
+    <span class="c1">// return pointer, env</span>
+    <span class="kd">var</span> <span class="nx">arg_types</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;number&#39;</span><span class="p">,</span> <span class="s1">&#39;number&#39;</span><span class="p">];</span>
+
+    <span class="c1">// one number per argument</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">args</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">arg_types</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="s1">&#39;number&#39;</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="kd">var</span> <span class="nx">func_name</span> <span class="o">=</span> <span class="s1">&#39;main&#39;</span><span class="p">;</span>
+
+    <span class="c1">// here&#39;s how emscripten lets us access LLVM functions</span>
+    <span class="kd">var</span> <span class="nx">func</span> <span class="o">=</span> <span class="nx">Module</span><span class="p">.</span><span class="nx">cwrap</span><span class="p">(</span><span class="nx">func_name</span><span class="p">,</span> <span class="s1">&#39;number&#39;</span><span class="p">,</span> <span class="nx">arg_types</span><span class="p">);</span>
+
+    <span class="kd">var</span> <span class="nx">wrapped</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">return_arr</span><span class="p">)</span> <span class="p">{</span>
+
+        <span class="c1">// Wrap TypedArrays into emscripten buffers.</span>
+        <span class="c1">// Buffer with the return buffer, initialized with an array</span>
+        <span class="c1">// passed as argument.</span>
+        <span class="kd">var</span> <span class="nx">buffer_out</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Buffer</span><span class="p">(</span><span class="nx">return_arr</span><span class="p">);</span>
+
+        <span class="c1">// Wrap function arguments.</span>
+        <span class="kd">var</span> <span class="nx">func_args</span> <span class="o">=</span> <span class="p">[</span><span class="nx">buffer_out</span><span class="p">.</span><span class="nx">pointer</span><span class="p">,</span> <span class="mi">0</span><span class="p">];</span>
+
+        <span class="c1">// Skip the first argument which is the return array.</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">arguments</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+            <span class="kd">var</span> <span class="nx">arg</span><span class="p">;</span>
+
+            <span class="c1">// Define the argument to send to the wrapped function.</span>
+            <span class="k">if</span> <span class="p">(</span><span class="nx">is_array</span><span class="p">(</span><span class="nx">args</span><span class="p">[</span><span class="nx">i</span><span class="o">-</span><span class="mi">1</span><span class="p">]))</span> <span class="p">{</span>
+                <span class="c1">// If that argument is an array, pass the pointer to</span>
+                <span class="c1">// an emscripten buffer containing the data.</span>
+                <span class="nx">arg</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Buffer</span><span class="p">(</span><span class="nx">arguments</span><span class="p">[</span><span class="nx">i</span><span class="p">]).</span><span class="nx">pointer</span><span class="p">;</span>
+            <span class="p">}</span>
+            <span class="k">else</span> <span class="p">{</span>
+                <span class="c1">// Otherwise, just pass the argument directly.</span>
+                <span class="nx">arg</span> <span class="o">=</span> <span class="nx">arguments</span><span class="p">[</span><span class="nx">i</span><span class="p">];</span>
+            <span class="p">}</span>
+            <span class="nx">func_args</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">arg</span><span class="p">);</span>
+        <span class="p">}</span>
+
+        <span class="c1">// we call the LLVM function</span>
+        <span class="nx">func</span><span class="p">.</span><span class="nx">apply</span><span class="p">(</span><span class="kc">undefined</span><span class="p">,</span> <span class="nx">func_args</span><span class="p">);</span>
+
+        <span class="c1">// we get the result by reading the output buffer</span>
+        <span class="kd">var</span> <span class="nx">result</span> <span class="o">=</span> <span class="nx">buffer_out</span><span class="p">.</span><span class="nx">get</span><span class="p">();</span>
+
+        <span class="k">return</span> <span class="nx">result</span><span class="p">;</span>
+    <span class="p">};</span>
+    <span class="k">return</span> <span class="nx">wrapped</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+
+
+<p>This wrapper connects JavaScript TypedArray buffers to the virtual machine buffers and pointers. We finally get a chance to call our compiled LLVM functions from JavaScript. Here is an interactive example:</p>
+<div class="highlight"><pre><span></span><span class="c1">// We get the input numbers.</span>
+<span class="kd">var</span> <span class="nx">arg1</span> <span class="o">=</span> <span class="nb">parseInt</span><span class="p">(</span><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#my_arg1&#39;</span><span class="p">).</span><span class="nx">val</span><span class="p">());</span>
+<span class="kd">var</span> <span class="nx">arg2</span> <span class="o">=</span> <span class="nb">parseInt</span><span class="p">(</span><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#my_arg2&#39;</span><span class="p">).</span><span class="nx">val</span><span class="p">());</span>
+
+<span class="c1">// We wrap the LLVM main() function, specifying the signature.</span>
+<span class="kd">var</span> <span class="nx">add</span> <span class="o">=</span> <span class="nx">wrap</span><span class="p">([</span><span class="s1">&#39;int&#39;</span><span class="p">,</span> <span class="s1">&#39;int&#39;</span><span class="p">]);</span>
+
+<span class="c1">// We create a buffer that will contain the result.</span>
+<span class="kd">var</span> <span class="nx">result</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Int32Array</span><span class="p">([</span><span class="mi">0</span><span class="p">]);</span>
+<span class="nx">result</span> <span class="o">=</span> <span class="nx">add</span><span class="p">(</span><span class="nx">result</span><span class="p">,</span> <span class="nx">arg1</span><span class="p">,</span> <span class="nx">arg2</span><span class="p">);</span>
+
+<span class="c1">// We display the result.</span>
+<span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#my_output&#39;</span><span class="p">).</span><span class="nx">val</span><span class="p">(</span><span class="nx">result</span><span class="p">[</span><span class="mi">0</span><span class="p">]);</span>
+</pre></div>
+
+
+<p>Recall that we started from this function:</p>
+<div class="highlight"><pre><span></span><span class="nd">@jit</span><span class="p">(</span><span class="n">int32</span><span class="p">(</span><span class="n">int32</span><span class="p">,</span> <span class="n">int32</span><span class="p">),</span> <span class="n">nopython</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span>
+</pre></div>
+
+
+<p>We now can use this function from JavaScript. Type some numbers below:</p>
+<iframe src="/widgets/emscripten-scalar.html" style="height: 60px;" scrolling="no"></iframe>
+
+<p>We have successfully compiled our first Python function to Javascript!</p>
+<h2>Now with NumPy arrays</h2>
+<p>This sounds promising. Now, let's try to go further and use NumPy arrays in our original function:</p>
+<div class="highlight"><pre><span></span><span class="nd">@jit</span><span class="p">(</span><span class="n">int32</span><span class="p">(</span><span class="n">int32</span><span class="p">[:]),</span> <span class="n">nopython</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">np_sum</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">x</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+</pre></div>
+
+
+<p>Let's have a look at the LLVM IR:</p>
+<div class="highlight"><pre><span></span><span class="k">print</span><span class="p">(</span><span class="n">llvm</span><span class="p">(</span><span class="n">np_sum</span><span class="p">))</span>
+</pre></div>
+
+
+<div class="highlight"><pre><span></span><span class="p">[...]</span>
+<span class="k">define</span> <span class="k">i32</span> <span class="vg">@&quot;__main__.np_sum.array(int32,_1d,_A,_nonconst)&quot;</span><span class="p">(</span><span class="k">i32</span><span class="p">*</span> <span class="k">nocapture</span> <span class="nv">%ret</span><span class="p">,</span> <span class="k">i8</span><span class="p">*</span> <span class="k">nocapture</span> <span class="k">readnone</span> <span class="nv">%env</span><span class="p">,</span> <span class="p">{</span> <span class="k">i8</span><span class="p">*,</span> <span class="k">i64</span><span class="p">,</span> <span class="k">i64</span><span class="p">,</span> <span class="k">i32</span><span class="p">*,</span> <span class="p">[</span><span class="m">1</span> <span class="k">x</span> <span class="k">i64</span><span class="p">],</span> <span class="p">[</span><span class="m">1</span> <span class="k">x</span> <span class="k">i64</span><span class="p">]</span> <span class="p">}*</span> <span class="k">nocapture</span> <span class="k">readonly</span> <span class="nv">%arg.x</span><span class="p">)</span> <span class="vg">#0</span> <span class="p">{</span>
+<span class="nl">entry:</span>
+  <span class="nv">%.4</span> <span class="p">=</span> <span class="k">load</span> <span class="p">{</span> <span class="k">i8</span><span class="p">*,</span> <span class="k">i64</span><span class="p">,</span> <span class="k">i64</span><span class="p">,</span> <span class="k">i32</span><span class="p">*,</span> <span class="p">[</span><span class="m">1</span> <span class="k">x</span> <span class="k">i64</span><span class="p">],</span> <span class="p">[</span><span class="m">1</span> <span class="k">x</span> <span class="k">i64</span><span class="p">]</span> <span class="p">}*</span> <span class="nv">%arg.x</span><span class="p">,</span> <span class="k">align</span> <span class="m">8</span>
+  <span class="nv">%.4.fca.3.extract</span> <span class="p">=</span> <span class="k">extractvalue</span> <span class="p">{</span> <span class="k">i8</span><span class="p">*,</span> <span class="k">i64</span><span class="p">,</span> <span class="k">i64</span><span class="p">,</span> <span class="k">i32</span><span class="p">*,</span> <span class="p">[</span><span class="m">1</span> <span class="k">x</span> <span class="k">i64</span><span class="p">],</span> <span class="p">[</span><span class="m">1</span> <span class="k">x</span> <span class="k">i64</span><span class="p">]</span> <span class="p">}</span> <span class="nv">%.4</span><span class="p">,</span> <span class="m">3</span>
+  <span class="nv">%.4.fca.4.0.extract</span> <span class="p">=</span> <span class="k">extractvalue</span> <span class="p">{</span> <span class="k">i8</span><span class="p">*,</span> <span class="k">i64</span><span class="p">,</span> <span class="k">i64</span><span class="p">,</span> <span class="k">i32</span><span class="p">*,</span> <span class="p">[</span><span class="m">1</span> <span class="k">x</span> <span class="k">i64</span><span class="p">],</span> <span class="p">[</span><span class="m">1</span> <span class="k">x</span> <span class="k">i64</span><span class="p">]</span> <span class="p">}</span> <span class="nv">%.4</span><span class="p">,</span> <span class="m">4</span><span class="p">,</span> <span class="m">0</span>
+  <span class="nv">%.4.fca.5.0.extract</span> <span class="p">=</span> <span class="k">extractvalue</span> <span class="p">{</span> <span class="k">i8</span><span class="p">*,</span> <span class="k">i64</span><span class="p">,</span> <span class="k">i64</span><span class="p">,</span> <span class="k">i32</span><span class="p">*,</span> <span class="p">[</span><span class="m">1</span> <span class="k">x</span> <span class="k">i64</span><span class="p">],</span> <span class="p">[</span><span class="m">1</span> <span class="k">x</span> <span class="k">i64</span><span class="p">]</span> <span class="p">}</span> <span class="nv">%.4</span><span class="p">,</span> <span class="m">5</span><span class="p">,</span> <span class="m">0</span>
+  <span class="nv">%.35.i</span> <span class="p">=</span> <span class="k">icmp</span> <span class="k">eq</span> <span class="k">i64</span> <span class="nv">%.4.fca.4.0.extract</span><span class="p">,</span> <span class="m">0</span>
+  <span class="k">br</span> <span class="k">i1</span> <span class="nv">%.35.i</span><span class="p">,</span> <span class="kt">label</span> <span class="nv">%&quot;numba.targets.arrayobj.array_sum_impl.array(int32,_1d,_A,_nonconst).exit&quot;</span><span class="p">,</span> <span class="kt">label</span> <span class="nv">%B16.endif.lr.ph.i</span><span class="p">,</span> <span class="nv">!prof</span> <span class="nv nv-Anonymous">!0</span>
+<span class="p">[...]</span>
+</pre></div>
+
+
+<p>The code is several hundreds of lines long. Again, we have a core LLVM function and a Python wrapper. Let's examine the signature of the core function:</p>
+<div class="highlight"><pre><span></span><span class="k">i32</span> <span class="vg">@&quot;__main__.np_sum.array(int32,_1d,_A,_nonconst)&quot;</span><span class="p">(</span><span class="k">i32</span><span class="p">*</span> <span class="nv">%ret</span><span class="p">,</span> <span class="k">i8</span><span class="p">*</span> <span class="nv">%env</span><span class="p">,</span> <span class="p">{</span> <span class="k">i8</span><span class="p">*,</span> <span class="k">i64</span><span class="p">,</span> <span class="k">i64</span><span class="p">,</span> <span class="k">i32</span><span class="p">*,</span> <span class="p">[</span><span class="m">1</span> <span class="k">x</span> <span class="k">i64</span><span class="p">],</span> <span class="p">[</span><span class="m">1</span> <span class="k">x</span> <span class="k">i64</span><span class="p">]</span> <span class="p">}*</span> <span class="nv">%arg.x</span><span class="p">)</span>
+</pre></div>
+
+
+<p>The signature follows the same pattern as before. The first argument is the integer output. The third argument is the most interesting: it represents our input array. It is a pointer to a structure containing six fields. After looking into Numba's code, we find out the signification of these six fields:</p>
+<ul>
+<li><code>i8* parent</code>: apparently mostly relevant to CPython</li>
+<li><code>i64 nitems</code>: number of items in the array</li>
+<li><code>i64 itemsize</code>: number of bytes per item</li>
+<li><code>i32* data</code>: a pointer to the data buffer</li>
+<li><code>[1 x i64] shape</code>: the shape of the array</li>
+<li><code>[1 x i64] strides</code>: the strides of the array</li>
+</ul>
+<p>This time too, we need a wrapper. We'll do something even uglier than before: we'll hardcode the array metadata (dtype, shape, etc.) in the wrapper, considering a <code>(10,) int32</code> array.</p>
+<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">add_wrapper</span><span class="p">(</span><span class="n">lib</span><span class="p">):</span>
+    <span class="n">main</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">    define i32 @main(i32* nocapture </span><span class="si">%r</span><span class="s2">et, i8* nocapture readnone </span><span class="si">%e</span><span class="s2">nv, i32* nocapture readonly %arr)</span>
+<span class="s2">    {</span>
+<span class="s2">        %tmp = alloca i8</span>
+<span class="s2">        store i8 0, i8* %tmp</span>
+<span class="s2">        %agg1 = insertvalue { i8*, i64, i64, i32*, [1 x i64], [1 x i64] } undef, i8* %tmp, 0             ; parent</span>
+<span class="s2">        %agg2 = insertvalue { i8*, i64, i64, i32*, [1 x i64], [1 x i64] } %agg1, i64 10, 1                ; nitems</span>
+<span class="s2">        %agg3 = insertvalue { i8*, i64, i64, i32*, [1 x i64], [1 x i64] } %agg2, i64 4, 2                ; itemsize</span>
+<span class="s2">        %agg4 = insertvalue { i8*, i64, i64, i32*, [1 x i64], [1 x i64] } %agg3, i32* %arr, 3            ; data</span>
+<span class="s2">        %agg5 = insertvalue { i8*, i64, i64, i32*, [1 x i64], [1 x i64] } %agg4, [1 x i64] [i64 10], 4    ; shape</span>
+<span class="s2">        %agg6 = insertvalue { i8*, i64, i64, i32*, [1 x i64], [1 x i64] } %agg5, [1 x i64] [i64 4], 5    ; strides</span>
+<span class="s2">        %ptr = alloca { i8*, i64, i64, i32*, [1 x i64], [1 x i64] }</span>
+<span class="s2">        store { i8*, i64, i64, i32*, [1 x i64], [1 x i64] } %agg6, { i8*, i64, i64, i32*, [1 x i64], [1 x i64] }* %ptr</span>
+<span class="s2">        </span><span class="si">%o</span><span class="s2">ut = call i32 @&quot;__main__.np_sum.array(int32,_1d,_A,_nonconst)&quot;(i32* </span><span class="si">%r</span><span class="s2">et, i8* </span><span class="si">%e</span><span class="s2">nv, { i8*, i64, i64, i32*, [1 x i64], [1 x i64] }* %ptr)</span>
+<span class="s2">        ret i32 </span><span class="si">%o</span><span class="s2">ut</span>
+<span class="s2">    }</span>
+<span class="s2">    declare i32 @&quot;__main__.np_sum.array(int32,_1d,_A,_nonconst)&quot;(i32* nocapture, i8* nocapture readnone, { i8*, i64, i64, i32*, [1 x i64], [1 x i64] }* nocapture readonly)</span>
+<span class="s2">    &quot;&quot;&quot;</span>
+    <span class="n">ll_module</span> <span class="o">=</span> <span class="n">ll</span><span class="o">.</span><span class="n">parse_assembly</span><span class="p">(</span><span class="n">main</span><span class="p">)</span>
+    <span class="n">ll_module</span><span class="o">.</span><span class="n">verify</span><span class="p">()</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">lib</span><span class="o">.</span><span class="n">add_llvm_module</span><span class="p">(</span><span class="n">ll_module</span><span class="p">)</span>
+    <span class="k">except</span> <span class="ne">RuntimeError</span><span class="p">:</span>
+        <span class="k">print</span><span class="p">(</span><span class="s2">&quot;Warning: the module as already been added.&quot;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">lib</span>
+</pre></div>
+
+
+<p>What does this wrapper do? It takes the data buffer of an array as an input, it creates an appropriate structure for the corresponding NumPy array, and it calls our compiled Python function. Note that the <code>alloca</code> instruction creates a pointer, while <code>insertvalue</code> lets us create the LLVM ndarray structure.</p>
+<p>This wrapper will make our lives easier in JavaScript. We'll just pass the data buffer, and this LLVM wrapper will take care of creating the appropriate array structure. The drawback is that the shape of the array is fixed at compile time here. For sure, there are much cleaner ways to do it.</p>
+<p>Let's compile this with emscripten:</p>
+<div class="highlight"><pre><span></span><span class="n">lib</span> <span class="o">=</span> <span class="n">get_lib</span><span class="p">(</span><span class="n">np_sum</span><span class="p">)</span>
+<span class="n">add_wrapper</span><span class="p">(</span><span class="n">lib</span><span class="p">)</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;array.ll&#39;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">fh</span><span class="p">:</span>
+    <span class="n">fh</span><span class="o">.</span><span class="n">write</span><span class="p">((</span><span class="nb">str</span><span class="p">(</span><span class="n">lib</span><span class="o">.</span><span class="n">_final_module</span><span class="p">)))</span>
+<span class="n">os</span><span class="o">.</span><span class="n">system</span><span class="p">(</span><span class="s1">&#39;./emscripten/emcc array.ll -o array.js -O3 -s NO_EXIT_RUNTIME=1&#39;</span><span class="p">)</span>
+<span class="mi">256</span>
+</pre></div>
+
+
+<div class="highlight"><pre><span></span><span class="nl">Value:</span>   <span class="nv">%.4.fca.4.0.extract</span> <span class="p">=</span> <span class="k">extractvalue</span> <span class="p">{</span> <span class="k">i8</span><span class="p">*,</span> <span class="k">i64</span><span class="p">,</span> <span class="k">i64</span><span class="p">,</span> <span class="k">i32</span><span class="p">*,</span> <span class="p">[</span><span class="m">1</span> <span class="k">x</span> <span class="k">i64</span><span class="p">],</span> <span class="p">[</span><span class="m">1</span> <span class="k">x</span> <span class="k">i64</span><span class="p">]</span> <span class="p">}</span> <span class="nv">%.4.insert15</span><span class="p">,</span> <span class="m">4</span><span class="p">,</span> <span class="m">0</span>
+<span class="nl">Value:</span>   <span class="nv">%.4.insert15</span> <span class="p">=</span> <span class="k">insertvalue</span> <span class="p">{</span> <span class="k">i8</span><span class="p">*,</span> <span class="k">i64</span><span class="p">,</span> <span class="k">i64</span><span class="p">,</span> <span class="k">i32</span><span class="p">*,</span> <span class="p">[</span><span class="m">1</span> <span class="k">x</span> <span class="k">i64</span><span class="p">],</span> <span class="p">[</span><span class="m">1</span> <span class="k">x</span> <span class="k">i64</span><span class="p">]</span> <span class="p">}</span> <span class="nv">%.4.insert12</span><span class="p">,</span> <span class="p">[</span><span class="m">1</span> <span class="k">x</span> <span class="k">i64</span><span class="p">]</span> <span class="nv">%.4.field14</span><span class="p">,</span> <span class="m">5</span>
+<span class="err">LLVM</span> <span class="nl">ERROR:</span> <span class="err">ExpandStructRegs</span> <span class="err">does</span> <span class="err">not</span> <span class="err">handle</span> <span class="err">nested</span> <span class="err">structs</span>
+</pre></div>
+
+
+<p>This doesn't sound very good. A bit of googling tells us that <a href="https://code.google.com/p/nativeclient/issues/detail?id=3815">PNaCl and emscripten do not support nested structures very well</a>. The bug is still open at this time. Apparently, these projects target LLVM IR generated by Clang, which doesn't seem to use nested structs (?). I opened <a href="https://github.com/numba/numba/issues/993">an issue</a> on the Numba GitHub repository, and someone suggested to disable the Numba optimizations. It worked, but then I had another similar bug. It looked like a dead-end.</p>
+<p>Fortunately, after some more googling I found out that <a href="http://code.google.com/p/nativeclient/issues/detail?id=3932">other people had encountered the same bug</a> with LLVM IR code generated by Julia and Rust. On this bug report, someone mentioned <a href="https://github.com/epdtry/rust-emscripten-passes">a fix for Rust</a>. So I tried it. I had to patch a C++ file in PNaCl and run a custom LLVM pass on the LLVM IR generated by Numba. It was a long shot, but it actually worked.</p>
+<div class="highlight"><pre><span></span><span class="n">os</span><span class="o">.</span><span class="n">system</span><span class="p">(</span>
+    <span class="s2">&quot;emscripten-fastcomp/build/Release/bin/opt &quot;</span>
+    <span class="s2">&quot;-load=rust-emscripten-passes/BreakStructArguments.so &quot;</span>
+    <span class="s2">&quot;-O3 -break-struct-arguments -globaldce array.ll -S -o array_fixed.ll&quot;</span>
+    <span class="p">)</span>
+<span class="mi">0</span>
+</pre></div>
+
+
+<div class="highlight"><pre><span></span><span class="n">os</span><span class="o">.</span><span class="n">system</span><span class="p">(</span><span class="s1">&#39;./emscripten/emcc array_fixed.ll -o array.js -O3 -s NO_EXIT_RUNTIME=1&#39;</span><span class="p">)</span>
+<span class="mi">0</span>
+</pre></div>
+
+
+<p>Here is the result. Let's first recall the original function:</p>
+<div class="highlight"><pre><span></span><span class="nd">@jit</span><span class="p">(</span><span class="n">int32</span><span class="p">(</span><span class="n">int32</span><span class="p">[:]),</span> <span class="n">nopython</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">np_sum</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">x</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+</pre></div>
+
+
+<p>Type some numbers below to compute the sum (no more than 10 numbers):</p>
+<iframe src="/widgets/emscripten-array.html" style="height: 80px;" scrolling="no"></iframe>
+
+<p>This is better than what I expected! I also managed to pass 2D arrays with a little more work with the wrappers. The following example computes the index of the row with the maximum value for <code>x</code>:</p>
+<div class="highlight"><pre><span></span><span class="nd">@numba.jit</span><span class="p">(</span><span class="n">numba</span><span class="o">.</span><span class="n">int32</span><span class="p">(</span><span class="n">numba</span><span class="o">.</span><span class="n">int32</span><span class="p">[:,::</span><span class="mi">1</span><span class="p">]))</span>
+<span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="n">i</span> <span class="o">=</span> <span class="n">x</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">argmax</span><span class="p">()</span>
+    <span class="k">return</span> <span class="n">x</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
+</pre></div>
+
+
+<p>Click on a number to change it:</p>
+<iframe src="/widgets/emscripten-table.html" style="height: 350px;" scrolling="no"></iframe>
+
+<h2>Performance</h2>
+<p>I've done some quick and somewhat non-scientific benchmarks. The test function is just <code>np.sum()</code> on an array containing one million random 32-bit integers uniformly sampled between -100 and 100. On my laptop, NumPy computes the sum in 0.85 ms. What about Numba/Emscripten and vanilla JavaScript? Click on the button to run the benchmark yourself:</p>
+<iframe src="/widgets/emscripten-benchmark.html" style="height: 200px;" scrolling="no"></iframe>
+
+<p>The Emscripten-compiled version appears to be 1-2 orders of magnitude slower than vanilla JavaScript and NumPy.</p>
+<h2>Conclusion</h2>
+<p>There are several things that I didn't manage or didn't try to do:</p>
+<ul>
+<li>Returning an array</li>
+<li>Passing several arrays as arguments</li>
+<li>Using ufuncs</li>
+<li>Using array operations</li>
+</ul>
+<p>Although interesting in itself, this proof-of-concept has important limitations:</p>
+<ul>
+<li>
+<p>It is inherently limited by what Numba's nopython mode provides. Currently, just the most basic constructs of <a href="http://numba.pydata.org/numba-doc/0.17.0/reference/pysupported.html">Python</a> and <a href="http://numba.pydata.org/numba-doc/0.17.0/reference/numpysupported.html">NumPy</a> are available in this mode. There is no array creation, reshaping, no array operations without preallocating the output arrays, etc. Python features are also quite limited; for example, no containers (lists, dicts, sets, etc.) are available as these constructs require the Python C API. It's unclear to me how much the Numba devs want to implement in the nopython mode.</p>
+</li>
+<li>
+<p>There is currently limited interest in using this approach compared to writing vanilla JavaScript by hand when needed. Fore sure, JavaScript doesn't support ndarrays (even if there are some JS <a href="https://github.com/scijs/ndarray">ndarray libraries</a> out there), but we've seen that Numba support for NumPy array computations is still a bit limited. Things would be quite different if we could compile a significant and non-trivial Python/NumPy codebase in nopython mode.</p>
+</li>
+<li>
+<p>I hard-coded the LLVM wrappers manually, which is quite horrible. However, I believe it would not be too complicated to build such wrappers dynamically using llvmlite.</p>
+</li>
+<li>
+<p>Performance could be better.</p>
+</li>
+<li>
+<p>This seems obvious, but: this approach only lets you compile Python functions ahead-of-time. Once you're in JavaScript, you can't write or compile your own functions on-the-fly. By contrast, the first approach I described in the introduction would let you do that.</p>
+</li>
+<li>
+<p>The whole approach is quite hackish (you need to apply obscure patches to unstable branches of various projects written in 3 or 4 different languages) and it feels like you're trying to fit a square peg in a round hole. I don't believe it could be ever used in production in any form.</p>
+</li>
+</ul>
+<p>Still, it was a lot of fun!</p>
+    </section>
+
+
+<nav class="pagination-wrapper">
+    <div class="pagination">
+        <div class="pagination-left">
+                <a href="https://cyrille.rossant.net/compiler-data-visualization/">
+                    &larr; previous
+                </a>
+        </div>
+        <div class="pagination-right">
+                <a href="https://cyrille.rossant.net/big-data-visualization-webgl-part2/">
+                    next&nbsp;&rarr;
+                </a>
+        </div>
+    </div>
+</nav>
+    <aside class="comments">
+
+<div id="disqus_thread"></div>
+<script>
+    /**
+     *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+     *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
+     */
+
+    var disqus_config = function () {
+        this.page.url = "https://cyrille.rossant.net/numpy-browser-llvm/";  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = "numpy-browser-llvm"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+
+    (function() {  // DON'T EDIT BELOW THIS LINE
+        var d = document, s = d.createElement('script');
+
+        s.src = '//rossant.disqus.com/embed.js';
+
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+
+    </aside>
+
+            </div>
+        </section>
+
+        <nav id="sidebar" class="pure-u-1 pure-u-md-1-4">
+            <div class="l-box">
+<section>
+    <div class="portrait">
+            <img src="/theme/images/cr.jpg" />
+    </div>
+    <div class="name-cv">
+        <div class="name">Cyrille Rossant, PhD</div>
+        <div class="cv">
+            <a href="/pdfs/cv.pdf"><i class="fa fa-file-pdf-o"></i> CV</a>
+        </div>
+    </div>
+    <div class="clear"></div>
+    <div class="sub-name">Neuroscience researcher and <br>
+software engineer at IBL and UCL<br>
+&nbsp;▸ IBL: <a href="https://www.internationalbrainlab.com/">International Brain Laboratory</a><br>
+&nbsp;▸ UCL: <a href="https://www.ucl.ac.uk/cortexlab">University College London</a></div>
+    <div class="contact"><i>firstname</i>.<i>lastname</i>@gmail.com</div>
+</section>
+
+<section class="tags">
+    <span class="tag"><a href="/tag/neuroscience/">#neuroscience</a></span>
+    <span class="tag"><a href="/tag/python/">#python</a></span>
+    <span class="tag"><a href="/tag/dataviz/">#dataviz</a></span>
+    <span class="tag"><a href="/tag/maths/">#maths</a></span>
+    <span class="tag"><a href="/tag/gpu/">#gpu</a></span>
+    <span class="tag"><a href="/tag/opendata/">#opendata</a></span>
+</section>
+
+
+<section class="books">
+    <header><h3>books</h3></header>
+    <div class="sub-header">Two books on <strong>Python for data science</strong></div>
+    <div class="book-1"><a href="/books/#minibook"><img src="/images/minibook.png"/></a></div>
+    <div class="book-2"><a href="/books/#cookbook"><img src="/images/cookbook.png"/></a></div>
+</section>
+
+
+<!-- <section class="search">
+    <script>
+  (function() {
+    var cx = '006027474294305969173:cpp1rvft78s';
+    var gcse = document.createElement('script');
+    gcse.type = 'text/javascript';
+    gcse.async = true;
+    gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+        '//www.google.com/cse/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(gcse, s);
+  })();
+</script>
+<gcse:search></gcse:search>
+</section> -->            </div>
+        </nav>
+
+        <footer id="footer" class="pure-u-1 pure-u-md-3-4">
+            <div class="l-box">
+                <div>
+                    <p>&copy; <a href="https://cyrille.rossant.net">Cyrille Rossant</a> &ndash;
+                        Built with <a href="https://github.com/PurePelicanTheme/pure-single">Pure Theme</a>
+                        for <a href="http://blog.getpelican.com/">Pelican</a>
+                    </p>
+                </div>
+            </div>
+        </footer>
+
+    </div>
+
+<!-- Start of StatCounter Code for Default Guide -->
+<script type="text/javascript">
+var sc_project=7297581;
+var sc_invisible=1;
+var sc_security="e9e753f7";
+var scJsHost = (("https:" == document.location.protocol) ?
+"https://secure." : "http://www.");
+document.write("<sc"+"ript type='text/javascript' src='" +
+scJsHost+
+"statcounter.com/counter/counter.js'></"+"script>");
+</script>
+<noscript><div class="statcounter"><a title="shopify site
+analytics" href="http://statcounter.com/shopify/"
+target="_blank"><img class="statcounter"
+src="http://c.statcounter.com/7297581/0/e9e753f7/1/"
+alt="shopify site analytics"></a></div></noscript>
+<!-- End of StatCounter Code for Default Guide -->
+</body>
+</html>
+

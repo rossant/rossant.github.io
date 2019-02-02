@@ -1,0 +1,260 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Cyrille Rossant, ">
+    <link href="/favicon.png" rel="icon">
+
+        <link rel="alternate"  href="https://cyrille.rossant.net/feeds/all.atom.xml" type="application/atom+xml" title="Cyrille Rossant Full Atom Feed"/>
+        <link rel="alternate" href="https://cyrille.rossant.net/feeds/atom.xml" type="application/atom+xml" title="Cyrille Rossant Atom Feed"/>
+
+        <title>Cyrille Rossant - Why use Python for scientific computing?</title>
+
+    <link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/pure/0.3.0/pure-min.css">
+    <!--[if lte IE 8]>
+        <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.5.0/grids-responsive-old-ie-min.css">
+    <![endif]-->
+    <!--[if gt IE 8]><!-->
+        <link rel="stylesheet" href="/theme/css/grids-responsive-min.css">
+    <!--<![endif]-->
+    <link rel="stylesheet" href="/theme/css/styles.css">
+    <link rel="stylesheet" href="/theme/css/pygments.css">
+    <!-- <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'> -->
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,500" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Ubuntu+Mono' rel='stylesheet' type='text/css'>
+
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/fitvids/1.0.1/jquery.fitvids.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $(".content").fitVids();
+        });
+    </script>
+</head>
+
+<body>
+
+
+    <header id="header" class="pure-g">
+        <div class="pure-u-1 pure-u-md-3-4">
+             <div id="menu">
+                 <div class="pure-menu pure-menu-open pure-menu-horizontal">
+<ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/projects/">Projects</a></li>
+        <li><a href="/books/">Books</a></li>
+        <li><a href="/about/">About</a></li>
+</ul>                </div>
+            </div>
+        </div>
+
+        <div class="pure-u-1 pure-u-md-1-4">
+            <div id="social">
+                <div class="pure-menu pure-menu-open pure-menu-horizontal">
+<ul>
+        <li><a href="https://twitter.com/cyrillerossant"><i class="fa fa-twitter"></i></a></li>
+        <li><a href="https://github.com/rossant"><i class="fa fa-github"></i></a></li>
+        <li><a href="https://www.linkedin.com/in/crossant"><i class="fa fa-linkedin"></i></a></li>
+        <li><a href="https://cyrille.rossant.net/feeds/all.atom.xml"><i class="fa fa-rss"></i></a></li>
+</ul>                </div>
+            </div>
+        </div>
+    </header>
+
+
+
+    <div id="layout" class="pure-g">
+        <section id="content" class="pure-u-1 pure-u-md-3-4">
+            <div class="l-box">
+
+    <header id="post-header">
+        <h1>Why use Python for scientific computing?</h1>
+            <div class="post-meta">
+                July 01, 2013
+            </div>
+            <div class="post-tags">
+                <ul>
+                    <li>tags:</li>
+                    <li><a href="/tag/python/">python</a></li>
+                </ul>
+            </div>
+    </header>
+
+    <section id="post">
+        <p>Why use Python for scientific computing? This is a legitimate question. For us, regular Python users, using Python is so natural that we sometimes forget that this choice is not obvious for everyone. Matlab is very widely used in some communities (e.g. experimental biologists) and choosing a different platform requires extensive proselytism. We need to find the right words to convince people that Python is really the future for scientific computing.</p>
+
+
+<p><a href="http://blog.fperez.org/2013/07/in-memoriam-john-d-hunter-iii-1968-2012.html">Citing</a> <a href="http://fperez.org/">Fernando Perez</a>, creator of <a href="http://ipython.org">IPython</a>: <em>"I am absolutely convinced that in a few decades, historians of science will describe the period we are in right now as one of deep and significant transformations to the very structure of science. And in that process, the rise of free openly available tools plays a central role."</em> I couldn't agree more. But being convinced is merely enough, and we need to be aware of objective facts supporting the idea that Python is just the best platform for scientific computing.</p>
+<p>Several people have written about why they chose Python over Matlab:</p>
+<ul>
+<li><a href="https://sites.google.com/site/pythonforscientists/python-vs-matlab">Almar Klein: Python vs
+    Matlab</a></li>
+<li><a href="http://stevetjoa.com/305/">Steve Tjoa: I used Matlab. Now I use
+    Python.</a></li>
+<li><a href="http://phillipmfeldman.org/Python/Advantages_of_Python_Over_Matlab.html">Philippe Feldman: Eight Advantages of Python Over
+    Matlab</a></li>
+<li><a href="http://vnoel.wordpress.com/2008/05/03/bye-matlab-hello-python-thanks-sage/">Vincent Noël: Bye Matlab, hello Python, thanks
+    Sage</a></li>
+<li><a href="http://www.stat.washington.edu/~hoytak/blog/whypython.html">Hoyt Koepke: 10 Reasons Python Rocks for Research (And a Few
+    Reasons it
+    Doesn’t)</a></li>
+</ul>
+<p>I also found this <a href="https://github.com/nipy/nipy/blob/master/doc/faq/why.rst">short text</a> in the documentation of <a href="http://nipy.org/">nipy</a>, a neuroimaging Python library. I reproduce it here as is.</p>
+<blockquote>
+<p>The choice of programming language has many scientific and practical consequences. Matlab is an example of a high-level language. Languages are considered high level if they are able to express a large amount of functionality per line of code; other examples of high level languages are Python, Perl, Octave, R and IDL. In contrast, C is a low-level language. Low level languages can achieve higher execution speed, but at the cost of code that is considerably more difficult to read. C++ and Java occupy the middle ground sharing the advantages and the disadvantages of both levels.</p>
+<p>Low level languages are a particularly ill-suited for exploratory scientific computing, because they present a high barrier to access by scientists that are not specialist programmers. Low-level code is difficult to read and write, which slows development ([Prechelt2000ECS], [boehm1981], [Walston1977MPM]) and makes it more difficult to understand the implementation of analysis algorithms. Ultimately this makes it less likely that scientists will use these languages for development, as their time for learning a new language or code base is at a premium. Low level languages do not usually offer an interactive command line, making data exploration much more rigid. Finally, applications written in low level languages tend to have more bugs, as bugs per line of code is approximately constant across many languages [brooks78].</p>
+<p>In contrast, interpreted, high-level languages tend to have easy-to-read syntax and the native ability to interact with data structures and objects with a wide range of built-in functionality. High level code is designed to be closer to the level of the ideas we are trying to implement, so the developer spends more time thinking about what the code does rather than how to write it. This is particularly important as it is researchers and scientists who will serve as the main developers of scientific analysis software. The fast development time of high-level programs makes it much easier to test new ideas with prototypes. Their interactive nature allows researchers flexible ways to explore their data.</p>
+<p>SPM is written in Matlab, which is a high-level language specialized for matrix algebra. Matlab code can be quick to develop and is relatively easy to read. However, Matlab is not suitable as a basis for a large-scale common development environment. The language is proprietary and the source code is not available, so researchers do not have access to core algorithms making bugs in the core very difficult to find and fix. Many scientific developers prefer to write code that can be freely used on any computer and avoid proprietary languages. Matlab has structural deficiencies for large projects: it lacks scalability and is poor at managing complex data structures needed for neuroimaging research. While it has the ability to integrate with other languages (e.g., C/C++ and FORTRAN) this feature is quite impoverished. Furthermore, its memory handling is weak and it lacks pointers - a major problem for dealing with the very large data structures that are often needed in neuroimaging. Matlab is also a poor choice for many applications such as system tasks, database programming, web interaction, and parallel computing. Finally, Matlab has weak GUI tools, which are crucial to researchers for productive interactions with their data.</p>
+</blockquote>
+<p>Globally, the main arguments are:</p>
+<ul>
+<li>Python is free and open source, whereas Matlab is a closed-source
+    commercial product.</li>
+<li>The Python <em>language</em> is just far better that Matlab's awkward
+    language.</li>
+<li>Python integrates better with other languages (e.g. C/C++).</li>
+<li>Python includes natively an impressive number of general-purpose or
+    more specialized libraries, and yet more external libraries are
+    being developed by Python enthusiasts.</li>
+</ul>
+<p>And, of course, nearly anything that is possible in Matlab is possible in Python, whereas the converse is not true.</p>
+<p>Now, a downside of Python compared to Matlab is that is just more complicated to install. For example, on Windows, a Matlab user can just install the software, click on the icon, and a full graphical IDE opens. In Python, there are some integrated scientific distributions with graphical IDEs but they are less convenient than Matlab. Using IPython involves either a command-line interface or a web interface (the notebook). And installing external libraries can be a pain (it almost always involves the command-line interface, which terrifies many Windows users). I think that's the main real problem that prevents Python from widespread adoption in the Matlab community.</p>
+<p>Yet, I'm pretty sure that Python will eventually become the platform of reference for scientific computing.</p>
+    </section>
+
+
+<nav class="pagination-wrapper">
+    <div class="pagination">
+        <div class="pagination-left">
+                <a href="https://cyrille.rossant.net/whats-wrong-with-scientific-python/">
+                    &larr; previous
+                </a>
+        </div>
+        <div class="pagination-right">
+                <a href="https://cyrille.rossant.net/start-an-ipython-notebook-server-in-windows-explorer/">
+                    next&nbsp;&rarr;
+                </a>
+        </div>
+    </div>
+</nav>
+    <aside class="comments">
+
+<div id="disqus_thread"></div>
+<script>
+    /**
+     *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+     *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
+     */
+
+    var disqus_config = function () {
+        this.page.url = "https://cyrille.rossant.net/why-using-python-for-scientific-computing/";  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = "why-using-python-for-scientific-computing"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+
+    (function() {  // DON'T EDIT BELOW THIS LINE
+        var d = document, s = d.createElement('script');
+
+        s.src = '//rossant.disqus.com/embed.js';
+
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+
+    </aside>
+
+            </div>
+        </section>
+
+        <nav id="sidebar" class="pure-u-1 pure-u-md-1-4">
+            <div class="l-box">
+<section>
+    <div class="portrait">
+            <img src="/theme/images/cr.jpg" />
+    </div>
+    <div class="name-cv">
+        <div class="name">Cyrille Rossant, PhD</div>
+        <div class="cv">
+            <a href="/pdfs/cv.pdf"><i class="fa fa-file-pdf-o"></i> CV</a>
+        </div>
+    </div>
+    <div class="clear"></div>
+    <div class="sub-name">Neuroscience researcher and <br>
+software engineer at IBL and UCL<br>
+&nbsp;▸ IBL: <a href="https://www.internationalbrainlab.com/">International Brain Laboratory</a><br>
+&nbsp;▸ UCL: <a href="https://www.ucl.ac.uk/cortexlab">University College London</a></div>
+    <div class="contact"><i>firstname</i>.<i>lastname</i>@gmail.com</div>
+</section>
+
+<section class="tags">
+    <span class="tag"><a href="/tag/neuroscience/">#neuroscience</a></span>
+    <span class="tag"><a href="/tag/python/">#python</a></span>
+    <span class="tag"><a href="/tag/dataviz/">#dataviz</a></span>
+    <span class="tag"><a href="/tag/maths/">#maths</a></span>
+    <span class="tag"><a href="/tag/gpu/">#gpu</a></span>
+    <span class="tag"><a href="/tag/opendata/">#opendata</a></span>
+</section>
+
+
+<section class="books">
+    <header><h3>books</h3></header>
+    <div class="sub-header">Two books on <strong>Python for data science</strong></div>
+    <div class="book-1"><a href="/books/#minibook"><img src="/images/minibook.png"/></a></div>
+    <div class="book-2"><a href="/books/#cookbook"><img src="/images/cookbook.png"/></a></div>
+</section>
+
+
+<!-- <section class="search">
+    <script>
+  (function() {
+    var cx = '006027474294305969173:cpp1rvft78s';
+    var gcse = document.createElement('script');
+    gcse.type = 'text/javascript';
+    gcse.async = true;
+    gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+        '//www.google.com/cse/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(gcse, s);
+  })();
+</script>
+<gcse:search></gcse:search>
+</section> -->            </div>
+        </nav>
+
+        <footer id="footer" class="pure-u-1 pure-u-md-3-4">
+            <div class="l-box">
+                <div>
+                    <p>&copy; <a href="https://cyrille.rossant.net">Cyrille Rossant</a> &ndash;
+                        Built with <a href="https://github.com/PurePelicanTheme/pure-single">Pure Theme</a>
+                        for <a href="http://blog.getpelican.com/">Pelican</a>
+                    </p>
+                </div>
+            </div>
+        </footer>
+
+    </div>
+
+<!-- Start of StatCounter Code for Default Guide -->
+<script type="text/javascript">
+var sc_project=7297581;
+var sc_invisible=1;
+var sc_security="e9e753f7";
+var scJsHost = (("https:" == document.location.protocol) ?
+"https://secure." : "http://www.");
+document.write("<sc"+"ript type='text/javascript' src='" +
+scJsHost+
+"statcounter.com/counter/counter.js'></"+"script>");
+</script>
+<noscript><div class="statcounter"><a title="shopify site
+analytics" href="http://statcounter.com/shopify/"
+target="_blank"><img class="statcounter"
+src="http://c.statcounter.com/7297581/0/e9e753f7/1/"
+alt="shopify site analytics"></a></div></noscript>
+<!-- End of StatCounter Code for Default Guide -->
+</body>
+</html>
+

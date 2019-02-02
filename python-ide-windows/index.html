@@ -1,0 +1,414 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Cyrille Rossant, ">
+    <link href="/favicon.png" rel="icon">
+
+        <link rel="alternate"  href="https://cyrille.rossant.net/feeds/all.atom.xml" type="application/atom+xml" title="Cyrille Rossant Full Atom Feed"/>
+        <link rel="alternate" href="https://cyrille.rossant.net/feeds/atom.xml" type="application/atom+xml" title="Cyrille Rossant Atom Feed"/>
+
+        <title>Cyrille Rossant - Build a Python IDE for Windows with Notepad++ and IPython</title>
+
+    <link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/pure/0.3.0/pure-min.css">
+    <!--[if lte IE 8]>
+        <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.5.0/grids-responsive-old-ie-min.css">
+    <![endif]-->
+    <!--[if gt IE 8]><!-->
+        <link rel="stylesheet" href="/theme/css/grids-responsive-min.css">
+    <!--<![endif]-->
+    <link rel="stylesheet" href="/theme/css/styles.css">
+    <link rel="stylesheet" href="/theme/css/pygments.css">
+    <!-- <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'> -->
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,500" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Ubuntu+Mono' rel='stylesheet' type='text/css'>
+
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/fitvids/1.0.1/jquery.fitvids.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $(".content").fitVids();
+        });
+    </script>
+</head>
+
+<body>
+
+
+    <header id="header" class="pure-g">
+        <div class="pure-u-1 pure-u-md-3-4">
+             <div id="menu">
+                 <div class="pure-menu pure-menu-open pure-menu-horizontal">
+<ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/projects/">Projects</a></li>
+        <li><a href="/books/">Books</a></li>
+        <li><a href="/about/">About</a></li>
+</ul>                </div>
+            </div>
+        </div>
+
+        <div class="pure-u-1 pure-u-md-1-4">
+            <div id="social">
+                <div class="pure-menu pure-menu-open pure-menu-horizontal">
+<ul>
+        <li><a href="https://twitter.com/cyrillerossant"><i class="fa fa-twitter"></i></a></li>
+        <li><a href="https://github.com/rossant"><i class="fa fa-github"></i></a></li>
+        <li><a href="https://www.linkedin.com/in/crossant"><i class="fa fa-linkedin"></i></a></li>
+        <li><a href="https://cyrille.rossant.net/feeds/all.atom.xml"><i class="fa fa-rss"></i></a></li>
+</ul>                </div>
+            </div>
+        </div>
+    </header>
+
+
+
+    <div id="layout" class="pure-g">
+        <section id="content" class="pure-u-1 pure-u-md-3-4">
+            <div class="l-box">
+
+    <header id="post-header">
+        <h1>Build a Python IDE for Windows with Notepad++ and IPython</h1>
+            <div class="post-meta">
+                July 02, 2012
+            </div>
+            <div class="post-tags">
+                <ul>
+                    <li>tags:</li>
+                    <li><a href="/tag/python/">python</a></li>
+                </ul>
+            </div>
+    </header>
+
+    <section id="post">
+        <p>I've been looking for a good and free Python IDE for Windows for a long time. I first used
+<a href="http://www.eclipse.org/">Eclipse</a> and <a href="http://pydev.org/">Pydev</a>, but
+Eclipse is a bit of a <em>"usine à gaz"</em>. I tried
+<a href="http://code.google.com/p/spyderlib/">Spyder</a> but it crashed too often
+and it was not flexible enough. I ended up using
+<a href="http://notepad-plus-plus.org/">Notepad++</a>, a really fast and powerful
+text editor, with the great command-line interpreter
+<a href="http://ipython.org/">IPython</a>. Notepad++ is extremely light to use,
+opens within a second, and contains most important features a Python
+developer wants (syntax highlighting, automatic indentation, code
+folding...). However, it does not include a native way for running
+Python scripts. On the other hand, IPython is a widely used and
+extremely powerful Python interpreter that is well adapted for
+scientific computing. It allows to run scripts in a command-line
+interface, and offers the possibility to continue an interactive session
+afterwards. It also includes a debugger and many more features.</p>
+
+
+<p>Unfortunately, using both Notepad++ and IPython in a convenient way
+during an interactive session, where one edits a script and runs it many
+times, is not straightforward. One can simply open both programs, with
+IPython opened in the script directory, and call the magic <em>%run
+script.py</em> command repeatedly. However, when calling <em>%run</em> several
+times, the Python script is correctly reloaded every time, but not the
+imported modules that could also have been edited in Notepad++. In other
+words, if one runs a script which depends on different modules, and
+edits one such module, those modifications won't be effective at the
+next <em>%run</em> command. One has to import and reload that specific module,
+which can be tiresome when editing a lot of different modules. There
+appears to be no way of resetting the whole IPython environment and
+reloading all modules. So typically one has to close and open again
+IPython in the right working directory. This is cumbersome since every
+edition-evaluation loop requires to close the IPython interpreter, open
+it again, put the window at a convenient place on the screen, go in the
+right directory, and run the script. Over and over again, even when
+changing just one line of code in an imported script.</p>
+<p>Those little issues might seem unimportant, but they can really hurt
+productivity and prevent the user from focusing on its core work.
+Therefore I've been looking for a way of automating this interactive
+edition-evaluation loop with Notepad++ and IPython. The goal is to let
+the user press a single keyboard button (e.g. F6) in a Python script
+opened in Notepad++ in order to execute it in IPython. One should have
+also a simple way of reloading all modules if needed. Here is what I
+came up with. This method may certainly be improved, and it could even
+be adapted to other OS than Windows.</p>
+<p>This method works with Python 2.7, IPython 0.13 and Notepad++ 6.1.3 (it
+will probably work with other versions, but it may require small
+modifications).</p>
+<p>First, create a custom IPython script that will define two new magic
+commands in IPython called <em>%cdrun</em> and <em>%cdrunkill</em>. Both open a new
+IPython interpreter, set a specific working directory, and run a Python
+script. The second command also kills any existing IPython interpreter
+(corresponding to a hard restart of IPython). This script will be loaded
+at every IPython launch, so it should be placed here:</p>
+<div class="highlight"><pre><span></span>C:\Users\&lt;USERNAME&gt;\.ipython\profile_default\startup\cdrun.py
+</pre></div>
+
+
+<p>This file contains the following code.</p>
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">from</span> <span class="nn">subprocess</span> <span class="kn">import</span> <span class="n">Popen</span><span class="p">,</span> <span class="n">PIPE</span>
+
+<span class="n">ip</span> <span class="o">=</span> <span class="n">get_ipython</span><span class="p">()</span>
+
+<span class="k">def</span> <span class="nf">kill_python</span><span class="p">():</span>
+    <span class="c1"># kill all other python processes</span>
+    <span class="n">pid</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">getpid</span><span class="p">())</span>
+    <span class="n">cmd</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;tasklist&#39;</span><span class="p">,</span> <span class="s2">&quot;/FO&quot;</span><span class="p">,</span> <span class="s2">&quot;LIST&quot;</span><span class="p">,</span> <span class="s2">&quot;/FI&quot;</span><span class="p">,</span> <span class="s2">&quot;IMAGENAME eq python.exe&quot;</span><span class="p">]</span>
+    <span class="n">r</span> <span class="o">=</span> <span class="n">Popen</span><span class="p">(</span><span class="n">cmd</span><span class="p">,</span> <span class="n">stdout</span><span class="o">=</span><span class="n">PIPE</span><span class="p">)</span><span class="o">.</span><span class="n">communicate</span><span class="p">()[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">r</span> <span class="o">=</span> <span class="n">r</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="n">ps</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">r</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">line</span><span class="p">[:</span><span class="mi">3</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;PID&#39;</span><span class="p">:</span>
+            <span class="n">ps</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">line</span><span class="p">[</span><span class="mi">4</span><span class="p">:]</span><span class="o">.</span><span class="n">strip</span><span class="p">())</span>
+    <span class="k">if</span> <span class="n">pid</span> <span class="ow">in</span> <span class="n">ps</span><span class="p">:</span>
+        <span class="n">ps</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">pid</span><span class="p">)</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">ps</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">return</span>
+    <span class="n">args</span> <span class="o">=</span> <span class="s2">&quot; &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="s2">&quot;/pid </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">p</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">ps</span><span class="p">])</span>
+    <span class="n">cmd</span> <span class="o">=</span> <span class="s2">&quot;taskkill /F </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">args</span>
+    <span class="n">os</span><span class="o">.</span><span class="n">system</span><span class="p">(</span><span class="n">cmd</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">n</span>
+
+<span class="k">def</span> <span class="nf">cdrun</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">arg</span><span class="p">):</span>
+    <span class="n">h</span><span class="p">,</span> <span class="n">t</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="n">arg</span><span class="p">)</span>
+    <span class="n">ip</span><span class="o">.</span><span class="n">magic</span><span class="p">(</span><span class="s2">&quot;cd </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">h</span><span class="p">)</span>
+    <span class="n">ip</span><span class="o">.</span><span class="n">magic</span><span class="p">(</span><span class="s2">&quot;run </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">t</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">cdrunkill</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">arg</span><span class="p">):</span>
+    <span class="n">kill_python</span><span class="p">()</span>
+    <span class="n">h</span><span class="p">,</span> <span class="n">t</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="n">arg</span><span class="p">)</span>
+    <span class="n">ip</span><span class="o">.</span><span class="n">magic</span><span class="p">(</span><span class="s2">&quot;cd </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">h</span><span class="p">)</span>
+    <span class="n">ip</span><span class="o">.</span><span class="n">magic</span><span class="p">(</span><span class="s2">&quot;run </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">t</span><span class="p">)</span>
+
+<span class="n">ip</span><span class="o">.</span><span class="n">define_magic</span><span class="p">(</span><span class="s1">&#39;cdrun&#39;</span><span class="p">,</span> <span class="n">cdrun</span><span class="p">)</span>
+<span class="n">ip</span><span class="o">.</span><span class="n">define_magic</span><span class="p">(</span><span class="s1">&#39;cdrunkill&#39;</span><span class="p">,</span> <span class="n">cdrunkill</span><span class="p">)</span>
+</pre></div>
+
+
+<p>The <em>kill_python</em> function kills all Python processes except the
+current one. Hence this script allows to automatically close a previous
+IPython interpreter and open a new one, resolving the module reloading
+issue. If you want to open a new IPython interpreter without killing all
+Python processes (for example, with a multicore computer, launching
+several scripts in different IPython interpreters can make them run in
+parallel on several CPUs), you can use the first command <em>cdrun</em>.</p>
+<p>Next, you can specify the screen location and the size of the Ipython
+window. It is very convenient because it allows you to put the
+Notepad++, say, on the left of the screen, and the IPython interpreter
+on the right, so that you don't have to manually move the IPython window
+every time you launch a new interpreter (otherwise Windows tends to put
+it at random locations). To do this, <a href="http://commandwindows.com/configure.htm">edit the window properties of the
+IPython prompt</a> (see method on
+this website).</p>
+<p>Third, define a new macro in Notepad++, by editing or creating the
+following file:</p>
+<div class="highlight"><pre><span></span><span class="c1"># in C:\Users\&lt;USERNAME&gt;\AppData\Roaming\Notepad++\shortcuts.xml</span>
+ipython -i -c <span class="s2">&quot;%cdrun </span><span class="k">$(</span>FULL_CURRENT_PATH<span class="k">)</span><span class="s2">&quot;</span>  
+ipython -i -c <span class="s2">&quot;%cdrunkill </span><span class="k">$(</span>FULL_CURRENT_PATH<span class="k">)</span><span class="s2">&quot;</span>
+</pre></div>
+
+
+<p>The buttons #117 and #118 correspond to F6 and F7 here. If other
+commands exist, just add the <em>\&lt;Command></em> lines in the
+<em>\&lt;UserDefinedCommands></em> section. If those shortcuts don't work, it may
+be because they are already assigned to other commands: go in Settings,
+then Shortcuts, and remove them.</p>
+<p>Also, do not edit this XML file with Notepad++, because your
+modifications may be discarded when you close Notepad++. Instead, ensure
+that Notepad++ is closed, edit the file with Notepad, and reopen
+Notepad++.</p>
+<p>Now, when you open a Python script in Notepad++, you can press F6. It
+will launch an IPython window and execute the script. At the end of the
+execution, you can interact in the IPython interpreter. If you need to
+execute the script again, just use the following command:</p>
+<div class="highlight"><pre><span></span><span class="o">%</span><span class="n">run</span> <span class="n">script</span><span class="o">.</span><span class="n">py</span>
+</pre></div>
+
+
+<p>This will reload <em>script.py</em>, but not other modules. If you need to
+reload everything, press F7 in Notepad++: it will close the IPython
+window and open a new one, at the same location on the screen. This
+gives you the illusion of a very light and basic Python IDE, and allows
+you to benefit from both the great editing features of Notepad++ and the
+powerful IPython interpreter at the same time.</p>
+<p><strong>Note</strong>: you can automate the process of re-evaluating the script in
+IPython. Here, you need to: save the script in Notepad++, set the focus
+to IPython (with the mouse or with ALT+TAB), and type again the <em>%run</em>
+command (or selecting it in the command history). With the very powerful
+tool <a href="http://www.autohotkey.com/">AutoHotkey</a>, you can create a simple
+script for automating these keystrokes. Create a text file named
+"ipython_update.ahk" somewhere and put the following code:</p>
+<div class="highlight"><pre><span></span><span class="nb">SetTitleMatchMode</span><span class="p">,</span> <span class="mi">2</span>
+<span class="nb">IfWinExist</span> <span class="n">Notepad</span><span class="se">`+`+</span>
+<span class="p">{</span>
+    <span class="nb">WinActivate</span>
+    <span class="nb">Send</span> <span class="o">^</span><span class="n">s</span>
+    <span class="nb">SetTitleMatchMode</span><span class="p">,</span> <span class="mi">1</span>
+    <span class="nb">IfWinExist</span> <span class="n">ipython</span>
+    <span class="p">{</span>
+        <span class="nb">WinActivate</span>
+        <span class="nb">Send</span> <span class="se">`%</span><span class="n">run</span> <span class="o">%</span><span class="mi">1</span><span class="o">%</span><span class="se">`r</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+
+
+<p>Now, in Notepad++, create a new command for launching this script with
+the current file as parameter:</p>
+<div class="highlight"><pre><span></span>autohotkey <span class="o">[</span>YOURPATH<span class="o">]</span><span class="se">\i</span>python_update.ahk <span class="k">$(</span>FILE_NAME<span class="k">)</span>
+</pre></div>
+
+
+<p>Ensure that the autohotkey.exe binary is in the Windows Path. Now,
+pressing F8 in Notepad++ will automatically set the focus to IPython and
+run your script.</p>
+<p><strong>Note for Linux users</strong>: Here is a Python function for killing all
+Python processes except the current one on Linux that might be useful.</p>
+<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">kill_python</span><span class="p">():</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Linux version (not very well tested, might need some tweaking)</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">pid</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">getpid</span><span class="p">())</span>
+    <span class="n">cmd</span> <span class="o">=</span> <span class="s2">&quot;ps -ef | grep python | awk &#39;{print $2}&#39;&quot;</span>
+    <span class="n">r</span> <span class="o">=</span> <span class="n">commands</span><span class="o">.</span><span class="n">getoutput</span><span class="p">(</span><span class="n">cmd</span><span class="p">)</span>
+    <span class="n">r</span> <span class="o">=</span> <span class="n">r</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">pid</span> <span class="ow">in</span> <span class="n">r</span><span class="p">:</span>
+        <span class="n">r</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">pid</span><span class="p">)</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">r</span><span class="p">)</span>
+    <span class="n">r</span> <span class="o">=</span> <span class="s1">&#39; &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">r</span><span class="p">)</span>
+    <span class="n">cmd</span> <span class="o">=</span> <span class="s1">&#39;kill </span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">r</span>
+    <span class="n">os</span><span class="o">.</span><span class="n">system</span><span class="p">(</span><span class="n">cmd</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">n</span>
+</pre></div>
+    </section>
+
+
+<nav class="pagination-wrapper">
+    <div class="pagination">
+        <div class="pagination-left">
+                <a href="https://cyrille.rossant.net/introduction-to-bayesian-thinking/">
+                    &larr; previous
+                </a>
+        </div>
+        <div class="pagination-right">
+                &nbsp;
+        </div>
+    </div>
+</nav>
+    <aside class="comments">
+
+<div id="disqus_thread"></div>
+<script>
+    /**
+     *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+     *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
+     */
+
+    var disqus_config = function () {
+        this.page.url = "https://cyrille.rossant.net/python-ide-windows/";  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = "python-ide-windows"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+
+    (function() {  // DON'T EDIT BELOW THIS LINE
+        var d = document, s = d.createElement('script');
+
+        s.src = '//rossant.disqus.com/embed.js';
+
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+
+    </aside>
+
+            </div>
+        </section>
+
+        <nav id="sidebar" class="pure-u-1 pure-u-md-1-4">
+            <div class="l-box">
+<section>
+    <div class="portrait">
+            <img src="/theme/images/cr.jpg" />
+    </div>
+    <div class="name-cv">
+        <div class="name">Cyrille Rossant, PhD</div>
+        <div class="cv">
+            <a href="/pdfs/cv.pdf"><i class="fa fa-file-pdf-o"></i> CV</a>
+        </div>
+    </div>
+    <div class="clear"></div>
+    <div class="sub-name">Neuroscience researcher and <br>
+software engineer at IBL and UCL<br>
+&nbsp;▸ IBL: <a href="https://www.internationalbrainlab.com/">International Brain Laboratory</a><br>
+&nbsp;▸ UCL: <a href="https://www.ucl.ac.uk/cortexlab">University College London</a></div>
+    <div class="contact"><i>firstname</i>.<i>lastname</i>@gmail.com</div>
+</section>
+
+<section class="tags">
+    <span class="tag"><a href="/tag/neuroscience/">#neuroscience</a></span>
+    <span class="tag"><a href="/tag/python/">#python</a></span>
+    <span class="tag"><a href="/tag/dataviz/">#dataviz</a></span>
+    <span class="tag"><a href="/tag/maths/">#maths</a></span>
+    <span class="tag"><a href="/tag/gpu/">#gpu</a></span>
+    <span class="tag"><a href="/tag/opendata/">#opendata</a></span>
+</section>
+
+
+<section class="books">
+    <header><h3>books</h3></header>
+    <div class="sub-header">Two books on <strong>Python for data science</strong></div>
+    <div class="book-1"><a href="/books/#minibook"><img src="/images/minibook.png"/></a></div>
+    <div class="book-2"><a href="/books/#cookbook"><img src="/images/cookbook.png"/></a></div>
+</section>
+
+
+<!-- <section class="search">
+    <script>
+  (function() {
+    var cx = '006027474294305969173:cpp1rvft78s';
+    var gcse = document.createElement('script');
+    gcse.type = 'text/javascript';
+    gcse.async = true;
+    gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+        '//www.google.com/cse/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(gcse, s);
+  })();
+</script>
+<gcse:search></gcse:search>
+</section> -->            </div>
+        </nav>
+
+        <footer id="footer" class="pure-u-1 pure-u-md-3-4">
+            <div class="l-box">
+                <div>
+                    <p>&copy; <a href="https://cyrille.rossant.net">Cyrille Rossant</a> &ndash;
+                        Built with <a href="https://github.com/PurePelicanTheme/pure-single">Pure Theme</a>
+                        for <a href="http://blog.getpelican.com/">Pelican</a>
+                    </p>
+                </div>
+            </div>
+        </footer>
+
+    </div>
+
+<!-- Start of StatCounter Code for Default Guide -->
+<script type="text/javascript">
+var sc_project=7297581;
+var sc_invisible=1;
+var sc_security="e9e753f7";
+var scJsHost = (("https:" == document.location.protocol) ?
+"https://secure." : "http://www.");
+document.write("<sc"+"ript type='text/javascript' src='" +
+scJsHost+
+"statcounter.com/counter/counter.js'></"+"script>");
+</script>
+<noscript><div class="statcounter"><a title="shopify site
+analytics" href="http://statcounter.com/shopify/"
+target="_blank"><img class="statcounter"
+src="http://c.statcounter.com/7297581/0/e9e753f7/1/"
+alt="shopify site analytics"></a></div></noscript>
+<!-- End of StatCounter Code for Default Guide -->
+</body>
+</html>
+

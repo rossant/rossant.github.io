@@ -1,0 +1,286 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Cyrille Rossant, ">
+    <link href="/favicon.png" rel="icon">
+
+        <link rel="alternate"  href="https://cyrille.rossant.net/feeds/all.atom.xml" type="application/atom+xml" title="Cyrille Rossant Full Atom Feed"/>
+        <link rel="alternate" href="https://cyrille.rossant.net/feeds/atom.xml" type="application/atom+xml" title="Cyrille Rossant Atom Feed"/>
+
+        <title>Cyrille Rossant - Writing the IPython Cookbook</title>
+
+    <link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/pure/0.3.0/pure-min.css">
+    <!--[if lte IE 8]>
+        <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.5.0/grids-responsive-old-ie-min.css">
+    <![endif]-->
+    <!--[if gt IE 8]><!-->
+        <link rel="stylesheet" href="/theme/css/grids-responsive-min.css">
+    <!--<![endif]-->
+    <link rel="stylesheet" href="/theme/css/styles.css">
+    <link rel="stylesheet" href="/theme/css/pygments.css">
+    <!-- <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'> -->
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,500" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Ubuntu+Mono' rel='stylesheet' type='text/css'>
+
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/fitvids/1.0.1/jquery.fitvids.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $(".content").fitVids();
+        });
+    </script>
+</head>
+
+<body>
+
+
+    <header id="header" class="pure-g">
+        <div class="pure-u-1 pure-u-md-3-4">
+             <div id="menu">
+                 <div class="pure-menu pure-menu-open pure-menu-horizontal">
+<ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/projects/">Projects</a></li>
+        <li><a href="/books/">Books</a></li>
+        <li><a href="/about/">About</a></li>
+</ul>                </div>
+            </div>
+        </div>
+
+        <div class="pure-u-1 pure-u-md-1-4">
+            <div id="social">
+                <div class="pure-menu pure-menu-open pure-menu-horizontal">
+<ul>
+        <li><a href="https://twitter.com/cyrillerossant"><i class="fa fa-twitter"></i></a></li>
+        <li><a href="https://github.com/rossant"><i class="fa fa-github"></i></a></li>
+        <li><a href="https://www.linkedin.com/in/crossant"><i class="fa fa-linkedin"></i></a></li>
+        <li><a href="https://cyrille.rossant.net/feeds/all.atom.xml"><i class="fa fa-rss"></i></a></li>
+</ul>                </div>
+            </div>
+        </div>
+    </header>
+
+
+
+    <div id="layout" class="pure-g">
+        <section id="content" class="pure-u-1 pure-u-md-3-4">
+            <div class="l-box">
+
+    <header id="post-header">
+        <h1>Writing the IPython Cookbook</h1>
+            <div class="post-meta">
+                October 30, 2014
+            </div>
+            <div class="post-tags">
+                <ul>
+                    <li>tags:</li>
+                    <li><a href="/tag/python/">python</a></li>
+                </ul>
+            </div>
+    </header>
+
+    <section id="post">
+        <p>My latest book was released a few weeks ago. This project has been one of the most challenging projects I've ever done, and not necessarily for the reasons I would have originally thought. Here is a little story of those fifteen months writing the IPython cookbook.</p>
+
+
+<p>The story begins shortly after the release of the IPython minibook, my first book, and the prequel of the cookbook. The editors proposed me to write a follow-up to this introduction to IPython, and I accepted. I had felt limited in terms of page count while writing the minibook, and I thought it would be a great idea to expand further on the subjects I couldn't develop properly in the minibook.</p>
+<p>The only constraint was that this new book would be a <em>cookbook</em>. This was a very strong constraint. The book had to be a collection of short focused recipes, each tackling a very specific problem.</p>
+<p>I then spent a few days working on a detailled table of contents. My idea was really to expand on the topics addressed in the minibook, namely the use of IPython and the scientific Python stack to solve problems in numerical analysis and data science. I came up with a list of fifteen chapters covering a wide range of the subject.</p>
+<p>I organized the timeline of the next 6-9 months with the help of the IPython developers. IPython 1.0 had yet to be released, but I wanted to target 2.0 in order to cover the interactive widgets. I had to organize my work carefully, because I was going to start the writing before the availability of some critical features. For this reason, I was unable to write the chapters in order. I came up with a very precise writing order, with the chapters depending the most on the widgets being due last. For example, I planned to write the chapter dedicated to the notebook <em>last</em>, whereas it is one of the first chapters in the book.</p>
+<p>Having such a rigid cookbook structure for the book made it easier to plan the writing. Since all recipes were relatively independent, I could create them in any order and even in parallel.</p>
+<p>In the end, it was clear to me that this would be a hard and challenging project. I just had no idea that it would be <em>that</em> hard.</p>
+<h2>Planning</h2>
+<p>I started to lay out the list of recipes in every chapter. I wanted to cover a broad range of the subject without entering too much into the details of every method. Further, I also wanted to illustrate all methods on various real-world examples.</p>
+<p>I kept a few text files with all ideas I had and a provisional list of recipes. Using simple text files using the Markdown syntax, synchronized with Dropbox, is the most effective way I know to keep notes organized. I had tried Evernote and other similar services, and I always ended up coming back to my little text files. It's just so simple and effective.</p>
+<p>Over the course of many months, I would constantly update my notes as ideas went on. I also kept a bookmark folder with all interesting websites I could find. This would become the main source of references for the book.</p>
+<p>I then started to write the very first chapters over the summer.</p>
+<p>I had a precise and relatively tight timeline imposed by the editors. I chose to stick to a virtual timeline, much tighter, by security. This way, I would always be ahead of schedule, or at least I wouldn't miss the editors' timeline.</p>
+<p>In practice, this proved to be essential. Since my virtual timeline was so tight (a couple of weeks per chapter), I always had to push back a bit the remaining deadlines. But I always managed to respect the official deadlines. I also made use of the few months before the official start of the writing; I was able to start the writing early and always be ahead of schedule.</p>
+<h2>Microsoft Word and the notebook</h2>
+<p>Like for the minibook, I started to write the book in this wonderful program called Microsoft Word. As all programmers know, writing text and code examples in Word is a real joy when we're used to text editors (and yet, I'm not a vi or emacs guru, I only use graphical text editors). Since the publisher's workflow is built around this program, I had no choice but using it for the book. I set up a few keyboard shortcuts to make the experience less painful, but it became clear that it would be nearly impossible to write <em>500 pages</em> of text, code, and mathematical equations in Word. The only tool I wanted to use was obviously the IPython notebook.</p>
+<p>At first, I had a small Python script that would convert notebooks to formatted ASCII text that I could copy and paste in Word. I could write and test the code in the notebook. I did that for a couple of chapters, and then I gave up. I just wanted to write <em>everything</em> in the notebook, not just the code. Text (rich text with bold, italics, etc.), lists, input code, output text, figures, equations, references, links, Tip boxes, and so on and so forth.</p>
+<p>So I tried something crazy. I investigated the possibility to write a full notebook-to-Word converter that was adapted to the Word template provided by the publisher. I knew that automating this process would take a lot of work, but would be beneficial in the long run. After all, I had more than <em>one hundred</em> recipes to write (one recipe = one notebook).</p>
+<p>I explored a few options, notably using the Open XML format, or using COM (an inter-process communication framework for Windows). I can't remember exactly why, but I decided not to use Open XML. I might have thought that I had to use the old <code>.doc</code> format, because the publisher was still using old versions of Word (I'm not sure if that's true anymore). Anyway, I ended up playing with COM in Python.</p>
+<p>It wasn't as bad as it sounds. Word's COM interface is <em>okay</em>, and using it from Python is straightforward (I was "fortunate" enough to be a Windows user at the time). I wrote a small Python class to write documents programmatically from Python, and using the <code>.dot</code> template that had been provided by the publisher.</p>
+<p>The hard part was actually to write the converter: parsing the notebook's JSON, including Markdown text. I basically had to write my own Markdown parser using a battery of regular expressions in order to support lists, equations, code, and so on. It wasn't an easy task, especially given that I was running out of time. I could have used an existing Markdown parser but I didn't manage to use them properly. My quick-and-dirty converter seemed to work okay, although not very quickly (the bottleneck seemed to be due to the inter-process communication anyway).</p>
+<p>For images, I wanted to have the possibility to integrate images with the Markdown syntax, or to use matplotlib figures. For the latter situation, all I had to do was to save the plots in PNG and integrate them in Word. I used a custom matplotlib parameter file, notably to use a higher DPI.</p>
+<p>Supporting LaTeX equations was harder. I didn't manage to convert them into Microsoft Equations, and I wasn't sure they would be supported by the publisher anyway. So I decided to convert all equations to images. I took some code from matplotlib to do that, using my local LaTeX installation.</p>
+<p>I used cell metadata in the notebook to specify some formatting options, like Tip boxes.</p>
+<p>Eventually, after maybe a month of work, I ended up with a command-line tool that took a list of notebooks and generated an entire chapter in Word, perfectly and entirely formatted. This was a clear victory, because it meant that I was able to write <em>exclusively</em> in the notebook without even thinking about Word. It meant I could just focus on the text, the examples, and the code, and not on how unhappy I was to use Word.</p>
+<p>If only I knew what would come next.</p>
+<p>In the meantime anyway, I was relieved.</p>
+<h2>The first draft</h2>
+<p>I wrote the first draft within several months. The hardest bit was to find interesting examples and use-cases illustrating each method. I tried to use examples from a wide variety of disciplines in order to emphasize the wide applicability of the Python scientific stack today.</p>
+<p>Finding compelling open datasets that could be used to illustrate specific methods wasn't easy. Getting a good idea is not enough: you have to test it and check that it gives interesting results.</p>
+<p>The rigid structure imposed by the cookbook format was both interesting and challenging. Every recipe had to contain an introduction, a list of installation instructions and requirements (<em>Getting ready</em>), a numbered list of steps (<em>How to do it</em>), the explanations (<em>How it works</em>), a discussion (<em>There's more</em>), and a list of references. At least I didn't have to care about the structure as it was all imposed to me. However, some recipes didn't fit this outline very well. The constraint of putting the instructions before the explanations didn't always work. Sometimes you want to understand what you're doing <em>while</em> you're doing it, not <em>after</em>. Some recipes were also a list of tips rather than a list of instructions. So I had to fight a bit with the editors to alleviate this constraint in a few recipes.</p>
+<p>Eventually, I had finished all recipes by the end of the winter.</p>
+<h2>The revisions</h2>
+<p>Shorty after, I started to receive the first reviews of my chapters by the technical reviewers. This is where my notebook-to-Word workflow started to be problematic. The reviews were made in the Word documents themselves (sent by e-mail), using this awesome <em>Track changes</em> feature. So I had to make corrections in the Word documents themselves, not in the notebooks. Since I didn't have the time to make a reverse Word-to-notebook converter, my process was unidirectional. There was no going back. Once I'd started to edit the automatically-generated Word documents, I couldn't go back to the notebook, and the two versions diverged permanently.</p>
+<p>All code changes had to be done twice: in the text, and also in the notebook (so that future readers get the last version of the code by downloading the notebooks).</p>
+<p>The reviews were globally positive, and I didn't have an enormous amount of work to do for the revisions.</p>
+<p>That being said, I had to add a few new recipes, because some subjects were not sufficiently covered in the first draft according to some reviewers. This was something unusual at this stage, so I had to convince my editors to let me do it.</p>
+<p>Finally, I finished the second draft within a couple of months.</p>
+<h2>The editing process</h2>
+<p>Once all the writing was finished, the next stage started. The goal was to go from the revised manuscript in Word to a corrected, proof-read, edited, laid out PDF. Perhaps surprisingly, this proved to be by far the hardest and most painful experience ever.</p>
+<p>A team of half a dozen editors appointed by the publisher started to process the entire manuscript in parallel to check for errors, inconsistencies, typos, grammar errors, and so on. That's the theory. In practice, this stage ended up in a chaotic nightmare.</p>
+<p>First, all editors had different ways of working, different opinions on the many conventions that compose a book, and were differently zealous. In the end, every chapter looked different in the way the recipes were organized, the links and references were presented, and so on and so forth.</p>
+<p>Second, some editors decided unilaterally to change the formatting of some words, to add or delete some words here and there, or even to delete entire paragraphs. These changes would make sense when they are motivated by actual issues in the text. However, this wasn't the case in the majority of instances. The worse part is that these changes would make a sentence or a paragraph incomprehensible, misleading, or just plain wrong. I often had to look back in the original version to understand what I originally meant and to fix the change.</p>
+<p>There could be hundreds of such changes in a single chapter (multiplied by fifteen chapters). Word's <em>Track changes</em> feature made the process even more enjoyable. It not only tracks changes in the text, but also formatting and many other non-relevant changes. In the end, the actual changes that could result in errors were flooded within thousands of non-relevant edits. I couldn't find a way to automatically filter these non-relevant edits.</p>
+<p>Oh, and if you forget to enable <em>Track changes</em>, then your changes are completely lost. This is because Word tracks actual changes rather than comparing two versions like a sane version system like Git would do.</p>
+<p>I spent tens if not hundreds of hours tracking and correcting these edits. It is ironic to think that this process was supposed to increase the overall quality of the book. If I hadn't been sufficiently vigilant, many "new" errors (introduced during the editing phase) would have slipped by.</p>
+<p>At the same time, the editors were instructed to try the code and check that it didn't contain any virus (sic). These poor souls had no programming experience and had to try all the code of this advanced-level book. I could see they were completely lost when they asked me why <code>random()</code> didn't return the same number as in the book when they tried it. I had to fight and convince the publisher that this was nothing less than a pure waste of time for me and the editors to try out all the code this way. I ended up doing this step myself.</p>
+<p>I was lucky enough to be aided by a few trustworthy people during this process, because I probably wouldn't have managed to do it on my own.</p>
+<p>Later in the process, it was decided that all equations would be reformatted by the editors with an adequate equation tool rather than with images. I also had to track down these hundreds of instances. There were a few errors, but it wasn't as bad as I feared.</p>
+<p>Still, look at the life cycle of this little equation. As any self-respecting equation, it started its life as LaTeX code.</p>
+<p><img alt="Original LaTeX equation" src="https://cyrille.rossant.net/images/eq1.png" /></p>
+<p>The conversion to Word resulted to a few minor mutilations.</p>
+<p><img alt="Word equation" src="https://cyrille.rossant.net/images/eq2.png" /></p>
+<p>For an unkown reason, it suffered a lot during its conversion to PDF.</p>
+<p><img alt="Conversion to PDF... waaat?!" src="https://cyrille.rossant.net/images/eq3.png" /></p>
+<p>Fortunately I spotted out the problem and had it corrected.</p>
+<p><img alt="Final version" src="https://cyrille.rossant.net/images/eq4.png" /></p>
+<h2>Conclusion</h2>
+<p>In the end, I managed to finish the editing phase in time, and the book was finally published late September. It was by far the hardest and most tedious experience I've ever done.</p>
+<p>The main conclusion of this is that I'm now convinced that Word is an abomination. I think it is one of the worse human creation after the atomic bomb. Everyone knows that writing in Word and sending over <code>chapter3.rev57.new.new-old.rev-final.doc</code> files by e-mail is a nightmare, but no one <em>really</em> knows until they have to do it for real with a 500-pages book full of code listings, images, mathematical equations, and URLs.</p>
+<p>Text files. Markdown. Distributed version control systems. Diff and merge. These are the right way to work collaboratively in the 21st century. Anyone thinking otherwise is stuck in the last millenium.</p>
+<p>I won't start any new project if I'm forced to use Word, and you should do the same.</p>
+<p>Recently, I read <a href="https://medium.com/@chacon/living-the-future-of-technical-writing-2f368bd0a272">this</a>. I also stumbled over <a href="https://atlas.oreilly.com/">this</a> and <a href="https://www.gitbook.com/">this</a>. Integrating the IPython notebook in these toolchains should be doable. I can't imagine working with anything else from now on.</p>
+    </section>
+
+
+<nav class="pagination-wrapper">
+    <div class="pagination">
+        <div class="pagination-left">
+                <a href="https://cyrille.rossant.net/big-data-visualization-webgl-part2/">
+                    &larr; previous
+                </a>
+        </div>
+        <div class="pagination-right">
+                <a href="https://cyrille.rossant.net/big-data-visualization-webgl-part1/">
+                    next&nbsp;&rarr;
+                </a>
+        </div>
+    </div>
+</nav>
+    <aside class="comments">
+
+<div id="disqus_thread"></div>
+<script>
+    /**
+     *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+     *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
+     */
+
+    var disqus_config = function () {
+        this.page.url = "https://cyrille.rossant.net/writing-ipython-cookbook/";  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = "writing-ipython-cookbook"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+
+    (function() {  // DON'T EDIT BELOW THIS LINE
+        var d = document, s = d.createElement('script');
+
+        s.src = '//rossant.disqus.com/embed.js';
+
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+
+    </aside>
+
+            </div>
+        </section>
+
+        <nav id="sidebar" class="pure-u-1 pure-u-md-1-4">
+            <div class="l-box">
+<section>
+    <div class="portrait">
+            <img src="/theme/images/cr.jpg" />
+    </div>
+    <div class="name-cv">
+        <div class="name">Cyrille Rossant, PhD</div>
+        <div class="cv">
+            <a href="/pdfs/cv.pdf"><i class="fa fa-file-pdf-o"></i> CV</a>
+        </div>
+    </div>
+    <div class="clear"></div>
+    <div class="sub-name">Neuroscience researcher and <br>
+software engineer at IBL and UCL<br>
+&nbsp;▸ IBL: <a href="https://www.internationalbrainlab.com/">International Brain Laboratory</a><br>
+&nbsp;▸ UCL: <a href="https://www.ucl.ac.uk/cortexlab">University College London</a></div>
+    <div class="contact"><i>firstname</i>.<i>lastname</i>@gmail.com</div>
+</section>
+
+<section class="tags">
+    <span class="tag"><a href="/tag/neuroscience/">#neuroscience</a></span>
+    <span class="tag"><a href="/tag/python/">#python</a></span>
+    <span class="tag"><a href="/tag/dataviz/">#dataviz</a></span>
+    <span class="tag"><a href="/tag/maths/">#maths</a></span>
+    <span class="tag"><a href="/tag/gpu/">#gpu</a></span>
+    <span class="tag"><a href="/tag/opendata/">#opendata</a></span>
+</section>
+
+
+<section class="books">
+    <header><h3>books</h3></header>
+    <div class="sub-header">Two books on <strong>Python for data science</strong></div>
+    <div class="book-1"><a href="/books/#minibook"><img src="/images/minibook.png"/></a></div>
+    <div class="book-2"><a href="/books/#cookbook"><img src="/images/cookbook.png"/></a></div>
+</section>
+
+
+<!-- <section class="search">
+    <script>
+  (function() {
+    var cx = '006027474294305969173:cpp1rvft78s';
+    var gcse = document.createElement('script');
+    gcse.type = 'text/javascript';
+    gcse.async = true;
+    gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+        '//www.google.com/cse/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(gcse, s);
+  })();
+</script>
+<gcse:search></gcse:search>
+</section> -->            </div>
+        </nav>
+
+        <footer id="footer" class="pure-u-1 pure-u-md-3-4">
+            <div class="l-box">
+                <div>
+                    <p>&copy; <a href="https://cyrille.rossant.net">Cyrille Rossant</a> &ndash;
+                        Built with <a href="https://github.com/PurePelicanTheme/pure-single">Pure Theme</a>
+                        for <a href="http://blog.getpelican.com/">Pelican</a>
+                    </p>
+                </div>
+            </div>
+        </footer>
+
+    </div>
+
+<!-- Start of StatCounter Code for Default Guide -->
+<script type="text/javascript">
+var sc_project=7297581;
+var sc_invisible=1;
+var sc_security="e9e753f7";
+var scJsHost = (("https:" == document.location.protocol) ?
+"https://secure." : "http://www.");
+document.write("<sc"+"ript type='text/javascript' src='" +
+scJsHost+
+"statcounter.com/counter/counter.js'></"+"script>");
+</script>
+<noscript><div class="statcounter"><a title="shopify site
+analytics" href="http://statcounter.com/shopify/"
+target="_blank"><img class="statcounter"
+src="http://c.statcounter.com/7297581/0/e9e753f7/1/"
+alt="shopify site analytics"></a></div></noscript>
+<!-- End of StatCounter Code for Default Guide -->
+</body>
+</html>
+

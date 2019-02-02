@@ -1,0 +1,280 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Cyrille Rossant, ">
+    <link href="/favicon.png" rel="icon">
+
+        <link rel="alternate"  href="https://cyrille.rossant.net/feeds/all.atom.xml" type="application/atom+xml" title="Cyrille Rossant Full Atom Feed"/>
+        <link rel="alternate" href="https://cyrille.rossant.net/feeds/atom.xml" type="application/atom+xml" title="Cyrille Rossant Atom Feed"/>
+
+        <title>Cyrille Rossant - Big Data visualization with WebGL, part 1: Overview</title>
+
+    <link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/pure/0.3.0/pure-min.css">
+    <!--[if lte IE 8]>
+        <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.5.0/grids-responsive-old-ie-min.css">
+    <![endif]-->
+    <!--[if gt IE 8]><!-->
+        <link rel="stylesheet" href="/theme/css/grids-responsive-min.css">
+    <!--<![endif]-->
+    <link rel="stylesheet" href="/theme/css/styles.css">
+    <link rel="stylesheet" href="/theme/css/pygments.css">
+    <!-- <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'> -->
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,500" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Ubuntu+Mono' rel='stylesheet' type='text/css'>
+
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/fitvids/1.0.1/jquery.fitvids.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $(".content").fitVids();
+        });
+    </script>
+</head>
+
+<body>
+
+
+    <header id="header" class="pure-g">
+        <div class="pure-u-1 pure-u-md-3-4">
+             <div id="menu">
+                 <div class="pure-menu pure-menu-open pure-menu-horizontal">
+<ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/projects/">Projects</a></li>
+        <li><a href="/books/">Books</a></li>
+        <li><a href="/about/">About</a></li>
+</ul>                </div>
+            </div>
+        </div>
+
+        <div class="pure-u-1 pure-u-md-1-4">
+            <div id="social">
+                <div class="pure-menu pure-menu-open pure-menu-horizontal">
+<ul>
+        <li><a href="https://twitter.com/cyrillerossant"><i class="fa fa-twitter"></i></a></li>
+        <li><a href="https://github.com/rossant"><i class="fa fa-github"></i></a></li>
+        <li><a href="https://www.linkedin.com/in/crossant"><i class="fa fa-linkedin"></i></a></li>
+        <li><a href="https://cyrille.rossant.net/feeds/all.atom.xml"><i class="fa fa-rss"></i></a></li>
+</ul>                </div>
+            </div>
+        </div>
+    </header>
+
+
+
+    <div id="layout" class="pure-g">
+        <section id="content" class="pure-u-1 pure-u-md-3-4">
+            <div class="l-box">
+
+    <header id="post-header">
+        <h1>Big Data visualization with WebGL, part 1: Overview</h1>
+            <div class="post-meta">
+                October 15, 2014
+            </div>
+            <div class="post-tags">
+                <ul>
+                    <li>tags:</li>
+                    <li><a href="/tag/dataviz/">dataviz</a></li>
+                    <li><a href="/tag/gpu/">gpu</a></li>
+                </ul>
+            </div>
+    </header>
+
+    <section id="post">
+        <p>In this post series, I'll talk about the big data visualization platform I'm currently developing with WebGL. I'll give in this first post the main motivations for this project. The next posts will contain the technical details.</p>
+
+
+<ul>
+<li>Part 1: Overview</li>
+<li><a href="https://cyrille.rossant.net/big-data-visualization-webgl-part2/">Part 2: Vispy</a></li>
+</ul>
+<h2>Overview</h2>
+<p>This project brings together several modern trends in data science and computing:</p>
+<ul>
+<li>Big Data</li>
+<li>Cloud computing</li>
+<li>Python</li>
+<li>The IPython/Jupyter notebook</li>
+<li>The modern Web platform</li>
+<li>Mobile devices</li>
+<li>Graphics Processing Units</li>
+</ul>
+<h3>Big Data</h3>
+<p><strong>Big Data</strong>, like every buzzword, is often misused. It will die eventually. Yet, it is not completely meaningless. We are really drowning in the volume of data. In the <a href="http://www.ucl.ac.uk/cortexlab">experimental neuroscience lab</a> I'm working in, we're constantly buying new multi-terabytes hard drives and NAS boxes. We're always running out of disk space. Yet, this is only for <em>storage</em>. Processing, analyzing, and visualizing these terabytes of data is harder and harder. Our algorithms, software, and hardware are not scaling as fast as our acquisition systems.</p>
+<p>This is not going to stop, on the contrary; it's going to get worse with international research projects such as the <a href="https://www.humanbrainproject.eu/">Human Brain Project</a> or the <a href="http://www.whitehouse.gov/share/brain-initiative">BRAIN Initiative</a>. Although raising huge technical challenges, this deluge of data is nevertheless expected to lead to important <a href="http://www.moore.org/programs/science/data-driven-discovery">data-driven discoveries</a>.</p>
+<p>This is not only true in experimental neuroscience, but also in virtually any academic and industrial discipline.</p>
+<h3>Cloud computing</h3>
+<p>In more and more disciplines, datasets are becoming too big for our computers. Cloud computing architectures let networks of computers process huge datasets in parallel. These platforms have been used by large Internet companies for many years. Academia is now trying to embrace this trend.</p>
+<p>Another thing to consider is <strong>big data inertia</strong>. A huge, multi-terabytes dataset is going to be stored in a computer, a network drive, or in the cloud. You're not going to move it around in order to analyze and visualize it. Data transfers at this scale come at a huge cost, so you'll have to <strong>bring your code to the data rather than the other way around</strong>.</p>
+<p>In terms of visualization, this implies that scalable solutions have to be distributed. Enabling <strong>remote data access</strong> for analysis and visualization is now a requirement.</p>
+<h3>Python</h3>
+<p>Python is one of the leading <strong>open platforms for data analysis and visualization</strong>. More and more scientists are using it. Yet, it lags behind other solutions when it comes to <em>big data</em> analysis and visualization. Another drawback of Python is the difficulty of installing a working scientific Python distribution on a computer (although <a href="http://conda.pydata.org/">conda</a> is not far from solving this problem altogether).</p>
+<p>Because of this, <em>sharing</em> and <em>diffusing</em> data analysis reports in Python containing interactive visualizations is far from being straightforward, particularly when large datasets are involved. Innovative solutions are required in this area.</p>
+<h3>The IPython notebook</h3>
+<p>One of the most popular features of the scientific Python platform is the <a href="http://ipython.org/notebook.html">IPython notebook</a> (now also called <a href="https://speakerdeck.com/fperez/project-jupyter">Jupyter</a> notebook). This tool lets scientists write code, text, and create figures in a single document, all within their Web browser. This document can be tracked by a version control system, shared, and converted to HTML, PDF, and other formats.</p>
+<p><a href="https://colaboratory.jupyter.org">Collaborative work on notebooks is becoming possible</a>. Notebooks now support non-Python languages (R, Julia, Haskell, and many others). Finally, interactive graphical applications can be built in the notebook thanks to IPython widgets.</p>
+<h3>The modern Web platform</h3>
+<p>Whereas Python is one of the leading data analysis platforms, <strong>JavaScript is simply one of the most popular programming languages in the world</strong>. I'm not sure how we got here, because JavaScript is not really known to be the most elegant language ever. However, the JavaScript community and ecosystem are huge nowadays. Also, the Web industry leaders have spent a considerable effort on building blazingly fast JavaScript interpreters for their browsers. JavaScript is probably here to stay, and we'll have to live with it.</p>
+<p>More optimistically, HTML5, CSS3, JavaScript, and the various WebSomething (WebGL, WebAudio, WebSocket, and so on) technologies offer an open, standardized, cross-platform, and highly capable platform for application development. For example, <a href="http://www.chromeexperiments.com/webgl/">WebGL</a> offers a standard API to display hardware-accelerated 2D and 3D graphics in real-time in the browser. Quite a few video games are written in WebGL now.</p>
+<p><strong>With Web applications, deployment is basically trivial</strong> (from a user perspective, at least). Open an URL with your browser and you instantaneously get your application running (possibly in the cloud). No installation, no plugin. That's probably one of the main reasons why this platform is so popular today.</p>
+<h3>Mobile devices</h3>
+<p>People spend more and more time on their mobile devices, and less and less time on their personal computers. That's not true everywhere, and many professionals still need a desktop computer. But I think this trend is not going to stop. Many scientists would love to access their data and analyses remotely through their mobile devices. Multi-touch interfaces on mobile devices would also make scientists more productive when they're visualizing and analyzing data.</p>
+<h3>Graphics Processing Units</h3>
+<p>The video game industry has been fostered the computational power of graphics processing units (GPUs) in the last two decades. Today, the GPU is often the most powerful processing unit in a computer. GPUs are now everywhere: desktop computers, laptops, tablets, smartphones, and even watches! We wouldn't have fast and fluid graphical interfaces without GPUs.</p>
+<p>GPUs are now routinely used in scientific disciplines for general-purpose computing applications. Some kinds of numerical problems can be solved highly efficiently on GPUs thanks to their massively parallel architecture. But GPUs were primarily designed for real-time rendering and 3D video games. We can also very well use them for big data visualization. I've been working on <a href="http://journal.frontiersin.org/Journal/10.3389/fninf.2013.00036/full">this idea</a> for two years, and this is the core idea of the project I'll be talking about here.</p>
+<h2>Bringing these technologies together</h2>
+<p>What would be an ideal, modern workflow for big data analysis and visualization? Here's my take:</p>
+<ol>
+<li><strong>Perform an experiment</strong>. Acquire a huge dataset, store it in a remote server or in the cloud.</li>
+<li><strong>Start your analysis</strong> by opening your Web browser and going to a secure URL.</li>
+<li><strong>Write code</strong> in a notebook interface to access and visualize your data. You can launch analyses in parallel, and get status reports asynchronously.</li>
+<li><strong>Use a GUI</strong>. There are specific situations where text-based interfaces are not enough, and you really need a user-friendly graphical interface for data processing. For example, you may need to run a semi-automatic analysis involving human supervision. This interface may involve complex interactive visualizations.</li>
+<li><strong>Collaborate</strong>. You're in the middle of an analysis session, and you want to share your findings <em>in real-time</em> with a colleague in another city or country. You just give her the URL, and she immediately gets access to your notebook.</li>
+<li><strong>Save your work</strong> using a distributed version control such as Git.</li>
+<li><strong>Access your work remotely</strong>. On your way back home, you can still access your notebook and your data from your smartphone.</li>
+<li><strong>Share your findings</strong> with colleagues or in a blog post. You can convert your notebook to an interactive self-contained HTML document containing your data, analyses, code, results, and interactive figures.</li>
+<li><strong>Publish</strong> a paper by converting your notebook to a publication-ready paper (we're not there yet!).</li>
+</ol>
+<p>Most of what is described here is <strong>already possible today using the IPython notebook</strong>. The architecture enabling interactive widgets was implemented in IPython 2.0. Collaborative work and multi-language support should be brought by IPython 3.0. Interactive visualization tools in JavaScript exist; <a href="http://d3js.org">d3.js</a> is the most popular one, and it can be effectively integrated in the notebook (although this requires quite some work at the moment, unless you use <a href="http://mpld3.github.io/">mpld3</a>).</p>
+<p>What is currently missing is a <strong>fast and scalable big data visualization tool in the browser</strong>. <a href="http://vispy.org">Vispy</a> is a hardware-accelerated big data visualization library in Python. I'm currently working on this library together with several other developers. Plotting interfaces are still being worked out at the moment, but data visualization widgets can already be written using lower-level interfaces. These visualizations are fast and scalable because the GPU is optimally leveraged thanks to <strong>OpenGL</strong> (Open Graphics Library).</p>
+<p>The last missing feature is the ability to <strong>run a Vispy visualization in the IPython notebook and in the browser</strong>. WebGL is an implementation of OpenGL in the Web browser. It is supported by all modern browsers on desktop computers and mobile devices. It is today the best technology at our disposal for distributed big data visualization.</p>
+<p>In the next posts, I'll describe how we're going to bring Vispy to the IPython notebook and the browser through WebGL. The main challenge will be to make Python and JavaScript communicate effectively, and to let users get the most of the architecture without asking them to write JavaScript code themselves.</p>
+    </section>
+
+
+<nav class="pagination-wrapper">
+    <div class="pagination">
+        <div class="pagination-left">
+                <a href="https://cyrille.rossant.net/writing-ipython-cookbook/">
+                    &larr; previous
+                </a>
+        </div>
+        <div class="pagination-right">
+                <a href="https://cyrille.rossant.net/ipython-cookbook-released/">
+                    next&nbsp;&rarr;
+                </a>
+        </div>
+    </div>
+</nav>
+    <aside class="comments">
+
+<div id="disqus_thread"></div>
+<script>
+    /**
+     *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+     *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
+     */
+
+    var disqus_config = function () {
+        this.page.url = "https://cyrille.rossant.net/big-data-visualization-webgl-part1/";  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = "big-data-visualization-webgl-part1"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+
+    (function() {  // DON'T EDIT BELOW THIS LINE
+        var d = document, s = d.createElement('script');
+
+        s.src = '//rossant.disqus.com/embed.js';
+
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+
+    </aside>
+
+            </div>
+        </section>
+
+        <nav id="sidebar" class="pure-u-1 pure-u-md-1-4">
+            <div class="l-box">
+<section>
+    <div class="portrait">
+            <img src="/theme/images/cr.jpg" />
+    </div>
+    <div class="name-cv">
+        <div class="name">Cyrille Rossant, PhD</div>
+        <div class="cv">
+            <a href="/pdfs/cv.pdf"><i class="fa fa-file-pdf-o"></i> CV</a>
+        </div>
+    </div>
+    <div class="clear"></div>
+    <div class="sub-name">Neuroscience researcher and <br>
+software engineer at IBL and UCL<br>
+&nbsp;▸ IBL: <a href="https://www.internationalbrainlab.com/">International Brain Laboratory</a><br>
+&nbsp;▸ UCL: <a href="https://www.ucl.ac.uk/cortexlab">University College London</a></div>
+    <div class="contact"><i>firstname</i>.<i>lastname</i>@gmail.com</div>
+</section>
+
+<section class="tags">
+    <span class="tag"><a href="/tag/neuroscience/">#neuroscience</a></span>
+    <span class="tag"><a href="/tag/python/">#python</a></span>
+    <span class="tag"><a href="/tag/dataviz/">#dataviz</a></span>
+    <span class="tag"><a href="/tag/maths/">#maths</a></span>
+    <span class="tag"><a href="/tag/gpu/">#gpu</a></span>
+    <span class="tag"><a href="/tag/opendata/">#opendata</a></span>
+</section>
+
+
+<section class="books">
+    <header><h3>books</h3></header>
+    <div class="sub-header">Two books on <strong>Python for data science</strong></div>
+    <div class="book-1"><a href="/books/#minibook"><img src="/images/minibook.png"/></a></div>
+    <div class="book-2"><a href="/books/#cookbook"><img src="/images/cookbook.png"/></a></div>
+</section>
+
+
+<!-- <section class="search">
+    <script>
+  (function() {
+    var cx = '006027474294305969173:cpp1rvft78s';
+    var gcse = document.createElement('script');
+    gcse.type = 'text/javascript';
+    gcse.async = true;
+    gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+        '//www.google.com/cse/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(gcse, s);
+  })();
+</script>
+<gcse:search></gcse:search>
+</section> -->            </div>
+        </nav>
+
+        <footer id="footer" class="pure-u-1 pure-u-md-3-4">
+            <div class="l-box">
+                <div>
+                    <p>&copy; <a href="https://cyrille.rossant.net">Cyrille Rossant</a> &ndash;
+                        Built with <a href="https://github.com/PurePelicanTheme/pure-single">Pure Theme</a>
+                        for <a href="http://blog.getpelican.com/">Pelican</a>
+                    </p>
+                </div>
+            </div>
+        </footer>
+
+    </div>
+
+<!-- Start of StatCounter Code for Default Guide -->
+<script type="text/javascript">
+var sc_project=7297581;
+var sc_invisible=1;
+var sc_security="e9e753f7";
+var scJsHost = (("https:" == document.location.protocol) ?
+"https://secure." : "http://www.");
+document.write("<sc"+"ript type='text/javascript' src='" +
+scJsHost+
+"statcounter.com/counter/counter.js'></"+"script>");
+</script>
+<noscript><div class="statcounter"><a title="shopify site
+analytics" href="http://statcounter.com/shopify/"
+target="_blank"><img class="statcounter"
+src="http://c.statcounter.com/7297581/0/e9e753f7/1/"
+alt="shopify site analytics"></a></div></noscript>
+<!-- End of StatCounter Code for Default Guide -->
+</body>
+</html>
+

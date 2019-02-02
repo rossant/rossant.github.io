@@ -1,0 +1,316 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Cyrille Rossant, ">
+    <link href="/favicon.png" rel="icon">
+
+        <link rel="alternate"  href="https://cyrille.rossant.net/feeds/all.atom.xml" type="application/atom+xml" title="Cyrille Rossant Full Atom Feed"/>
+        <link rel="alternate" href="https://cyrille.rossant.net/feeds/atom.xml" type="application/atom+xml" title="Cyrille Rossant Atom Feed"/>
+
+        <title>Cyrille Rossant - Moving away from HDF5</title>
+
+    <link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/pure/0.3.0/pure-min.css">
+    <!--[if lte IE 8]>
+        <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.5.0/grids-responsive-old-ie-min.css">
+    <![endif]-->
+    <!--[if gt IE 8]><!-->
+        <link rel="stylesheet" href="/theme/css/grids-responsive-min.css">
+    <!--<![endif]-->
+    <link rel="stylesheet" href="/theme/css/styles.css">
+    <link rel="stylesheet" href="/theme/css/pygments.css">
+    <!-- <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'> -->
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,500" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Ubuntu+Mono' rel='stylesheet' type='text/css'>
+
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/fitvids/1.0.1/jquery.fitvids.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $(".content").fitVids();
+        });
+    </script>
+</head>
+
+<body>
+
+
+    <header id="header" class="pure-g">
+        <div class="pure-u-1 pure-u-md-3-4">
+             <div id="menu">
+                 <div class="pure-menu pure-menu-open pure-menu-horizontal">
+<ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/projects/">Projects</a></li>
+        <li><a href="/books/">Books</a></li>
+        <li><a href="/about/">About</a></li>
+</ul>                </div>
+            </div>
+        </div>
+
+        <div class="pure-u-1 pure-u-md-1-4">
+            <div id="social">
+                <div class="pure-menu pure-menu-open pure-menu-horizontal">
+<ul>
+        <li><a href="https://twitter.com/cyrillerossant"><i class="fa fa-twitter"></i></a></li>
+        <li><a href="https://github.com/rossant"><i class="fa fa-github"></i></a></li>
+        <li><a href="https://www.linkedin.com/in/crossant"><i class="fa fa-linkedin"></i></a></li>
+        <li><a href="https://cyrille.rossant.net/feeds/all.atom.xml"><i class="fa fa-rss"></i></a></li>
+</ul>                </div>
+            </div>
+        </div>
+    </header>
+
+
+
+    <div id="layout" class="pure-g">
+        <section id="content" class="pure-u-1 pure-u-md-3-4">
+            <div class="l-box">
+
+    <header id="post-header">
+        <h1>Moving away from HDF5</h1>
+            <div class="post-meta">
+                January 06, 2016
+            </div>
+            <div class="post-tags">
+                <ul>
+                    <li>tags:</li>
+                    <li><a href="/tag/python/">python</a></li>
+                </ul>
+            </div>
+    </header>
+
+    <section id="post">
+        <p><strong>Update [2016-01-30]: <a href="/should-you-use-hdf5/">I wrote a follow-up here</a></strong></p>
+<p>In the research lab where I work, we've been developing a data processing pipeline for several years. This includes not only a program but also a new file format based on <strong>HDF5</strong> for a specific type of data. While the choice of HDF5 was looking compelling on paper, we found many issues with it. <strong>Recently, despite the high costs, we decided to abandon this format in our software</strong>.</p>
+<p>In this post, I'll describe what is HDF5 and what are the issues that made us move away from it.</p>
+
+
+<h2>What is HDF5?</h2>
+<p>For those who haven't come across it, <a href="https://en.wikipedia.org/wiki/Hierarchical_Data_Format"><strong>Hierarchical Data Format</strong></a>, or HDF [in this post I'll only talk about the current version, HDF5], is a multipurpose hierarchical container format capable of storing large numerical datasets with their metadata. The specification is open and the tools are open source. Development of HDF5 is done by the <a href="https://www.hdfgroup.org/"><strong>HDF Group</strong></a>, a non-profit corporation.</p>
+<h3>What's in an HDF5 file?</h3>
+<p>An HDF5 file contains a POSIX-like hierarchy of numerical arrays (aka <strong>datasets</strong>) organized within <strong>groups</strong>.</p>
+<p>A dataset can be stored in two ways: <strong>contiguously or chunked</strong>. If the former, the dataset is stored in a contiguous buffer in the file. If the latter, it is split uniformly in rectangular chunks organized in a B-tree.</p>
+<p>HDF5 also supports lossless compression of datasets.</p>
+<h3>File system within a file</h3>
+<p>Effectively, you can see HDF5 as <strong>a file system within a file</strong>, where files are datasets and folders are groups. However, the <a href="https://www.hdfgroup.org/HDF5/faq/whyhdf5.html">HDF Group doesn't seem to like this comparison</a>. The major differences are as follows:</p>
+<ul>
+<li><strong>An HDF5 file is portable</strong>: the entire structure is contained in the file and doesn't depend on the underlying file system. However it does depend on the HDF5 library.</li>
+<li><strong>HDF5 datasets have a rigid structure</strong>: they are all homogeneous (hyper)rectangular numerical arrays, whereas files in a file system can be anything.</li>
+<li>You can add <strong>metadata</strong> to groups, whereas file systems don't support this.</li>
+</ul>
+<h2>A short story</h2>
+<p>Many neuroscience labs working on extracellular recordings had been using a file format for almost two decades. This was meant to be a temporary file format and no one expected that it would become so widely used. For this reason, not much thought had been given to it. The format mixed text and binary files, metadata was stored in poorly-specified XML file. There were some quirks like off-by-one discrepancies between files. It could happen that scientific results were wrong because the experimenter was confused by the format. There were also serious performance problems, and the format wouldn't have scaled to modern recording devices.</p>
+<p>These files were used in a suite of graphical programs that had also been developed a while ago, and that wouldn't have scaled to these new devices.</p>
+<p>As we worked on a new version of the processing software, we decided to also design a <strong>new version of this file format that would be based on HDF5</strong>.</p>
+<p><strong>HDF5 looked like an ideal choice</strong>: widely-supported, supposedly fast and scalable, versatile. We couldn't find any argument against it. The following advantages were the main reasons we chose HDF5 in the first place:</p>
+<ul>
+<li>Open</li>
+<li>Large community</li>
+<li>You can create symlinks between datasets and HDF5 files</li>
+<li>Transparent endianness support</li>
+<li>Portability and metadata, as seen above</li>
+<li>Chunked datasets can be resized along a given dimension</li>
+<li>Possible support for compression</li>
+</ul>
+<p>We spent months and years designing the perfect HDF5-based file format that would work for everyone. We ran many benchmarks on various configurations to find the best compromise between design and performance. We rewrote our entire Python software around this new format using the <a href="http://www.h5py.org/">h5py library</a>. People around the world started to generate petabytes of data with our program.</p>
+<p>That's when we started to see several practical problems, which also made us aware of deeper issues with HDF5:</p>
+<ul>
+<li>High risks of data corruption</li>
+<li>Bugs and crashes in the HDF5 library and in the wrappers</li>
+<li>Poor performance in some situations</li>
+<li>Limited support for parallel access</li>
+<li>Impossibility to explore datasets with standard Unix/Windows tools</li>
+<li>Hard dependence on a single implementation of the library</li>
+<li>High complexity of the specification and the implementation</li>
+<li>Opacity of the development and slow reactivity of the development team</li>
+</ul>
+<p>Our users were upset. They couldn't do things they could do with the old format, however clunky it may have been. We implemented hacks and patches around these bugs and limitations, and ended up with an unmaintainable code mess.</p>
+<p>At some point, we said stop. For us, <strong>HDF5 was too much trouble, and we estimated that dropping it completely was the least painful choice</strong>. With so much data in this format in the wild, we still need to provide support, conversion, and export facilities, but we encourage our users to move to a simpler format.</p>
+<h2>Disadvantages of HDF5</h2>
+<p>What has gone wrong? <strong>The first mistake we did was to design a file format in the first place</strong>. This is an extremely hard problem, and the slightest mistake has huge and expensive consequences. This is better left off to dedicated working groups.</p>
+<p>Let's now see the disadvantages of HDF5 in detail.</p>
+<h3>Single implementation</h3>
+<p><strong>The <a href="https://www.hdfgroup.org/HDF5/doc/H5.format.html">HDF5 specification</a> is very complex and low level</strong>. It spans about <strong>150 pages</strong>. In theory, since the specification is open, anyone can write their own implementation. In practice, this is so complex that <strong>there is a single implementation, spanning over 300,000 lines of C code</strong>. The library may be hard to compile on some systems. There are wrappers in many languages, including Python. They all rely on the same C library, so they all share the bugs and performance issues of this implementation. Of course, the wrappers can add their own bugs and issues.</p>
+<p>The code repository of the reference implementation is hard to find. It looks like there is an <a href="https://github.com/live-clones/hdf5">unofficial GitHub clone</a> of an <a href="https://svn.hdfgroup.uiuc.edu/hdf5/trunk/">SVN repository</a>. There are no issues, pull requests, little documentation, etc. just a bunch of commits. To understand the code properly, you have to become very familiar with the 150 pages of specification.</p>
+<p><strong>Overall, using HDF5 means that, to access your data, you're going to depend on a very complex specification and library, slowly developed over almost 20 years by a handful of persons, and which are probably understood by just a few people in the world</strong>. This is a bit scary.</p>
+<h3>Corruption risks</h3>
+<p>Corruption may happen if your software crashes while it's accessing an HDF5 file. Once a file is corrupted, all of your data is basically lost forever. <strong>This is a major drawback of storing a lot of data in a single file, which is what HDF5 is designed for</strong>. Users of our software have lost many hours of work because of this. Of course, you need to write your software properly to minimize the risk of crashes, but it is hard to avoid them completely. Some crashes are due to the HDF5 library itself.</p>
+<p>To mitigate corruption issues, journaling was being considered in a future version of HDF5. I can find mentions of this feature on the mailing list, <a href="http://hdf-forum.184993.n3.nabble.com/hdf-forum-Recover-a-corrupt-HDF5-file-td193622.html">for example here in 2008</a>, or in <a href="http://hdf-forum.184993.n3.nabble.com/File-corruption-and-hdf5-design-considerations-td4025305.html">2012</a>. It was planned for the <strong>1.10 version</strong>, which itself was originally planned for <a href="https://lists.hdfgroup.org/pipermail/hdf-forum_lists.hdfgroup.org/2011-September/005059.html">2011</a>, if not earlier. Finally it looks like <a href="https://hdfgroup.org/wp/2015/05/whats-coming-in-the-hdf5-1-10-0-release/"><strong>journaling is not going to make it into the 1.10 release</strong></a> [see the <em>Comments</em> section in this page]. This release is currently planned for 2016, and the <a href="https://www.hdfgroup.org/HDF5/release/obtain5110.html">very first alpha version has been released a few days ago</a>.</p>
+<p>[Anecdotally, this version seems to break compatibility in that <em>earlier releases [of HDF5] will not be able to read HDF5-1.10 files.</em> Also, there is a big warning for the alpha release: <em>PLEASE BE AWARE that the file format is not yet stable. DO NOT keep files created with this version.</em>]</p>
+<h3>Various limitations and bugs</h3>
+<p>Once, we had to tell our Windows users to downgrade their version of h5py because a <a href="https://github.com/h5py/h5py/issues/593">segmentation fault occurred with variable-length strings</a> in the latest version. This is one of the disadvantages of using a compiled library instead of a pure Python library. There is no other choice since the only known implementation of HDF5 is written in C.</p>
+<p><a href="http://docs.h5py.org/en/latest/strings.html">UTF-8 support in HDF5 seems limited</a>, so in practice you need to rely on ASCII to avoid any potential problems.</p>
+<p>There are few supported data types for metadata attributes. In Python, if your attributes are in an unsupported type (for example, tuples), they might be silently serialized via pickle to an opaque binary blog, making them unreadable in another language like MATLAB.</p>
+<p>A surprising limitation: <strong>as of today, you still can't delete an array in an HDF5 file</strong>. More precisely, you can delete the link, but the data remains in the file so that the file size isn't reduced. The only way around this is to make a copy of the file <em>without</em> the deleted array (for example with the <em>h5repack</em> tool). This is problematic when you have 1TB+ files. The upcoming HDF5 1.10 promises to fix this partially, but it is still in alpha stage at the time of this writing.</p>
+<h3>Performance issues</h3>
+<p>Since HDF5 is a sort of file system within a file, it cannot benefit from the smart caching/predictive strategies provided by modern operating systems. This can lead to poor performance.</p>
+<p>If you use chunking, you need to be very careful with the <a href="http://www.speedup.ch/workshops/w37_2008/HDF5-Tutorial-PDF/HDF5-Cach-Buf.pdf">chunk size</a> and your CPU cache size, otherwise you might end up with terrible performance. Optimizing performance with HDF5 is a <a href="http://www.pytables.org/usersguide/optimization.html">rather complicated topic</a>.</p>
+<p>In our application, we have a particular use-case where we have a large contiguous array with, say, 100,000 lines and 1000 columns (in reality these numbers may be much larger than that), and we need to access a small number of lines quickly. Unfortunately, there is no locality in our access patterns. We found out that using h5py led to very slow access times, but it's due to a <a href="https://gist.github.com/rossant/7b4704e8caeb8f173084#gistcomment-1665072">known weakness of the implementation of fancy indexing in h5py</a>.</p>
+<p>When we perform a regular selection with slices, we also found that h5py is several times slower than memory-mapping a file with NumPy, but it's unclear if this is due to h5py or HDF5 itself.</p>
+<p>We also found that <strong>we can actually bypass libhdf5 when reading an HDF5 file</strong>, provided that we use uncompressed contiguous datasets. All we have to do is find the address of the first byte of the array in the file, and memory-map the buffer with NumPy. This also leads to faster access times.</p>
+<p>Overall, <strong>in this situation, using memory-mapping instead of h5py/HDF5 leads to read access times that are significantly faster</strong>.</p>
+<p><a href="https://gist.github.com/rossant/7b4704e8caeb8f173084">You'll find a standalone benchmark as a Jupyter notebook here.</a></p>
+<p>In conclusion, we found out the hard way that <strong>HDF5 may be quite slower than simpler container formats, and as such, it is not always a good choice in performance-critical applications.</strong> This was quite surprising as we (wrongly) expected HDF5 to be particularly fast in most situations. Note that performance might be good enough in other use-cases. If you consider using HDF5 or another format, be sure to run detailed benchmarks in challenging situations before you commit to it.</p>
+<p>[<strong>Update</strong>: note that an earlier version of this paragraph mentioned a 100x speed increase, but it's been pointed out in the comments below that the benchmark was not comparing the right thing. The paragraph above and the benchmark have been updated accordingly. Earlier versions of the benchmark can be found in the notebook history.]</p>
+<h3>Poor support on distributed architectures</h3>
+<p>Parallel access in HDF5 exists but it is a bit <a href="https://github.com/rossant/hdf5-experiments/wiki/Summary-of-HDF5-parallel-features">limited</a> and not easy to use. MPI is required for multiprocessing.</p>
+<p>HDF5 was designed at a time where <a href="http://www.dursi.ca/hpc-is-dying-and-mpi-is-killing-it/">MPI was the state-of-the-art for high performance computing</a>. Now, we have large-scale distributed architectures like Hadoop, Spark, etc. HDF5 isn't well supported on these systems. For example, on Spark, you have to <a href="https://hdfgroup.org/wp/2015/03/from-hdf5-datasets-to-apache-spark-rdds/">split your data into multiple HDF5 files</a>, which is precisely the opposite of what HDF5 encourages you to do [see also <a href="https://www.hdfgroup.org/pubs/papers/Big_HDF_FAQs.pdf">this document</a> by the HDF Group].</p>
+<p>By contrast, flat binary files are natively supported on Spark.</p>
+<h3>Opacity</h3>
+<p><strong>You depend on the HDF5 library to do anything with an HDF5 file</strong>. What is in a file? How many arrays there are? What are their paths, shapes, data types? What is the metadata? Without the HDF5 library, you can't answer any of these questions. Even when HDF5 is installed, you need dedicated tools or, worse, you need to write your own script. This adds considerable cognitive overhead when working with scientific data in HDF5.</p>
+<p>You can't use standard Unix/Windows tools like <code>awk</code>, <code>wc</code>, <code>grep</code>, Windows Explorer, text editors, and so on, because the structure of HDF5 files is hidden in a binary blob that only the standard libhdf5 understands. There is a Windows-Explorer-like <a href="https://www.hdfgroup.org/products/java/hdfview/"><em>HDFView</em></a> tool written in Java that allows you to look inside HDF5 files, but it is very limited compared to the tools you find in modern operating systems.</p>
+<p>A simpler and roughly equivalent alternative to HDF5 would be to store each array in its own file, within a sensible file hierarchy, and with the metadata stored in JSON or YAML files. For the file format of the individual arrays, one can choose for example a raw binary format without a header (<code>arr.tofile()</code> in NumPy), or the <a href="http://docs.scipy.org/doc/numpy-dev/neps/npy-format.html">NumPy format <code>.npy</code></a> which is just a flat binary file with a fixed-length ASCII header. [Note the paragraph about HDF5 in the page linked above] These files can be easily memory-mapped with very good performance since the file system and the OS are in charge in that case.</p>
+<p>This leads to a self-documenting format that anyone can immediately explore with any command-line shell, on any computer on the planet, with any programming language, without installing anything, and without reading any specific documentation. In 20 or 30 years, your files are much more likely to be readable if they are stored in this format than if they're stored in HDF5.</p>
+<h3>Philosophy</h3>
+<p><strong>HDF5 encourages you to put within a single file many data arrays corresponding to a given experiment or trial</strong>. These arrays are organized in a POSIX-like structure.</p>
+<p>One can wonder why not just use a hierarchy of files within a directory.</p>
+<p>Modern file systems are particularly complex. They have been designed, refined, battle-tested, and optimized over decades. As such, despite their complexity, they're now very robust. They're also highly efficient, and they implement advanced caching strategies. HDF5 is just more limited and slower. Perhaps things were different when HDF5 was originally developed.</p>
+<p>If you replace your HDF5 file by a hierarchy of flat binary files and text files, as described in the previous section, you obtain a file format that is more robust, more powerful, more efficient, more maintainable, more transparent, and more amenable to distributed systems than HDF5.</p>
+<p>The only disadvantage of this more rudimentary container format I can think of is portability. You can always zip up the archive, but this is generally slow, especially with huge datasets. That being said, today's datasets are so big that they don't tend to move a lot. Rather than sharing huge datasets, it might be a better idea to fire up a <a href="http://jupyter.org/">Jupyter server</a> and serve analysis notebooks.</p>
+<p>When datasets are really too big to fit on a single computer, distributed architectures like Spark are preferred, and we saw that these architectures don't support HDF5 well.</p>
+<h2>Conclusion</h2>
+<p>We've learned our lesson. <strong>Designing, maintaining, and promoting a file format within a community is hard</strong>. It cannot be reasonably done by a small group of people who also need to write software, develop algorithms, and do research.</p>
+<p>I don't think we could have predicted all of our problems with HDF5, since we had only heard enthusiast opinions. Maybe HDF5 was great a decade ago, and it just became outdated.</p>
+<p>What I do know is that <strong>we wouldn't have had these problems if we hadn't tried to develop a file format in the first place</strong>.</p>
+<p>We've now rewritten our software to make it modular and completely agnostic to file formats. <strong>We've moved from writing a monolithic application to writing a library</strong>. We're encouraging our users to adapt these components to whatever file format they're already using. The APIs we provide make this straightforward.</p>
+<p>There is always a tension, in that many of our users are biologists without a computer science background [to simplify, they're using Windows, Word, and MATLAB instead of Unix, vim/emacs, and Python] and they expect an integrated single-click graphical program. The solution we've found is to develop the library <em>first</em>, and <em>then</em> write separately an integrated solution based on this library.</p>
+<p><em>Thanks to Max Hunter and others for their comments on this post.</em></p>
+    </section>
+
+
+<nav class="pagination-wrapper">
+    <div class="pagination">
+        <div class="pagination-left">
+                <a href="https://cyrille.rossant.net/should-you-use-hdf5/">
+                    &larr; previous
+                </a>
+        </div>
+        <div class="pagination-right">
+                <a href="https://cyrille.rossant.net/new-year/">
+                    next&nbsp;&rarr;
+                </a>
+        </div>
+    </div>
+</nav>
+    <aside class="comments">
+
+<div id="disqus_thread"></div>
+<script>
+    /**
+     *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+     *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
+     */
+
+    var disqus_config = function () {
+        this.page.url = "https://cyrille.rossant.net/moving-away-hdf5/";  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = "moving-away-hdf5"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+
+    (function() {  // DON'T EDIT BELOW THIS LINE
+        var d = document, s = d.createElement('script');
+
+        s.src = '//rossant.disqus.com/embed.js';
+
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+
+    </aside>
+
+            </div>
+        </section>
+
+        <nav id="sidebar" class="pure-u-1 pure-u-md-1-4">
+            <div class="l-box">
+<section>
+    <div class="portrait">
+            <img src="/theme/images/cr.jpg" />
+    </div>
+    <div class="name-cv">
+        <div class="name">Cyrille Rossant, PhD</div>
+        <div class="cv">
+            <a href="/pdfs/cv.pdf"><i class="fa fa-file-pdf-o"></i> CV</a>
+        </div>
+    </div>
+    <div class="clear"></div>
+    <div class="sub-name">Neuroscience researcher and <br>
+software engineer at IBL and UCL<br>
+&nbsp;▸ IBL: <a href="https://www.internationalbrainlab.com/">International Brain Laboratory</a><br>
+&nbsp;▸ UCL: <a href="https://www.ucl.ac.uk/cortexlab">University College London</a></div>
+    <div class="contact"><i>firstname</i>.<i>lastname</i>@gmail.com</div>
+</section>
+
+<section class="tags">
+    <span class="tag"><a href="/tag/neuroscience/">#neuroscience</a></span>
+    <span class="tag"><a href="/tag/python/">#python</a></span>
+    <span class="tag"><a href="/tag/dataviz/">#dataviz</a></span>
+    <span class="tag"><a href="/tag/maths/">#maths</a></span>
+    <span class="tag"><a href="/tag/gpu/">#gpu</a></span>
+    <span class="tag"><a href="/tag/opendata/">#opendata</a></span>
+</section>
+
+
+<section class="books">
+    <header><h3>books</h3></header>
+    <div class="sub-header">Two books on <strong>Python for data science</strong></div>
+    <div class="book-1"><a href="/books/#minibook"><img src="/images/minibook.png"/></a></div>
+    <div class="book-2"><a href="/books/#cookbook"><img src="/images/cookbook.png"/></a></div>
+</section>
+
+
+<!-- <section class="search">
+    <script>
+  (function() {
+    var cx = '006027474294305969173:cpp1rvft78s';
+    var gcse = document.createElement('script');
+    gcse.type = 'text/javascript';
+    gcse.async = true;
+    gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+        '//www.google.com/cse/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(gcse, s);
+  })();
+</script>
+<gcse:search></gcse:search>
+</section> -->            </div>
+        </nav>
+
+        <footer id="footer" class="pure-u-1 pure-u-md-3-4">
+            <div class="l-box">
+                <div>
+                    <p>&copy; <a href="https://cyrille.rossant.net">Cyrille Rossant</a> &ndash;
+                        Built with <a href="https://github.com/PurePelicanTheme/pure-single">Pure Theme</a>
+                        for <a href="http://blog.getpelican.com/">Pelican</a>
+                    </p>
+                </div>
+            </div>
+        </footer>
+
+    </div>
+
+<!-- Start of StatCounter Code for Default Guide -->
+<script type="text/javascript">
+var sc_project=7297581;
+var sc_invisible=1;
+var sc_security="e9e753f7";
+var scJsHost = (("https:" == document.location.protocol) ?
+"https://secure." : "http://www.");
+document.write("<sc"+"ript type='text/javascript' src='" +
+scJsHost+
+"statcounter.com/counter/counter.js'></"+"script>");
+</script>
+<noscript><div class="statcounter"><a title="shopify site
+analytics" href="http://statcounter.com/shopify/"
+target="_blank"><img class="statcounter"
+src="http://c.statcounter.com/7297581/0/e9e753f7/1/"
+alt="shopify site analytics"></a></div></noscript>
+<!-- End of StatCounter Code for Default Guide -->
+</body>
+</html>
+

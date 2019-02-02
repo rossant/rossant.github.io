@@ -1,0 +1,86 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>NumPy in the browser</title>
+    <link rel="stylesheet" href="lib/jquery-ui.min.css">
+    <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.5.0/pure-min.css">
+    <link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,500" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="lib/styles.css">
+</head>
+
+<body>
+
+    <table class="pure-table" id="my_table">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>x</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+                <td>0</td>
+                <td>100</td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>20</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>50</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>130</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>40</td>
+            </tr>
+        </tbody>
+    </table>
+
+    The largest item is:
+
+    <form class="pure-form">
+        <input type="text" id="my_output" value="" disabled="true" style="width: 90px; color: black;" placeholder="">
+    </form>
+
+
+    <script src="lib/jquery-1.11.2.min.js"></script>
+    <script src="lib/mindmup-editabletable.js"></script>
+    <script src="lib/emscripten-wrapper.js"></script>
+    <script src="lib/emscripten-table.js"></script>
+
+    <script>
+
+        var f = wrap(['int[:,::1]']);
+
+        function go() {
+
+            var values = [];
+            $('#my_table td').each(function (i) {
+                values[i] = parseInt($(this).text());
+            });
+
+            var arg = new Int32Array(values);
+            var result = new Int32Array([0]);
+            result = f(result, arg);
+            $("#my_output").val('#' + result[0]);
+        }
+
+        $('#my_table').editableTableWidget();
+        $('#my_table td').on('change', function() {
+            go()
+        });
+
+        go();
+    </script>
+
+</body>
+</html>

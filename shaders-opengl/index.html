@@ -1,0 +1,722 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Cyrille Rossant, ">
+    <link href="/favicon.png" rel="icon">
+
+        <link rel="alternate"  href="https://cyrille.rossant.net/feeds/all.atom.xml" type="application/atom+xml" title="Cyrille Rossant Full Atom Feed"/>
+        <link rel="alternate" href="https://cyrille.rossant.net/feeds/atom.xml" type="application/atom+xml" title="Cyrille Rossant Atom Feed"/>
+
+        <title>Cyrille Rossant - The Power of Shaders in Real-Time Graphics Programming</title>
+
+    <link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/pure/0.3.0/pure-min.css">
+    <!--[if lte IE 8]>
+        <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.5.0/grids-responsive-old-ie-min.css">
+    <![endif]-->
+    <!--[if gt IE 8]><!-->
+        <link rel="stylesheet" href="/theme/css/grids-responsive-min.css">
+    <!--<![endif]-->
+    <link rel="stylesheet" href="/theme/css/styles.css">
+    <link rel="stylesheet" href="/theme/css/pygments.css">
+    <!-- <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'> -->
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,500" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Ubuntu+Mono' rel='stylesheet' type='text/css'>
+
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/fitvids/1.0.1/jquery.fitvids.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $(".content").fitVids();
+        });
+    </script>
+</head>
+
+<body>
+
+
+    <header id="header" class="pure-g">
+        <div class="pure-u-1 pure-u-md-3-4">
+             <div id="menu">
+                 <div class="pure-menu pure-menu-open pure-menu-horizontal">
+<ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/projects/">Projects</a></li>
+        <li><a href="/books/">Books</a></li>
+        <li><a href="/about/">About</a></li>
+</ul>                </div>
+            </div>
+        </div>
+
+        <div class="pure-u-1 pure-u-md-1-4">
+            <div id="social">
+                <div class="pure-menu pure-menu-open pure-menu-horizontal">
+<ul>
+        <li><a href="https://twitter.com/cyrillerossant"><i class="fa fa-twitter"></i></a></li>
+        <li><a href="https://github.com/rossant"><i class="fa fa-github"></i></a></li>
+        <li><a href="https://www.linkedin.com/in/crossant"><i class="fa fa-linkedin"></i></a></li>
+        <li><a href="https://cyrille.rossant.net/feeds/all.atom.xml"><i class="fa fa-rss"></i></a></li>
+</ul>                </div>
+            </div>
+        </div>
+    </header>
+
+
+
+    <div id="layout" class="pure-g">
+        <section id="content" class="pure-u-1 pure-u-md-3-4">
+            <div class="l-box">
+
+    <header id="post-header">
+        <h1>The Power of Shaders in Real-Time Graphics Programming</h1>
+            <div class="post-meta">
+                November 05, 2012
+            </div>
+            <div class="post-tags">
+                <ul>
+                    <li>tags:</li>
+                    <li><a href="/tag/gpu/">gpu</a></li>
+                    <li><a href="/tag/dataviz/">dataviz</a></li>
+                </ul>
+            </div>
+    </header>
+
+    <section id="post">
+        <p>I've been programming in
+<a href="http://en.wikipedia.org/wiki/OpenGL">OpenGL</a>
+for a few months. Like a lot of programmers,
+I learnt the language by myself, thanks to various tutorials, books or e-books
+on the subject. One couldn't say there's a lack of resources on this
+20-years old language since it's so widely used throughout the world. Yet,
+I was surprised to discover a few weeks ago that the <strong>vast majority of what
+I learnt has been obsolete for almost a decade</strong>. The reason is that too many
+textbooks and tutorials on the Internet about OpenGL refer to a deprecated
+way of programming and which relates to the <strong>fixed-function pipeline</strong>.
+The modern way of programming in OpenGL is to use the <strong>programmable pipeline
+through shaders</strong>. The
+<a href="http://www.arcsynthesis.org/gltut/">free e-book</a> by
+Jason McKesson is a very good
+resource for learning modern OpenGL programming using the programmable
+pipeline.</p>
+
+
+<h2>The graphics pipeline</h2>
+<p>I'll try to explain what this is all about in simple terms, assuming no
+prior knowledge in graphics programming. Since graphics cards exist, the way
+rendering is done in a computer can be seen as a
+<a href="http://en.wikipedia.org/wiki/Graphics_pipeline">pipeline</a>.
+At the top, there's
+data that enters in the graphics card memory. At the bottom, there's the pixels
+on the screen. The role of the graphics card is, and has always been, to
+transform the data into pixels. The reason why this is complicated is that
+most of the time, the graphics card needs to render 3D data on a 2D screen.
+Indeed, graphics cards have been created primarily to allow real-time
+rendering in 3D video games. So, first, the 3D data describing the game
+world and characters enter into the graphics card memory.
+Then, the graphics card transforms the data into a 2D scene that corresponds
+to the projection of the world onto a virtual camera. In a first-person game,
+like an FPS for instance, this camera corresponds to the eye of the main
+character.</p>
+<p><a href="http://en.wikipedia.org/wiki/3D_projection">Projecting a 3D world to a 2D camera</a>
+is not mathematically complicated,
+and only involves basic linear algebra. However, it can be expensive in terms
+of computing power, since the number of mathematical operations to perform
+at every frame increases with the scene complexity. More details in the game
+implies a higher number of points, therefore a higher number of operations.
+Those operations constitute a highly parallel problem, since in general, the
+same mathematical operation is performed on all points (for instance,
+when the camera moves, the same linear transformation is applied on all
+points). The power of graphics cards comes precisely from their highly parallel
+architecture which lets them compute this kind of linear transformation
+in a very efficient way.</p>
+<p>So, coming back to the rendering pipeline, the transformation of the data
+involves <strong>linear transformations</strong> to get the 2D positions of the points on the
+camera, then
+<a href="http://en.wikipedia.org/wiki/Rasterization"><strong>rasterization</strong></a>
+to transform primitives (made up by vertices) into
+colored pixels. In addition, an important aspect of 3D rendering has to do with
+<strong>lighting</strong>,
+which plays an essential role in the realistic aspect of the scene. Real-time
+realistic lighting is a complicated subject. There's also the issue of
+textures, reflections, etc.
+So over the years, graphics cards
+programming has become increasingly complicated in order to account for more
+and more complex and realistic rendering algorithms.</p>
+<h2>The advent of programmable shaders</h2>
+<p>Then, an alternative approach has been to bring flexibility in this pipeline
+process, by giving the programmer the possibility to customize this
+rendering pipeline. Instead of having fixed, hard-coded rendering algorithms,
+the programmer had the possibility to write small programs in a low-level
+language called a
+<a href="http://en.wikipedia.org/wiki/Shader"><strong>shading language</strong></a>.
+A shader program is executed
+independently and in parallel over all vertices or pixels, and transforms
+them in order to implement custom rendering algorithms. This new technique
+has allowed for real-time special effects that would not have been possible
+before.</p>
+<p>Several types of shaders exist, the most common ones are the vertex shader and
+the fragment shader. The <strong>vertex shader is executed once per vertex</strong> and can
+transform its position. Applications include any special effect that requires
+independent transformation of vertices that would not be possible globally
+(e.g. cloth simulation, hair movements, morphing, particle system rendering,
+special lighting effects, etc.).</p>
+<p>The <strong>fragment shader is executed once per pixel</strong> and can transform its
+final color. Applications include everything related to textures, lighting,
+reflections, etc.</p>
+<p><strong>Shaders are extremely powerful, for they give the programmer
+full control of the graphics card to make them do what they do best:
+real-time rendering</strong>. The deep reason why they are so powerful is that shaders
+execute on the GPU in a fully parallel way, so they exploit the
+<a href="http://en.wikipedia.org/wiki/Graphics_processing_unit">parallel architecture of graphics card</a>
+in the most efficient possible way. The hundreds
+or thousands of cores all execute simultaneously the same little programs
+that transform the megabytes or gigabytes of data stored in GPU memory into
+millions of pixels on the screen. And the precise algorithms are up to the
+programmer rather than the graphics card manufacturer.</p>
+<p>In the early times of programmable pipeline rendering, shaders were written
+in an assembly language, making them highly difficult to write, design, read,
+and debug. Then, more readable languages have been designed, such as
+<a href="http://en.wikipedia.org/wiki/GLSL">GLSL</a> (OpenGL),
+<a href="http://en.wikipedia.org/wiki/HLSL">HLSL</a> (DirectX),
+or
+<a href="http://en.wikipedia.org/wiki/Cg_(programming_language)">Cg</a> (Nvidia).
+These languages look very much like C, even if they target
+very different architectures than those of typical central processing units.
+The simple and widespread syntax has made shader programming a potential
+reality for most graphics programmers.</p>
+<p>Today, shaders are widely used in virtually all 3D video games. Yet, very few
+OpenGL resources address them. Instead, tutorials and lessons explain how
+to use the fixed-function pipeline to perform transform and lighting on the
+GPU, without precising that this way of doing has been obsolete for nearly 10
+years! Now, even old graphics cards fully support programmable shaders,
+so I can't see good reasons not to use them. They are just so powerful,
+easy to program and they allow for a thorough understanding of how modern
+graphics cards work, and how to use their extreme computational power to their
+full extent.</p>
+<h2>Concrete example of shaders in OpenGL</h2>
+<p>I will now give an example of using shaders in PyOpenGL, by
+extending
+<a href="/2d-graphics-rendering-tutorial-with-pyopengl/">my previous tutorial on PyOpenGL</a>.
+In OpenGL, shaders are
+written in
+<a href="http://en.wikipedia.org/wiki/GLSL">GLSL</a>.
+Several versions of GLSL exist, and the version supported
+by the GPU depends on the version of OpenGL implemented in the graphics
+card drivers. I will assume that OpenGL 3.30 is supported.</p>
+<p>First, when using shaders, it may be a good idea to get rid of all code related
+to the fixed-function pipeline. It is now completely deprecated, yet almost
+all tutorials do not mention that. For example, here is a non-exhaustive list
+of deprecated OpenGL functions:</p>
+<div class="highlight"><pre><span></span>glColorPointer, glVertexPointer, glEnableClientState, glLoadIdentity,
+glLoadMatrix, glMultMatrix, glOrtho*, glPopMatrix, glRotate*, glScale*,
+glTranslate*, glMaterial*, glLight*...
+</pre></div>
+
+
+<p>The details can be found in
+<a href="http://www.opengl.org/registry/">the official specifications</a>.
+It means that all functions related to transformations, lighting, texturing,
+etc. are deprecated and should rather be implemented in vertex and fragment
+shaders. Concerning matrix transformations, it means that matrices
+need to be passed to the vertex shader through
+<a href="http://www.opengl.org/wiki/Uniform_(GLSL)">uniform variables</a>, and then
+be explicitely multiplied to the position vector (which are attribute
+variables). Similarly for lighting and texturing.</p>
+<h3>Example description</h3>
+<p>In this simple example, a null sampled function (<span class="math">\(x \in [-1, 1], y = 0\)</span>) is
+loaded on the GPU as an attribute variable named <code>position</code>. An
+<a href="http://www.opengl.org/wiki/Type_Qualifier_(GLSL)">attribute variable</a>
+is an array of scalars or vectors (of dimension 2, 3 or 4) that
+is loaded on the GPU as a
+<a href="http://www.opengl.org/wiki/Vertex_Buffer_Object#Vertex_Buffer_Object">vertex buffer object</a>.
+It has a name, a type
+and a location. The location is an integer that should be unique within
+a shader program. Here, <code>position</code> is an attribute of type vec2 and location 0.
+It contains the coordinates of the vertices. There are <span class="math">\(N\)</span> vertices, so
+<span class="math">\(N\)</span> vectors with vertex coordinates, and <span class="math">\(N\)</span> executions of the vertex shader.
+Each thread takes one vec2 position as an input, and returns the final
+position in the special variable <code>gl_Position</code>. If linear transformations
+need to be applied, one needs to multiply matrices with <code>position</code> and assign
+the result to <code>gl_Position</code>.</p>
+<h3>Vertex shader</h3>
+<p>Here is the source code of the vertex shader in this example.</p>
+<div class="highlight"><pre><span></span><span class="c1"># Vertex shader.</span>
+<span class="n">VS</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">#version 330</span>
+<span class="s2">// Attribute variable that contains coordinates of the vertices.</span>
+<span class="s2">layout(location = 0) in vec2 position;</span>
+
+<span class="s2">// Main function, which needs to set `gl_Position`.</span>
+<span class="s2">void main()</span>
+<span class="s2">{</span>
+<span class="s2">    // The final position is transformed from a null signal to a sinewave here.</span>
+<span class="s2">    // We pass the position to gl_Position, by converting it into</span>
+<span class="s2">    // a 4D vector. The last coordinate should be 0 when rendering 2D figures.</span>
+<span class="s2">    gl_Position = vec4(position.x, .2 * sin(20 * position.x), 0., 1.);</span>
+<span class="s2">}</span>
+<span class="s2">&quot;&quot;&quot;</span>
+</pre></div>
+
+
+<p>The code should be self-explanatory. The x coordinate of the position is
+used to calculate the y coordinate (through a sinus function). We don't use
+the y coordinate at all, so we could also have used an array of floats for
+the position. The special variable
+<a href="http://www.opengl.org/sdk/docs/manglsl/xhtml/gl_Position.xml"><code>gl_Position</code></a>
+has four components,
+the third is the third dimension (not used here since we render a 2D scene),
+the latest is the fourth, homogeneous coordinate, that is not relevant in
+2D rendering and should be fixed to 1.</p>
+<h3>Fragment shader</h3>
+<p>The fragment shader is executed once per primitive pixel. It takes possible
+vertex shader outputs as inputs (none here) and returns the pixel color
+as an output. The output color needs to be explicitely declared.
+Usage of the special <code>gl_FragColor</code> keyword is now deprecated, such as
+a lot of other <code>gl_*</code> variables in GLSL.</p>
+<div class="highlight"><pre><span></span><span class="c1"># Fragment shader</span>
+<span class="n">FS</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">#version 330</span>
+<span class="s2">// Output variable of the fragment shader, which is a 4D vector containing the</span>
+<span class="s2">// RGBA components of the pixel color.</span>
+<span class="s2">out vec4 out_color;</span>
+
+<span class="s2">// Main fragment shader function.</span>
+<span class="s2">void main()</span>
+<span class="s2">{</span>
+<span class="s2">    // We simply set the pixel color to yellow.</span>
+<span class="s2">    out_color = vec4(1., 1., 0., 1.);</span>
+<span class="s2">}</span>
+<span class="s2">&quot;&quot;&quot;</span>
+</pre></div>
+
+
+<p>Once again, the code should be clear enough. The <code>out_color</code> variable contains
+the red, green, blue and alpha components of the pixel final color. The
+components are between 0 and 1. The alpha component is the transparency:
+0 for completely transparent, 1 for completely opaque.</p>
+<h3>Compiling a shader</h3>
+<p>Once shader codes have been defined, shaders need to be compiled.
+Here is a small Python function for compiling a vertex shader.</p>
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">OpenGL.GL</span> <span class="kn">as</span> <span class="nn">gl</span>
+<span class="k">def</span> <span class="nf">compile_vertex_shader</span><span class="p">(</span><span class="n">source</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Compile a vertex shader from source.&quot;&quot;&quot;</span>
+    <span class="n">vertex_shader</span> <span class="o">=</span> <span class="n">gl</span><span class="o">.</span><span class="n">glCreateShader</span><span class="p">(</span><span class="n">gl</span><span class="o">.</span><span class="n">GL_VERTEX_SHADER</span><span class="p">)</span>
+    <span class="n">gl</span><span class="o">.</span><span class="n">glShaderSource</span><span class="p">(</span><span class="n">vertex_shader</span><span class="p">,</span> <span class="n">source</span><span class="p">)</span>
+    <span class="n">gl</span><span class="o">.</span><span class="n">glCompileShader</span><span class="p">(</span><span class="n">vertex_shader</span><span class="p">)</span>
+    <span class="c1"># check compilation error</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="n">gl</span><span class="o">.</span><span class="n">glGetShaderiv</span><span class="p">(</span><span class="n">vertex_shader</span><span class="p">,</span> <span class="n">gl</span><span class="o">.</span><span class="n">GL_COMPILE_STATUS</span><span class="p">)</span>
+    <span class="k">if</span> <span class="ow">not</span><span class="p">(</span><span class="n">result</span><span class="p">):</span>
+        <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span><span class="n">gl</span><span class="o">.</span><span class="n">glGetShaderInfoLog</span><span class="p">(</span><span class="n">vertex_shader</span><span class="p">))</span>
+    <span class="k">return</span> <span class="n">vertex_shader</span>
+</pre></div>
+
+
+<p>Compilation involves the creation of a shader, the load of the source code,
+and finally the compilation. Then, we check that no error happened during
+the compilation, or we print the compilation error. This last step
+is critical when debugging a PyOpenGL program using shaders, because otherwise
+there is no way to know why the compilation failed.</p>
+<p>The function for compiling a fragment shader is pretty much the same (see the
+full script at the end for the details).</p>
+<h3>Attaching shaders to a program</h3>
+<p>Once the vertex and fragment shaders have been compiled, they need to be
+attached to a program, the latter being then linked.</p>
+<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">link_shader_program</span><span class="p">(</span><span class="n">vertex_shader</span><span class="p">,</span> <span class="n">fragment_shader</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Create a shader program with from compiled shaders.&quot;&quot;&quot;</span>
+    <span class="n">program</span> <span class="o">=</span> <span class="n">gl</span><span class="o">.</span><span class="n">glCreateProgram</span><span class="p">()</span>
+    <span class="n">gl</span><span class="o">.</span><span class="n">glAttachShader</span><span class="p">(</span><span class="n">program</span><span class="p">,</span> <span class="n">vertex_shader</span><span class="p">)</span>
+    <span class="n">gl</span><span class="o">.</span><span class="n">glAttachShader</span><span class="p">(</span><span class="n">program</span><span class="p">,</span> <span class="n">fragment_shader</span><span class="p">)</span>
+    <span class="n">gl</span><span class="o">.</span><span class="n">glLinkProgram</span><span class="p">(</span><span class="n">program</span><span class="p">)</span>
+    <span class="c1"># check linking error</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="n">gl</span><span class="o">.</span><span class="n">glGetProgramiv</span><span class="p">(</span><span class="n">program</span><span class="p">,</span> <span class="n">gl</span><span class="o">.</span><span class="n">GL_LINK_STATUS</span><span class="p">)</span>
+    <span class="k">if</span> <span class="ow">not</span><span class="p">(</span><span class="n">result</span><span class="p">):</span>
+        <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span><span class="n">gl</span><span class="o">.</span><span class="n">glGetProgramInfoLog</span><span class="p">(</span><span class="n">program</span><span class="p">))</span>
+    <span class="k">return</span> <span class="n">program</span>
+</pre></div>
+
+
+<p>We first create a program, then we attach the compiled shaders, and finally
+we link the program. We also check that the linking was successful.</p>
+<h3>Using shaders</h3>
+<p>Finally, here is how to use shaders during the rendering process.</p>
+<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">paintGL</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="c1"># vertices located in the buffer in position 0 contain 2 single</span>
+    <span class="c1"># precision floating points as coordinates</span>
+    <span class="n">gl</span><span class="o">.</span><span class="n">glEnableVertexAttribArray</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+    <span class="n">gl</span><span class="o">.</span><span class="n">glVertexAttribPointer</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">gl</span><span class="o">.</span><span class="n">GL_FLOAT</span><span class="p">,</span> <span class="n">gl</span><span class="o">.</span><span class="n">GL_FALSE</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="bp">None</span><span class="p">)</span>
+    <span class="c1"># we use the compiled program</span>
+    <span class="n">gl</span><span class="o">.</span><span class="n">glUseProgram</span><span class="p">(</span><span class="n">program</span><span class="p">)</span>
+    <span class="c1"># draw &quot;count&quot; points from the VBO</span>
+    <span class="n">gl</span><span class="o">.</span><span class="n">glDrawArrays</span><span class="p">(</span><span class="n">gl</span><span class="o">.</span><span class="n">GL_LINE_STRIP</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">))</span>
+</pre></div>
+
+
+<p>We activate the buffers that need to pass data to the vertex shader,
+then we use the program before calling the OpenGL rendering commands.</p>
+<h3>Full script</h3>
+<p>Finally, here is the full Python script that displays a sinewave function
+using shaders. PyQt4 or PySide and PyOpenGL are necessary. If you use PySide,
+you should simply replace <code>PyQt4</code> by <code>PySide</code> in the imports. The
+<code>create_window</code> function has already been explained
+<a href="/making-pyqt4-pyside-and-ipython-work-together/">in a previous post</a>.</p>
+<div class="highlight"><pre><span></span><span class="c1"># PyQt4 imports</span>
+<span class="kn">from</span> <span class="nn">PyQt4</span> <span class="kn">import</span> <span class="n">QtGui</span><span class="p">,</span> <span class="n">QtCore</span><span class="p">,</span> <span class="n">QtOpenGL</span>
+<span class="kn">from</span> <span class="nn">PyQt4.QtOpenGL</span> <span class="kn">import</span> <span class="n">QGLWidget</span>
+<span class="c1"># PyOpenGL imports</span>
+<span class="kn">import</span> <span class="nn">OpenGL.GL</span> <span class="kn">as</span> <span class="nn">gl</span>
+<span class="kn">import</span> <span class="nn">OpenGL.arrays.vbo</span> <span class="kn">as</span> <span class="nn">glvbo</span>
+
+<span class="c1"># Window creation function.</span>
+<span class="k">def</span> <span class="nf">create_window</span><span class="p">(</span><span class="n">window_class</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Create a Qt window in Python, or interactively in IPython with Qt GUI</span>
+<span class="sd">    event loop integration:</span>
+<span class="sd">        # in ~/.ipython/ipython_config.py</span>
+<span class="sd">        c.TerminalIPythonApp.gui = &#39;qt&#39;</span>
+<span class="sd">        c.TerminalIPythonApp.pylab = &#39;qt&#39;</span>
+<span class="sd">    See also:</span>
+<span class="sd">        http://ipython.org/ipython-doc/dev/interactive/qtconsole.html#qt-and-the-qtconsole</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">app_created</span> <span class="o">=</span> <span class="bp">False</span>
+    <span class="n">app</span> <span class="o">=</span> <span class="n">QtCore</span><span class="o">.</span><span class="n">QCoreApplication</span><span class="o">.</span><span class="n">instance</span><span class="p">()</span>
+    <span class="k">if</span> <span class="n">app</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+        <span class="n">app</span> <span class="o">=</span> <span class="n">QtGui</span><span class="o">.</span><span class="n">QApplication</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">)</span>
+        <span class="n">app_created</span> <span class="o">=</span> <span class="bp">True</span>
+    <span class="n">app</span><span class="o">.</span><span class="n">references</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
+    <span class="n">window</span> <span class="o">=</span> <span class="n">window_class</span><span class="p">()</span>
+    <span class="n">app</span><span class="o">.</span><span class="n">references</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">window</span><span class="p">)</span>
+    <span class="n">window</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+    <span class="k">if</span> <span class="n">app_created</span><span class="p">:</span>
+        <span class="n">app</span><span class="o">.</span><span class="n">exec_</span><span class="p">()</span>
+    <span class="k">return</span> <span class="n">window</span>
+
+<span class="k">def</span> <span class="nf">compile_vertex_shader</span><span class="p">(</span><span class="n">source</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Compile a vertex shader from source.&quot;&quot;&quot;</span>
+    <span class="n">vertex_shader</span> <span class="o">=</span> <span class="n">gl</span><span class="o">.</span><span class="n">glCreateShader</span><span class="p">(</span><span class="n">gl</span><span class="o">.</span><span class="n">GL_VERTEX_SHADER</span><span class="p">)</span>
+    <span class="n">gl</span><span class="o">.</span><span class="n">glShaderSource</span><span class="p">(</span><span class="n">vertex_shader</span><span class="p">,</span> <span class="n">source</span><span class="p">)</span>
+    <span class="n">gl</span><span class="o">.</span><span class="n">glCompileShader</span><span class="p">(</span><span class="n">vertex_shader</span><span class="p">)</span>
+    <span class="c1"># check compilation error</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="n">gl</span><span class="o">.</span><span class="n">glGetShaderiv</span><span class="p">(</span><span class="n">vertex_shader</span><span class="p">,</span> <span class="n">gl</span><span class="o">.</span><span class="n">GL_COMPILE_STATUS</span><span class="p">)</span>
+    <span class="k">if</span> <span class="ow">not</span><span class="p">(</span><span class="n">result</span><span class="p">):</span>
+        <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span><span class="n">gl</span><span class="o">.</span><span class="n">glGetShaderInfoLog</span><span class="p">(</span><span class="n">vertex_shader</span><span class="p">))</span>
+    <span class="k">return</span> <span class="n">vertex_shader</span>
+
+<span class="k">def</span> <span class="nf">compile_fragment_shader</span><span class="p">(</span><span class="n">source</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Compile a fragment shader from source.&quot;&quot;&quot;</span>
+    <span class="n">fragment_shader</span> <span class="o">=</span> <span class="n">gl</span><span class="o">.</span><span class="n">glCreateShader</span><span class="p">(</span><span class="n">gl</span><span class="o">.</span><span class="n">GL_FRAGMENT_SHADER</span><span class="p">)</span>
+    <span class="n">gl</span><span class="o">.</span><span class="n">glShaderSource</span><span class="p">(</span><span class="n">fragment_shader</span><span class="p">,</span> <span class="n">source</span><span class="p">)</span>
+    <span class="n">gl</span><span class="o">.</span><span class="n">glCompileShader</span><span class="p">(</span><span class="n">fragment_shader</span><span class="p">)</span>
+    <span class="c1"># check compilation error</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="n">gl</span><span class="o">.</span><span class="n">glGetShaderiv</span><span class="p">(</span><span class="n">fragment_shader</span><span class="p">,</span> <span class="n">gl</span><span class="o">.</span><span class="n">GL_COMPILE_STATUS</span><span class="p">)</span>
+    <span class="k">if</span> <span class="ow">not</span><span class="p">(</span><span class="n">result</span><span class="p">):</span>
+        <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span><span class="n">gl</span><span class="o">.</span><span class="n">glGetShaderInfoLog</span><span class="p">(</span><span class="n">fragment_shader</span><span class="p">))</span>
+    <span class="k">return</span> <span class="n">fragment_shader</span>
+
+<span class="k">def</span> <span class="nf">link_shader_program</span><span class="p">(</span><span class="n">vertex_shader</span><span class="p">,</span> <span class="n">fragment_shader</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Create a shader program with from compiled shaders.&quot;&quot;&quot;</span>
+    <span class="n">program</span> <span class="o">=</span> <span class="n">gl</span><span class="o">.</span><span class="n">glCreateProgram</span><span class="p">()</span>
+    <span class="n">gl</span><span class="o">.</span><span class="n">glAttachShader</span><span class="p">(</span><span class="n">program</span><span class="p">,</span> <span class="n">vertex_shader</span><span class="p">)</span>
+    <span class="n">gl</span><span class="o">.</span><span class="n">glAttachShader</span><span class="p">(</span><span class="n">program</span><span class="p">,</span> <span class="n">fragment_shader</span><span class="p">)</span>
+    <span class="n">gl</span><span class="o">.</span><span class="n">glLinkProgram</span><span class="p">(</span><span class="n">program</span><span class="p">)</span>
+    <span class="c1"># check linking error</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="n">gl</span><span class="o">.</span><span class="n">glGetProgramiv</span><span class="p">(</span><span class="n">program</span><span class="p">,</span> <span class="n">gl</span><span class="o">.</span><span class="n">GL_LINK_STATUS</span><span class="p">)</span>
+    <span class="k">if</span> <span class="ow">not</span><span class="p">(</span><span class="n">result</span><span class="p">):</span>
+        <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span><span class="n">gl</span><span class="o">.</span><span class="n">glGetProgramInfoLog</span><span class="p">(</span><span class="n">program</span><span class="p">))</span>
+    <span class="k">return</span> <span class="n">program</span>
+
+<span class="c1"># Vertex shader</span>
+<span class="n">VS</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">#version 330</span>
+<span class="s2">// Attribute variable that contains coordinates of the vertices.</span>
+<span class="s2">layout(location = 0) in vec2 position;</span>
+
+<span class="s2">// Main function, which needs to set `gl_Position`.</span>
+<span class="s2">void main()</span>
+<span class="s2">{</span>
+<span class="s2">    // The final position is transformed from a null signal to a sinewave here.</span>
+<span class="s2">    // We pass the position to gl_Position, by converting it into</span>
+<span class="s2">    // a 4D vector. The last coordinate should be 0 when rendering 2D figures.</span>
+<span class="s2">    gl_Position = vec4(position.x, .2 * sin(20 * position.x), 0., 1.);</span>
+<span class="s2">}</span>
+<span class="s2">&quot;&quot;&quot;</span>
+
+<span class="c1"># Fragment shader</span>
+<span class="n">FS</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">#version 330</span>
+<span class="s2">// Output variable of the fragment shader, which is a 4D vector containing the</span>
+<span class="s2">// RGBA components of the pixel color.</span>
+<span class="s2">out vec4 out_color;</span>
+
+<span class="s2">// Main fragment shader function.</span>
+<span class="s2">void main()</span>
+<span class="s2">{</span>
+<span class="s2">    // We simply set the pixel color to yellow.</span>
+<span class="s2">    out_color = vec4(1., 1., 0., 1.);</span>
+<span class="s2">}</span>
+<span class="s2">&quot;&quot;&quot;</span>
+
+<span class="k">class</span> <span class="nc">GLPlotWidget</span><span class="p">(</span><span class="n">QGLWidget</span><span class="p">):</span>
+    <span class="c1"># default window size</span>
+    <span class="n">width</span><span class="p">,</span> <span class="n">height</span> <span class="o">=</span> <span class="mi">600</span><span class="p">,</span> <span class="mi">600</span>
+
+    <span class="k">def</span> <span class="nf">initializeGL</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Initialize OpenGL, VBOs, upload data on the GPU, etc.&quot;&quot;&quot;</span>
+        <span class="c1"># background color</span>
+        <span class="n">gl</span><span class="o">.</span><span class="n">glClearColor</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+        <span class="c1"># create a Vertex Buffer Object with the specified data</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">vbo</span> <span class="o">=</span> <span class="n">glvbo</span><span class="o">.</span><span class="n">VBO</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">)</span>
+        <span class="c1"># compile the vertex shader</span>
+        <span class="n">vs</span> <span class="o">=</span> <span class="n">compile_vertex_shader</span><span class="p">(</span><span class="n">VS</span><span class="p">)</span>
+        <span class="c1"># compile the fragment shader</span>
+        <span class="n">fs</span> <span class="o">=</span> <span class="n">compile_fragment_shader</span><span class="p">(</span><span class="n">FS</span><span class="p">)</span>
+        <span class="c1"># compile the vertex shader</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">shaders_program</span> <span class="o">=</span> <span class="n">link_shader_program</span><span class="p">(</span><span class="n">vs</span><span class="p">,</span> <span class="n">fs</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">paintGL</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Paint the scene.&quot;&quot;&quot;</span>
+        <span class="c1"># clear the buffer</span>
+        <span class="n">gl</span><span class="o">.</span><span class="n">glClear</span><span class="p">(</span><span class="n">gl</span><span class="o">.</span><span class="n">GL_COLOR_BUFFER_BIT</span><span class="p">)</span>
+        <span class="c1"># bind the VBO</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">vbo</span><span class="o">.</span><span class="n">bind</span><span class="p">()</span>
+        <span class="c1"># tell OpenGL that the VBO contains an array of vertices</span>
+        <span class="c1"># prepare the shader</span>
+        <span class="n">gl</span><span class="o">.</span><span class="n">glEnableVertexAttribArray</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+        <span class="c1"># these vertices contain 2 single precision coordinates</span>
+        <span class="n">gl</span><span class="o">.</span><span class="n">glVertexAttribPointer</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">gl</span><span class="o">.</span><span class="n">GL_FLOAT</span><span class="p">,</span> <span class="n">gl</span><span class="o">.</span><span class="n">GL_FALSE</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="bp">None</span><span class="p">)</span>
+        <span class="n">gl</span><span class="o">.</span><span class="n">glUseProgram</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">shaders_program</span><span class="p">)</span>
+        <span class="c1"># draw &quot;count&quot; points from the VBO</span>
+        <span class="n">gl</span><span class="o">.</span><span class="n">glDrawArrays</span><span class="p">(</span><span class="n">gl</span><span class="o">.</span><span class="n">GL_LINE_STRIP</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">))</span>
+
+    <span class="k">def</span> <span class="nf">resizeGL</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Called upon window resizing: reinitialize the viewport.&quot;&quot;&quot;</span>
+        <span class="c1"># update the window size</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">width</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">height</span> <span class="o">=</span> <span class="n">width</span><span class="p">,</span> <span class="n">height</span>
+        <span class="c1"># paint within the whole window</span>
+        <span class="n">gl</span><span class="o">.</span><span class="n">glViewport</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="c1"># import numpy for generating random data points</span>
+    <span class="kn">import</span> <span class="nn">sys</span>
+    <span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+
+    <span class="c1"># null signal</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="mi">10000</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span>
+    <span class="n">data</span><span class="p">[:,</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mf">1.</span><span class="p">,</span> <span class="mf">1.</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">))</span>
+
+    <span class="c1"># define a Qt window with an OpenGL widget inside it</span>
+    <span class="k">class</span> <span class="nc">TestWindow</span><span class="p">(</span><span class="n">QtGui</span><span class="o">.</span><span class="n">QMainWindow</span><span class="p">):</span>
+        <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+            <span class="nb">super</span><span class="p">(</span><span class="n">TestWindow</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
+            <span class="c1"># initialize the GL widget</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">widget</span> <span class="o">=</span> <span class="n">GLPlotWidget</span><span class="p">()</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">widget</span><span class="o">.</span><span class="n">data</span> <span class="o">=</span> <span class="n">data</span>
+            <span class="c1"># put the window at the screen position (100, 100)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">setGeometry</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">widget</span><span class="o">.</span><span class="n">width</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">widget</span><span class="o">.</span><span class="n">height</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">setCentralWidget</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">widget</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+    <span class="c1"># show the window</span>
+    <span class="n">win</span> <span class="o">=</span> <span class="n">create_window</span><span class="p">(</span><span class="n">TestWindow</span><span class="p">)</span>
+</pre></div>
+
+
+<p>There is of course much more to say about shaders that what this deceptively
+simple example has shown: how to implement linear transformations,
+lighting, textures, etc.
+<a href="http://www.arcsynthesis.org/gltut/">This free ebook</a> is an excellent
+resource for modern OpenGL programming, since it directly addresses the
+programmable pipeline instead of the deprecated fixed-function pipeline.
+The latter remains supported only for the sake of backwards compatibility,
+and should not be used at all.</p>
+<script type="text/javascript">if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
+    var align = "center",
+        indent = "0em",
+        linebreak = "false";
+
+    if (false) {
+        align = (screen.width < 768) ? "left" : align;
+        indent = (screen.width < 768) ? "0em" : indent;
+        linebreak = (screen.width < 768) ? 'true' : linebreak;
+    }
+
+    var mathjaxscript = document.createElement('script');
+    mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
+    mathjaxscript.type = 'text/javascript';
+    mathjaxscript.src = 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/latest.js?config=TeX-AMS-MML_HTMLorMML';
+    mathjaxscript[(window.opera ? "innerHTML" : "text")] =
+        "MathJax.Hub.Config({" +
+        "    config: ['MMLorHTML.js']," +
+        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } }," +
+        "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
+        "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
+        "    displayAlign: '"+ align +"'," +
+        "    displayIndent: '"+ indent +"'," +
+        "    showMathMenu: true," +
+        "    messageStyle: 'normal'," +
+        "    tex2jax: { " +
+        "        inlineMath: [ ['\\\\(','\\\\)'] ], " +
+        "        displayMath: [ ['$$','$$'] ]," +
+        "        processEscapes: true," +
+        "        preview: 'TeX'," +
+        "    }, " +
+        "    'HTML-CSS': { " +
+        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'inherit ! important'} }," +
+        "        linebreaks: { automatic: "+ linebreak +", width: '90% container' }," +
+        "    }, " +
+        "}); " +
+        "if ('default' !== 'default') {" +
+            "MathJax.Hub.Register.StartupHook('HTML-CSS Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax['HTML-CSS'].FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+            "MathJax.Hub.Register.StartupHook('SVG Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax.SVG.FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+        "}";
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
+}
+</script>
+    </section>
+
+
+<nav class="pagination-wrapper">
+    <div class="pagination">
+        <div class="pagination-left">
+                <a href="https://cyrille.rossant.net/galrys-story-or-the-quest-of-multi-million-plots/">
+                    &larr; previous
+                </a>
+        </div>
+        <div class="pagination-right">
+                <a href="https://cyrille.rossant.net/introducing-galry/">
+                    next&nbsp;&rarr;
+                </a>
+        </div>
+    </div>
+</nav>
+    <aside class="comments">
+
+<div id="disqus_thread"></div>
+<script>
+    /**
+     *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+     *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
+     */
+
+    var disqus_config = function () {
+        this.page.url = "https://cyrille.rossant.net/shaders-opengl/";  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = "shaders-opengl"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+
+    (function() {  // DON'T EDIT BELOW THIS LINE
+        var d = document, s = d.createElement('script');
+
+        s.src = '//rossant.disqus.com/embed.js';
+
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+
+    </aside>
+
+            </div>
+        </section>
+
+        <nav id="sidebar" class="pure-u-1 pure-u-md-1-4">
+            <div class="l-box">
+<section>
+    <div class="portrait">
+            <img src="/theme/images/cr.jpg" />
+    </div>
+    <div class="name-cv">
+        <div class="name">Cyrille Rossant, PhD</div>
+        <div class="cv">
+            <a href="/pdfs/cv.pdf"><i class="fa fa-file-pdf-o"></i> CV</a>
+        </div>
+    </div>
+    <div class="clear"></div>
+    <div class="sub-name">Neuroscience researcher and <br>
+software engineer at IBL and UCL<br>
+&nbsp;▸ IBL: <a href="https://www.internationalbrainlab.com/">International Brain Laboratory</a><br>
+&nbsp;▸ UCL: <a href="https://www.ucl.ac.uk/cortexlab">University College London</a></div>
+    <div class="contact"><i>firstname</i>.<i>lastname</i>@gmail.com</div>
+</section>
+
+<section class="tags">
+    <span class="tag"><a href="/tag/neuroscience/">#neuroscience</a></span>
+    <span class="tag"><a href="/tag/python/">#python</a></span>
+    <span class="tag"><a href="/tag/dataviz/">#dataviz</a></span>
+    <span class="tag"><a href="/tag/maths/">#maths</a></span>
+    <span class="tag"><a href="/tag/gpu/">#gpu</a></span>
+    <span class="tag"><a href="/tag/opendata/">#opendata</a></span>
+</section>
+
+
+<section class="books">
+    <header><h3>books</h3></header>
+    <div class="sub-header">Two books on <strong>Python for data science</strong></div>
+    <div class="book-1"><a href="/books/#minibook"><img src="/images/minibook.png"/></a></div>
+    <div class="book-2"><a href="/books/#cookbook"><img src="/images/cookbook.png"/></a></div>
+</section>
+
+
+<!-- <section class="search">
+    <script>
+  (function() {
+    var cx = '006027474294305969173:cpp1rvft78s';
+    var gcse = document.createElement('script');
+    gcse.type = 'text/javascript';
+    gcse.async = true;
+    gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+        '//www.google.com/cse/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(gcse, s);
+  })();
+</script>
+<gcse:search></gcse:search>
+</section> -->            </div>
+        </nav>
+
+        <footer id="footer" class="pure-u-1 pure-u-md-3-4">
+            <div class="l-box">
+                <div>
+                    <p>&copy; <a href="https://cyrille.rossant.net">Cyrille Rossant</a> &ndash;
+                        Built with <a href="https://github.com/PurePelicanTheme/pure-single">Pure Theme</a>
+                        for <a href="http://blog.getpelican.com/">Pelican</a>
+                    </p>
+                </div>
+            </div>
+        </footer>
+
+    </div>
+
+<!-- Start of StatCounter Code for Default Guide -->
+<script type="text/javascript">
+var sc_project=7297581;
+var sc_invisible=1;
+var sc_security="e9e753f7";
+var scJsHost = (("https:" == document.location.protocol) ?
+"https://secure." : "http://www.");
+document.write("<sc"+"ript type='text/javascript' src='" +
+scJsHost+
+"statcounter.com/counter/counter.js'></"+"script>");
+</script>
+<noscript><div class="statcounter"><a title="shopify site
+analytics" href="http://statcounter.com/shopify/"
+target="_blank"><img class="statcounter"
+src="http://c.statcounter.com/7297581/0/e9e753f7/1/"
+alt="shopify site analytics"></a></div></noscript>
+<!-- End of StatCounter Code for Default Guide -->
+</body>
+</html>
+

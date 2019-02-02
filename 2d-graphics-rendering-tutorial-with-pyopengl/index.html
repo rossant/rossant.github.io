@@ -1,0 +1,500 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Cyrille Rossant, ">
+    <link href="/favicon.png" rel="icon">
+
+        <link rel="alternate"  href="https://cyrille.rossant.net/feeds/all.atom.xml" type="application/atom+xml" title="Cyrille Rossant Full Atom Feed"/>
+        <link rel="alternate" href="https://cyrille.rossant.net/feeds/atom.xml" type="application/atom+xml" title="Cyrille Rossant Atom Feed"/>
+
+        <title>Cyrille Rossant - 2D graphics rendering tutorial with PyOpenGL</title>
+
+    <link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/pure/0.3.0/pure-min.css">
+    <!--[if lte IE 8]>
+        <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.5.0/grids-responsive-old-ie-min.css">
+    <![endif]-->
+    <!--[if gt IE 8]><!-->
+        <link rel="stylesheet" href="/theme/css/grids-responsive-min.css">
+    <!--<![endif]-->
+    <link rel="stylesheet" href="/theme/css/styles.css">
+    <link rel="stylesheet" href="/theme/css/pygments.css">
+    <!-- <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'> -->
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,500" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Ubuntu+Mono' rel='stylesheet' type='text/css'>
+
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/fitvids/1.0.1/jquery.fitvids.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $(".content").fitVids();
+        });
+    </script>
+</head>
+
+<body>
+
+
+    <header id="header" class="pure-g">
+        <div class="pure-u-1 pure-u-md-3-4">
+             <div id="menu">
+                 <div class="pure-menu pure-menu-open pure-menu-horizontal">
+<ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/projects/">Projects</a></li>
+        <li><a href="/books/">Books</a></li>
+        <li><a href="/about/">About</a></li>
+</ul>                </div>
+            </div>
+        </div>
+
+        <div class="pure-u-1 pure-u-md-1-4">
+            <div id="social">
+                <div class="pure-menu pure-menu-open pure-menu-horizontal">
+<ul>
+        <li><a href="https://twitter.com/cyrillerossant"><i class="fa fa-twitter"></i></a></li>
+        <li><a href="https://github.com/rossant"><i class="fa fa-github"></i></a></li>
+        <li><a href="https://www.linkedin.com/in/crossant"><i class="fa fa-linkedin"></i></a></li>
+        <li><a href="https://cyrille.rossant.net/feeds/all.atom.xml"><i class="fa fa-rss"></i></a></li>
+</ul>                </div>
+            </div>
+        </div>
+    </header>
+
+
+
+    <div id="layout" class="pure-g">
+        <section id="content" class="pure-u-1 pure-u-md-3-4">
+            <div class="l-box">
+
+    <header id="post-header">
+        <h1>2D graphics rendering tutorial with PyOpenGL</h1>
+            <div class="post-meta">
+                September 17, 2012
+            </div>
+            <div class="post-tags">
+                <ul>
+                    <li>tags:</li>
+                    <li><a href="/tag/python/">python</a></li>
+                    <li><a href="/tag/gpu/">gpu</a></li>
+                    <li><a href="/tag/dataviz/">dataviz</a></li>
+                </ul>
+            </div>
+    </header>
+
+    <section id="post">
+        <p><strong>UPDATE</strong>: you may be interested in the <a href="http://vispy.org/">Vispy</a> library, which provides easier and more Pythonic access to OpenGL.</p>
+<p><a href="http://en.wikipedia.org/wiki/OpenGL">OpenGL</a> is a widely used open and cross-platform library for real-time 3D graphics, developed more than twenty years ago. It provides a low-level API that allows the developer to access the graphics hardware in an uniform way. It is the platform of choice when developing complex 2D or 3D applications that require hardware acceleration and that need to work on different platforms. It can be used in a number of languages including C/C++, C#, Java, Objective-C (used in iPhone and iPad games), Python, etc. In this article, I'll show how OpenGL can be used with Python (thanks to the <a href="http://pyopengl.sourceforge.net/documentation/index.html">PyOpenGL library</a>) to efficiently render 2D graphics.</p>
+
+
+<h2>Installation</h2>
+<p>One needs Python with the
+<a href="http://numpy.scipy.org/">Numpy</a>,
+<a href="http://pyopengl.sourceforge.net/documentation/index.html">PyOpenGL</a>, and
+<a href="http://www.riverbankcomputing.co.uk/software/pyqt/intro">PyQt4</a> libraries. On
+Windows, binary installers can be found
+<a href="http://www.lfd.uci.edu/~gohlke/pythonlibs/">on this webpage</a>.</p>
+<p>In addition, the most
+recent drivers of the system graphics cards are needed, so that the latest
+implementation of OpenGL is available. In particular, we'll make use of
+<a href="http://en.wikipedia.org/wiki/Vertex_Buffer_Object">vertex buffer objects (VBOs)</a>,
+that are available in the core implementation
+starting from OpenGL version 1.5 (which appeared in 2003). Graphics cards that
+were shipped after this date should have drivers that support VBOs. However,
+it is possible that the drivers installed on the system do not support a
+recent version of OpenGL.</p>
+<p>For instance, on Windows, I had some issues with the default drivers of a 2009
+graphics cards: OpenGL 1.1 was the only supported version. The reason is that
+Windows (starting from Vista) can use a sort of generic driver based on the
+<a href="http://en.wikipedia.org/wiki/Windows_Display_Driver_Model">Windows Display Driver Model (WDDM)</a>
+when the constructor drivers are not found
+or not available. Now, the WDDM drivers tend to privilege
+<a href="http://en.wikipedia.org/wiki/DirectX">DirectX</a> (Microsoft's
+own graphics library, concurrent to OpenGL) rather than OpenGL, such that only
+very old versions of OpenGL are supported on those drivers. In order to make
+things work, one needs to find the constructor drivers and force their
+installation. It can be a bit painful.</p>
+<p>In brief, if you have an error message mentioning OpenGL and buffer objects when
+running the script below, ensure that the graphics card drivers are the right
+ones. An extremely useful tool to check the OpenGL capabilities of the
+graphics card is
+<a href="http://www.realtech-vr.com/glview/">OpenGL Extensions Viewer</a>. It works on
+Windows, Linux, and iOS.</p>
+<h2>QGLWidget</h2>
+<p>We'll define a
+<a href="http://en.wikipedia.org/wiki/Qt_(framework)">Qt</a>
+widget that displays points at random positions in the window.
+This widget will derive from
+<a href="http://doc.qt.nokia.com/4.7-snapshot/qglwidget.html"><code>QGLWidget</code></a>,
+a Qt widget that offers access to
+the OpenGL API for rendering. Three methods at least need to be overriden
+in the derived class: <code>initializeGL()</code>, <code>updateGL()</code>, and <code>resizeGL(w, h)</code>.</p>
+<ul>
+<li>
+<p><code>initializeGL()</code>: make here calls to OpenGL initialization commands. It is
+    also the place for creating vertex buffer objects and populating them with
+    some data.</p>
+</li>
+<li>
+<p><code>paintGL()</code>: make here calls to OpenGL rendering commands. It is called
+    whenever the window needs to be redrawn.</p>
+</li>
+<li>
+<p><code>resizeGL(w, h)</code>: make here calls related to camera and viewport. It is
+    called whenever the size of the widget is changed (the new widget size are
+    passed as parameters to this method).</p>
+</li>
+</ul>
+<h2>Vertex Buffer Objects</h2>
+<p>The most efficient way of rendering data is to minimize the data
+transfers from system memory to GPU memory, and to minimize the number of calls
+to OpenGL rendering commands. A convenient way for doing this is to use
+<a href="http://en.wikipedia.org/wiki/Vertex_Buffer_Object">Vertex Buffer Objects</a>.
+They allow to allocate memory on the GPU, load data on the GPU
+once (or several times if the data changes), and render it
+efficiently since the data stays on the GPU between consecutives calls to
+<code>paintGL()</code>. PyOpenGL integrates a module to easily create and use VBOs:</p>
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">OpenGL.arrays.vbo</span> <span class="kn">as</span> <span class="nn">glvbo</span>
+<span class="c1"># in initializeGL:</span>
+<span class="c1"># create a VBO, data is a Nx2 Numpy array</span>
+<span class="bp">self</span><span class="o">.</span><span class="n">vbo</span> <span class="o">=</span> <span class="n">glvbo</span><span class="o">.</span><span class="n">VBO</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">)</span>
+
+<span class="c1"># in paintGL:</span>
+<span class="c1"># bind a VBO, i.e. tell OpenGL we&#39;re going to use it for subsequent</span>
+<span class="c1"># rendering commands</span>
+<span class="bp">self</span><span class="o">.</span><span class="n">vbo</span><span class="o">.</span><span class="n">bind</span><span class="p">()</span>
+</pre></div>
+
+
+<h2>Painting with VBOs</h2>
+<p>OpenGL can render primitives like points, lines, and convex polygons.
+The
+<a href="https://www.opengl.org/sdk/docs/man2/xhtml/glEnableClientState.xml"><code>glEnableClientState</code></a>
+and
+<a href="https://www.opengl.org/sdk/docs/man2/xhtml/glVertexPointer.xml"><code>glVertexPointer</code></a>
+functions configure the VBO
+for rendering, and the
+<a href="https://www.opengl.org/sdk/docs/man2/xhtml/glDrawArrays.xml"><code>glDrawArrays</code></a>
+function draws primitives from the
+buffer stored in GPU memory. Other drawing commands that can be used with
+a VBO include
+<a href="https://www.opengl.org/sdk/docs/man2/xhtml/glMultiDrawArrays.xml"><code>glMultiDrawArrays</code></a>
+for plotting several independent primitives
+from a single VBO (which is more efficient, but less flexible, than using
+several VBOs). Indexed drawing is also possible and allows to use vertices
+in arbitrary order, and to reuse vertices several times during rendering.
+The relevant functions are
+<a href="https://www.opengl.org/sdk/docs/man2/xhtml/glDrawElements.xml"><code>glDrawElements</code></a> and
+<a href="https://www.opengl.org/sdk/docs/man2/xhtml/glMultiDrawElements.xml"><code>glMultiDrawElements</code></a>.</p>
+<p>Color can be specified either before calling the rendering commands, with
+the function
+<a href="https://www.opengl.org/sdk/docs/man2/xhtml/glColor.xml"><code>glColor</code></a>,
+or by creating a special VBO for colors, containing
+the colors of every point. The relevant functions are
+<a href="https://www.opengl.org/sdk/docs/man2/xhtml/glColorPointer.xml"><code>glColorPointer</code></a>
+and <code>glEnableClientState(GL_COLOR_ARRAY)</code>. A variant consists in packing the
+colors with the vertices, i.e. having 5 numbers per point in a single VBO
+(x, y coordinates and R, V, B color components).
+<a href="http://pyopengl.sourceforge.net/context/tutorials/shader_2.xhtml">See some details here</a>.</p>
+<p><strong>Note</strong>: apparently, in OpenGL, using
+<a href="http://en.wikipedia.org/wiki/Single-precision_floating-point_format">single precision floating point numbers</a>
+is better than using
+<a href="http://en.wikipedia.org/wiki/Double-precision_floating-point_format">double precision float point numbers</a>.
+The graphics card may not indeed support the latter format. I used doubles in
+an early version of this post and I had some nasty memory access violation
+crashes in particular cases. They disappeared when I switched to floats. If
+this is helpful to anyone...</p>
+<div class="highlight"><pre><span></span><span class="c1"># in paintGL:</span>
+<span class="c1"># set the color yellow</span>
+<span class="n">gl</span><span class="o">.</span><span class="n">glColor</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span>
+<span class="c1"># enable the VBO</span>
+<span class="n">gl</span><span class="o">.</span><span class="n">glEnableClientState</span><span class="p">(</span><span class="n">gl</span><span class="o">.</span><span class="n">GL_VERTEX_ARRAY</span><span class="p">)</span>
+<span class="c1"># tell OpenGL that each vertex is made of 2 single precision floating</span>
+<span class="c1"># numbers (x and y coordinates).</span>
+<span class="n">gl</span><span class="o">.</span><span class="n">glVertexPointer</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">gl</span><span class="o">.</span><span class="n">GL_FLOAT</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">vbo</span><span class="p">)</span>
+<span class="c1"># draw all points from the VBO</span>
+<span class="n">gl</span><span class="o">.</span><span class="n">glDrawArrays</span><span class="p">(</span><span class="n">gl</span><span class="o">.</span><span class="n">GL_POINTS</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">))</span>
+</pre></div>
+
+
+<h2>Setting orthographic projection for 2D rendering</h2>
+<p>The <code>resizeGL</code> method sets the geometric projection used for
+<a href="http://en.wikipedia.org/wiki/Rasterisation">rasterization</a>.
+Since we're only interested in 2D rendering in this article, we're using
+<a href="http://en.wikipedia.org/wiki/Orthographic_projection">orthographic projection</a>
+with the
+<a href="https://www.opengl.org/sdk/docs/man2/xhtml/glOrtho.xml"><code>glOrtho</code></a> function.
+The
+<a href="https://www.opengl.org/sdk/docs/man2/xhtml/glViewport.xml"><code>glViewport</code></a>
+function
+allows to specify the part of the screen used for the subsequent rendering
+commands. Here we just tell OpenGL to draw within the entire window.</p>
+<div class="highlight"><pre><span></span><span class="c1"># paint within the whole window</span>
+<span class="n">gl</span><span class="o">.</span><span class="n">glViewport</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">width</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">height</span><span class="p">)</span>
+<span class="c1"># set orthographic projection (2D only)</span>
+<span class="n">gl</span><span class="o">.</span><span class="n">glMatrixMode</span><span class="p">(</span><span class="n">gl</span><span class="o">.</span><span class="n">GL_PROJECTION</span><span class="p">)</span>
+<span class="n">gl</span><span class="o">.</span><span class="n">glLoadIdentity</span><span class="p">()</span>
+<span class="c1"># the window corner OpenGL coordinates are (-+1, -+1)</span>
+<span class="n">gl</span><span class="o">.</span><span class="n">glOrtho</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+</pre></div>
+
+
+<h2>Setting the PyQt widget</h2>
+<p>Here we use PyQt as a GUI window system. To show a window on the screen and
+use our OpenGL widget, we first need to define a Qt main window, put the
+OpenGL widget inside, and finally create a Qt application to host the main
+window.</p>
+<div class="highlight"><pre><span></span><span class="c1"># define a Qt window with an OpenGL widget inside it</span>
+<span class="k">class</span> <span class="nc">TestWindow</span><span class="p">(</span><span class="n">QtGui</span><span class="o">.</span><span class="n">QMainWindow</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">TestWindow</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
+        <span class="c1"># initialize the GL widget</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">widget</span> <span class="o">=</span> <span class="n">GLPlotWidget</span><span class="p">()</span>
+        <span class="c1"># [...] (set data for the OpenGL widget)</span>
+        <span class="c1"># put the window at the screen position (100, 100)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">setGeometry</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">widget</span><span class="o">.</span><span class="n">width</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">widget</span><span class="o">.</span><span class="n">height</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">setCentralWidget</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">widget</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="c1"># create the Qt App and window</span>
+<span class="n">app</span> <span class="o">=</span> <span class="n">QtGui</span><span class="o">.</span><span class="n">QApplication</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">)</span>
+<span class="n">window</span> <span class="o">=</span> <span class="n">TestWindow</span><span class="p">()</span>
+<span class="n">window</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<span class="n">app</span><span class="o">.</span><span class="n">exec_</span><span class="p">()</span>
+</pre></div>
+
+
+<h2>Full script</h2>
+<p>Here is the full script.</p>
+<div class="highlight"><pre><span></span><span class="c1"># PyQt4 imports</span>
+<span class="kn">from</span> <span class="nn">PyQt4</span> <span class="kn">import</span> <span class="n">QtGui</span><span class="p">,</span> <span class="n">QtCore</span><span class="p">,</span> <span class="n">QtOpenGL</span>
+<span class="kn">from</span> <span class="nn">PyQt4.QtOpenGL</span> <span class="kn">import</span> <span class="n">QGLWidget</span>
+<span class="c1"># PyOpenGL imports</span>
+<span class="kn">import</span> <span class="nn">OpenGL.GL</span> <span class="kn">as</span> <span class="nn">gl</span>
+<span class="kn">import</span> <span class="nn">OpenGL.arrays.vbo</span> <span class="kn">as</span> <span class="nn">glvbo</span>
+
+<span class="k">class</span> <span class="nc">GLPlotWidget</span><span class="p">(</span><span class="n">QGLWidget</span><span class="p">):</span>
+    <span class="c1"># default window size</span>
+    <span class="n">width</span><span class="p">,</span> <span class="n">height</span> <span class="o">=</span> <span class="mi">600</span><span class="p">,</span> <span class="mi">600</span>
+
+    <span class="k">def</span> <span class="nf">set_data</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Load 2D data as a Nx2 Numpy array.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">data</span> <span class="o">=</span> <span class="n">data</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">count</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+
+    <span class="k">def</span> <span class="nf">initializeGL</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Initialize OpenGL, VBOs, upload data on the GPU, etc.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="c1"># background color</span>
+        <span class="n">gl</span><span class="o">.</span><span class="n">glClearColor</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span>
+        <span class="c1"># create a Vertex Buffer Object with the specified data</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">vbo</span> <span class="o">=</span> <span class="n">glvbo</span><span class="o">.</span><span class="n">VBO</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">paintGL</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Paint the scene.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="c1"># clear the buffer</span>
+        <span class="n">gl</span><span class="o">.</span><span class="n">glClear</span><span class="p">(</span><span class="n">gl</span><span class="o">.</span><span class="n">GL_COLOR_BUFFER_BIT</span><span class="p">)</span>
+        <span class="c1"># set yellow color for subsequent drawing rendering calls</span>
+        <span class="n">gl</span><span class="o">.</span><span class="n">glColor</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span>
+        <span class="c1"># bind the VBO</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">vbo</span><span class="o">.</span><span class="n">bind</span><span class="p">()</span>
+        <span class="c1"># tell OpenGL that the VBO contains an array of vertices</span>
+        <span class="n">gl</span><span class="o">.</span><span class="n">glEnableClientState</span><span class="p">(</span><span class="n">gl</span><span class="o">.</span><span class="n">GL_VERTEX_ARRAY</span><span class="p">)</span>
+        <span class="c1"># these vertices contain 2 single precision coordinates</span>
+        <span class="n">gl</span><span class="o">.</span><span class="n">glVertexPointer</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">gl</span><span class="o">.</span><span class="n">GL_FLOAT</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">vbo</span><span class="p">)</span>
+        <span class="c1"># draw &quot;count&quot; points from the VBO</span>
+        <span class="n">gl</span><span class="o">.</span><span class="n">glDrawArrays</span><span class="p">(</span><span class="n">gl</span><span class="o">.</span><span class="n">GL_POINTS</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">count</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">resizeGL</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Called upon window resizing: reinitialize the viewport.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="c1"># update the window size</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">width</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">height</span> <span class="o">=</span> <span class="n">width</span><span class="p">,</span> <span class="n">height</span>
+        <span class="c1"># paint within the whole window</span>
+        <span class="n">gl</span><span class="o">.</span><span class="n">glViewport</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">)</span>
+        <span class="c1"># set orthographic projection (2D only)</span>
+        <span class="n">gl</span><span class="o">.</span><span class="n">glMatrixMode</span><span class="p">(</span><span class="n">gl</span><span class="o">.</span><span class="n">GL_PROJECTION</span><span class="p">)</span>
+        <span class="n">gl</span><span class="o">.</span><span class="n">glLoadIdentity</span><span class="p">()</span>
+        <span class="c1"># the window corner OpenGL coordinates are (-+1, -+1)</span>
+        <span class="n">gl</span><span class="o">.</span><span class="n">glOrtho</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="c1"># import numpy for generating random data points</span>
+    <span class="kn">import</span> <span class="nn">sys</span>
+    <span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+    <span class="kn">import</span> <span class="nn">numpy.random</span> <span class="kn">as</span> <span class="nn">rdn</span>
+
+    <span class="c1"># define a Qt window with an OpenGL widget inside it</span>
+    <span class="k">class</span> <span class="nc">TestWindow</span><span class="p">(</span><span class="n">QtGui</span><span class="o">.</span><span class="n">QMainWindow</span><span class="p">):</span>
+        <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+            <span class="nb">super</span><span class="p">(</span><span class="n">TestWindow</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
+            <span class="c1"># generate random data points</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="o">.</span><span class="mi">2</span><span class="o">*</span><span class="n">rdn</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">100000</span><span class="p">,</span><span class="mi">2</span><span class="p">),</span><span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span>
+            <span class="c1"># initialize the GL widget</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">widget</span> <span class="o">=</span> <span class="n">GLPlotWidget</span><span class="p">()</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">widget</span><span class="o">.</span><span class="n">set_data</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">)</span>
+            <span class="c1"># put the window at the screen position (100, 100)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">setGeometry</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">widget</span><span class="o">.</span><span class="n">width</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">widget</span><span class="o">.</span><span class="n">height</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">setCentralWidget</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">widget</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+    <span class="c1"># create the Qt App and window</span>
+    <span class="n">app</span> <span class="o">=</span> <span class="n">QtGui</span><span class="o">.</span><span class="n">QApplication</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">)</span>
+    <span class="n">window</span> <span class="o">=</span> <span class="n">TestWindow</span><span class="p">()</span>
+    <span class="n">window</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+    <span class="n">app</span><span class="o">.</span><span class="n">exec_</span><span class="p">()</span>
+</pre></div>
+
+
+<p><img alt="PyOpenGL tutorial" src="https://cyrille.rossant.net/images/gl.png" /></p>
+<h2>Final notes</h2>
+<p>Here are some related interesting links:</p>
+<ul>
+<li><a href="http://pyopengl.sourceforge.net/documentation/index.html">Official PyOpenGL documentation</a></li>
+<li><a href="https://www.opengl.org/sdk/docs/man2/">Official OpenGL documentation</a></li>
+<li><a href="http://pyopengl.sourceforge.net/context/tutorials/index.xhtml">A PyOpenGL tutorial</a></li>
+<li><a href="http://zetcode.com/tutorials/pyqt4/">A PyQt4 tutorial</a></li>
+<li><a href="http://www.siafoo.net/article/58">PyOpenGL tips and tricks</a></li>
+<li><a href="http://www.songho.ca/opengl/gl_vbo.html">Introduction to VBOs (C++)</a></li>
+<li><a href="http://www.opengl.org/wiki/Vertex_Specification_Best_Practices">Vertex Specification Best Practices</a></li>
+</ul>
+    </section>
+
+
+<nav class="pagination-wrapper">
+    <div class="pagination">
+        <div class="pagination-left">
+                <a href="https://cyrille.rossant.net/a-tutorial-on-openglopencl-interoperability-in-python/">
+                    &larr; previous
+                </a>
+        </div>
+        <div class="pagination-right">
+                <a href="https://cyrille.rossant.net/pyopencl-on-windows-without-a-gpu/">
+                    next&nbsp;&rarr;
+                </a>
+        </div>
+    </div>
+</nav>
+    <aside class="comments">
+
+<div id="disqus_thread"></div>
+<script>
+    /**
+     *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+     *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
+     */
+
+    var disqus_config = function () {
+        this.page.url = "https://cyrille.rossant.net/2d-graphics-rendering-tutorial-with-pyopengl/";  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = "2d-graphics-rendering-tutorial-with-pyopengl"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+
+    (function() {  // DON'T EDIT BELOW THIS LINE
+        var d = document, s = d.createElement('script');
+
+        s.src = '//rossant.disqus.com/embed.js';
+
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+
+    </aside>
+
+            </div>
+        </section>
+
+        <nav id="sidebar" class="pure-u-1 pure-u-md-1-4">
+            <div class="l-box">
+<section>
+    <div class="portrait">
+            <img src="/theme/images/cr.jpg" />
+    </div>
+    <div class="name-cv">
+        <div class="name">Cyrille Rossant, PhD</div>
+        <div class="cv">
+            <a href="/pdfs/cv.pdf"><i class="fa fa-file-pdf-o"></i> CV</a>
+        </div>
+    </div>
+    <div class="clear"></div>
+    <div class="sub-name">Neuroscience researcher and <br>
+software engineer at IBL and UCL<br>
+&nbsp;▸ IBL: <a href="https://www.internationalbrainlab.com/">International Brain Laboratory</a><br>
+&nbsp;▸ UCL: <a href="https://www.ucl.ac.uk/cortexlab">University College London</a></div>
+    <div class="contact"><i>firstname</i>.<i>lastname</i>@gmail.com</div>
+</section>
+
+<section class="tags">
+    <span class="tag"><a href="/tag/neuroscience/">#neuroscience</a></span>
+    <span class="tag"><a href="/tag/python/">#python</a></span>
+    <span class="tag"><a href="/tag/dataviz/">#dataviz</a></span>
+    <span class="tag"><a href="/tag/maths/">#maths</a></span>
+    <span class="tag"><a href="/tag/gpu/">#gpu</a></span>
+    <span class="tag"><a href="/tag/opendata/">#opendata</a></span>
+</section>
+
+
+<section class="books">
+    <header><h3>books</h3></header>
+    <div class="sub-header">Two books on <strong>Python for data science</strong></div>
+    <div class="book-1"><a href="/books/#minibook"><img src="/images/minibook.png"/></a></div>
+    <div class="book-2"><a href="/books/#cookbook"><img src="/images/cookbook.png"/></a></div>
+</section>
+
+
+<!-- <section class="search">
+    <script>
+  (function() {
+    var cx = '006027474294305969173:cpp1rvft78s';
+    var gcse = document.createElement('script');
+    gcse.type = 'text/javascript';
+    gcse.async = true;
+    gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+        '//www.google.com/cse/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(gcse, s);
+  })();
+</script>
+<gcse:search></gcse:search>
+</section> -->            </div>
+        </nav>
+
+        <footer id="footer" class="pure-u-1 pure-u-md-3-4">
+            <div class="l-box">
+                <div>
+                    <p>&copy; <a href="https://cyrille.rossant.net">Cyrille Rossant</a> &ndash;
+                        Built with <a href="https://github.com/PurePelicanTheme/pure-single">Pure Theme</a>
+                        for <a href="http://blog.getpelican.com/">Pelican</a>
+                    </p>
+                </div>
+            </div>
+        </footer>
+
+    </div>
+
+<!-- Start of StatCounter Code for Default Guide -->
+<script type="text/javascript">
+var sc_project=7297581;
+var sc_invisible=1;
+var sc_security="e9e753f7";
+var scJsHost = (("https:" == document.location.protocol) ?
+"https://secure." : "http://www.");
+document.write("<sc"+"ript type='text/javascript' src='" +
+scJsHost+
+"statcounter.com/counter/counter.js'></"+"script>");
+</script>
+<noscript><div class="statcounter"><a title="shopify site
+analytics" href="http://statcounter.com/shopify/"
+target="_blank"><img class="statcounter"
+src="http://c.statcounter.com/7297581/0/e9e753f7/1/"
+alt="shopify site analytics"></a></div></noscript>
+<!-- End of StatCounter Code for Default Guide -->
+</body>
+</html>
+

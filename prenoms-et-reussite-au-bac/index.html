@@ -1,0 +1,616 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Cyrille Rossant, ">
+    <link href="/favicon.png" rel="icon">
+
+        <link rel="alternate"  href="https://cyrille.rossant.net/feeds/all.atom.xml" type="application/atom+xml" title="Cyrille Rossant Full Atom Feed"/>
+        <link rel="alternate" href="https://cyrille.rossant.net/feeds/atom.xml" type="application/atom+xml" title="Cyrille Rossant Atom Feed"/>
+
+        <title>Cyrille Rossant - Prénoms et réussite au bac</title>
+
+    <link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/pure/0.3.0/pure-min.css">
+    <!--[if lte IE 8]>
+        <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.5.0/grids-responsive-old-ie-min.css">
+    <![endif]-->
+    <!--[if gt IE 8]><!-->
+        <link rel="stylesheet" href="/theme/css/grids-responsive-min.css">
+    <!--<![endif]-->
+    <link rel="stylesheet" href="/theme/css/styles.css">
+    <link rel="stylesheet" href="/theme/css/pygments.css">
+    <!-- <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'> -->
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,500" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Ubuntu+Mono' rel='stylesheet' type='text/css'>
+
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/fitvids/1.0.1/jquery.fitvids.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $(".content").fitVids();
+        });
+    </script>
+</head>
+
+<body>
+
+
+    <header id="header" class="pure-g">
+        <div class="pure-u-1 pure-u-md-3-4">
+             <div id="menu">
+                 <div class="pure-menu pure-menu-open pure-menu-horizontal">
+<ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/projects/">Projects</a></li>
+        <li><a href="/books/">Books</a></li>
+        <li><a href="/about/">About</a></li>
+</ul>                </div>
+            </div>
+        </div>
+
+        <div class="pure-u-1 pure-u-md-1-4">
+            <div id="social">
+                <div class="pure-menu pure-menu-open pure-menu-horizontal">
+<ul>
+        <li><a href="https://twitter.com/cyrillerossant"><i class="fa fa-twitter"></i></a></li>
+        <li><a href="https://github.com/rossant"><i class="fa fa-github"></i></a></li>
+        <li><a href="https://www.linkedin.com/in/crossant"><i class="fa fa-linkedin"></i></a></li>
+        <li><a href="https://cyrille.rossant.net/feeds/all.atom.xml"><i class="fa fa-rss"></i></a></li>
+</ul>                </div>
+            </div>
+        </div>
+    </header>
+
+
+
+    <div id="layout" class="pure-g">
+        <section id="content" class="pure-u-1 pure-u-md-3-4">
+            <div class="l-box">
+
+    <header id="post-header">
+        <h1>Prénoms et réussite au bac</h1>
+            <div class="post-meta">
+                July 12, 2012
+            </div>
+            <div class="post-tags">
+                <ul>
+                    <li>tags:</li>
+                    <li><a href="/tag/opendata/">opendata</a></li>
+                </ul>
+            </div>
+    </header>
+
+    <section id="post">
+        <p>Le sociologue Baptiste Coulmont, auteur de 
+<em><a href="http://coulmont.com/livres/prenoms/">Sociologie des prénoms</a></em>, s'est
+intéressé aux corrélations entre le prénom des candidats au baccalauréat
+2012 et leur réussite à cet examen (<a href="http://coulmont.com/blog/2012/07/08/prenoms-mentions-bac-2012/">voir ici pour l'étude originale sur
+le blog de
+l'auteur</a>).
+Ce travail a été <a href="http://www.lepoint.fr/societe/les-prenoms-qui-reussissent-au-bac-10-07-2012-1483876_23.php">largement relayé par les
+médias</a>,
+car les résultats sont particulièrement intéressants. Il s'avère que
+certains prénoms réussissent mieux que d'autres: les Madeleine et autres
+Côme réussissent bien mieux (plus de 25% de mentions TB chez ces
+candidats) que les Youssef ou Nabil (aucune mention TB cette année). Ce
+n'est probablement pas le prénom en lui-même qui influe sur le résultat,
+mais plutôt le fait que le prénom est souvent le reflet de certains
+critères sociologiques (classe sociale, origine géographique, profession
+des parents...). Ce sont ces derniers critères qui ont une influence
+certaine sur les résultats scolaires, démontrant des inégalités
+profondes dans le système éducatif actuel.</p>
+
+
+<p><strong>EDIT</strong>: <a href="http://coulmont.com/bac/">maintenant, vous pouvez connaître les résultats des candidats
+portant votre prénom!</a></p>
+<p>J'ai voulu effectuer quelques analyses complémentaires sur ces mêmes
+données, en m'intéressant plus aux aspects mathématiques que
+sociologiques. Il peut s'agir d'un exemple intéressant dans
+l'enseignement d'un cours de probabilité et statistiques, illustrant
+notamment les notions de
+<a href="http://fr.wikipedia.org/wiki/Probabilit%C3%A9_conditionnelle">conditionnement</a>,
+d'<a href="http://fr.wikipedia.org/wiki/Esp%C3%A9rance_conditionnelle">espérance
+conditionnelle</a>,
+de <a href="http://fr.wikipedia.org/wiki/Inf%C3%A9rence_bay%C3%A9sienne">raisonnement
+bayésien</a>,
+ou de <a href="http://fr.wikipedia.org/wiki/Divergence_de_Kullback-Leibler">divergence de
+Kullback-Leibler</a>.</p>
+<h2>Résultat moyen en fonction du prénom</h2>
+<p>Nous nous intéressons au <strong>profil de résultats</strong>: il s'agit d'une courbe
+donnant la proportion de candidats pour chaque résultat possible: oral
+(O), passable (P), mention assez bien (AB), mention bien (B), mention
+très bien (TB). Cela s'appelle aussi une distribution de probabilité sur
+l'ensemble des résultats possibles. Voici le profil moyen, pour tous les
+candidats et indépendamment du prénom. <strong>Il y a environ 17% de candidats
+devant passer l'oral, 35% de P, 27% de AB, 14% de B, 7% de TB</strong>.
+Rappelons que ces chiffres comportent deux biais: il ne s'agit que des
+candidats ayant obtenu l'examen après le premier écrit, ou ayant obtenu
+la possibilité de passer l'oral. Les candidats ayant échoué après le
+premier écrit ne sont pas inclus dans les données. Le deuxième biais
+concerne le fait que seuls les candidats ayant accepté de diffuser
+publiquement leurs résultats sont inclus.</p>
+<p><img alt="Prénoms" src="https://cyrille.rossant.net/images/prenoms-all.png" /></p>
+<p>Maintenant, nous nous intéressants à l'influence du prénom sur le
+résultat au bac. Nous allons utiliser deux approches mathématiques: la
+première utilise l'<strong>espérance conditionnelle</strong>, la seconde utilise la
+<strong>divergence de Kullback-Leibler</strong>. Dans les deux cas, l'idée est de
+comparer le profil moyen avec le profil pour chaque prénom. Cela revient
+à étudier la distribution de probabilité conditionnelle à la donnée du
+prénom. En d'autres termes, si un candidat pris au hasard a 7% d'avoir
+eu mention TB, le fait de savoir qu'il s'appelle Côme, Nicolas, ou
+Youssef change-t-il cette probabilité? Cette question correspond au
+principe mathématique de <strong>conditionnement</strong>. Du point de vue de
+l'espérance conditionnelle, on peut se demander, si la moyenne générale
+au bac est de 12 chez tous les candidats, combien de points en plus on
+peut attendre chez un candidat en connaissant son prénom? D'un point de
+vue bayésien, on peut aussi voir la question ainsi: connaissant le
+profil de résultat moyen (prior), le fait de connaître le prénom
+change-t-il le profil de résultat (posterior)?</p>
+<h2>Moyenne au bac</h2>
+<p>Dans cette première approche, nous nous intéressons à la moyenne des
+candidats, sachant ou non leurs prénoms. Mathématiquement, il s'agit
+respectivement de l'espérance de la distribution moyenne du résultat, et
+de l'<em>espérance conditionnelle</em> de cette distribution <em>sachant</em> le
+prénom du candidat. Pour cela, nous assignons d'abord une note moyenne à
+chaque mention: 9 pour O, 11 pour P, 13 pour AB, 15 pour B, 17 pour TB.
+Il ne s'agit bien sûr que d'une approximation, puisque nous n'avons
+accès qu'à la mention et pas à la note moyenne de chaque candidat. Chez
+tous les candidats (ayant réussi ou devant passer l'oral, donc), la
+moyenne globale est de 12.2.</p>
+<p>Nous pouvons ensuite, pour chaque prénom, calculer l'écart, par rapport
+à cette moyenne, de la moyenne des candidats portant ce prénom (ou
+espérance conditionnelle). Nous trouvons que cet écart varie entre -2.1
+(Nahida) et +2.1 (Gaëtane), soit une bonne mention d'écart. <strong>Autrement
+dit, une Nahida a en moyenne <em>une mention en-dessous</em> de la mention
+moyenne des candidats, comparé à <em>une mention au-dessus</em> pour une
+Gaëtane</strong>. Voici le profil de résultat des six prénoms les plus
+en-dessous de la moyenne:</p>
+<p><img alt="Moyenne" src="https://cyrille.rossant.net/images/prenoms-mean.png" /></p>
+<p>Voici les résultats complets pour les 30 prénoms les plus en-dessous,
+avec l'écart à la moyenne.</p>
+<div class="highlight"><pre><span></span>Nahida       -2,07
+Alyson       -1,97
+Imad         -1,91
+Nadir        -1,80
+Mariama      -1,75
+Bilel        -1,65
+Fatma        -1,63
+Abdelkader   -1,60
+Manuella     -1,59
+Aziza        -1,57
+Yassin       -1,57
+Mounir       -1,57
+Moussa       -1,56
+Siham        -1,55
+Patrice      -1,53
+Kamel        -1,53
+Giovanni     -1,53
+Dalila       -1,47
+Abdel        -1,45
+Erwin        -1,42
+Nordine      -1,41
+Khalid       -1,40
+Latifa       -1,40
+Youssef      -1,38
+Sofian       -1,38
+Souad        -1,37
+Soumia       -1,37
+Bilal        -1,36
+Alysson      -1,36
+Lamia        -1,35
+</pre></div>
+
+
+<p>Du côté des prénoms avec l'écart le plus au-dessus de la moyenne, voici
+les profils de résultats.</p>
+<p><img alt="Moyenne" src="https://cyrille.rossant.net/images/prenoms-mean2.png" /></p>
+<div class="highlight"><pre><span></span>Gaetane        2,13
+Madeleine      1,94
+Ariane         1,82
+Come           1,76
+Marguerite     1,73
+Isaure         1,71
+Mahaut         1,61
+Marie-Anne     1,58
+Hannah         1,51
+Melisande      1,46
+Viviane        1,45
+Quitterie      1,43
+Marie-Astrid   1,43
+Guillemette    1,38
+Anouk          1,35
+Irene          1,34
+Blaise         1,33
+Arielle        1,33
+Solange        1,33
+Leon           1,31
+Domitille      1,29
+Celeste        1,23
+Noemi          1,23
+Cleo           1,23
+Hortense       1,22
+Baudouin       1,19
+Jack           1,19
+Iris           1,17
+Jolan          1,17
+Gaspard        1,16
+</pre></div>
+
+
+<h2>Destin des prénoms</h2>
+<p>Avec la seconde méthode, nous nous intéressons à la quantité
+d'information obtenue avec la connaissance du prénom. Autrement dit,
+posons-nous d'abord la question suivante:</p>
+<ul>
+<li><strong>Quel résultat attendre d'un candidat pris au hasard?</strong></li>
+<li><em>Réponse</em>: voir le profil de résultat moyen au début de cet article,
+    supposé connu a priori (7% de mention TB, 14% de mentions B, etc.).</li>
+</ul>
+<p>Ensuite:</p>
+<ul>
+<li>Quel résultat attendre d'un candidat pris au hasard, <em>si l'on nous
+    donne son prénom</em>? Plus précisément, <strong>à quel point notre attente du
+    résultat est-elle modifiée par la connaissance de son prénom</strong>?</li>
+<li><em>Réponse</em>: la <strong>divergence de Kullback-Leibler</strong> entre la
+    distribution moyenne, et la distribution conditionnée au prénom,
+    donne une réponse quantitative à cette question.</li>
+</ul>
+<p>Cette divergence constitue une sorte de métrique entre deux
+distributions. Une divergence quasi-nulle signifie que les distributions
+sont quasi-identiques, donc que notre attente du résultat n'est pas
+modifiée par la connaissance du prénom. A l'inverse, une divergence plus
+élevée signifie que la connaissance du prénom change de manière
+importante le résultat que l'on peut attendre du candidat (<a href="http://en.wikipedia.org/wiki/Kullback%E2%80%93Leibler_divergence#KL_divergence_and_Bayesian_updating">voir ici
+pour des
+détails</a>).
+Les graphiques ci-dessous illustrent cela.</p>
+<p>Voici d'abord les six prénoms associés à la divergence la plus élevée.
+Nous reconnaissons les prénoms obtenus plus haut, sauf que les prénoms
+réussissant le mieux sont mélangés avec ceux réussissant le moins. En
+effet, cette mesure signifie à quel point les profils de résultats sont
+différents de la moyenne, mais pas la direction de cette différence, qui
+peut être meilleure (plus de bonnes mentions) ou moins bonne (plus de
+mauvais résultats).</p>
+<p><img alt="Divergence" src="https://cyrille.rossant.net/images/prenoms-kl2.png" /></p>
+<p>Voici les 30 prénoms associés à la divergence la plus élevée.</p>
+<div class="highlight"><pre><span></span>Nahida
+Alyson
+Imad
+Nadir
+Alysson
+Gaetane
+Tina
+Mariama
+Patrice
+Madeleine
+Aziza
+Come
+Fatih
+Bilel
+Manuella
+Moussa
+Fatma
+Giovanni
+Abdelkader
+Cleo
+Elia
+Erwin
+Isaure
+Abdel
+Siham
+Zelie
+Yassin
+Mounir
+Juliane
+Leon
+</pre></div>
+
+
+<p>Maintenant, nous pouvons aussi nous intéresser aux <strong>prénoms avec la
+divergence la plus faible</strong>, autrement dit les prénoms les plus
+représentatifs de l'ensemble des candidats. Ces prénoms sont
+probablement répartis de manière uniforme parmi tous les candidats, sans
+être associés, par exemple, à une classe sociale particulière qui aurait
+des résultats très différents de la moyenne. Ainsi, un Valentin ou une
+Emilie a un profil de résultat tout à fait comparable à la moyenne
+globale.</p>
+<p><img alt="Divergence" src="https://cyrille.rossant.net/images/prenoms-kl1.png" /></p>
+<div class="highlight"><pre><span></span>Valentin
+Emilie
+Nicolas
+Alexandra
+Clement
+Laura
+Thomas
+Arnaud
+Remy
+Alexandre
+Helene
+Hugo
+Mario
+Bastien
+Sebastien
+Estelle
+Xavier
+Romain
+Quentin
+Eva
+Guillaume
+Rayan
+Vincent
+Adrien
+Sabine
+Ines
+Lucas
+Sarah
+Floriane
+Virgile
+</pre></div>
+
+
+<p>En conclusion, nous avons donné des méthodes pour trouver les prénoms
+qui influent le plus (positivement ou négativement) sur le résultat au
+bac, et à l'inverse pour trouver ceux qui ont le moins d'impact sur le
+résultat et qui sont le plus proches possible des résultats globaux. Il
+y a probablement beaucoup d'autres choses à analyser dans ces données.</p>
+<h2>Méthodes</h2>
+<p><em>Données.</em> Les données concernent les résultats de 346851 candidats,
+toutes séries confondues (générales et technologiques), qui ont au moins
+eu l'oral et qui ont accepté de rendre disponible publiquement leur
+résultat. Tous ces candidats portent 18473 prénoms différents. Pour les
+analyses, nous n'avons considéré que les prénoms portés par au moins 20
+candidats, soit 1211 prénoms différents représentant 310145 candidats.</p>
+<p><em>Modélisation</em>. L'ensemble des candidats est noté
+<span class="math">\(\Omega\)</span>, l'ensemble des 1211 prénoms est noté
+<span class="math">\(E\)</span>, l'ensemble des résultats possibles est noté
+<span class="math">\(F\)</span>. L'ensemble <span class="math">\(\Omega\)</span> est muni de la tribu
+discrète et de la mesure de probabilité uniforme. Les variables
+aléatoires <span class="math">\(X(\omega)\)</span> et <span class="math">\(Y(\omega)\)</span> sont
+des variables aléatoires à valeurs dans <span class="math">\(E\)</span> et
+<span class="math">\(F\)</span>, respectivement, et donnant le prénom et le résultat de
+chaque candidat. Voici les formules utilisées.</p>
+<ul>
+<li>
+<p>La probabilité de <span class="math">\(y\)</span> est:</p>
+<p>
+<div class="math">$$
+p[y]=\frac{\textrm{card}\left\{\omega \in
+\Omega \mid Y(\omega)=y\right\}}{\textrm{card}(\Omega)}  
+$$</div>
+</p>
+</li>
+<li>
+<p>La probabilité conditionnelle de <span class="math">\(y\)</span> sachant
+    <span class="math">\(x\)</span> est:</p>
+<p>
+<div class="math">$$ 
+p[y\mid x] = \frac{\textrm{card}\left\{\omega
+\in \Omega \mid X(\omega)=x,
+Y(\omega)=y\right\}}{\textrm{card}\left\{\omega \in \Omega
+\mid X(\omega)=x\right\}}  
+$$</div>
+</p>
+</li>
+<li>
+<p>L'espérance de <span class="math">\(y\)</span> est:</p>
+<p>
+<div class="math">$$
+E[y]=\sum_{y \in F} y \times p[y]  
+$$</div>
+</p>
+</li>
+<li>
+<p>L'espérance conditionnelle de <span class="math">\(y\)</span> sachant
+    <span class="math">\(x\)</span> est:</p>
+<p>
+<div class="math">$$
+E[y \mid x]=\sum_{y \in F} y \times p[y \mid
+x]  
+$$</div>
+</p>
+</li>
+<li>
+<p>La divergence de Kullback-Leibler entre la distribution
+    <span class="math">\(p[y]\)</span> et la distribution conditionnelle
+    <span class="math">\(p[y\mid x]\)</span> est:</p>
+<p>
+<div class="math">$$ 
+D(x)=\sum_{y \in F} p[y \mid x] \times
+\log\left(\frac{p[y \mid x]}{p[y]}\right)  
+$$</div>
+</p>
+</li>
+</ul>
+<script type="text/javascript">if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
+    var align = "center",
+        indent = "0em",
+        linebreak = "false";
+
+    if (false) {
+        align = (screen.width < 768) ? "left" : align;
+        indent = (screen.width < 768) ? "0em" : indent;
+        linebreak = (screen.width < 768) ? 'true' : linebreak;
+    }
+
+    var mathjaxscript = document.createElement('script');
+    mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
+    mathjaxscript.type = 'text/javascript';
+    mathjaxscript.src = 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/latest.js?config=TeX-AMS-MML_HTMLorMML';
+    mathjaxscript[(window.opera ? "innerHTML" : "text")] =
+        "MathJax.Hub.Config({" +
+        "    config: ['MMLorHTML.js']," +
+        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } }," +
+        "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
+        "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
+        "    displayAlign: '"+ align +"'," +
+        "    displayIndent: '"+ indent +"'," +
+        "    showMathMenu: true," +
+        "    messageStyle: 'normal'," +
+        "    tex2jax: { " +
+        "        inlineMath: [ ['\\\\(','\\\\)'] ], " +
+        "        displayMath: [ ['$$','$$'] ]," +
+        "        processEscapes: true," +
+        "        preview: 'TeX'," +
+        "    }, " +
+        "    'HTML-CSS': { " +
+        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'inherit ! important'} }," +
+        "        linebreaks: { automatic: "+ linebreak +", width: '90% container' }," +
+        "    }, " +
+        "}); " +
+        "if ('default' !== 'default') {" +
+            "MathJax.Hub.Register.StartupHook('HTML-CSS Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax['HTML-CSS'].FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+            "MathJax.Hub.Register.StartupHook('SVG Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax.SVG.FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+        "}";
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
+}
+</script>
+    </section>
+
+
+<nav class="pagination-wrapper">
+    <div class="pagination">
+        <div class="pagination-left">
+                <a href="https://cyrille.rossant.net/frequence-des-prenoms-des-candidats-au-bac-2012/">
+                    &larr; previous
+                </a>
+        </div>
+        <div class="pagination-right">
+                <a href="https://cyrille.rossant.net/introduction-to-bayesian-thinking/">
+                    next&nbsp;&rarr;
+                </a>
+        </div>
+    </div>
+</nav>
+    <aside class="comments">
+
+<div id="disqus_thread"></div>
+<script>
+    /**
+     *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+     *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
+     */
+
+    var disqus_config = function () {
+        this.page.url = "https://cyrille.rossant.net/prenoms-et-reussite-au-bac/";  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = "prenoms-et-reussite-au-bac"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+
+    (function() {  // DON'T EDIT BELOW THIS LINE
+        var d = document, s = d.createElement('script');
+
+        s.src = '//rossant.disqus.com/embed.js';
+
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+
+    </aside>
+
+            </div>
+        </section>
+
+        <nav id="sidebar" class="pure-u-1 pure-u-md-1-4">
+            <div class="l-box">
+<section>
+    <div class="portrait">
+            <img src="/theme/images/cr.jpg" />
+    </div>
+    <div class="name-cv">
+        <div class="name">Cyrille Rossant, PhD</div>
+        <div class="cv">
+            <a href="/pdfs/cv.pdf"><i class="fa fa-file-pdf-o"></i> CV</a>
+        </div>
+    </div>
+    <div class="clear"></div>
+    <div class="sub-name">Neuroscience researcher and <br>
+software engineer at IBL and UCL<br>
+&nbsp;▸ IBL: <a href="https://www.internationalbrainlab.com/">International Brain Laboratory</a><br>
+&nbsp;▸ UCL: <a href="https://www.ucl.ac.uk/cortexlab">University College London</a></div>
+    <div class="contact"><i>firstname</i>.<i>lastname</i>@gmail.com</div>
+</section>
+
+<section class="tags">
+    <span class="tag"><a href="/tag/neuroscience/">#neuroscience</a></span>
+    <span class="tag"><a href="/tag/python/">#python</a></span>
+    <span class="tag"><a href="/tag/dataviz/">#dataviz</a></span>
+    <span class="tag"><a href="/tag/maths/">#maths</a></span>
+    <span class="tag"><a href="/tag/gpu/">#gpu</a></span>
+    <span class="tag"><a href="/tag/opendata/">#opendata</a></span>
+</section>
+
+
+<section class="books">
+    <header><h3>books</h3></header>
+    <div class="sub-header">Two books on <strong>Python for data science</strong></div>
+    <div class="book-1"><a href="/books/#minibook"><img src="/images/minibook.png"/></a></div>
+    <div class="book-2"><a href="/books/#cookbook"><img src="/images/cookbook.png"/></a></div>
+</section>
+
+
+<!-- <section class="search">
+    <script>
+  (function() {
+    var cx = '006027474294305969173:cpp1rvft78s';
+    var gcse = document.createElement('script');
+    gcse.type = 'text/javascript';
+    gcse.async = true;
+    gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+        '//www.google.com/cse/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(gcse, s);
+  })();
+</script>
+<gcse:search></gcse:search>
+</section> -->            </div>
+        </nav>
+
+        <footer id="footer" class="pure-u-1 pure-u-md-3-4">
+            <div class="l-box">
+                <div>
+                    <p>&copy; <a href="https://cyrille.rossant.net">Cyrille Rossant</a> &ndash;
+                        Built with <a href="https://github.com/PurePelicanTheme/pure-single">Pure Theme</a>
+                        for <a href="http://blog.getpelican.com/">Pelican</a>
+                    </p>
+                </div>
+            </div>
+        </footer>
+
+    </div>
+
+<!-- Start of StatCounter Code for Default Guide -->
+<script type="text/javascript">
+var sc_project=7297581;
+var sc_invisible=1;
+var sc_security="e9e753f7";
+var scJsHost = (("https:" == document.location.protocol) ?
+"https://secure." : "http://www.");
+document.write("<sc"+"ript type='text/javascript' src='" +
+scJsHost+
+"statcounter.com/counter/counter.js'></"+"script>");
+</script>
+<noscript><div class="statcounter"><a title="shopify site
+analytics" href="http://statcounter.com/shopify/"
+target="_blank"><img class="statcounter"
+src="http://c.statcounter.com/7297581/0/e9e753f7/1/"
+alt="shopify site analytics"></a></div></noscript>
+<!-- End of StatCounter Code for Default Guide -->
+</body>
+</html>
+

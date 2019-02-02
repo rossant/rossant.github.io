@@ -1,0 +1,281 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Cyrille Rossant, ">
+    <link href="/favicon.png" rel="icon">
+
+        <link rel="alternate"  href="https://cyrille.rossant.net/feeds/all.atom.xml" type="application/atom+xml" title="Cyrille Rossant Full Atom Feed"/>
+        <link rel="alternate" href="https://cyrille.rossant.net/feeds/atom.xml" type="application/atom+xml" title="Cyrille Rossant Atom Feed"/>
+
+        <title>Cyrille Rossant - Twelve Tips about Starting a New Open-Source Project</title>
+
+    <link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/pure/0.3.0/pure-min.css">
+    <!--[if lte IE 8]>
+        <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.5.0/grids-responsive-old-ie-min.css">
+    <![endif]-->
+    <!--[if gt IE 8]><!-->
+        <link rel="stylesheet" href="/theme/css/grids-responsive-min.css">
+    <!--<![endif]-->
+    <link rel="stylesheet" href="/theme/css/styles.css">
+    <link rel="stylesheet" href="/theme/css/pygments.css">
+    <!-- <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'> -->
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,500" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Ubuntu+Mono' rel='stylesheet' type='text/css'>
+
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/fitvids/1.0.1/jquery.fitvids.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $(".content").fitVids();
+        });
+    </script>
+</head>
+
+<body>
+
+
+    <header id="header" class="pure-g">
+        <div class="pure-u-1 pure-u-md-3-4">
+             <div id="menu">
+                 <div class="pure-menu pure-menu-open pure-menu-horizontal">
+<ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/projects/">Projects</a></li>
+        <li><a href="/books/">Books</a></li>
+        <li><a href="/about/">About</a></li>
+</ul>                </div>
+            </div>
+        </div>
+
+        <div class="pure-u-1 pure-u-md-1-4">
+            <div id="social">
+                <div class="pure-menu pure-menu-open pure-menu-horizontal">
+<ul>
+        <li><a href="https://twitter.com/cyrillerossant"><i class="fa fa-twitter"></i></a></li>
+        <li><a href="https://github.com/rossant"><i class="fa fa-github"></i></a></li>
+        <li><a href="https://www.linkedin.com/in/crossant"><i class="fa fa-linkedin"></i></a></li>
+        <li><a href="https://cyrille.rossant.net/feeds/all.atom.xml"><i class="fa fa-rss"></i></a></li>
+</ul>                </div>
+            </div>
+        </div>
+    </header>
+
+
+
+    <div id="layout" class="pure-g">
+        <section id="content" class="pure-u-1 pure-u-md-3-4">
+            <div class="l-box">
+
+    <header id="post-header">
+        <h1>Twelve Tips about Starting a New Open-Source Project</h1>
+            <div class="post-meta">
+                December 01, 2012
+            </div>
+            <div class="post-tags">
+                <ul>
+                    <li>tags:</li>
+                </ul>
+            </div>
+    </header>
+
+    <section id="post">
+        <p>Here are some tips targeting developers who want to create an open-source
+project. They reflect my personal opinion and may not be all adapted to
+every situation.</p>
+
+
+<h2>Meet a need</h2>
+<p>So, you want to create a new <a href="http://en.wikipedia.org/wiki/Open_source">open-source project</a>? That's a good idea, but you need to understand very early why you want to do that. "Because it's fun"is not always a sufficient answer. Well, you can always learn by writing some software that will only be used by yourself and which will give you some experience, but at some point, you'll want your stuff to be used by other people.</p>
+<ul>
+<li>So, what is new about your project?</li>
+<li>Why do you need to create a new project instead of using or improving existing
+    projects?</li>
+<li>What does it offer that is not brought by other projects?</li>
+<li>Why would people be interested in your project?</li>
+<li>Who are you targetting? Other developers with a new programming library,
+    consumers, etc.?</li>
+<li>Are you confident that you'll be able to devote to that project an
+    important part of your time for the next few months or years?</li>
+<li>Do you have sufficient experience and knowledge to be able to write your very
+    own software?</li>
+</ul>
+<p>Creating a software or a library is a tough but rewarding task. And it can be fun! You just need to think carefully about your project before you write a single line of code.</p>
+<h2>Be an expert in your language</h2>
+<p>So, you've chosen the programming language you'll be using for your project. Do you consider yourself as an expert in that language? Needless to say that you should already be experienced enough in the tools you'll be using. You'll need to know about all aspects of your language. If you're using <a href="http://en.wikipedia.org/wiki/Object-oriented_programming">object-oriented programming</a>, make sure you know about all its subtleties.</p>
+<p>For example, I've recently started a project using <a href="http://en.wikipedia.org/wiki/Python_(programming_language)">Python</a> and <a href="http://en.wikipedia.org/wiki/OpenGL">OpenGL</a>. Whereas at the time I started this project, I considered myself sufficiently aknowledged about Python, I clearly was not about OpenGL. So, I learnt OpenGL while I was developing my software. At some point, I realized I could use newer techniques that were much more powerful. More importantly, <a href="https://cyrille.rossant.net/shaders-opengl/">the techniques I was using then were in fact totally obsolete</a>. My sources of documentation were simply completely outdated. I had to make important changes in my code in order to use the newer techniques. Had I be sufficiently aware about OpenGL before, I could have made the right decisions early on.</p>
+<h2>Write only in English</h2>
+<p>This advice only concerns non-English native speakers. I see many students in programming write code in some weird mixed language between their native language and English. There will always be some words in English in the code, be it only because of the English keywords in any programming language. I can understand the fact that someone is attached to their mother tongue, but the programming world is international. You can <em>never</em> be absolutely sure that some code you're writing today for yourself will never be used by someone else in the future. And that someone may not speak your language. How would you explain to that Chinese intern that he needs to learn Polish just to understand your comments in the code?</p>
+<p>Of course, the same advice holds even stronger for any documentation you'd
+write. If you're not fluent enough in English, take lessons (and I should too).</p>
+<h2>Be an expert in your version control system</h2>
+<p>Using a <a href="http://en.wikipedia.org/wiki/Revision_control">version control system</a> for any programming project is so natural and obvious that I don't even consider that as an advice... You don't even need to subscribe to an online service at first, you can just install a local <a href="http://en.wikipedia.org/wiki/Distributed_revision_control">distributed version system</a> such as <a href="http://en.wikipedia.org/wiki/Git_(software)">git</a> or <a href="http://en.wikipedia.org/wiki/Mercurial">mercurial</a> on your computer. Of course, at some point you'll want to host your code online, it's just so much more practical and secure. It's also nearly imperative when you work with different computers.</p>
+<p>If you want your code to be both private and hosted online, you'll need to pay if you use <a href="https://github.com/">Github</a>. However, <a href="http://sourceforge.net">Sourceforge</a> should let you do that for free.</p>
+<p>Anyway, the point is that you need to understand most workings of your version control system of choice. If you're not familiar enough with it, take the time and learn it. It's important. It's the backbone of your code.</p>
+<p>Now, I should really follow this advice myself and go learn git for good.</p>
+<h2>Programming is easy, designing is harder</h2>
+<p>Programming is easy. At least, it can be (especially with Python!). <a href="http://briggs.net.nz/snake-wrangling-for-kids.html">Children can learn the most basic aspects</a>. Some languages are harder for sure. And the code can also be intrinsically involved sometimes, for example with concurrent and parallel programming.</p>
+<p>My point is that programming is not necessarily the hard part. <em>Designing</em> is the tough one. Thinking about <a href="http://en.wikipedia.org/wiki/Software_design">the perfect architecture</a> for your code is, at least in my own experience, much, much harder than just "spewing out" code. Thinking about a coherent way of organizing your code into loosely-coupled modules, making your code simultaneously readable, flexible and efficient, designing a streamlined programming interface, these are the real challenges.</p>
+<p>Unfortunately, I don't have any concrete advice about how to achieve that. I know that many people are using some formal methods for finding the prefect architecture, involving horrid swearwords such as <a href="http://en.wikipedia.org/wiki/Unified_Modeling_Language">"UML"</a> and scary schematics with many boxes and arrows all over the place. I've never had the chance to learn that in school, and I've naturally been developing a more <em>instinctive</em> (who said bogus?) way of thinking about the big picture.</p>
+<p><img alt="UML" src="http://upload.wikimedia.org/wikipedia/commons/8/81/UML_Diagrams.jpg" /></p>
+<p>Take the time to think about the code you're writing. Is it <a href="http://en.wikipedia.org/wiki/Code_smell">smelling good</a>? If not, think again and <a href="http://en.wikipedia.org/wiki/Refactoring">refactor</a>. Is your code design rigid or flexible? Are you doing it the right way? Being constantly critical about your own code allows you to deal with <a href="http://en.wikipedia.org/wiki/Anti-pattern">badly designed code</a> early on.</p>
+<h2>Don't spare the doc</h2>
+<p>Are you immortal and do you have an infallible memory? If not, you should document everything you do for your project. Document all your functions, with the details about the arguments and the returned variables (<a href="http://en.wikipedia.org/wiki/Docstring">docstrings</a>). Comment your code when it's unclear. Maintain separate documents about the global architecture of your code, about any decision you've made.</p>
+<p>Trucks run fast. You may not be alive tomorrow. It would be a shame if your project disappeared with you, wouldn't it? Make sure you're not the only one to understand how your code works. Someone reading all your documentation should be able to maintain and extend your code without your help.</p>
+<h2>Don't spare the unit tests</h2>
+<p>I know that <a href="http://en.wikipedia.org/wiki/Unit_testing">unit tests</a> are important. Yet, I'm always lazy when it comes to writing them. I often prefer to test things manually. That's a <em>terrible</em> idea. Spending hours writing automated unit tests takes in the end far less time than testing everything yourself as soon as you make a change in your code.</p>
+<p>A non-trivial software or library is a complex thing. It contains thousands of lines of code that are all related (well, they shouldn't be <em>too</em> interdependent if you have a good global code architecture). Fixing a bug somewhere can create a new bug somewhere else in the code more often than you'd thought (butterfly effect). That's the fundamental issue of <a href="http://en.wikipedia.org/wiki/Non-regression_testing"><em>non-regression</em></a>. As you go along the development of your project, you want things to work <em>better</em> with time, not <em>worse</em>. When you fix a bug, you don't want it to reappear months later as you change some seamingly unrelated code.</p>
+<p>The only way to be sure that this doesn't happen is to write automated unit tests. Writing unit tests is a real investment. It takes time initially, time that does not apparently make your software more functional. However, it does make it more reliable. And it can save you hours of debugging in the future.</p>
+<p>Sometimes, the type of your software is not particularly well adapted to automated unit tests. It may rely on external web services, databases, or worse, it can contain a graphical part (or a graphical user interface).</p>
+<p>For my visualization project, I thought for a long time that it was simply not possible to do automated tests. Yet, at some point, the code was becoming simply to large to allow me to test everything manually. So I had to take the time thinking about some way to write unit tests for the rendering engine. I found a solution, not a perfect one, but sufficient to let me know when things that worked before don't work anymore. For every rendering feature, I write a small script that uses it to draw the exact same white square at the center of the screen. Then, the rendered figure is temporarily saved into a PNG file, which is then automatically compared to a reference image. If the two images are different, the test fails.</p>
+<p>It took me maybe one hour or two to make that work, but it proved extremely useful. For the week or two I've been using these tests, I've been able to find several bugs that were introduced by new, apparently unrelated features. I've then been able to fix them immediately.</p>
+<p>You should write unit tests sooner rather than later.</p>
+<h2>Profile and optimize</h2>
+<p>Code readibility is more important than <a href="http://en.wikipedia.org/wiki/Program_optimization">premature optimization</a>. Yet, no one uses slow software or libraries. Make sure you <a href="https://cyrille.rossant.net/profiling-and-optimizing-python-code/">profile and optimize</a> your code regularly. When you code, think about design and readibility first, but do not overlook performance either, especially if you're in a time critical section (e.g. in a loop). When you code in a <a href="http://en.wikipedia.org/wiki/Garbage_collection_(computer_science)">garbage-collected</a> language like Python or .NET, make sure you don't create many temporary objects on the <a href="http://en.wikipedia.org/wiki/Dynamic_memory_allocation">heap</a> when you don't absolutely need them. Relatedly, use native structures instead of custom types as much as you can.</p>
+<h2>Don't overlook code quality</h2>
+<p>Make sure you're writing good code. Good not only in the design and architecture, but also just nice looking code. If your programming language has widely used <a href="http://en.wikipedia.org/wiki/Coding_conventions">guidelines</a>, read them carefully and use them. For example, Python has <a href="http://www.python.org/dev/peps/pep-0008/">PEP8</a>. If there are tools for your language that automatically check the quality of your code, use them. Use spaces, indentation, and comments to structure your code and make it more readable. Code should not be something hidden behind a fancy GUI that comes with your software, it is <em>part</em> of your software and it's something you should be proud of. If you'd be ashamed to show your code to some other programmer, then you should seriously consider improving it.</p>
+<h2>Do some marketing</h2>
+<p>Do you want other people to use your software? If so, you should go find them, because they won't go find you. Target your audience. Check out mailing lists, groups, blogs where your audience hang around, and do some marketing. Prepare screenshots or videos if your software has any graphical part. Using Twitter is also a good idea. Be humble and open to the criticisms.</p>
+<h2>Get other people involved</h2>
+<p>If you want your software to be widely used and if it is an ambitious project, you'd better find other developers willing to work closely with you. An open-source project is all the more likely to be a long term project than there are people involved in it. Find good collaborators and help them understand all aspects of it. Alternatively, they can work on a specific and independent part (e.g. an external module or plug-in). If you're really serious about your project, you should have a long-term plan and consider its perpetuation after you move on to other projects.</p>
+<h2>Have fun</h2>
+<p>Finally, the whole point of open source development is to have fun (well, maybe not the whole point, but it's an important factor). You should be in love with your language and passionate about programming in general. Do you like sport more than programming? If so, just turn off your computer and do what you like.</p>
+<p><img alt="Have fun!" src="http://1.bp.blogspot.com/-85-oqQ7DBX4/T4wNBbg8kdI/AAAAAAAAABw/pCpdCT2jfDw/s1600/wisbase-1.jpg" /></p>
+    </section>
+
+
+<nav class="pagination-wrapper">
+    <div class="pagination">
+        <div class="pagination-left">
+                <a href="https://cyrille.rossant.net/numpy-performance-tricks/">
+                    &larr; previous
+                </a>
+        </div>
+        <div class="pagination-right">
+                <a href="https://cyrille.rossant.net/galrys-story-or-the-quest-of-multi-million-plots/">
+                    next&nbsp;&rarr;
+                </a>
+        </div>
+    </div>
+</nav>
+    <aside class="comments">
+
+<div id="disqus_thread"></div>
+<script>
+    /**
+     *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+     *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
+     */
+
+    var disqus_config = function () {
+        this.page.url = "https://cyrille.rossant.net/twelve-tips-about-starting-a-new-open-source-project/";  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = "twelve-tips-about-starting-a-new-open-source-project"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+
+    (function() {  // DON'T EDIT BELOW THIS LINE
+        var d = document, s = d.createElement('script');
+
+        s.src = '//rossant.disqus.com/embed.js';
+
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+
+    </aside>
+
+            </div>
+        </section>
+
+        <nav id="sidebar" class="pure-u-1 pure-u-md-1-4">
+            <div class="l-box">
+<section>
+    <div class="portrait">
+            <img src="/theme/images/cr.jpg" />
+    </div>
+    <div class="name-cv">
+        <div class="name">Cyrille Rossant, PhD</div>
+        <div class="cv">
+            <a href="/pdfs/cv.pdf"><i class="fa fa-file-pdf-o"></i> CV</a>
+        </div>
+    </div>
+    <div class="clear"></div>
+    <div class="sub-name">Neuroscience researcher and <br>
+software engineer at IBL and UCL<br>
+&nbsp;▸ IBL: <a href="https://www.internationalbrainlab.com/">International Brain Laboratory</a><br>
+&nbsp;▸ UCL: <a href="https://www.ucl.ac.uk/cortexlab">University College London</a></div>
+    <div class="contact"><i>firstname</i>.<i>lastname</i>@gmail.com</div>
+</section>
+
+<section class="tags">
+    <span class="tag"><a href="/tag/neuroscience/">#neuroscience</a></span>
+    <span class="tag"><a href="/tag/python/">#python</a></span>
+    <span class="tag"><a href="/tag/dataviz/">#dataviz</a></span>
+    <span class="tag"><a href="/tag/maths/">#maths</a></span>
+    <span class="tag"><a href="/tag/gpu/">#gpu</a></span>
+    <span class="tag"><a href="/tag/opendata/">#opendata</a></span>
+</section>
+
+
+<section class="books">
+    <header><h3>books</h3></header>
+    <div class="sub-header">Two books on <strong>Python for data science</strong></div>
+    <div class="book-1"><a href="/books/#minibook"><img src="/images/minibook.png"/></a></div>
+    <div class="book-2"><a href="/books/#cookbook"><img src="/images/cookbook.png"/></a></div>
+</section>
+
+
+<!-- <section class="search">
+    <script>
+  (function() {
+    var cx = '006027474294305969173:cpp1rvft78s';
+    var gcse = document.createElement('script');
+    gcse.type = 'text/javascript';
+    gcse.async = true;
+    gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+        '//www.google.com/cse/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(gcse, s);
+  })();
+</script>
+<gcse:search></gcse:search>
+</section> -->            </div>
+        </nav>
+
+        <footer id="footer" class="pure-u-1 pure-u-md-3-4">
+            <div class="l-box">
+                <div>
+                    <p>&copy; <a href="https://cyrille.rossant.net">Cyrille Rossant</a> &ndash;
+                        Built with <a href="https://github.com/PurePelicanTheme/pure-single">Pure Theme</a>
+                        for <a href="http://blog.getpelican.com/">Pelican</a>
+                    </p>
+                </div>
+            </div>
+        </footer>
+
+    </div>
+
+<!-- Start of StatCounter Code for Default Guide -->
+<script type="text/javascript">
+var sc_project=7297581;
+var sc_invisible=1;
+var sc_security="e9e753f7";
+var scJsHost = (("https:" == document.location.protocol) ?
+"https://secure." : "http://www.");
+document.write("<sc"+"ript type='text/javascript' src='" +
+scJsHost+
+"statcounter.com/counter/counter.js'></"+"script>");
+</script>
+<noscript><div class="statcounter"><a title="shopify site
+analytics" href="http://statcounter.com/shopify/"
+target="_blank"><img class="statcounter"
+src="http://c.statcounter.com/7297581/0/e9e753f7/1/"
+alt="shopify site analytics"></a></div></noscript>
+<!-- End of StatCounter Code for Default Guide -->
+</body>
+</html>
+

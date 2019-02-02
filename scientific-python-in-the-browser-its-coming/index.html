@@ -1,0 +1,284 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Cyrille Rossant, ">
+    <link href="/favicon.png" rel="icon">
+
+        <link rel="alternate"  href="https://cyrille.rossant.net/feeds/all.atom.xml" type="application/atom+xml" title="Cyrille Rossant Full Atom Feed"/>
+        <link rel="alternate" href="https://cyrille.rossant.net/feeds/atom.xml" type="application/atom+xml" title="Cyrille Rossant Atom Feed"/>
+
+        <title>Cyrille Rossant - Scientific Python in the Browser: it's coming!</title>
+
+    <link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/pure/0.3.0/pure-min.css">
+    <!--[if lte IE 8]>
+        <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.5.0/grids-responsive-old-ie-min.css">
+    <![endif]-->
+    <!--[if gt IE 8]><!-->
+        <link rel="stylesheet" href="/theme/css/grids-responsive-min.css">
+    <!--<![endif]-->
+    <link rel="stylesheet" href="/theme/css/styles.css">
+    <link rel="stylesheet" href="/theme/css/pygments.css">
+    <!-- <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'> -->
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,500" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Ubuntu+Mono' rel='stylesheet' type='text/css'>
+
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/fitvids/1.0.1/jquery.fitvids.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $(".content").fitVids();
+        });
+    </script>
+</head>
+
+<body>
+
+
+    <header id="header" class="pure-g">
+        <div class="pure-u-1 pure-u-md-3-4">
+             <div id="menu">
+                 <div class="pure-menu pure-menu-open pure-menu-horizontal">
+<ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/projects/">Projects</a></li>
+        <li><a href="/books/">Books</a></li>
+        <li><a href="/about/">About</a></li>
+</ul>                </div>
+            </div>
+        </div>
+
+        <div class="pure-u-1 pure-u-md-1-4">
+            <div id="social">
+                <div class="pure-menu pure-menu-open pure-menu-horizontal">
+<ul>
+        <li><a href="https://twitter.com/cyrillerossant"><i class="fa fa-twitter"></i></a></li>
+        <li><a href="https://github.com/rossant"><i class="fa fa-github"></i></a></li>
+        <li><a href="https://www.linkedin.com/in/crossant"><i class="fa fa-linkedin"></i></a></li>
+        <li><a href="https://cyrille.rossant.net/feeds/all.atom.xml"><i class="fa fa-rss"></i></a></li>
+</ul>                </div>
+            </div>
+        </div>
+    </header>
+
+
+
+    <div id="layout" class="pure-g">
+        <section id="content" class="pure-u-1 pure-u-md-3-4">
+            <div class="l-box">
+
+    <header id="post-header">
+        <h1>Scientific Python in the Browser: it's coming!</h1>
+            <div class="post-meta">
+                March 31, 2014
+            </div>
+            <div class="post-tags">
+                <ul>
+                    <li>tags:</li>
+                    <li><a href="/tag/python/">python</a></li>
+                </ul>
+            </div>
+    </header>
+
+    <section id="post">
+        <p>There is currently a manifest trend in the scientific Python ecosystem: Python is slowly but surely coming to the browser. It's a real challenge, but we're getting there. In this post, I want to give an overview of where we are, and where we're headed.</p>
+
+
+<h2>Why it's a good thing</h2>
+<p><strong>Python is becoming <a href="https://cyrille.rossant.net/why-using-python-for-scientific-computing/">one of the most popular open source platforms for scientific computing and data analysis</a></strong>. The language is easy-to-use, expressive, open to the rest of the universe, and the scientific ecosystem is quite solid.</p>
+<p>On the other hand, the Web is today the <a href="https://blog.mozilla.org/blog/2012/02/27/mozilla-in-mobile-the-web-is-the-platform/">platform of choice</a> for client-side applications. What we called <em>Web 2.0</em> some time ago is now just the <em>Web</em>. Social networks have pervaded our lives and sharing things on the Web with our acquaintances is now entirely natural. The Web is also becoming a solid mobile platform, maybe not quite as powerful as native platforms yet, but it should eventually get there (at least that's my hope).</p>
+<p>Marrying Python and the Web seems natural. <strong>The power and expressivity of Python for numerical computing, and the popularity of the Web for diffusion and dissemination, interactive data visualization, rich client applications...</strong> Why hasn't it happened yet? The main reason is technical. Python is Python, Javascript is Javascript. Those two just don't get along.</p>
+<p>It doesn't have to be that way. Technical difficulties can be overcome. We're not there yet, but we're getting there. Here's why.</p>
+<h2>The signs it's coming</h2>
+<p>It's like different pieces of a puzzle popping here and there, suggesting a barely perceptible convergence. From time to time, Python timidly tempts to approach the Web platform.</p>
+<h3>The IPython notebook</h3>
+<p>The most dazzling attempt so far has decidedly been the <a href="http://ipython.org/notebook.html"><strong>IPython notebook</strong></a>. This impressively architectured piece of software has been particularly well received by the community. The reason is that it was just the exactly right answer to a desperate need. The fact that it's a browser-based technology is almost a detail, and yet that is precisely my point. Many people now <em>live</em> in the browser, so bringing Python there just seems absolutely right.</p>
+<p>To me, <strong>the IPython notebook is the first revolution in the convergence between Python and the Web platform</strong>.</p>
+<p>The second revolution is <a href="http://ipython.org/ipython-doc/dev/whatsnew/development.html#notebook-widgets"><strong>IPython 2.0 and its interactive widgets</strong></a>. Those may sound like a gadget, but they <em>really</em> are not. They represent a fundamental change of paradigm that brings Python and the browser yet closer. We now have the right architecture to make Python and Javascript communicate in real time. We now have extendable graphical widgets that interact dynamically with Python. We now have the technology to create small Web-based client-side applications that are backed by Python. All that in the notebook.</p>
+<p>The third revolution has yet to come. It will complete the union between Python and Javascript by bringing an important part of scientific Python <em>within</em> the browser. That's probably a controversial idea, but I think it's both desirable and achievable within the next few years.</p>
+<h3>Web-based visualization libraries in Python</h3>
+<p>Another trend concerns interactive data visualization technologies that come to the browser.</p>
+<p>Libraries like <a href="http://bokeh.pydata.org">Bokeh</a>, or online services like <a href="https://plot.ly">plot.ly</a>, allow people to design figures in Python in order to obtain Web-based visualizations. The rationale behind these ideas is that scientists are no longer satisfied with static publication-ready plots: they want <em>interactive</em> plots. There really can be scientific information in interactivity (think about linked brushing for instance).</p>
+<p>A widely popular interactive visualization library in the Web community is <a href="http://d3js.org/">d3.js</a>. It's no surprise that several Python libraries try to target it as a backend. There's <a href="http://vincent.readthedocs.org/en/latest/">Vincent</a> that lets you design a visualization in Python, export it to <a href="http://trifacta.github.io/vega/">Vega</a> (a visualization grammar), and finally generate a d3.js visualization from there.</p>
+<p>And there's <a href="http://mpld3.github.io/">mpld3</a>, a wonderful attempt to bring matplotlib and d3.js together. <a href="https://github.com/jakevdp/mpld3/issues/69">The idea is conceptually very simple</a>: <a href="https://github.com/mpld3/mplexporter">export a matplotlib figure to JSON</a>, and generate a d3.js visualization from there. <a href="http://mpld3.github.io/examples/custom_plugin.html">The end-result is stunning</a>: your matplotlib figures become <em>intrinsically</em> interactive. You no longer need a live Python server to pan and zoom in your figure: it's just there, in your browser.</p>
+<p>Finally, I want to mention <a href="http://vispy.org/">Vispy</a>, a project I'm currently involved in. The idea is to leverage the power of the graphics card (through OpenGL) for fast high-performance interactive visualization of potentially huge datasets. Although it is a Python project, we think hard about ways to bring Vispy to the browser. The most promising (and challenging) approach is quite similar to mpld3: export a visualization in JSON, and render it in the browser with WebGL.</p>
+<p>In the end, it seems like data visualization is today a hot topic that concentrates a large part of the various efforts to bring scientific Python to the browser.</p>
+<h3>Mobile devices</h3>
+<p>I've given the arguments from the Python side. Here are those from the browser side.</p>
+<p>HTML5, Javascript and CSS3 now form a popular multi-device development technology for client-side applications. Frameworks and game engines are constantly being developped. The popularity of the platform comes from the simplicity of deployement and the fact that it's based on standard technologies of the Web. Mobile devices have now good support of those technologies. The <em>write once, run anywhere</em> slogan is now (slowly) becoming true.</p>
+<p>There's no reason why scientific applications should not benefit from this platform. The eventuality of joining Python and the Web could enable the creation of rich scientific applications, with ergonomic and portable HTML-based user interfaces backed by the powerful scientific Python ecosystem. Those applications would run in the browser, so deployement would become trivial compared to installing a Python distribution. Besides, they could run directly on tablets and smartphones. I think there would be a huge demand for this.</p>
+<h3>Web technologies</h3>
+<p>Web technologies are being more and more mature and powerful. Even if the Javascript language is sometimes unappreciated, it is becoming quite efficient on latest browsers, notably thanks to dynamic compilation techniques (V8, SpiderMonkey, Chakra...).</p>
+<p>Native C code can now be ported to Javascript thanks to <a href="http://emscripten.org/">emscripten</a> and <a href="http://asmjs.org/">asm.js</a>. Emscripten, based on <a href="http://llvm.org/">LLVM</a>, can convert C code to a subset of Javascript: asm.js, which is a kind of intermediate-level "assembly language" in Javascript. One can now execute Javascript code with performance close to native code. High performance is really coming to the browser.</p>
+<p>Very recently, <a href="https://01.org/blogs/tlcounts/2014/bringing-simd-javascript">Intel, Mozilla and Google announced that SIMD instructions where coming to Chrome and Firefox</a>, and to emscripten as well.</p>
+<p><a href="http://www.khronos.org/webcl/">WebCL</a> is still a draft, but it should eventually bring OpenCL to the browser. General purpose massively parallel computing on multicore CPUs and GPUs in the (desktop or mobile) browser is becoming a reality.</p>
+<p>Finally, <a href="http://www.khronos.org/webgl/">WebGL</a> will interest big data visualization libraries: this technology gives direct access to OpenGL ES from the browser. WebGL support on mobile devices is still scarce, but it should hopefully improve in the future.</p>
+<p>As an aside, see this <a href="http://superconductor.github.io/superconductor/">promising project</a> in Javascript that combines WebGL and WebCL for big data visualization in the browser.</p>
+<p>So we see that the pieces of the puzzle are being put together to enable high-performance computing and visualization in the browser. We are close to get everything we need to bring scientific Python to the browser. The last challenge is the language barrier itself.</p>
+<h2>How it's coming</h2>
+<p>So, how could scientific Python come to the browser? Here are a few ideas. Some of them may not be reasonable. I have probably omitted interesting alternative ideas. And I've no idea about which approach could effectively succeed. I hope people more clever than me will eventually find out.</p>
+<h3>Python in the Cloud</h3>
+<p>The "easiest" solution is probably a <em>cloud</em> approach. Run Python in the cloud, and make it accessible from browser-based applications. I think this is one of the most reasonable approaches in the short and medium term. Many services already offer this technology: <a href="https://wakari.io/">Wakari</a>, <a href="http://www.picloud.com/">PiCloud</a>, <a href="https://www.pythonanywhere.com/">PythonAnywhere</a>, <a href="http://star.mit.edu/cluster/">StarCluster</a>, and others. The main drawbacks are the following:</p>
+<ol>
+<li>A live Internet connection is required.</li>
+<li>You might get high latency depending on your connection, which can be detrimental to real-time interactivity.</li>
+<li>Those services may sometimes be expensive (you need a cloud infrastructure!).</li>
+<li>You don't really "own" your code and your data.</li>
+</ol>
+<p>The cloud approach is probably the best for heavy workflows, highly intensive computations, and huge amounts of data. For reasonably light computations, or small to medium amounts of data, purely offline self-contained solutions may be interesting alternatives.</p>
+<h3>A Python interpreter in the browser</h3>
+<p>An idea is to write a Python interpreter in Javascript. This can be done manually (<a href="http://www.brython.info/">Brython</a>, <a href="http://www.skulpt.org/">skulpt</a>) or automatically (<a href="http://repl.it/languages">repl.it</a>). Performance is generally not optimal, because you end up with Python code being interpreted by a Javascript library that is itself interpreted by the browser.</p>
+<p>There are also Javascript libraries that parse Python code and translate it to Javascript (<a href="https://github.com/PythonJS/PythonJS">PythonJS</a>, <a href="http://pyjs.org/">pyjs</a>).</p>
+<p>Although impressive, these projects generally do not guarantee 100% of the language syntax nor 100% modules in the Python standard library. And they don't have support for scientific Python modules like NumPy, SciPy, etc. The main challenge with those libraries is that they include C and even FORTRAN code.</p>
+<p>Note that we could also consider translators from Python to languages like <a href="http://coffeescript.org/">CoffeeScript</a>, that transcompile in return to Javascript.</p>
+<h3>A Python JIT compiler in the browser</h3>
+<p>There's an ongoing project called <a href="http://www.rfk.id.au/blog/entry/pypy-js-first-steps/">PyPy.js</a> that aims at bringing PyPy's JIT Python compiler to Javascript with LLVM and emscripten. There's probably just <a href="http://www.rfk.id.au/"><em>one</em> guy</a> on the entire Earth who has the required degree of programming wizardry to achieve this project. I hope he'll be successful eventually. The end-result would be impressive: write Python code, and JIT-compile it <em>in the browser</em> to asm.js with PyPy and emscripten. <a href="http://www.rfk.id.au/blog/entry/pypy-js-poc-jit/">Performance appears to be promising</a>.</p>
+<h3>NumPy in the browser</h3>
+<p>All the solutions mentionned above do not tackle a major challenge: how to bring NumPy and the rest of the scientific Python stack to the browser?</p>
+<p>A large part of those libraries is written in C or FORTRAN, and make API calls to CPython. Bringing these entire projects as they are now to the browser seems extremely hard to me. Emscripten and asm.js might help, but to what extent I'm not sure.</p>
+<p>An alternative would be to rewrite from scratch part of the core functionality of NumPy. The major missing piece is the multidimensional array data structure: the <code>ndarray</code>, and vectorized computations. <a href="https://github.com/mikolalysenko">Mikola Lysenko</a> has a few projects in this spirit: <a href="https://github.com/mikolalysenko/ndarray"><code>ndarray</code></a>, <a href="https://github.com/mikolalysenko/cwise"><code>cwise</code></a>, and others. This work may be a starting point for bringing core NumPy-like functionality to the browser.</p>
+<p>These projects could be combined with asm.js, SIMD.js or WebCL to achieve high performance.</p>
+<p>There's also a line of work related to JIT compilation of NumPy computations: <a href="http://numba.pydata.org/">Numba</a> and <a href="http://blaze.pydata.org/">Blaze</a>, conducted by <a href="http://continuum.io/">Continuum Analytics</a>. Those projects are based on LLVM: they can parse Python code and emit LLVM bytecode that can be compiled to assembly languages for nearly optimal performance. There might be some work to do there to compile Python code to optimized Javascript/asm.js.</p>
+<h2>Conclusion</h2>
+<p>I think there's a whole body of evidence showing that scientific Python will eventually come to the browser. How, I don't know, but I can definitely see several promising approaches.</p>
+<p>We'll probably make baby steps at first. For instance, executing simple NumPy-based pure functions from Python to Javascript.</p>
+<p>The IPython notebook will provide the perfect platform for these experiments. In particular, the interactive API in IPython 2.0+ could be extended to support Javascript callback functions instead of Python functions. Right now, the <code>@interact</code> function decorator allows you to generate a set of widgets to control the input arguments of a function. This is a wonderful idea in my opinion, because it's fundamentally <em>functional</em>. Converting such decorated Python function to Javascript would directly enable purely offline interactive widgets with the existing infrastructure.</p>
+<p>There's some really exciting and challenging work down the road, and I can't wait to see what the community will bring to life.</p>
+    </section>
+
+
+<nav class="pagination-wrapper">
+    <div class="pagination">
+        <div class="pagination-left">
+                <a href="https://cyrille.rossant.net/opendata-interior-hackathon/">
+                    &larr; previous
+                </a>
+        </div>
+        <div class="pagination-right">
+                <a href="https://cyrille.rossant.net/back-from-our-first-vispy-code-camp-at-esrf/">
+                    next&nbsp;&rarr;
+                </a>
+        </div>
+    </div>
+</nav>
+    <aside class="comments">
+
+<div id="disqus_thread"></div>
+<script>
+    /**
+     *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+     *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
+     */
+
+    var disqus_config = function () {
+        this.page.url = "https://cyrille.rossant.net/scientific-python-in-the-browser-its-coming/";  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = "scientific-python-in-the-browser-its-coming"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+
+    (function() {  // DON'T EDIT BELOW THIS LINE
+        var d = document, s = d.createElement('script');
+
+        s.src = '//rossant.disqus.com/embed.js';
+
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+
+    </aside>
+
+            </div>
+        </section>
+
+        <nav id="sidebar" class="pure-u-1 pure-u-md-1-4">
+            <div class="l-box">
+<section>
+    <div class="portrait">
+            <img src="/theme/images/cr.jpg" />
+    </div>
+    <div class="name-cv">
+        <div class="name">Cyrille Rossant, PhD</div>
+        <div class="cv">
+            <a href="/pdfs/cv.pdf"><i class="fa fa-file-pdf-o"></i> CV</a>
+        </div>
+    </div>
+    <div class="clear"></div>
+    <div class="sub-name">Neuroscience researcher and <br>
+software engineer at IBL and UCL<br>
+&nbsp;▸ IBL: <a href="https://www.internationalbrainlab.com/">International Brain Laboratory</a><br>
+&nbsp;▸ UCL: <a href="https://www.ucl.ac.uk/cortexlab">University College London</a></div>
+    <div class="contact"><i>firstname</i>.<i>lastname</i>@gmail.com</div>
+</section>
+
+<section class="tags">
+    <span class="tag"><a href="/tag/neuroscience/">#neuroscience</a></span>
+    <span class="tag"><a href="/tag/python/">#python</a></span>
+    <span class="tag"><a href="/tag/dataviz/">#dataviz</a></span>
+    <span class="tag"><a href="/tag/maths/">#maths</a></span>
+    <span class="tag"><a href="/tag/gpu/">#gpu</a></span>
+    <span class="tag"><a href="/tag/opendata/">#opendata</a></span>
+</section>
+
+
+<section class="books">
+    <header><h3>books</h3></header>
+    <div class="sub-header">Two books on <strong>Python for data science</strong></div>
+    <div class="book-1"><a href="/books/#minibook"><img src="/images/minibook.png"/></a></div>
+    <div class="book-2"><a href="/books/#cookbook"><img src="/images/cookbook.png"/></a></div>
+</section>
+
+
+<!-- <section class="search">
+    <script>
+  (function() {
+    var cx = '006027474294305969173:cpp1rvft78s';
+    var gcse = document.createElement('script');
+    gcse.type = 'text/javascript';
+    gcse.async = true;
+    gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+        '//www.google.com/cse/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(gcse, s);
+  })();
+</script>
+<gcse:search></gcse:search>
+</section> -->            </div>
+        </nav>
+
+        <footer id="footer" class="pure-u-1 pure-u-md-3-4">
+            <div class="l-box">
+                <div>
+                    <p>&copy; <a href="https://cyrille.rossant.net">Cyrille Rossant</a> &ndash;
+                        Built with <a href="https://github.com/PurePelicanTheme/pure-single">Pure Theme</a>
+                        for <a href="http://blog.getpelican.com/">Pelican</a>
+                    </p>
+                </div>
+            </div>
+        </footer>
+
+    </div>
+
+<!-- Start of StatCounter Code for Default Guide -->
+<script type="text/javascript">
+var sc_project=7297581;
+var sc_invisible=1;
+var sc_security="e9e753f7";
+var scJsHost = (("https:" == document.location.protocol) ?
+"https://secure." : "http://www.");
+document.write("<sc"+"ript type='text/javascript' src='" +
+scJsHost+
+"statcounter.com/counter/counter.js'></"+"script>");
+</script>
+<noscript><div class="statcounter"><a title="shopify site
+analytics" href="http://statcounter.com/shopify/"
+target="_blank"><img class="statcounter"
+src="http://c.statcounter.com/7297581/0/e9e753f7/1/"
+alt="shopify site analytics"></a></div></noscript>
+<!-- End of StatCounter Code for Default Guide -->
+</body>
+</html>
+

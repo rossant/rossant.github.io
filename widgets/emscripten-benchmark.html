@@ -1,0 +1,99 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>NumPy in the browser</title>
+
+    <link rel="stylesheet" href="lib/jquery-ui.min.css">
+    <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.5.0/pure-min.css">
+    <link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,500" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="lib/styles.css">
+    <style>
+    table, div {
+        margin: 10px;
+    }
+    button {
+        margin: 0 10px;
+    }
+    </style>
+</head>
+
+<body>
+
+    <table class="pure-table">
+        <thead>
+            <tr>
+                <th>Method</th>
+                <th>Time</th>
+                <th>Sum</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+                <td>Numba/Emscripten</td>
+                <td id="emscripten"></td>
+                <td id="emscripten_result"></td>
+            </tr>
+
+            <tr>
+                <td>Pure JS</td>
+                <td id="purejs"></td>
+                <td id="purejs_result"></td>
+            </tr>
+
+        </tbody>
+    </table>
+
+    <form class="pure-form">
+        <button class="pure-button pure-button-primary" onclick="go(); return false;" type="button">Go</button>
+    </form>
+
+    <script src="lib/jquery-1.11.2.min.js"></script>
+    <script src="lib/emscripten-wrapper.js"></script>
+    <script src="lib/emscripten-benchmark.js"></script>
+
+    <script>
+
+    var sum = wrap(['int[:]']);
+
+    var n = 1000000;
+    var arr = new Int32Array(n);
+
+    function getRandomInt(min, max) {
+        return Math.floor(Math.random() * (max - min + 1)) + min;
+    }
+
+    function go() {
+
+        // Reinitialize the array.
+        for (var i = 0; i < n; i++) {
+            arr[i] = getRandomInt(-100, 100);
+        }
+
+        // Numba/emscripten.
+        var result = new Int32Array([0]);
+        var start = (new Date).getTime();
+        result = sum(result, arr);
+        var diff = (new Date).getTime() - start;
+        $('#emscripten').html(diff + ' ms');
+        $('#emscripten_result').html(result[0]);
+
+        // Pure JS.
+        start = (new Date).getTime();
+        var s = 0;
+        for (var i = 0; i < n; i++) {
+             s += arr[i];
+        }
+        diff = (new Date).getTime() - start;
+        $('#purejs').html(diff + ' ms');
+        $('#purejs_result').html(s);
+    }
+
+    go();
+    </script>
+
+</body>
+</html>

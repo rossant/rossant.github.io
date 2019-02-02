@@ -1,0 +1,21 @@
+
+body {
+    margin: 0;
+
+    font-family: "Source Sans Pro", sans-serif;
+    font-size: 18px;
+    font-weight: 300;
+    color: #000;
+}
+input, table {
+    margin: 10px 0;
+}
+td, th {
+    text-align: right;
+}
+button {
+    margin: 0 10px;
+}
+iframe {
+    overflow: hidden;
+}

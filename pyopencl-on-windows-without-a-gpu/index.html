@@ -1,0 +1,403 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Cyrille Rossant, ">
+    <link href="/favicon.png" rel="icon">
+
+        <link rel="alternate"  href="https://cyrille.rossant.net/feeds/all.atom.xml" type="application/atom+xml" title="Cyrille Rossant Full Atom Feed"/>
+        <link rel="alternate" href="https://cyrille.rossant.net/feeds/atom.xml" type="application/atom+xml" title="Cyrille Rossant Atom Feed"/>
+
+        <title>Cyrille Rossant - A PyOpenCL tutorial on Windows with or without a GPU</title>
+
+    <link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/pure/0.3.0/pure-min.css">
+    <!--[if lte IE 8]>
+        <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.5.0/grids-responsive-old-ie-min.css">
+    <![endif]-->
+    <!--[if gt IE 8]><!-->
+        <link rel="stylesheet" href="/theme/css/grids-responsive-min.css">
+    <!--<![endif]-->
+    <link rel="stylesheet" href="/theme/css/styles.css">
+    <link rel="stylesheet" href="/theme/css/pygments.css">
+    <!-- <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'> -->
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,500" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Ubuntu+Mono' rel='stylesheet' type='text/css'>
+
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/fitvids/1.0.1/jquery.fitvids.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $(".content").fitVids();
+        });
+    </script>
+</head>
+
+<body>
+
+
+    <header id="header" class="pure-g">
+        <div class="pure-u-1 pure-u-md-3-4">
+             <div id="menu">
+                 <div class="pure-menu pure-menu-open pure-menu-horizontal">
+<ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/projects/">Projects</a></li>
+        <li><a href="/books/">Books</a></li>
+        <li><a href="/about/">About</a></li>
+</ul>                </div>
+            </div>
+        </div>
+
+        <div class="pure-u-1 pure-u-md-1-4">
+            <div id="social">
+                <div class="pure-menu pure-menu-open pure-menu-horizontal">
+<ul>
+        <li><a href="https://twitter.com/cyrillerossant"><i class="fa fa-twitter"></i></a></li>
+        <li><a href="https://github.com/rossant"><i class="fa fa-github"></i></a></li>
+        <li><a href="https://www.linkedin.com/in/crossant"><i class="fa fa-linkedin"></i></a></li>
+        <li><a href="https://cyrille.rossant.net/feeds/all.atom.xml"><i class="fa fa-rss"></i></a></li>
+</ul>                </div>
+            </div>
+        </div>
+    </header>
+
+
+
+    <div id="layout" class="pure-g">
+        <section id="content" class="pure-u-1 pure-u-md-3-4">
+            <div class="l-box">
+
+    <header id="post-header">
+        <h1>A PyOpenCL tutorial on Windows with or without a GPU</h1>
+            <div class="post-meta">
+                September 16, 2012
+            </div>
+            <div class="post-tags">
+                <ul>
+                    <li>tags:</li>
+                    <li><a href="/tag/python/">python</a></li>
+                    <li><a href="/tag/gpu/">gpu</a></li>
+                </ul>
+            </div>
+    </header>
+
+    <section id="post">
+        <p>I've been using <a href="http://en.wikipedia.org/wiki/CUDA">CUDA</a> and
+<a href="http://documen.tician.de/pycuda/">PyCUDA</a> as
+<a href="http://en.wikipedia.org/wiki/GPGPU">GPGPU</a> platforms for a few years now.
+They enable access to the incredible computational power of graphics cards
+through a simple C-like language. A recent
+<a href="http://en.wikipedia.org/wiki/Nvidia">Nvidia</a> graphics card is nevertheless
+required in order to execute CUDA code. Some computers may not include a
+Nvidia GPU, but rather an
+<a href="http://en.wikipedia.org/wiki/Advanced_Micro_Devices">AMD/ATI</a> card or even
+an integrated graphics processor. Those computers thus cannot execute a CUDA
+program.</p>
+
+
+<p>Whereas changing the GPU on a desktop computer is straightforward (one still
+needs to buy a new graphics card...), it is generally not possible to do so
+on a laptop. It prevents a number of developers to run, compile or debug CUDA
+code. It is also certainly a problem when distributing a software relying on
+CUDA, since not having a CUDA-enabled Nvidia GPU prevents one to even launch
+the program.</p>
+<p>For these reasons, I've recently been interested in
+<a href="http://en.wikipedia.org/wiki/OpenCL">OpenCL</a>, a computing framework
+equivalent to CUDA. The main difference is that OpenCL is an open standard
+that has been adopted not only by Nvidia, but also by Intel and AMD. It means
+that OpenCL programs may run on (recent) graphics card of either Nvidia or
+AMD. In addition, a very interesting feature is that OpenCL programs may run
+on a computer that does not even have a OpenCL-enabled GPU, but only a
+recent-enough CPU. OpenCL code can be compiled for CPUs through the <a href="http://software.intel.com/en-us/vcsource/tools/opencl-sdk">Intel
+SDK for OpenCL</a>
+(Intel-only CPUs) or the <a href="http://developer.amd.com/tools/hc/AMDAPPSDK/">AMD APP
+SDK</a>. OpenCL code is still
+accelerated through vectorization instructions on CPUs (e.g.
+<a href="http://en.wikipedia.org/wiki/Streaming_SIMD_Extensions">SSE</a> or
+<a href="http://en.wikipedia.org/wiki/Advanced_Vector_Extensions">AVX</a>) and multicore
+CPUs.</p>
+<p>This is really convenient since one can develop, debug and run an OpenCL
+program on virtually any computer, even if it does not include an
+OpenCL-enabled GPU. Moreover, distributing such a program is easier since the
+end-user does not necessarily need to have a specific graphics card. Of
+course, the performance of the program will be far less interesting than with
+such a GPU, but the program will still run correctly.</p>
+<p>Here I detail my first experience with OpenCL on Python (using
+<a href="http://mathema.tician.de/software/pyopencl">PyOpenCL</a>).
+The installation part is actually the less trivial part (while still being
+relatively easy) and may be of interest to some people.</p>
+<h2>Installation of an OpenCL SDK</h2>
+<p>I'll explain how I could install OpenCL and PyOpenCL on an "old" laptop with
+an <a href="http://www.amd.com/us/products/desktop/graphics/ati-radeon-hd-3000/hd-3600">ATI Radeon Mobility HD
+3650</a>
+graphics card that does not support
+OpenCL, an <a href="http://en.wikipedia.org/wiki/Intel_Core_2">Intel Core 2 Duo CPU</a>,
+and a 32-bits <a href="http://en.wikipedia.org/wiki/Windows_8">Windows 8</a> operating
+system.</p>
+<p>First, one needs to install an OpenCL SDK. AMD and Intel have their own SDKs
+and I installed both. Later, we'll see that PyOpenCL allows us to choose, at
+compilation-time, which SDK to use. The installation of the SDKs is
+straightforward on Windows.</p>
+<h2>Installation of PyOpenCL</h2>
+<p>PyOpenCL is to OpenCL what PyCUDA is to CUDA: a Python wrapper to those GPGPU
+platforms. It is developed and maintained by <a href="http://mathema.tician.de/">Andreas
+Klöckner</a>.</p>
+<p>Installing PyOpenCL on Windows is easy when using the binary package provided
+by <a href="http://www.lfd.uci.edu/~gohlke/">Christoph Gohlke</a>. <a href="http://www.lfd.uci.edu/~gohlke/pythonlibs/">His
+webpage</a> contains Windows binary
+installers for the most recent versions of hundreds of Python packages. It is
+of invaluable help for those Python users that use Windows. It is also
+possible yet much more complicated to build <a href="http://wiki.tiker.net/PyOpenCL/Installation">PyOpenCL from source on
+Windows</a>.</p>
+<p>PyOpenCL has a few uncommon dependencies (beyond
+<a href="http://numpy.scipy.org/">Numpy</a>), like
+<a href="http://pypi.python.org/pypi/decorator">decorator</a> and
+<a href="http://pypi.python.org/pypi/pytools">PyTools</a> (actually the latter includes
+<em>decorator</em>, so I'm not even sure one needs to install decorator separately).
+These libraries can be easily installed with the <code>easy_install</code> command-line
+tool provided by the <a href="http://packages.python.org/distribute/">Distribute</a>
+library.</p>
+<p>Some environment variables may need to be specified, like <code>PYOPENCL_CTX</code> or
+<code>PYOPENCL_COMPILER_OUTPUT</code> (see below). In order to do this, one needs to go
+to the advanced system parameters and add new variables in the <em>User
+variables</em> section (<a href="http://www.technoon.com/how-to-add-environment-variables-in-windows-8.html">see
+here</a>
+for details).</p>
+<p>In order to quickly test the installation of PyOpenCL, try the following
+commands in a Python console:</p>
+<div class="highlight"><pre><span></span>import pyopencl
+import pyopencl.array
+</pre></div>
+
+
+<p>We now turn to the execution of a very simple OpenCL program.</p>
+<h2>PyOpenCL Hello World script</h2>
+<p>Save the following code in a .py file and execute it. The OpenCL code should be
+compiled and executed correctly, and the squares of integers should be
+displayed. Some warnings may be displayed even if everything worked corectly.
+In addition, PyOpenCL may require the user to decide which SDK to use if several
+are installed. In order not to be asked everytime, one can set the
+<code>PYOPENCL_CTX</code> environment variable to the corresponding index (see above).</p>
+<p>I could use both Intel and AMD SDKs. Ensure that you run Python in a command
+line as an administrator (otherwise it may cause issues with
+compilation, at least that's what I could note on my Windows 8 setup).</p>
+<p>The actual code is self-explanatory, especially for someone who already knows
+CUDA. This program generates a Numpy array with all integers between 0 and 9,
+passes it to an OpenCL kernel that computes the square of an array of integers,
+dynamically compiles and executes this kernel, and copies back the output from
+the context memory to Python.</p>
+<div class="highlight"><pre><span></span><span class="c1"># import PyOpenCL and Numpy. An OpenCL-enabled GPU is not required,</span>
+<span class="c1"># OpenCL kernels can be compiled on most CPUs thanks to the Intel SDK for OpenCL</span>
+<span class="c1"># or the AMD APP SDK.</span>
+<span class="kn">import</span> <span class="nn">pyopencl</span> <span class="kn">as</span> <span class="nn">cl</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+
+<span class="c1"># create an OpenCL context</span>
+<span class="n">ctx</span> <span class="o">=</span> <span class="n">cl</span><span class="o">.</span><span class="n">create_some_context</span><span class="p">()</span>
+<span class="n">queue</span> <span class="o">=</span> <span class="n">cl</span><span class="o">.</span><span class="n">CommandQueue</span><span class="p">(</span><span class="n">ctx</span><span class="p">)</span>
+
+<span class="c1"># create the kernel input</span>
+<span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">10</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">int32</span><span class="p">)</span>
+
+<span class="c1"># kernel output placeholder</span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">(</span><span class="n">a</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">int32</span><span class="p">)</span>
+
+<span class="c1"># create context buffers for a and b arrays</span>
+<span class="c1"># for a (input), we need to specify that this buffer should be populated from a</span>
+<span class="n">a_dev</span> <span class="o">=</span> <span class="n">cl</span><span class="o">.</span><span class="n">Buffer</span><span class="p">(</span><span class="n">ctx</span><span class="p">,</span> <span class="n">cl</span><span class="o">.</span><span class="n">mem_flags</span><span class="o">.</span><span class="n">READ_ONLY</span> <span class="o">|</span> <span class="n">cl</span><span class="o">.</span><span class="n">mem_flags</span><span class="o">.</span><span class="n">COPY_HOST_PTR</span><span class="p">,</span>
+                    <span class="n">hostbuf</span><span class="o">=</span><span class="n">a</span><span class="p">)</span>
+<span class="c1"># for b (output), we just allocate an empty buffer</span>
+<span class="n">b_dev</span> <span class="o">=</span> <span class="n">cl</span><span class="o">.</span><span class="n">Buffer</span><span class="p">(</span><span class="n">ctx</span><span class="p">,</span> <span class="n">cl</span><span class="o">.</span><span class="n">mem_flags</span><span class="o">.</span><span class="n">WRITE_ONLY</span><span class="p">,</span> <span class="n">b</span><span class="o">.</span><span class="n">nbytes</span><span class="p">)</span>
+
+<span class="c1"># OpenCL kernel code</span>
+<span class="n">code</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">__kernel void test1(__global int* a, __global int* b) {</span>
+<span class="s2">    int i = get_global_id(0);</span>
+<span class="s2">    b[i] = a[i]*a[i];</span>
+<span class="s2">}</span>
+<span class="s2">&quot;&quot;&quot;</span>
+
+<span class="c1"># compile the kernel</span>
+<span class="n">prg</span> <span class="o">=</span> <span class="n">cl</span><span class="o">.</span><span class="n">Program</span><span class="p">(</span><span class="n">ctx</span><span class="p">,</span> <span class="n">code</span><span class="p">)</span><span class="o">.</span><span class="n">build</span><span class="p">()</span>
+
+<span class="c1"># launch the kernel</span>
+<span class="n">event</span> <span class="o">=</span> <span class="n">prg</span><span class="o">.</span><span class="n">test1</span><span class="p">(</span><span class="n">queue</span><span class="p">,</span> <span class="n">a</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span> <span class="n">a_dev</span><span class="p">,</span> <span class="n">b_dev</span><span class="p">)</span>
+<span class="n">event</span><span class="o">.</span><span class="n">wait</span><span class="p">()</span>
+
+<span class="c1"># copy the output from the context to the Python process</span>
+<span class="n">cl</span><span class="o">.</span><span class="n">enqueue_copy</span><span class="p">(</span><span class="n">queue</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">b_dev</span><span class="p">)</span>
+
+<span class="c1"># if everything went fine, b should contain squares of integers</span>
+<span class="k">print</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+</pre></div>
+
+
+<p>Here is the output I get on my installation.</p>
+<div class="highlight"><pre><span></span>C:\Python27\lib\site-packages\pyopencl\__init__.py:32: CompilerWarning: Built kernel retrieved from cache. Original from-source build had warnings:
+Build on &lt;pyopencl.Device &#39;Intel(R) Core(TM)2 Duo CPU     T6400  @ 2.00GHz&#39; on &#39;Intel(R) OpenCL&#39; at 0x2251b58&gt; succeeded, but said:
+
+Build started
+Kernel &lt;test1&gt; was successfully vectorized
+Done.
+  warn(text, CompilerWarning)
+C:\Python27\lib\site-packages\pyopencl\__init__.py:32: CompilerWarning: From-binary build succeeded, but resulted in non-empty logs:
+Build on &lt;pyopencl.Device &#39;Intel(R) Core(TM)2 Duo CPU     T6400  @ 2.00GHz&#39; on &#39;Intel(R) OpenCL&#39; at 0x2251b58&gt; succeeded, but said:
+
+Build started
+Kernel &lt;test1&gt; was successfully vectorized
+Done.
+  warn(text, CompilerWarning)
+[ 0  1  4  9 16 25 36 49 64 81]
+</pre></div>
+
+
+<h2>Final notes</h2>
+<p>There is of course far more to tell about OpenCL that what I've shown here.
+The point was to show how one could use GPGPU on a standard computer that
+does not have a GPGPU-enabled graphics card, by using OpenCL and Python.
+Even if I don't have much experience in OpenCL yet, I think it has a promising
+future as an open and portable concurrent to CUDA.</p>
+<p>Here are some interesting related links:</p>
+<ul>
+<li><a href="http://www.khronos.org/opencl/">The official OpenCL website</a></li>
+<li><a href="http://enja.org/2011/02/22/adventures-in-pyopencl-part-1-getting-started-with-python/">PyOpenCL tutorial</a></li>
+<li><a href="http://www.planquart.com/tutoriel-n%C2%B01-pyopencl-premier-calcul-sur-gpu">Another one (in French)</a></li>
+</ul>
+    </section>
+
+
+<nav class="pagination-wrapper">
+    <div class="pagination">
+        <div class="pagination-left">
+                <a href="https://cyrille.rossant.net/2d-graphics-rendering-tutorial-with-pyopengl/">
+                    &larr; previous
+                </a>
+        </div>
+        <div class="pagination-right">
+                <a href="https://cyrille.rossant.net/a-mathematical-proof-that-our-world-is-in-three-dimensions/">
+                    next&nbsp;&rarr;
+                </a>
+        </div>
+    </div>
+</nav>
+    <aside class="comments">
+
+<div id="disqus_thread"></div>
+<script>
+    /**
+     *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+     *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
+     */
+
+    var disqus_config = function () {
+        this.page.url = "https://cyrille.rossant.net/pyopencl-on-windows-without-a-gpu/";  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = "pyopencl-on-windows-without-a-gpu"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+
+    (function() {  // DON'T EDIT BELOW THIS LINE
+        var d = document, s = d.createElement('script');
+
+        s.src = '//rossant.disqus.com/embed.js';
+
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+
+    </aside>
+
+            </div>
+        </section>
+
+        <nav id="sidebar" class="pure-u-1 pure-u-md-1-4">
+            <div class="l-box">
+<section>
+    <div class="portrait">
+            <img src="/theme/images/cr.jpg" />
+    </div>
+    <div class="name-cv">
+        <div class="name">Cyrille Rossant, PhD</div>
+        <div class="cv">
+            <a href="/pdfs/cv.pdf"><i class="fa fa-file-pdf-o"></i> CV</a>
+        </div>
+    </div>
+    <div class="clear"></div>
+    <div class="sub-name">Neuroscience researcher and <br>
+software engineer at IBL and UCL<br>
+&nbsp;▸ IBL: <a href="https://www.internationalbrainlab.com/">International Brain Laboratory</a><br>
+&nbsp;▸ UCL: <a href="https://www.ucl.ac.uk/cortexlab">University College London</a></div>
+    <div class="contact"><i>firstname</i>.<i>lastname</i>@gmail.com</div>
+</section>
+
+<section class="tags">
+    <span class="tag"><a href="/tag/neuroscience/">#neuroscience</a></span>
+    <span class="tag"><a href="/tag/python/">#python</a></span>
+    <span class="tag"><a href="/tag/dataviz/">#dataviz</a></span>
+    <span class="tag"><a href="/tag/maths/">#maths</a></span>
+    <span class="tag"><a href="/tag/gpu/">#gpu</a></span>
+    <span class="tag"><a href="/tag/opendata/">#opendata</a></span>
+</section>
+
+
+<section class="books">
+    <header><h3>books</h3></header>
+    <div class="sub-header">Two books on <strong>Python for data science</strong></div>
+    <div class="book-1"><a href="/books/#minibook"><img src="/images/minibook.png"/></a></div>
+    <div class="book-2"><a href="/books/#cookbook"><img src="/images/cookbook.png"/></a></div>
+</section>
+
+
+<!-- <section class="search">
+    <script>
+  (function() {
+    var cx = '006027474294305969173:cpp1rvft78s';
+    var gcse = document.createElement('script');
+    gcse.type = 'text/javascript';
+    gcse.async = true;
+    gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+        '//www.google.com/cse/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(gcse, s);
+  })();
+</script>
+<gcse:search></gcse:search>
+</section> -->            </div>
+        </nav>
+
+        <footer id="footer" class="pure-u-1 pure-u-md-3-4">
+            <div class="l-box">
+                <div>
+                    <p>&copy; <a href="https://cyrille.rossant.net">Cyrille Rossant</a> &ndash;
+                        Built with <a href="https://github.com/PurePelicanTheme/pure-single">Pure Theme</a>
+                        for <a href="http://blog.getpelican.com/">Pelican</a>
+                    </p>
+                </div>
+            </div>
+        </footer>
+
+    </div>
+
+<!-- Start of StatCounter Code for Default Guide -->
+<script type="text/javascript">
+var sc_project=7297581;
+var sc_invisible=1;
+var sc_security="e9e753f7";
+var scJsHost = (("https:" == document.location.protocol) ?
+"https://secure." : "http://www.");
+document.write("<sc"+"ript type='text/javascript' src='" +
+scJsHost+
+"statcounter.com/counter/counter.js'></"+"script>");
+</script>
+<noscript><div class="statcounter"><a title="shopify site
+analytics" href="http://statcounter.com/shopify/"
+target="_blank"><img class="statcounter"
+src="http://c.statcounter.com/7297581/0/e9e753f7/1/"
+alt="shopify site analytics"></a></div></noscript>
+<!-- End of StatCounter Code for Default Guide -->
+</body>
+</html>
+

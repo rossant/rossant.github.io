@@ -1,0 +1,247 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Cyrille Rossant, ">
+    <link href="/favicon.png" rel="icon">
+
+        <link rel="alternate"  href="https://cyrille.rossant.net/feeds/all.atom.xml" type="application/atom+xml" title="Cyrille Rossant Full Atom Feed"/>
+        <link rel="alternate" href="https://cyrille.rossant.net/feeds/atom.xml" type="application/atom+xml" title="Cyrille Rossant Atom Feed"/>
+
+        <title>Cyrille Rossant</title>
+
+    <link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/pure/0.3.0/pure-min.css">
+    <!--[if lte IE 8]>
+        <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.5.0/grids-responsive-old-ie-min.css">
+    <![endif]-->
+    <!--[if gt IE 8]><!-->
+        <link rel="stylesheet" href="/theme/css/grids-responsive-min.css">
+    <!--<![endif]-->
+    <link rel="stylesheet" href="/theme/css/styles.css">
+    <link rel="stylesheet" href="/theme/css/pygments.css">
+    <!-- <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'> -->
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,500" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Ubuntu+Mono' rel='stylesheet' type='text/css'>
+
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+</head>
+
+<body>
+
+
+    <header id="header" class="pure-g">
+        <div class="pure-u-1 pure-u-md-3-4">
+             <div id="menu">
+                 <div class="pure-menu pure-menu-open pure-menu-horizontal">
+<ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/projects/">Projects</a></li>
+        <li><a href="/books/">Books</a></li>
+        <li><a href="/about/">About</a></li>
+</ul>                </div>
+            </div>
+        </div>
+
+        <div class="pure-u-1 pure-u-md-1-4">
+            <div id="social">
+                <div class="pure-menu pure-menu-open pure-menu-horizontal">
+<ul>
+        <li><a href="https://twitter.com/cyrillerossant"><i class="fa fa-twitter"></i></a></li>
+        <li><a href="https://github.com/rossant"><i class="fa fa-github"></i></a></li>
+        <li><a href="https://www.linkedin.com/in/crossant"><i class="fa fa-linkedin"></i></a></li>
+        <li><a href="https://cyrille.rossant.net/feeds/all.atom.xml"><i class="fa fa-rss"></i></a></li>
+</ul>                </div>
+            </div>
+        </div>
+    </header>
+
+
+
+    <div id="layout" class="pure-g">
+        <section id="content" class="pure-u-1 pure-u-md-3-4">
+            <div class="l-box">
+    <section id="posts">
+
+        <header id="posts-header">
+            <h1>Cyrille Rossant</h1>
+        </header>
+
+    <section class="post">
+        <header class="post-header">
+            <h3><a href="https://cyrille.rossant.net/pelican-github/">Setting up a blog with Pelican and GitHub Pages</a></h3>
+            <p class="sub-header-3">2016-02-01</p>
+            <p class="post-summary"><p>I describe how I set up my static blog/website in Python with <a href="http://blog.getpelican.com/">Pelican</a>, <a href="http://pandoc.org/">pandoc</a>, <a href="https://www.docker.com/">Docker</a>, <a href="http://www.dockerhub.com/">Dockerhub</a>, <a href="https://pages.github.com/">GitHub pages</a>, and <a href="https://travis-ci.org/">Travis CI</a>.</p>
+</p>
+        </header>
+        <div class="read-more">
+            <a class="pure-button" href="https://cyrille.rossant.net/pelican-github/">
+                read on
+            </a>
+        </div>
+    </section>
+        <hr />
+    <section class="post">
+        <header class="post-header">
+            <h3><a href="https://cyrille.rossant.net/should-you-use-hdf5/">Should you use HDF5?</a></h3>
+            <p class="sub-header-3">2016-01-30</p>
+            <p class="post-summary"><p>This is a follow-up on my post <a href="/moving-away-hdf5/"><em>Moving away from HDF5</em></a> (see also <a href="http://blog.khinsen.net/posts/2016/01/07/on-hdf5-and-the-future-of-data-management/">Konrad Hinsen's post</a>, and discussions on <a href="https://twitter.com/cyrillerossant/status/684767653697683456">Twitter</a> and <a href="https://news.ycombinator.com/item?id=10858189">Hacker News</a>). Here are some further thoughts, in no particular order.</p>
+</p>
+        </header>
+        <div class="read-more">
+            <a class="pure-button" href="https://cyrille.rossant.net/should-you-use-hdf5/">
+                read on
+            </a>
+        </div>
+    </section>
+        <hr />
+    <section class="post">
+        <header class="post-header">
+            <h3><a href="https://cyrille.rossant.net/moving-away-hdf5/">Moving away from HDF5</a></h3>
+            <p class="sub-header-3">2016-01-06</p>
+            <p class="post-summary"><p><strong>Update [2016-01-30]: <a href="/should-you-use-hdf5/">I wrote a follow-up here</a></strong></p>
+<p>In the research lab where I work, we've been developing a data processing pipeline for several years. This includes not only a program but also a new file format based on <strong>HDF5</strong> for a specific type of data. While the choice of HDF5 was looking compelling on paper, we found many issues with it. <strong>Recently, despite the high costs, we decided to abandon this format in our software</strong>.</p>
+<p>In this post, I'll describe what is HDF5 and what are the issues that made us move away from it.</p>
+</p>
+        </header>
+        <div class="read-more">
+            <a class="pure-button" href="https://cyrille.rossant.net/moving-away-hdf5/">
+                read on
+            </a>
+        </div>
+    </section>
+        <hr />
+    <section class="post">
+        <header class="post-header">
+            <h3><a href="https://cyrille.rossant.net/new-year/">New year</a></h3>
+            <p class="sub-header-3">2016-01-01</p>
+            <p class="post-summary"><p>I didn't write a lot lately: only 2 posts in 2015! I'll try to do better this year: more and shorter posts about programming, technology, and science. There's no shortage of topics to discuss.</p>
+<p>Happy New Year.</p></p>
+        </header>
+        <div class="read-more">
+            <a class="pure-button" href="https://cyrille.rossant.net/new-year/">
+                read on
+            </a>
+        </div>
+    </section>
+        <hr />
+    <section class="post">
+        <header class="post-header">
+            <h3><a href="https://cyrille.rossant.net/compiler-data-visualization/">A compiler infrastructure for data visualization</a></h3>
+            <p class="sub-header-3">2015-07-24</p>
+            <p class="post-summary"><p>There are many data visualization tools out there. Yet, I believe we're still lacking a robust, scalable, and cross-platform visualization toolkit that can handle today's massive datasets.</p>
+<p>Most existing tools target simple plots with a few hundreds or thousands of points: bar plots, scatter plots, histograms and the like. Typically, these figures represent aggregated statistical quantities. Maps are also particularly popular, and there are now really great open source tools.</p>
+<p>Perhaps contrary to a common belief, this is not the end of the story. There are much more complex visualization needs in academia and industry, and I've always been unsatisfied by the tools at our disposal.</p>
+</p>
+        </header>
+        <div class="read-more">
+            <a class="pure-button" href="https://cyrille.rossant.net/compiler-data-visualization/">
+                read on
+            </a>
+        </div>
+    </section>
+
+<nav class="pagination-wrapper">
+    <div class="pagination">
+        <div class="pagination-left">
+                <a href="https://cyrille.rossant.net/"><span>&larr; previous</span></a>
+        </div>
+        <span>Page 2 / 9 &nbsp; (<a href="https://cyrille.rossant.net/archives/">all</a>)</span>
+        <div class="pagination-right">
+                <a href="https://cyrille.rossant.net/page/3/">next&nbsp;&rarr;</a>
+        </div>
+    </div>
+</nav>    </section>
+            </div>
+        </section>
+
+        <nav id="sidebar" class="pure-u-1 pure-u-md-1-4">
+            <div class="l-box">
+<section>
+    <div class="portrait">
+            <img src="/theme/images/cr.jpg" />
+    </div>
+    <div class="name-cv">
+        <div class="name">Cyrille Rossant, PhD</div>
+        <div class="cv">
+            <a href="/pdfs/cv.pdf"><i class="fa fa-file-pdf-o"></i> CV</a>
+        </div>
+    </div>
+    <div class="clear"></div>
+    <div class="sub-name">Neuroscience researcher and <br>
+software engineer at IBL and UCL<br>
+&nbsp;▸ IBL: <a href="https://www.internationalbrainlab.com/">International Brain Laboratory</a><br>
+&nbsp;▸ UCL: <a href="https://www.ucl.ac.uk/cortexlab">University College London</a></div>
+    <div class="contact"><i>firstname</i>.<i>lastname</i>@gmail.com</div>
+</section>
+
+<section class="tags">
+    <span class="tag"><a href="/tag/neuroscience/">#neuroscience</a></span>
+    <span class="tag"><a href="/tag/python/">#python</a></span>
+    <span class="tag"><a href="/tag/dataviz/">#dataviz</a></span>
+    <span class="tag"><a href="/tag/maths/">#maths</a></span>
+    <span class="tag"><a href="/tag/gpu/">#gpu</a></span>
+    <span class="tag"><a href="/tag/opendata/">#opendata</a></span>
+</section>
+
+
+<section class="books">
+    <header><h3>books</h3></header>
+    <div class="sub-header">Two books on <strong>Python for data science</strong></div>
+    <div class="book-1"><a href="/books/#minibook"><img src="/images/minibook.png"/></a></div>
+    <div class="book-2"><a href="/books/#cookbook"><img src="/images/cookbook.png"/></a></div>
+</section>
+
+
+<!-- <section class="search">
+    <script>
+  (function() {
+    var cx = '006027474294305969173:cpp1rvft78s';
+    var gcse = document.createElement('script');
+    gcse.type = 'text/javascript';
+    gcse.async = true;
+    gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+        '//www.google.com/cse/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(gcse, s);
+  })();
+</script>
+<gcse:search></gcse:search>
+</section> -->            </div>
+        </nav>
+
+        <footer id="footer" class="pure-u-1 pure-u-md-3-4">
+            <div class="l-box">
+                <div>
+                    <p>&copy; <a href="https://cyrille.rossant.net">Cyrille Rossant</a> &ndash;
+                        Built with <a href="https://github.com/PurePelicanTheme/pure-single">Pure Theme</a>
+                        for <a href="http://blog.getpelican.com/">Pelican</a>
+                    </p>
+                </div>
+            </div>
+        </footer>
+
+    </div>
+
+<!-- Start of StatCounter Code for Default Guide -->
+<script type="text/javascript">
+var sc_project=7297581;
+var sc_invisible=1;
+var sc_security="e9e753f7";
+var scJsHost = (("https:" == document.location.protocol) ?
+"https://secure." : "http://www.");
+document.write("<sc"+"ript type='text/javascript' src='" +
+scJsHost+
+"statcounter.com/counter/counter.js'></"+"script>");
+</script>
+<noscript><div class="statcounter"><a title="shopify site
+analytics" href="http://statcounter.com/shopify/"
+target="_blank"><img class="statcounter"
+src="http://c.statcounter.com/7297581/0/e9e753f7/1/"
+alt="shopify site analytics"></a></div></noscript>
+<!-- End of StatCounter Code for Default Guide -->
+</body>
+</html>
+

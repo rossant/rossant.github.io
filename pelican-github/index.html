@@ -1,0 +1,427 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Cyrille Rossant, ">
+    <link href="/favicon.png" rel="icon">
+
+        <link rel="alternate"  href="https://cyrille.rossant.net/feeds/all.atom.xml" type="application/atom+xml" title="Cyrille Rossant Full Atom Feed"/>
+        <link rel="alternate" href="https://cyrille.rossant.net/feeds/atom.xml" type="application/atom+xml" title="Cyrille Rossant Atom Feed"/>
+
+        <title>Cyrille Rossant - Setting up a blog with Pelican and GitHub Pages</title>
+
+    <link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/pure/0.3.0/pure-min.css">
+    <!--[if lte IE 8]>
+        <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.5.0/grids-responsive-old-ie-min.css">
+    <![endif]-->
+    <!--[if gt IE 8]><!-->
+        <link rel="stylesheet" href="/theme/css/grids-responsive-min.css">
+    <!--<![endif]-->
+    <link rel="stylesheet" href="/theme/css/styles.css">
+    <link rel="stylesheet" href="/theme/css/pygments.css">
+    <!-- <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'> -->
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,500" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Ubuntu+Mono' rel='stylesheet' type='text/css'>
+
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/fitvids/1.0.1/jquery.fitvids.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $(".content").fitVids();
+        });
+    </script>
+</head>
+
+<body>
+
+
+    <header id="header" class="pure-g">
+        <div class="pure-u-1 pure-u-md-3-4">
+             <div id="menu">
+                 <div class="pure-menu pure-menu-open pure-menu-horizontal">
+<ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/projects/">Projects</a></li>
+        <li><a href="/books/">Books</a></li>
+        <li><a href="/about/">About</a></li>
+</ul>                </div>
+            </div>
+        </div>
+
+        <div class="pure-u-1 pure-u-md-1-4">
+            <div id="social">
+                <div class="pure-menu pure-menu-open pure-menu-horizontal">
+<ul>
+        <li><a href="https://twitter.com/cyrillerossant"><i class="fa fa-twitter"></i></a></li>
+        <li><a href="https://github.com/rossant"><i class="fa fa-github"></i></a></li>
+        <li><a href="https://www.linkedin.com/in/crossant"><i class="fa fa-linkedin"></i></a></li>
+        <li><a href="https://cyrille.rossant.net/feeds/all.atom.xml"><i class="fa fa-rss"></i></a></li>
+</ul>                </div>
+            </div>
+        </div>
+    </header>
+
+
+
+    <div id="layout" class="pure-g">
+        <section id="content" class="pure-u-1 pure-u-md-3-4">
+            <div class="l-box">
+
+    <header id="post-header">
+        <h1>Setting up a blog with Pelican and GitHub Pages</h1>
+            <div class="post-meta">
+                February 01, 2016
+            </div>
+            <div class="post-tags">
+                <ul>
+                    <li>tags:</li>
+                    <li><a href="/tag/python/">python</a></li>
+                </ul>
+            </div>
+    </header>
+
+    <section id="post">
+        <p>I describe how I set up my static blog/website in Python with <a href="http://blog.getpelican.com/">Pelican</a>, <a href="http://pandoc.org/">pandoc</a>, <a href="https://www.docker.com/">Docker</a>, <a href="http://www.dockerhub.com/">Dockerhub</a>, <a href="https://pages.github.com/">GitHub pages</a>, and <a href="https://travis-ci.org/">Travis CI</a>.</p>
+
+
+<p>Here is the workflow I wanted to have:</p>
+<ol>
+<li>I write new contents in Markdown files.</li>
+<li>I commit and push the sources to my GitHub repository.</li>
+<li>That's it. The website is automatically updated after two minutes, thanks to <strong>Travis CI</strong> and <strong>Docker</strong>. My CV is also automatically converted from Markdown to PDF via LaTeX.</li>
+</ol>
+<p>Setting this up was not straightforward and it did require significant upfront investment.</p>
+<h2>Creating a GitHub repo for your website</h2>
+<p>I assume you're creating your personal webpage. You need to create a <code>yourname.github.io</code> repo where <code>yourname</code> is your GitHub login. You can also use the same method for an organization page, with minor adjustments. <a href="https://github.com/rossant/rossant.github.io/">My repo is here</a>.</p>
+<p>The <code>master</code> branch will contain the automatically-generated HTML contents. Only Travis CI will write to this branch with a force push. The sources will be in an <a href="https://git-scm.com/docs/git-checkout/"><em>orphan branch</em></a> named <code>sources</code>.</p>
+<p>Clone your repo. Let's assume your local path is <code>/home/yourname/git/yourname.github.io/</code>.</p>
+<h2>Setting up Pelican</h2>
+<p>Now create your website locally with Pelican. If you're starting from scratch this is not the simplest step! You can refer to <a href="http://docs.getpelican.com/en/stable/">Pelican's documentation</a>.</p>
+<p>Here is an excerpt of my repo's file structure:</p>
+<div class="highlight"><pre><span></span>pelican-plugins/                    # git clone the official pelican-plugins repo
+plugins/                            # put your own plugins here
+content/                            # put your contents here
+  images/                           # images that you use in your posts
+  pages/                            # static pages
+    about.md
+    ...
+  2016-01-01-my-blog-post.md        # URL will be http://yourname.github.io/my-blog-post/
+  ...
+themes/                             # put your themes and templates here
+  pure/
+    static/
+    templates/
+output/                             # HTML output generated by Pelican
+
+Dockerfile                          # these two files are for Docker
+run_docker.sh
+
+Makefile                            # these files are auto-generated by Pelican
+pelicanconf.py
+publishconf.py
+</pre></div>
+
+
+<p>I write pages and posts in Markdown files within the <code>contents/</code> subdirectory. I can use the Jupyter Notebook to edit Markdown files with the <a href="http://github.com/rossant/ipymd">ipymd</a> package. This is convenient when my posts contain a lot of code.</p>
+<p>The theme's files (jinja templates, CSS and JS files) are in <code>themes/pure/</code> (<a href="http://purecss.io/">pure</a> is the name of the CSS framework I'm using). I use a few Pelican plugins, which are in the <code>pelican-plugins/</code> subdirectory (a <a href="https://github.com/getpelican/pelican-plugins">cloned repo</a>). I also have a custom plugin in <code>plugins/</code> (see later in this post).</p>
+<p>When Pelican generates the website, the HTML files are saved in the <code>output/</code> subfolder which is <em>not</em> tracked by git.</p>
+<p>Pelican comes with a tool that initializes the file structure for a new site. It creates a default <code>pelicanconf.py</code>, a complete <code>Makefile</code>, and a few other things. You put all of your site's parameters in <code>pelicanconf.py</code>. Here is an excerpt of my <code>pelicanconf.py</code>:</p>
+<div class="highlight"><pre><span></span><span class="n">THEME</span> <span class="o">=</span> <span class="s1">&#39;themes/pure&#39;</span>
+<span class="n">PATH</span> <span class="o">=</span> <span class="s1">&#39;content&#39;</span>
+<span class="c1"># Extract a post&#39;s date from the filename:</span>
+<span class="n">FILENAME_METADATA</span> <span class="o">=</span> <span class="s1">&#39;(?P&lt;date&gt;\d{4}-\d{2}-\d{2})-(?P&lt;slug&gt;.*)&#39;</span>
+<span class="n">STATIC_PATHS</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;images&#39;</span><span class="p">]</span>
+<span class="n">EXTRA_PATH_METADATA</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;images/favicon.png&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;path&#39;</span><span class="p">:</span> <span class="s1">&#39;favicon.png&#39;</span><span class="p">},</span>
+<span class="p">}</span>
+<span class="c1"># Markdown extensions:</span>
+<span class="n">MD_EXTENSIONS</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;codehilite(css_class=highlight,&#39;</span>
+                 <span class="s1">&#39;guess_lang=False,linenums=False)&#39;</span><span class="p">,</span>
+                 <span class="s1">&#39;headerid&#39;</span><span class="p">,</span>
+                 <span class="s1">&#39;extra&#39;</span><span class="p">]</span>
+<span class="c1"># Pagination:</span>
+<span class="n">DEFAULT_PAGINATION</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="n">PAGINATION_PATTERNS</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;{base_name}/&#39;</span><span class="p">,</span> <span class="s1">&#39;{base_name}/index.html&#39;</span><span class="p">),</span>
+    <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;{base_name}/page/{number}/&#39;</span><span class="p">,</span> <span class="s1">&#39;{base_name}/page/{number}/index.html&#39;</span><span class="p">),</span>
+<span class="p">)</span>
+<span class="n">PLUGIN_PATHS</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;pelican-plugins&#39;</span><span class="p">,</span> <span class="s1">&#39;plugins&#39;</span><span class="p">]</span>
+<span class="c1"># Pelican plugins:</span>
+<span class="n">PLUGINS</span> <span class="o">=</span> <span class="p">[</span><span class="c1"># These plugins are part of the official `pelican-plugins` repo:</span>
+           <span class="s1">&#39;render_math&#39;</span><span class="p">,</span>
+           <span class="s1">&#39;summary&#39;</span><span class="p">,</span>
+           <span class="s1">&#39;neighbors&#39;</span><span class="p">,</span>
+           <span class="c1"># This one is a custom plugin:</span>
+           <span class="s1">&#39;pdf&#39;</span><span class="p">,</span>
+           <span class="p">]</span>
+<span class="n">ARTICLE_URL</span> <span class="o">=</span> <span class="s1">&#39;{slug}/&#39;</span>
+<span class="n">ARTICLE_SAVE_AS</span> <span class="o">=</span> <span class="s1">&#39;{slug}/index.html&#39;</span>
+<span class="n">PAGE_URL</span> <span class="o">=</span> <span class="s1">&#39;{slug}/&#39;</span>
+<span class="n">PAGE_SAVE_AS</span> <span class="o">=</span> <span class="s1">&#39;{slug}/index.html&#39;</span>
+</pre></div>
+
+
+<p>At this point, develop and configure your site locally until it's ready to be made public. I generally use <code>make html</code> to generate the website locally, <code>make regenerate</code> to have it regenerated automatically while I work on it, and <code>make serve</code> to browse it locally at <code>http://localhost:8000</code>.</p>
+<p>The <code>publishconf.py</code> makes a few adjustements to your <code>pelicanconf.py</code> to make your website ready to be published (mainly specifying the public URL of your website).</p>
+<h2>Automatically generating a PDF version of my CV</h2>
+<p>One of the pages of my site contains my CV in Markdown. I wanted to have a PDF version automatically available, using <a href="http://pandoc.org/">pandoc</a> and LaTeX to convert from Markdown to PDF. I created a quick-and-dirty plugin for this purpose:</p>
+<div class="highlight"><pre><span></span><span class="c1"># This is in `plugins/pdf/__init__.py`</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">tempfile</span>
+
+<span class="kn">from</span> <span class="nn">pelican</span> <span class="kn">import</span> <span class="n">signals</span>
+
+<span class="c1"># The pandoc command. The CV is saved in a static `pdfs/` subdirectory.</span>
+<span class="n">CMD</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;pandoc {fn} -o content/pdfs/cv.pdf &#39;</span>
+       <span class="s1">&#39;-V geometry:margin=1in &#39;</span>
+       <span class="s1">&#39;--template=template.tex&#39;</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">generate_pdf</span><span class="p">(</span><span class="n">p</span><span class="p">):</span>
+    <span class="k">with</span> <span class="n">tempfile</span><span class="o">.</span><span class="n">TemporaryDirectory</span><span class="p">()</span> <span class="k">as</span> <span class="n">tmpdir</span><span class="p">:</span>
+        <span class="k">print</span><span class="p">(</span><span class="s2">&quot;Generating cv.pdf&quot;</span><span class="p">)</span>
+        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;content/pages/about.md&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+            <span class="n">contents</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+        <span class="n">fn</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">tmpdir</span><span class="p">,</span> <span class="s1">&#39;about.md&#39;</span><span class="p">)</span>
+        <span class="n">contents</span> <span class="o">=</span> <span class="n">contents</span><span class="p">[</span><span class="n">contents</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">---&#39;</span><span class="p">)</span> <span class="o">+</span> <span class="mi">4</span><span class="p">:]</span>
+        <span class="c1"># Add title and author in Markdown front matter.</span>
+        <span class="n">contents</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;---</span><span class="se">\n</span><span class="s1">&#39;</span>
+                    <span class="s1">&#39;title: Curriculum vitae</span><span class="se">\n</span><span class="s1">&#39;</span>
+                    <span class="s1">&#39;author: Cyrille Rossant</span><span class="se">\n</span><span class="s1">&#39;</span>
+                    <span class="s1">&#39;---</span><span class="se">\n\n</span><span class="s1">&#39;</span> <span class="o">+</span>
+                    <span class="n">contents</span><span class="p">)</span>
+        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">fn</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+            <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">contents</span><span class="p">)</span>
+        <span class="n">os</span><span class="o">.</span><span class="n">system</span><span class="p">(</span><span class="n">CMD</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">fn</span><span class="o">=</span><span class="n">fn</span><span class="p">))</span>
+
+
+<span class="k">def</span> <span class="nf">register</span><span class="p">():</span>
+    <span class="c1"># Create the PDF before generating the site.</span>
+    <span class="n">signals</span><span class="o">.</span><span class="n">initialized</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="n">generate_pdf</span><span class="p">)</span>
+</pre></div>
+
+
+<p>Now, as part of the build process, a <code>content/pdfs/cv.pdf</code> file is automatically generated. This ensures that the PDF is always in sync with that page. This PDF is not tracked by git. It will be automatically generated by Travis CI.</p>
+<h2>Setting up Travis CI</h2>
+<p>Now we're going to set up Travis CI. We'll tell Travis to build the website at every push to the <code>sources</code> branch, and to force push the output to the <code>master</code> branch. This ensures that the website is automatically built and deployed.</p>
+<p>Here's my <code>.travis.yml</code>:</p>
+<div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">language</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">python</span>
+<span class="l l-Scalar l-Scalar-Plain">python</span><span class="p p-Indicator">:</span>
+  <span class="p p-Indicator">-</span> <span class="s">&quot;3.5&quot;</span>
+<span class="l l-Scalar l-Scalar-Plain">sudo</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">required</span>
+<span class="l l-Scalar l-Scalar-Plain">services</span><span class="p p-Indicator">:</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">docker</span>
+<span class="l l-Scalar l-Scalar-Plain">branches</span><span class="p p-Indicator">:</span>
+  <span class="l l-Scalar l-Scalar-Plain">only</span><span class="p p-Indicator">:</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">sources</span>
+<span class="l l-Scalar l-Scalar-Plain">env</span><span class="p p-Indicator">:</span>
+  <span class="l l-Scalar l-Scalar-Plain">global</span><span class="p p-Indicator">:</span>
+    <span class="l l-Scalar l-Scalar-Plain">secure</span><span class="p p-Indicator">:</span> <span class="s">&quot;xxxxxxxxxxxx&quot;</span>
+<span class="l l-Scalar l-Scalar-Plain">install</span><span class="p p-Indicator">:</span>
+<span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">pip install ghp-import</span>
+<span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">git clone https://github.com/getpelican/pelican-plugins</span>
+<span class="l l-Scalar l-Scalar-Plain">script</span><span class="p p-Indicator">:</span>
+<span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">make publish github</span>
+</pre></div>
+
+
+<p>A few things to note:</p>
+<ul>
+<li>I use Docker to build the website and the PDF but this is optional.</li>
+<li>If you don't use Docker, you'll have to install Pelican and other dependencies to build your website.</li>
+<li>I put an encrypted version of an authentication key to allow Travis to push to the <code>master</code> branch of the repo. Refer to <a href="http://blog.mathieu-leplatre.info/publish-your-pelican-blog-on-github-pages-via-travis-ci.html">this page</a> to see how to generate and encrypt an authentication key.</li>
+<li>I use the <a href="https://github.com/davisp/ghp-import"><code>ghp-import</code> tool</a> to push the generated website to the <code>master</code> branch. <strong>Note that this tool is destructive: here it will destroy your <code>master</code> branch every time</strong>. You will always have a single commit in <code>master</code> with the latest version of your website.</li>
+<li>The build process occurs in <code>make publish github</code> which is readily provided by the default <code>Makefile</code>. What this command does is:<ul>
+<li>Generate your website in <code>output/</code>.</li>
+<li>Commit the <code>output/</code> to the <code>master</code> branch.</li>
+<li>Push force that branch to GitHub. GitHub Pages takes care of the rest and updates your website automatically at <code>http://yourname.github.io</code>.</li>
+</ul>
+</li>
+</ul>
+<h2>Setting up Docker</h2>
+<p>The default <code>Makefile</code> contains the command <code>pelican contents/ -o output/ -s publishconf.py</code> to generate your website. However, since I'm using Docker, I've replaced this command by a <code>bash run_docker.sh</code>, described below.</p>
+<p>The main reason why I'm using Docker here is that installing LaTeX takes a while, and using Docker makes the build process slightly faster on Travis CI. The image is big though (almost 1GB), mainly because of LaTeX, and I'd be happy to find a way to make it smaller. It would make the build process faster.</p>
+<p>Using Docker also gives me a bit more control on the dependencies I need. But it certainly makes the setup more complicated. Don't use it if you don't need it.</p>
+<p>First, install Docker locally. This is not necessarily straightforward: <a href="https://docs.docker.com/engine/installation/">follow all instructions</a>. Also, create a <a href="https://hub.docker.com/">Dockerhub</a> account, and create a <code>yourname/pelican</code> repository. Dockerhub is like GitHub, but for Docker images.</p>
+<p>Then, create a <code>Dockerfile</code> at the root of your repo with the following:</p>
+<div class="highlight"><pre><span></span>FROM python:3
+MAINTAINER yourname &lt;your@email.com&gt;
+
+# Update OS
+RUN apt-get update
+RUN sed -i &#39;s/# \(.*multiverse$\)/\1/g&#39; /etc/apt/sources.list
+RUN apt-get -y upgrade
+
+# Install dependencies
+# I need LaTeX and pandoc to generate the CV:
+RUN apt-get install make git tex-common texlive pandoc -y
+RUN pip install pelican Markdown ghp-import
+RUN pip install --upgrade pelican Markdown ghp-import
+
+WORKDIR /site
+# Generate the website when running the container:
+CMD pelican content/ -o output/ -s publishconf.py
+</pre></div>
+
+
+<p>Starting from a Python 3 image, we add LaTeX, pandoc, Pelican, Markdown, and ghp-import, and we generate the website.</p>
+<p>When you'll run a container based on this image, you'll have to mount your repository as a data volume so that the Docker container has access to it.</p>
+<p>Build your container with <code>docker build -t yourname/pelican .</code> (note the trailing dot!). This will download the Python 3 image and build an image with your Dockerfile instructions.</p>
+<p>Next step is to <a href="https://docs.docker.com/engine/userguide/dockerrepos/">upload the image to your Dockerhub account</a> with <code>docker login</code> and <code>docker push yourname/pelican</code>. Travis CI will download it and use it to build your website.</p>
+<p>Finally, here's a tiny bash script to pull the latest version of the image from Dockerhub and run it to generate the website:</p>
+<div class="highlight"><pre><span></span><span class="c1"># This is run_docker.sh</span>
+<span class="c1"># Pull the latest Docker image</span>
+docker pull yourname/pelican
+<span class="c1"># Generate the site with pelican</span>
+docker run -t -v <span class="k">$(</span><span class="nb">pwd</span><span class="k">)</span>:/site yourname/pelican
+</pre></div>
+
+
+<p>The last line of the script runs our container. The <code>-v $(pwd):/site</code> allows us to mount the current directory (typically your <code>~/git/yourname.github.io/</code> repo) to the <code>/site</code> directory, which is our container's working directory.</p>
+<p>Phew, that's it! Now I can edit the Markdown sources, commit and push to GitHub, and the website is built automatically by Travis CI. To sum up, the build process done by Travis CI at every push to <code>sources</code> is as follows:</p>
+<ul>
+<li>Clone the current <code>yourname.github.io</code> repo</li>
+<li>Pull the <code>yourname/pelican</code> image from Dockerhub</li>
+<li>Create and run a container based on this image, with the current directory containing the sources mounted inside the container</li>
+<li>The container, which has Pelican, LaTeX, and pandoc installed, generates the website in <code>output/</code>, including the PDF version of one of the pages</li>
+<li>The output is committed to the <code>master</code> branch via <code>ghp-import</code></li>
+<li>The <code>master</code> branch is pushed to the GitHub <code>yourname.github.io</code> repo thanks to the authentication token</li>
+</ul>
+    </section>
+
+
+<nav class="pagination-wrapper">
+    <div class="pagination">
+        <div class="pagination-left">
+                <a href="https://cyrille.rossant.net/nature-neuroscience-paper/">
+                    &larr; previous
+                </a>
+        </div>
+        <div class="pagination-right">
+                <a href="https://cyrille.rossant.net/should-you-use-hdf5/">
+                    next&nbsp;&rarr;
+                </a>
+        </div>
+    </div>
+</nav>
+    <aside class="comments">
+
+<div id="disqus_thread"></div>
+<script>
+    /**
+     *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+     *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
+     */
+
+    var disqus_config = function () {
+        this.page.url = "https://cyrille.rossant.net/pelican-github/";  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = "pelican-github"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+
+    (function() {  // DON'T EDIT BELOW THIS LINE
+        var d = document, s = d.createElement('script');
+
+        s.src = '//rossant.disqus.com/embed.js';
+
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+
+    </aside>
+
+            </div>
+        </section>
+
+        <nav id="sidebar" class="pure-u-1 pure-u-md-1-4">
+            <div class="l-box">
+<section>
+    <div class="portrait">
+            <img src="/theme/images/cr.jpg" />
+    </div>
+    <div class="name-cv">
+        <div class="name">Cyrille Rossant, PhD</div>
+        <div class="cv">
+            <a href="/pdfs/cv.pdf"><i class="fa fa-file-pdf-o"></i> CV</a>
+        </div>
+    </div>
+    <div class="clear"></div>
+    <div class="sub-name">Neuroscience researcher and <br>
+software engineer at IBL and UCL<br>
+&nbsp;▸ IBL: <a href="https://www.internationalbrainlab.com/">International Brain Laboratory</a><br>
+&nbsp;▸ UCL: <a href="https://www.ucl.ac.uk/cortexlab">University College London</a></div>
+    <div class="contact"><i>firstname</i>.<i>lastname</i>@gmail.com</div>
+</section>
+
+<section class="tags">
+    <span class="tag"><a href="/tag/neuroscience/">#neuroscience</a></span>
+    <span class="tag"><a href="/tag/python/">#python</a></span>
+    <span class="tag"><a href="/tag/dataviz/">#dataviz</a></span>
+    <span class="tag"><a href="/tag/maths/">#maths</a></span>
+    <span class="tag"><a href="/tag/gpu/">#gpu</a></span>
+    <span class="tag"><a href="/tag/opendata/">#opendata</a></span>
+</section>
+
+
+<section class="books">
+    <header><h3>books</h3></header>
+    <div class="sub-header">Two books on <strong>Python for data science</strong></div>
+    <div class="book-1"><a href="/books/#minibook"><img src="/images/minibook.png"/></a></div>
+    <div class="book-2"><a href="/books/#cookbook"><img src="/images/cookbook.png"/></a></div>
+</section>
+
+
+<!-- <section class="search">
+    <script>
+  (function() {
+    var cx = '006027474294305969173:cpp1rvft78s';
+    var gcse = document.createElement('script');
+    gcse.type = 'text/javascript';
+    gcse.async = true;
+    gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+        '//www.google.com/cse/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(gcse, s);
+  })();
+</script>
+<gcse:search></gcse:search>
+</section> -->            </div>
+        </nav>
+
+        <footer id="footer" class="pure-u-1 pure-u-md-3-4">
+            <div class="l-box">
+                <div>
+                    <p>&copy; <a href="https://cyrille.rossant.net">Cyrille Rossant</a> &ndash;
+                        Built with <a href="https://github.com/PurePelicanTheme/pure-single">Pure Theme</a>
+                        for <a href="http://blog.getpelican.com/">Pelican</a>
+                    </p>
+                </div>
+            </div>
+        </footer>
+
+    </div>
+
+<!-- Start of StatCounter Code for Default Guide -->
+<script type="text/javascript">
+var sc_project=7297581;
+var sc_invisible=1;
+var sc_security="e9e753f7";
+var scJsHost = (("https:" == document.location.protocol) ?
+"https://secure." : "http://www.");
+document.write("<sc"+"ript type='text/javascript' src='" +
+scJsHost+
+"statcounter.com/counter/counter.js'></"+"script>");
+</script>
+<noscript><div class="statcounter"><a title="shopify site
+analytics" href="http://statcounter.com/shopify/"
+target="_blank"><img class="statcounter"
+src="http://c.statcounter.com/7297581/0/e9e753f7/1/"
+alt="shopify site analytics"></a></div></noscript>
+<!-- End of StatCounter Code for Default Guide -->
+</body>
+</html>
+
