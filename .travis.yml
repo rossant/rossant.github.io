@@ -1,17 +1,18 @@
 language: python
 python:
-- '3.5'
+  - "3.8"
 sudo: required
-services:
-- docker
 branches:
   only:
   - sources
 env:
   global:
   - secure: "gYGETPMdL08dkNcli92QEr3iaFBTDMyal7C2rOpgVNxz/pRq94xkoKLUom8cY+Q31NPL5Kfvkow32YYzJVVQWWh4ldZ68WZjhN9B0Y+uTFI2WvqRhLWqqb3KZvJjcEr30/03iajB6puj17EXN5HHpLFWwdxdP919qATxq3QIRmM="
+before-install:
+  - sudo apt-get update
+  - apt-get install make git tex-common texlive pandoc -y
+  - pip install --upgrade pelican Markdown ghp-import
 install:
-- pip install ghp-import
-- git clone https://github.com/getpelican/pelican-plugins
+  - git clone --recursive https://github.com/getpelican/pelican-plugins
 script:
-- make publish github
+  - make publish github
