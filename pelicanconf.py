@@ -87,10 +87,12 @@ MENUITEMS = [('Home', '/'),
              ]
 DATE_FORMATS = {
     'en': '%Y-%m-%d',
+    'fr': '%Y-%m-%d',
 }
 
 TIMEZONE = 'Europe/Paris'
 DEFAULT_LANG = 'en'
+LOCALE = ('en_US',)
 
 # Feed generation is usually not desired when developing
 FEED_ALL_ATOM = None
