@@ -157,7 +157,7 @@ They allow to allocate memory on the GPU, load data on the GPU
 once (or several times if the data changes), and render it
 efficiently since the data stays on the GPU between consecutives calls to
 <code>paintGL()</code>. PyOpenGL integrates a module to easily create and use VBOs:</p>
-<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">OpenGL.arrays.vbo</span> <span class="kn">as</span> <span class="nn">glvbo</span>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">OpenGL.arrays.vbo</span> <span class="k">as</span> <span class="nn">glvbo</span>
 <span class="c1"># in initializeGL:</span>
 <span class="c1"># create a VBO, data is a Nx2 Numpy array</span>
 <span class="bp">self</span><span class="o">.</span><span class="n">vbo</span> <span class="o">=</span> <span class="n">glvbo</span><span class="o">.</span><span class="n">VBO</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">)</span>
@@ -166,8 +166,7 @@ efficiently since the data stays on the GPU between consecutives calls to
 <span class="c1"># bind a VBO, i.e. tell OpenGL we&#39;re going to use it for subsequent</span>
 <span class="c1"># rendering commands</span>
 <span class="bp">self</span><span class="o">.</span><span class="n">vbo</span><span class="o">.</span><span class="n">bind</span><span class="p">()</span>
-</pre></div>
-
+</code></pre></div>
 
 <h2>Painting with VBOs</h2>
 <p>OpenGL can render primitives like points, lines, and convex polygons.
@@ -207,7 +206,7 @@ The graphics card may not indeed support the latter format. I used doubles in
 an early version of this post and I had some nasty memory access violation
 crashes in particular cases. They disappeared when I switched to floats. If
 this is helpful to anyone...</p>
-<div class="highlight"><pre><span></span><span class="c1"># in paintGL:</span>
+<div class="highlight"><pre><span></span><code><span class="c1"># in paintGL:</span>
 <span class="c1"># set the color yellow</span>
 <span class="n">gl</span><span class="o">.</span><span class="n">glColor</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span>
 <span class="c1"># enable the VBO</span>
@@ -217,8 +216,7 @@ this is helpful to anyone...</p>
 <span class="n">gl</span><span class="o">.</span><span class="n">glVertexPointer</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">gl</span><span class="o">.</span><span class="n">GL_FLOAT</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">vbo</span><span class="p">)</span>
 <span class="c1"># draw all points from the VBO</span>
 <span class="n">gl</span><span class="o">.</span><span class="n">glDrawArrays</span><span class="p">(</span><span class="n">gl</span><span class="o">.</span><span class="n">GL_POINTS</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">))</span>
-</pre></div>
-
+</code></pre></div>
 
 <h2>Setting orthographic projection for 2D rendering</h2>
 <p>The <code>resizeGL</code> method sets the geometric projection used for
@@ -232,22 +230,21 @@ The
 function
 allows to specify the part of the screen used for the subsequent rendering
 commands. Here we just tell OpenGL to draw within the entire window.</p>
-<div class="highlight"><pre><span></span><span class="c1"># paint within the whole window</span>
+<div class="highlight"><pre><span></span><code><span class="c1"># paint within the whole window</span>
 <span class="n">gl</span><span class="o">.</span><span class="n">glViewport</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">width</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">height</span><span class="p">)</span>
 <span class="c1"># set orthographic projection (2D only)</span>
 <span class="n">gl</span><span class="o">.</span><span class="n">glMatrixMode</span><span class="p">(</span><span class="n">gl</span><span class="o">.</span><span class="n">GL_PROJECTION</span><span class="p">)</span>
 <span class="n">gl</span><span class="o">.</span><span class="n">glLoadIdentity</span><span class="p">()</span>
 <span class="c1"># the window corner OpenGL coordinates are (-+1, -+1)</span>
 <span class="n">gl</span><span class="o">.</span><span class="n">glOrtho</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
-</pre></div>
-
+</code></pre></div>
 
 <h2>Setting the PyQt widget</h2>
 <p>Here we use PyQt as a GUI window system. To show a window on the screen and
 use our OpenGL widget, we first need to define a Qt main window, put the
 OpenGL widget inside, and finally create a Qt application to host the main
 window.</p>
-<div class="highlight"><pre><span></span><span class="c1"># define a Qt window with an OpenGL widget inside it</span>
+<div class="highlight"><pre><span></span><code><span class="c1"># define a Qt window with an OpenGL widget inside it</span>
 <span class="k">class</span> <span class="nc">TestWindow</span><span class="p">(</span><span class="n">QtGui</span><span class="o">.</span><span class="n">QMainWindow</span><span class="p">):</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="nb">super</span><span class="p">(</span><span class="n">TestWindow</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
@@ -264,17 +261,16 @@ window.</p>
 <span class="n">window</span> <span class="o">=</span> <span class="n">TestWindow</span><span class="p">()</span>
 <span class="n">window</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 <span class="n">app</span><span class="o">.</span><span class="n">exec_</span><span class="p">()</span>
-</pre></div>
-
+</code></pre></div>
 
 <h2>Full script</h2>
 <p>Here is the full script.</p>
-<div class="highlight"><pre><span></span><span class="c1"># PyQt4 imports</span>
+<div class="highlight"><pre><span></span><code><span class="c1"># PyQt4 imports</span>
 <span class="kn">from</span> <span class="nn">PyQt4</span> <span class="kn">import</span> <span class="n">QtGui</span><span class="p">,</span> <span class="n">QtCore</span><span class="p">,</span> <span class="n">QtOpenGL</span>
 <span class="kn">from</span> <span class="nn">PyQt4.QtOpenGL</span> <span class="kn">import</span> <span class="n">QGLWidget</span>
 <span class="c1"># PyOpenGL imports</span>
-<span class="kn">import</span> <span class="nn">OpenGL.GL</span> <span class="kn">as</span> <span class="nn">gl</span>
-<span class="kn">import</span> <span class="nn">OpenGL.arrays.vbo</span> <span class="kn">as</span> <span class="nn">glvbo</span>
+<span class="kn">import</span> <span class="nn">OpenGL.GL</span> <span class="k">as</span> <span class="nn">gl</span>
+<span class="kn">import</span> <span class="nn">OpenGL.arrays.vbo</span> <span class="k">as</span> <span class="nn">glvbo</span>
 
 <span class="k">class</span> <span class="nc">GLPlotWidget</span><span class="p">(</span><span class="n">QGLWidget</span><span class="p">):</span>
     <span class="c1"># default window size</span>
@@ -326,8 +322,8 @@ window.</p>
 <span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
     <span class="c1"># import numpy for generating random data points</span>
     <span class="kn">import</span> <span class="nn">sys</span>
-    <span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
-    <span class="kn">import</span> <span class="nn">numpy.random</span> <span class="kn">as</span> <span class="nn">rdn</span>
+    <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+    <span class="kn">import</span> <span class="nn">numpy.random</span> <span class="k">as</span> <span class="nn">rdn</span>
 
     <span class="c1"># define a Qt window with an OpenGL widget inside it</span>
     <span class="k">class</span> <span class="nc">TestWindow</span><span class="p">(</span><span class="n">QtGui</span><span class="o">.</span><span class="n">QMainWindow</span><span class="p">):</span>
@@ -348,8 +344,7 @@ window.</p>
     <span class="n">window</span> <span class="o">=</span> <span class="n">TestWindow</span><span class="p">()</span>
     <span class="n">window</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
     <span class="n">app</span><span class="o">.</span><span class="n">exec_</span><span class="p">()</span>
-</pre></div>
-
+</code></pre></div>
 
 <p><img alt="PyOpenGL tutorial" src="https://cyrille.rossant.net/images/gl.png" /></p>
 <h2>Final notes</h2>

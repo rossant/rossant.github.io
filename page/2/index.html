@@ -71,10 +71,30 @@
 
     <section class="post">
         <header class="post-header">
+            <h3><a href="https://cyrille.rossant.net/nature-neuroscience-paper/">New paper in Nature Neuroscience</a></h3>
+            <p class="sub-header-3">2016-04-14</p>
+            <p class="post-summary"><p>We published a <a href="http://www.nature.com/neuro/journal/v19/n4/full/nn.4268.html">new paper in Nature Neuroscience</a> about our spike sorting method. This paper is accompanied by an open source software suite named <a href="http://klusta.readthedocs.io/en/latest/">klusta</a>, which includes automatic and manual programs for extracting spikes from large multielectrode recordings.</p>
+<p><a href="/nature-neuroscience-paper/"><img alt="Paper in Nature Neuroscience" src="/images/nn.png" /></a></p></p>
+        </header>
+        <div class="read-more">
+            <a class="pure-button" href="https://cyrille.rossant.net/nature-neuroscience-paper/">
+                read on
+            </a>
+        </div>
+    </section>
+        <hr />
+    <section class="post">
+        <header class="post-header">
             <h3><a href="https://cyrille.rossant.net/pelican-github/">Setting up a blog with Pelican and GitHub Pages</a></h3>
             <p class="sub-header-3">2016-02-01</p>
             <p class="post-summary"><p>I describe how I set up my static blog/website in Python with <a href="http://blog.getpelican.com/">Pelican</a>, <a href="http://pandoc.org/">pandoc</a>, <a href="https://www.docker.com/">Docker</a>, <a href="http://www.dockerhub.com/">Dockerhub</a>, <a href="https://pages.github.com/">GitHub pages</a>, and <a href="https://travis-ci.org/">Travis CI</a>.</p>
-</p>
+
+
+<p>Here is the workflow I wanted to have:</p>
+<ol>
+<li>I write new contents in Markdown files.</li>
+<li>I commit and push the sources to my GitHub repository.</li>
+<li>That's it. The …</li></ol></p>
         </header>
         <div class="read-more">
             <a class="pure-button" href="https://cyrille.rossant.net/pelican-github/">
@@ -88,7 +108,9 @@
             <h3><a href="https://cyrille.rossant.net/should-you-use-hdf5/">Should you use HDF5?</a></h3>
             <p class="sub-header-3">2016-01-30</p>
             <p class="post-summary"><p>This is a follow-up on my post <a href="/moving-away-hdf5/"><em>Moving away from HDF5</em></a> (see also <a href="http://blog.khinsen.net/posts/2016/01/07/on-hdf5-and-the-future-of-data-management/">Konrad Hinsen's post</a>, and discussions on <a href="https://twitter.com/cyrillerossant/status/684767653697683456">Twitter</a> and <a href="https://news.ycombinator.com/item?id=10858189">Hacker News</a>). Here are some further thoughts, in no particular order.</p>
-</p>
+
+
+<p>First, others have pointed out alternative implementations of the HDF5 specification (complete or not), notably in <a href="https://cyrille.rossant.net/moving-away-hdf5/#comment-2445619778">Julia</a> and …</p></p>
         </header>
         <div class="read-more">
             <a class="pure-button" href="https://cyrille.rossant.net/should-you-use-hdf5/">
@@ -102,9 +124,7 @@
             <h3><a href="https://cyrille.rossant.net/moving-away-hdf5/">Moving away from HDF5</a></h3>
             <p class="sub-header-3">2016-01-06</p>
             <p class="post-summary"><p><strong>Update [2016-01-30]: <a href="/should-you-use-hdf5/">I wrote a follow-up here</a></strong></p>
-<p>In the research lab where I work, we've been developing a data processing pipeline for several years. This includes not only a program but also a new file format based on <strong>HDF5</strong> for a specific type of data. While the choice of HDF5 was looking compelling on paper, we found many issues with it. <strong>Recently, despite the high costs, we decided to abandon this format in our software</strong>.</p>
-<p>In this post, I'll describe what is HDF5 and what are the issues that made us move away from it.</p>
-</p>
+<p>In the research lab where I work, we've been developing a data processing pipeline for several years. This includes not only a program but also a new file format based on <strong>HDF5</strong> for a specific type of data. While the choice of HDF5 …</p></p>
         </header>
         <div class="read-more">
             <a class="pure-button" href="https://cyrille.rossant.net/moving-away-hdf5/">
@@ -122,22 +142,6 @@
         </header>
         <div class="read-more">
             <a class="pure-button" href="https://cyrille.rossant.net/new-year/">
-                read on
-            </a>
-        </div>
-    </section>
-        <hr />
-    <section class="post">
-        <header class="post-header">
-            <h3><a href="https://cyrille.rossant.net/compiler-data-visualization/">A compiler infrastructure for data visualization</a></h3>
-            <p class="sub-header-3">2015-07-24</p>
-            <p class="post-summary"><p>There are many data visualization tools out there. Yet, I believe we're still lacking a robust, scalable, and cross-platform visualization toolkit that can handle today's massive datasets.</p>
-<p>Most existing tools target simple plots with a few hundreds or thousands of points: bar plots, scatter plots, histograms and the like. Typically, these figures represent aggregated statistical quantities. Maps are also particularly popular, and there are now really great open source tools.</p>
-<p>Perhaps contrary to a common belief, this is not the end of the story. There are much more complex visualization needs in academia and industry, and I've always been unsatisfied by the tools at our disposal.</p>
-</p>
-        </header>
-        <div class="read-more">
-            <a class="pure-button" href="https://cyrille.rossant.net/compiler-data-visualization/">
                 read on
             </a>
         </div>

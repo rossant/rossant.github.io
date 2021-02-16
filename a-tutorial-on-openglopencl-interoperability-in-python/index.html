@@ -141,7 +141,7 @@ this script can work.</p>
 <h2>OpenCL initialization</h2>
 <p>OpenCL needs to be initialized with OpenGL interoperability. This code snippet
 does just that:</p>
-<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">clinit</span><span class="p">():</span>
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">clinit</span><span class="p">():</span>
     <span class="sd">&quot;&quot;&quot;Initialize OpenCL with GL-CL interop.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">plats</span> <span class="o">=</span> <span class="n">cl</span><span class="o">.</span><span class="n">get_platforms</span><span class="p">()</span>
@@ -155,8 +155,7 @@ does just that:</p>
                             <span class="o">+</span> <span class="n">get_gl_sharing_context_properties</span><span class="p">())</span>
     <span class="n">queue</span> <span class="o">=</span> <span class="n">cl</span><span class="o">.</span><span class="n">CommandQueue</span><span class="p">(</span><span class="n">ctx</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">ctx</span><span class="p">,</span> <span class="n">queue</span>
-</pre></div>
-
+</code></pre></div>
 
 <p>This code comes
 <a href="http://enja.org/2011/03/22/adventures-in-pyopencl-part-2-particles-with-pyopengl/">from this blog post</a>.</p>
@@ -174,13 +173,12 @@ function does the trick.</p>
     several times (since the OpenCL kernel has access to it) with the
     <code>usage=GL_DYNAMIC_DRAW</code> keyword argument. This buffer initially contains
     only zeros.</p>
-<div class="highlight"><pre><span></span><span class="c1"># empty OpenGL VBO</span>
+<div class="highlight"><pre><span></span><code><span class="c1"># empty OpenGL VBO</span>
 <span class="bp">self</span><span class="o">.</span><span class="n">glbuf</span> <span class="o">=</span> <span class="n">glvbo</span><span class="o">.</span><span class="n">VBO</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">shape</span><span class="p">),</span>
                        <span class="n">usage</span><span class="o">=</span><span class="n">gl</span><span class="o">.</span><span class="n">GL_DYNAMIC_DRAW</span><span class="p">,</span>
                        <span class="n">target</span><span class="o">=</span><span class="n">gl</span><span class="o">.</span><span class="n">GL_ARRAY_BUFFER</span><span class="p">)</span>
 <span class="bp">self</span><span class="o">.</span><span class="n">glbuf</span><span class="o">.</span><span class="n">bind</span><span class="p">()</span>
-</pre></div>
-
+</code></pre></div>
 
 </li>
 <li>
@@ -190,41 +188,38 @@ function does the trick.</p>
     copy data from it to the OpenGL VBO.
     Also, we initialize OpenCL right after the OpenGL VBO
     creation, and just before the OpenCL buffer creation.</p>
-<div class="highlight"><pre><span></span><span class="c1"># initialize the CL context</span>
+<div class="highlight"><pre><span></span><code><span class="c1"># initialize the CL context</span>
 <span class="bp">self</span><span class="o">.</span><span class="n">ctx</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">queue</span> <span class="o">=</span> <span class="n">clinit</span><span class="p">()</span>
 <span class="c1"># create a pure read-only OpenCL buffer</span>
 <span class="bp">self</span><span class="o">.</span><span class="n">clbuf</span> <span class="o">=</span> <span class="n">cl</span><span class="o">.</span><span class="n">Buffer</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">ctx</span><span class="p">,</span>
                     <span class="n">cl</span><span class="o">.</span><span class="n">mem_flags</span><span class="o">.</span><span class="n">READ_ONLY</span> <span class="o">|</span> <span class="n">cl</span><span class="o">.</span><span class="n">mem_flags</span><span class="o">.</span><span class="n">COPY_HOST_PTR</span><span class="p">,</span>
                     <span class="n">hostbuf</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">)</span>
-</pre></div>
-
+</code></pre></div>
 
 </li>
 <li>
 <p>An interop object to access an OpenGL VBO from OpenCL: this object
     is passed to the OpenCL kernel and allows direct access to the OpenGL VBO.</p>
-<div class="highlight"><pre><span></span><span class="c1"># create an interop object to access to GL VBO from OpenCL</span>
+<div class="highlight"><pre><span></span><code><span class="c1"># create an interop object to access to GL VBO from OpenCL</span>
 <span class="bp">self</span><span class="o">.</span><span class="n">glclbuf</span> <span class="o">=</span> <span class="n">cl</span><span class="o">.</span><span class="n">GLBuffer</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">ctx</span><span class="p">,</span> <span class="n">cl</span><span class="o">.</span><span class="n">mem_flags</span><span class="o">.</span><span class="n">READ_WRITE</span><span class="p">,</span>
                            <span class="nb">int</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">glbuf</span><span class="o">.</span><span class="n">buffers</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span>
-</pre></div>
-
+</code></pre></div>
 
 </li>
 </ul>
 <p>Finally, once these buffers have been created, we can compile the OpenCL kernel.</p>
-<div class="highlight"><pre><span></span><span class="c1"># build the OpenCL program</span>
+<div class="highlight"><pre><span></span><code><span class="c1"># build the OpenCL program</span>
 <span class="bp">self</span><span class="o">.</span><span class="n">program</span> <span class="o">=</span> <span class="n">cl</span><span class="o">.</span><span class="n">Program</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">ctx</span><span class="p">,</span> <span class="n">clkernel</span><span class="p">)</span><span class="o">.</span><span class="n">build</span><span class="p">()</span>
 <span class="c1"># release the PyOpenCL queue</span>
 <span class="bp">self</span><span class="o">.</span><span class="n">queue</span><span class="o">.</span><span class="n">finish</span><span class="p">()</span>
-</pre></div>
-
+</code></pre></div>
 
 <h2>Kernel code</h2>
 <p>The OpenCL kernel accepts two arguments: pointers to the OpenCL buffer (with
 source data), and to the OpenGL VBO. We first get the array index in the
 current thread, then we copy the data from the OpenCL buffer to the OpenGL VBO,
 and transform the y-coordinate through a sine function.</p>
-<div class="highlight"><pre><span></span><span class="cp"># OpenCL kernel that generates a sine function.</span>
+<div class="highlight"><pre><span></span><code><span class="cp"># OpenCL kernel that generates a sine function.</span>
 <span class="n">clkernel</span> <span class="o">=</span> <span class="s">&quot;&quot;&quot;</span>
 <span class="n">__kernel</span> <span class="kt">void</span> <span class="nf">clkernel</span><span class="p">(</span><span class="n">__global</span> <span class="kt">float2</span><span class="o">*</span> <span class="n">clpos</span><span class="p">,</span> <span class="n">__global</span> <span class="kt">float2</span><span class="o">*</span> <span class="n">glpos</span><span class="p">)</span>
 <span class="p">{</span>
@@ -238,8 +233,7 @@ and transform the y-coordinate through a sine function.</p>
     <span class="n">glpos</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">y</span> <span class="o">=</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="n">sin</span><span class="p">(</span><span class="mf">10.0</span> <span class="o">*</span> <span class="n">clpos</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">x</span><span class="p">);</span>
 <span class="p">}</span>
 <span class="s">&quot;&quot;&quot;</span>
-</pre></div>
-
+</code></pre></div>
 
 <h2>Kernel execution</h2>
 <p>The second trickiest part is the kernel execution. Indeed, OpenCL needs to get
@@ -253,7 +247,7 @@ the <code>glclbuf</code> object).</p>
 <code>program</code> object has a method with the same name as the kernel name. The
 parameters include the OpenCL queue, the global and local worksizes, and
 the arguments to the kernel.</p>
-<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">execute</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">execute</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Execute the OpenCL kernel.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="c1"># get secure access to GL-CL interop objects</span>
@@ -262,12 +256,11 @@ the arguments to the kernel.</p>
     <span class="n">kernelargs</span> <span class="o">=</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">clbuf</span><span class="p">,</span>
                   <span class="bp">self</span><span class="o">.</span><span class="n">glclbuf</span><span class="p">)</span>
     <span class="c1"># execute the kernel</span>
-    <span class="bp">self</span><span class="o">.</span><span class="n">program</span><span class="o">.</span><span class="n">clkernel</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">queue</span><span class="p">,</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">count</span><span class="p">,),</span> <span class="bp">None</span><span class="p">,</span> <span class="o">*</span><span class="n">kernelargs</span><span class="p">)</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">program</span><span class="o">.</span><span class="n">clkernel</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">queue</span><span class="p">,</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">count</span><span class="p">,),</span> <span class="kc">None</span><span class="p">,</span> <span class="o">*</span><span class="n">kernelargs</span><span class="p">)</span>
     <span class="c1"># release access to the GL-CL interop objects</span>
     <span class="n">cl</span><span class="o">.</span><span class="n">enqueue_release_gl_objects</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">queue</span><span class="p">,</span> <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">glclbuf</span><span class="p">])</span>
     <span class="bp">self</span><span class="o">.</span><span class="n">queue</span><span class="o">.</span><span class="n">finish</span><span class="p">()</span>
-</pre></div>
-
+</code></pre></div>
 
 <p>Here, we call this function in <code>initializeGL()</code>, after the buffers creation.
 This way, we update the OpenGL VBO through the OpenCL kernel only at
@@ -286,7 +279,7 @@ The graphics card may not indeed support the latter format. I used doubles in
 an early version of this post and I had some nasty memory access violation
 crashes in particular cases. They disappeared when I switched to floats. If
 this is helpful to anyone...</p>
-<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">paintGL</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">paintGL</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Paint the scene.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="c1"># clear the GL scene</span>
@@ -301,19 +294,18 @@ this is helpful to anyone...</p>
     <span class="n">gl</span><span class="o">.</span><span class="n">glVertexPointer</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">gl</span><span class="o">.</span><span class="n">GL_FLOAT</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">glbuf</span><span class="p">)</span>
     <span class="c1"># draw &quot;count&quot; points from the VBO</span>
     <span class="n">gl</span><span class="o">.</span><span class="n">glDrawArrays</span><span class="p">(</span><span class="n">gl</span><span class="o">.</span><span class="n">GL_LINE_STRIP</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">count</span><span class="p">)</span>
-</pre></div>
-
+</code></pre></div>
 
 <h2>Full script</h2>
 <p>Here is the full script.</p>
-<div class="highlight"><pre><span></span><span class="c1"># PyQt4 imports</span>
+<div class="highlight"><pre><span></span><code><span class="c1"># PyQt4 imports</span>
 <span class="kn">from</span> <span class="nn">PyQt4</span> <span class="kn">import</span> <span class="n">QtGui</span><span class="p">,</span> <span class="n">QtCore</span><span class="p">,</span> <span class="n">QtOpenGL</span>
 <span class="kn">from</span> <span class="nn">PyQt4.QtOpenGL</span> <span class="kn">import</span> <span class="n">QGLWidget</span>
 <span class="c1"># PyOpenGL imports</span>
-<span class="kn">import</span> <span class="nn">OpenGL.GL</span> <span class="kn">as</span> <span class="nn">gl</span>
-<span class="kn">import</span> <span class="nn">OpenGL.arrays.vbo</span> <span class="kn">as</span> <span class="nn">glvbo</span>
+<span class="kn">import</span> <span class="nn">OpenGL.GL</span> <span class="k">as</span> <span class="nn">gl</span>
+<span class="kn">import</span> <span class="nn">OpenGL.arrays.vbo</span> <span class="k">as</span> <span class="nn">glvbo</span>
 <span class="c1"># PyOpenCL imports</span>
-<span class="kn">import</span> <span class="nn">pyopencl</span> <span class="kn">as</span> <span class="nn">cl</span>
+<span class="kn">import</span> <span class="nn">pyopencl</span> <span class="k">as</span> <span class="nn">cl</span>
 <span class="kn">from</span> <span class="nn">pyopencl.tools</span> <span class="kn">import</span> <span class="n">get_gl_sharing_context_properties</span>
 
 <span class="c1"># OpenCL kernel that generates a sine function.</span>
@@ -388,7 +380,7 @@ this is helpful to anyone...</p>
         <span class="n">kernelargs</span> <span class="o">=</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">clbuf</span><span class="p">,</span>
                       <span class="bp">self</span><span class="o">.</span><span class="n">glclbuf</span><span class="p">)</span>
         <span class="c1"># execute the kernel</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">program</span><span class="o">.</span><span class="n">clkernel</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">queue</span><span class="p">,</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">count</span><span class="p">,),</span> <span class="bp">None</span><span class="p">,</span> <span class="o">*</span><span class="n">kernelargs</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">program</span><span class="o">.</span><span class="n">clkernel</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">queue</span><span class="p">,</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">count</span><span class="p">,),</span> <span class="kc">None</span><span class="p">,</span> <span class="o">*</span><span class="n">kernelargs</span><span class="p">)</span>
         <span class="c1"># release access to the GL-CL interop objects</span>
         <span class="n">cl</span><span class="o">.</span><span class="n">enqueue_release_gl_objects</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">queue</span><span class="p">,</span> <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">glclbuf</span><span class="p">])</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">queue</span><span class="o">.</span><span class="n">finish</span><span class="p">()</span>
@@ -441,7 +433,7 @@ this is helpful to anyone...</p>
 
 <span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
     <span class="kn">import</span> <span class="nn">sys</span>
-    <span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+    <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
     <span class="c1"># define a Qt window with an OpenGL widget inside it</span>
     <span class="k">class</span> <span class="nc">TestWindow</span><span class="p">(</span><span class="n">QtGui</span><span class="o">.</span><span class="n">QMainWindow</span><span class="p">):</span>
@@ -464,8 +456,7 @@ this is helpful to anyone...</p>
     <span class="n">window</span> <span class="o">=</span> <span class="n">TestWindow</span><span class="p">()</span>
     <span class="n">window</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
     <span class="n">app</span><span class="o">.</span><span class="n">exec_</span><span class="p">()</span>
-</pre></div>
-
+</code></pre></div>
 
 <p><img alt="GL-CL interop" src="https://cyrille.rossant.net/images/glcl.png" /></p>
 <h2>Final notes</h2>
@@ -477,30 +468,19 @@ this is helpful to anyone...</p>
 <li><a href="http://www.youtube.com/watch?v=Tv1lrjA9UvA">A cool example of what one can do with OpenGL+OpenCL!</a></li>
 </ul>
 <script type="text/javascript">if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
-    var align = "center",
-        indent = "0em",
-        linebreak = "false";
-
-    if (false) {
-        align = (screen.width < 768) ? "left" : align;
-        indent = (screen.width < 768) ? "0em" : indent;
-        linebreak = (screen.width < 768) ? 'true' : linebreak;
-    }
-
     var mathjaxscript = document.createElement('script');
     mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
     mathjaxscript.type = 'text/javascript';
-    mathjaxscript.src = 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/latest.js?config=TeX-AMS-MML_HTMLorMML';
+    mathjaxscript.src = '//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
     mathjaxscript[(window.opera ? "innerHTML" : "text")] =
         "MathJax.Hub.Config({" +
         "    config: ['MMLorHTML.js']," +
         "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } }," +
         "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
         "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
-        "    displayAlign: '"+ align +"'," +
-        "    displayIndent: '"+ indent +"'," +
+        "    displayAlign: 'center'," +
+        "    displayIndent: '0em'," +
         "    showMathMenu: true," +
-        "    messageStyle: 'normal'," +
         "    tex2jax: { " +
         "        inlineMath: [ ['\\\\(','\\\\)'] ], " +
         "        displayMath: [ ['$$','$$'] ]," +
@@ -508,26 +488,9 @@ this is helpful to anyone...</p>
         "        preview: 'TeX'," +
         "    }, " +
         "    'HTML-CSS': { " +
-        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'inherit ! important'} }," +
-        "        linebreaks: { automatic: "+ linebreak +", width: '90% container' }," +
-        "    }, " +
-        "}); " +
-        "if ('default' !== 'default') {" +
-            "MathJax.Hub.Register.StartupHook('HTML-CSS Jax Ready',function () {" +
-                "var VARIANT = MathJax.OutputJax['HTML-CSS'].FONTDATA.VARIANT;" +
-                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
-                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
-                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
-                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
-            "});" +
-            "MathJax.Hub.Register.StartupHook('SVG Jax Ready',function () {" +
-                "var VARIANT = MathJax.OutputJax.SVG.FONTDATA.VARIANT;" +
-                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
-                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
-                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
-                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
-            "});" +
-        "}";
+        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'black ! important'} }" +
+        "    } " +
+        "}); ";
     (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
 }
 </script>

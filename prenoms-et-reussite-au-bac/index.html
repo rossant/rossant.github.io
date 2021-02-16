@@ -171,7 +171,7 @@ en-dessous de la moyenne:</p>
 <p><img alt="Moyenne" src="https://cyrille.rossant.net/images/prenoms-mean.png" /></p>
 <p>Voici les résultats complets pour les 30 prénoms les plus en-dessous,
 avec l'écart à la moyenne.</p>
-<div class="highlight"><pre><span></span>Nahida       -2,07
+<div class="highlight"><pre><span></span><code>Nahida       -2,07
 Alyson       -1,97
 Imad         -1,91
 Nadir        -1,80
@@ -201,13 +201,12 @@ Soumia       -1,37
 Bilal        -1,36
 Alysson      -1,36
 Lamia        -1,35
-</pre></div>
-
+</code></pre></div>
 
 <p>Du côté des prénoms avec l'écart le plus au-dessus de la moyenne, voici
 les profils de résultats.</p>
 <p><img alt="Moyenne" src="https://cyrille.rossant.net/images/prenoms-mean2.png" /></p>
-<div class="highlight"><pre><span></span>Gaetane        2,13
+<div class="highlight"><pre><span></span><code>Gaetane        2,13
 Madeleine      1,94
 Ariane         1,82
 Come           1,76
@@ -237,8 +236,7 @@ Jack           1,19
 Iris           1,17
 Jolan          1,17
 Gaspard        1,16
-</pre></div>
-
+</code></pre></div>
 
 <h2>Destin des prénoms</h2>
 <p>Avec la seconde méthode, nous nous intéressons à la quantité
@@ -276,7 +274,7 @@ peut être meilleure (plus de bonnes mentions) ou moins bonne (plus de
 mauvais résultats).</p>
 <p><img alt="Divergence" src="https://cyrille.rossant.net/images/prenoms-kl2.png" /></p>
 <p>Voici les 30 prénoms associés à la divergence la plus élevée.</p>
-<div class="highlight"><pre><span></span>Nahida
+<div class="highlight"><pre><span></span><code>Nahida
 Alyson
 Imad
 Nadir
@@ -306,8 +304,7 @@ Yassin
 Mounir
 Juliane
 Leon
-</pre></div>
-
+</code></pre></div>
 
 <p>Maintenant, nous pouvons aussi nous intéresser aux <strong>prénoms avec la
 divergence la plus faible</strong>, autrement dit les prénoms les plus
@@ -318,7 +315,7 @@ des résultats très différents de la moyenne. Ainsi, un Valentin ou une
 Emilie a un profil de résultat tout à fait comparable à la moyenne
 globale.</p>
 <p><img alt="Divergence" src="https://cyrille.rossant.net/images/prenoms-kl1.png" /></p>
-<div class="highlight"><pre><span></span>Valentin
+<div class="highlight"><pre><span></span><code>Valentin
 Emilie
 Nicolas
 Alexandra
@@ -348,8 +345,7 @@ Lucas
 Sarah
 Floriane
 Virgile
-</pre></div>
-
+</code></pre></div>
 
 <p>En conclusion, nous avons donné des méthodes pour trouver les prénoms
 qui influent le plus (positivement ou négativement) sur le résultat au
@@ -425,30 +421,19 @@ $$</div>
 </li>
 </ul>
 <script type="text/javascript">if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
-    var align = "center",
-        indent = "0em",
-        linebreak = "false";
-
-    if (false) {
-        align = (screen.width < 768) ? "left" : align;
-        indent = (screen.width < 768) ? "0em" : indent;
-        linebreak = (screen.width < 768) ? 'true' : linebreak;
-    }
-
     var mathjaxscript = document.createElement('script');
     mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
     mathjaxscript.type = 'text/javascript';
-    mathjaxscript.src = 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/latest.js?config=TeX-AMS-MML_HTMLorMML';
+    mathjaxscript.src = '//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
     mathjaxscript[(window.opera ? "innerHTML" : "text")] =
         "MathJax.Hub.Config({" +
         "    config: ['MMLorHTML.js']," +
         "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } }," +
         "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
         "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
-        "    displayAlign: '"+ align +"'," +
-        "    displayIndent: '"+ indent +"'," +
+        "    displayAlign: 'center'," +
+        "    displayIndent: '0em'," +
         "    showMathMenu: true," +
-        "    messageStyle: 'normal'," +
         "    tex2jax: { " +
         "        inlineMath: [ ['\\\\(','\\\\)'] ], " +
         "        displayMath: [ ['$$','$$'] ]," +
@@ -456,26 +441,9 @@ $$</div>
         "        preview: 'TeX'," +
         "    }, " +
         "    'HTML-CSS': { " +
-        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'inherit ! important'} }," +
-        "        linebreaks: { automatic: "+ linebreak +", width: '90% container' }," +
-        "    }, " +
-        "}); " +
-        "if ('default' !== 'default') {" +
-            "MathJax.Hub.Register.StartupHook('HTML-CSS Jax Ready',function () {" +
-                "var VARIANT = MathJax.OutputJax['HTML-CSS'].FONTDATA.VARIANT;" +
-                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
-                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
-                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
-                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
-            "});" +
-            "MathJax.Hub.Register.StartupHook('SVG Jax Ready',function () {" +
-                "var VARIANT = MathJax.OutputJax.SVG.FONTDATA.VARIANT;" +
-                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
-                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
-                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
-                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
-            "});" +
-        "}";
+        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'black ! important'} }" +
+        "    } " +
+        "}); ";
     (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
 }
 </script>

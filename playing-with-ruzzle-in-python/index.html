@@ -106,11 +106,10 @@ The frequency list can be found on Wikipedia for example
 order of frequency, one with the list of frequencies for each letter.
 These files can be easily opened with Numy's <code>loadtxt</code>. Then, to sample
 letters according to this distribution, we can use the following code:</p>
-<div class="highlight"><pre><span></span><span class="n">frequencies_cum</span> <span class="o">=</span> <span class="n">cumsum</span><span class="p">(</span><span class="n">frequencies</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><span class="n">frequencies_cum</span> <span class="o">=</span> <span class="n">cumsum</span><span class="p">(</span><span class="n">frequencies</span><span class="p">)</span>
 <span class="n">dig</span> <span class="o">=</span> <span class="n">digitize</span><span class="p">(</span><span class="n">rand</span><span class="p">(</span><span class="n">count</span><span class="p">),</span> <span class="n">frequencies_cum</span><span class="p">)</span>
 <span class="n">grid</span> <span class="o">=</span> <span class="n">letters</span><span class="p">[</span><span class="n">dig</span><span class="p">]</span><span class="o">.</span><span class="n">reshape</span><span class="p">((</span><span class="n">rows</span><span class="p">,</span> <span class="n">columns</span><span class="p">))</span>
-</pre></div>
-
+</code></pre></div>
 
 <p>Here, <code>letters</code> is a 26-long vector with the letters,
 <code>frequencies</code> is a 26-long vector with the letter frequencies,
@@ -137,7 +136,7 @@ probably overkill for small grids!</p>
 nice representation in the IPython notebook. The principle is to
 create a <code>_repr_html_</code> method for the class so that a HTML table is displayed
 in the notebook. Here is an example of such a class:</p>
-<div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Grid</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+<div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">Grid</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">rows</span><span class="p">,</span> <span class="n">columns</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">rows</span> <span class="o">=</span> <span class="n">rows</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="n">columns</span>
@@ -159,16 +158,15 @@ in the notebook. Here is an example of such a class:</p>
 <span class="s2">        background: #eee;</span>
 <span class="s2">        &quot;&quot;&quot;</span>
         <span class="n">html</span> <span class="o">=</span> <span class="s1">&#39;&lt;table&gt;</span><span class="se">\n</span><span class="s1">&#39;</span>
-        <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="nb">xrange</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">rows</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">xrange</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">rows</span><span class="p">):</span>
             <span class="n">html</span> <span class="o">+=</span> <span class="s1">&#39;&lt;tr&gt;</span><span class="se">\n</span><span class="s1">&#39;</span>
-            <span class="k">for</span> <span class="n">column</span> <span class="ow">in</span> <span class="nb">xrange</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">columns</span><span class="p">):</span>
-                <span class="n">html</span> <span class="o">+=</span> <span class="s1">&#39;&lt;td style=&quot;{0:s}&quot;&gt;{1:s}&lt;/td&gt;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+            <span class="k">for</span> <span class="n">column</span> <span class="ow">in</span> <span class="n">xrange</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">columns</span><span class="p">):</span>
+                <span class="n">html</span> <span class="o">+=</span> <span class="s1">&#39;&lt;td style=&quot;</span><span class="si">{0:s}</span><span class="s1">&quot;&gt;</span><span class="si">{1:s}</span><span class="s1">&lt;/td&gt;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
                     <span class="n">style_td</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">grid</span><span class="p">[</span><span class="n">row</span><span class="p">,</span> <span class="n">column</span><span class="p">])</span>
             <span class="n">html</span> <span class="o">+=</span> <span class="s1">&#39;&lt;/tr&gt;</span><span class="se">\n</span><span class="s1">&#39;</span>
         <span class="n">html</span> <span class="o">+=</span> <span class="s1">&#39;&lt;/table&gt;&#39;</span>
         <span class="k">return</span> <span class="n">html</span>
-</pre></div>
-
+</code></pre></div>
 
 <p>The <code>__init__</code> constructor just contains the grid generation code we described
 above. The interesting part is in the <code>_repr_html_</code> method. We define a HTML
@@ -193,22 +191,20 @@ in a given language. For the French language,
 It's a few megabytes large. I had to get rid of the accents, and I used the
 following code snippet
 (<a href="http://stackoverflow.com/questions/517923/what-is-the-best-way-to-remove-accents-in-a-python-unicode-string">found here</a>):</p>
-<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">unicodedata</span>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">unicodedata</span>
 <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;dictionary_accents.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
     <span class="n">dictionary</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
 <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">dictionary</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
-    <span class="n">dictionary</span> <span class="o">=</span> <span class="nb">unicode</span><span class="p">(</span><span class="n">dictionary</span><span class="p">,</span> <span class="s1">&#39;utf8&#39;</span><span class="p">,</span> <span class="s1">&#39;ignore&#39;</span><span class="p">)</span>
+    <span class="n">dictionary</span> <span class="o">=</span> <span class="n">unicode</span><span class="p">(</span><span class="n">dictionary</span><span class="p">,</span> <span class="s1">&#39;utf8&#39;</span><span class="p">,</span> <span class="s1">&#39;ignore&#39;</span><span class="p">)</span>
 <span class="n">dictionary</span> <span class="o">=</span> <span class="n">unicodedata</span><span class="o">.</span><span class="n">normalize</span><span class="p">(</span><span class="s1">&#39;NFKD&#39;</span><span class="p">,</span> <span class="n">dictionary</span><span class="p">)</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s1">&#39;ascii&#39;</span><span class="p">,</span><span class="s1">&#39;ignore&#39;</span><span class="p">)</span>
 <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;dictionary.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
     <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">dictionary</span><span class="o">.</span><span class="n">lower</span><span class="p">())</span>
-</pre></div>
-
+</code></pre></div>
 
 <p>Then, the dictionary can be simply loaded in Python using Numpy's <code>loadtxt</code>
 function:</p>
-<div class="highlight"><pre><span></span><span class="n">dictionary</span> <span class="o">=</span> <span class="n">loadtxt</span><span class="p">(</span><span class="s1">&#39;dictionary.txt&#39;</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">str</span><span class="p">)</span>
-</pre></div>
-
+<div class="highlight"><pre><span></span><code><span class="n">dictionary</span> <span class="o">=</span> <span class="n">loadtxt</span><span class="p">(</span><span class="s1">&#39;dictionary.txt&#39;</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">str</span><span class="p">)</span>
+</code></pre></div>
 
 <h3>Using an efficient data structure for the dictionary</h3>
 <p>We're going to write an algorithm that automatically resolves a grid by finding
@@ -241,7 +237,7 @@ corresponds to an existing word in the dictionary.</p>
 <a href="http://stackoverflow.com/questions/11015320/how-to-create-a-trie-in-python">code snippet on StackOverflow</a>
 implementing a trie in Python. It is particularly simple, because a structure
 with nested Python dictionaries is perfectly adapted for tries.</p>
-<div class="highlight"><pre><span></span><span class="n">_end</span> <span class="o">=</span> <span class="s1">&#39;_end_&#39;</span>
+<div class="highlight"><pre><span></span><code><span class="n">_end</span> <span class="o">=</span> <span class="s1">&#39;_end_&#39;</span>
 <span class="k">def</span> <span class="nf">make_trie</span><span class="p">(</span><span class="o">*</span><span class="n">words</span><span class="p">):</span>
     <span class="n">root</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
     <span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">words</span><span class="p">:</span>
@@ -250,42 +246,39 @@ with nested Python dictionaries is perfectly adapted for tries.</p>
             <span class="n">current_dict</span> <span class="o">=</span> <span class="n">current_dict</span><span class="o">.</span><span class="n">setdefault</span><span class="p">(</span><span class="n">letter</span><span class="p">,</span> <span class="p">{})</span>
         <span class="n">current_dict</span> <span class="o">=</span> <span class="n">current_dict</span><span class="o">.</span><span class="n">setdefault</span><span class="p">(</span><span class="n">_end</span><span class="p">,</span> <span class="n">_end</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">root</span>
-</pre></div>
-
+</code></pre></div>
 
 <p>This function takes a list of words as an argument, and converts it into
 a trie. To get all words starting with <code>sta</code>, we just use
 <code>trie['s']['t']['a']</code>. Now, here is the function to efficiently check
 if a word is in the dictionary:</p>
-<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">in_trie</span><span class="p">(</span><span class="n">trie</span><span class="p">,</span> <span class="n">word</span><span class="p">):</span>
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">in_trie</span><span class="p">(</span><span class="n">trie</span><span class="p">,</span> <span class="n">word</span><span class="p">):</span>
     <span class="n">current_dict</span> <span class="o">=</span> <span class="n">trie</span>
     <span class="k">for</span> <span class="n">letter</span> <span class="ow">in</span> <span class="n">word</span><span class="p">:</span>
         <span class="k">if</span> <span class="n">letter</span> <span class="ow">in</span> <span class="n">current_dict</span><span class="p">:</span>
             <span class="n">current_dict</span> <span class="o">=</span> <span class="n">current_dict</span><span class="p">[</span><span class="n">letter</span><span class="p">]</span>
         <span class="k">else</span><span class="p">:</span>
-            <span class="k">return</span> <span class="bp">False</span>
+            <span class="k">return</span> <span class="kc">False</span>
     <span class="k">else</span><span class="p">:</span>
         <span class="k">if</span> <span class="n">_end</span> <span class="ow">in</span> <span class="n">current_dict</span><span class="p">:</span>
-            <span class="k">return</span> <span class="bp">True</span>
+            <span class="k">return</span> <span class="kc">True</span>
         <span class="k">else</span><span class="p">:</span>
-            <span class="k">return</span> <span class="bp">False</span>
-</pre></div>
-
+            <span class="k">return</span> <span class="kc">False</span>
+</code></pre></div>
 
 <p>This function explores the tree following the letters in the word, and
 returns <code>True</code> if it ends on a leaf.</p>
 <p>Here is the function to check is a string is a prefix to at least one word
 in the dictionary:</p>
-<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">prefix_in_trie</span><span class="p">(</span><span class="n">trie</span><span class="p">,</span> <span class="n">word</span><span class="p">):</span>
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">prefix_in_trie</span><span class="p">(</span><span class="n">trie</span><span class="p">,</span> <span class="n">word</span><span class="p">):</span>
     <span class="n">current_dict</span> <span class="o">=</span> <span class="n">trie</span>
     <span class="k">for</span> <span class="n">letter</span> <span class="ow">in</span> <span class="n">word</span><span class="p">:</span>
         <span class="k">if</span> <span class="n">letter</span> <span class="ow">in</span> <span class="n">current_dict</span><span class="p">:</span>
             <span class="n">current_dict</span> <span class="o">=</span> <span class="n">current_dict</span><span class="p">[</span><span class="n">letter</span><span class="p">]</span>
         <span class="k">else</span><span class="p">:</span>
-            <span class="k">return</span> <span class="bp">False</span>
-    <span class="k">return</span> <span class="bp">True</span>
-</pre></div>
-
+            <span class="k">return</span> <span class="kc">False</span>
+    <span class="k">return</span> <span class="kc">True</span>
+</code></pre></div>
 
 <h3>Solving algorithm</h3>
 <p>Now, here is the solving algorithm. We first start from any letter in the grid.
@@ -301,7 +294,7 @@ containing a list of tuples <code>(i,j)</code>. It allows us
 to avoid crossings in the paths, i.e. we can't explore an already visited
 position in a given path.</p>
 <p>Here is the code:</p>
-<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">get_word</span><span class="p">(</span><span class="n">positions</span><span class="p">):</span>
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">get_word</span><span class="p">(</span><span class="n">positions</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Get the word corresponding to a path (list of positions).&quot;&quot;&quot;</span>
     <span class="k">return</span> <span class="s1">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="n">g</span><span class="o">.</span><span class="n">grid</span><span class="p">[(</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">)]</span> <span class="k">for</span> <span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">)</span> <span class="ow">in</span> <span class="n">positions</span><span class="p">])</span>
 
@@ -333,14 +326,13 @@ position in a given path.</p>
 <span class="k">def</span> <span class="nf">find_words</span><span class="p">(</span><span class="n">grid</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Return all possible words in a grid.&quot;&quot;&quot;</span>
     <span class="n">words</span> <span class="o">=</span> <span class="p">[]</span>
-    <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="nb">xrange</span><span class="p">(</span><span class="n">grid</span><span class="o">.</span><span class="n">rows</span><span class="p">):</span>
-        <span class="k">for</span> <span class="n">column</span> <span class="ow">in</span> <span class="nb">xrange</span><span class="p">(</span><span class="n">grid</span><span class="o">.</span><span class="n">columns</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">xrange</span><span class="p">(</span><span class="n">grid</span><span class="o">.</span><span class="n">rows</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">column</span> <span class="ow">in</span> <span class="n">xrange</span><span class="p">(</span><span class="n">grid</span><span class="o">.</span><span class="n">columns</span><span class="p">):</span>
             <span class="n">explore</span><span class="p">([(</span><span class="n">row</span><span class="p">,</span> <span class="n">column</span><span class="p">)],</span> <span class="n">words</span><span class="p">)</span>
     <span class="c1"># sort words by decreasing order of length</span>
     <span class="n">words</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">words</span><span class="p">,</span> <span class="nb">cmp</span><span class="o">=</span><span class="k">lambda</span> <span class="n">k</span><span class="p">,</span><span class="n">v</span><span class="p">:</span> <span class="nb">len</span><span class="p">(</span><span class="n">k</span><span class="p">)</span><span class="o">-</span><span class="nb">len</span><span class="p">(</span><span class="n">v</span><span class="p">))[::</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
     <span class="k">return</span> <span class="n">words</span>
-</pre></div>
-
+</code></pre></div>
 
 <p>This algorithm appears to be sufficiently performant on 4x4 grids thanks
 to our efficient trie data structure. A naive implementation with a Numpy
@@ -348,37 +340,25 @@ array for the dictionary takes several minutes instead of a few tens of
 milliseconds with the trie.</p>
 <p>As an example, here is the list of words found on the grid shown above
 (in French):</p>
-<div class="highlight"><pre><span></span>barbue, reacs, ruera, barbu, cabus, ubacs, scare, jura, jure, reac, crue, crus, urus, abus, ruer, bacs, busc, bure, brus, cuba, cura, cure, cabs, guru, grue, ubac, suca, surs, rea, eau, cru, ure, are, rue, rua, rus, bar, bac, bus, bue, bru, cab, car, gus, suc, sur, ra, re, eu, cl, au, ru, bu, ca, us, su.
-</pre></div>
-
+<div class="highlight"><pre><span></span><code>barbue, reacs, ruera, barbu, cabus, ubacs, scare, jura, jure, reac, crue, crus, urus, abus, ruer, bacs, busc, bure, brus, cuba, cura, cure, cabs, guru, grue, ubac, suca, surs, rea, eau, cru, ure, are, rue, rua, rus, bar, bac, bus, bue, bru, cab, car, gus, suc, sur, ra, re, eu, cl, au, ru, bu, ca, us, su.
+</code></pre></div>
 
 <p>Finally, the full code, including the dictionary,
 <a href="">can be downloaded here</a>.</p>
 <script type="text/javascript">if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
-    var align = "center",
-        indent = "0em",
-        linebreak = "false";
-
-    if (false) {
-        align = (screen.width < 768) ? "left" : align;
-        indent = (screen.width < 768) ? "0em" : indent;
-        linebreak = (screen.width < 768) ? 'true' : linebreak;
-    }
-
     var mathjaxscript = document.createElement('script');
     mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
     mathjaxscript.type = 'text/javascript';
-    mathjaxscript.src = 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/latest.js?config=TeX-AMS-MML_HTMLorMML';
+    mathjaxscript.src = '//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
     mathjaxscript[(window.opera ? "innerHTML" : "text")] =
         "MathJax.Hub.Config({" +
         "    config: ['MMLorHTML.js']," +
         "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } }," +
         "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
         "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
-        "    displayAlign: '"+ align +"'," +
-        "    displayIndent: '"+ indent +"'," +
+        "    displayAlign: 'center'," +
+        "    displayIndent: '0em'," +
         "    showMathMenu: true," +
-        "    messageStyle: 'normal'," +
         "    tex2jax: { " +
         "        inlineMath: [ ['\\\\(','\\\\)'] ], " +
         "        displayMath: [ ['$$','$$'] ]," +
@@ -386,26 +366,9 @@ milliseconds with the trie.</p>
         "        preview: 'TeX'," +
         "    }, " +
         "    'HTML-CSS': { " +
-        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'inherit ! important'} }," +
-        "        linebreaks: { automatic: "+ linebreak +", width: '90% container' }," +
-        "    }, " +
-        "}); " +
-        "if ('default' !== 'default') {" +
-            "MathJax.Hub.Register.StartupHook('HTML-CSS Jax Ready',function () {" +
-                "var VARIANT = MathJax.OutputJax['HTML-CSS'].FONTDATA.VARIANT;" +
-                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
-                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
-                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
-                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
-            "});" +
-            "MathJax.Hub.Register.StartupHook('SVG Jax Ready',function () {" +
-                "var VARIANT = MathJax.OutputJax.SVG.FONTDATA.VARIANT;" +
-                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
-                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
-                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
-                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
-            "});" +
-        "}";
+        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'black ! important'} }" +
+        "    } " +
+        "}); ";
     (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
 }
 </script>

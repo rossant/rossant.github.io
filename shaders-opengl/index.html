@@ -210,11 +210,10 @@ card drivers. I will assume that OpenGL 3.30 is supported.</p>
 to the fixed-function pipeline. It is now completely deprecated, yet almost
 all tutorials do not mention that. For example, here is a non-exhaustive list
 of deprecated OpenGL functions:</p>
-<div class="highlight"><pre><span></span>glColorPointer, glVertexPointer, glEnableClientState, glLoadIdentity,
+<div class="highlight"><pre><span></span><code>glColorPointer, glVertexPointer, glEnableClientState, glLoadIdentity,
 glLoadMatrix, glMultMatrix, glOrtho*, glPopMatrix, glRotate*, glScale*,
 glTranslate*, glMaterial*, glLight*...
-</pre></div>
-
+</code></pre></div>
 
 <p>The details can be found in
 <a href="http://www.opengl.org/registry/">the official specifications</a>.
@@ -243,7 +242,7 @@ need to be applied, one needs to multiply matrices with <code>position</code> an
 the result to <code>gl_Position</code>.</p>
 <h3>Vertex shader</h3>
 <p>Here is the source code of the vertex shader in this example.</p>
-<div class="highlight"><pre><span></span><span class="c1"># Vertex shader.</span>
+<div class="highlight"><pre><span></span><code><span class="c1"># Vertex shader.</span>
 <span class="n">VS</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
 <span class="s2">#version 330</span>
 <span class="s2">// Attribute variable that contains coordinates of the vertices.</span>
@@ -258,8 +257,7 @@ the result to <code>gl_Position</code>.</p>
 <span class="s2">    gl_Position = vec4(position.x, .2 * sin(20 * position.x), 0., 1.);</span>
 <span class="s2">}</span>
 <span class="s2">&quot;&quot;&quot;</span>
-</pre></div>
-
+</code></pre></div>
 
 <p>The code should be self-explanatory. The x coordinate of the position is
 used to calculate the y coordinate (through a sinus function). We don't use
@@ -276,7 +274,7 @@ vertex shader outputs as inputs (none here) and returns the pixel color
 as an output. The output color needs to be explicitely declared.
 Usage of the special <code>gl_FragColor</code> keyword is now deprecated, such as
 a lot of other <code>gl_*</code> variables in GLSL.</p>
-<div class="highlight"><pre><span></span><span class="c1"># Fragment shader</span>
+<div class="highlight"><pre><span></span><code><span class="c1"># Fragment shader</span>
 <span class="n">FS</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
 <span class="s2">#version 330</span>
 <span class="s2">// Output variable of the fragment shader, which is a 4D vector containing the</span>
@@ -290,8 +288,7 @@ a lot of other <code>gl_*</code> variables in GLSL.</p>
 <span class="s2">    out_color = vec4(1., 1., 0., 1.);</span>
 <span class="s2">}</span>
 <span class="s2">&quot;&quot;&quot;</span>
-</pre></div>
-
+</code></pre></div>
 
 <p>Once again, the code should be clear enough. The <code>out_color</code> variable contains
 the red, green, blue and alpha components of the pixel final color. The
@@ -300,7 +297,7 @@ components are between 0 and 1. The alpha component is the transparency:
 <h3>Compiling a shader</h3>
 <p>Once shader codes have been defined, shaders need to be compiled.
 Here is a small Python function for compiling a vertex shader.</p>
-<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">OpenGL.GL</span> <span class="kn">as</span> <span class="nn">gl</span>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">OpenGL.GL</span> <span class="k">as</span> <span class="nn">gl</span>
 <span class="k">def</span> <span class="nf">compile_vertex_shader</span><span class="p">(</span><span class="n">source</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Compile a vertex shader from source.&quot;&quot;&quot;</span>
     <span class="n">vertex_shader</span> <span class="o">=</span> <span class="n">gl</span><span class="o">.</span><span class="n">glCreateShader</span><span class="p">(</span><span class="n">gl</span><span class="o">.</span><span class="n">GL_VERTEX_SHADER</span><span class="p">)</span>
@@ -311,8 +308,7 @@ Here is a small Python function for compiling a vertex shader.</p>
     <span class="k">if</span> <span class="ow">not</span><span class="p">(</span><span class="n">result</span><span class="p">):</span>
         <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span><span class="n">gl</span><span class="o">.</span><span class="n">glGetShaderInfoLog</span><span class="p">(</span><span class="n">vertex_shader</span><span class="p">))</span>
     <span class="k">return</span> <span class="n">vertex_shader</span>
-</pre></div>
-
+</code></pre></div>
 
 <p>Compilation involves the creation of a shader, the load of the source code,
 and finally the compilation. Then, we check that no error happened during
@@ -324,7 +320,7 @@ full script at the end for the details).</p>
 <h3>Attaching shaders to a program</h3>
 <p>Once the vertex and fragment shaders have been compiled, they need to be
 attached to a program, the latter being then linked.</p>
-<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">link_shader_program</span><span class="p">(</span><span class="n">vertex_shader</span><span class="p">,</span> <span class="n">fragment_shader</span><span class="p">):</span>
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">link_shader_program</span><span class="p">(</span><span class="n">vertex_shader</span><span class="p">,</span> <span class="n">fragment_shader</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Create a shader program with from compiled shaders.&quot;&quot;&quot;</span>
     <span class="n">program</span> <span class="o">=</span> <span class="n">gl</span><span class="o">.</span><span class="n">glCreateProgram</span><span class="p">()</span>
     <span class="n">gl</span><span class="o">.</span><span class="n">glAttachShader</span><span class="p">(</span><span class="n">program</span><span class="p">,</span> <span class="n">vertex_shader</span><span class="p">)</span>
@@ -335,24 +331,22 @@ attached to a program, the latter being then linked.</p>
     <span class="k">if</span> <span class="ow">not</span><span class="p">(</span><span class="n">result</span><span class="p">):</span>
         <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span><span class="n">gl</span><span class="o">.</span><span class="n">glGetProgramInfoLog</span><span class="p">(</span><span class="n">program</span><span class="p">))</span>
     <span class="k">return</span> <span class="n">program</span>
-</pre></div>
-
+</code></pre></div>
 
 <p>We first create a program, then we attach the compiled shaders, and finally
 we link the program. We also check that the linking was successful.</p>
 <h3>Using shaders</h3>
 <p>Finally, here is how to use shaders during the rendering process.</p>
-<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">paintGL</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">paintGL</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
     <span class="c1"># vertices located in the buffer in position 0 contain 2 single</span>
     <span class="c1"># precision floating points as coordinates</span>
     <span class="n">gl</span><span class="o">.</span><span class="n">glEnableVertexAttribArray</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
-    <span class="n">gl</span><span class="o">.</span><span class="n">glVertexAttribPointer</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">gl</span><span class="o">.</span><span class="n">GL_FLOAT</span><span class="p">,</span> <span class="n">gl</span><span class="o">.</span><span class="n">GL_FALSE</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="bp">None</span><span class="p">)</span>
+    <span class="n">gl</span><span class="o">.</span><span class="n">glVertexAttribPointer</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">gl</span><span class="o">.</span><span class="n">GL_FLOAT</span><span class="p">,</span> <span class="n">gl</span><span class="o">.</span><span class="n">GL_FALSE</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
     <span class="c1"># we use the compiled program</span>
     <span class="n">gl</span><span class="o">.</span><span class="n">glUseProgram</span><span class="p">(</span><span class="n">program</span><span class="p">)</span>
     <span class="c1"># draw &quot;count&quot; points from the VBO</span>
     <span class="n">gl</span><span class="o">.</span><span class="n">glDrawArrays</span><span class="p">(</span><span class="n">gl</span><span class="o">.</span><span class="n">GL_LINE_STRIP</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">))</span>
-</pre></div>
-
+</code></pre></div>
 
 <p>We activate the buffers that need to pass data to the vertex shader,
 then we use the program before calling the OpenGL rendering commands.</p>
@@ -362,12 +356,12 @@ using shaders. PyQt4 or PySide and PyOpenGL are necessary. If you use PySide,
 you should simply replace <code>PyQt4</code> by <code>PySide</code> in the imports. The
 <code>create_window</code> function has already been explained
 <a href="/making-pyqt4-pyside-and-ipython-work-together/">in a previous post</a>.</p>
-<div class="highlight"><pre><span></span><span class="c1"># PyQt4 imports</span>
+<div class="highlight"><pre><span></span><code><span class="c1"># PyQt4 imports</span>
 <span class="kn">from</span> <span class="nn">PyQt4</span> <span class="kn">import</span> <span class="n">QtGui</span><span class="p">,</span> <span class="n">QtCore</span><span class="p">,</span> <span class="n">QtOpenGL</span>
 <span class="kn">from</span> <span class="nn">PyQt4.QtOpenGL</span> <span class="kn">import</span> <span class="n">QGLWidget</span>
 <span class="c1"># PyOpenGL imports</span>
-<span class="kn">import</span> <span class="nn">OpenGL.GL</span> <span class="kn">as</span> <span class="nn">gl</span>
-<span class="kn">import</span> <span class="nn">OpenGL.arrays.vbo</span> <span class="kn">as</span> <span class="nn">glvbo</span>
+<span class="kn">import</span> <span class="nn">OpenGL.GL</span> <span class="k">as</span> <span class="nn">gl</span>
+<span class="kn">import</span> <span class="nn">OpenGL.arrays.vbo</span> <span class="k">as</span> <span class="nn">glvbo</span>
 
 <span class="c1"># Window creation function.</span>
 <span class="k">def</span> <span class="nf">create_window</span><span class="p">(</span><span class="n">window_class</span><span class="p">):</span>
@@ -379,11 +373,11 @@ you should simply replace <code>PyQt4</code> by <code>PySide</code> in the impor
 <span class="sd">    See also:</span>
 <span class="sd">        http://ipython.org/ipython-doc/dev/interactive/qtconsole.html#qt-and-the-qtconsole</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="n">app_created</span> <span class="o">=</span> <span class="bp">False</span>
+    <span class="n">app_created</span> <span class="o">=</span> <span class="kc">False</span>
     <span class="n">app</span> <span class="o">=</span> <span class="n">QtCore</span><span class="o">.</span><span class="n">QCoreApplication</span><span class="o">.</span><span class="n">instance</span><span class="p">()</span>
-    <span class="k">if</span> <span class="n">app</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">app</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
         <span class="n">app</span> <span class="o">=</span> <span class="n">QtGui</span><span class="o">.</span><span class="n">QApplication</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">)</span>
-        <span class="n">app_created</span> <span class="o">=</span> <span class="bp">True</span>
+        <span class="n">app_created</span> <span class="o">=</span> <span class="kc">True</span>
     <span class="n">app</span><span class="o">.</span><span class="n">references</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
     <span class="n">window</span> <span class="o">=</span> <span class="n">window_class</span><span class="p">()</span>
     <span class="n">app</span><span class="o">.</span><span class="n">references</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">window</span><span class="p">)</span>
@@ -484,7 +478,7 @@ you should simply replace <code>PyQt4</code> by <code>PySide</code> in the impor
         <span class="c1"># prepare the shader</span>
         <span class="n">gl</span><span class="o">.</span><span class="n">glEnableVertexAttribArray</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
         <span class="c1"># these vertices contain 2 single precision coordinates</span>
-        <span class="n">gl</span><span class="o">.</span><span class="n">glVertexAttribPointer</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">gl</span><span class="o">.</span><span class="n">GL_FLOAT</span><span class="p">,</span> <span class="n">gl</span><span class="o">.</span><span class="n">GL_FALSE</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="bp">None</span><span class="p">)</span>
+        <span class="n">gl</span><span class="o">.</span><span class="n">glVertexAttribPointer</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">gl</span><span class="o">.</span><span class="n">GL_FLOAT</span><span class="p">,</span> <span class="n">gl</span><span class="o">.</span><span class="n">GL_FALSE</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
         <span class="n">gl</span><span class="o">.</span><span class="n">glUseProgram</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">shaders_program</span><span class="p">)</span>
         <span class="c1"># draw &quot;count&quot; points from the VBO</span>
         <span class="n">gl</span><span class="o">.</span><span class="n">glDrawArrays</span><span class="p">(</span><span class="n">gl</span><span class="o">.</span><span class="n">GL_LINE_STRIP</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">))</span>
@@ -499,7 +493,7 @@ you should simply replace <code>PyQt4</code> by <code>PySide</code> in the impor
 <span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
     <span class="c1"># import numpy for generating random data points</span>
     <span class="kn">import</span> <span class="nn">sys</span>
-    <span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+    <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
     <span class="c1"># null signal</span>
     <span class="n">data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="mi">10000</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span>
@@ -519,8 +513,7 @@ you should simply replace <code>PyQt4</code> by <code>PySide</code> in the impor
 
     <span class="c1"># show the window</span>
     <span class="n">win</span> <span class="o">=</span> <span class="n">create_window</span><span class="p">(</span><span class="n">TestWindow</span><span class="p">)</span>
-</pre></div>
-
+</code></pre></div>
 
 <p>There is of course much more to say about shaders that what this deceptively
 simple example has shown: how to implement linear transformations,
@@ -531,30 +524,19 @@ programmable pipeline instead of the deprecated fixed-function pipeline.
 The latter remains supported only for the sake of backwards compatibility,
 and should not be used at all.</p>
 <script type="text/javascript">if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
-    var align = "center",
-        indent = "0em",
-        linebreak = "false";
-
-    if (false) {
-        align = (screen.width < 768) ? "left" : align;
-        indent = (screen.width < 768) ? "0em" : indent;
-        linebreak = (screen.width < 768) ? 'true' : linebreak;
-    }
-
     var mathjaxscript = document.createElement('script');
     mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
     mathjaxscript.type = 'text/javascript';
-    mathjaxscript.src = 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/latest.js?config=TeX-AMS-MML_HTMLorMML';
+    mathjaxscript.src = '//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
     mathjaxscript[(window.opera ? "innerHTML" : "text")] =
         "MathJax.Hub.Config({" +
         "    config: ['MMLorHTML.js']," +
         "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } }," +
         "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
         "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
-        "    displayAlign: '"+ align +"'," +
-        "    displayIndent: '"+ indent +"'," +
+        "    displayAlign: 'center'," +
+        "    displayIndent: '0em'," +
         "    showMathMenu: true," +
-        "    messageStyle: 'normal'," +
         "    tex2jax: { " +
         "        inlineMath: [ ['\\\\(','\\\\)'] ], " +
         "        displayMath: [ ['$$','$$'] ]," +
@@ -562,26 +544,9 @@ and should not be used at all.</p>
         "        preview: 'TeX'," +
         "    }, " +
         "    'HTML-CSS': { " +
-        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'inherit ! important'} }," +
-        "        linebreaks: { automatic: "+ linebreak +", width: '90% container' }," +
-        "    }, " +
-        "}); " +
-        "if ('default' !== 'default') {" +
-            "MathJax.Hub.Register.StartupHook('HTML-CSS Jax Ready',function () {" +
-                "var VARIANT = MathJax.OutputJax['HTML-CSS'].FONTDATA.VARIANT;" +
-                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
-                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
-                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
-                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
-            "});" +
-            "MathJax.Hub.Register.StartupHook('SVG Jax Ready',function () {" +
-                "var VARIANT = MathJax.OutputJax.SVG.FONTDATA.VARIANT;" +
-                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
-                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
-                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
-                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
-            "});" +
-        "}";
+        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'black ! important'} }" +
+        "    } " +
+        "}); ";
     (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
 }
 </script>

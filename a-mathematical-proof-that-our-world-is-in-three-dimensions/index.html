@@ -111,41 +111,38 @@
 <p>We will now show that if a vector field satisfying the three preceding properties (like the gravitation law) verifies the inverse-square law, then it implies necessarily that <span class="math">\(N=3\)</span>, i.e. the world has three dimensions.</p>
 <h2>3. Proof</h2>
 <p>The proof is straightforward once one knows the following <a href="http://en.wikipedia.org/wiki/Laplace_operator#N_dimensions">expression for the Laplacian in N dimensions and in spherical coordinates</a>:</p>
+<p>
 <div class="math">$$\Delta u(r) = \frac{1}{r^{N-1}} \times \frac{\partial}{\partial r} \left( r^{n-1} \frac{\partial u}{\partial r} \right) + \frac{1}{r^2} \times \Delta_{S^{N-1}} u$$</div>
+</p>
 <p>where <span class="math">\(\Delta_{S^{N-1}}\)</span> is the <a href="http://en.wikipedia.org/wiki/Laplace%E2%80%93Beltrami_operator">Laplace-Beltrami operator</a> on the <a href="http://en.wikipedia.org/wiki/N_sphere">(N-1)-hypersphere</a> (an (N-1)-dimensional <a href="http://en.wikipedia.org/wiki/Riemannian_manifold">Riemannian manifold</a>), also called <a href="http://en.wikipedia.org/wiki/Laplace%E2%80%93Beltrami_operator#Examples">spherical Laplacian</a>.</p>
 <p>Since <span class="math">\(u\)</span> is isotropic and depends only on <span class="math">\(r\)</span>, it is constant on hyperspheres (defined by <span class="math">\(r=\textrm{constant}\)</span>), so that the restriction of <span class="math">\(u\)</span> on <span class="math">\(S^{N-1}\)</span> is constant, its gradient is null, and <span class="math">\(\Delta_{S^{N-1}} u=0\)</span>. Therefore:</p>
+<p>
 <div class="math">$$\frac{1}{r^{N-1}} \times \frac{\partial}{\partial r} \left( r^{n-1} \frac{\partial u}{\partial r} \right) = 0$$</div>
+</p>
 <p>hence:</p>
+<p>
 <div class="math">$$\left( r^{n-1} \frac{\partial u}{\partial r} \right) = \textrm{constant}$$</div>
+</p>
 <p>and finally we find that:</p>
+<p>
 <div class="math">$$u(r) = \frac{C}{r^{N-2}}.$$</div>
+</p>
 <p>We omit the integration constant since a potential field is defined up to an additive constant. Hence, the intensity of the vector field <span class="math">\(\nabla u\)</span> is proportional to <span class="math">\(1/r^{N-1}\)</span>. For an inverse-square law, it means that <span class="math">\(N-1=2\)</span> so that <span class="math">\(N=3\)</span>.</p>
 <p>Finally, we should add that some modern theories, like <a href="http://en.wikipedia.org/wiki/String_theory">string theory</a>, assume a higher number of spatial dimensions, where the extra dimensions are of a much smaller scale, such that, at common scales, the three dimensions of space are still a reasonable approximation.</p>
 <script type="text/javascript">if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
-    var align = "center",
-        indent = "0em",
-        linebreak = "false";
-
-    if (false) {
-        align = (screen.width < 768) ? "left" : align;
-        indent = (screen.width < 768) ? "0em" : indent;
-        linebreak = (screen.width < 768) ? 'true' : linebreak;
-    }
-
     var mathjaxscript = document.createElement('script');
     mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
     mathjaxscript.type = 'text/javascript';
-    mathjaxscript.src = 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/latest.js?config=TeX-AMS-MML_HTMLorMML';
+    mathjaxscript.src = '//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
     mathjaxscript[(window.opera ? "innerHTML" : "text")] =
         "MathJax.Hub.Config({" +
         "    config: ['MMLorHTML.js']," +
         "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } }," +
         "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
         "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
-        "    displayAlign: '"+ align +"'," +
-        "    displayIndent: '"+ indent +"'," +
+        "    displayAlign: 'center'," +
+        "    displayIndent: '0em'," +
         "    showMathMenu: true," +
-        "    messageStyle: 'normal'," +
         "    tex2jax: { " +
         "        inlineMath: [ ['\\\\(','\\\\)'] ], " +
         "        displayMath: [ ['$$','$$'] ]," +
@@ -153,26 +150,9 @@
         "        preview: 'TeX'," +
         "    }, " +
         "    'HTML-CSS': { " +
-        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'inherit ! important'} }," +
-        "        linebreaks: { automatic: "+ linebreak +", width: '90% container' }," +
-        "    }, " +
-        "}); " +
-        "if ('default' !== 'default') {" +
-            "MathJax.Hub.Register.StartupHook('HTML-CSS Jax Ready',function () {" +
-                "var VARIANT = MathJax.OutputJax['HTML-CSS'].FONTDATA.VARIANT;" +
-                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
-                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
-                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
-                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
-            "});" +
-            "MathJax.Hub.Register.StartupHook('SVG Jax Ready',function () {" +
-                "var VARIANT = MathJax.OutputJax.SVG.FONTDATA.VARIANT;" +
-                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
-                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
-                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
-                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
-            "});" +
-        "}";
+        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'black ! important'} }" +
+        "    } " +
+        "}); ";
     (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
 }
 </script>

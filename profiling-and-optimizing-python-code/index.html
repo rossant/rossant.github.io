@@ -153,18 +153,16 @@ session.
 In order to convert this file into an human-readable format, one has to use the
 <code>pstats</code> module. I found the following solution convenient: I create a .bat file
 with the following lines (this is for Windows):</p>
-<div class="highlight"><pre><span></span>python -m cProfile -o prof script.py
+<div class="highlight"><pre><span></span><code>python -m cProfile -o prof script.py
 python dumpprof.py &gt; stats.txt
-</pre></div>
-
+</code></pre></div>
 
 <p>The first line profiles 'script.py' and saves the result in a 'prof' file.
 The second line converts the 'prof' binary file into a text file.</p>
 <p>The <code>dumpprof.py</code> file contains the following code:</p>
-<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pstats</span>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">pstats</span>
 <span class="n">pstats</span><span class="o">.</span><span class="n">Stats</span><span class="p">(</span><span class="s1">&#39;prof&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">strip_dirs</span><span class="p">()</span><span class="o">.</span><span class="n">sort_stats</span><span class="p">(</span><span class="s2">&quot;cumulative&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">print_stats</span><span class="p">()</span>
-</pre></div>
-
+</code></pre></div>
 
 <p>You can take a look to the Python documentation to find all the options
 in the
@@ -173,8 +171,8 @@ When I launch the .bat file, the script is executed,
 and I get a text file with the profiling result, that is, with the time 
 each function took.</p>
 <p>Here is a toy example with the following script:</p>
-<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">numpy.random</span> <span class="kn">as</span> <span class="nn">rdn</span>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">numpy.random</span> <span class="k">as</span> <span class="nn">rdn</span>
 
 <span class="c1"># uncomment for line_profiler</span>
 <span class="c1"># @profile</span>
@@ -184,11 +182,10 @@ each function took.</p>
     <span class="n">c</span> <span class="o">=</span> <span class="n">b</span> <span class="o">**</span> <span class="mi">2</span>
 
 <span class="n">test</span><span class="p">()</span>
-</pre></div>
-
+</code></pre></div>
 
 <p>An excerpt of the output of <code>cProfile</code> on my laptop is:</p>
-<div class="highlight"><pre><span></span>10895 function calls (10706 primitive calls) in 0.472 CPU seconds
+<div class="highlight"><pre><span></span><code>10895 function calls (10706 primitive calls) in 0.472 CPU seconds
 
 Ordered by: cumulative time
 
@@ -202,8 +199,7 @@ ncalls  tottime  percall  cumtime  percall filename:lineno(function)
     1    0.126    0.126    0.126    0.126 {method &#39;repeat&#39; of &#39;numpy.ndarray&#39; objects}
     [...]
     1    0.009    0.009    0.009    0.009 {method &#39;randn&#39; of &#39;mtrand.RandomState&#39; objects}
-</pre></div>
-
+</code></pre></div>
 
 <p>The <code>test</code> function took 209 ms, among which 126 were spent in the <code>repeat</code>
 function (allocating and copying large amounts of data takes time). But
@@ -216,13 +212,12 @@ on Windows), you can use the <code>kernprof.py</code> module. I had to copy it f
 Python scripts directory (e.g. <code>C:\Python27\Scritps</code>) to my script directory. 
 Then, add the <code>@profile</code> decorator to every function you want to profile line
 by line. Finally, use the following command:</p>
-<div class="highlight"><pre><span></span>python -m kernprof -l -v script.py &gt; statsline.txt
-</pre></div>
-
+<div class="highlight"><pre><span></span><code>python -m kernprof -l -v script.py &gt; statsline.txt
+</code></pre></div>
 
 <p>This executes the script and generates a text file with the line profiler
 output. Here is the output on the toy example:</p>
-<div class="highlight"><pre><span></span>Wrote profile results to script.py.lprof
+<div class="highlight"><pre><span></span><code>Wrote profile results to script.py.lprof
 Timer unit: 5.13284e-07 s
 
 File: script.py
@@ -236,8 +231,7 @@ Line #      Hits         Time  Per Hit   % Time  Line Contents
      6         1        18069  18069.0      4.5      a = rdn.randn(100000)
      7         1       241293 241293.0     60.4      b = np.repeat(a, 100)
      8         1       140307 140307.0     35.1      c = b ** 2
-</pre></div>
-
+</code></pre></div>
 
 <p>The percentage of time and the actual time (in unit of
 the Timer unit, about 0.5 microseconds here) spent on each line is given.

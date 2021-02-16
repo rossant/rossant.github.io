@@ -105,43 +105,39 @@
 <li>Use the wizard to create a new installer file (it is just a <code>.iss</code> text file).</li>
 <li>
 <p>Tell the wizard to copy your folder <code>MyApplication</code> to <code>C:\Program Files\MyApplication</code>. The ISS code for this looks like this:</p>
-<div class="highlight"><pre><span></span><span class="k">[Files]</span>
+<div class="highlight"><pre><span></span><code><span class="k">[Files]</span>
 <span class="na">Source: &quot;D:\Dev\MyApplication&quot;; DestDir: &quot;{app}&quot;; Flags: ignoreversion recursesubdirs createallsubdirs</span>
-</pre></div>
-
+</code></pre></div>
 
 <p>Note the <code>{app}</code> variable which contains the user application path. <a href="http://www.jrsoftware.org/ishelp/index.php?topic=consts">See the list of Inno Setup constants here</a>.</p>
 </li>
 </ul>
 <h3>Step 3: create the shortcuts</h3>
 <p>Create some shortcuts. Here is the ISS code to create a shorcut in the Start menu launching a Python GUI application:</p>
-<div class="highlight"><pre><span></span><span class="k">[Icons]</span>
+<div class="highlight"><pre><span></span><code><span class="k">[Icons]</span>
 <span class="na">Name: &quot;{group}\Application&quot;; Filename: &quot;{app}\WinPython-64bit-2.7.5.0\python-2.7.5.amd64\pythonw.exe&quot;; WorkingDir: &quot;{app}&quot;; Parameters: &quot;&quot;&quot;{app}\WinPython-64bit-2.7.5.0\python-2.7.5.amd64\Lib\site-packages\myapplication\scripts\runmyapp.py&quot;&quot;&quot;; IconFilename: &quot;{app}\favicon.ico&quot;</span>
-</pre></div>
-
+</code></pre></div>
 
 <p>This code snippet assumes that the Python script running your application is in <code>myapplication\scripts\runmyapp.py</code>. You could also have this script somewhere directly in your application folder and not necessarily in your Python package. You can also specify an icon as a <code>.ico</code> file.</p>
 <p>You can create shortcuts on the desktop too. <a href="http://www.jrsoftware.org/ishelp/topic_iconssection.htm">See more details here</a>.</p>
 <h3>Step 4: customize the installation process</h3>
 <p>Inno Setup allows you to customize the installation process as you wish. Together with Python scripts, you can really achieve anything. For instance, here is how you can run a Python script at the end of the installation process.</p>
-<div class="highlight"><pre><span></span><span class="k">[Run]</span>
+<div class="highlight"><pre><span></span><code><span class="k">[Run]</span>
 <span class="na">Filename: &quot;{app}\WinPython-64bit-2.7.5.0\python-2.7.5.amd64\python.exe&quot;; WorkingDir: &quot;{app}&quot;; Parameters: &quot;&quot;&quot;{app}\postinstall.py&quot;&quot;&quot;; Flags: runhidden</span>
-</pre></div>
-
+</code></pre></div>
 
 <p>Here are a few directives that you can use to customize some aspects of the installation wizard (icon, images, colors...):</p>
-<div class="highlight"><pre><span></span><span class="k">[Setup]</span>
+<div class="highlight"><pre><span></span><code><span class="k">[Setup]</span>
 <span class="na">SetupIconFile</span><span class="o">=</span><span class="s">D:\Dev\myapp\favicon.ico</span>
 <span class="na">WizardImageFile</span><span class="o">=</span><span class="s">wizard.bmp</span>
 <span class="na">WizardImageStretch</span><span class="o">=</span><span class="s">no</span>
 <span class="na">WizardSmallImageFile</span><span class="o">=</span><span class="s">wizard-small.bmp</span>
 <span class="na">WizardImageBackColor</span><span class="o">=</span><span class="s">$ffffff</span>
-</pre></div>
-
+</code></pre></div>
 
 <h3>Python code to install packages</h3>
 <p>You can create Python scripts that the user runs by clicking on an icon (see the <code>[Icons]</code> section above). You can for instance create a small utility that updates automatically your application by checking the last installer version on a server, and downloading and executing it automatically. Here is some Python code snippet that installs or updates a Python package in the user's WinPython distribution, from a zip or a Windows package created with distutils.</p>
-<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sys</span>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">sys</span>
 <span class="kn">from</span> <span class="nn">winpython</span> <span class="kn">import</span> <span class="n">wppm</span><span class="p">,</span> <span class="n">utils</span>
 
 <span class="k">try</span><span class="p">:</span>
@@ -150,8 +146,7 @@
     <span class="n">dist</span><span class="o">.</span><span class="n">install</span><span class="p">(</span><span class="n">package</span><span class="p">)</span>
 <span class="k">except</span><span class="p">:</span>
     <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s2">&quot;Unable to install the package.&quot;</span><span class="p">)</span>
-</pre></div>
-
+</code></pre></div>
 
 <h3>Conclusion</h3>
 <p>This solution may not be adapted to everyone. But I think it is best for regular Windows users who are used to do everything with the mouse and who are scared by command line interfaces. It allows any Python developer to create and distribute a graphical application as easily as for a more standard C++ program. I imagine that games for Windows could be written with Python and be easily distributed like this. <a href="http://kivy.org/">Kivy</a>, a Python library used in media applications and games, uses a similar technique as far as I know.</p>

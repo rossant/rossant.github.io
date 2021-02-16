@@ -138,12 +138,11 @@ IPython interpreter, set a specific working directory, and run a Python
 script. The second command also kills any existing IPython interpreter
 (corresponding to a hard restart of IPython). This script will be loaded
 at every IPython launch, so it should be placed here:</p>
-<div class="highlight"><pre><span></span>C:\Users\&lt;USERNAME&gt;\.ipython\profile_default\startup\cdrun.py
-</pre></div>
-
+<div class="highlight"><pre><span></span><code>C:\Users\&lt;USERNAME&gt;\.ipython\profile_default\startup\cdrun.py
+</code></pre></div>
 
 <p>This file contains the following code.</p>
-<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">os</span>
 <span class="kn">from</span> <span class="nn">subprocess</span> <span class="kn">import</span> <span class="n">Popen</span><span class="p">,</span> <span class="n">PIPE</span>
 
 <span class="n">ip</span> <span class="o">=</span> <span class="n">get_ipython</span><span class="p">()</span>
@@ -181,8 +180,7 @@ at every IPython launch, so it should be placed here:</p>
 
 <span class="n">ip</span><span class="o">.</span><span class="n">define_magic</span><span class="p">(</span><span class="s1">&#39;cdrun&#39;</span><span class="p">,</span> <span class="n">cdrun</span><span class="p">)</span>
 <span class="n">ip</span><span class="o">.</span><span class="n">define_magic</span><span class="p">(</span><span class="s1">&#39;cdrunkill&#39;</span><span class="p">,</span> <span class="n">cdrunkill</span><span class="p">)</span>
-</pre></div>
-
+</code></pre></div>
 
 <p>The <em>kill_python</em> function kills all Python processes except the
 current one. Hence this script allows to automatically close a previous
@@ -201,11 +199,10 @@ IPython prompt</a> (see method on
 this website).</p>
 <p>Third, define a new macro in Notepad++, by editing or creating the
 following file:</p>
-<div class="highlight"><pre><span></span><span class="c1"># in C:\Users\&lt;USERNAME&gt;\AppData\Roaming\Notepad++\shortcuts.xml</span>
+<div class="highlight"><pre><span></span><code><span class="c1"># in C:\Users\&lt;USERNAME&gt;\AppData\Roaming\Notepad++\shortcuts.xml</span>
 ipython -i -c <span class="s2">&quot;%cdrun </span><span class="k">$(</span>FULL_CURRENT_PATH<span class="k">)</span><span class="s2">&quot;</span>  
 ipython -i -c <span class="s2">&quot;%cdrunkill </span><span class="k">$(</span>FULL_CURRENT_PATH<span class="k">)</span><span class="s2">&quot;</span>
-</pre></div>
-
+</code></pre></div>
 
 <p>The buttons #117 and #118 correspond to F6 and F7 here. If other
 commands exist, just add the <em>\&lt;Command></em> lines in the
@@ -220,9 +217,8 @@ Notepad++.</p>
 will launch an IPython window and execute the script. At the end of the
 execution, you can interact in the IPython interpreter. If you need to
 execute the script again, just use the following command:</p>
-<div class="highlight"><pre><span></span><span class="o">%</span><span class="n">run</span> <span class="n">script</span><span class="o">.</span><span class="n">py</span>
-</pre></div>
-
+<div class="highlight"><pre><span></span><code><span class="o">%</span><span class="n">run</span> <span class="n">script</span><span class="o">.</span><span class="n">py</span>
+</code></pre></div>
 
 <p>This will reload <em>script.py</em>, but not other modules. If you need to
 reload everything, press F7 in Notepad++: it will close the IPython
@@ -237,7 +233,7 @@ command (or selecting it in the command history). With the very powerful
 tool <a href="http://www.autohotkey.com/">AutoHotkey</a>, you can create a simple
 script for automating these keystrokes. Create a text file named
 "ipython_update.ahk" somewhere and put the following code:</p>
-<div class="highlight"><pre><span></span><span class="nb">SetTitleMatchMode</span><span class="p">,</span> <span class="mi">2</span>
+<div class="highlight"><pre><span></span><code><span class="nb">SetTitleMatchMode</span><span class="p">,</span> <span class="mi">2</span>
 <span class="nb">IfWinExist</span> <span class="n">Notepad</span><span class="se">`+`+</span>
 <span class="p">{</span>
     <span class="nb">WinActivate</span>
@@ -249,21 +245,19 @@ script for automating these keystrokes. Create a text file named
         <span class="nb">Send</span> <span class="se">`%</span><span class="n">run</span> <span class="o">%</span><span class="mi">1</span><span class="o">%</span><span class="se">`r</span>
     <span class="p">}</span>
 <span class="p">}</span>
-</pre></div>
-
+</code></pre></div>
 
 <p>Now, in Notepad++, create a new command for launching this script with
 the current file as parameter:</p>
-<div class="highlight"><pre><span></span>autohotkey <span class="o">[</span>YOURPATH<span class="o">]</span><span class="se">\i</span>python_update.ahk <span class="k">$(</span>FILE_NAME<span class="k">)</span>
-</pre></div>
-
+<div class="highlight"><pre><span></span><code>autohotkey <span class="o">[</span>YOURPATH<span class="o">]</span><span class="se">\i</span>python_update.ahk <span class="k">$(</span>FILE_NAME<span class="k">)</span>
+</code></pre></div>
 
 <p>Ensure that the autohotkey.exe binary is in the Windows Path. Now,
 pressing F8 in Notepad++ will automatically set the focus to IPython and
 run your script.</p>
 <p><strong>Note for Linux users</strong>: Here is a Python function for killing all
 Python processes except the current one on Linux that might be useful.</p>
-<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">kill_python</span><span class="p">():</span>
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">kill_python</span><span class="p">():</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Linux version (not very well tested, might need some tweaking)</span>
 <span class="sd">    &quot;&quot;&quot;</span>
@@ -278,7 +272,7 @@ Python processes except the current one on Linux that might be useful.</p>
     <span class="n">cmd</span> <span class="o">=</span> <span class="s1">&#39;kill </span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">r</span>
     <span class="n">os</span><span class="o">.</span><span class="n">system</span><span class="p">(</span><span class="n">cmd</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">n</span>
-</pre></div>
+</code></pre></div>
     </section>
 
 
