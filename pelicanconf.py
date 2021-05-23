@@ -34,6 +34,9 @@ EXTRA_PATH_METADATA = {
 }
 THEME = 'themes/pure'
 
+PDF_STYLE = ""
+PDF_STYLE_PATH = ""
+
 MARKDOWN = {
     'extension_configs': {
         'markdown.extensions.codehilite': {'css_class': 'highlight',

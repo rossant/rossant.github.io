@@ -2,20 +2,22 @@
 Title: About
 ---
 
-**Neuroscience researcher and software engineer at the [International Brain Laboratory](https://internationalbrainlab.com) and [University College London](http://www.ucl.ac.uk/).**
+**Neuroscience researcher and software engineer** at the [**International Brain Laboratory**](https://internationalbrainlab.com) and [**University College London**](http://www.ucl.ac.uk/) (Institute of Neurology).
 
 * PhD in **neuroscience**
-* Strong background in **pure and applied mathematics** and **computer science**
-* Former student of the **[&Eacute;cole Normale Supérieure](http://www.ens.fr)**, Paris
-* 25+ years of experience in **software development**
-* Author of **several books on Python for data science**
+* Strong interest in biomedical and clinical research
+* Former student of the **[&Eacute;cole Normale Supérieure de la rue d'Ulm](http://www.ens.fr)**<br>**(mathematics, physics, computer science)**
+* Author of **[several books on Python for data science]({filename}books.md)**
+* 25+ years of experience in **computing** (Python, C, C#, C++, MATLAB, PHP)
+* 20 years of experience in **GPU graphics/computing** (CUDA, OpenGL, Vulkan)
+* 20 years of experience in **databases** (SQL)
+* Front-end development (web, mobile, Qt)
 
-**Skills**: neuroscience, spiking neural networks, machine learning, signal processing, software engineering, scientific computing, parallel computing, data visualization, Python, NumPy, GPU (CUDA, OpenCL, OpenGL), MATLAB, C#, C++, front-end development (web, mobile, Qt)
 
 ## Professional experience
 
 * 2018-now: **Neuroscience researcher and software engineer at the [International Brain Laboratory](https://internationalbrainlab.com)**
-* 2012-now: **Research associate at [University College London](http://www.ucl.ac.uk/), [Cortical Processing Laboratory](http://www.ucl.ac.uk/cortexlab)** with [Kenneth D. Harris](https://iris.ucl.ac.uk/iris/browse/profile?upi=KDHAR02). *Spike sorting for large dense arrays*.
+* 2012-now: **Research associate at [University College London](http://www.ucl.ac.uk/), Institute of Neurology, [Cortical Processing Laboratory](http://www.ucl.ac.uk/cortexlab)** with [Kenneth D. Harris](https://iris.ucl.ac.uk/iris/browse/profile?upi=KDHAR02). *Spike sorting for large dense arrays*.
 * 2009-2012: **PhD at [&Eacute;cole Normale Supérieure](http://www.ens.fr/)** with [Romain Brette](http://romainbrette.fr/).
 *Correlations in neural coding*.
 * 2008: **Undergraduate internship at [Princeton University](http://www.princeton.edu/main/)** with [Michael Berry](http://molbio.princeton.edu/faculty/molbio-faculty/95-berry).
