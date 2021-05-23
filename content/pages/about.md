@@ -2,20 +2,22 @@
 Title: About
 ---
 
-**Neuroscience researcher and software engineer at the [International Brain Laboratory](https://internationalbrainlab.com) and [University College London](http://www.ucl.ac.uk/).**
+**Neuroscience researcher and software engineer** at the [**International Brain Laboratory**](https://internationalbrainlab.com) and [**University College London**](http://www.ucl.ac.uk/) (Institute of Neurology).
 
 * PhD in **neuroscience**
-* Strong background in **pure and applied mathematics** and **computer science**
-* Former student of the **[&Eacute;cole Normale Supérieure](http://www.ens.fr)**, Paris
-* 25+ years of experience in **software development**
-* Author of **several books on Python for data science**
+* Strong interest in biomedical and clinical research
+* Former student of the **[&Eacute;cole Normale Supérieure de la rue d'Ulm](http://www.ens.fr)**<br>**(mathematics, physics, computer science)**
+* Author of **[several books on Python for data science]({filename}books.md)**
+* 25+ years of experience in **computing** (Python, C, C#, C++, MATLAB, PHP)
+* 20 years of experience in **GPU graphics/computing** (CUDA, OpenGL, Vulkan)
+* 20 years of experience in **databases** (SQL)
+* Front-end development (web, mobile, Qt)
 
-**Skills**: neuroscience, spiking neural networks, machine learning, signal processing, software engineering, scientific computing, parallel computing, data visualization, Python, NumPy, GPU (CUDA, OpenCL, OpenGL), MATLAB, C#, C++, front-end development (web, mobile, Qt)
 
 ## Professional experience
 
 * 2018-now: **Neuroscience researcher and software engineer at the [International Brain Laboratory](https://internationalbrainlab.com)**
-* 2012-now: **Research associate at [University College London](http://www.ucl.ac.uk/), [Cortical Processing Laboratory](http://www.ucl.ac.uk/cortexlab)** with [Kenneth D. Harris](https://iris.ucl.ac.uk/iris/browse/profile?upi=KDHAR02). *Spike sorting for large dense arrays*.
+* 2012-now: **Research associate at [University College London](http://www.ucl.ac.uk/), Institute of Neurology, [Cortical Processing Laboratory](http://www.ucl.ac.uk/cortexlab)** with [Kenneth D. Harris](https://iris.ucl.ac.uk/iris/browse/profile?upi=KDHAR02). *Spike sorting for large dense arrays*.
 * 2009-2012: **PhD at [&Eacute;cole Normale Supérieure](http://www.ens.fr/)** with [Romain Brette](http://romainbrette.fr/).
 *Correlations in neural coding*.
 * 2008: **Undergraduate internship at [Princeton University](http://www.princeton.edu/main/)** with [Michael Berry](http://molbio.princeton.edu/faculty/molbio-faculty/95-berry).
@@ -37,6 +39,8 @@ Title: About
 
 ### Articles in international peer-reviewed scientific journals
 
+* The International Brain Laboratory, Valeria Aguillon-Rodriguez, Dora Angelaki, Hannah Bayer, Niccolo Bonacchi, Matteo Carandini, Fanny Cazettes, Gaelle Chapuis, Anne K Churchland, Yang Dan, Eric Dewitt, Mayo Faulkner, Hamish Forrest, Laura Haetzel, Michael Häusser, Sonja B Hofer, Fei Hu, Anup Khanal, Christopher Krasniak, Ines Laranjeira, Zachary F Mainen, Guido Meijer, Nathaniel J Miska, Thomas D Mrsic-Flogel, Masayoshi Murakami, Jean-Paul Noel, Alejandro Pan-Vazquez, **Cyrille Rossant**, Joshua Sanders, Karolina Socha, Rebecca Terry, Anne E Urai, Hernando Vergara, Miles Wells, Christian J Wilson, Ilana B Witten, Lauren E Wool, Anthony M Zador (2021). [Standardized and reproducible measurement of decision-making in mice](https://elifesciences.org/articles/63711). **eLife**, 10.7554/eLife.63711.
+* Zahl SM, Mack JA, **Rossant C**, Squier W, Wester K (2021). [Thrombosis is not a marker of bridging vein rupture in infants with alleged abusive head trauma](https://onlinelibrary.wiley.com/doi/full/10.1111/apa.15908). **Acta Paediatrica**, doi.org/10.1111/apa.15908.
 * Rougier NP, Hinsen K, Alexandre F, Arildsen T, Barba LA, Benureau FCY, Brown CT, de Buyl P, Caglayan O, Davison AP, Delsuc M, Detorakis G, Diem AK, Drix D, Enel P, Girard B, Guest O, Hall MG, Henriques RN, Hinaut X, Jaron KS, Khamassi M, Klein A, Manninen T, Marchesi P, McGlinn D, Metzner C, Petchey O, Plesser HE, Poisot T, Ram K, Ram Y, Roesch E, **Rossant C**, Rostami V, Shifman A, Stachelek J, Stimberg M, Stollmeier F, Vaggi F, Viejo G, Vitay J, Vostinar AE, Yurchak R, Zito T. (2017). [Sustainable computational science: the ReScience initiative](https://peerj.com/articles/cs-142/). **PeerJ Computer Science**, 3:e142, doi.org/10.7717/peerj-cs.142
 * James J. Jun, Nicholas A. Steinmetz, Joshua H. Siegle, Daniel J. Denman, Marius Bauza, Brian Barbarits, Albert K. Lee, Costas A. Anastassiou, Alexandru Andrei, Çağatay Aydın, Mladen Barbic, Timothy J. Blanche, Vincent Bonin, João Couto, Barundeb Dutta, Sergey L. Gratiy, Diego A. Gutnisky, Michael Häusser, Bill Karsh, Peter Ledochowitsch, Carolina Mora Lopez, Catalin Mitelut, Silke Musa, Michael Okun, Marius Pachitariu, Jan Putzeys, P. Dylan Rich, **Cyrille Rossant**, Wei-lung Sun, Karel Svoboda, Matteo Carandini, Kenneth D. Harris, Christof Koch, John O’Keefe & Timothy D. Harris (2017). [Fully integrated silicon probes for high-density recording of neural activity](https://www.nature.com/articles/nature24636). **Nature**, 551, 232-236; doi:10.1038/nature24636
 * **Rossant C, Kadir S**, Goodman D, Schulman J, Hunter M, Saleem A, Grosmark A, Belluscio M, Denfield G, Ecker A, Tolias A, Solomon S, Buzsaki G, Carandini M, Harris D. (2016, joint first authors) [Spike sorting for large, dense electrode arrays]({filename}/pdfs/RossantLarge2016.pdf). **Nature Neuroscience**, 19, 634-641; doi:10.1038/nn.4268
@@ -46,6 +50,11 @@ Title: About
 * **Rossant C**, Leijon S, Magnusson AK, Brette R (2011). [Sensitivity of noisy neurons to coincident inputs]({filename}/pdfs/RossantSensitivity2011.pdf). **Journal of Neuroscience**, 31(47): 17193-17206; doi: 10.1523/JNEUROSCI.2482-11.2011
 * **Rossant C**, Goodman DF, Fontaine B, Platkiewicz J, Magnusson A, Brette B (2011). [Fitting neuron models to spike trains]({filename}/pdfs/RossantFitting2011.pdf). **Frontiers in Neuroscience**, 5:9. doi:10.3389/fnins.2011.00009
 * **Rossant C**, Goodman D, Platkiewicz J, Brette R (2010). [Automatic fitting of spiking neuron models to electrophysiological recordings]({filename}/pdfs/RossantAutomatic2010.pdf). **Frontiers in Neuroinformatics**, 4:2. doi:10.3389/neuro.11.002.2010
+
+
+### Articles in international journals
+
+* **Rossant C**, International Brain Laboratory, Rougier N (2021, in press). [High-performance interactive scientific visualization with DatoViz via the Vulkan low-level GPU API](#). **Computing in Science and Engineering**, doi.org/10.1109/MCSE.2021.3078345
 
 
 ### Dissertations
