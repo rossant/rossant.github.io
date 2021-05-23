@@ -6,7 +6,7 @@ Title: About
 
 * PhD in **neuroscience**
 * Strong interest in biomedical and clinical research
-* Former student of the **[&Eacute;cole Normale Supérieure de la rue d'Ulm](http://www.ens.fr)**<br>**(mathematics, physics, computer science)**
+* Former student of the **[&Eacute;cole Normale Supérieure de la rue d'Ulm](http://www.ens.fr)** <br>**(mathematics, physics, computer science)**
 * Author of **[several books on Python for data science]({filename}books.md)**
 * 25+ years of experience in **computing** (Python, C, C#, C++, MATLAB, PHP)
 * 20 years of experience in **GPU graphics/computing** (CUDA, OpenGL, Vulkan)
