@@ -73,7 +73,7 @@
     <header id="post-header">
         <h1>2D graphics rendering tutorial with PyOpenGL</h1>
             <div class="post-meta">
-                September 17, 2012
+                septembre 17, 2012
             </div>
             <div class="post-tags">
                 <ul>
@@ -168,6 +168,7 @@ efficiently since the data stays on the GPU between consecutives calls to
 <span class="bp">self</span><span class="o">.</span><span class="n">vbo</span><span class="o">.</span><span class="n">bind</span><span class="p">()</span>
 </code></pre></div>
 
+
 <h2>Painting with VBOs</h2>
 <p>OpenGL can render primitives like points, lines, and convex polygons.
 The
@@ -218,6 +219,7 @@ this is helpful to anyone...</p>
 <span class="n">gl</span><span class="o">.</span><span class="n">glDrawArrays</span><span class="p">(</span><span class="n">gl</span><span class="o">.</span><span class="n">GL_POINTS</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">))</span>
 </code></pre></div>
 
+
 <h2>Setting orthographic projection for 2D rendering</h2>
 <p>The <code>resizeGL</code> method sets the geometric projection used for
 <a href="http://en.wikipedia.org/wiki/Rasterisation">rasterization</a>.
@@ -238,6 +240,7 @@ commands. Here we just tell OpenGL to draw within the entire window.</p>
 <span class="c1"># the window corner OpenGL coordinates are (-+1, -+1)</span>
 <span class="n">gl</span><span class="o">.</span><span class="n">glOrtho</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
 </code></pre></div>
+
 
 <h2>Setting the PyQt widget</h2>
 <p>Here we use PyQt as a GUI window system. To show a window on the screen and
@@ -262,6 +265,7 @@ window.</p>
 <span class="n">window</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 <span class="n">app</span><span class="o">.</span><span class="n">exec_</span><span class="p">()</span>
 </code></pre></div>
+
 
 <h2>Full script</h2>
 <p>Here is the full script.</p>
@@ -345,6 +349,7 @@ window.</p>
     <span class="n">window</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
     <span class="n">app</span><span class="o">.</span><span class="n">exec_</span><span class="p">()</span>
 </code></pre></div>
+
 
 <p><img alt="PyOpenGL tutorial" src="https://cyrille.rossant.net/images/gl.png" /></p>
 <h2>Final notes</h2>

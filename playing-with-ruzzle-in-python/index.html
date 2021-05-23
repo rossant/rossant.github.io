@@ -73,7 +73,7 @@
     <header id="post-header">
         <h1>Playing with Ruzzle in Python</h1>
             <div class="post-meta">
-                February 12, 2013
+                février 12, 2013
             </div>
             <div class="post-tags">
                 <ul>
@@ -110,6 +110,7 @@ letters according to this distribution, we can use the following code:</p>
 <span class="n">dig</span> <span class="o">=</span> <span class="n">digitize</span><span class="p">(</span><span class="n">rand</span><span class="p">(</span><span class="n">count</span><span class="p">),</span> <span class="n">frequencies_cum</span><span class="p">)</span>
 <span class="n">grid</span> <span class="o">=</span> <span class="n">letters</span><span class="p">[</span><span class="n">dig</span><span class="p">]</span><span class="o">.</span><span class="n">reshape</span><span class="p">((</span><span class="n">rows</span><span class="p">,</span> <span class="n">columns</span><span class="p">))</span>
 </code></pre></div>
+
 
 <p>Here, <code>letters</code> is a 26-long vector with the letters,
 <code>frequencies</code> is a 26-long vector with the letter frequencies,
@@ -168,6 +169,7 @@ in the notebook. Here is an example of such a class:</p>
         <span class="k">return</span> <span class="n">html</span>
 </code></pre></div>
 
+
 <p>The <code>__init__</code> constructor just contains the grid generation code we described
 above. The interesting part is in the <code>_repr_html_</code> method. We define a HTML
 table, some basic CSS styles and we return the code. Then, in the IPython
@@ -201,10 +203,12 @@ following code snippet
     <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">dictionary</span><span class="o">.</span><span class="n">lower</span><span class="p">())</span>
 </code></pre></div>
 
+
 <p>Then, the dictionary can be simply loaded in Python using Numpy's <code>loadtxt</code>
 function:</p>
 <div class="highlight"><pre><span></span><code><span class="n">dictionary</span> <span class="o">=</span> <span class="n">loadtxt</span><span class="p">(</span><span class="s1">&#39;dictionary.txt&#39;</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">str</span><span class="p">)</span>
 </code></pre></div>
+
 
 <h3>Using an efficient data structure for the dictionary</h3>
 <p>We're going to write an algorithm that automatically resolves a grid by finding
@@ -248,6 +252,7 @@ with nested Python dictionaries is perfectly adapted for tries.</p>
     <span class="k">return</span> <span class="n">root</span>
 </code></pre></div>
 
+
 <p>This function takes a list of words as an argument, and converts it into
 a trie. To get all words starting with <code>sta</code>, we just use
 <code>trie['s']['t']['a']</code>. Now, here is the function to efficiently check
@@ -266,6 +271,7 @@ if a word is in the dictionary:</p>
             <span class="k">return</span> <span class="kc">False</span>
 </code></pre></div>
 
+
 <p>This function explores the tree following the letters in the word, and
 returns <code>True</code> if it ends on a leaf.</p>
 <p>Here is the function to check is a string is a prefix to at least one word
@@ -279,6 +285,7 @@ in the dictionary:</p>
             <span class="k">return</span> <span class="kc">False</span>
     <span class="k">return</span> <span class="kc">True</span>
 </code></pre></div>
+
 
 <h3>Solving algorithm</h3>
 <p>Now, here is the solving algorithm. We first start from any letter in the grid.
@@ -330,9 +337,10 @@ position in a given path.</p>
         <span class="k">for</span> <span class="n">column</span> <span class="ow">in</span> <span class="n">xrange</span><span class="p">(</span><span class="n">grid</span><span class="o">.</span><span class="n">columns</span><span class="p">):</span>
             <span class="n">explore</span><span class="p">([(</span><span class="n">row</span><span class="p">,</span> <span class="n">column</span><span class="p">)],</span> <span class="n">words</span><span class="p">)</span>
     <span class="c1"># sort words by decreasing order of length</span>
-    <span class="n">words</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">words</span><span class="p">,</span> <span class="nb">cmp</span><span class="o">=</span><span class="k">lambda</span> <span class="n">k</span><span class="p">,</span><span class="n">v</span><span class="p">:</span> <span class="nb">len</span><span class="p">(</span><span class="n">k</span><span class="p">)</span><span class="o">-</span><span class="nb">len</span><span class="p">(</span><span class="n">v</span><span class="p">))[::</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+    <span class="n">words</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">words</span><span class="p">,</span> <span class="n">cmp</span><span class="o">=</span><span class="k">lambda</span> <span class="n">k</span><span class="p">,</span><span class="n">v</span><span class="p">:</span> <span class="nb">len</span><span class="p">(</span><span class="n">k</span><span class="p">)</span><span class="o">-</span><span class="nb">len</span><span class="p">(</span><span class="n">v</span><span class="p">))[::</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
     <span class="k">return</span> <span class="n">words</span>
 </code></pre></div>
+
 
 <p>This algorithm appears to be sufficiently performant on 4x4 grids thanks
 to our efficient trie data structure. A naive implementation with a Numpy
@@ -342,6 +350,7 @@ milliseconds with the trie.</p>
 (in French):</p>
 <div class="highlight"><pre><span></span><code>barbue, reacs, ruera, barbu, cabus, ubacs, scare, jura, jure, reac, crue, crus, urus, abus, ruer, bacs, busc, bure, brus, cuba, cura, cure, cabs, guru, grue, ubac, suca, surs, rea, eau, cru, ure, are, rue, rua, rus, bar, bac, bus, bue, bru, cab, car, gus, suc, sur, ra, re, eu, cl, au, ru, bu, ca, us, su.
 </code></pre></div>
+
 
 <p>Finally, the full code, including the dictionary,
 <a href="">can be downloaded here</a>.</p>

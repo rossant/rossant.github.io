@@ -73,7 +73,7 @@
     <header id="post-header">
         <h1>The Power of Shaders in Real-Time Graphics Programming</h1>
             <div class="post-meta">
-                November 05, 2012
+                novembre 05, 2012
             </div>
             <div class="post-tags">
                 <ul>
@@ -215,6 +215,7 @@ glLoadMatrix, glMultMatrix, glOrtho*, glPopMatrix, glRotate*, glScale*,
 glTranslate*, glMaterial*, glLight*...
 </code></pre></div>
 
+
 <p>The details can be found in
 <a href="http://www.opengl.org/registry/">the official specifications</a>.
 It means that all functions related to transformations, lighting, texturing,
@@ -259,6 +260,7 @@ the result to <code>gl_Position</code>.</p>
 <span class="s2">&quot;&quot;&quot;</span>
 </code></pre></div>
 
+
 <p>The code should be self-explanatory. The x coordinate of the position is
 used to calculate the y coordinate (through a sinus function). We don't use
 the y coordinate at all, so we could also have used an array of floats for
@@ -290,6 +292,7 @@ a lot of other <code>gl_*</code> variables in GLSL.</p>
 <span class="s2">&quot;&quot;&quot;</span>
 </code></pre></div>
 
+
 <p>Once again, the code should be clear enough. The <code>out_color</code> variable contains
 the red, green, blue and alpha components of the pixel final color. The
 components are between 0 and 1. The alpha component is the transparency:
@@ -309,6 +312,7 @@ Here is a small Python function for compiling a vertex shader.</p>
         <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span><span class="n">gl</span><span class="o">.</span><span class="n">glGetShaderInfoLog</span><span class="p">(</span><span class="n">vertex_shader</span><span class="p">))</span>
     <span class="k">return</span> <span class="n">vertex_shader</span>
 </code></pre></div>
+
 
 <p>Compilation involves the creation of a shader, the load of the source code,
 and finally the compilation. Then, we check that no error happened during
@@ -333,6 +337,7 @@ attached to a program, the latter being then linked.</p>
     <span class="k">return</span> <span class="n">program</span>
 </code></pre></div>
 
+
 <p>We first create a program, then we attach the compiled shaders, and finally
 we link the program. We also check that the linking was successful.</p>
 <h3>Using shaders</h3>
@@ -347,6 +352,7 @@ we link the program. We also check that the linking was successful.</p>
     <span class="c1"># draw &quot;count&quot; points from the VBO</span>
     <span class="n">gl</span><span class="o">.</span><span class="n">glDrawArrays</span><span class="p">(</span><span class="n">gl</span><span class="o">.</span><span class="n">GL_LINE_STRIP</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">))</span>
 </code></pre></div>
+
 
 <p>We activate the buffers that need to pass data to the vertex shader,
 then we use the program before calling the OpenGL rendering commands.</p>
@@ -514,6 +520,7 @@ you should simply replace <code>PyQt4</code> by <code>PySide</code> in the impor
     <span class="c1"># show the window</span>
     <span class="n">win</span> <span class="o">=</span> <span class="n">create_window</span><span class="p">(</span><span class="n">TestWindow</span><span class="p">)</span>
 </code></pre></div>
+
 
 <p>There is of course much more to say about shaders that what this deceptively
 simple example has shown: how to implement linear transformations,

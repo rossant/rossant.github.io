@@ -73,7 +73,7 @@
     <header id="post-header">
         <h1>A tutorial on OpenGL/OpenCL interoperability in Python</h1>
             <div class="post-meta">
-                September 18, 2012
+                septembre 18, 2012
             </div>
             <div class="post-tags">
                 <ul>
@@ -157,6 +157,7 @@ does just that:</p>
     <span class="k">return</span> <span class="n">ctx</span><span class="p">,</span> <span class="n">queue</span>
 </code></pre></div>
 
+
 <p>This code comes
 <a href="http://enja.org/2011/03/22/adventures-in-pyopencl-part-2-particles-with-pyopengl/">from this blog post</a>.</p>
 <p>This function returns an OpenCL context object, and a command queue used for
@@ -180,6 +181,7 @@ function does the trick.</p>
 <span class="bp">self</span><span class="o">.</span><span class="n">glbuf</span><span class="o">.</span><span class="n">bind</span><span class="p">()</span>
 </code></pre></div>
 
+
 </li>
 <li>
 <p>A standard OpenCL buffer: in our example, this buffer contains the "source"
@@ -196,6 +198,7 @@ function does the trick.</p>
                     <span class="n">hostbuf</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">)</span>
 </code></pre></div>
 
+
 </li>
 <li>
 <p>An interop object to access an OpenGL VBO from OpenCL: this object
@@ -204,6 +207,7 @@ function does the trick.</p>
 <span class="bp">self</span><span class="o">.</span><span class="n">glclbuf</span> <span class="o">=</span> <span class="n">cl</span><span class="o">.</span><span class="n">GLBuffer</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">ctx</span><span class="p">,</span> <span class="n">cl</span><span class="o">.</span><span class="n">mem_flags</span><span class="o">.</span><span class="n">READ_WRITE</span><span class="p">,</span>
                            <span class="nb">int</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">glbuf</span><span class="o">.</span><span class="n">buffers</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span>
 </code></pre></div>
+
 
 </li>
 </ul>
@@ -214,6 +218,7 @@ function does the trick.</p>
 <span class="bp">self</span><span class="o">.</span><span class="n">queue</span><span class="o">.</span><span class="n">finish</span><span class="p">()</span>
 </code></pre></div>
 
+
 <h2>Kernel code</h2>
 <p>The OpenCL kernel accepts two arguments: pointers to the OpenCL buffer (with
 source data), and to the OpenGL VBO. We first get the array index in the
@@ -221,7 +226,7 @@ current thread, then we copy the data from the OpenCL buffer to the OpenGL VBO,
 and transform the y-coordinate through a sine function.</p>
 <div class="highlight"><pre><span></span><code><span class="cp"># OpenCL kernel that generates a sine function.</span>
 <span class="n">clkernel</span> <span class="o">=</span> <span class="s">&quot;&quot;&quot;</span>
-<span class="n">__kernel</span> <span class="kt">void</span> <span class="nf">clkernel</span><span class="p">(</span><span class="n">__global</span> <span class="kt">float2</span><span class="o">*</span> <span class="n">clpos</span><span class="p">,</span> <span class="n">__global</span> <span class="kt">float2</span><span class="o">*</span> <span class="n">glpos</span><span class="p">)</span>
+<span class="n">__kernel</span> <span class="kt">void</span> <span class="n">clkernel</span><span class="p">(</span><span class="n">__global</span> <span class="kt">float2</span><span class="o">*</span> <span class="n">clpos</span><span class="p">,</span> <span class="n">__global</span> <span class="kt">float2</span><span class="o">*</span> <span class="n">glpos</span><span class="p">)</span>
 <span class="p">{</span>
     <span class="c1">//get our index in the array</span>
     <span class="kt">unsigned</span> <span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="n">get_global_id</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
@@ -234,6 +239,7 @@ and transform the y-coordinate through a sine function.</p>
 <span class="p">}</span>
 <span class="s">&quot;&quot;&quot;</span>
 </code></pre></div>
+
 
 <h2>Kernel execution</h2>
 <p>The second trickiest part is the kernel execution. Indeed, OpenCL needs to get
@@ -261,6 +267,7 @@ the arguments to the kernel.</p>
     <span class="n">cl</span><span class="o">.</span><span class="n">enqueue_release_gl_objects</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">queue</span><span class="p">,</span> <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">glclbuf</span><span class="p">])</span>
     <span class="bp">self</span><span class="o">.</span><span class="n">queue</span><span class="o">.</span><span class="n">finish</span><span class="p">()</span>
 </code></pre></div>
+
 
 <p>Here, we call this function in <code>initializeGL()</code>, after the buffers creation.
 This way, we update the OpenGL VBO through the OpenCL kernel only at
@@ -295,6 +302,7 @@ this is helpful to anyone...</p>
     <span class="c1"># draw &quot;count&quot; points from the VBO</span>
     <span class="n">gl</span><span class="o">.</span><span class="n">glDrawArrays</span><span class="p">(</span><span class="n">gl</span><span class="o">.</span><span class="n">GL_LINE_STRIP</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">count</span><span class="p">)</span>
 </code></pre></div>
+
 
 <h2>Full script</h2>
 <p>Here is the full script.</p>
@@ -457,6 +465,7 @@ this is helpful to anyone...</p>
     <span class="n">window</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
     <span class="n">app</span><span class="o">.</span><span class="n">exec_</span><span class="p">()</span>
 </code></pre></div>
+
 
 <p><img alt="GL-CL interop" src="https://cyrille.rossant.net/images/glcl.png" /></p>
 <h2>Final notes</h2>

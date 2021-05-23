@@ -73,7 +73,7 @@
     <header id="post-header">
         <h1>Making PyQt4, PySide and IPython work together</h1>
             <div class="post-meta">
-                September 20, 2012
+                septembre 20, 2012
             </div>
             <div class="post-tags">
                 <ul>
@@ -126,6 +126,7 @@ used in conjunction with IPython), but that will probably change at some point.<
 <span class="kn">from</span> <span class="nn">python_qt_binding</span> <span class="kn">import</span> <span class="n">QtGui</span><span class="p">,</span> <span class="n">QtCore</span>  <span class="c1"># new imports</span>
 </code></pre></div>
 
+
 <p>The <code>python_qt_binding</code> package must be importable: the folder should be
 in the current directory, or put the path to this folder in the Python path
 (e.g. by creating an ASCII <code>.pth</code> file with the path to <code>python_qt_binding</code>
@@ -148,6 +149,7 @@ which comes from the <code>python_qt_binding</code> package):</p>
     <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span><span class="s1">&#39;Could not set API version (</span><span class="si">%s</span><span class="s1">): did you import PyQt4 directly?&#39;</span> <span class="o">%</span> <span class="n">e</span><span class="p">)</span>
 </code></pre></div>
 
+
 <p>This code must be called before any PyQt4 import. It can be a problem with
 IPython, which automatically imports PyQt4 when Qt GUI event loop integration
 is active. A possible solution is to paste the above code
@@ -164,6 +166,7 @@ automatically created when you create an IPython profile):</p>
 <span class="n">c</span><span class="o">.</span><span class="n">TerminalIPythonApp</span><span class="o">.</span><span class="n">pylab</span> <span class="o">=</span> <span class="s1">&#39;qt&#39;</span>
 </code></pre></div>
 
+
 <p>This allows you to open a Qt window in an interactive way, and to access the Qt
 widget instance from IPython while the window is open. It solves also some
 slow-down issues in the IPython console when windows have been opened.
@@ -175,6 +178,7 @@ automatically created upon IPython launch, so that:</p>
 <span class="n">window</span><span class="o">.</span><span class="n">show</span>
 </code></pre></div>
 
+
 <p>just works. But this won't work by default in Python (e.g. with
 <code>python script.py</code>) since a Qt application won't have been opened in the first
 place. By contrast, using the following code:</p>
@@ -183,6 +187,7 @@ place. By contrast, using the following code:</p>
 <span class="n">window</span><span class="o">.</span><span class="n">show</span>
 <span class="n">app</span><span class="o">.</span><span class="n">exec_</span><span class="p">()</span>
 </code></pre></div>
+
 
 <p>will work with a standard Python console, but will disable interactive GUI
 integration in IPython! So in order to
@@ -205,6 +210,7 @@ Python interpreter), I use the following code:</p>
         <span class="n">app</span><span class="o">.</span><span class="n">exec_</span><span class="p">()</span>
     <span class="k">return</span> <span class="n">window</span>
 </code></pre></div>
+
 
 <p>This function can be used like this:</p>
 <div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">MyQtWindow</span><span class="p">(</span><span class="n">QtGui</span><span class="o">.</span><span class="n">QMainWindow</span><span class="p">):</span>

@@ -73,7 +73,7 @@
     <header id="post-header">
         <h1>NumPy in the browser: proof of concept with Numba, LLVM, and emscripten</h1>
             <div class="post-meta">
-                February 18, 2015
+                février 18, 2015
             </div>
             <div class="post-tags">
                 <ul>
@@ -122,6 +122,7 @@
 <span class="kn">from</span> <span class="nn">numba</span> <span class="kn">import</span> <span class="n">int32</span>
 </code></pre></div>
 
+
 <p>It seems that there is an easy way to get the LLVM IR of a JIT'ed function in the development version of Numba, but this version didn't work for me, so here is a custom function doing the same thing (we'll make extensive use of unstable API in this post so most things are likely to break with different versions of Numba and other libraries...):</p>
 <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">llvm</span><span class="p">(</span><span class="n">func</span><span class="p">,</span> <span class="n">sig</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Return the LLVM IR of a @jit&#39;ed function.&quot;&quot;&quot;</span>
@@ -130,14 +131,17 @@
     <span class="k">return</span> <span class="nb">str</span><span class="p">(</span><span class="n">func</span><span class="o">.</span><span class="n">_compileinfos</span><span class="p">[</span><span class="n">sig</span><span class="p">]</span><span class="o">.</span><span class="n">library</span><span class="o">.</span><span class="n">_final_module</span><span class="p">)</span>
 </code></pre></div>
 
+
 <p>Let's define a trivial function operating on scalars:</p>
 <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
     <span class="k">return</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span>
 </code></pre></div>
 
+
 <div class="highlight"><pre><span></span><code><span class="n">f</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
 <span class="mi">3</span>
 </code></pre></div>
+
 
 <p>Now, let's compile it in nopython mode:</p>
 <div class="highlight"><pre><span></span><code><span class="nd">@jit</span><span class="p">(</span><span class="n">int32</span><span class="p">(</span><span class="n">int32</span><span class="p">,</span> <span class="n">int32</span><span class="p">),</span> <span class="n">nopython</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
@@ -145,10 +149,12 @@
     <span class="k">return</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span>
 </code></pre></div>
 
+
 <p>For simplicity, we have specified the input and output types explicitely. Numba can compile several overloaded versions of the same function at runtime, depending on the types of the arguments.</p>
 <p>Let's have a look at the generated LLVM IR:</p>
 <div class="highlight"><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="n">llvm</span><span class="p">(</span><span class="n">f</span><span class="p">))</span>
 </code></pre></div>
+
 
 <div class="highlight"><pre><span></span><code><span class="p">[...]</span>
 
@@ -201,6 +207,7 @@
 <span class="p">}</span>
 </code></pre></div>
 
+
 <p>That's a lot of code for such a simple function! And yet I have only kept the most relevant bits.</p>
 <p>Two LLVM functions are defined here (<code>define</code> instruction):</p>
 <ul>
@@ -214,6 +221,7 @@
 <div class="highlight"><pre><span></span><code><span class="nv">%.15</span> <span class="p">=</span> <span class="k">add</span> <span class="k">i32</span> <span class="nv">%arg.y</span><span class="p">,</span> <span class="nv">%arg.x</span>
 <span class="k">store</span> <span class="k">i32</span> <span class="nv">%.15</span><span class="p">,</span> <span class="k">i32</span><span class="p">*</span> <span class="nv">%ret</span><span class="p">,</span> <span class="k">align</span> <span class="m">4</span>
 </code></pre></div>
+
 
 <p>The <code>add</code> instructions adds our two input numbers and saves them into a local variable <code>%.15</code>. Then, the <code>store</code> instruction puts that value into the <code>%ret</code> pointer passed as input: that's the return value of the function.</p>
 <p>The <code>@wrapper.__main__.f.int32.int32</code> function is more complicated and we won't detail it at all here. This function wraps the core LLVM function <code>@__main__.f.int32.int32</code> and exposes it to the Python interpreter. For example, our input numbers are actually Python objects. Some works needs to be done with the Python C API to extract the actual numbers from these objects and pass them to the core LLVM function.</p>
@@ -231,6 +239,7 @@
     <span class="k">return</span> <span class="n">lib</span>
 </code></pre></div>
 
+
 <p>Now, we save the LLVM IR code to a <code>.ll</code> file (the extension for files containing LLVM IR code), and we call <code>emcc</code> (the emscripten compiler):</p>
 <div class="highlight"><pre><span></span><code><span class="n">lib</span> <span class="o">=</span> <span class="n">get_lib</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
 <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;scalar.ll&#39;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">fh</span><span class="p">:</span>
@@ -239,9 +248,11 @@
 <span class="mi">0</span>
 </code></pre></div>
 
+
 <div class="highlight"><pre><span></span><code><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">getsize</span><span class="p">(</span><span class="s1">&#39;scalar.js&#39;</span><span class="p">)</span>
 <span class="mi">138022</span>
 </code></pre></div>
+
 
 <div class="highlight"><pre><span></span><code><span class="err">!</span><span class="n">cut</span> <span class="o">-</span><span class="n">c</span><span class="o">-</span><span class="mi">80</span> <span class="n">scalar</span><span class="o">.</span><span class="n">js</span> <span class="o">|</span> <span class="n">head</span> <span class="o">-</span><span class="n">n5</span>
 <span class="n">var</span> <span class="n">Module</span><span class="p">;</span><span class="k">if</span><span class="p">(</span><span class="err">!</span><span class="n">Module</span><span class="p">)</span><span class="n">Module</span><span class="o">=</span><span class="p">(</span><span class="n">typeof</span> <span class="n">Module</span><span class="o">!==</span><span class="s2">&quot;undefined&quot;</span><span class="err">?</span><span class="n">Module</span><span class="p">:</span><span class="n">null</span><span class="p">)</span><span class="o">||</span><span class="p">{};</span><span class="n">var</span> <span class="n">m</span>
@@ -250,6 +261,7 @@
 <span class="o">//</span> <span class="n">EMSCRIPTEN_START_FUNCS</span>
 <span class="n">function</span> <span class="n">ma</span><span class="p">(</span><span class="n">a</span><span class="p">){</span><span class="n">a</span><span class="o">=</span><span class="n">a</span><span class="o">|</span><span class="mi">0</span><span class="p">;</span><span class="n">var</span> <span class="n">b</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">b</span><span class="o">=</span><span class="n">i</span><span class="p">;</span><span class="n">i</span><span class="o">=</span><span class="n">i</span><span class="o">+</span><span class="n">a</span><span class="o">|</span><span class="mi">0</span><span class="p">;</span><span class="n">i</span><span class="o">=</span><span class="n">i</span><span class="o">+</span><span class="mi">15</span><span class="o">&amp;-</span><span class="mi">16</span><span class="p">;</span><span class="k">return</span> <span class="n">b</span><span class="o">|</span><span class="mi">0</span><span class="p">}</span><span class="n">function</span> <span class="n">na</span><span class="p">(){</span><span class="n">ret</span>
 </code></pre></div>
+
 
 <p>We now have a JavaScript file that supposedly implements our function. How do we call it from JavaScript? After all, what we have here is a sort of function compiled for a virtual machine in JavaScript. With Numba, we had a LLVM wrapper for Python that let us call the function from Python. Here, we have nothing, and we need to write our own wrapper.</p>
 <p>A few more details:</p>
@@ -280,6 +292,7 @@
     <span class="k">return</span> <span class="n">lib</span>
 </code></pre></div>
 
+
 <p>It's a bit ugly because the wrapper is hard-coded with the function's signature.</p>
 <p>Once we have this <code>main()</code> function, we can finally access it from JavaScript. But we're not done yet, because we need a way to retrieve the result. Recall that the result is stored via a pointer passed as a first argument to our LLVM function.</p>
 <p>After a bit of googling, I implemented a quick-and-dirty JavaScript wrapper:</p>
@@ -308,7 +321,7 @@
 <span class="p">}</span>
 
 <span class="kd">function</span> <span class="nx">is_array</span><span class="p">(</span><span class="nx">tp</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">return</span> <span class="p">(</span><span class="nx">tp</span><span class="p">.</span><span class="nx">indexOf</span><span class="p">(</span><span class="s1">&#39;:&#39;</span><span class="p">)</span> <span class="o">&gt;</span> <span class="o">-</span><span class="mi">1</span><span class="p">);</span>
+    <span class="k">return</span> <span class="p">(</span><span class="nx">tp</span><span class="p">.</span><span class="nx">indexOf</span><span class="p">(</span><span class="s1">&#39;:&#39;</span><span class="p">)</span> <span class="o">&gt;</span> <span class="o">-</span><span class="mf">1</span><span class="p">);</span>
 <span class="p">}</span>
 
 <span class="c1">// wrap the main() LLVM function</span>
@@ -318,7 +331,7 @@
     <span class="kd">var</span> <span class="nx">arg_types</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;number&#39;</span><span class="p">,</span> <span class="s1">&#39;number&#39;</span><span class="p">];</span>
 
     <span class="c1">// one number per argument</span>
-    <span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">args</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="mf">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">args</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
         <span class="nx">arg_types</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="s1">&#39;number&#39;</span><span class="p">);</span>
     <span class="p">}</span>
 
@@ -335,14 +348,14 @@
         <span class="kd">var</span> <span class="nx">buffer_out</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Buffer</span><span class="p">(</span><span class="nx">return_arr</span><span class="p">);</span>
 
         <span class="c1">// Wrap function arguments.</span>
-        <span class="kd">var</span> <span class="nx">func_args</span> <span class="o">=</span> <span class="p">[</span><span class="nx">buffer_out</span><span class="p">.</span><span class="nx">pointer</span><span class="p">,</span> <span class="mi">0</span><span class="p">];</span>
+        <span class="kd">var</span> <span class="nx">func_args</span> <span class="o">=</span> <span class="p">[</span><span class="nx">buffer_out</span><span class="p">.</span><span class="nx">pointer</span><span class="p">,</span> <span class="mf">0</span><span class="p">];</span>
 
         <span class="c1">// Skip the first argument which is the return array.</span>
-        <span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">arguments</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="mf">1</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">arguments</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
             <span class="kd">var</span> <span class="nx">arg</span><span class="p">;</span>
 
             <span class="c1">// Define the argument to send to the wrapped function.</span>
-            <span class="k">if</span> <span class="p">(</span><span class="nx">is_array</span><span class="p">(</span><span class="nx">args</span><span class="p">[</span><span class="nx">i</span><span class="o">-</span><span class="mi">1</span><span class="p">]))</span> <span class="p">{</span>
+            <span class="k">if</span> <span class="p">(</span><span class="nx">is_array</span><span class="p">(</span><span class="nx">args</span><span class="p">[</span><span class="nx">i</span><span class="o">-</span><span class="mf">1</span><span class="p">]))</span> <span class="p">{</span>
                 <span class="c1">// If that argument is an array, pass the pointer to</span>
                 <span class="c1">// an emscripten buffer containing the data.</span>
                 <span class="nx">arg</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Buffer</span><span class="p">(</span><span class="nx">arguments</span><span class="p">[</span><span class="nx">i</span><span class="p">]).</span><span class="nx">pointer</span><span class="p">;</span>
@@ -366,6 +379,7 @@
 <span class="p">}</span>
 </code></pre></div>
 
+
 <p>This wrapper connects JavaScript TypedArray buffers to the virtual machine buffers and pointers. We finally get a chance to call our compiled LLVM functions from JavaScript. Here is an interactive example:</p>
 <div class="highlight"><pre><span></span><code><span class="c1">// We get the input numbers.</span>
 <span class="kd">var</span> <span class="nx">arg1</span> <span class="o">=</span> <span class="nb">parseInt</span><span class="p">(</span><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#my_arg1&#39;</span><span class="p">).</span><span class="nx">val</span><span class="p">());</span>
@@ -375,18 +389,20 @@
 <span class="kd">var</span> <span class="nx">add</span> <span class="o">=</span> <span class="nx">wrap</span><span class="p">([</span><span class="s1">&#39;int&#39;</span><span class="p">,</span> <span class="s1">&#39;int&#39;</span><span class="p">]);</span>
 
 <span class="c1">// We create a buffer that will contain the result.</span>
-<span class="kd">var</span> <span class="nx">result</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Int32Array</span><span class="p">([</span><span class="mi">0</span><span class="p">]);</span>
+<span class="kd">var</span> <span class="nx">result</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Int32Array</span><span class="p">([</span><span class="mf">0</span><span class="p">]);</span>
 <span class="nx">result</span> <span class="o">=</span> <span class="nx">add</span><span class="p">(</span><span class="nx">result</span><span class="p">,</span> <span class="nx">arg1</span><span class="p">,</span> <span class="nx">arg2</span><span class="p">);</span>
 
 <span class="c1">// We display the result.</span>
-<span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#my_output&#39;</span><span class="p">).</span><span class="nx">val</span><span class="p">(</span><span class="nx">result</span><span class="p">[</span><span class="mi">0</span><span class="p">]);</span>
+<span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#my_output&#39;</span><span class="p">).</span><span class="nx">val</span><span class="p">(</span><span class="nx">result</span><span class="p">[</span><span class="mf">0</span><span class="p">]);</span>
 </code></pre></div>
+
 
 <p>Recall that we started from this function:</p>
 <div class="highlight"><pre><span></span><code><span class="nd">@jit</span><span class="p">(</span><span class="n">int32</span><span class="p">(</span><span class="n">int32</span><span class="p">,</span> <span class="n">int32</span><span class="p">),</span> <span class="n">nopython</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
     <span class="k">return</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span>
 </code></pre></div>
+
 
 <p>We now can use this function from JavaScript. Type some numbers below:</p>
 <iframe src="/widgets/emscripten-scalar.html" style="height: 60px;" scrolling="no"></iframe>
@@ -399,9 +415,11 @@
     <span class="k">return</span> <span class="n">x</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
 </code></pre></div>
 
+
 <p>Let's have a look at the LLVM IR:</p>
 <div class="highlight"><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="n">llvm</span><span class="p">(</span><span class="n">np_sum</span><span class="p">))</span>
 </code></pre></div>
+
 
 <div class="highlight"><pre><span></span><code><span class="p">[...]</span>
 <span class="k">define</span> <span class="k">i32</span> <span class="vg">@&quot;__main__.np_sum.array(int32,_1d,_A,_nonconst)&quot;</span><span class="p">(</span><span class="k">i32</span><span class="p">*</span> <span class="k">nocapture</span> <span class="nv">%ret</span><span class="p">,</span> <span class="k">i8</span><span class="p">*</span> <span class="k">nocapture</span> <span class="k">readnone</span> <span class="nv">%env</span><span class="p">,</span> <span class="p">{</span> <span class="k">i8</span><span class="p">*,</span> <span class="k">i64</span><span class="p">,</span> <span class="k">i64</span><span class="p">,</span> <span class="k">i32</span><span class="p">*,</span> <span class="p">[</span><span class="m">1</span> <span class="k">x</span> <span class="k">i64</span><span class="p">],</span> <span class="p">[</span><span class="m">1</span> <span class="k">x</span> <span class="k">i64</span><span class="p">]</span> <span class="p">}*</span> <span class="k">nocapture</span> <span class="k">readonly</span> <span class="nv">%arg.x</span><span class="p">)</span> <span class="vg">#0</span> <span class="p">{</span>
@@ -415,9 +433,11 @@
 <span class="p">[...]</span>
 </code></pre></div>
 
+
 <p>The code is several hundreds of lines long. Again, we have a core LLVM function and a Python wrapper. Let's examine the signature of the core function:</p>
 <div class="highlight"><pre><span></span><code><span class="k">i32</span> <span class="vg">@&quot;__main__.np_sum.array(int32,_1d,_A,_nonconst)&quot;</span><span class="p">(</span><span class="k">i32</span><span class="p">*</span> <span class="nv">%ret</span><span class="p">,</span> <span class="k">i8</span><span class="p">*</span> <span class="nv">%env</span><span class="p">,</span> <span class="p">{</span> <span class="k">i8</span><span class="p">*,</span> <span class="k">i64</span><span class="p">,</span> <span class="k">i64</span><span class="p">,</span> <span class="k">i32</span><span class="p">*,</span> <span class="p">[</span><span class="m">1</span> <span class="k">x</span> <span class="k">i64</span><span class="p">],</span> <span class="p">[</span><span class="m">1</span> <span class="k">x</span> <span class="k">i64</span><span class="p">]</span> <span class="p">}*</span> <span class="nv">%arg.x</span><span class="p">)</span>
 </code></pre></div>
+
 
 <p>The signature follows the same pattern as before. The first argument is the integer output. The third argument is the most interesting: it represents our input array. It is a pointer to a structure containing six fields. After looking into Numba's code, we find out the signification of these six fields:</p>
 <ul>
@@ -457,6 +477,7 @@
     <span class="k">return</span> <span class="n">lib</span>
 </code></pre></div>
 
+
 <p>What does this wrapper do? It takes the data buffer of an array as an input, it creates an appropriate structure for the corresponding NumPy array, and it calls our compiled Python function. Note that the <code>alloca</code> instruction creates a pointer, while <code>insertvalue</code> lets us create the LLVM ndarray structure.</p>
 <p>This wrapper will make our lives easier in JavaScript. We'll just pass the data buffer, and this LLVM wrapper will take care of creating the appropriate array structure. The drawback is that the shape of the array is fixed at compile time here. For sure, there are much cleaner ways to do it.</p>
 <p>Let's compile this with emscripten:</p>
@@ -468,10 +489,12 @@
 <span class="mi">256</span>
 </code></pre></div>
 
+
 <div class="highlight"><pre><span></span><code><span class="nl">Value:</span>   <span class="nv">%.4.fca.4.0.extract</span> <span class="p">=</span> <span class="k">extractvalue</span> <span class="p">{</span> <span class="k">i8</span><span class="p">*,</span> <span class="k">i64</span><span class="p">,</span> <span class="k">i64</span><span class="p">,</span> <span class="k">i32</span><span class="p">*,</span> <span class="p">[</span><span class="m">1</span> <span class="k">x</span> <span class="k">i64</span><span class="p">],</span> <span class="p">[</span><span class="m">1</span> <span class="k">x</span> <span class="k">i64</span><span class="p">]</span> <span class="p">}</span> <span class="nv">%.4.insert15</span><span class="p">,</span> <span class="m">4</span><span class="p">,</span> <span class="m">0</span>
 <span class="nl">Value:</span>   <span class="nv">%.4.insert15</span> <span class="p">=</span> <span class="k">insertvalue</span> <span class="p">{</span> <span class="k">i8</span><span class="p">*,</span> <span class="k">i64</span><span class="p">,</span> <span class="k">i64</span><span class="p">,</span> <span class="k">i32</span><span class="p">*,</span> <span class="p">[</span><span class="m">1</span> <span class="k">x</span> <span class="k">i64</span><span class="p">],</span> <span class="p">[</span><span class="m">1</span> <span class="k">x</span> <span class="k">i64</span><span class="p">]</span> <span class="p">}</span> <span class="nv">%.4.insert12</span><span class="p">,</span> <span class="p">[</span><span class="m">1</span> <span class="k">x</span> <span class="k">i64</span><span class="p">]</span> <span class="nv">%.4.field14</span><span class="p">,</span> <span class="m">5</span>
 <span class="err">LLVM</span> <span class="nl">ERROR:</span> <span class="err">ExpandStructRegs</span> <span class="err">does</span> <span class="err">not</span> <span class="err">handle</span> <span class="err">nested</span> <span class="err">structs</span>
 </code></pre></div>
+
 
 <p>This doesn't sound very good. A bit of googling tells us that <a href="https://code.google.com/p/nativeclient/issues/detail?id=3815">PNaCl and emscripten do not support nested structures very well</a>. The bug is still open at this time. Apparently, these projects target LLVM IR generated by Clang, which doesn't seem to use nested structs (?). I opened <a href="https://github.com/numba/numba/issues/993">an issue</a> on the Numba GitHub repository, and someone suggested to disable the Numba optimizations. It worked, but then I had another similar bug. It looked like a dead-end.</p>
 <p>Fortunately, after some more googling I found out that <a href="http://code.google.com/p/nativeclient/issues/detail?id=3932">other people had encountered the same bug</a> with LLVM IR code generated by Julia and Rust. On this bug report, someone mentioned <a href="https://github.com/epdtry/rust-emscripten-passes">a fix for Rust</a>. So I tried it. I had to patch a C++ file in PNaCl and run a custom LLVM pass on the LLVM IR generated by Numba. It was a long shot, but it actually worked.</p>
@@ -483,15 +506,18 @@
 <span class="mi">0</span>
 </code></pre></div>
 
+
 <div class="highlight"><pre><span></span><code><span class="n">os</span><span class="o">.</span><span class="n">system</span><span class="p">(</span><span class="s1">&#39;./emscripten/emcc array_fixed.ll -o array.js -O3 -s NO_EXIT_RUNTIME=1&#39;</span><span class="p">)</span>
 <span class="mi">0</span>
 </code></pre></div>
+
 
 <p>Here is the result. Let's first recall the original function:</p>
 <div class="highlight"><pre><span></span><code><span class="nd">@jit</span><span class="p">(</span><span class="n">int32</span><span class="p">(</span><span class="n">int32</span><span class="p">[:]),</span> <span class="n">nopython</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="k">def</span> <span class="nf">np_sum</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
     <span class="k">return</span> <span class="n">x</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
 </code></pre></div>
+
 
 <p>Type some numbers below to compute the sum (no more than 10 numbers):</p>
 <iframe src="/widgets/emscripten-array.html" style="height: 80px;" scrolling="no"></iframe>
@@ -502,6 +528,7 @@
     <span class="n">i</span> <span class="o">=</span> <span class="n">x</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">argmax</span><span class="p">()</span>
     <span class="k">return</span> <span class="n">x</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
 </code></pre></div>
+
 
 <p>Click on a number to change it:</p>
 <iframe src="/widgets/emscripten-table.html" style="height: 350px;" scrolling="no"></iframe>

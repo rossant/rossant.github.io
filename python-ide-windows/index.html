@@ -73,7 +73,7 @@
     <header id="post-header">
         <h1>Build a Python IDE for Windows with Notepad++ and IPython</h1>
             <div class="post-meta">
-                July 02, 2012
+                juillet 02, 2012
             </div>
             <div class="post-tags">
                 <ul>
@@ -141,6 +141,7 @@ at every IPython launch, so it should be placed here:</p>
 <div class="highlight"><pre><span></span><code>C:\Users\&lt;USERNAME&gt;\.ipython\profile_default\startup\cdrun.py
 </code></pre></div>
 
+
 <p>This file contains the following code.</p>
 <div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">os</span>
 <span class="kn">from</span> <span class="nn">subprocess</span> <span class="kn">import</span> <span class="n">Popen</span><span class="p">,</span> <span class="n">PIPE</span>
@@ -182,6 +183,7 @@ at every IPython launch, so it should be placed here:</p>
 <span class="n">ip</span><span class="o">.</span><span class="n">define_magic</span><span class="p">(</span><span class="s1">&#39;cdrunkill&#39;</span><span class="p">,</span> <span class="n">cdrunkill</span><span class="p">)</span>
 </code></pre></div>
 
+
 <p>The <em>kill_python</em> function kills all Python processes except the
 current one. Hence this script allows to automatically close a previous
 IPython interpreter and open a new one, resolving the module reloading
@@ -204,6 +206,7 @@ ipython -i -c <span class="s2">&quot;%cdrun </span><span class="k">$(</span>FULL
 ipython -i -c <span class="s2">&quot;%cdrunkill </span><span class="k">$(</span>FULL_CURRENT_PATH<span class="k">)</span><span class="s2">&quot;</span>
 </code></pre></div>
 
+
 <p>The buttons #117 and #118 correspond to F6 and F7 here. If other
 commands exist, just add the <em>\&lt;Command></em> lines in the
 <em>\&lt;UserDefinedCommands></em> section. If those shortcuts don't work, it may
@@ -219,6 +222,7 @@ execution, you can interact in the IPython interpreter. If you need to
 execute the script again, just use the following command:</p>
 <div class="highlight"><pre><span></span><code><span class="o">%</span><span class="n">run</span> <span class="n">script</span><span class="o">.</span><span class="n">py</span>
 </code></pre></div>
+
 
 <p>This will reload <em>script.py</em>, but not other modules. If you need to
 reload everything, press F7 in Notepad++: it will close the IPython
@@ -247,10 +251,12 @@ script for automating these keystrokes. Create a text file named
 <span class="p">}</span>
 </code></pre></div>
 
+
 <p>Now, in Notepad++, create a new command for launching this script with
 the current file as parameter:</p>
 <div class="highlight"><pre><span></span><code>autohotkey <span class="o">[</span>YOURPATH<span class="o">]</span><span class="se">\i</span>python_update.ahk <span class="k">$(</span>FILE_NAME<span class="k">)</span>
 </code></pre></div>
+
 
 <p>Ensure that the autohotkey.exe binary is in the Windows Path. Now,
 pressing F8 in Notepad++ will automatically set the focus to IPython and

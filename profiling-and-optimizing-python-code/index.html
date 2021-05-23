@@ -73,7 +73,7 @@
     <header id="post-header">
         <h1>Profiling and optimizing Python code</h1>
             <div class="post-meta">
-                October 10, 2012
+                octobre 10, 2012
             </div>
             <div class="post-tags">
                 <ul>
@@ -157,12 +157,14 @@ with the following lines (this is for Windows):</p>
 python dumpprof.py &gt; stats.txt
 </code></pre></div>
 
+
 <p>The first line profiles 'script.py' and saves the result in a 'prof' file.
 The second line converts the 'prof' binary file into a text file.</p>
 <p>The <code>dumpprof.py</code> file contains the following code:</p>
 <div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">pstats</span>
 <span class="n">pstats</span><span class="o">.</span><span class="n">Stats</span><span class="p">(</span><span class="s1">&#39;prof&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">strip_dirs</span><span class="p">()</span><span class="o">.</span><span class="n">sort_stats</span><span class="p">(</span><span class="s2">&quot;cumulative&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">print_stats</span><span class="p">()</span>
 </code></pre></div>
+
 
 <p>You can take a look to the Python documentation to find all the options
 in the
@@ -184,6 +186,7 @@ each function took.</p>
 <span class="n">test</span><span class="p">()</span>
 </code></pre></div>
 
+
 <p>An excerpt of the output of <code>cProfile</code> on my laptop is:</p>
 <div class="highlight"><pre><span></span><code>10895 function calls (10706 primitive calls) in 0.472 CPU seconds
 
@@ -201,6 +204,7 @@ ncalls  tottime  percall  cumtime  percall filename:lineno(function)
     1    0.009    0.009    0.009    0.009 {method &#39;randn&#39; of &#39;mtrand.RandomState&#39; objects}
 </code></pre></div>
 
+
 <p>The <code>test</code> function took 209 ms, among which 126 were spent in the <code>repeat</code>
 function (allocating and copying large amounts of data takes time). But
 we don't have directly the time that the square operation took.</p>
@@ -214,6 +218,7 @@ Then, add the <code>@profile</code> decorator to every function you want to prof
 by line. Finally, use the following command:</p>
 <div class="highlight"><pre><span></span><code>python -m kernprof -l -v script.py &gt; statsline.txt
 </code></pre></div>
+
 
 <p>This executes the script and generates a text file with the line profiler
 output. Here is the output on the toy example:</p>
@@ -232,6 +237,7 @@ Line #      Hits         Time  Per Hit   % Time  Line Contents
      7         1       241293 241293.0     60.4      b = np.repeat(a, 100)
      8         1       140307 140307.0     35.1      c = b ** 2
 </code></pre></div>
+
 
 <p>The percentage of time and the actual time (in unit of
 the Timer unit, about 0.5 microseconds here) spent on each line is given.
