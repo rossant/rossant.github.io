@@ -6,8 +6,6 @@
     <meta name="description" content="Cyrille Rossant, ">
     <link href="/favicon.png" rel="icon">
 
-        <link rel="alternate"  href="https://cyrille.rossant.net/feeds/all.atom.xml" type="application/atom+xml" title="Cyrille Rossant Full Atom Feed"/>
-        <link rel="alternate" href="https://cyrille.rossant.net/feeds/atom.xml" type="application/atom+xml" title="Cyrille Rossant Atom Feed"/>
 
         <title>Cyrille Rossant - Big Data visualization with WebGL, part 2: VisPy</title>
 
@@ -58,7 +56,7 @@
         <li><a href="https://twitter.com/cyrillerossant"><i class="fa fa-twitter"></i></a></li>
         <li><a href="https://github.com/rossant"><i class="fa fa-github"></i></a></li>
         <li><a href="https://www.linkedin.com/in/crossant"><i class="fa fa-linkedin"></i></a></li>
-        <li><a href="https://cyrille.rossant.net/feeds/all.atom.xml"><i class="fa fa-rss"></i></a></li>
+        <li><a href="/None"><i class="fa fa-rss"></i></a></li>
 </ul>                </div>
             </div>
         </div>
@@ -73,7 +71,7 @@
     <header id="post-header">
         <h1>Big Data visualization with WebGL, part 2: VisPy</h1>
             <div class="post-meta">
-                décembre 11, 2014
+                December 11, 2014
             </div>
             <div class="post-tags">
                 <ul>
@@ -89,16 +87,16 @@
 
 
 <ul>
-<li><a href="https://cyrille.rossant.net/big-data-visualization-webgl-part1/">Part 1: Overview</a></li>
+<li><a href="/big-data-visualization-webgl-part1/">Part 1: Overview</a></li>
 <li>Part 2: VisPy</li>
 </ul>
 <h2>Birth of the project</h2>
 <p>I started to be interested in high-performance data visualization technologies three years ago. I was left unsatisfied by existing visualization libraries in Python like matplotlib. Although rich and powerful, matplotlib is slow when it comes to interactive visualization, particularly with datasets containing more than a few thousands of points. Yet, I was often dealing with digital time-dependent signals containing millions of points or more. It struck me to find out that no existing library would let me pan and zoom in a plot containing a long signal. More generally, there was no way to visualize interactively a large dataset.</p>
-<p>Being familiar with graphics processing units (GPUs) for general-purpose computing, I started to investigate the possibility to leverage the hardware acceleration offered by these devices for interactive data visualization. I ended up releasing an experimental visualization toolkit named Galry for this purpose. With Galry, I was able to interactively explore plots containing tens to hundreds of millions of points. I've already detailed this work in previous posts (<a href="https://cyrille.rossant.net/introducing-galry/">here</a>, <a href="https://cyrille.rossant.net/shaders-opengl/">here</a>, <a href="https://cyrille.rossant.net/galrys-story-or-the-quest-of-multi-million-plots/">here</a>, and <a href="https://cyrille.rossant.net/hardware-accelerated-interactive-data-visualization-in-python/">here</a>).</p>
+<p>Being familiar with graphics processing units (GPUs) for general-purpose computing, I started to investigate the possibility to leverage the hardware acceleration offered by these devices for interactive data visualization. I ended up releasing an experimental visualization toolkit named Galry for this purpose. With Galry, I was able to interactively explore plots containing tens to hundreds of millions of points. I've already detailed this work in previous posts (<a href="/introducing-galry/">here</a>, <a href="/shaders-opengl/">here</a>, <a href="/galrys-story-or-the-quest-of-multi-million-plots/">here</a>, and <a href="/hardware-accelerated-interactive-data-visualization-in-python/">here</a>).</p>
 <p>In late 2012, other developers of similar libraries and I decided to join forces to create a brand new visualization library that would scale to very big datasets. The VisPy library was born.</p>
 <h2>What is VisPy?</h2>
 <p><a href="http://vispy.org">VisPy</a> is a scientific visualization library in Python that focuses on scalability and performance. It is based on OpenGL, an open industry-standard visualization library that can leverage the hardware acceleration of graphics processing units.</p>
-<p><img alt="VisPy examples" src="https://cyrille.rossant.net/images/vispy-examples.png" /></p>
+<p><img alt="VisPy examples" src="/images/vispy-examples.png" /></p>
 <p>VisPy focuses on <em>modern</em> OpenGL. Whereas legacy OpenGL uses a fixed function pipeline with a limited predefined list of rendering features, modern OpenGL lets users customize all aspects of the rendering pipeline. This is done through through small programs named <strong>shaders</strong>. These programs are written in a low-level C-like language called GLSL. Shaders run on the GPU and benefit from the massively parallel architecture of GPUs.</p>
 <p>A major challenge of the project is to offer visualization facilities that are simultaneously user-friendly, flexible, and efficient. The high flexibility of OpenGL should be reflected by the user API. Yet, these constraints tend to be mutually exclusive. An easy-to-use library tends to offer less possibilities than a complex one. This is particularly problematic in a visualization library, where users needs can be highly diverse.</p>
 <p>To overcome these issues, VisPy provides several interfaces and abstraction levels that vary in terms of accessibility and flexibility. These interfaces are presented here in decreasing order of user-friendliness, and increasing order of flexibility.</p>
@@ -131,12 +129,12 @@
 <nav class="pagination-wrapper">
     <div class="pagination">
         <div class="pagination-left">
-                <a href="https://cyrille.rossant.net/numpy-browser-llvm/">
+                <a href="/numpy-browser-llvm/">
                     &larr; previous
                 </a>
         </div>
         <div class="pagination-right">
-                <a href="https://cyrille.rossant.net/writing-ipython-cookbook/">
+                <a href="/writing-ipython-cookbook/">
                     next&nbsp;&rarr;
                 </a>
         </div>
@@ -152,7 +150,7 @@
      */
 
     var disqus_config = function () {
-        this.page.url = "https://cyrille.rossant.net/big-data-visualization-webgl-part2/";  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.url = "/big-data-visualization-webgl-part2/";  // Replace PAGE_URL with your page's canonical URL variable
         this.page.identifier = "big-data-visualization-webgl-part2"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
     };
 
@@ -230,7 +228,7 @@ software engineer at IBL and UCL<br>
         <footer id="footer" class="pure-u-1 pure-u-md-3-4">
             <div class="l-box">
                 <div>
-                    <p>&copy; <a href="https://cyrille.rossant.net">Cyrille Rossant</a> &ndash;
+                    <p>&copy; <a href="">Cyrille Rossant</a> &ndash;
                         Built with <a href="https://github.com/PurePelicanTheme/pure-single">Pure Theme</a>
                         for <a href="http://blog.getpelican.com/">Pelican</a>
                     </p>
