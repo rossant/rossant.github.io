@@ -6,6 +6,8 @@
     <meta name="description" content="Cyrille Rossant, ">
     <link href="/favicon.png" rel="icon">
 
+        <link rel="alternate"  href="https://cyrille.rossant.net/feeds/all.atom.xml" type="application/atom+xml" title="Cyrille Rossant Full Atom Feed"/>
+        <link rel="alternate" href="https://cyrille.rossant.net/feeds/atom.xml" type="application/atom+xml" title="Cyrille Rossant Atom Feed"/>
 
         <title>Cyrille Rossant - Making PyQt4, PySide and IPython work together</title>
 
@@ -56,7 +58,7 @@
         <li><a href="https://twitter.com/cyrillerossant"><i class="fa fa-twitter"></i></a></li>
         <li><a href="https://github.com/rossant"><i class="fa fa-github"></i></a></li>
         <li><a href="https://www.linkedin.com/in/crossant"><i class="fa fa-linkedin"></i></a></li>
-        <li><a href="/None"><i class="fa fa-rss"></i></a></li>
+        <li><a href="https://cyrille.rossant.net/feeds/all.atom.xml"><i class="fa fa-rss"></i></a></li>
 </ul>                </div>
             </div>
         </div>
@@ -120,9 +122,9 @@ Priority is given to PyQt4, but it can be changed in the code.
 I prefer to use PyQt for now, since it seems more stable (especially when
 used in conjunction with IPython), but that will probably change at some point.</p>
 <p>To use it, replace all your <code>PyQt4</code> or <code>PySide</code> imports with this package, like:</p>
-<div class="highlight"><pre><span></span><code><span class="c1"># from PyQt4 import QtGui, QtCore  # old imports</span>
+<div class="highlight"><pre><span></span><span class="c1"># from PyQt4 import QtGui, QtCore  # old imports</span>
 <span class="kn">from</span> <span class="nn">python_qt_binding</span> <span class="kn">import</span> <span class="n">QtGui</span><span class="p">,</span> <span class="n">QtCore</span>  <span class="c1"># new imports</span>
-</code></pre></div>
+</pre></div>
 
 
 <p>The <code>python_qt_binding</code> package must be importable: the folder should be
@@ -134,7 +136,7 @@ inside).</p>
 deprecation road. Python 3 only supports v2, so does PySide. On Python 2.x,
 the v1 is the default API. You can change the API with the following code
 which comes from the <code>python_qt_binding</code> package):</p>
-<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">sip</span>
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sip</span>
 <span class="k">try</span><span class="p">:</span>
     <span class="n">sip</span><span class="o">.</span><span class="n">setapi</span><span class="p">(</span><span class="s1">&#39;QDate&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
     <span class="n">sip</span><span class="o">.</span><span class="n">setapi</span><span class="p">(</span><span class="s1">&#39;QDateTime&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
@@ -145,7 +147,7 @@ which comes from the <code>python_qt_binding</code> package):</p>
     <span class="n">sip</span><span class="o">.</span><span class="n">setapi</span><span class="p">(</span><span class="s1">&#39;QVariant&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
 <span class="k">except</span> <span class="ne">ValueError</span><span class="p">,</span> <span class="n">e</span><span class="p">:</span>
     <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span><span class="s1">&#39;Could not set API version (</span><span class="si">%s</span><span class="s1">): did you import PyQt4 directly?&#39;</span> <span class="o">%</span> <span class="n">e</span><span class="p">)</span>
-</code></pre></div>
+</pre></div>
 
 
 <p>This code must be called before any PyQt4 import. It can be a problem with
@@ -160,9 +162,9 @@ to either <code>pyqt</code> or <code>pyside</code> depending on which library yo
 <p>To enable the Qt GUI event loop integration in IPython, you need to uncomment
 the following lines in <code>~/.ipython/profile_default/ipython_config.py</code> (this file is
 automatically created when you create an IPython profile):</p>
-<div class="highlight"><pre><span></span><code><span class="n">c</span><span class="o">.</span><span class="n">TerminalIPythonApp</span><span class="o">.</span><span class="n">gui</span> <span class="o">=</span> <span class="s1">&#39;qt&#39;</span>
+<div class="highlight"><pre><span></span><span class="n">c</span><span class="o">.</span><span class="n">TerminalIPythonApp</span><span class="o">.</span><span class="n">gui</span> <span class="o">=</span> <span class="s1">&#39;qt&#39;</span>
 <span class="n">c</span><span class="o">.</span><span class="n">TerminalIPythonApp</span><span class="o">.</span><span class="n">pylab</span> <span class="o">=</span> <span class="s1">&#39;qt&#39;</span>
-</code></pre></div>
+</pre></div>
 
 
 <p>This allows you to open a Qt window in an interactive way, and to access the Qt
@@ -172,34 +174,34 @@ It also works with matplotlib.</p>
 <h2>Create a Qt window with IPython</h2>
 <p>When Qt GUI event loop integration is active, a Qt application is
 automatically created upon IPython launch, so that:</p>
-<div class="highlight"><pre><span></span><code><span class="n">window</span> <span class="o">=</span> <span class="n">MyQtWindow</span><span class="p">()</span>
+<div class="highlight"><pre><span></span><span class="n">window</span> <span class="o">=</span> <span class="n">MyQtWindow</span><span class="p">()</span>
 <span class="n">window</span><span class="o">.</span><span class="n">show</span>
-</code></pre></div>
+</pre></div>
 
 
 <p>just works. But this won't work by default in Python (e.g. with
 <code>python script.py</code>) since a Qt application won't have been opened in the first
 place. By contrast, using the following code:</p>
-<div class="highlight"><pre><span></span><code><span class="n">app</span> <span class="o">=</span> <span class="n">QtGui</span><span class="o">.</span><span class="n">QApplication</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><span class="n">app</span> <span class="o">=</span> <span class="n">QtGui</span><span class="o">.</span><span class="n">QApplication</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">)</span>
 <span class="n">window</span> <span class="o">=</span> <span class="n">MyQtWindow</span><span class="p">()</span>
 <span class="n">window</span><span class="o">.</span><span class="n">show</span>
 <span class="n">app</span><span class="o">.</span><span class="n">exec_</span><span class="p">()</span>
-</code></pre></div>
+</pre></div>
 
 
 <p>will work with a standard Python console, but will disable interactive GUI
 integration in IPython! So in order to
 have the expected behavior in both cases (interactive IPython, or standard
 Python interpreter), I use the following code:</p>
-<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">create_window</span><span class="p">(</span><span class="n">window_class</span><span class="p">):</span>
+<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">create_window</span><span class="p">(</span><span class="n">window_class</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Create a Qt window in Python, or interactively in IPython with Qt GUI</span>
 <span class="sd">    event loop integration.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="n">app_created</span> <span class="o">=</span> <span class="kc">False</span>
+    <span class="n">app_created</span> <span class="o">=</span> <span class="bp">False</span>
     <span class="n">app</span> <span class="o">=</span> <span class="n">QtCore</span><span class="o">.</span><span class="n">QCoreApplication</span><span class="o">.</span><span class="n">instance</span><span class="p">()</span>
-    <span class="k">if</span> <span class="n">app</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">app</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
         <span class="n">app</span> <span class="o">=</span> <span class="n">QtGui</span><span class="o">.</span><span class="n">QApplication</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">)</span>
-        <span class="n">app_created</span> <span class="o">=</span> <span class="kc">True</span>
+        <span class="n">app_created</span> <span class="o">=</span> <span class="bp">True</span>
     <span class="n">app</span><span class="o">.</span><span class="n">references</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
     <span class="n">window</span> <span class="o">=</span> <span class="n">window_class</span><span class="p">()</span>
     <span class="n">app</span><span class="o">.</span><span class="n">references</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">window</span><span class="p">)</span>
@@ -207,28 +209,28 @@ Python interpreter), I use the following code:</p>
     <span class="k">if</span> <span class="n">app_created</span><span class="p">:</span>
         <span class="n">app</span><span class="o">.</span><span class="n">exec_</span><span class="p">()</span>
     <span class="k">return</span> <span class="n">window</span>
-</code></pre></div>
+</pre></div>
 
 
 <p>This function can be used like this:</p>
-<div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">MyQtWindow</span><span class="p">(</span><span class="n">QtGui</span><span class="o">.</span><span class="n">QMainWindow</span><span class="p">):</span>
+<div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">MyQtWindow</span><span class="p">(</span><span class="n">QtGui</span><span class="o">.</span><span class="n">QMainWindow</span><span class="p">):</span>
     <span class="c1"># [...] your Qt window code</span>
     <span class="k">pass</span>
 
 <span class="n">window</span> <span class="o">=</span> <span class="n">create_window</span><span class="p">(</span><span class="n">MyQtWindow</span><span class="p">)</span>
-</code></pre></div>
+</pre></div>
     </section>
 
 
 <nav class="pagination-wrapper">
     <div class="pagination">
         <div class="pagination-left">
-                <a href="/profiling-and-optimizing-python-code/">
+                <a href="https://cyrille.rossant.net/profiling-and-optimizing-python-code/">
                     &larr; previous
                 </a>
         </div>
         <div class="pagination-right">
-                <a href="/a-tutorial-on-openglopencl-interoperability-in-python/">
+                <a href="https://cyrille.rossant.net/a-tutorial-on-openglopencl-interoperability-in-python/">
                     next&nbsp;&rarr;
                 </a>
         </div>
@@ -244,7 +246,7 @@ Python interpreter), I use the following code:</p>
      */
 
     var disqus_config = function () {
-        this.page.url = "/making-pyqt4-pyside-and-ipython-work-together/";  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.url = "https://cyrille.rossant.net/making-pyqt4-pyside-and-ipython-work-together/";  // Replace PAGE_URL with your page's canonical URL variable
         this.page.identifier = "making-pyqt4-pyside-and-ipython-work-together"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
     };
 
@@ -322,7 +324,7 @@ software engineer at IBL and UCL<br>
         <footer id="footer" class="pure-u-1 pure-u-md-3-4">
             <div class="l-box">
                 <div>
-                    <p>&copy; <a href="">Cyrille Rossant</a> &ndash;
+                    <p>&copy; <a href="https://cyrille.rossant.net">Cyrille Rossant</a> &ndash;
                         Built with <a href="https://github.com/PurePelicanTheme/pure-single">Pure Theme</a>
                         for <a href="http://blog.getpelican.com/">Pelican</a>
                     </p>

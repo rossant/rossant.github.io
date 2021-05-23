@@ -6,6 +6,8 @@
     <meta name="description" content="Cyrille Rossant, ">
     <link href="/favicon.png" rel="icon">
 
+        <link rel="alternate"  href="https://cyrille.rossant.net/feeds/all.atom.xml" type="application/atom+xml" title="Cyrille Rossant Full Atom Feed"/>
+        <link rel="alternate" href="https://cyrille.rossant.net/feeds/atom.xml" type="application/atom+xml" title="Cyrille Rossant Atom Feed"/>
 
         <title>Cyrille Rossant</title>
 
@@ -50,7 +52,7 @@
         <li><a href="https://twitter.com/cyrillerossant"><i class="fa fa-twitter"></i></a></li>
         <li><a href="https://github.com/rossant"><i class="fa fa-github"></i></a></li>
         <li><a href="https://www.linkedin.com/in/crossant"><i class="fa fa-linkedin"></i></a></li>
-        <li><a href="/None"><i class="fa fa-rss"></i></a></li>
+        <li><a href="https://cyrille.rossant.net/feeds/all.atom.xml"><i class="fa fa-rss"></i></a></li>
 </ul>                </div>
             </div>
         </div>
@@ -69,16 +71,21 @@
 
     <section class="post">
         <header class="post-header">
-            <h3><a href="/numpy-performance-tricks/">NumPy performance tricks</a></h3>
+            <h3><a href="https://cyrille.rossant.net/numpy-performance-tricks/">NumPy performance tricks</a></h3>
             <p class="sub-header-3">2013-01-27</p>
             <p class="post-summary"><p>I've been using NumPy for nearly five years, but I'm still learning
 performance tricks. The reason is that I currently need to deal with
 very large arrays (hundreds of millions of elements) and the performance
 of my code started to be disappointing. Then, through extensive
-line-by-line profiling, I discovered some …</p></p>
+line-by-line profiling, I discovered some subtleties that explain why
+some seemingly harmless lines of code can actually lead to major
+bottlenecks. Very often, a small trick allows to significantly improve
+the performance. Here is what I've learnt. These tips are intended to
+regular Numpy users rather than pure beginners.</p>
+</p>
         </header>
         <div class="read-more">
-            <a class="pure-button" href="/numpy-performance-tricks/">
+            <a class="pure-button" href="https://cyrille.rossant.net/numpy-performance-tricks/">
                 read on
             </a>
         </div>
@@ -86,18 +93,15 @@ line-by-line profiling, I discovered some …</p></p>
         <hr />
     <section class="post">
         <header class="post-header">
-            <h3><a href="/twelve-tips-about-starting-a-new-open-source-project/">Twelve Tips about Starting a New Open-Source Project</a></h3>
+            <h3><a href="https://cyrille.rossant.net/twelve-tips-about-starting-a-new-open-source-project/">Twelve Tips about Starting a New Open-Source Project</a></h3>
             <p class="sub-header-3">2012-12-01</p>
             <p class="post-summary"><p>Here are some tips targeting developers who want to create an open-source
 project. They reflect my personal opinion and may not be all adapted to
 every situation.</p>
-
-
-<h2>Meet a need</h2>
-<p>So, you want to create a new <a href="http://en.wikipedia.org/wiki/Open_source">open-source project</a>? That's a good idea, but you need to understand very early …</p></p>
+</p>
         </header>
         <div class="read-more">
-            <a class="pure-button" href="/twelve-tips-about-starting-a-new-open-source-project/">
+            <a class="pure-button" href="https://cyrille.rossant.net/twelve-tips-about-starting-a-new-open-source-project/">
                 read on
             </a>
         </div>
@@ -105,7 +109,7 @@ every situation.</p>
         <hr />
     <section class="post">
         <header class="post-header">
-            <h3><a href="/galrys-story-or-the-quest-of-multi-million-plots/">Galry's Story, or the quest of multi-million plots</a></h3>
+            <h3><a href="https://cyrille.rossant.net/galrys-story-or-the-quest-of-multi-million-plots/">Galry's Story, or the quest of multi-million plots</a></h3>
             <p class="sub-header-3">2012-11-30</p>
             <p class="post-summary"><p>About a month ago,
 <a href="/introducing-galry/">I announced here the availability</a>
@@ -113,10 +117,15 @@ of a
 <a href="http://rossant.github.com/galry/">new experimental high performance visualization package in Python</a>
 that I'm developing as part of my current research project.
 It has significantly evolved since then, but it is still experimental.
-Moreover, the interface is still not ready for a 0 …</p></p>
+Moreover, the interface is still not ready for a 0.1 release. I also need to do
+much more tests on various systems and graphics cards. In this post I'll
+talk about how the idea of writing a new visualization package came up in the
+first place. I'll also describe the new features that are coming to the
+library.</p>
+</p>
         </header>
         <div class="read-more">
-            <a class="pure-button" href="/galrys-story-or-the-quest-of-multi-million-plots/">
+            <a class="pure-button" href="https://cyrille.rossant.net/galrys-story-or-the-quest-of-multi-million-plots/">
                 read on
             </a>
         </div>
@@ -124,17 +133,28 @@ Moreover, the interface is still not ready for a 0 …</p></p>
         <hr />
     <section class="post">
         <header class="post-header">
-            <h3><a href="/shaders-opengl/">The Power of Shaders in Real-Time Graphics Programming</a></h3>
+            <h3><a href="https://cyrille.rossant.net/shaders-opengl/">The Power of Shaders in Real-Time Graphics Programming</a></h3>
             <p class="sub-header-3">2012-11-05</p>
             <p class="post-summary"><p>I've been programming in
 <a href="http://en.wikipedia.org/wiki/OpenGL">OpenGL</a>
 for a few months. Like a lot of programmers,
 I learnt the language by myself, thanks to various tutorials, books or e-books
 on the subject. One couldn't say there's a lack of resources on this
-20-years old language since it's so widely used throughout the …</p></p>
+20-years old language since it's so widely used throughout the world. Yet,
+I was surprised to discover a few weeks ago that the <strong>vast majority of what
+I learnt has been obsolete for almost a decade</strong>. The reason is that too many
+textbooks and tutorials on the Internet about OpenGL refer to a deprecated
+way of programming and which relates to the <strong>fixed-function pipeline</strong>.
+The modern way of programming in OpenGL is to use the <strong>programmable pipeline
+through shaders</strong>. The
+<a href="http://www.arcsynthesis.org/gltut/">free e-book</a> by
+Jason McKesson is a very good
+resource for learning modern OpenGL programming using the programmable
+pipeline.</p>
+</p>
         </header>
         <div class="read-more">
-            <a class="pure-button" href="/shaders-opengl/">
+            <a class="pure-button" href="https://cyrille.rossant.net/shaders-opengl/">
                 read on
             </a>
         </div>
@@ -142,18 +162,15 @@ on the subject. One couldn't say there's a lack of resources on this
         <hr />
     <section class="post">
         <header class="post-header">
-            <h3><a href="/introducing-galry/">Introducing Galry, a high-performance interactive 2D visualization Python package</a></h3>
+            <h3><a href="https://cyrille.rossant.net/introducing-galry/">Introducing Galry, a high-performance interactive 2D visualization Python package</a></h3>
             <p class="sub-header-3">2012-10-24</p>
             <p class="post-summary"><p>I'm releasing today the code of a first experimental version of 
 <a href="http://rossant.github.com/galry/"><strong>Galry, a high-performance interactive 2D visualization Python package</strong></a>
 that I'm creating as part of my current research project.</p>
-
-
-<p>The rationale of this package is to provide a highly flexible and optimized
-way of visualizing large 2D datasets in Python …</p></p>
+</p>
         </header>
         <div class="read-more">
-            <a class="pure-button" href="/introducing-galry/">
+            <a class="pure-button" href="https://cyrille.rossant.net/introducing-galry/">
                 read on
             </a>
         </div>
@@ -162,11 +179,11 @@ way of visualizing large 2D datasets in Python …</p></p>
 <nav class="pagination-wrapper">
     <div class="pagination">
         <div class="pagination-left">
-                <a href="/page/6/"><span>&larr; previous</span></a>
+                <a href="https://cyrille.rossant.net/page/6/"><span>&larr; previous</span></a>
         </div>
-        <span>Page 7 / 9 &nbsp; (<a href="/archives/">all</a>)</span>
+        <span>Page 7 / 9 &nbsp; (<a href="https://cyrille.rossant.net/archives/">all</a>)</span>
         <div class="pagination-right">
-                <a href="/page/8/">next&nbsp;&rarr;</a>
+                <a href="https://cyrille.rossant.net/page/8/">next&nbsp;&rarr;</a>
         </div>
     </div>
 </nav>    </section>
@@ -231,7 +248,7 @@ software engineer at IBL and UCL<br>
         <footer id="footer" class="pure-u-1 pure-u-md-3-4">
             <div class="l-box">
                 <div>
-                    <p>&copy; <a href="">Cyrille Rossant</a> &ndash;
+                    <p>&copy; <a href="https://cyrille.rossant.net">Cyrille Rossant</a> &ndash;
                         Built with <a href="https://github.com/PurePelicanTheme/pure-single">Pure Theme</a>
                         for <a href="http://blog.getpelican.com/">Pelican</a>
                     </p>

@@ -6,6 +6,8 @@
     <meta name="description" content="Cyrille Rossant, ">
     <link href="/favicon.png" rel="icon">
 
+        <link rel="alternate"  href="https://cyrille.rossant.net/feeds/all.atom.xml" type="application/atom+xml" title="Cyrille Rossant Full Atom Feed"/>
+        <link rel="alternate" href="https://cyrille.rossant.net/feeds/atom.xml" type="application/atom+xml" title="Cyrille Rossant Atom Feed"/>
 
         <title>Cyrille Rossant - Start an IPython notebook server in Windows Explorer</title>
 
@@ -56,7 +58,7 @@
         <li><a href="https://twitter.com/cyrillerossant"><i class="fa fa-twitter"></i></a></li>
         <li><a href="https://github.com/rossant"><i class="fa fa-github"></i></a></li>
         <li><a href="https://www.linkedin.com/in/crossant"><i class="fa fa-linkedin"></i></a></li>
-        <li><a href="/None"><i class="fa fa-rss"></i></a></li>
+        <li><a href="https://cyrille.rossant.net/feeds/all.atom.xml"><i class="fa fa-rss"></i></a></li>
 </ul>                </div>
             </div>
         </div>
@@ -87,34 +89,34 @@
 
 
 <p>Here is a script launching an IPython notebook server in the current active window:</p>
-<div class="highlight"><pre><span></span><code><span class="nb">#SingleInstance</span> <span class="n">Force</span>
+<div class="highlight"><pre><span></span><span class="nb">#SingleInstance</span> <span class="n">Force</span>
 <span class="nb">#NoTrayIcon</span>
 
-<span class="nb">SetTitleMatchMode</span> <span class="n">RegEx</span><span class="c1"></span>
+<span class="nb">SetTitleMatchMode</span> <span class="n">RegEx</span><span class="c c-Singleline"></span>
 
-<span class="c1">; Press CTRL+I in a Windows Explorer window to launch a IPython notebook server</span>
-<span class="c1">; in the current folder.</span>
-<span class="o">^</span><span class="n">i</span><span class="o">::</span><span class="c1"></span>
-<span class="c1">; Get the current path.</span>
-<span class="nb">Send</span> <span class="o">^</span><span class="n">l</span><span class="c1"></span>
-<span class="c1">; Backup the current clipboard.</span>
-<span class="n">ClipSaved</span> <span class="o">:=</span> <span class="nv">ClipboardAll</span><span class="c1"></span>
-<span class="c1">; Copy and save the current path.</span>
+<span class="c c-Singleline">; Press CTRL+I in a Windows Explorer window to launch a IPython notebook server</span>
+<span class="c c-Singleline">; in the current folder.</span>
+<span class="o">^</span><span class="n">i</span><span class="o">::</span><span class="c c-Singleline"></span>
+<span class="c c-Singleline">; Get the current path.</span>
+<span class="nb">Send</span> <span class="o">^</span><span class="n">l</span><span class="c c-Singleline"></span>
+<span class="c c-Singleline">; Backup the current clipboard.</span>
+<span class="n">ClipSaved</span> <span class="o">:=</span> <span class="nv">ClipboardAll</span><span class="c c-Singleline"></span>
+<span class="c c-Singleline">; Copy and save the current path.</span>
 <span class="nb">Send</span> <span class="o">^</span><span class="n">c</span>
 <span class="nb">ClipWait</span>
-<span class="n">x</span> <span class="o">=</span> <span class="nv">%Clipboard%</span><span class="c1"></span>
-<span class="c1">; Restore the clipboard.</span>
+<span class="n">x</span> <span class="o">=</span> <span class="nv">%Clipboard%</span><span class="c c-Singleline"></span>
+<span class="c c-Singleline">; Restore the clipboard.</span>
 <span class="nv">Clipboard</span> <span class="o">:=</span> <span class="n">ClipSaved</span>
-<span class="n">ClipSaved</span> <span class="o">=</span><span class="c1"> ; Free the memory in case the clipboard was very large.</span>
-<span class="c1">; Now, run the IPython notebook server.</span>
+<span class="n">ClipSaved</span> <span class="o">=</span><span class="c c-Singleline"> ; Free the memory in case the clipboard was very large.</span>
+<span class="c c-Singleline">; Now, run the IPython notebook server.</span>
 <span class="nb">RunWait</span><span class="p">,</span> <span class="n">ipython</span> <span class="n">notebook</span> <span class="o">--</span><span class="n">pylab</span> <span class="n">inline</span> <span class="o">--</span><span class="n">notebook</span><span class="o">-</span><span class="n">dir</span> <span class="s">&quot;%x%&quot;</span><span class="p">,</span> <span class="p">,</span> <span class="n">min</span>
-<span class="nb">return</span><span class="c1"></span>
+<span class="nb">return</span><span class="c c-Singleline"></span>
 
-<span class="c1">; Press CTRL+ALT+P to kill all Python processes.</span>
+<span class="c c-Singleline">; Press CTRL+ALT+P to kill all Python processes.</span>
 <span class="o">^!</span><span class="n">p</span><span class="o">::</span>
 <span class="nb">Run</span><span class="p">,</span> <span class="n">taskkill</span> <span class="o">/</span><span class="n">f</span> <span class="o">/</span><span class="n">im</span> <span class="n">python</span><span class="o">.</span><span class="n">exe</span><span class="p">,</span> <span class="p">,</span> <span class="n">min</span>
 <span class="nb">return</span>
-</code></pre></div>
+</pre></div>
 
 
 <p>Save this script in a <code>ipynb.ahk</code> script and double-click on it. Then, pressing <code>CTRL+I</code> launches an IPython notebook server in the current directory of the active window.</p>
@@ -126,12 +128,12 @@
 <nav class="pagination-wrapper">
     <div class="pagination">
         <div class="pagination-left">
-                <a href="/why-using-python-for-scientific-computing/">
+                <a href="https://cyrille.rossant.net/why-using-python-for-scientific-computing/">
                     &larr; previous
                 </a>
         </div>
         <div class="pagination-right">
-                <a href="/create-a-standalone-windows-installer-for-your-python-application/">
+                <a href="https://cyrille.rossant.net/create-a-standalone-windows-installer-for-your-python-application/">
                     next&nbsp;&rarr;
                 </a>
         </div>
@@ -147,7 +149,7 @@
      */
 
     var disqus_config = function () {
-        this.page.url = "/start-an-ipython-notebook-server-in-windows-explorer/";  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.url = "https://cyrille.rossant.net/start-an-ipython-notebook-server-in-windows-explorer/";  // Replace PAGE_URL with your page's canonical URL variable
         this.page.identifier = "start-an-ipython-notebook-server-in-windows-explorer"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
     };
 
@@ -225,7 +227,7 @@ software engineer at IBL and UCL<br>
         <footer id="footer" class="pure-u-1 pure-u-md-3-4">
             <div class="l-box">
                 <div>
-                    <p>&copy; <a href="">Cyrille Rossant</a> &ndash;
+                    <p>&copy; <a href="https://cyrille.rossant.net">Cyrille Rossant</a> &ndash;
                         Built with <a href="https://github.com/PurePelicanTheme/pure-single">Pure Theme</a>
                         for <a href="http://blog.getpelican.com/">Pelican</a>
                     </p>
