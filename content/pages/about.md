@@ -5,12 +5,12 @@ Title: About
 **Neuroscience researcher and software engineer** at the [**International Brain Laboratory**](https://internationalbrainlab.com) and [**University College London**](http://www.ucl.ac.uk/) (Institute of Neurology).
 
 * PhD in **neuroscience**
-* Strong interest in biomedical and clinical research
 * Former student of the **[&Eacute;cole Normale Supérieure de la rue d'Ulm](http://www.ens.fr)** <br>**(mathematics, physics, computer science)**
 * Author of **[several books on Python for data science]({filename}books.md)**
-* 25+ years of experience in **computing** (Python, C, C#, C++, MATLAB, PHP)
-* 20 years of experience in **GPU graphics/computing** (CUDA, OpenGL, Vulkan)
-* 20 years of experience in **databases** (SQL)
+* 15 years of experience in **scientific computing** (NumPy, MATLAB)
+* 25+ years of experience in **programming** (Python, C, C#, C++, PHP)
+* 20 years of experience in **GPU programming for computing and graphics** (CUDA, OpenCL, OpenGL, Vulkan)
+* 20 years of experience in **databases** (PostgreSQL, MySQL)
 * Front-end development (web, mobile, Qt)
 
 
@@ -54,7 +54,7 @@ Title: About
 
 ### Articles in international journals
 
-* **Rossant C**, International Brain Laboratory, Rougier N (2021, in press). [High-performance interactive scientific visualization with DatoViz via the Vulkan low-level GPU API](#). **Computing in Science and Engineering**, doi.org/10.1109/MCSE.2021.3078345
+* **Rossant C**, International Brain Laboratory, Rougier N (2021). [High-performance interactive scientific visualization with Datoviz via the Vulkan low-level GPU API](https://www.computer.org/csdl/magazine/cs/2021/04/09500108/1vBD2PGIVlC). **Computing in Science and Engineering**, doi.org/10.1109/MCSE.2021.3078345
 
 
 ### Dissertations
