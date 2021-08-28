@@ -1,74 +1,30 @@
 Title: Projects
 
-Here are my current projects:
+## Research software development
 
-* [Open-source Python libraries](#open-source-python-libraries): tools for numerical computing and technical writing
-* [Technical writings](#technical-writings): books and blog posts
-* [Open data](#open-data): analysis and visualization of public datasets
-
-## Open-source Python libraries
-
-### phy: spike sorting for large dense arrays
-
-I'm leading the development of [**phy**](https://github.com/kwikteam/phy/), a Python library for large-scale electrophysiological data analysis. This library is being used by dozens of experimental labs around the world.
-
-**Features**:
-
-* Spike detection algorithms
-* Bindings to clustering algorithms
-* Manual clustering
-* Fast and scalable visualization with VisPy
-* Modular GUIs with Qt
+* I help develop and maintain software and the IT stack for the [International Brain Laboratory](https://internationalbrainlab.org/).
+* I develop [Datoviz](https://datoviz.org/), an early C/C++ engine for GPU high-performance scientific visualization.
+* I'm part of the core development team of [VisPy](http://vispy.org), a GPU-based scientific visualization library.
+* I maintain [phy](https://github.com/cortex-lab/phy/), a Python software for large-scale electrophysiological data analysis, visualization, and manual curation.
+* I've contributed to the development of [Brian](https://briansimulator.org/), a spiking neural network simulator in Python.
 
 
-### VisPy: high-performance interactive data visualization
+## Teaching
 
-I'm part of the core development team of [VisPy](http://vispy.org), a data visualization library based on OpenGL.
-
-**Features**:
-
-* Display millions of points efficiently
-* 3D visualization
+* I've written [several books on Python for data science and numerical computing](/books).
+* I maintain the curated [Awesome Math](https://github.com/rossant/awesome-math) page, which contains many references to high-quality, freely-available mathematics courses.
+* I've taught mathematics (analysis, probability, statistics) and numerical computing to undergraduate students for several years.
+* I've written [an interactive tutorial on the t-SNE algorithm](https://www.oreilly.com/learning/an-illustrated-introduction-to-the-t-sne-algorithm) on the **O'Reilly Learning** platform.
 
 
-### podoc: conversion of markup documents in pure Python
+## Research
 
-I'm currently working on a [library](https://github.com/podoc/podoc) for converting documents between different markup formats. This library is fully compatible with [pandoc](http://pandoc.org/) but the most common conversion paths don't require it. This library will eventually supersede the older [ipymd library](https://github.com/rossant/ipymd).
+For the past few years, I've been interested in the science of the so-called shaken baby syndrome (SBS), also known as abusive head trauma (AHT). This is a fascinating academic topic at the intersection of science, medecine, criminal law, and sociology.
 
-**Features**:
+Most healthcare and law professionals involved with child protection assume that when an infant brought to the hospital is found with specific medical findings, namely subdural and retinal hemorrhage, the child has almost certainly been a victim of inflicted traumatic head injury. The sole observation of these findings almost always leads to a social investigation and criminal prosecution for child abuse (even child murder in the worst cases). Children are frequently put in foster care, and caregivers may be convicted and incarcerated, on the sole basis of an authoritative medical report, even when there is no other evidence of abuse, trauma, or violence.
 
-* Edit Markdown or OpenDocument files in the Jupyter Notebook.
-* Convert between Markdown, Jupyter Notebook, and other formats *without* pandoc.
-* Convert between many other formats with pandoc.
-* Easily parse, filter, and transform documents.
+I experienced this kind of diagnosis myself in 2016 when my 5-month-old son was briefly given to social services after he was found with subdural and retinal hemorrhage at the hospital. Fortunately, he recovered perfectly after neurosurgery, and the childminder, once prosecuted on the sole basis of this diagnosis, was cleared four years later. Medical experts eventually ruled that the actual cause of his symptoms was not child abuse, but a neurological condition called external hydrocephalus which can also cause subdural and retinal hemorrhage.
 
+This personal experience led me to investigate this subject in depth from an academic viewpoint. As many other researchers and physicians before me, I discovered, surprisingly, that the science of medical determinations of SBS/AHT has been known to be flawed and unreliable for two decades. Although the discovery of multiple unexplained traumatic injuries in a premobile infant surely warrants an investigation, isolated subdural and retinal hemorrhage may result from dozens of medical conditions such as external hydrocephalus, blood clotting disorders, or even short falls. In fact, even the causal link between impact-free traumatic shaking and isolated retino-dural hemorrhage has a weak scientific evidence base, as shown by a [2017 systematic review performed by the Swedish governmental health agency](https://www.sbu.se/en/publications/sbu-assesses/traumatic-shaking--the-role-of-the-triad-in-medical-investigations-of-suspected-traumatic-shaking/). A systematic diagnosis process relying exclusively on these two signs comes with a great risk of missing other medical explanations, notably due to cognitive biases among clinicians and medical experts.
 
-## Technical writings
-
-### Books
-
-I've written [several books on Python for data science and numerical computing](/books).
-
-
-### Posts on O'Reilly Learning
-
-I've written [an interactive tutorial on the t-SNE algorithm](https://www.oreilly.com/learning/an-illustrated-introduction-to-the-t-sne-algorithm) on the **O'Reilly Learning** platform.
-
-
-### Awesome Math
-
-I maintain the curated [Awesome Math](https://github.com/rossant/awesome-math) page, which contains many references to high-quality, freely-available mathematics courses.
-
-
-### Blog posts
-
-I've written [a few tutorials on my blog](/archives).
-
-
-## Open data
-
-I analyze public datasets with Python and I make data visualizations.
-
-* [Map of all road accidents in France in 2012](/opendata-interior-hackathon), realized with [Rue89](http://rue89.nouvelobs.com/2014/06/25/carte-presque-tous-les-accidents-route-2012-253113) journalists during an [Open Data Hackathon organized by the French Minister of the Interior](http://fr.okfn.org/2014/08/09/retour-sur-le-premier-hackathon-sur-les-donnees-du-ministere-de-linterieur/). I gathered several data sources with IPython and pandas to create the final dataset of all accidents.
-* [Vélib' in Paris](/velib-open-data)
-* First names of students taking their high-school diplomas (in French, based on an [original study by Baptiste Coulmont](http://coulmont.com/blog/2012/07/08/prenoms-mentions-bac-2012/)): [post 1](/prenoms-et-reussite-au-bac) and [post 2](/frequence-des-prenoms-des-candidats-au-bac-2012)
+I'm working with medical, scientific, and legal experts around the world to investigate the global extent of these medical errors and miscarriages of justice, to better understand the root causes of this possible societal failure, and to find ways to reduce the number of misdiagnoses of child abuse.

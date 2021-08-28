@@ -1,4 +1,11 @@
-## Sources of the website
+## New instructions
+
+* ./generate.sh # generate the HTML output
+* ./serve.sh    # development server
+* ./publish.sh  # publish on github
+
+
+## Old notes
 
 * This is in the `sources` branch of `rossant.github.io`.
 * The `master` branch contains the generated output.
