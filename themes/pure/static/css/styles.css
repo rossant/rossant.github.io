@@ -1,11 +1,14 @@
-
 /*
 When setting the primary font stack, apply it to the Pure grid units along
 with `html`, `button`, `input`, `select`, and `textarea`. Pure Grids use
 specific font stacks to ensure the greatest OS/browser compatibility.
 */
-html, button, input, select, textarea,
-.pure-g [class *= "pure-u"] {
+html,
+button,
+input,
+select,
+textarea,
+.pure-g [class *="pure-u"] {
     /* Set your content font stack here: */
     font-family: "Source Sans Pro", sans-serif;
     font-size: 18px;
@@ -13,11 +16,16 @@ html, button, input, select, textarea,
     color: #000;
 }
 
+p {
+    line-height: 1.6;
+}
+
 strong {
     font-weight: 600;
 }
 
-#layout, #header {
+#layout,
+#header {
     margin: 0 auto;
     padding: 0 2em;
     max-width: 1000px;
@@ -46,32 +54,38 @@ iframe {
     margin-bottom: 3em;
     padding: 0 2em;
 }
+
 #header ul {
     margin: 0;
     padding: 0;
     list-style: none;
     height: 100%;
 }
+
 #header li {
     margin: 0;
     padding: 0;
     text-align: left;
 }
-#header a  {
+
+#header a {
     font-size: 1.25em;
     padding: .5em .5em .5em 0em;
     margin: 0 1.5em 0 0;
     border: 0;
 }
+
 #header li a:hover {
     color: #000;
     background-color: inherit;
     border: 0;
 }
+
 #menu a {
     text-transform: lowercase;
 }
-#social a  {
+
+#social a {
     margin-right: 0em;
     font-size: 1.59em;
     margin: 0 .5em 0 0;
@@ -97,6 +111,7 @@ iframe {
     vertical-align: center;
     overflow: hidden
 }
+
 #sidebar .portrait img {
     margin: -5% 0;
     width: 100%;
@@ -132,10 +147,12 @@ iframe {
     /*margin-top: .5em;*/
 }
 
-#sidebar .contact, #sidebar .location {
+#sidebar .contact,
+#sidebar .location {
     font-size: .9em;
     color: #777;
 }
+
 .e-mail:before {
     content: attr(data-website) "\0040" attr(data-user);
     unicode-bidi: bidi-override;
@@ -148,30 +165,47 @@ iframe {
     margin: 1em 0 1em 0;
 }
 
+#sidebar .posts ul {
+    margin-left: 0;
+    padding-left: 0;
+    font-size: .9em;
+}
+
+#sidebar .posts ul li:before {
+    content: "▸ ";
+    padding-right: 3px;
+}
+
 
 #sidebar .books {
     margin: 1em 0 1em 0;
     display: block;
     clear: both;
 }
+
 #sidebar .books h3 {
     margin: .5em 0 .5em 0;
 }
+
 #sidebar .books div.sub-header {
     font-size: .9em;
     margin: 0 0 1em 0;
 }
-#sidebar .books div.book-1, #sidebar .books div.book-2 {
+
+#sidebar .books div.book-1,
+#sidebar .books div.book-2 {
     margin: 0;
     padding: 0;
     float: left;
     width: 50%;
 }
-#sidebar .books div.book-1 {
-}
+
+#sidebar .books div.book-1 {}
+
 #sidebar .books div.book-2 {
     text-align: right;
 }
+
 #sidebar .books img {
     width: 95%;
 }
@@ -180,7 +214,9 @@ iframe {
     margin: 12em 0 1em 0;
     padding: 0;
 }
-#sidebar .gsc-control-cse, #sidebar .gsc-search-box {
+
+#sidebar .gsc-control-cse,
+#sidebar .gsc-search-box {
     padding: 0;
     border: 0;
 }
@@ -206,6 +242,7 @@ iframe {
     text-align: right;
     text-transform: lowercase;
 }
+
 #content header .post-tags {
     margin: 0;
     padding: 0;
@@ -214,24 +251,26 @@ iframe {
     text-align: right;
     text-transform: lowercase;
 }
+
 #content header .post-tags ul {
     margin: 0 0 1em 0;
     padding: 0;
     list-style: none;
 }
+
 #content header .post-tags li {
     margin: 0 0 0 .5em;
     padding: 0;
     display: inline;
 }
+
 #content .l-box {
     margin: 0;
     padding: 0 4em 0 0;
     position: relative;
 }
 
-#post {
-}
+#post {}
 
 code {
     /*font-size: .9em;*/
@@ -239,15 +278,17 @@ code {
     padding: 0 .1em;
 }
 
-.book-cover {
-}
+.book-cover {}
+
 .book-cover img {
     width: 90%;
     max-width: 200px;
 }
+
 .book-descr h3 {
     margin: 0 0 1em 0;
 }
+
 .book-descr .sub-header-3 ul {
     margin: 0;
 }
@@ -267,7 +308,8 @@ code {
     margin: 1em 0;
 }
 
-#post img, .post img {
+#post img,
+.post img {
     max-width: 100%;
 }
 
@@ -298,7 +340,8 @@ code {
     margin: 1em 0;
 }
 
-.ipynb-html td, .ipynb-html th {
+.ipynb-html td,
+.ipynb-html th {
     padding: .25em;
 }
 
@@ -316,7 +359,8 @@ code {
 }
 #posts .post .post-header h3 a {
 }*/
-#posts hr, #tag-posts hr {
+#posts hr,
+#tag-posts hr {
     display: block;
     height: 1px;
     border: 0;
@@ -325,9 +369,11 @@ code {
     margin: 2.5em 10% 2em 10%;
     padding: 0;
 }
+
 .read-more {
     text-align: right;
 }
+
 blockquote {
     color: #777;
     border-left: .5em solid #eee;
@@ -336,7 +382,12 @@ blockquote {
 
 
 /****** HEADERS ******/
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     font-weight: 300;
 }
 
@@ -355,6 +406,7 @@ h2 {
     padding: 0 0 .25em 0;
     border-bottom: 1px solid #ddd;
 }
+
 #content .sub-header-2 {
     text-align: right;
     margin: -1.25em 0 0 0;
@@ -368,6 +420,7 @@ h3 {
     font-size: 1.35em;
     color: #777;
 }
+
 #content .sub-header-3 {
     margin: -1em 0 0 0;
     font-size: .9em;
@@ -385,10 +438,13 @@ h3 {
     /*font-weight: 500;*/
     /*letter-spacing: 0.1em;*/
 }
-.pagination-left, .pagination-right {
+
+.pagination-left,
+.pagination-right {
     position: absolute;
     top: 0;
 }
+
 .pagination {
     font-size: .9em;
     text-align: center;
@@ -396,10 +452,12 @@ h3 {
     margin: 2em 2em -2em 2em;
     /*max-width: 100%;*/
 }
+
 .pagination-left {
     left: 0;
     text-align: left;
 }
+
 .pagination-right {
     right: 0;
     text-align: right;
@@ -424,7 +482,7 @@ h3 {
     padding: .25em 4em 1em 0;
 }
 
-#footer .l-box > div {
+#footer .l-box>div {
     padding: .5em 0;
     margin: 0;
     border-top: 1px solid #ddd;

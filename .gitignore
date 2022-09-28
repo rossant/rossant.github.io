@@ -1,6 +1,7 @@
 __pycache__/
 _old/
 _*
+*.pid
 cache/
 output*/
 wpimport/
