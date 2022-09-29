@@ -16,7 +16,8 @@ textarea,
     color: #000;
 }
 
-p {
+p,
+li {
     line-height: 1.6;
 }
 
@@ -308,12 +309,81 @@ code {
     margin: 1em 0;
 }
 
+#post ul li {
+    margin: 20px auto;
+}
+
 #post img,
 .post img {
     max-width: 100%;
 }
 
+#post p.box {
+    border: 1px solid #999;
+    padding: 10px;
+}
 
+#post p {
+    margin-bottom: 1.2em;
+}
+
+#post figure {
+    margin-bottom: 30px;
+}
+
+#post figure img {
+    margin: 5px auto;
+    display: block;
+    align-content: center;
+    width: 80%;
+}
+
+#post figcaption {
+    margin: -10px 20px 10px 20px;
+    width: 80%;
+    padding: 0 10%;
+    display: block;
+    font-size: .8em;
+    color: #999;
+    font-style: italic;
+}
+
+
+
+#post .side-by-side {
+    display: flex;
+    flex-direction: row;
+}
+
+@media screen and (max-width: 580px) {
+    #post .side-by-side {
+        flex-direction: column;
+    }
+}
+
+#post .side-by-side .left {
+    padding: 0 10px;
+}
+
+#post .side-by-side .right {
+    padding: 0 10px;
+}
+
+#post span.ref {
+    display: block;
+    text-align: right;
+    margin-top: 5px;
+}
+
+#post .side-by-side p {
+    font-size: .9em;
+    font-style: italic;
+    margin-bottom: 30px;
+}
+
+#post .side-by-side h4 {
+    border-bottom: 1px solid #ccc;
+}
 
 
 
@@ -375,7 +445,7 @@ code {
 }
 
 blockquote {
-    color: #777;
+    color: #555;
     border-left: .5em solid #eee;
     padding: 0 0 0 .75em;
 }
@@ -417,8 +487,8 @@ h2 {
 
 h3 {
     margin: 1.25em 0 .75em 0;
-    font-size: 1.35em;
-    color: #777;
+    font-size: 1.45em;
+    color: #555;
 }
 
 #content .sub-header-3 {
@@ -427,6 +497,12 @@ h3 {
     color: #999;
 }
 
+
+h4 {
+    margin: 1.2em 0 .5em 0;
+    font-size: 1.25em;
+    color: #777;
+}
 
 /****** PAGINATION ******/
 .pagination-wrapper {

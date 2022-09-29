@@ -1,6 +1,6 @@
 <section>
     <div class="portrait">
-            <img src="/theme/images/cr.jpg" />
+        <img src="/theme/images/cr.jpg" />
     </div>
     <div class="name-cv">
         <div class="name">{{ SIDEBAR_NAME }}</div>
@@ -14,17 +14,31 @@
 </section>
 
 <section class="tags">
-{% for tag in SIDEBAR_TAGS %}
+    {% for tag in SIDEBAR_TAGS %}
     <span class="tag"><a href="/tag/{{ tag }}/">#{{ tag }}</a></span>
-{% endfor %}
+    {% endfor %}
+</section>
+
+
+<section class="posts">
+    <header>
+        <h3>featured posts</h3>
+    </header>
+    <ul>
+        {% for post in SIDEBAR_POSTS %}
+        <li class="post"><a href="/{{ post.url }}/">{{ post.name }}</a></li>
+        {% endfor %}
+    </ul>
 </section>
 
 
 <section class="books">
-    <header><h3>books</h3></header>
+    <header>
+        <h3>books</h3>
+    </header>
     <div class="sub-header">Two books on <strong>Python for data science</strong></div>
-    <div class="book-1"><a href="/books/#minibook"><img src="/images/minibook.png"/></a></div>
-    <div class="book-2"><a href="/books/#cookbook"><img src="/images/cookbook.png"/></a></div>
+    <div class="book-1"><a href="/books/#minibook"><img src="/images/minibook.png" /></a></div>
+    <div class="book-2"><a href="/books/#cookbook"><img src="/images/cookbook.png" /></a></div>
 </section>
 
 
