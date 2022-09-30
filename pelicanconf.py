@@ -21,6 +21,12 @@ SIDEBAR_TAGS = ['neuroscience',
                 'gpu',
                 'opendata',
                 ]
+SIDEBAR_POSTS = [
+    {
+        'url': 'introduction-shaken-baby-syndrome-controversy',
+        'name': 'An Introduction to the Scientific Controversy over Shaken Baby Syndrome'
+    }
+]
 
 DEFAULT_DATE = 'fs'
 WITH_FUTURE_DATES = True
@@ -57,11 +63,11 @@ PAGINATION_PATTERNS = (
 )
 PLUGIN_PATHS = ['pelican-plugins', 'plugins']
 PLUGINS = [
-           'summary',
-           'neighbors',
-           'pdf',
-           'render_math',
-           ]
+    'summary',
+    'neighbors',
+    'pdf',
+    'render_math',
+]
 # SUMMARY_USE_FIRST_PARAGRAPH = True
 DISPLAY_CATEGORIES_ON_MENU = False
 DISPLAY_PAGES_ON_MENU = False

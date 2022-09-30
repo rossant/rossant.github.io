@@ -339,8 +339,8 @@ code {
 }
 
 #post figcaption {
-    margin: -10px 20px 10px 20px;
-    width: 80%;
+    margin: 10px 20px 10px 20px;
+    /* width: 80%; */
     padding: 0 10%;
     display: block;
     font-size: .8em;
