@@ -8,7 +8,7 @@ It involves a wide range of academic disciplines: pediatrics, neurology, neuropa
 
 <!-- PELICAN_END_SUMMARY -->
 
-As such, the mass of data and information collected in the past half-century is phenomenal. There may have been hundreds of popular press articles and documentaries in the past decades, while the academic publications count in the thousands.
+As such, the mass of data and information collected in the past half-century is phenomenal. There has been hundreds of popular press articles and documentaries in the past decades, while the academic publications number in the thousands.
 
 Investigating this hotly-debated subject is a challenging and even daunting endeavor.
 
@@ -24,13 +24,13 @@ This post provides a few pointers to anyone interested in understanding the most
 
 # Overview
 
-Before presenting some of the most important references on the subject, we'll formulate special precautions that should be taken when investigating the subject, and we'll try to clarify the definitions and the most contentious points.
+Before presenting some of the most important references on the subject, we will indicate the caution required when investigating the subject, and we'll try to clarify the definitions and the most contentious points.
 
 ## Caution to reader
 
 It is crucially important to understand that SBS/AHT is not an academic subject like others, for reasons listed here:
 
-1. SBS/AHT is not just an abstract controversy, disconnected from reality. It has major, direct judicial implications in courts all over the world on a daily basis (children removals from their homes, criminal convictions of parents and caregivers). The judicial decisions pronounced on the basis of medical expert opinion on SBS/AHT have immediate consequences for the affected children and their families.
+1. SBS/AHT is not just an abstract controversy. It has major, direct judicial implications in courts all over the world on a daily basis (removal of children from their homes, criminal convictions of parents and caregivers). The judicial decisions pronounced on the basis of medical expert opinion on SBS/AHT have immediate consequences for the affected children and their families.
 
 2. SBS/AHT is related to the delicate topics of child abuse and child protection. It specifically involves babies, including severely disabled or deceased infants. These concepts naturally elicit strong emotions in most individuals. This may sometimes hamper objective thinking in otherwise rationally-minded professionals such as doctors, scientists, judges, and lawyers.
 
@@ -42,15 +42,15 @@ It is crucially important to understand that SBS/AHT is not an academic subject 
 
 6. The adherent side is presented as having near-universal institutional support. It is fundamentally important that, for the sake of making a robust, evidence-based scientific opinion, one makes sustained efforts to surpass any argument of authority. Although in general, institutional support may be expected to follow scientific evidence, this is not strictly guaranteed, particulary when there are major non-scientific ramifications (political, financial, societal...). As such, one should not rely on a natural confidence in scientific authority; one should instead keep a critical mind at all times and never hesitate to question or double-check any explicit or implicit assumption.
 
-7. As a corrolary to this extremely polarized dispute, the field is replete with violent personal attacks, insults, ad-hominem arguments, straw-man arguments, misstatements, and misrepresentations. The reader needs to keep a calm, objective, rational mind and concentrate on nothing else than robust methodology and sound scientific evidence, leaving all emotion aside.
+7. As a corollary to this extremely polarized dispute, the field is replete with violent personal attacks, insults, ad-hominem arguments, straw-man arguments, misstatements, and misrepresentations. The reader needs to keep a calm, objective, rational mind and concentrate on nothing else than robust methodology and sound scientific evidence, leaving all emotion aside.
 
-8. A superficial read of the SBS/AHT academic literature, especially reviews, is all but sufficient to gain a deep understanding of the issues at play. One has to comprehend their historical context and evolution over time periods spanning many decades. It is often necessary to look up and read cited references in a recursive fashion.
+8. A superficial read of the SBS/AHT academic literature, especially reviews, is all but sufficient to gain a deep understanding of the issues at play. One has to comprehend their historical context and evolution over periods spanning many decades. It is often necessary to look up and read cited references repeatedly.
 
-9. One has to make the unnatural habit of checking every cited and seemingly literature-supported bit of information. It has been shown on multiple occasions that certains assertions cannot be accepted at face value, even when references are proposed. Examples may be given later.
+9. One has to make the unnatural habit of checking every cited and seemingly literature-supported item of information. It has been shown on multiple occasions that certains assertions cannot be accepted at face value, even when references are proposed. Examples may be given later.
 
-10. In opposition with the philosophy of the open science movement, anonymized data on which medical studies are based is almost never available. This is partly explained by obvious issues related to the medical and judicial confidentiality of child abuse cases. For example, when a clinical study includes cases that received a medical determination of child abuse, the exact medical information used by researchers to make these determinations is not accessible, or in an extremely limited form (as a table or a graph in the publication). When cases are selected based on the existence of confessions obtained during police interrogation, the context and specifics of the interrogation are not available. Since independent verification is impossible, the scientific value of most studies is limited by the opacity of the data they rely on. In this context, testimonies of individuals relating personal or professional experience of these cases may sometimes bring valuable insight.
+10. Contrary to the philosophy of the open science movement, anonymized data on which medical studies are based is almost never available. This is partly explained by obvious issues related to the medical and judicial confidentiality of child abuse cases. For example, when a clinical study includes cases that received a medical determination of child abuse, the exact medical information used by researchers to make these determinations is not accessible, or in an extremely limited form (as a table or a graph in the publication). When cases are selected based on the existence of confessions obtained during police interrogation, the context and specifics of the interrogation are not available. Since independent verification is impossible, the scientific value of most studies is limited by the opacity of the data they rely on. In this context, testimonies of individuals relating personal or professional experience of these cases may sometimes bring valuable insight.
 
-11. When writing about this topic, it is often necessary to make obvious statements explicit, such as reminding that shaking a baby must be strictly prohibited, that severe injuries are expected after inflicted traumatic head injuries to children, and that child abusers need to be criminally prosecuted. The reason for stating the obvious is that SBS/AHT agnostics are often accused, without any supporting evidence, of "denying" the existence of child abuse, or pretending that "shaking is safe". In reality, the controversy only pertains to the reliability with which child abuse can be inferred with a high degree of certainty based on a few medical findings alone.
+11. When writing about this topic, it is often necessary to make obvious statements explicit, such as that shaking a baby must be strictly avoided, that severe injuries are expected after inflicted head trauma in children, and that child abusers must be criminally prosecuted. The reason for stating the obvious is that SBS/AHT agnostics are often accused, without any supporting evidence, of "denying" the existence of child abuse, or pretending that "shaking is safe". In reality, the controversy only pertains to the reliability with which child abuse can be inferred with a high degree of certainty based on a few medical findings alone.
 
 
 
@@ -58,7 +58,7 @@ It is crucially important to understand that SBS/AHT is not an academic subject 
 
 The absolute first step when investigating such a subject is to be clear on definitions. The SBS/AHT controversy is so intense that even the most basic definitions are vigorously debated. The term "Shaken Baby Syndrome" has actually several totally different meanings, which is a major reason for the high degree of confusion and obfuscation surrounding this issue.
 
-On the one hand, Shaken Baby Syndrome describes a child abuse act where an adult exasperated by the uncontrollable cries of a young baby holds the child under the arm pits and vigorously shakes him or her back and forth. The brutal and periodic angular movement sustained by the baby's head during this act, amplified by the weakness of neck muscles, may cause neurological injuries. Severe disability or death may ensue. These dramatic consequences on the children justify prevention measures targeting parents and caregivers, but also healthcare professionals who should be trained to recognize characteric signs in young victims.
+On the one hand, Shaken Baby Syndrome describes a child abuse act where an adult exasperated by the uncontrollable crying of a young baby holds the child under the arms and vigorously shakes him or her back and forth. The brutal and repeated angular movement sustained by the baby's head during this act, amplified by the weakness of neck muscles and relatively large size of the infant head, may cause neurological injuries. Severe disability or death may ensue. These dramatic consequences on the child justify prevention measures targeting parents and caregivers, but also healthcare professionals who should be trained to recognize characteric signs in young victims.
 
 On the other hand, Shaken Baby Syndrome _also_ describes a set of related scientific hypotheses that we'll formulate as follows (medical terms will be explained briefly below):
 
@@ -66,24 +66,24 @@ On the other hand, Shaken Baby Syndrome _also_ describes a set of related scient
 
 2. When a child is violently shaken, severe neurological symptoms appear almost immediately (the child instantly loses consciousness or will undergo a dramatic and sudden change of mental state).
 
-3. The only other possible causes of these medical findings are: a multistory fall, a high-speed motor vehicle accident, and extremely rare medical conditions such as glutaric aciduria, Menkes disease, some severe blood clotting disorders, and a few others. In other words, the medical findings mentioned above are thought to have a traumatic origin in nearly all cases. If no trauma is evoked by parents or caregivers, the only logical explanation is that they lie.
+3. The only other possible causes of these medical findings are: a multistory fall, a high-speed motor vehicle accident, and extremely rare medical conditions such as glutaric aciduria, Menkes disease, some severe blood clotting disorders, and a few others. In other words, the medical findings mentioned above are thought to have a traumatic origin in nearly all cases. If no trauma is evoked by parents or caregivers, the only logical explanation is that they are lying.
 
-As a corollary, we may use the following tentative definition:
+As a corollary, we propose the following tentative definition:
 
-<p class="box"><strong>SBS Definition</strong> : Shaken Baby Syndrome refers to the idea according to which if an infant is found with a constellation of medical findings including one or several of <strong>subdural hemorrhage (SDH)</strong>, <strong>retinal hemorrhage (RH)</strong>, and/or bridging vein thrombosis, if no story of a major trauma such as a multistory fall or a high-speed motor vehicle acciden is given by the parents or caregivers, and if none of the few rare medical conditions mentioned above is found, then it can be concluded, by default but with near-absolute certainty, that the child has been violently shaken by the last person present with him or her when symptoms first appeared.</p>
+<p class="box"><strong>SBS Definition</strong> : Shaken Baby Syndrome refers to the idea that if an infant is found with a constellation of medical findings including one or several of: <strong>subdural hemorrhage (SDH)</strong>, <strong>retinal hemorrhage (RH)</strong>, and/or bridging vein thrombosis; if no history of a major trauma such as a multistory fall or a high-speed motor vehicle accident is given by the parents or caregivers; and if none of the few rare medical conditions mentioned above is found, then it can be concluded, by default but with near-absolute certainty, that the child has been violently shaken by the last person present with him or her when symptoms first appeared.</p>
 
-The former definition, related to the child abuse act, is obviously non-controversial, contrary to the latter.
+The first definition given above, related to the child abuse act, is obviously non-controversial, contrary to the second.
 
 Before we pursue, we must give some basic medical terminology.
 
 ### Some medical terminology
 
-- The brain is surrounded by three **meningeal membranes**: the pia matter, the arachnoid, and the dura mater.
-- The space between the pia matter and the arachnoid is the **subarachnoid space**. It is filled with cerebrospinal fluid. The (virtual) space between the arachnoid and the dura mater is the **subdural space**.
-- **Subdural hemorrhage**, blood in the subdural space, is found in up to 46% of newborns ([Rooks 2008](http://www.ajnr.org/content/29/6/1082/tab-article-info)).
-An **intracranial hemorrhage** occurs when blood in the meningeal spaces.
-- **Bridging veins** drain the blood from the brain into sinuses within the dura. They cross the subarachnoid space.
-- **Retinal hemorrhage** occurs when blood is found in the retina, at the back of the eyes. They are found in about 20% of newborns ([Callaway 2016](https://www.sciencedirect.com/science/article/pii/S0161642016000233)).
+- The brain is surrounded by three **meningeal membranes**: the pia, the arachnoid, and the dura mater.
+- The space between the pia and the arachnoid is the **subarachnoid space**. It is filled with cerebrospinal fluid. The arachnoid and the dura mater are in continuity with one another in life, forming the **subdural compartment** which may contain fluid or blood.
+- **Subdural hemorrhage**, blood in the subdural compartment, is found in up to 46% of newborns ([Rooks 2008](http://www.ajnr.org/content/29/6/1082/tab-article-info)).
+An **intracranial hemorrhage** occurs when blood is found in any of the tissues or membranes within the head.
+- **Bridging veins** drain the blood from the brain, crossing the subarachnoid space to enter sinuses within the dura.
+- **Retinal hemorrhage** occurs when blood is found in the retina, at the back of the eyes. It is found in about 20% of newborns ([Callaway 2016](https://www.sciencedirect.com/science/article/pii/S0161642016000233)).
 
 <figure>
 <a href="https://commons.wikimedia.org/wiki/File:Meninges-en.svg"><img src="https://upload.wikimedia.org/wikipedia/commons/8/8e/Meninges-en.svg"></a>
@@ -92,13 +92,13 @@ An **intracranial hemorrhage** occurs when blood in the meningeal spaces.
 
 ## Legal implications
 
-Our tentative SBS definition has clear legal implications. Infantile subdural and retinal hemorrhage are considered to be so specific of violent child abuse that their sole presence in an infant, even with no sign of trauma on the body and no concern for abuse in the child's environment, constitutes an almost irrefutable proof that a criminal offense has occurred and, as such, justifies drastic child protection procedures, criminal prosecutions, and convictions.
+Our tentative SBS definition has clear legal implications. Infantile subdural and retinal hemorrhage are considered to be so specific for violent child abuse that their sole presence in an infant, even with no sign of trauma on the body and no concern for abuse in the child's environment, constitutes an almost irrefutable proof that a criminal offence has occurred and, as such, justifies drastic child protection procedures, criminal prosecutions, and convictions.
 
 We see here that SBS is really at the intersection of **medicine, science, and law.**
 
 The degree of certainty with which medical experts determine the occurrence of abuse in these cases is important to the courts since, in common law jurisdictions, the legal standard of proof is "beyond a reasonable doubt". It is this certainty that can lead to criminal convictions, even when there is no other supporting evidence of child abuse beyond the medical determination of SBS.
 
-🇫🇷  In the French criminal justice system, the judges' and jurors' "intimate conviction" is the standard of proof. Here, too, the certainty with which highly-recognized and experienced judicial experts make a medical determinal of child abuse has a direct impact on the intimate conviction of triers of facts.
+🇫🇷  In the French criminal justice system, the judges' and jurors' "intimate conviction" is the standard of proof. Here, too, the certainty with which highly-recognized and experienced judicial experts make a medical determination of child abuse has a direct impact on the "intimate conviction" of triers of facts.
 
 Surprinsingly, a clear definition of SBS/AHT such as ours is rarely explictely found in this form in the medical literature, although it does appear in a few instances. It mostly emerges from the literature corpus as a de facto medical belief taught and shared by healthcare providers since the late 1970's and up to the 2010's around the globe. An abundant case law over the last five decades across many countries also shows that medical experts have long relied on this hypothesis in family and criminal courts.
 
@@ -106,36 +106,36 @@ Surprinsingly, a clear definition of SBS/AHT such as ours is rarely explictely f
 
 ## A contested definition
 
-[Norman Guthkelch](https://en.wikipedia.org/wiki/Norman_Guthkelch), the British neurosurgeon who first evoked a possible causal link between shaking and infantile subdural hemorrhage, has criticized the very term of Shaken Baby Syndrome:
+[Norman Guthkelch](https://en.wikipedia.org/wiki/Norman_Guthkelch), the British neurosurgeon who first evoked a possible causal link between shaking and infant subdural hemorrhage, has criticized the very term Shaken Baby Syndrome:
 
 > "In contrast, the appellation **shaken baby syndrome (SBS)** asserts a unique etiology (shaking). It also implies intent since it is difficult to 'accidentally' shake a baby. (...) Since subdural and retinal hemorrhages (with or without cerebral edema) may also be observed in accidental or natural settings, I suggest that the elements of the classic triad of retinal hemorrhage, subdural hemorrhage and cerebral edema would be better defined in terms of their medical features. Since subdural hemorrhages in infancy originate in the dura, perhaps **"retino-dural hemorrhage of infancy"** would be an acceptable name for the primary findings. (...) This would allow us to investigate causation without appearing to assume that we already know the answer." <span class="ref">(<a href="https://heinonline.org/HOL/Page?handle=hein.journals/hhpol12&div=14&g_sent=1&collection=journals">Guthkelch 2012</a>, p. 202, emphases ours)</span>
 
 Criticized by agnostics, this definition has also been somewhat abandoned by adherents.
 
-In 2009, the American Academy of Pediatrics published a position paper recommending to abandon the use of Shaken Baby Syndrome, and replace it with a newer and broader term, **Abusive Head Trauma (AHT)**:
+In 2009, the American Academy of Pediatrics published a position paper recommending abandoning the use of Shaken Baby Syndrome, and replacing it with a newer and broader term, **Abusive Head Trauma (AHT)**:
 
 > "**Shaken baby syndrome** is a subset of AHT. (...)
 >
 > The term **"shaken baby syndrome"** has become recognized by the public (...) The American Academy of Pediatrics supports prevention efforts that reduce the frequency of AHT and recognizes the utility of maintaining the use of the term **"shaken baby syndrome"** for prevention efforts. Just as the public commonly uses the term "heart attack" and not "myocardial infarction," the term "shaken baby syndrome" has its place in the popular vernacular. However, for medical purposes, **the American Academy of Pediatrics recommends adoption of the term "abusive head trauma"** as the diagnosis used in the medical chart to describe the constellation of cerebral, spinal, and cranial injuries that result from inflicted head injury to infants and young children." <span class="ref">(<a href="https://publications.aap.org/pediatrics/article/123/5/1409/71477">Christian 2009</a>, p. 1410, emphases ours)</span>
 
-This definition shies away from shaking as a particular abusive gesture. The newer term has a broader scope which encompasses all kinds of traumatic injuries inflicted to an infant's head, often involving _direct impact_ to the head.
+This definition shies away from shaking as a specific abusive gesture. The newer term has a broader scope which encompasses all kinds of traumatic injuries inflicted to an infant's head, often involving _direct impact_ to the head.
 
-This change of definition only adds to the confusion, since it abandons the kernel of the issue: the link between _impact-free_ shaking and _purely intracranial_ findings. The association of non-accidental trauma involving impact to the head with severe injuries is not debated.
+This change of definition only adds to the confusion, since it abandons the kernel of the issue: the link between shaking alone, without impact and _purely intracranial_ findings. The association of non-accidental trauma involving impact to the head with severe injuries is not contested.
 
 Agnostics also criticize the term Abusive Head Trauma on the basis that this term continues to conflate an intention (abuse) with a medical diagnosis. They contend that abuse is a legal determination, not a medical one ([Findley 2019](https://heinonline.org/HOL/Page?handle=hein.journals/wlr2019&div=41&g_sent=1&collection=journals)).
 
 
 ## The "triad"
 
-Alongside this shift of terminology was acted the abandonment of our **SBS Definition** indicated above.
+Alongside this shift of terminology the **SBS Definition** indicated above was abandoned.
 
-Historically, the term "triad" has been strongly related to this definition.
+Historically, the term "triad" has been strongly associated with this definition.
 
-The **"triad"** refers to three medical findings: subdural hemorrhage, retinal hemorrhage, and brain swelling. In the past, authors from both sides have used this term to refer to the idea that the sole discovery of one or several of these medical findings, when unexplained by the story or by the discovery of the few rare medical causes, even without any traumatic injury to the skin, the bones, or the neck, suffices to "diagnose" child abuse with near certainty.
+The **"triad"** refers to three medical findings: subdural hemorrhage, retinal hemorrhage, and brain swelling. In the past, authors from both sides have used this term to refer to the idea that the discovery of one or several of these medical findings alone, when unexplained by the story or by the discovery of the few rare medical causes, even without any traumatic injury to the skin, the bones, or the neck, suffices to "diagnose" child abuse with near certainty.
 
-We prefer abstaining from using this term to avoid further confusion, especially since it may also refer only to one or two components of it. This term can nevertheless be found in the literature from both sides.
+We prefer abstaining from the use of this term to avoid further confusion, especially since it may be used when only one or two of its components are identified. This term can nevertheless be found in the literature from both sides.
 
-Importantly, the very existence of the "triad", or of a near-automatic determination of child abuse based on a few medical findings, is now denied by many adherents. **Our tentative SBS Definition, which is being contested on its scientific reliability, is also debated on its very existence.**
+Importantly, the very existence of the "triad", or of a near-automatic determination of child abuse based on a few medical findings, is now denied by many adherents. **The scientific reliability as well as the very existence of our tentative definition of SBS is contested.**
 
 Adherents now claim that "diagnosing" SBS/AHT is a highly complex process that involves an entire multidisciplinary team, and that never relies on the sole observance of subdural and retinal hemorrhage:
 
@@ -150,7 +150,7 @@ It should also be noted that, in the past ten years, the strong association of r
 
 ### Citations from the medical literature, old and new
 
-We give here a few relevant citations from the adherent medical literature, illustrating a paradigm shift about the existence and validity of "triad"-based medical determinations of abuse between the late 1990's and the late 2010's. These citations are by no means exhaustive.
+We give here a few relevant citations from the adherents' medical literature, illustrating a paradigm shift about the existence and validity of "triad"-based medical determinations of abuse between the late 1990's and the late 2010's. These citations are by no means exhaustive.
 
 <div class="side-by-side">
   <div class="left">
@@ -200,8 +200,7 @@ In the rest of this post, we'll give many references to learn more about the con
 
 **Notes**
 
-- We give almost no references pertaining to the first definition of shaken baby syndrome, related to prevention, as this is outside the scope of the SBS/AHT controversy.
-- When this distinction makes sense, we classify references between "SBS/AHT adherents" and "agnostics". The field is so polarized that this classification appears to be relevant in many cases.
+- We classified references between "SBS/AHT adherents" and "agnostics" when this was relevant.
 - Some references may appear multiple times in different categories.
 - References only available in French are indicated with a flag&nbsp;&nbsp;🇫🇷.
 - This bibliography will be completed over time. Contact me by email (see website sidebar/footer) to propose any corrections or additions.
@@ -348,13 +347,13 @@ https://www.sbu.se/en/publications/sbu-assesses/traumatic-shaking--the-role-of-t
 
 ## Academic publications
 
-In this section, we give some of the main references to medical, scientific, and legal academic publications, sorted in decreasing order of publication. There is at least one order of magnitude more publications on the subject in the literature. We try to give references from both sides of the controversy, when this distinction makes sense.
+In this section, we give some of the main references to medical, scientific, and legal academic publications, sorted by date of publication. There is at least one order of magnitude more publications on the subject in the literature. We try to give references from both sides of the controversy, when this distinction makes sense.
 
 * [**XXX 2000.**]()
 
 ### History
 
-These historical publications are considered as the seminal works leading to the recognition of shaken baby syndrome. The two main figures are **John Caffey** (1895-1978), American pediatric radiologist, and **Norman Guthkelch** (1915-2016), British pediatric neurosurgeon. Note that, in the last few years of his life, the latter has criticized the way medical determinations of SBS were done.
+These historical publications are considered as the seminal works leading to the recognition of shaken baby syndrome. The two main figures are **John Caffey** (1895-1978), American pediatric radiologist, and **Norman Guthkelch** (1915-2016), British pediatric neurosurgeon. Note that, in the last few years of his life, the latter has criticized the way medical determinations of SBS were .
 
 Caffey 1974
 The Whiplash Shaken Infant Syndrome
@@ -510,7 +509,7 @@ Reading studies in neuropathology and forensic pathology ideally requires some m
 
 By understanding the natural reactions of cells and tissues to pathological conditions such as mechanical trauma or hypoxia-anoxia (lack of oxygen), and by observing the tissues of deceased infants, pathologists can elaborate and verify hypotheses related to the causes of observed medical findings.
 
-On the other hand, whereas radiology allows one to make observations of medical findings inside the tissues, it is typically required to make a careful comparison with pathological findings in order to infer causative mechanisms, in particuler when evaluating the traumatic or non-traumatic nature of specific findings.
+On the other hand, whereas radiology allows one to make observations of medical findings in the tissues of living patients, it is typically required to make a careful comparison with pathological findings in order to verify the observations and infer causative mechanisms, in particuler when evaluating the traumatic or non-traumatic nature of specific findings.
 
 A significant aspect of the SBS/AHT controversy pertains to neuropathological discussions about the traumatic or non-traumatic nature of specific brain lesions observed in deceased infants, as this strongly determines whether child abuse will be ultimately retained as the cause of death or not.
 
