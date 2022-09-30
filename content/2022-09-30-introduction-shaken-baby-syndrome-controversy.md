@@ -479,6 +479,10 @@ Guthkelch 2012
 Problems of Infant Retino-Dural Hemorrhage with Minimal External Injury
 https://heinonline.org/HOL/Page?handle=hein.journals/hhpol12&div=14&g_sent=1&collection=journals
 
+Tuerkheimer 2010
+Science-Dependent Prosecution and the Problem of Epistemic Contingency: A Study of Shaken Baby Syndrome
+https://heinonline.org/HOL/Page?handle=hein.journals/bamalr62&div=20&g_sent=1
+
 Tuerkheimer 2009
 The Next Innocence Project: Shaken Baby Syndrome and the Criminal Courts
 https://heinonline.org/HOL/Page?handle=hein.journals/walq87&id=3&collection=journals&index=
@@ -982,6 +986,10 @@ Ghosh 2011
 Subdural Hematoma in Infants Without Accidental or Nonaccidental Injury: Benign External Hydrocephalus, a Risk Factor
 https://journals.sagepub.com/doi/full/10.1177/0009922811406435
 
+Vinchon 2010
+Subdural hematoma in infants: can it occur spontaneously? Data from a prospective series and critical review of the literature
+https://link.springer.com/article/10.1007/s00381-010-1105-2
+
 Pittman 2003
 Significance of a Subdural Hematoma in a Child with External Hydrocephalus
 https://www.proquest.com/docview/224150969?pq-origsite=gscholar&fromopenview=true
@@ -1478,13 +1486,38 @@ https://onlinelibrary.wiley.com/doi/full/10.1111/apa.14138
 
 ### Confessions
 
+Many authors from both sides agree that, since experiments cannot be conducted on babies and that videotaped and witnessed shaking events are rare, confessions are the main evidentiary basis of SBS/AHT. Adherents believe in their validity in most cases, while agnostics claim they are unreliable due to the existence of guilty pleas or the possibility of false confessions during police interrogation.
+
+For a SBS/AHT adherent:
+
+> To those who argue that the contribution of shaking to the pathophysiology of AHT is a hypothesis lacking a sufficient evidentiary base, the consistent and repeated observation that confessed shaking results in stereotypical injuries that are so frequently encountered in AHT—and which are so extraordinarily rare following accidental/impact injuries—_is_ the evidentiary basis for shaking. <span class="ref">(<a href="https://www.sciencedirect.com/science/article/pii/B9781416063933000415?via%3Dihub">Dias 2011</a>, p. 310)</span>
+
+For agnostics:
+
+> Moreover, (...) it is unsettling that physicians would rely so heavily on purported perpetrator confessions as somehow validating questionable SBS/AHT beliefs. Approximately twenty-five percent of the DNA exonerations in this country were in cases where the innocent defendant had allegedly confessed (...). Many purported SBS "confessions" are obtained pursuant to plea agreements; or as a requirement to retain or regain parental rights in dependency proceedings; or the confession was merely to shaking the child in an effort to resuscitate after the child had already collapsed; or the confession was induced by law enforcement through suggestion that confessing to shaking would allow the child to receive important medical treatment or was the “only” possible explanation for the child’s condition. <span class="ref">(<a href="https://heinonline.org/HOL/Page?collection=journals&handle=hein.journals/saclr59&id=299&men_tab=srchresults">Papetti 2019</a>, pp. 342-343)</span>
+
+
+
+
 #### SBS/AHT adherents
+
+Vinchon 2022
+Confessed versus denied inflicted head injuries in infants: similarities and differences
+https://link.springer.com/article/10.1007/s00381-021-05381-8
 
 Edwards 2020
 What Do Confessions Reveal about Abusive Head Trauma? A Systematic Review
 https://onlinelibrary.wiley.com/doi/full/10.1002/car.2627
 
-De Leuuw 2013
+Feld 2018
+Shaken baby syndrome—what convicted perpetrators report
+https://link.springer.com/article/10.1007/s00194-018-0276-0
+
+Vinchon 2017
+Response to Lyn∅e: questions about isolated trauma shaking and confessions
+https://link.springer.com/article/10.1007/s00381-017-3516-9
+
+De Leeuw 2013
 Confessed Abusive Blunt Head Trauma
 https://journals.lww.com/amjforensicmedicine/FullText/2013/06000/Confessed_Abusive_Blunt_Head_Trauma.15.aspx
 
@@ -1500,6 +1533,10 @@ Adamsbaum 2010
 Abusive Head Trauma: Judicial Admissions Highlight Violent and Repetitive Shaking
 https://publications.aap.org/pediatrics/article-abstract/126/3/546/66177/Abusive-Head-Trauma-Judicial-Admissions-Highlight
 
+Vinchon 2010
+Confessed abuse versus witnessed accidents in infants: comparison of clinical, radiological, and ophthalmological data in corroborated cases
+https://link.springer.com/article/10.1007/s00381-009-1048-7
+
 Biron 2005
 Perpetrator accounts in infant abusive head trauma brought about by a shaking event
 https://www.sciencedirect.com/science/article/pii/S014521340500253X
@@ -1507,8 +1544,6 @@ https://www.sciencedirect.com/science/article/pii/S014521340500253X
 Starling 1995
 Abusive Head Trauma: The Relationship of Perpetrators to Their Victims
 https://publications.aap.org/pediatrics/article-abstract/95/2/259/59426/Abusive-Head-Trauma-The-Relationship-of
-
-vinchon
 
 
 #### Agnostics
@@ -1521,6 +1556,110 @@ Thiblin 2020
 Medical findings and symptoms in infants exposed to witnessed or admitted abusive shaking: A nationwide registry study
 https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0240182
 
-leo conference
-brook?
-kassin
+Johnson 2020
+Shaken Baby Syndrome/Abusive Head Trauma: Wrongful Conviction Risks, Mis-information Effects, and Psychological Consultation
+https://heinonline.org/HOL/Page?handle=hein.journals/nclr82&div=29&g_sent=1
+
+Brook 2019
+Is there an evidentiary basis for shaken baby syndrome? The conviction of Joby Rowe
+https://www.researchgate.net/profile/C-Brook/publication/333978817_Is_there_an_evidentiary_basis_for_shaken_baby_syndrome_The_conviction_of_Joby_Rowe/links/5f5c7d1f299bf1d43cfcaccd/Is-there-an-evidentiary-basis-for-shaken-baby-syndrome-The-conviction-of-Joby-Rowe.pdf
+
+Leo 2017
+Police Interrogation, False Confessions, and Alleged Child Abuse Cases
+https://heinonline.org/HOL/Page?handle=hein.journals/umijlr50&id=717&collection=journals&index=
+
+Frenda 2016
+Sleep deprivation and false confessions
+https://www.pnas.org/doi/abs/10.1073/pnas.1521518113
+
+Kassin 2015
+The Social Psychology of False Confessions
+https://spssi.onlinelibrary.wiley.com/doi/full/10.1111/sipr.12009
+
+Shaw 2015
+Constructing Rich False Memories of Committing Crime
+https://journals.sagepub.com/doi/full/10.1177/0956797614562862
+
+Cutler 2014
+Interrogations and False Confessions: A Psychological Perspective
+https://www.proquest.com/docview/1535666192?pq-origsite=gscholar&fromopenview=true
+
+Kassin 2012
+Why confessions trump innocence
+https://psycnet.apa.org/doiLanding?doi=10.1037%2Fa0028212
+
+Gudjonsson 2011
+Suspect Interviews and False Confessions
+https://journals.sagepub.com/doi/full/10.1177/0963721410396824
+
+Leo 2010
+From False Confession to Wrongful Conviction: Seven Psychological Processes
+https://journals.sagepub.com/doi/abs/10.1177/009318531003800103
+
+Leo 2010
+Psychological and Cultural Aspects of Interrogations and False Confessions: Using Research to Inform Legal Decision-Making
+https://papers.ssrn.com/sol3/papers.cfm?abstract_id=1537331
+
+Kassin 2010
+Police-Induced Confessions: Risk Factors and Recommendations
+https://link.springer.com/article/10.1007/s10979-009-9188-6
+
+Kopelman 2010
+Varieties of false memories
+https://www.tandfonline.com/doi/abs/10.1080/026432999380762
+
+Leo 2009
+False Confessions: Causes, Consequences and Implications
+https://papers.ssrn.com/sol3/papers.cfm?abstract_id=1328623
+
+Leo 2009
+What do potential jurors know about police interrogation techniques and false confessions?
+https://onlinelibrary.wiley.com/doi/abs/10.1002/bsl.872
+
+Kassin 2008
+The Psychology of Confessions
+https://web.williams.edu/Psychology/Faculty/Kassin/files/Kassin%20(2008)%20-%20ARLSS%20Chapter.pdf
+
+Kassin 2008
+False Confessions: Causes, Consequences, and Implications for Reform
+https://journals.sagepub.com/doi/full/10.1111/j.1467-8721.2008.00584.x
+
+Kassin 2007
+Internalized False Confessions
+https://www.taylorfrancis.com/chapters/edit/10.4324/9781315086309-7/internalized-false-confessions-saul-kassin
+
+Leestma 2006
+Shaken baby syndrome: do confessions by alleged perpetrators validate the concept?
+https://www.safetylit.org/citations/index.php?fuseaction=citations.viewdetails&citationIds[]=citjournalarticle_380653_23
+
+Kassin 2005
+On the Psychology of Confessions: Does Innocence Put Innocents at Risk?
+https://psycnet.apa.org/buy/2005-03019-002
+
+Kassin 2005
+“I’d Know a False Confession if I Saw One”: A Comparative Study of College Students and Police Investigators
+https://link.springer.com/article/10.1007/s10979-005-2416-9
+
+Henkel 2004
+Memory distortions in coerced false confessions: a source monitoring framework analysis
+https://onlinelibrary.wiley.com/doi/abs/10.1002/acp.1026
+
+Kassin 2004
+The Psychology of Confessions: A Review of the Literature and Issues
+https://journals.sagepub.com/doi/full/10.1111/j.1529-1006.2004.00016.x
+
+Kassin 1997
+The psychology of confession evidence
+https://psycnet.apa.org/doiLanding?doi=10.1037%2F0003-066X.52.3.221
+
+Ofshe 1997
+The Social Psychology of Police Interrogation: The Theory and Classification of True and False Confessions
+https://heinonline.org/HOL/Page?handle=hein.journals/slps16&div=11&g_sent=1
+
+Kassin 1996
+The Social Psychology of False Confessions: Compliance, Internalization, and Confabulation
+https://journals.sagepub.com/doi/abs/10.1111/j.1467-9280.1996.tb00344.x
+
+Gudjonsson 1990
+A Proven Case of False Confession: Psychological Aspects of the Coerced-Compliant Type
+https://journals.sagepub.com/doi/abs/10.1177/106002809003000409
