@@ -22,7 +22,7 @@ li {
 }
 
 strong {
-    font-weight: 600;
+    font-weight: 700;
 }
 
 #layout,
@@ -310,7 +310,11 @@ code {
 }
 
 #post ul li {
-    margin: 20px auto;
+    margin: 0 auto 10px 0;
+}
+
+#post ul li p {
+    margin: 0;
 }
 
 #post img,
@@ -323,7 +327,7 @@ code {
     padding: 10px;
 }
 
-#post p {
+#post>p {
     margin-bottom: 1.2em;
 }
 
