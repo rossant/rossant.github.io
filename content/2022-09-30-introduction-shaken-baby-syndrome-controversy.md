@@ -347,13 +347,13 @@ https://www.sbu.se/en/publications/sbu-assesses/traumatic-shaking--the-role-of-t
 
 ## Academic publications
 
-In this section, we give some of the main references to medical, scientific, and legal academic publications, sorted by date of publication. There is at least one order of magnitude more publications on the subject in the literature. We try to give references from both sides of the controversy, when this distinction makes sense.
+In this section, we give some of the main references to medical, scientific, and legal academic publications, sorted by category and date of publication. There are about ten times more publications in the literature. We try to give references from both sides of the controversy, when this distinction makes sense.
 
 * [**XXX 2000.**]()
 
 ### History
 
-These historical publications are considered as the seminal works leading to the recognition of shaken baby syndrome. The two main figures are **John Caffey** (1895-1978), American pediatric radiologist, and **Norman Guthkelch** (1915-2016), British pediatric neurosurgeon. Note that, in the last few years of his life, the latter has criticized the way medical determinations of SBS were .
+These historical publications are considered as the seminal works leading to the recognition of shaken baby syndrome. The two main figures are **John Caffey** (1895-1978), American pediatric radiologist, and **Norman Guthkelch** (1915-2016), British pediatric neurosurgeon. Note that, in the last few years of his life, the latter has criticized the way medical determinations of SBS were made.
 
 Caffey 1974
 The Whiplash Shaken Infant Syndrome
@@ -488,8 +488,6 @@ https://heinonline.org/HOL/Page?handle=hein.journals/walq87&id=3&collection=jour
 
 
 ### Systematic reviews
-
-#### Agnostics
 
 Lynøe 2017
 Insufficient evidence for 'shaken baby syndrome'—a systematic review
@@ -711,7 +709,7 @@ https://journals.lww.com/topicsinmri/Fulltext/2002/04000/Ethical_Issues_in_Imagi
 
 ### Retinal hemorrhage
 
-The pathophysiological mechanisms of retinal hemorrhage is incompletely understood. As a first approximation, SBS/AHT adherents believe they occur due to the vitreo-retinal traction during traumatic shaking, whereas agnostics believe they occur as a consequence of raise intracranial pressure and/or intracranial hemorrhage.
+The pathophysiological mechanisms of retinal hemorrhage is incompletely understood. As a first approximation, SBS/AHT adherents believe they occur due to the vitreo-retinal traction during traumatic shaking, whereas agnostics believe they occur as a consequence of raised intracranial pressure and/or intracranial hemorrhage.
 
 
 #### SBS/AHT adherents
@@ -833,9 +831,9 @@ https://www.nature.com/articles/eye2009200
 
 ### Birth
 
-Between a quarter and half of all asymptomatic neonates present subdural and/or retinal hemorrhage in their first days of life. Although they typically cause no symptoms and resolve in a few days, they may persist and cause complications in a small proportion of cases.
+Between a quarter and a half of all asymptomatic neonates present subdural and/or retinal hemorrhage in their first days of life. Although they typically cause no symptoms and resolve in a few days, they may persist and cause complications in a small proportion of cases.
 
-An often-cited study is [Rooks 2008](http://www.ajnr.org/content/29/6/1082) who found subdural hemorrhage within 72 hours of delivery in 46% of 101 asymptomatic neonates. The hemorrhage resolved spontaneously within three months in all cases, but one child had a new extraaxial collection on follow-up at 26 days which raised concern for abuse, ruled out after a full investigation. This case shows that birth intracranial hemorrhage may sometimes persist after several weeks and be misinterpreted as child abuse:
+An often-cited study is [Rooks 2008](http://www.ajnr.org/content/29/6/1082) who found subdural hemorrhage within 72 hours of delivery in 46% of 101 asymptomatic neonates. The hemorrhage resolved spontaneously within three months in all cases, but one child had a new extraaxial collection on follow-up at 26 days which raised concern for abuse, which was ruled out after a full investigation. This case shows that birth intracranial hemorrhage may sometimes persist after several weeks and be misinterpreted as child abuse:
 
 > Initially, this patient had bilateral posterior occipital SDHs, which were being followed for resolution. At 26 days of life, the patient returned for the follow-up MR imaging and was noted to have a 1-cm extraaxial left frontal collection that did not conform to CSF attenuation, consistent with a spontaneous SDH. The patient was admitted for full evaluation for nonaccidental injury to include skeletal survey, ophthalmologic examination, coagulation panel, metabolic studies, as well as social work enquiries. These investigations did not reveal any additional injuries or findings to support **NAI [Nonaccidental Injury]** as an etiology of the spontaneous frontal SDH (Fig 4). At a 5-month follow-up MR imaging, the left frontal SDH resolved; however, the subarachnoid space remained prominent in this patient. This finding suggests that though not typical in a neonate, **prominent extra-axial space is a predisposing factor for SDHs as has been reported by other authors**. <span class="ref">(<a href="http://www.ajnr.org/content/29/6/1082">Rooks 2008</a>, pp. 1087-1088 , emphases ours)</span>
 
@@ -1009,8 +1007,6 @@ https://thejns.org/focus/view/journals/neurosurg-focus/7/4/article-pE5.xml
 
 ### Differential diagnoses
 
-#### SBS/AHT adherents
-
 Anderst 2021
 Subdural hemorrhage in a cohort with cerebral sinovenous thrombosis: Application to abusive head trauma
 https://www.sciencedirect.com/science/article/pii/S0145213421001927
@@ -1039,6 +1035,11 @@ https://publications.aap.org/pediatrics/article-abstract/99/3/371/67453/Coagulop
 
 
 ### Animal models
+
+Obviously, shaking cannot be reproduced in infants in an experimental setting. Researchers have instead investigated shaking in animal models. To date, results have been inconclusive: the characteristic features of the triad, including bridging vein rupture, subdural hematoma, and retinal hemorrhage, have not yet been observed in animal models of shaking. On the other hand, traumatic cervical and brain injuries have been described.
+
+> The experimental animal models, in both laboratory rodents and domestic animal species, developed to date were unable to reliably replicate the full spectrum of neuropathologic changes found in human infant AHT. <span class="ref">(<a href="https://link.springer.com/article/10.1007/s00381-022-05577-6">Finnie 2022</a>)</span>
+
 
 Finnie 2022
 Animal models of pediatric abusive head trauma
@@ -1084,10 +1085,6 @@ Finnie 2011
 Diffuse neuronal perikaryal amyloid precursor protein immunoreactivity in an ovine model of non-accidental head injury (the shaken baby syndrome)
 https://www.sciencedirect.com/science/article/pii/S096758680900407X
 
-Maguire 2011
-Estimating the Probability of Abusive Head Trauma: A Pooled Analysis
-https://publications.aap.org/pediatrics/article-abstract/128/3/e550/30708/Estimating-the-Probability-of-Abusive-Head-Trauma
-
 Coats 2010
 Ocular Hemorrhages in Neonatal Porcine Eyes from Single, Rapid Rotational Events
 https://iovs.arvojournals.org/article.aspx?articleid=2127329
@@ -1116,6 +1113,10 @@ https://www.liebertpub.com/doi/abs/10.1089/neu.2006.23.1570
 
 
 ### Biomechanics and modeling
+
+Biomechanics is another research avenue, where physical or virtual models of a baby's head are developed and subject to various traumatic conditions. Kinematics and materials deformations can be measured and compared to known or estimated tissue injury thresholds. Results have been inconclusive so far, and it remains unclear whether shaking alone can generate sufficient forces to cause traumatic rupture of bridging veins, subdural hemorrhage, and retinal hemorrhage.
+
+> Although only Cory and Jones reported rotational head accelerations in excess of predicted injury thresholds for concussion, no study has to date demonstrated that shaking alone, without an associated impact, exceeds the injury thresholds associated with SDH. <span class="ref">(<a href="https://journals.sagepub.com/doi/full/10.1177/0025802414564495">Jones 2015</a>, p. 292)</span>
 
 #### SBS/AHT adherents
 
@@ -1146,6 +1147,10 @@ https://link.springer.com/article/10.1007/s10439-017-1833-5
 Jenny 2017
 Biomechanical Response of the Infant Head to Shaking: An Experimental Investigation
 https://www.liebertpub.com/doi/full/10.1089/neu.2016.4687
+
+Jones 2015
+Development of a computational biomechanical infant model for the investigation of infant head injury by shaking
+https://journals.sagepub.com/doi/full/10.1177/0025802414564495
 
 Couper 2015
 Infant brain subjected to oscillatory loading
@@ -1292,7 +1297,7 @@ https://thejns.org/view/journals/j-neurosurg/66/3/article-p409.xml
 
 ### Short falls
 
-Severe injuries following short falls are rare, but how rare they are is controversial. To some authors, they are so exceptional that it can be considered that stories of short falls are almost falsified whenever a child has sustained severe or fatal injuries. To others, these statistical arguments are not correct, and short falls should be considered as an important differential diagnosis of subdural and retinal hemorrhage in infants.
+Severe injuries following short falls are rare, but how rare they are is controversial. To some authors, they are so exceptional that histories of short falls can be considered to be falsified in almost all severe or fatal cases. To others, these statistical arguments are not correct, and short falls should be considered as an important differential diagnosis of subdural and retinal hemorrhage in infants.
 
 
 #### SBS/AHT adherents
@@ -1449,6 +1454,10 @@ Liley 2012
 Infant abusive head trauma: Incidence, outcomes and awareness
 https://search.informit.org/doi/abs/10.3316/INFORMIT.806368705909212
 
+Maguire 2011
+Estimating the Probability of Abusive Head Trauma: A Pooled Analysis
+https://publications.aap.org/pediatrics/article-abstract/128/3/e550/30708/Estimating-the-Probability-of-Abusive-Head-Trauma
+
 Runyan 2008
 The Challenges of Assessing the Incidence of Inflicted Traumatic Brain Injury: A World Perspective
 https://www.sciencedirect.com/science/article/pii/S0749379708000639
@@ -1485,7 +1494,7 @@ https://onlinelibrary.wiley.com/doi/full/10.1111/apa.14138
 
 ### Confessions
 
-Many authors from both sides agree that, since experiments cannot be conducted on babies and videotaped and witnessed shaking events are rare, confessions are the main evidentiary basis of SBS/AHT. Adherents believe in their validity in most cases, while agnostics claim they are unreliable due to the existence of guilty pleas or the possibility of false confessions during police interrogation.
+Many authors from both sides agree that, since experiments cannot be conducted on babies, and since videotaped and witnessed shaking events are vanishingly rare, confessions are the main evidentiary basis of SBS/AHT. Adherents believe in the validity of most confessions of shaking, while agnostics claim they are unreliable due to the existence of guilty pleas and false confessions during police interrogation.
 
 For a SBS/AHT adherent:
 
