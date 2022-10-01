@@ -258,7 +258,8 @@ In the remainder of this post, we will give references to learn more about the c
 
 
 
-## <a id="sec-books"></a>Books
+
+## <a id="sec-books" href="#sec-books">Books</a>
 
 #### SBS/AHT adherents
 
@@ -280,7 +281,7 @@ In the remainder of this post, we will give references to learn more about the c
 
 
 
-## <a id="sec-press"></a>Press investigations
+## <a id="sec-press" href="#sec-press">Press investigations</a>
 
 In this section, we give references to press investigations specifically covering the scientific and legal controversy.
 
@@ -335,7 +336,7 @@ In this section, we give references to press investigations specifically coverin
 
 
 
-## Opinion pieces
+## <a id="sec-opinion" href="#sec-opinion">Opinion pieces</a>
 
 #### SBS/AHT adherents
 
@@ -360,7 +361,7 @@ Syndrome/Abusive Head Trauma](https://ncip.org/wp-content/uploads/2019/12/STATEM
 
 
 
-## <a id="sec-films"></a>Films, documentaries, talks
+## <a id="sec-films" href="#sec-films">Films, documentaries, talks</a>
 
 * [**Retro report 2015.** The Nanny Murder Case: Shaken Baby Syndrome on Trial](https://www.retroreport.org/video/a-syndrome-on-trial/)
 
@@ -371,7 +372,7 @@ Syndrome/Abusive Head Trauma](https://ncip.org/wp-content/uploads/2019/12/STATEM
 
 
 
-## <a id="sec-gov"></a>Governmental reports
+## <a id="sec-gov" href="#sec-gov">Governmental reports</a>
 
 We give references to official position papers, or "consensus" papers, organized by countries rather than by side.
 
@@ -405,13 +406,12 @@ We give references to official position papers, or "consensus" papers, organized
 
 
 
-## <a id="sec-academic"></a>Academic publications
+## <a id="sec-academic" href="#sec-academic">Academic publications</a>
 
 In this section, we give some of the main references to medical, scientific, and legal academic publications, sorted by category and date of publication. There are about ten times more publications in the literature. We try to give references from both sides of the controversy, when this distinction makes sense.
 
-<!-- * [**XXX 2000.**]() -->
 
-### <a id="sec-history"></a>History
+### <a id="sec-history" href="#sec-history">History</a>
 
 These historical publications are considered as the seminal works leading to the recognition of shaken baby syndrome. The two main figures are **John Caffey** (1895-1978), American pediatric radiologist, and **Norman Guthkelch** (1915-2016), British pediatric neurosurgeon. Note that, in the last few years of his life, the latter has criticized the way medical determinations of SBS were made.
 
@@ -445,7 +445,7 @@ These historical publications are considered as the seminal works leading to the
 
 
 
-### <a id="sec-opiniated"></a>Opiniated reviews
+### <a id="sec-opiniated" href="#sec-opiniated">Opiniated reviews</a>
 
 We give here references to reviews that may be found to present a bias toward one side of the controversy.
 
@@ -499,7 +499,7 @@ We give here references to reviews that may be found to present a bias toward on
 * [**Tuerkheimer 2009.** The Next Innocence Project: Shaken Baby Syndrome and the Criminal Courts](https://heinonline.org/HOL/Page?handle=hein.journals/walq87&id=3&collection=journals&index=)
 
 
-### <a id="sec-systematic"></a>Systematic reviews
+### <a id="sec-systematic" href="#sec-systematic">Systematic reviews</a>
 
 * [**Lynøe 2017.** Insufficient evidence for 'shaken baby syndrome'—a systematic review](https://onlinelibrary.wiley.com/doi/abs/10.1111/apa.13760)
 
@@ -508,7 +508,7 @@ We give here references to reviews that may be found to present a bias toward on
 
 
 
-### <a id="sec-neuropathology"></a>Neuropathology
+### <a id="sec-neuropathology" href="#sec-neuropathology">Neuropathology</a>
 
 We now move to more technical references.
 
@@ -587,7 +587,7 @@ Similar discussions also exist regarding bridging veins, subdural, and retinal h
 
 
 
-### <a id="sec-radiology"></a>Radiology
+### <a id="sec-radiology" href="#sec-radiology">Radiology</a>
 
 We refer to the introduction of the _Neuropathology_ section above.
 
@@ -647,7 +647,7 @@ Some authors remind that radiology alone may not yield a reliable medical determ
 
 
 
-### <a id="sec-rh"></a>Retinal hemorrhage
+### <a id="sec-rh" href="#sec-rh">Retinal hemorrhage</a>
 
 The pathophysiological mechanisms of retinal hemorrhage is incompletely understood. As a first approximation, SBS/AHT adherents believe they occur due to the vitreo-retinal traction during traumatic shaking, whereas agnostics believe they occur as a consequence of raised intracranial pressure and/or intracranial hemorrhage.
 
@@ -713,7 +713,7 @@ The pathophysiological mechanisms of retinal hemorrhage is incompletely understo
 * [**Clarke 2009.** Vitreoretinal traction is a major factor in causing the haemorrhagic retinopathy of abusive head injury? – No](https://www.nature.com/articles/eye2009200)
 
 
-### <a id="sec-birth"></a>Birth
+### <a id="sec-birth" href="#sec-birth">Birth</a>
 
 Between a quarter and a half of all asymptomatic neonates present subdural and/or retinal hemorrhage in their first days of life. Although they typically cause no symptoms and resolve in a few days, they may persist and cause complications in a small proportion of cases.
 
@@ -765,7 +765,7 @@ An often-cited study is [Rooks 2008](http://www.ajnr.org/content/29/6/1082) who 
 
 
 
-### <a id="sec-beh"></a>Benign external hydrocephalus
+### <a id="sec-beh" href="#sec-beh">Benign external hydrocephalus</a>
 
 Benign external hydrocephalus (BEH), also known as enlarged extraaxial spaces, enlargement of subarachnoid spaces, or many other terms, is a medical condition _"associating a rapid increase in head circumference, combined with enlarged subarachnoid spaces as seen on neuroimaging—especially overlying the frontal lobes—and normal or only moderately enlarged ventricles_" ([Zahl 2011](https://link.springer.com/article/10.1007/s10143-011-0327-4)). It is often considered as a risk factor for the development of quasi-spontaneous subdural hemorrhage and retinal hemorrhage, although not by part of the SBS/AHT adherents. Some authors believe that a number of children with BEH are misdiagnosed with SBS/AHT, especially due to imaging similarities.
 
@@ -826,7 +826,7 @@ Left: Fig. 2b from <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4814308
 
 
 
-### <a id="sec-dd"></a>Differential diagnoses
+### <a id="sec-dd" href="#sec-dd">Differential diagnoses</a>
 
 * [**Anderst 2021.** Subdural hemorrhage in a cohort with cerebral sinovenous thrombosis: Application to abusive head trauma](https://www.sciencedirect.com/science/article/pii/S0145213421001927)
 
@@ -861,7 +861,7 @@ Left: Fig. 2b from <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4814308
 
 
 
-### <a id="sec-animal"></a>Animal models
+### <a id="sec-animal" href="#sec-animal">Animal models</a>
 
 Obviously, shaking cannot be reproduced in infants in an experimental setting. Researchers have instead investigated shaking in animal models. To date, results have been inconclusive: the characteristic features of the triad, including bridging vein rupture, subdural hematoma, and retinal hemorrhage, have not yet been observed in animal models of shaking. On the other hand, traumatic cervical and brain injuries have been described.
 
@@ -906,7 +906,7 @@ Obviously, shaking cannot be reproduced in infants in an experimental setting. R
 
 
 
-### <a id="sec-biomechanics"></a>Biomechanics and numerical modeling
+### <a id="sec-biomechanics" href="#sec-biomechanics">Biomechanics and numerical modeling</a>
 
 Biomechanics is another research avenue, where physical or virtual models of a baby's head are developed and subject to various traumatic conditions. Kinematics and materials deformations can be measured and compared to known or estimated tissue injury thresholds.
 
@@ -930,9 +930,15 @@ Results have been inconclusive so far, and it remains unclear whether shaking al
 
 * [**Suh 2020.** Determining the Tractional Forces on Vitreoretinal Interface Using a Computer Simulation Model in Abusive Head Trauma](https://www.sciencedirect.com/science/article/pii/S0002939420303160)
 
+* [**van Zandwijk 2019.** Modeling of inflicted head injury by shaking trauma in children: what can we learn? Part II: A systematic review of mathematical and physical models](https://link.springer.com/article/10.1007/s12024-019-00093-7)
+
 * [**Jenny 2017.** Biomechanical Response of the Infant Head to Shaking: An Experimental Investigation](https://www.liebertpub.com/doi/full/10.1089/neu.2016.4687)
 
 * [**Yoshida 2014.** A finite element analysis of the retinal hemorrhages accompanied by shaken baby syndrome/abusive head trauma](https://www.sciencedirect.com/science/article/pii/S0021929014004801)
+
+* [**Nadarasa 2014.** Update on injury mechanisms in abusive head trauma - shaken baby syndrome](https://link.springer.com/article/10.1007/s00247-014-3168-9)
+
+* [**Yamasaki 2014.** Experimental analyses of the retinal and subretinal haemorrhages accompanied by shaken baby syndrome/abusive head trauma using a dummy doll](https://www.sciencedirect.com/science/article/pii/S002013831400182X)
 
 * [**Roth 2010.** Finite element modelling of paediatric head impact: Global validation against experimental data](https://www.sciencedirect.com/science/article/pii/S0169260709002880)
 
@@ -940,11 +946,16 @@ Results have been inconclusive so far, and it remains unclear whether shaking al
 
 * [**Raul 2008.** Influence of the benign enlargement of the subarachnoid space on the bridging veins strain during a shaking event: a finite element study](https://link.springer.com/article/10.1007/s00414-008-0242-6)
 
+* [**Pierce 2008.** Injury Biomechanics and Child Abuse](https://www.researchgate.net/profile/Gina-Bertocci/publication/6325079_Injury_Biomechanics_and_Child_Abuse/links/595d121245851524687a57d6/Injury-Biomechanics-and-Child-Abuse.pdf)
+
 * [**Bertocci 2006.** Applications of Biomechanics Aiding in the Diagnosis of Child Abus](https://www.sciencedirect.com/science/article/pii/S1522840106000498)
+
+* [**Oehmichen 2005.** Fall or Shaken: Traumatic Brain Injury in Children Caused by Falls or Abuse at Home - A Review on Biomechanics and Diagnosis](https://www.thieme-connect.com/products/ejournals/html/10.1055/s-2005-872812)
 
 * [**Prange 2003.** Anthropomorphic simulations of falls, shakes, and inflicted impacts in infants](https://thejns.org/view/journals/j-neurosurg/99/1/article-p143.xml)
 
 * [**Cory 2003.** Can Shaking Alone Cause Fatal Brain Injury?: A biomechanical assessment of the Duhaime shaken baby syndrome model](https://journals.sagepub.com/doi/abs/10.1258/rsmmsl.43.4.317)
+
 
 
 #### Neutral/agnostics
@@ -958,8 +969,6 @@ Results have been inconclusive so far, and it remains unclear whether shaking al
 * [**Miller 2020.** An envelope of linear and rotational head motion during everyday activities](https://link.springer.com/article/10.1007/s10237-019-01267-6)
 
 * [**Burgos-Flórez 2020.** Stress and strain propagation on infant skull from impact loads during falls: a finite element analysis](https://www.tandfonline.com/doi/full/10.1080/23335432.2020.1719196)
-
-* [**van Zandwijk 2019.** Modeling of inflicted head injury by shaking trauma in children: what can we learn? Part II: A systematic review of mathematical and physical models](https://link.springer.com/article/10.1007/s12024-019-00093-7)
 
 * [**Li 2019.** Infant skull fractures: Accident or abuse?: Evidences from biomechanical analysis using finite element head models](https://www.sciencedirect.com/science/article/pii/S0379073818310302)
 
@@ -983,11 +992,7 @@ Results have been inconclusive so far, and it remains unclear whether shaking al
 
 * [**Couper 2015.** Infant brain subjected to oscillatory loading](https://www.tandfonline.com/doi/abs/10.1080/14484846.2008.11464560)
 
-* [**Yamasaki 2014.** Experimental analyses of the retinal and subretinal haemorrhages accompanied by shaken baby syndrome/abusive head trauma using a dummy doll](https://www.sciencedirect.com/science/article/pii/S002013831400182X)
-
 * [**Jones 2014.** Development of a computational biomechanical infant model for the investigation of infant head injury by shaking](https://journals.sagepub.com/doi/full/10.1177/0025802414564495)
-
-* [**Nadarasa 2014.** Update on injury mechanisms in abusive head trauma - shaken baby syndrome](https://link.springer.com/article/10.1007/s00247-014-3168-9)
 
 * [**Thompson 2011.** Pediatric short-distance household falls: Biomechanics and associated injury severity](https://www.sciencedirect.com/science/article/pii/S0001457510002113)
 
@@ -1005,11 +1010,7 @@ Results have been inconclusive so far, and it remains unclear whether shaking al
 
 * [**Coats 2008.** Potential for head injuries in infants from low-height falls](https://thejns.org/pediatrics/view/journals/j-neurosurg-pediatr/2/5/article-p321.xml)
 
-* [**Pierce 2008.** Injury Biomechanics and Child Abuse](https://www.researchgate.net/profile/Gina-Bertocci/publication/6325079_Injury_Biomechanics_and_Child_Abuse/links/595d121245851524687a57d6/Injury-Biomechanics-and-Child-Abuse.pdf)
-
 * [**Wolfson 2005.** Rigid-body modelling of shaken baby syndrome](https://journals.sagepub.com/doi/abs/10.1243/095441105X9237)
-
-* [**Oehmichen 2005.** Fall or Shaken: Traumatic Brain Injury in Children Caused by Falls or Abuse at Home - A Review on Biomechanics and Diagnosis](https://www.thieme-connect.com/products/ejournals/html/10.1055/s-2005-872812)
 
 * [**Goldsmith 2004.** A Biomechanical Analysis of the Causes of Traumatic Brain Injury in Infants and Children](https://journals.lww.com/amjforensicmedicine/Fulltext/2004/06000/Fatal_Pediatric_Head_Injuries_Caused_by.00001.aspx)
 
@@ -1025,7 +1026,7 @@ Results have been inconclusive so far, and it remains unclear whether shaking al
 
 
 
-### <a id="sec-falls"></a>Short falls
+### <a id="sec-falls" href="#sec-falls">Short falls</a>
 
 Severe injuries following short falls are rare, but how rare they are is controversial. To some authors, they are so exceptional that histories of short falls can be considered to be falsified in almost all severe or fatal cases. To other authors, these statistical arguments are not correct, and short falls should be considered as an important differential diagnosis of subdural and retinal hemorrhage in infants.
 
@@ -1076,7 +1077,7 @@ Severe injuries following short falls are rare, but how rare they are is controv
 
 
 
-### <a id="sec-confessions"></a>Confessions
+### <a id="sec-confessions" href="#sec-confessions">Confessions</a>
 
 Many authors from both sides agree that, since experiments cannot be conducted on babies, and since videotaped and witnessed shaking events are vanishingly rare, confessions are the main evidentiary basis of SBS/AHT. Adherents believe in the validity of most confessions of shaking, while agnostics claim they are unreliable due to the existence of guilty pleas and false confessions during police interrogation.
 
@@ -1176,7 +1177,7 @@ For agnostics:
 
 
 
-### <a id="sec-epidemiology"></a>Epidemiology and prevention
+### <a id="sec-epidemiology" href="#sec-epidemiology">Epidemiology and prevention</a>
 
 Epidemiological studies investigate the demographics of children diagnosed with SBS/AHT, the incidence of these medical determinations, and the impact of prevention programs on the global incidence of determinations of abuse.
 
@@ -1237,7 +1238,7 @@ Epidemiological studies investigate the demographics of children diagnosed with 
 
 
 
-### <a id="sec-ethics"></a>Medical ethics, medicolegal issues, cognitive biases
+### <a id="sec-ethics" href="#sec-ethics">Medical ethics, medicolegal issues, cognitive biases</a>
 
 #### SBS/AHT adherents
 
