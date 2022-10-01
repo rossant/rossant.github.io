@@ -385,8 +385,11 @@ code {
 
 #post .side-by-side p {
     font-size: .9em;
-    font-style: italic;
+    /* font-style: italic; */
+    padding-left: 8px;
     margin-bottom: 30px;
+    color: #555;
+    border-left: 0.25em solid #eee;
 }
 
 #post .side-by-side h4 {
@@ -471,7 +474,7 @@ h6 {
 
 h1 {
     font-size: 2.25em;
-    margin: 0 0 .1em -.025em;
+    margin: 1em 0 .1em -.025em;
     padding: 0 0 .25em 0;
     border-bottom: 1px solid #aaa;
 }

@@ -26,6 +26,7 @@ This post provides a few pointers to anyone interested in understanding the most
 
 Before presenting some of the most important references on the subject, we will indicate the caution required when investigating the subject, and we'll try to clarify the definitions and the most contentious points.
 
+
 ## Caution to reader
 
 It is crucially important to understand that SBS/AHT is not an academic subject like others, for reasons listed here:
@@ -40,7 +41,7 @@ It is crucially important to understand that SBS/AHT is not an academic subject 
 
 5. The degree of polarization in this area is extreme. As a first approximation, one may consider a currently dominant view, supported by what we may call "SBS/AHT adherents", and a different view supported by "agnostics". Even the very existence of a legitimate controversy is denied by most adherents. We'll discuss these terms later in this post.
 
-6. The adherent side is presented as having near-universal institutional support. It is fundamentally important that, for the sake of making a robust, evidence-based scientific opinion, one must make a sustained effort to move beyond any argument from authority. Although in general, institutional support may be expected to follow scientific evidence, this is not strictly guaranteed, particularly when there are major non-scientific (political, financial, societal...) ramifications. Thus, one should not rely on one's natural confidence in scientific authority; rather, one should instead keep an open mind and exercise critical thinking at all times, and never hesitate to question or double-check any explicit or implicit assumption.
+6. The adherent side is presented as having near-universal institutional support. It is fundamentally important that, for the sake of making a robust, evidence-based scientific opinion, one must make a sustained effort to move beyond any argument from authority. The reader should not substitute collective certainty with scientific evidence. Although in general, institutional support may be expected to follow scientific evidence, this is not strictly guaranteed, particularly when there are major non-scientific (political, financial, societal...) ramifications. Thus, one should not rely on one's natural confidence in scientific authority; rather, the reader should keep an open mind and exercise critical thinking at all times, and never hesitate to question or double-check any explicit or implicit assumption.
 
 7. As a corollary to this extremely polarized dispute, the field is replete with violent personal attacks, insults, ad-hominem arguments, straw-man arguments, misstatements, and misrepresentations. The reader needs to keep a calm, objective, rational mind and concentrate on nothing other than robust methodology and sound scientific evidence, leaving all emotion aside.
 
@@ -53,10 +54,24 @@ It is crucially important to understand that SBS/AHT is not an academic subject 
 11. When writing about this topic, it is often necessary to make obvious statements explicit, such as recalling that shaking a baby must be strictly avoided, that severe injuries are to be expected after inflicted head trauma in children, and that child abusers must be criminally prosecuted. The reason for stating the obvious is that SBS/AHT agnostics are often accused, without any supporting evidence, of "denying" the existence of child abuse, or pretending that "shaking is safe". In reality, the controversy pertains uniquely to the reliability with which child abuse can be inferred with a high degree of certainty based on a few medical findings alone.
 
 
+## "Adherents" vs "agnostics"
+
+We will refer to both sides of the controversy as "SBS/AHT adherents" and "agnostics". This is not a perfect denomination, and in any case any choice of denomination can be considered biased by one side or another. We intend these terms to be understood precisely according to their definitions of the Collins dictionary:
+
+- [**Adherent**](https://www.collinsdictionary.com/dictionary/english/adherent): "someone who holds a particular belief or supports a particular person or group"
+
+- [**Agnostic**](https://www.collinsdictionary.com/dictionary/english/agnostic): "a person who claims, with respect to any particular question, that the answer cannot be known with certainty"
+
+Adherents generally believe that SBS/AHT is a valid, non-controversial medical diagnosis that has an extremely low rate of false positives ([Narang 2016](https://www.sciencedirect.com/science/article/pii/S0022347616304024)).
+
+On the other side, whereas a very small number of authors may deny the "existence" of SBS/AHT, most merely point to a lack of scientific reliability and certainty about these medical determinations of abuse and, therefore, a possibly high number of wrongful convictions and miscarriages of justice. Here is a citation from some of these authors:
+
+> "Today, we are still seeking answers to the questions that we have been asking for 40 years or longer—questions such as, why do some infants or toddlers suddenly collapse or die? Why do some of these children have subdural hemorrhages while others do not? What does the presence of the triad (or some elements of the triad) tell us about the cause of the collapse or death? And are there any findings that can accurately distinguish between accidents, abuse and natural causes? For decades, we thought we had answers to some of these questions: we thought that the presence of the triad, or some of its elements, proved that the child had been shaken. Today, the correct answer to these questions is, **'we don't know.'** And, until we do know, we are, in Dr. Duhaime's words, simply 'shooting in the dark.'" <span class="ref">(<a href="https://heinonline.org/hol-cgi-bin/get_pdf.cgi?handle=hein.journals/hhpol12&section=15">Findley 2011</a>, pp. 261-262, emphasis ours)</span>
+
 
 ## A tentative definition
 
-The absolute first step when investigating such a subject is to be clear on definitions. The SBS/AHT controversy is so intense that even the most basic definitions are vigorously debated. The term "Shaken Baby Syndrome" has actually several totally different meanings, which is a major reason for the high degree of confusion and obfuscation surrounding this issue.
+A required first step when investigating such a subject is to be clear on definitions. The SBS/AHT controversy is so intense that even the most basic definitions are vigorously debated. The term "Shaken Baby Syndrome" has actually several totally different meanings, which is a major reason for the high degree of confusion and obfuscation surrounding this issue.
 
 On the one hand, Shaken Baby Syndrome describes a child abuse act where an adult exasperated by the uncontrollable crying of a young baby holds the child under the arms and vigorously shakes him or her back and forth. The brutal and repeated angular movement sustained by the baby's head during this act, amplified by the weakness of neck muscles and relatively large size of the infant head, may cause neurological injuries. Severe disability or death may ensue. These dramatic consequences on the child justify prevention measures targeting parents and caregivers, but also healthcare professionals who should be trained to recognize characteric signs in young victims.
 
@@ -90,6 +105,7 @@ An **intracranial hemorrhage** occurs when blood is found in any of the tissues 
 <figcaption>Meninges of the central nervous parts. Credits: Wikimedia, SVG by Mysid, original by SEER Development Team, Jmarchn.</figcaption>
 </figure>
 
+
 ## Legal implications
 
 Our tentative definition of SBS has clear legal implications. Infantile subdural and retinal hemorrhage are considered to be so specific for violent child abuse that their sole presence in an infant, even with no sign of trauma on the body and no suspicion of abuse in the child's environment, constitutes an almost irrefutable proof that a criminal offence has occurred and, as such, justifies drastic child protection procedures, criminal prosecutions, and convictions.
@@ -101,7 +117,6 @@ The degree of certainty with which medical experts determine the occurrence of a
 🇫🇷  In the French criminal justice system, the judges' and jurors' "intimate conviction" is the standard of proof. Here, too, the certainty with which highly-recognized and experienced judicial experts make a medical determination of child abuse has a direct impact on the "intimate conviction" of triers of facts.
 
 Surprisingly, a clear definition of SBS/AHT such as ours is rarely found in this explicit form in the medical literature, although it does appear in a few instances. It mostly emerges from the literature corpus as a de facto medical belief taught and shared by healthcare providers around the globe since the late 1970's and up to the 2010's. An abundant case law over the last five decades across many countries also shows that medical experts have long relied on this hypothesis in family and criminal courts.
-
 
 
 ## A contested definition
@@ -178,19 +193,27 @@ We give here a few relevant citations from the adherents' medical literature, il
 </div>
 
 
-### "Adherents" vs "agnostics"
+## Contested topics, open questions
 
-We refer to both sides of the controversy as "SBS/AHT adherents" and "agnostics". This is not a perfect denomination, and in any case any choice of denomination can be considered biased by one side or another. We intend these terms to be understood precisely according to their definitions of the Collins dictionary:
+We propose some open debated questions and links to scientific references below.
 
-- [**Adherent**](https://www.collinsdictionary.com/dictionary/english/adherent): "someone who holds a particular belief or supports a particular person or group"
+* What are the pathophysiological mechanisms of subdural and retinal hemorrhage in infants? See [Neuropathology](#sec-neuropathology), [Radiology](#sec-radiology), [Retinal hemorrhage](#sec-rh).
+* What are the medical causes and risk factors of subdural and retinal hemorrhage in infants? See [Benign external hydrocephalus](#sec-beh), [Differential diagnoses](#sec-dd), [Short falls](#sec-falls).
+* With no satisfactory experimental model of shaking, what evidence do we have that traumatic shaking alone (without impact) can rupture bridging veins and cause subdural and retinal hemorrhage? What is the temporal evolution of symptoms after trauma? See [History](#sec-history), [Animal models](#sec-animal), [Biomechanics and modeling](#sec-biomechanics), [Radiology](#sec-radiology).
+* How reliable are admissions of shaking obtained after medical determinations of SBS/AHT? What scientific evidence can we infer from the rare described cases of witnessed and videotaped shaking? See [Confessions](#sec-confessions), [Medical ethics, medicolegal issues, cognitive biases](#sec-ethics).
+* How severe is the issue of circular reasoning arising in the clinical literature, where medical determinations of SBS/AHT are made based on the same findings that are being studied? See [Systematic reviews](#sec-systematic), [Opiniated reviews](#sec-opiniated), [Epidemiology and prevention](#sec-epidemiology).
+* What are the psychological, societal, ethical implications of medical determinations of child abuse? See [Medical ethics, medicolegal issues, cognitive biases](#sec-ethics).
 
-- [**Agnostic**](https://www.collinsdictionary.com/dictionary/english/agnostic): "a person who claims, with respect to any particular question, that the answer cannot be known with certainty"
 
-Adherents generally believe that SBS/AHT is a valid, non-controversial medical diagnosis that has an extremely low rate of false positives ([Narang 2016](https://www.sciencedirect.com/science/article/pii/S0022347616304024)).
 
-On the other side, whereas a very small number of authors may deny the "existence" of SBS/AHT, most merely point to a lack of scientific reliability and certainty about these medical determinations of abuse and, therefore, a possibly high number of wrongful convictions and miscarriages of justice. Here is a citation from some of these authors:
 
-> "Today, we are still seeking answers to the questions that we have been asking for 40 years or longer—questions such as, why do some infants or toddlers suddenly collapse or die? Why do some of these children have subdural hemorrhages while others do not? What does the presence of the triad (or some elements of the triad) tell us about the cause of the collapse or death? And are there any findings that can accurately distinguish between accidents, abuse and natural causes? For decades, we thought we had answers to some of these questions: we thought that the presence of the triad, or some of its elements, proved that the child had been shaken. Today, the correct answer to these questions is, **'we don't know.'** And, until we do know, we are, in Dr. Duhaime's words, simply 'shooting in the dark.'" <span class="ref">(<a href="https://heinonline.org/hol-cgi-bin/get_pdf.cgi?handle=hein.journals/hhpol12&section=15">Findley 2011</a>, pp. 261-262, emphasis ours)</span>
+
+
+
+
+
+
+
 
 
 
@@ -200,10 +223,10 @@ In the remainder of this post, we will give many references to learn more about 
 
 **Notes**
 
-- We classified references between "SBS/AHT adherents" and "agnostics" when this was relevant.
+- We classified references between "SBS/AHT adherents" and "agnostics" when this distinction was relevant.
 - Some references may appear multiple times in different categories.
 - References only available in French are indicated with a flag&nbsp;&nbsp;🇫🇷.
-- This bibliography will be completed over time. Contact me by email (see website sidebar/footer) to propose any corrections or additions.
+- This bibliography will be completed over time. Contact me by email (see sidebar/footer on this page) to propose any corrections or additions.
 
 
 ### Table of contents
@@ -332,8 +355,6 @@ Syndrome/Abusive Head Trauma](https://ncip.org/wp-content/uploads/2019/12/STATEM
 
 ## <a id="sec-films"></a>Films, documentaries, talks
 
-#### Agnostics
-
 * [**Retro report 2015.** The Nanny Murder Case: Shaken Baby Syndrome on Trial](https://www.retroreport.org/video/a-syndrome-on-trial/)
 
 * [**The Syndrome 2015.**](https://www.thesyndromefilm.com/)
@@ -345,7 +366,7 @@ Syndrome/Abusive Head Trauma](https://ncip.org/wp-content/uploads/2019/12/STATEM
 
 ## <a id="sec-gov"></a>Governmental reports
 
-We give references to official position papers, organized by countries rather than by side.
+We give references to official position papers, or "consensus" papers, organized by countries rather than by side.
 
 #### United States
 
@@ -419,7 +440,7 @@ These historical publications are considered as the seminal works leading to the
 
 ### <a id="sec-opiniated"></a>Opiniated reviews
 
-We give here references to reviews that clearly present a bias toward one side of the controversy.
+We give here references to reviews that may be found to present a bias toward one side of the controversy.
 
 #### SBS/AHT adherents
 
@@ -554,7 +575,7 @@ We refer to the introduction of the _Neuropathology_ section above.
 
 Some authors remind that radiology alone may not yield a reliable medical determination of abuse:
 
-> The medical and imaging evidence, particularly when there is only central nervous system injury, cannot reliably diagnose _intentional_ injury. Only the child protection investigation may provide the basis for *inflicted* injury in the context of supportive medical, imaging, biomechanical, or pathological findings. <span class="ref">(<a href="https://journals.lww.com/topicsinmri/Fulltext/2007/02000/Imaging_of_the_Central_Nervous_System_in_Suspected.4.aspx">Barnes 2007</a>, p. 53)</span>
+> "The medical and imaging evidence, particularly when there is only central nervous system injury, cannot reliably diagnose _intentional_ injury. Only the child protection investigation may provide the basis for *inflicted* injury in the context of supportive medical, imaging, biomechanical, or pathological findings." <span class="ref">(<a href="https://journals.lww.com/topicsinmri/Fulltext/2007/02000/Imaging_of_the_Central_Nervous_System_in_Suspected.4.aspx">Barnes 2007</a>, p. 53)</span>
 
 
 #### SBS/AHT adherents
@@ -680,7 +701,7 @@ Between a quarter and a half of all asymptomatic neonates present subdural and/o
 
 An often-cited study is [Rooks 2008](http://www.ajnr.org/content/29/6/1082) who found subdural hemorrhage within 72 hours of delivery in 46% of 101 asymptomatic neonates. The hemorrhage resolved spontaneously within three months in all cases, but one child had a new extraaxial collection on follow-up at 26 days which raised concern for abuse, which was ruled out after a full investigation. This case shows that birth intracranial hemorrhage may sometimes persist after several weeks and be misinterpreted as child abuse:
 
-> Initially, this patient had bilateral posterior occipital SDHs, which were being followed for resolution. At 26 days of life, the patient returned for the follow-up MR imaging and was noted to have a 1-cm extraaxial left frontal collection that did not conform to CSF attenuation, consistent with a spontaneous SDH. The patient was admitted for full evaluation for nonaccidental injury to include skeletal survey, ophthalmologic examination, coagulation panel, metabolic studies, as well as social work enquiries. These investigations did not reveal any additional injuries or findings to support **NAI [Nonaccidental Injury]** as an etiology of the spontaneous frontal SDH (Fig 4). At a 5-month follow-up MR imaging, the left frontal SDH resolved; however, the subarachnoid space remained prominent in this patient. This finding suggests that though not typical in a neonate, **prominent extra-axial space is a predisposing factor for SDHs as has been reported by other authors**. <span class="ref">(<a href="http://www.ajnr.org/content/29/6/1082">Rooks 2008</a>, pp. 1087-1088 , emphases ours)</span>
+> "Initially, this patient had bilateral posterior occipital SDHs, which were being followed for resolution. At 26 days of life, the patient returned for the follow-up MR imaging and was noted to have a 1-cm extraaxial left frontal collection that did not conform to CSF attenuation, consistent with a spontaneous SDH. The patient was admitted for full evaluation for nonaccidental injury to include skeletal survey, ophthalmologic examination, coagulation panel, metabolic studies, as well as social work enquiries. These investigations did not reveal any additional injuries or findings to support **NAI [Nonaccidental Injury]** as an etiology of the spontaneous frontal SDH (Fig 4). At a 5-month follow-up MR imaging, the left frontal SDH resolved; however, the subarachnoid space remained prominent in this patient. This finding suggests that though not typical in a neonate, **prominent extra-axial space is a predisposing factor for SDHs as has been reported by other authors**." <span class="ref">(<a href="http://www.ajnr.org/content/29/6/1082">Rooks 2008</a>, pp. 1087-1088 , emphases ours)</span>
 
 <figure>
 <a href="https://user-images.githubusercontent.com/1942359/193289901-d8326618-520f-45b5-94e0-6843498ec704.png"><img src="https://user-images.githubusercontent.com/1942359/193289901-d8326618-520f-45b5-94e0-6843498ec704.png"></a>
@@ -818,7 +839,7 @@ Benign external hydrocephalus (BEH), also known as enlarged extraaxial spaces, e
 
 Obviously, shaking cannot be reproduced in infants in an experimental setting. Researchers have instead investigated shaking in animal models. To date, results have been inconclusive: the characteristic features of the triad, including bridging vein rupture, subdural hematoma, and retinal hemorrhage, have not yet been observed in animal models of shaking. On the other hand, traumatic cervical and brain injuries have been described.
 
-> The experimental animal models, in both laboratory rodents and domestic animal species, developed to date were unable to reliably replicate the full spectrum of neuropathologic changes found in human infant AHT. <span class="ref">(<a href="https://link.springer.com/article/10.1007/s00381-022-05577-6">Finnie 2022</a>)</span>
+> "The experimental animal models, in both laboratory rodents and domestic animal species, developed to date were unable to reliably replicate the full spectrum of neuropathologic changes found in human infant AHT." <span class="ref">(<a href="https://link.springer.com/article/10.1007/s00381-022-05577-6">Finnie 2022</a>)</span>
 
 
 * [**Finnie 2022.** Animal models of pediatric abusive head trauma](https://link.springer.com/article/10.1007/s00381-022-05577-6)
@@ -864,7 +885,7 @@ Biomechanics is another research avenue, where physical or virtual models of a b
 
 Results have been inconclusive so far, and it remains unclear whether shaking alone can generate sufficient forces to cause traumatic rupture of bridging veins, subdural hemorrhage, and retinal hemorrhage. On the other hand, forces generated during impacts have been found to be consistently larger than with shaking alone.
 
-> Although only Cory and Jones reported rotational head accelerations in excess of predicted injury thresholds for concussion, no study has to date demonstrated that shaking alone, without an associated impact, exceeds the injury thresholds associated with SDH. <span class="ref">(<a href="https://journals.sagepub.com/doi/full/10.1177/0025802414564495">Jones 2015</a>, p. 292)</span>
+> "Although only Cory and Jones reported rotational head accelerations in excess of predicted injury thresholds for concussion, no study has to date demonstrated that shaking alone, without an associated impact, exceeds the injury thresholds associated with SDH." <span class="ref">(<a href="https://journals.sagepub.com/doi/full/10.1177/0025802414564495">Jones 2015</a>, p. 292)</span>
 
 
 #### SBS/AHT adherents
@@ -1016,11 +1037,11 @@ Many authors from both sides agree that, since experiments cannot be conducted o
 
 For a SBS/AHT adherent:
 
-> To those who argue that the contribution of shaking to the pathophysiology of AHT is a hypothesis lacking a sufficient evidentiary base, the consistent and repeated observation that confessed shaking results in stereotypical injuries that are so frequently encountered in AHT—and which are so extraordinarily rare following accidental/impact injuries—_is_ the evidentiary basis for shaking. <span class="ref">(<a href="https://www.sciencedirect.com/science/article/pii/B9781416063933000415?via%3Dihub">Dias 2011</a>, p. 310)</span>
+> "To those who argue that the contribution of shaking to the pathophysiology of AHT is a hypothesis lacking a sufficient evidentiary base, the consistent and repeated observation that confessed shaking results in stereotypical injuries that are so frequently encountered in AHT—and which are so extraordinarily rare following accidental/impact injuries—_is_ the evidentiary basis for shaking." <span class="ref">(<a href="https://www.sciencedirect.com/science/article/pii/B9781416063933000415?via%3Dihub">Dias 2011</a>, p. 310)</span>
 
 For agnostics:
 
-> Moreover, (...) it is unsettling that physicians would rely so heavily on purported perpetrator confessions as somehow validating questionable SBS/AHT beliefs. Approximately twenty-five percent of the DNA exonerations in this country were in cases where the innocent defendant had allegedly confessed (...). Many purported SBS "confessions" are obtained pursuant to plea agreements; or as a requirement to retain or regain parental rights in dependency proceedings; or the confession was merely to shaking the child in an effort to resuscitate after the child had already collapsed; or the confession was induced by law enforcement through suggestion that confessing to shaking would allow the child to receive important medical treatment or was the “only” possible explanation for the child's condition. <span class="ref">(<a href="https://heinonline.org/HOL/Page?collection=journals&handle=hein.journals/saclr59&id=299&men_tab=srchresults">Papetti 2019</a>, pp. 342-343)</span>
+> "Moreover, (...) it is unsettling that physicians would rely so heavily on purported perpetrator confessions as somehow validating questionable SBS/AHT beliefs. Approximately twenty-five percent of the DNA exonerations in this country were in cases where the innocent defendant had allegedly confessed (...). Many purported SBS "confessions" are obtained pursuant to plea agreements; or as a requirement to retain or regain parental rights in dependency proceedings; or the confession was merely to shaking the child in an effort to resuscitate after the child had already collapsed; or the confession was induced by law enforcement through suggestion that confessing to shaking would allow the child to receive important medical treatment or was the “only” possible explanation for the child's condition." <span class="ref">(<a href="https://heinonline.org/HOL/Page?collection=journals&handle=hein.journals/saclr59&id=299&men_tab=srchresults">Papetti 2019</a>, pp. 342-343)</span>
 
 
 #### SBS/AHT adherents
