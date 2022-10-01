@@ -1,11 +1,14 @@
-
 /*
 When setting the primary font stack, apply it to the Pure grid units along
 with `html`, `button`, `input`, `select`, and `textarea`. Pure Grids use
 specific font stacks to ensure the greatest OS/browser compatibility.
 */
-html, button, input, select, textarea,
-.pure-g [class *= "pure-u"] {
+html,
+button,
+input,
+select,
+textarea,
+.pure-g [class *="pure-u"] {
     /* Set your content font stack here: */
     font-family: "Source Sans Pro", sans-serif;
     font-size: 18px;
@@ -13,11 +16,17 @@ html, button, input, select, textarea,
     color: #000;
 }
 
-strong {
-    font-weight: 600;
+p,
+li {
+    line-height: 1.6;
 }
 
-#layout, #header {
+strong {
+    font-weight: 500;
+}
+
+#layout,
+#header {
     margin: 0 auto;
     padding: 0 2em;
     max-width: 1000px;
@@ -46,32 +55,38 @@ iframe {
     margin-bottom: 3em;
     padding: 0 2em;
 }
+
 #header ul {
     margin: 0;
     padding: 0;
     list-style: none;
     height: 100%;
 }
+
 #header li {
     margin: 0;
     padding: 0;
     text-align: left;
 }
-#header a  {
+
+#header a {
     font-size: 1.25em;
     padding: .5em .5em .5em 0em;
     margin: 0 1.5em 0 0;
     border: 0;
 }
+
 #header li a:hover {
     color: #000;
     background-color: inherit;
     border: 0;
 }
+
 #menu a {
     text-transform: lowercase;
 }
-#social a  {
+
+#social a {
     margin-right: 0em;
     font-size: 1.59em;
     margin: 0 .5em 0 0;
@@ -97,6 +112,7 @@ iframe {
     vertical-align: center;
     overflow: hidden
 }
+
 #sidebar .portrait img {
     margin: -5% 0;
     width: 100%;
@@ -132,10 +148,12 @@ iframe {
     /*margin-top: .5em;*/
 }
 
-#sidebar .contact, #sidebar .location {
+#sidebar .contact,
+#sidebar .location {
     font-size: .9em;
     color: #777;
 }
+
 .e-mail:before {
     content: attr(data-website) "\0040" attr(data-user);
     unicode-bidi: bidi-override;
@@ -148,30 +166,47 @@ iframe {
     margin: 1em 0 1em 0;
 }
 
+#sidebar .posts ul {
+    margin-left: 0;
+    padding-left: 0;
+    font-size: .9em;
+}
+
+#sidebar .posts ul li:before {
+    content: "▸ ";
+    padding-right: 3px;
+}
+
 
 #sidebar .books {
     margin: 1em 0 1em 0;
     display: block;
     clear: both;
 }
+
 #sidebar .books h3 {
     margin: .5em 0 .5em 0;
 }
+
 #sidebar .books div.sub-header {
     font-size: .9em;
     margin: 0 0 1em 0;
 }
-#sidebar .books div.book-1, #sidebar .books div.book-2 {
+
+#sidebar .books div.book-1,
+#sidebar .books div.book-2 {
     margin: 0;
     padding: 0;
     float: left;
     width: 50%;
 }
-#sidebar .books div.book-1 {
-}
+
+#sidebar .books div.book-1 {}
+
 #sidebar .books div.book-2 {
     text-align: right;
 }
+
 #sidebar .books img {
     width: 95%;
 }
@@ -180,7 +215,9 @@ iframe {
     margin: 12em 0 1em 0;
     padding: 0;
 }
-#sidebar .gsc-control-cse, #sidebar .gsc-search-box {
+
+#sidebar .gsc-control-cse,
+#sidebar .gsc-search-box {
     padding: 0;
     border: 0;
 }
@@ -206,6 +243,7 @@ iframe {
     text-align: right;
     text-transform: lowercase;
 }
+
 #content header .post-tags {
     margin: 0;
     padding: 0;
@@ -214,24 +252,26 @@ iframe {
     text-align: right;
     text-transform: lowercase;
 }
+
 #content header .post-tags ul {
     margin: 0 0 1em 0;
     padding: 0;
     list-style: none;
 }
+
 #content header .post-tags li {
     margin: 0 0 0 .5em;
     padding: 0;
     display: inline;
 }
+
 #content .l-box {
     margin: 0;
     padding: 0 4em 0 0;
     position: relative;
 }
 
-#post {
-}
+#post {}
 
 code {
     /*font-size: .9em;*/
@@ -239,15 +279,17 @@ code {
     padding: 0 .1em;
 }
 
-.book-cover {
-}
+.book-cover {}
+
 .book-cover img {
     width: 90%;
     max-width: 200px;
 }
+
 .book-descr h3 {
     margin: 0 0 1em 0;
 }
+
 .book-descr .sub-header-3 ul {
     margin: 0;
 }
@@ -267,12 +309,117 @@ code {
     margin: 1em 0;
 }
 
-#post img, .post img {
+#post ul {
+    margin-top: 5px;
+}
+
+#post ul li {
+    margin: 0 auto 8px 0;
+}
+
+#post ul li p {
+    margin: 0;
+}
+
+#post img,
+.post img {
     max-width: 100%;
+}
+
+#post p.box {
+    border: 1px solid #999;
+    padding: 10px;
+}
+
+#post>p {
+    margin-bottom: 1.2em;
+}
+
+#post figure {
+    margin-bottom: 30px;
+}
+
+#post figure img {
+    margin: 5px auto;
+    display: block;
+    align-content: center;
+    width: 80%;
+}
+
+#post figcaption {
+    margin: 10px 20px 10px 20px;
+    /* width: 80%; */
+    padding: 0 10%;
+    display: block;
+    font-size: .8em;
+    color: #999;
+    font-style: italic;
 }
 
 
 
+#post .side-by-side {
+    display: flex;
+    flex-direction: row;
+}
+
+@media screen and (max-width: 580px) {
+    #post .side-by-side {
+        flex-direction: column;
+    }
+}
+
+#post .side-by-side .left {
+    padding: 0 10px;
+}
+
+#post .side-by-side .right {
+    padding: 0 10px;
+}
+
+#post span.ref {
+    display: block;
+    text-align: right;
+    margin-top: 5px;
+}
+
+#post .side-by-side p {
+    font-size: .9em;
+    /* font-style: italic; */
+    padding-left: 8px;
+    margin-bottom: 30px;
+    color: #555;
+    border-left: 0.25em solid #eee;
+}
+
+#post .side-by-side h4 {
+    border-bottom: 1px solid #ccc;
+}
+
+
+
+#post h2 a:hover::after,
+#post h3 a:hover::after {
+    display: inline-block;
+    background: url(https://upload.wikimedia.org/wikipedia/commons/d/de/Simpleicons_Interface_link-symbol.svg);
+    content: "";
+    background-size: 20px 20px;
+    margin-left: 10px;
+    width: 20px;
+    height: 20px;
+    opacity: 0.666;
+}
+
+#post h3 a:hover::after {
+    background-size: 15px 15px;
+    width: 15px;
+    height: 15px;
+}
+
+#post h2 a,
+#post h3 a {
+    color: #555;
+}
 
 
 /***** IPYNB INPUT OUTPUT ******/
@@ -298,7 +445,8 @@ code {
     margin: 1em 0;
 }
 
-.ipynb-html td, .ipynb-html th {
+.ipynb-html td,
+.ipynb-html th {
     padding: .25em;
 }
 
@@ -316,7 +464,8 @@ code {
 }
 #posts .post .post-header h3 a {
 }*/
-#posts hr, #tag-posts hr {
+#posts hr,
+#tag-posts hr {
     display: block;
     height: 1px;
     border: 0;
@@ -325,24 +474,31 @@ code {
     margin: 2.5em 10% 2em 10%;
     padding: 0;
 }
+
 .read-more {
     text-align: right;
 }
+
 blockquote {
-    color: #777;
+    color: #555;
     border-left: .5em solid #eee;
     padding: 0 0 0 .75em;
 }
 
 
 /****** HEADERS ******/
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     font-weight: 300;
 }
 
 h1 {
     font-size: 2.25em;
-    margin: 0 0 .1em -.025em;
+    margin: 1em 0 .1em -.025em;
     padding: 0 0 .25em 0;
     border-bottom: 1px solid #aaa;
 }
@@ -353,8 +509,9 @@ h2 {
     font-size: 1.75em;
     margin: 1.75em 0 .5em 0;
     padding: 0 0 .25em 0;
-    border-bottom: 1px solid #ddd;
+    border-bottom: 1px solid #ccc;
 }
+
 #content .sub-header-2 {
     text-align: right;
     margin: -1.25em 0 0 0;
@@ -365,15 +522,24 @@ h2 {
 
 h3 {
     margin: 1.25em 0 .75em 0;
-    font-size: 1.35em;
-    color: #777;
+    font-size: 1.45em;
+    color: #555;
+    padding: 0 0 .20em 0;
+    border-bottom: 1px solid #eee;
 }
+
 #content .sub-header-3 {
     margin: -1em 0 0 0;
     font-size: .9em;
     color: #999;
 }
 
+
+h4 {
+    margin: 1.5em 0 1em 0;
+    font-size: 1.25em;
+    color: #777;
+}
 
 /****** PAGINATION ******/
 .pagination-wrapper {
@@ -385,10 +551,13 @@ h3 {
     /*font-weight: 500;*/
     /*letter-spacing: 0.1em;*/
 }
-.pagination-left, .pagination-right {
+
+.pagination-left,
+.pagination-right {
     position: absolute;
     top: 0;
 }
+
 .pagination {
     font-size: .9em;
     text-align: center;
@@ -396,10 +565,12 @@ h3 {
     margin: 2em 2em -2em 2em;
     /*max-width: 100%;*/
 }
+
 .pagination-left {
     left: 0;
     text-align: left;
 }
+
 .pagination-right {
     right: 0;
     text-align: right;
@@ -424,7 +595,7 @@ h3 {
     padding: .25em 4em 1em 0;
 }
 
-#footer .l-box > div {
+#footer .l-box>div {
     padding: .5em 0;
     margin: 0;
     border-top: 1px solid #ddd;

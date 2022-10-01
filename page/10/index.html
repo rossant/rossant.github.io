@@ -13,7 +13,7 @@
     <link rel="alternate" href="https://cyrille.rossant.net/feeds/atom.xml" type="application/atom+xml"
         title="Cyrille Rossant Atom Feed" />
 
-    <title>Cyrille Rossant - NumPy performance tricks</title>
+    <title>Cyrille Rossant</title>
 
     <link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/pure/0.3.0/pure-min.css">
@@ -32,12 +32,6 @@
 
 
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/fitvids/1.0.1/jquery.fitvids.min.js"></script>
-    <script>
-        $(document).ready(function(){
-            $(".content").fitVids();
-        });
-    </script>
 </head>
 
 <body>
@@ -74,77 +68,51 @@
     <div id="layout" class="pure-g">
         <section id="content" class="pure-u-1 pure-u-md-3-4">
             <div class="l-box">
+    <section id="posts">
 
-    <header id="post-header">
-        <h1>NumPy performance tricks</h1>
-            <div class="post-meta">
-                January 27, 2013
-            </div>
-            <div class="post-tags">
-                <ul>
-                    <li>tags:</li>
-                    <li><a href="/tag/python/">python</a></li>
-                </ul>
-            </div>
-    </header>
+        <header id="posts-header">
+            <h1>Cyrille Rossant</h1>
+        </header>
 
-    <section id="post">
-        <p>I've been using NumPy for nearly five years, but I'm still learning
-performance tricks. The reason is that I currently need to deal with
-very large arrays (hundreds of millions of elements) and the performance
-of my code started to be disappointing. Then, through extensive
-line-by-line profiling, I discovered some subtleties that explain why
-some seemingly harmless lines of code can actually lead to major
-bottlenecks. Very often, a small trick allows to significantly improve
-the performance. Here is what I've learnt. These tips are intended to
-regular Numpy users rather than pure beginners.</p>
-
-
-<p><a href="https://ipython-books.github.io/featured-01.html"><strong>A new version of this post can be found here.</strong></a></p>
+    <section class="post">
+        <header class="post-header">
+            <h3><a href="https://cyrille.rossant.net/python-ide-windows/">Build a Python IDE for Windows with Notepad++ and IPython</a></h3>
+            <p class="sub-header-3">2012-07-02</p>
+            <p class="post-summary"><p>I've been looking for a good and free Python IDE for Windows for a long time. I first used
+<a href="http://www.eclipse.org/">Eclipse</a> and <a href="http://pydev.org/">Pydev</a>, but
+Eclipse is a bit of a <em>"usine à gaz"</em>. I tried
+<a href="http://code.google.com/p/spyderlib/">Spyder</a> but it crashed too often
+and it was not flexible enough. I ended up using
+<a href="http://notepad-plus-plus.org/">Notepad++</a>, a really fast and powerful
+text editor, with the great command-line interpreter
+<a href="http://ipython.org/">IPython</a>. Notepad++ is extremely light to use,
+opens within a second, and contains most important features a Python
+developer wants (syntax highlighting, automatic indentation, code
+folding...). However, it does not include a native way for running
+Python scripts. On the other hand, IPython is a widely used and
+extremely powerful Python interpreter that is well adapted for
+scientific computing. It allows to run scripts in a command-line
+interface, and offers the possibility to continue an interactive session
+afterwards. It also includes a debugger and many more features.</p>
+</p>
+        </header>
+        <div class="read-more">
+            <a class="pure-button" href="https://cyrille.rossant.net/python-ide-windows/">
+                read on
+            </a>
+        </div>
     </section>
-
 
 <nav class="pagination-wrapper">
     <div class="pagination">
         <div class="pagination-left">
-                <a href="https://cyrille.rossant.net/playing-with-ruzzle-in-python/">
-                    &larr; previous
-                </a>
+                <a href="https://cyrille.rossant.net/page/9/"><span>&larr; previous</span></a>
         </div>
+        <span>Page 10 / 10 &nbsp; (<a href="https://cyrille.rossant.net/archives/">all</a>)</span>
         <div class="pagination-right">
-                <a href="https://cyrille.rossant.net/twelve-tips-about-starting-a-new-open-source-project/">
-                    next&nbsp;&rarr;
-                </a>
         </div>
     </div>
-</nav>
-    <aside class="comments">
-
-<div id="disqus_thread"></div>
-<script>
-    /**
-     *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
-     *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
-     */
-
-    var disqus_config = function () {
-        this.page.url = "https://cyrille.rossant.net/numpy-performance-tricks/";  // Replace PAGE_URL with your page's canonical URL variable
-        this.page.identifier = "numpy-performance-tricks"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
-    };
-
-    (function() {  // DON'T EDIT BELOW THIS LINE
-        var d = document, s = d.createElement('script');
-
-        s.src = '//rossant.disqus.com/embed.js';
-
-        s.setAttribute('data-timestamp', +new Date());
-        (d.head || d.body).appendChild(s);
-    })();
-</script>
-<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
-
-    </aside>
-
+</nav>    </section>
             </div>
         </section>
 
