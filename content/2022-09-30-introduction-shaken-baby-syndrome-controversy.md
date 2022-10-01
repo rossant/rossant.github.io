@@ -118,7 +118,9 @@ We see here that the issue of SBS is really situated at the intersection of **me
 
 The degree of certainty with which medical experts determine the occurrence of abuse in these cases is important to the courts since, in common law jurisdictions, the legal standard of proof is "beyond a reasonable doubt". It is this certainty that can lead to criminal convictions, even when there is no other supporting evidence of child abuse beyond the medical determination of SBS.
 
-🇫🇷&nbsp;&nbsp;In legal systems based on civil law, such as France, the judges' and jurors' "intimate conviction" is the standard of proof ([Esnard 2013](https://www.sciencedirect.com/science/article/pii/S1162908812001004)). Here, too, the certainty with which highly-recognized and experienced judicial experts make a medical determination of child abuse has a direct impact on the "intimate conviction" of triers of facts.
+🇫🇷&nbsp;&nbsp;In legal systems based on civil law, such as France, the judges' and jurors' "intimate conviction" is the standard of proof ([Esnard 2013](https://www.sciencedirect.com/science/article/pii/S1162908812001004)). Here, too, the certainty with which highly-recognized and experienced judicial experts make a medical determination of child abuse has a direct impact on the "intimate conviction" of triers of facts. Presentations of slow-motion videos, or direct demonstrations, of an adult violently shaking a doll may also have a psychological impact on judges and jurors.
+
+At the time of writing, the [National Registry of Exonerations](https://www.law.umich.edu/special/exoneration/Pages/detaillist.aspx?View=%7BFAF6EDDB-5A68-4F8F-8A52-2C61F5BF9EA7%7D&FilterField1=Group&FilterValue1=SBS) has identified 27 of exonerations of past convictions in SBS/AHT cases in the United States.
 
 
 ## A contested definition
@@ -150,7 +152,7 @@ Historically, the term "triad" has been strongly associated with this definition
 
 The **"triad"** refers to three medical findings: subdural hemorrhage, retinal hemorrhage, and brain swelling. In the past, authors from both sides used this term to refer to the idea that the discovery of one or several of these medical findings alone, when unexplained by the story or by the discovery of the few rare medical causes, even without any traumatic injury to the skin, the bones, or the neck, suffices to "diagnose" child abuse with near-certainty.
 
-We will abstain from using the term "triad", in order to avoid further confusion, especially since it is sometimes used even when only one or two of its components are identified. Note, however, that the term occurs frequently in the literature from both sides.
+We will abstain from using the term "triad", even if this term occurs frequently in the literature from both sides. It may lead to confusion as it is sometimes used when only one or two of its components are identified. Furthermore, these findings are likely to be pathophysiologically related, so their occurrence should not be considered as statistically-independent events.
 
 Importantly, the very existence of the "triad", indicating a near-automatic determination of child abuse based on a few medical findings, is now denied by many adherents. **Thus it is not just the scientific reliability of our tentative definition of SBS that is contested, but even whether this definition is used at all.**
 
