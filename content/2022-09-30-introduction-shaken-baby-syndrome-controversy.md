@@ -289,33 +289,19 @@ In this section we mostly give references to press investigations covering speci
 
 * [**Macdonald 2019.** Prometheus shaken baby debate](https://www.researchgate.net/publication/331963471_Prometheus_shaken_baby_debate)
 
-The Justice Gap 2018
-Waney Squier: 'Science is not a democracy'
-https://www.thejusticegap.com/waney-squier-what-we-have-is-a-hypothesis-that-isnt-fit-for-use-as-a-diagnosis-or-in-our-courts/
+* [**The Justice Gap 2018**. Waney Squier: 'Science is not a democracy'](https://www.thejusticegap.com/waney-squier-what-we-have-is-a-hypothesis-that-isnt-fit-for-use-as-a-diagnosis-or-in-our-courts/)
 
-The Times 2016
-Why I denied shaken baby syndrome
-https://www.thetimes.co.uk/article/why-i-denied-shaken-baby-syndrome-x8nql2dzn
+* [**The Times 2016**. Why I denied shaken baby syndrome](https://www.thetimes.co.uk/article/why-i-denied-shaken-baby-syndrome-x8nql2dzn)
 
-The Guardian 2016
-Doctor wins appeal over shaken baby syndrome trials evidence
-https://www.theguardian.com/society/2016/nov/04/doctor-waney-squier-wins-appeal-shaken-baby-syndrome-trials-evidence
+* [**The Guardian 2016**. Doctor wins appeal over shaken baby syndrome trials evidence](https://www.theguardian.com/society/2016/nov/04/doctor-waney-squier-wins-appeal-shaken-baby-syndrome-trials-evidence)
 
-The Guardian 2016, Clive Stafford Smith
-The science of shaken baby syndrome
-https://www.theguardian.com/society/2016/mar/25/science-shaken-baby-syndrome
+* [**The Guardian 2016, Clive Stafford Smith**. The science of shaken baby syndrome](https://www.theguardian.com/society/2016/mar/25/science-shaken-baby-syndrome)
 
-The Guardian 2016
-Why the shaken baby syndrome tribunal led to Dr Waney Squier being struck off
-https://www.theguardian.com/society/2016/mar/22/why-the-shaken-baby-syndrome-tribunal-led-to-dr-waney-squier-being-struck-off
+* [**The Guardian 2016**. Why the shaken baby syndrome tribunal led to Dr Waney Squier being struck off](https://www.theguardian.com/society/2016/mar/22/why-the-shaken-baby-syndrome-tribunal-led-to-dr-waney-squier-being-struck-off)
 
-BBC 2016
-Should Waney Squier have been struck off over shaken baby syndrome?
-https://www.bbc.com/news/health-37672451
+* [**BBC 2016**. Should Waney Squier have been struck off over shaken baby syndrome?](https://www.bbc.com/news/health-37672451)
 
-The Guardian 2008
-Beyond reasonable doubt
-https://www.theguardian.com/commentisfree/2008/mar/13/beyondreasonabledoubt
+* [**The Guardian 2008**. Beyond reasonable doubt](https://www.theguardian.com/commentisfree/2008/mar/13/beyondreasonabledoubt)
 
 
 
@@ -401,13 +387,25 @@ In this section, we give some of the main references to medical, scientific, and
 
 These historical publications are considered as the seminal works leading to the recognition of shaken baby syndrome. The two main figures are **John Caffey** (1895-1978), American pediatric radiologist, and **Norman Guthkelch** (1915-2016), British pediatric neurosurgeon. Note that, in the last few years of his life, the latter has criticized the way medical determinations of SBS were made.
 
+* [**Lazoritz 1997**. The whiplash shaken infant syndrome: Has Caffey's syndrome changed or have we changed his syndrome?](https://www.sciencedirect.com/science/article/pii/S0145213497000616)
+
+* [**Ludwig 1984**. Shaken baby syndrome: A review of 20 cases](https://www.sciencedirect.com/science/article/abs/pii/S0196064484805715)
+
+* [**Heins 1984**. The 'Battered Child' Revisited](https://jamanetwork.com/journals/jama/article-abstract/393363)
+
 * [**Caffey 1974.** The Whiplash Shaken Infant Syndrome](https://publications.aap.org/pediatrics/article-abstract/54/4/396/45903/The-Whiplash-Shaken-Infant-Syndrome-Manual-Shaking)
 
 * [**Caffey 1972.** On the Theory and Practice of Shaking Infants Its Potential Residual Effects of Permanent Brain Damage and Mental Retardation](https://jamanetwork.com/journals/jamapediatrics/article-abstract/504650)
 
+* [**Silverman 1972**. Unrecognized Trauma in Infants, the Battered Child Syndrome, and the Syndrome of Ambroise Tardieu](https://pubs.rsna.org/doi/abs/10.1148/104.2.337)
+
 * [**Guthkelch 1971.** Infantile Subdural Haematoma and its Relationship to Whiplash Injuries](https://www.bmj.com/content/2/5759/430)
 
 * [**Ommaya 1968.** Whiplash Injury and Brain Damage: An Experimental Study](https://jamanetwork.com/journals/jama/article-abstract/338923)
+
+* [**Till 1968**. Subdural Haematoma and Effusion in Infancy](https://www.bmj.com/content/3/5615/400.abstract)
+
+* [**Caffey 1965**. Significance of the history in the diagnosis of traumatic injury to children](https://www.sciencedirect.com/science/article/abs/pii/S0022347665820984)
 
 * [**Kempe 1962.** The Battered-Child Syndrome](https://jamanetwork.com/journals/jama/article-abstract/327895)
 
@@ -523,6 +521,8 @@ Similar discussions also exist regarding bridging veins, subdural, and retinal h
 
 #### Agnostics
 
+* [**Squier 2016**. Infants dying suddenly and unexpectedly share demographic features with infants who die with retinal and dural bleeding: a review of neural mechanisms](https://onlinelibrary.wiley.com/doi/full/10.1111/dmcn.13202)
+
 * [**Scheimberg 2013.** Nontraumatic Intradural and Subdural Hemorrhage and Hypoxic Ischemic Encephalopathy in Fetuses, Infants, and Children up to Three Years of Age: Analysis of Two Audits of 636 Cases from Two Referral Centers in the United Kingdom](https://journals.sagepub.com/doi/full/10.2350/12-08-1232-OA.1)
 
 * [**Squier 2012.** The pathophysiology of brain swelling associated with subdural hemorrhage: the role of the trigeminovascular system](https://link.springer.com/article/10.1007/s00381-012-1870-1)
@@ -576,6 +576,8 @@ Some authors remind that radiology alone may not yield a reliable medical determ
 * [**Girard 2015.** Neuroimaging differential diagnoses to abusive head trauma](https://link.springer.com/article/10.1007/s00247-015-3509-3)
 
 * [**Hahnemann 2014.** Imaging of bridging vein thrombosis in infants with abusive head trauma: the “Tadpole Sign”.](https://link.springer.com/article/10.1007/s00330-014-3443-z)
+
+* [**Stoodley 2014**. Controversies in non-accidental head injury in infants](https://www.birpublications.org/doi/full/10.1259/bjr/23921951)
 
 * [**Choudhary 2014.** Imaging of spinal injury in abusive head trauma: a retrospective study](https://link.springer.com/article/10.1007/s00247-014-2959-3)
 
@@ -781,13 +783,31 @@ Benign external hydrocephalus (BEH), also known as enlarged extraaxial spaces, e
 
 * [**Anderst 2021.** Subdural hemorrhage in a cohort with cerebral sinovenous thrombosis: Application to abusive head trauma](https://www.sciencedirect.com/science/article/pii/S0145213421001927)
 
+* [**Mankad 2019**. The neuroimaging mimics of abusive head trauma](https://www.sciencedirect.com/science/article/pii/S1090379818303052)
+
+* [**Akinseye 2019**. Imaging findings of Menkes disease, a radiographic mimic of abusive trauma](https://www.sciencedirect.com/science/article/pii/S1930043319301967)
+
+* [**Pomeranz 2018**. Child Abuse and Conditions That Mimic It](https://www.pediatric.theclinics.com/article/S0031-3955(18)30106-8/fulltext)
+
 * [**Anderst 2018.** Relevance of Abusive Head Trauma to Intracranial Hemorrhages and Bleeding Disorders](https://publications.aap.org/pediatrics/article/141/5/e20173485/37863/Relevance-of-Abusive-Head-Trauma-to-Intracranial)
 
+* [**Christian 2017**. Medical Mimics of Child Abuse](https://www.ajronline.org/doi/full/10.2214/AJR.16.17450)
+
+* [**Isaac 2017**. A Unique Type of Birth Trauma Mistaken for Abus](https://onlinelibrary.wiley.com/doi/full/10.1111/1556-4029.13557)
+
+* [**Shur 2015**. Genetic differentials of child abuse: Is your case rare or real?](https://onlinelibrary.wiley.com/doi/full/10.1002/ajmg.c.31464)
+
+* [**Patel 2015**. Common skin and bleeding disorders that can potentially masquerade as child abuse](https://onlinelibrary.wiley.com/doi/full/10.1002/ajmg.c.31462)
+
 * [**Jenny 2014.** Alternate theories of causation in abusive head trauma: What the science tells us](https://link.springer.com/article/10.1007/s00247-014-3106-x)
+
+* [**Jackson 2012**. Challenges in the evaluation for possible abuse: Presentations of congenital bleeding disorders in childhood](https://www.sciencedirect.com/science/article/pii/S0145213412000142)
 
 * [**McLean 2012.** Does Intracranial Venous Thrombosis Cause Subdural Hemorrhage in the Pediatric Population?](http://www.ajnr.org/content/33/7/1281.short)
 
 * [**Stray-Pedersen 2010.** An infant with subdural hematoma and retinal hemorrhages: does von Willebrand disease explain the findings?](https://link.springer.com/article/10.1007/s12024-010-9176-7)
+
+* [**Nassogne 2002**. Massive subdural haematomas in Menkes disease mimicking shaken baby syndrome](https://link.springer.com/article/10.1007/s00381-002-0630-z)
 
 * [**Hymel 1997.** Coagulopathy in Pediatric Abusive Head Trauma](https://publications.aap.org/pediatrics/article-abstract/99/3/371/67453/Coagulopathy-in-Pediatric-Abusive-Head-Trauma)
 
@@ -1000,7 +1020,7 @@ For a SBS/AHT adherent:
 
 For agnostics:
 
-> Moreover, (...) it is unsettling that physicians would rely so heavily on purported perpetrator confessions as somehow validating questionable SBS/AHT beliefs. Approximately twenty-five percent of the DNA exonerations in this country were in cases where the innocent defendant had allegedly confessed (...). Many purported SBS "confessions" are obtained pursuant to plea agreements; or as a requirement to retain or regain parental rights in dependency proceedings; or the confession was merely to shaking the child in an effort to resuscitate after the child had already collapsed; or the confession was induced by law enforcement through suggestion that confessing to shaking would allow the child to receive important medical treatment or was the “only” possible explanation for the child’s condition. <span class="ref">(<a href="https://heinonline.org/HOL/Page?collection=journals&handle=hein.journals/saclr59&id=299&men_tab=srchresults">Papetti 2019</a>, pp. 342-343)</span>
+> Moreover, (...) it is unsettling that physicians would rely so heavily on purported perpetrator confessions as somehow validating questionable SBS/AHT beliefs. Approximately twenty-five percent of the DNA exonerations in this country were in cases where the innocent defendant had allegedly confessed (...). Many purported SBS "confessions" are obtained pursuant to plea agreements; or as a requirement to retain or regain parental rights in dependency proceedings; or the confession was merely to shaking the child in an effort to resuscitate after the child had already collapsed; or the confession was induced by law enforcement through suggestion that confessing to shaking would allow the child to receive important medical treatment or was the “only” possible explanation for the child's condition. <span class="ref">(<a href="https://heinonline.org/HOL/Page?collection=journals&handle=hein.journals/saclr59&id=299&men_tab=srchresults">Papetti 2019</a>, pp. 342-343)</span>
 
 
 #### SBS/AHT adherents
@@ -1074,7 +1094,7 @@ For agnostics:
 
 * [**Kassin 2005.** On the Psychology of Confessions: Does Innocence Put Innocents at Risk?](https://psycnet.apa.org/buy/2005-03019-002)
 
-* [**Kassin 2005.** “I’d Know a False Confession if I Saw One”: A Comparative Study of College Students and Police Investigators](https://link.springer.com/article/10.1007/s10979-005-2416-9)
+* [**Kassin 2005.** “I'd Know a False Confession if I Saw One”: A Comparative Study of College Students and Police Investigators](https://link.springer.com/article/10.1007/s10979-005-2416-9)
 
 * [**Henkel 2004.** Memory distortions in coerced false confessions: a source monitoring framework analysis](https://onlinelibrary.wiley.com/doi/abs/10.1002/acp.1026)
 
@@ -1155,97 +1175,56 @@ Epidemiological studies investigate the demographics of children diagnosed with 
 
 #### SBS/AHT adherents
 
-Narang 2021
-Overturned abusive head trauma and shaken baby syndrome convictions in the United States: Prevalence, legal basis, and medical evidence
-https://www.sciencedirect.com/science/article/pii/S014521342100449X
+* [**Narang 2021**. Overturned abusive head trauma and shaken baby syndrome convictions in the United States: Prevalence, legal basis, and medical evidence](https://www.sciencedirect.com/science/article/pii/S014521342100449X)
 
-Bass 2020
-Medicolegal issues in abusive head trauma for the pediatric neurosurgeon
-https://thejns.org/focus/view/journals/neurosurg-focus/49/5/article-pE23.xml
+* [**Bass 2020**. Medicolegal issues in abusive head trauma for the pediatric neurosurgeon](https://thejns.org/focus/view/journals/neurosurg-focus/49/5/article-pE23.xml)
 
-Cowley 2018
-Factors influencing child protection professionals’ decision-making and multidisciplinary collaboration in suspected abusive head trauma cases: A qualitative study
-https://www.sciencedirect.com/science/article/pii/S0145213418302497
+* [**Cowley 2018**. Factors influencing child protection professionals' decision-making and multidisciplinary collaboration in suspected abusive head trauma cases: A qualitative study](https://www.sciencedirect.com/science/article/pii/S0145213418302497)
 
-Narang 2016
-Acceptance of Shaken Baby Syndrome and Abusive Head Trauma as Medical Diagnoses
-https://www.sciencedirect.com/science/article/pii/S0022347616304024
+* [**Narang 2016**. Acceptance of Shaken Baby Syndrome and Abusive Head Trauma as Medical Diagnoses](https://www.sciencedirect.com/science/article/pii/S0022347616304024)
 
-Albert 2012
-Ensuring Appropriate Expert Testimony for Cases Involving the “Shaken Baby”
-https://jamanetwork.com/journals/jama/article-abstract/1212315
+* [**Albert 2012**. Ensuring Appropriate Expert Testimony for Cases Involving the “Shaken Baby”](https://jamanetwork.com/journals/jama/article-abstract/1212315)
 
-Holmgren 2013
-Ethical Issues in Forensic Testimony Involving Abusive Head Trauma
-https://journals.sagepub.com/doi/full/10.23907/2013.042
+* [**Holmgren 2013**. Ethical Issues in Forensic Testimony Involving Abusive Head Trauma](https://journals.sagepub.com/doi/full/10.23907/2013.042)
 
-Garrett 2012
-Overcoming Defense ExpertTestimony in Abusive Head Trauma Cases
-https://www.apainc.org/wp-content/uploads/2019/10/abusive-headtrauma_ndaa-1.pdf
+* [**Garrett 2012**. Overcoming Defense ExpertTestimony in Abusive Head Trauma Cases](https://www.apainc.org/wp-content/uploads/2019/10/abusive-headtrauma_ndaa-1.pdf)
 
 
 
 #### Agnostics
 
-Kukucka 2022
-Human Factors in Forensic Science: Psychological Causes of Bias and Error
-https://psyarxiv.com/8pqyt/
+* [**Kukucka 2022**. Human Factors in Forensic Science: Psychological Causes of Bias and Error](https://psyarxiv.com/8pqyt/)
 
-Brown 2021
-Ethical challenges in child abuse: what is the harm of a misdiagnosis?
-https://link.springer.com/article/10.1007/s00247-020-04845-4
+* [**Brown 2021**. Ethical challenges in child abuse: what is the harm of a misdiagnosis?](https://link.springer.com/article/10.1007/s00247-020-04845-4)
 
-Dror 2021
-Cognitive bias in forensic pathology decisions
-https://onlinelibrary.wiley.com/doi/full/10.1111/1556-4029.14697
+* [**Dror 2021**. Cognitive bias in forensic pathology decisions](https://onlinelibrary.wiley.com/doi/full/10.1111/1556-4029.14697)
 
-Johnson 2020
-Shaken Baby Syndrome/Abusive Head Trauma: Wrongful Conviction Risks, Mis-information Effects, and Psychological Consultation
-https://www.tandfonline.com/doi/full/10.1080/24732850.2020.1726165
+* [**Högberg 2020**. Parents' experiences of seeking health care and encountering allegations of shaken baby syndrome: A qualitative study](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0228911)
 
-Lynøe 2020
-Denialism Preserves Scientific Controversies: a Case Study of Abusive Head Trauma Research
-https://www.jcbmr.com/index.php/jcbmr/article/view/37
+* [**Johnson 2020**. Shaken Baby Syndrome/Abusive Head Trauma: Wrongful Conviction Risks, Mis-information Effects, and Psychological Consultation](https://www.tandfonline.com/doi/full/10.1080/24732850.2020.1726165)
 
-Lynøe 2020
-Can Burnout Among Child Abuse Clinicians be Caused by Doubt that They are Doing the Right Thing?
-https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7932000/
+* [**Lynøe 2020**. Denialism Preserves Scientific Controversies: a Case Study of Abusive Head Trauma Research](https://www.jcbmr.com/index.php/jcbmr/article/view/37)
 
-Skellern 2020
-Thinking fast and slow in the evaluation of injury plausibility in child protection
-https://onlinelibrary.wiley.com/doi/full/10.1111/jpc.15084
+* [**Lynøe 2020**. Can Burnout Among Child Abuse Clinicians be Caused by Doubt that They are Doing the Right Thing?](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7932000/)
 
-Lynøe 2020
-The Unspoken Shaken Baby Lie Detector Algorithm—An Analysis of Diagnostic Procedures in Cases of Allegedly Abusive Head Trauma without External Signs of Trauma
-https://www.researchgate.net/profile/Anders-Eriksson-12/publication/344572138_The_Unspoken_Shaken_Baby_Lie_Detector_Algorithm-An_Analysis_of_Diagnostic_Procedures_in_Cases_of_Allegedly_Abusive_Head_Trauma_without_External_Signs_of_Trauma/links/5fbe7e8fa6fdcc6cc6689b23/The-Unspoken-Shaken-Baby-Lie-Detector-Algorithm-An-Analysis-of-Diagnostic-Procedures-in-Cases-of-Allegedly-Abusive-Head-Trauma-without-External-Signs-of-Trauma.pdf
+* [**Skellern 2020**. Thinking fast and slow in the evaluation of injury plausibility in child protection](https://onlinelibrary.wiley.com/doi/full/10.1111/jpc.15084)
 
-Lynøe 2020
-Do Child Abuse Pediatricians Search for a “Pediatric Vulcan Planet”? Comparison of Controversies about the Vulcan-Must-Exist-Theory and the Infant-Must-Have-Been-Shaken-Theory
-https://www.researchgate.net/profile/C-Brook/publication/346005323_Do_Child_Abuse_Pediatricians_Search_for_a_Pediatric_Vulcan_Planet_Comparison_of_Controversies_about_the_Vulcan-Must-Exist-Theory_and_the_Infant-Must-Have-Been-Shaken-Theory/links/5fbc3244299bf104cf6e752e/Do-Child-Abuse-Pediatricians-Search-for-a-Pediatric-Vulcan-Planet-Comparison-of-Controversies-about-the-Vulcan-Must-Exist-Theory-and-the-Infant-Must-Have-Been-Shaken-Theory.pdf
+* [**Lynøe 2020**. The Unspoken Shaken Baby Lie Detector Algorithm—An Analysis of Diagnostic Procedures in Cases of Allegedly Abusive Head Trauma without External Signs of Trauma](https://www.researchgate.net/profile/Anders-Eriksson-12/publication/344572138_The_Unspoken_Shaken_Baby_Lie_Detector_Algorithm-An_Analysis_of_Diagnostic_Procedures_in_Cases_of_Allegedly_Abusive_Head_Trauma_without_External_Signs_of_Trauma/links/5fbe7e8fa6fdcc6cc6689b23/The-Unspoken-Shaken-Baby-Lie-Detector-Algorithm-An-Analysis-of-Diagnostic-Procedures-in-Cases-of-Allegedly-Abusive-Head-Trauma-without-External-Signs-of-Trauma.pdf)
 
-Lynøe 2019
-Hidden clinical values and overestimation of shaken baby cases
-https://journals.sagepub.com/doi/full/10.1177/1477750919851048
+* [**Lynøe 2020**. Do Child Abuse Pediatricians Search for a “Pediatric Vulcan Planet”? Comparison of Controversies about the Vulcan-Must-Exist-Theory and the Infant-Must-Have-Been-Shaken-Theory](https://www.researchgate.net/profile/C-Brook/publication/346005323_Do_Child_Abuse_Pediatricians_Search_for_a_Pediatric_Vulcan_Planet_Comparison_of_Controversies_about_the_Vulcan-Must-Exist-Theory_and_the_Infant-Must-Have-Been-Shaken-Theory/links/5fbc3244299bf104cf6e752e/Do-Child-Abuse-Pediatricians-Search-for-a-Pediatric-Vulcan-Planet-Comparison-of-Controversies-about-the-Vulcan-Must-Exist-Theory-and-the-Infant-Must-Have-Been-Shaken-Theory.pdf)
 
-Lynøe 2018
-From Child Protection to Paradigm Protection—The Genesis, Development, and Defense of a Scientific Paradigm
-https://academic.oup.com/jmp/article/44/3/378/5090117
+* [**Lynøe 2019**. Hidden clinical values and overestimation of shaken baby cases](https://journals.sagepub.com/doi/full/10.1177/1477750919851048)
 
-Dror 2018
-When expert decision making goes wrong: Consensus, bias, the role of experts, and accuracy
-https://psycnet.apa.org/doiLanding?doi=10.1016%2Fj.jarmac.2018.01.007
+* [**Lynøe 2018**. From Child Protection to Paradigm Protection—The Genesis, Development, and Defense of a Scientific Paradigm](https://academic.oup.com/jmp/article/44/3/378/5090117)
 
-Kukucka 2017
-Cognitive Bias and Blindness: A Global Survey of Forensic Science Examiners
-https://www.sciencedirect.com/science/article/pii/S2211368117300323
+* [**Dror 2018**. When expert decision making goes wrong: Consensus, bias, the role of experts, and accuracy](https://psycnet.apa.org/doiLanding?doi=10.1016%2Fj.jarmac.2018.01.007)
 
-Cuellar 2017
-Causal reasoning and data analysis: problems with the abusive head trauma diagnosis
-https://academic.oup.com/lpr/article-abstract/16/4/223/4557531?login=false
+* [**Kukucka 2017**. Cognitive Bias and Blindness: A Global Survey of Forensic Science Examiners](https://www.sciencedirect.com/science/article/pii/S2211368117300323)
 
-Skellern 2015
-Minimising bias in the forensic evaluation of suspicious paediatric injury
-https://www.sciencedirect.com/science/article/pii/S1752928X15000864
+* [**Cuellar 2017**. Causal reasoning and data analysis: problems with the abusive head trauma diagnosis](https://academic.oup.com/lpr/article-abstract/16/4/223/4557531?login=false)
 
+* [**Skellern 2015**. Minimising bias in the forensic evaluation of suspicious paediatric injury](https://www.sciencedirect.com/science/article/pii/S1752928X15000864)
 
+* [**Meriwether 1986**. Child Abuse Reporting Laws: Time for a Change](https://heinonline.org/HOL/Page?handle=hein.journals/famlq20&id=155&collection=journals&index=)
 
+* [**Besharov 1986**. Unfounded allegations-a new child abuse problem](https://welfareacademy.umd.edu/pubs/childwelfare/unfoundedallegations_86.pdf)
