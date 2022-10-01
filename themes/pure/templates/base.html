@@ -1,26 +1,32 @@
 <!doctype html>
 <html lang="en">
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="{% block meta_description %}{{ SITENAME }}, {{ TAGLINE }}{% endblock meta_description %}">
+    <meta name="description"
+        content="{% block meta_description %}{{ SITENAME }}, {{ TAGLINE }}{% endblock meta_description %}">
     <link href="/favicon.png" rel="icon">
 
     {% if FEED_ALL_ATOM %}
-        <link rel="alternate"  href="{{ FEED_DOMAIN }}/{{ FEED_ALL_ATOM }}" type="application/atom+xml" title="{{ SITENAME }} Full Atom Feed"/>
+    <link rel="alternate" href="{{ FEED_DOMAIN }}/{{ FEED_ALL_ATOM }}" type="application/atom+xml"
+        title="{{ SITENAME }} Full Atom Feed" />
     {% endif %}
     {% if FEED_ALL_RSS %}
-        <link rel="alternate" href="{{ FEED_DOMAIN }}/{{ FEED_ALL_RSS }}" type="application/rss+xml" title="{{ SITENAME }} Full RSS Feed"/>
+    <link rel="alternate" href="{{ FEED_DOMAIN }}/{{ FEED_ALL_RSS }}" type="application/rss+xml"
+        title="{{ SITENAME }} Full RSS Feed" />
     {% endif %}
     {% if FEED_ATOM %}
-        <link rel="alternate" href="{{ FEED_DOMAIN }}/{{ FEED_ATOM }}" type="application/atom+xml" title="{{ SITENAME }} Atom Feed"/>
+    <link rel="alternate" href="{{ FEED_DOMAIN }}/{{ FEED_ATOM }}" type="application/atom+xml"
+        title="{{ SITENAME }} Atom Feed" />
     {% endif %}
     {% if FEED_RSS %}
-        <link rel="alternate" href="{{ FEED_DOMAIN }}/{{ FEED_RSS }}" type="application/rss+xml" title="{{ SITENAME }} RSS Feed"/>
+    <link rel="alternate" href="{{ FEED_DOMAIN }}/{{ FEED_RSS }}" type="application/rss+xml"
+        title="{{ SITENAME }} RSS Feed" />
     {% endif %}
 
     {% block head %}
-        <title>{% block title %}{{ SITENAME }}{% endblock title %}</title>
+    <title>{% block title %}{{ SITENAME }}{% endblock title %}</title>
     {% endblock head %}
 
     <link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
@@ -29,12 +35,13 @@
         <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.5.0/grids-responsive-old-ie-min.css">
     <![endif]-->
     <!--[if gt IE 8]><!-->
-        <link rel="stylesheet" href="/theme/css/grids-responsive-min.css">
+    <link rel="stylesheet" href="/theme/css/grids-responsive-min.css">
     <!--<![endif]-->
     <link rel="stylesheet" href="/theme/css/styles.css">
     <link rel="stylesheet" href="/theme/css/pygments.css">
     <!-- <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'> -->
-    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,500" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,500,600,700" rel="stylesheet"
+        type="text/css">
     <link href='https://fonts.googleapis.com/css?family=Ubuntu+Mono' rel='stylesheet' type='text/css'>
     {% block head_css %}{% endblock %}
 
@@ -48,8 +55,8 @@
 
     <header id="header" class="pure-g">
         <div class="pure-u-1 pure-u-md-3-4">
-             <div id="menu">
-                 <div class="pure-menu pure-menu-open pure-menu-horizontal">
+            <div id="menu">
+                <div class="pure-menu pure-menu-open pure-menu-horizontal">
                     {% include 'menu.html' %}
                 </div>
             </div>
@@ -96,6 +103,5 @@
     {% include 'sc.html' %}
 
 </body>
+
 </html>
-
-

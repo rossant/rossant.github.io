@@ -902,9 +902,7 @@ Obviously, shaking cannot be reproduced in infants in an experimental setting. R
 
 * [**Levchakov 2006.** Computational Studies of Strain Exposures in Neonate and Mature Rat Brains during Closed Head Impact](https://www.liebertpub.com/doi/abs/10.1089/neu.2006.23.1570)
 
-Mao 2006
-Application of a finite element model of the brain to study traumatic brain injury mechanisms in the rat
-https://www.researchgate.net/publication/6494896_Application_of_a_finite_element_model_of_the_brain_to_study_traumatic_brain_injury_mechanisms_in_the_rat
+* [**Mao 2006.** Application of a finite element model of the brain to study traumatic brain injury mechanisms in the rat](https://www.researchgate.net/publication/6494896_Application_of_a_finite_element_model_of_the_brain_to_study_traumatic_brain_injury_mechanisms_in_the_rat)
 
 
 
@@ -953,27 +951,19 @@ Results have been inconclusive so far, and it remains unclear whether shaking al
 
 * [**Davison 2022.** A Biomechanical Assessment of Shaken Baby Syndrome: What About the Spine?](https://www.sciencedirect.com/science/article/pii/S1878875022003977)
 
-Wilhelm 2020
-Injury Biomechanics of a Child's Head: Problems, Challenges and Possibilities with a New aHEAD Finite Element Model
-https://www.mdpi.com/2076-3417/10/13/4467
+* [**Wilhelm 2020.** Injury Biomechanics of a Child's Head: Problems, Challenges and Possibilities with a New aHEAD Finite Element Model](https://www.mdpi.com/2076-3417/10/13/4467)
 
 * [**Schiks 2020.** Thresholds for the assessment of inflicted head injury by shaking trauma in infants: a systematic review](https://www.sciencedirect.com/science/article/pii/S0379073819304724)
 
 * [**Miller 2020.** An envelope of linear and rotational head motion during everyday activities](https://link.springer.com/article/10.1007/s10237-019-01267-6)
 
-Burgos-Flórez 2020
-Stress and strain propagation on infant skull from impact loads during falls: a finite element analysis
-https://www.tandfonline.com/doi/full/10.1080/23335432.2020.1719196
+* [**Burgos-Flórez 2020.** Stress and strain propagation on infant skull from impact loads during falls: a finite element analysis](https://www.tandfonline.com/doi/full/10.1080/23335432.2020.1719196)
 
 * [**van Zandwijk 2019.** Modeling of inflicted head injury by shaking trauma in children: what can we learn? Part II: A systematic review of mathematical and physical models](https://link.springer.com/article/10.1007/s12024-019-00093-7)
 
-Li 2019
-Infant skull fractures: Accident or abuse?: Evidences from biomechanical analysis using finite element head models
-https://www.sciencedirect.com/science/article/pii/S0379073818310302
+* [**Li 2019.** Infant skull fractures: Accident or abuse?: Evidences from biomechanical analysis using finite element head models](https://www.sciencedirect.com/science/article/pii/S0379073818310302)
 
-Brooks 2018
-Finite element models and material data for analysis of infant head impacts
-https://www.sciencedirect.com/science/article/pii/S2405844018349235
+* [**Brooks 2018.** Finite element models and material data for analysis of infant head impacts](https://www.sciencedirect.com/science/article/pii/S2405844018349235)
 
 * [**Johnson 2018.** Response to Jenny et al.: Biomechanical Response of the Infant Head to Shaking: An Experimental Investigation](https://www.liebertpub.com/doi/full/10.1089/neu.2017.5420)
 
