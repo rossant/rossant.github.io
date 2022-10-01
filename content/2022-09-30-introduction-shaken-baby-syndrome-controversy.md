@@ -24,7 +24,7 @@ This post provides a few pointers to anyone interested in understanding the most
 
 # Overview
 
-Before presenting some of the most important references on the subject, we will indicate the caution required when investigating the subject, and we'll try to clarify the definitions and the most contentious points.
+Before presenting some of the most important references on the subject, we will indicate the caution required when investigating the subject, and we will try to clarify the definitions and the most contentious points.
 
 
 ## Caution to reader
@@ -39,7 +39,7 @@ It is crucially important to understand that SBS/AHT is not an academic subject 
 
 4. There is a significant amount of confusion and even obfuscation in the literature regarding terminology and definitions. The meaning of commonly-used terms has slowly, and often implicitly, evolved over the course of decades. Discrepancies only appear when confronting literature decades apart.
 
-5. The degree of polarization in this area is extreme. As a first approximation, one may consider a currently dominant view, supported by what we may call "SBS/AHT adherents", and a different view supported by "agnostics". Even the very existence of a legitimate controversy is denied by most adherents. We'll discuss these terms later in this post.
+5. The degree of polarization in this area is extreme. As a first approximation, one may consider a currently dominant view, supported by what we may call "SBS/AHT adherents", and a different view supported by "agnostics". Even the very existence of a legitimate controversy is denied by most adherents. We will discuss these terms later in this post.
 
 6. The adherent side is presented as having near-universal institutional support. It is fundamentally important that, for the sake of making a robust, evidence-based scientific opinion, one must make a sustained effort to move beyond any argument from authority. The reader should not substitute collective certainty with scientific evidence. Although in general, institutional support may be expected to follow scientific evidence, this is not strictly guaranteed, particularly when there are major non-scientific (political, financial, societal...) ramifications. Thus, one should not rely on one's natural confidence in scientific authority; rather, the reader should keep an open mind and exercise critical thinking at all times, and never hesitate to question or double-check any explicit or implicit assumption.
 
@@ -96,7 +96,7 @@ Before we pursue, we must give some basic medical terminology.
 ### Some medical terminology
 
 - The brain is surrounded by three **meningeal membranes**: the pia, the arachnoid, and the dura mater.
-- The space between the pia and the arachnoid is the **subarachnoid space**. It is filled with cerebrospinal fluid. The arachnoid and the dura mater are in continuity with one another in life, forming the **subdural compartment** which may contain fluid or blood.
+- The space between the pia and the arachnoid is the **subarachnoid space**. It is filled with cerebrospinal fluid. The arachnoid and the dura mater are in continuity with one another, forming the **subdural compartment** which may contain fluid or blood.
 - **Subdural hemorrhage**, blood in the subdural compartment, is found in up to 46% of newborns ([Rooks 2008](http://www.ajnr.org/content/29/6/1082/tab-article-info)).
 An **intracranial hemorrhage** occurs when blood is found in any of the tissues or membranes within the head.
 - **Bridging veins** drain the blood from the brain, crossing the subarachnoid space to enter sinuses within the dura.
@@ -202,7 +202,7 @@ We give here a few relevant citations from the adherents' medical literature, il
 We propose some open debated questions, with links to scientific references below.
 
 * What are the pathophysiological mechanisms of subdural and retinal hemorrhage in infants? See [Neuropathology](#sec-neuropathology), [Radiology](#sec-radiology), [Retinal hemorrhage](#sec-rh).
-* What are the medical causes and risk factors of subdural and retinal hemorrhage in infants? See [Benign external hydrocephalus](#sec-beh), [Differential diagnoses](#sec-dd), [Short falls](#sec-falls).
+* What are the medical causes and risk factors of subdural and retinal hemorrhage in infants? See [Benign external hydrocephalus](#sec-beh), [Differential diagnoses](#sec-dd), [Birth](#sec-birth), [Short falls](#sec-falls).
 * With no satisfactory experimental model of shaking, what evidence do we have that traumatic shaking alone (without impact) can rupture bridging veins and cause subdural and retinal hemorrhage? What is the temporal evolution of symptoms after trauma? See [History](#sec-history), [Animal models](#sec-animal), [Biomechanics and modeling](#sec-biomechanics), [Radiology](#sec-radiology).
 * How reliable are admissions of shaking obtained after medical determinations of SBS/AHT? What scientific evidence can we infer from the rare described cases of witnessed and videotaped shaking? See [Confessions](#sec-confessions), [Medical ethics, medicolegal issues, cognitive biases](#sec-ethics).
 * What is the scientific impact of the circular reasoning issue that arises in the clinical literature (where medical determinations of SBS/AHT are made based on the very same findings that are being studied)? See [Systematic reviews](#sec-systematic), [Opiniated reviews](#sec-opiniated), [Epidemiology and prevention](#sec-epidemiology).
