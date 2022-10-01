@@ -525,6 +525,17 @@ Whereas traumatic brain injury seemed to be common in children who died with a m
 Similar discussions also exist regarding bridging veins, subdural, and retinal hemorrhage.
 
 
+
+
+
+
+<figure>
+<a href="https://user-images.githubusercontent.com/1942359/193409692-6bbbc046-acf0-4622-b4df-c49045023e67.png"><img src="https://user-images.githubusercontent.com/1942359/193409692-6bbbc046-acf0-4622-b4df-c49045023e67.png"></a>
+<figcaption>Fig. 4 of <a href="https://link.springer.com/article/10.1007/s00247-008-1084-6">Mack 2009</a>. <emph>"a Left subdural compartment hemorrhage. a T1-W coronal MR image shows left subdural compartment hemorrhage. b Graphic representation of hemorrhage originating from the inner dural plexus (BV bridging vein, DP dural plexus)"</emph></figcaption>
+</figure>
+
+
+
 #### SBS/AHT adherents
 
 * [**Rambaud 2015.** Bridging veins and autopsy findings in abusive head trauma](https://link.springer.com/article/10.1007/s00247-015-3285-0)
@@ -712,7 +723,7 @@ An often-cited study is [Rooks 2008](http://www.ajnr.org/content/29/6/1082) who 
 
 <figure>
 <a href="https://user-images.githubusercontent.com/1942359/193289901-d8326618-520f-45b5-94e0-6843498ec704.png"><img src="https://user-images.githubusercontent.com/1942359/193289901-d8326618-520f-45b5-94e0-6843498ec704.png"></a>
-<figcaption>Fig 4. of <a href="http://www.ajnr.org/content/29/6/1082">Rooks 2008</a>. <emph>"Images obtained at 7 and 26 days postnatal age for follow-up of bilateral occipital SDH in a neonate with extra-axial collections. Axial T2, T1, gradient-refocused echo (GRE), and FLAIR images (left to right, top row) show CSF-intensity frontal subarachnoid collections that were present since birth. Also note a thin linear T1 hyperintense GRE hypointense bilateral posterior occipital SDH. At 26 days postnatal age (bottom row), left frontal subdural collections that do not conform to CSF signal intensity are present, consistent with spontaneous SDH. The patient had no history of trauma and had a negative evaluation for NAI."</emph></figcaption>
+<figcaption>Fi. 4 of <a href="http://www.ajnr.org/content/29/6/1082">Rooks 2008</a>. <emph>"Images obtained at 7 and 26 days postnatal age for follow-up of bilateral occipital SDH in a neonate with extra-axial collections. Axial T2, T1, gradient-refocused echo (GRE), and FLAIR images (left to right, top row) show CSF-intensity frontal subarachnoid collections that were present since birth. Also note a thin linear T1 hyperintense GRE hypointense bilateral posterior occipital SDH. At 26 days postnatal age (bottom row), left frontal subdural collections that do not conform to CSF signal intensity are present, consistent with spontaneous SDH. The patient had no history of trauma and had a negative evaluation for NAI."</emph></figcaption>
 </figure>
 
 
@@ -756,7 +767,15 @@ An often-cited study is [Rooks 2008](http://www.ajnr.org/content/29/6/1082) who 
 
 ### <a id="sec-beh"></a>Benign external hydrocephalus
 
-Benign external hydrocephalus (BEH), also known as enlarged extraaxial spaces, enlargement of subarachnoid spaces, or many other terms, is a medical condition _"associating a rapid increase in head circumference, combined with enlarged subarachnoid spaces as seen on neuroimaging—especially overlying the frontal lobes—and normal or only moderately enlarged ventricles_" ([Zahl 2011](https://link.springer.com/article/10.1007/s10143-011-0327-4)). It is often considered as a risk factor for the development of quasi-spontaneous subdural hemorrhage and retinal hemorrhage, although not by part of the SBS/AHT adherents.
+Benign external hydrocephalus (BEH), also known as enlarged extraaxial spaces, enlargement of subarachnoid spaces, or many other terms, is a medical condition _"associating a rapid increase in head circumference, combined with enlarged subarachnoid spaces as seen on neuroimaging—especially overlying the frontal lobes—and normal or only moderately enlarged ventricles_" ([Zahl 2011](https://link.springer.com/article/10.1007/s10143-011-0327-4)). It is often considered as a risk factor for the development of quasi-spontaneous subdural hemorrhage and retinal hemorrhage, although not by part of the SBS/AHT adherents. Some authors believe that a number of children with BEH are misdiagnosed with SBS/AHT, especially due to imaging similarities.
+
+<figure>
+<a href="https://user-images.githubusercontent.com/1942359/193410388-60a712fa-2cc9-49f5-86e2-88f5ffdc7934.png"><img src="https://user-images.githubusercontent.com/1942359/193410388-60a712fa-2cc9-49f5-86e2-88f5ffdc7934.png"></a>
+<figcaption>This figure shows MRIs of two different infants, one diagnosed with SBS/AHT (left), one with BEH and no concern for abuse (right).<br>
+Left: Fig. 2b from <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4814308/">Flom 2016</a>. <emph>"Abnormal screening head MRI sequences in 2.5-month-old boy with abusive head trauma and Glasgow coma scale score of 15. b Axial gradient recalled echo sequence demonstrates interhemispheric and left convexity subdural hemorrhage (arrow). This sequence was assessed as abnormal."</emph>.
+<br>Right: Fig. 2 from <a href="https://link.springer.com/article/10.1007/s00381-010-1105-2">Vinchon 2010</a> showing a case of "spontaneous subdural hemorrhage" with no concern for abuse. <emph>"Case 7: 5-month male with preexisting idiopathic macrocrania (+3 SD), without other past medical history, who presented with a 10-day duration syndrome of raised intracranial pressure with increased head circumference (symptomatic macrocrania with discontinuity of the growth curve). Computed tomography showed a purely hypodense collection, which magnetic resonance imaging (axial view, T2-weighted) showed to be both subdural and subarachnoid. Other explorations were all negative. Subdural subtraction of 20 ml of bloody cerebrospinal fluid was followed with subduroperitoneal drainage and uneventful recovery. The coexistence of subdural hematoma (SDH) with arachnoidomegaly shows that both compartments are under pressure and suggests that preexisting hydrodynamic fragility was decompensated with the occurrence of an SDH."</emph></figcaption>
+</figure>
+
 
 #### SBS/AHT adherents
 
@@ -883,6 +902,9 @@ Obviously, shaking cannot be reproduced in infants in an experimental setting. R
 
 * [**Levchakov 2006.** Computational Studies of Strain Exposures in Neonate and Mature Rat Brains during Closed Head Impact](https://www.liebertpub.com/doi/abs/10.1089/neu.2006.23.1570)
 
+Mao 2006
+Application of a finite element model of the brain to study traumatic brain injury mechanisms in the rat
+https://www.researchgate.net/publication/6494896_Application_of_a_finite_element_model_of_the_brain_to_study_traumatic_brain_injury_mechanisms_in_the_rat
 
 
 
@@ -898,28 +920,78 @@ Results have been inconclusive so far, and it remains unclear whether shaking al
 
 > "Although only Cory and Jones reported rotational head accelerations in excess of predicted injury thresholds for concussion, no study has to date demonstrated that shaking alone, without an associated impact, exceeds the injury thresholds associated with SDH." <span class="ref">(<a href="https://journals.sagepub.com/doi/full/10.1177/0025802414564495">Jones 2015</a>, p. 292)</span>
 
+<figure>
+<a href="https://user-images.githubusercontent.com/1942359/193409036-8f019a64-c31a-4cba-bab6-10c06e15d682.png"><img src="https://user-images.githubusercontent.com/1942359/193409036-8f019a64-c31a-4cba-bab6-10c06e15d682.png"></a>
+<figcaption>Figure 3 from <a href="https://www.mdpi.com/2076-3417/10/13/4467/htm">Wilhelm 2020</a>. <emph>"Figure 3. Development of a numerical model of a small child’s head depicted in five stages."</emph></figcaption>
+</figure>
+
 
 #### SBS/AHT adherents
 
-* [**Strey-Pedersen 2021.** Violent Infant Surrogate Shaking: Continuous High-Magnitude Centripetal Force and Abrupt Shift in Tangential Acceleration May Explain High Risk of Subdural Hemorrhage](https://www.liebertpub.com/doi/full/10.1089/neur.2021.0013)
+* [**Stray-Pedersen 2021.** Violent Infant Surrogate Shaking: Continuous High-Magnitude Centripetal Force and Abrupt Shift in Tangential Acceleration May Explain High Risk of Subdural Hemorrhage](https://www.liebertpub.com/doi/full/10.1089/neur.2021.0013)
 
 * [**Suh 2020.** Determining the Tractional Forces on Vitreoretinal Interface Using a Computer Simulation Model in Abusive Head Trauma](https://www.sciencedirect.com/science/article/pii/S0002939420303160)
 
+* [**Jenny 2017.** Biomechanical Response of the Infant Head to Shaking: An Experimental Investigation](https://www.liebertpub.com/doi/full/10.1089/neu.2016.4687)
+
+* [**Yoshida 2014.** A finite element analysis of the retinal hemorrhages accompanied by shaken baby syndrome/abusive head trauma](https://www.sciencedirect.com/science/article/pii/S0021929014004801)
+
+* [**Roth 2010.** Finite element modelling of paediatric head impact: Global validation against experimental data](https://www.sciencedirect.com/science/article/pii/S0169260709002880)
+
+* [**Roth 2008.** Finite element analysis of child head injuries in the field of child abuse](https://www.tandfonline.com/doi/full/10.1080/10255840802298893)
+
+* [**Raul 2008.** Influence of the benign enlargement of the subarachnoid space on the bridging veins strain during a shaking event: a finite element study](https://link.springer.com/article/10.1007/s00414-008-0242-6)
+
+* [**Bertocci 2006.** Applications of Biomechanics Aiding in the Diagnosis of Child Abus](https://www.sciencedirect.com/science/article/pii/S1522840106000498)
+
+* [**Prange 2003.** Anthropomorphic simulations of falls, shakes, and inflicted impacts in infants](https://thejns.org/view/journals/j-neurosurg/99/1/article-p143.xml)
+
+* [**Cory 2003.** Can Shaking Alone Cause Fatal Brain Injury?: A biomechanical assessment of the Duhaime shaken baby syndrome model](https://journals.sagepub.com/doi/abs/10.1258/rsmmsl.43.4.317)
+
+
+#### Neutral/agnostics
+
+* [**Davison 2022.** A Biomechanical Assessment of Shaken Baby Syndrome: What About the Spine?](https://www.sciencedirect.com/science/article/pii/S1878875022003977)
+
+Wilhelm 2020
+Injury Biomechanics of a Child's Head: Problems, Challenges and Possibilities with a New aHEAD Finite Element Model
+https://www.mdpi.com/2076-3417/10/13/4467
+
 * [**Schiks 2020.** Thresholds for the assessment of inflicted head injury by shaking trauma in infants: a systematic review](https://www.sciencedirect.com/science/article/pii/S0379073819304724)
 
+* [**Miller 2020.** An envelope of linear and rotational head motion during everyday activities](https://link.springer.com/article/10.1007/s10237-019-01267-6)
+
+Burgos-Flórez 2020
+Stress and strain propagation on infant skull from impact loads during falls: a finite element analysis
+https://www.tandfonline.com/doi/full/10.1080/23335432.2020.1719196
+
 * [**van Zandwijk 2019.** Modeling of inflicted head injury by shaking trauma in children: what can we learn? Part II: A systematic review of mathematical and physical models](https://link.springer.com/article/10.1007/s12024-019-00093-7)
+
+Li 2019
+Infant skull fractures: Accident or abuse?: Evidences from biomechanical analysis using finite element head models
+https://www.sciencedirect.com/science/article/pii/S0379073818310302
+
+Brooks 2018
+Finite element models and material data for analysis of infant head impacts
+https://www.sciencedirect.com/science/article/pii/S2405844018349235
+
+* [**Johnson 2018.** Response to Jenny et al.: Biomechanical Response of the Infant Head to Shaking: An Experimental Investigation](https://www.liebertpub.com/doi/full/10.1089/neu.2017.5420)
+
+* [**Reinmann 2018.** Fundamental Limits of Shaking a Baby](https://onlinelibrary.wiley.com/doi/pdf/10.1111/1556-4029.13777)
 
 * [**Jones 2017.** Development and validation of a physical model to investigate the biomechanics of infant head impact](https://www.sciencedirect.com/science/article/pii/S0379073817301366)
 
 * [**Pasquesi 2017.** Failure and Fatigue Properties of Immature Human and Porcine Parasagittal Bridging Veins](https://link.springer.com/article/10.1007/s10439-017-1833-5)
 
-* [**Jenny 2017.** Biomechanical Response of the Infant Head to Shaking: An Experimental Investigation](https://www.liebertpub.com/doi/full/10.1089/neu.2016.4687)
+* [**Lee 2016.** Biomechanical, Epidemiologic, and Forensic Considerations of Pediatric Head Injuries](https://www.sciencedirect.com/science/article/pii/B9780124045842000094)
 
 * [**Jones 2015.** Development of a computational biomechanical infant model for the investigation of infant head injury by shaking](https://journals.sagepub.com/doi/full/10.1177/0025802414564495)
 
-* [**Couper 2015.** Infant brain subjected to oscillatory loading](https://www.tandfonline.com/doi/abs/10.1080/14484846.2008.11464560)
+* [**Sullivan 2015.** Biofidelic neck influences head kinematics of parietal and occipital impacts following short falls in infants](https://www.sciencedirect.com/science/article/pii/S0001457515002171)
 
-* [**Yoshida 2014.** A finite element analysis of the retinal hemorrhages accompanied by shaken baby syndrome/abusive head trauma](https://www.sciencedirect.com/science/article/pii/S0021929014004801)
+* [**Goriely 2015.** Mechanics of the brain: perspectives, challenges, and opportunities](https://link.springer.com/article/10.1007/s10237-015-0662-4)
+
+* [**Couper 2015.** Infant brain subjected to oscillatory loading](https://www.tandfonline.com/doi/abs/10.1080/14484846.2008.11464560)
 
 * [**Yamasaki 2014.** Experimental analyses of the retinal and subretinal haemorrhages accompanied by shaken baby syndrome/abusive head trauma using a dummy doll](https://www.sciencedirect.com/science/article/pii/S002013831400182X)
 
@@ -929,64 +1001,36 @@ Results have been inconclusive so far, and it remains unclear whether shaking al
 
 * [**Thompson 2011.** Pediatric short-distance household falls: Biomechanics and associated injury severity](https://www.sciencedirect.com/science/article/pii/S0001457510002113)
 
+* [**Lloyd 2011.** Biomechanical Evaluation of Head Kinematics During Infant Shaking Versus Pediatric Activities of Daily Living](https://www.walshmedicalmedia.com/open-access/biomechanical-evaluation-of-head-kinematics-during-infant-shaking-versus-pediatric-activities-of-daily-living-2090-2697-2-109.pdf)
+
 * [**Jones 2011.** The potential effects of floor impact surfaces on infant head injury outcome during a short fall](https://journals.sagepub.com/doi/full/10.1258/msl.2011.011006)
 
-* [**Cheng 2010.** Study of an infant brain subjected to periodic motion via a custom experimental apparatus design and finite element modelling](https://www.sciencedirect.com/science/article/pii/S0021929010004148)
+* [**Funk 2010.** Head and Neck Loading in Everyday and Vigorous Activities](https://link.springer.com/article/10.1007/s10439-010-0183-3)
 
-* [**Roth 2010.** Finite element modelling of paediatric head impact: Global validation against experimental data](https://www.sciencedirect.com/science/article/pii/S0169260709002880)
+* [**Ibrahim 2010.** Biomechanics of the toddler head during low-height falls: an anthropomorphic dummy analysis](https://thejns.org/pediatrics/view/journals/j-neurosurg-pediatr/6/1/article-p57.xml)
+
+* [**Cheng 2010.** Study of an infant brain subjected to periodic motion via a custom experimental apparatus design and finite element modelling](https://www.sciencedirect.com/science/article/pii/S0021929010004148)
 
 * [**Couper 2009.** Mechanical response of infant brain to manually inflicted shaking](https://journals.sagepub.com/doi/abs/10.1243/09544119JEIM587)
 
 * [**Coats 2008.** Potential for head injuries in infants from low-height falls](https://thejns.org/pediatrics/view/journals/j-neurosurg-pediatr/2/5/article-p321.xml)
 
-* [**Roth 2008.** Finite element analysis of child head injuries in the field of child abuse](https://www.tandfonline.com/doi/full/10.1080/10255840802298893)
-
-* [**Raul 2008.** Influence of the benign enlargement of the subarachnoid space on the bridging veins strain during a shaking event: a finite element study](https://link.springer.com/article/10.1007/s00414-008-0242-6)
-
 * [**Pierce 2008.** Injury Biomechanics and Child Abuse](https://www.researchgate.net/profile/Gina-Bertocci/publication/6325079_Injury_Biomechanics_and_Child_Abuse/links/595d121245851524687a57d6/Injury-Biomechanics-and-Child-Abuse.pdf)
-
-* [**Bertocci 2006.** Applications of Biomechanics Aiding in the Diagnosis of Child Abus](https://www.sciencedirect.com/science/article/pii/S1522840106000498)
 
 * [**Wolfson 2005.** Rigid-body modelling of shaken baby syndrome](https://journals.sagepub.com/doi/abs/10.1243/095441105X9237)
 
 * [**Oehmichen 2005.** Fall or Shaken: Traumatic Brain Injury in Children Caused by Falls or Abuse at Home - A Review on Biomechanics and Diagnosis](https://www.thieme-connect.com/products/ejournals/html/10.1055/s-2005-872812)
 
-* [**Prange 2003.** Anthropomorphic simulations of falls, shakes, and inflicted impacts in infants](https://thejns.org/view/journals/j-neurosurg/99/1/article-p143.xml)
+* [**Goldsmith 2004.** A Biomechanical Analysis of the Causes of Traumatic Brain Injury in Infants and Children](https://journals.lww.com/amjforensicmedicine/Fulltext/2004/06000/Fatal_Pediatric_Head_Injuries_Caused_by.00001.aspx)
 
-* [**Cory 2003.** Can Shaking Alone Cause Fatal Brain Injury?: A biomechanical assessment of the Duhaime shaken baby syndrome model](https://journals.sagepub.com/doi/abs/10.1258/rsmmsl.43.4.317)
+* [**Ommaya 2002.** Biomechanics and neuropathology of adult and paediatric head injury](https://www.tandfonline.com/doi/abs/10.1080/02688690220148824)
 
 * [**Prange 2002.** Regional, Directional, and Age-Dependent Properties of the Brain Undergoing Large Deformation](https://asmedigitalcollection.asme.org/biomechanical/article/124/2/244/416959/Regional-Directional-and-Age-Dependent-Properties)
 
 * [**Hymel 1998.** Abusive Head Trauma? A Biomechanics-Based Approach](https://journals.sagepub.com/doi/abs/10.1177/1077559598003002006)
 
-
-#### Agnostics/neutral
-
-* [**Davison 2022.** A Biomechanical Assessment of Shaken Baby Syndrome: What About the Spine?](https://www.sciencedirect.com/science/article/pii/S1878875022003977)
-
-* [**Miller 2020.** An envelope of linear and rotational head motion during everyday activities](https://link.springer.com/article/10.1007/s10237-019-01267-6)
-
-* [**Johnson 2018.** Response to Jenny et al.: Biomechanical Response of the Infant Head to Shaking: An Experimental Investigation](https://www.liebertpub.com/doi/full/10.1089/neu.2017.5420)
-
-* [**Reinmann 2018.** Fundamental Limits of Shaking a Baby](https://onlinelibrary.wiley.com/doi/pdf/10.1111/1556-4029.13777)
-
-* [**Lee 2016.** Biomechanical, Epidemiologic, and Forensic Considerations of Pediatric Head Injuries](https://www.sciencedirect.com/science/article/pii/B9780124045842000094)
-
-* [**Sullivan 2015.** Biofidelic neck influences head kinematics of parietal and occipital impacts following short falls in infants](https://www.sciencedirect.com/science/article/pii/S0001457515002171)
-
-* [**Goriely 2015.** Mechanics of the brain: perspectives, challenges, and opportunities](https://link.springer.com/article/10.1007/s10237-015-0662-4)
-
-* [**Lloyd 2011.** Biomechanical Evaluation of Head Kinematics During Infant Shaking Versus Pediatric Activities of Daily Living](https://www.walshmedicalmedia.com/open-access/biomechanical-evaluation-of-head-kinematics-during-infant-shaking-versus-pediatric-activities-of-daily-living-2090-2697-2-109.pdf)
-
-* [**Ibrahim 2010.** Biomechanics of the toddler head during low-height falls: an anthropomorphic dummy analysis](https://thejns.org/pediatrics/view/journals/j-neurosurg-pediatr/6/1/article-p57.xml)
-
-* [**Funk 2010.** Head and Neck Loading in Everyday and Vigorous Activities](https://link.springer.com/article/10.1007/s10439-010-0183-3)
-
-* [**Goldsmith 2004.** A Biomechanical Analysis of the Causes of Traumatic Brain Injury in Infants and Children](https://journals.lww.com/amjforensicmedicine/Fulltext/2004/06000/Fatal_Pediatric_Head_Injuries_Caused_by.00001.aspx)
-
-* [**Ommaya 2002.** Biomechanics and neuropathology of adult and paediatric head injury](https://www.tandfonline.com/doi/abs/10.1080/02688690220148824)
-
 * [**Duhaime 1987.** The shaken baby syndrome: A clinical, pathological, and biomechanical study](https://thejns.org/view/journals/j-neurosurg/66/3/article-p409.xml)
+
 
 
 
