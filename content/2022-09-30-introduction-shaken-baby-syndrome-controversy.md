@@ -20,7 +20,7 @@ This post provides a few pointers to anyone interested in understanding the most
 
 > **Post updates**
 >
-> - 2022-10-01 : initial version
+> - 2022-09-30 : initial version
 
 # Overview
 
@@ -89,6 +89,8 @@ Consequently, we propose the following tentative definition:
 
 The first definition given above, related directly to an act of child abuse, is obviously non-controversial; all debate concerns only the second.
 
+Surprisingly, a clear definition of SBS/AHT such as ours is rarely found in this explicit form in the medical literature, although it does appear in a few instances. It mostly emerges from the literature corpus as a de facto medical belief taught and shared by healthcare providers around the globe since the late 1970's and up to the 2010's. An abundant case law over the last five decades across many countries also shows that medical experts have long relied on this hypothesis in family and criminal courts.
+
 Before we pursue, we must give some basic medical terminology.
 
 ### Some medical terminology
@@ -110,13 +112,13 @@ An **intracranial hemorrhage** occurs when blood is found in any of the tissues 
 
 Our tentative definition of SBS has clear legal implications. Infantile subdural and retinal hemorrhage are considered to be so specific for violent child abuse that their sole presence in an infant, even with no sign of trauma on the body and no suspicion of abuse in the child's environment, constitutes an almost irrefutable proof that a criminal offence has occurred and, as such, justifies drastic child protection procedures, criminal prosecutions, and convictions.
 
+In practice, medical determinations are almost always made similarly. Parents or caregivers bring a young child (most often aged less than 6 months, almost always less than 12) to the emergency room for subacute or acute symptoms such as seizures, fussiness, irritability, apnea, poor eating, vomiting, increasing head circumference... The child undergoes cranial CT or MRI and doctors find subdural collections and/or hemorrhage. Fundoscopy reveals retinal hemorrhage. The hospital team makes a medical determination of SBS/AHT and reports the family to authorities. Social and police investigations may lead to the removal of the child (and siblings, if any) from their familial environment, while parents or caregivers are prosecuted. At the trial, medical experts testify that their determination of child abuse is nearly certain.
+
 We see here that the issue of SBS is really situated at the intersection of **medicine, science, and law.**
 
 The degree of certainty with which medical experts determine the occurrence of abuse in these cases is important to the courts since, in common law jurisdictions, the legal standard of proof is "beyond a reasonable doubt". It is this certainty that can lead to criminal convictions, even when there is no other supporting evidence of child abuse beyond the medical determination of SBS.
 
-🇫🇷  In the French criminal justice system, the judges' and jurors' "intimate conviction" is the standard of proof. Here, too, the certainty with which highly-recognized and experienced judicial experts make a medical determination of child abuse has a direct impact on the "intimate conviction" of triers of facts.
-
-Surprisingly, a clear definition of SBS/AHT such as ours is rarely found in this explicit form in the medical literature, although it does appear in a few instances. It mostly emerges from the literature corpus as a de facto medical belief taught and shared by healthcare providers around the globe since the late 1970's and up to the 2010's. An abundant case law over the last five decades across many countries also shows that medical experts have long relied on this hypothesis in family and criminal courts.
+🇫🇷&nbsp;&nbsp;In legal systems based on civil law, such as France, the judges' and jurors' "intimate conviction" is the standard of proof ([Esnard 2013](https://www.sciencedirect.com/science/article/pii/S1162908812001004)). Here, too, the certainty with which highly-recognized and experienced judicial experts make a medical determination of child abuse has a direct impact on the "intimate conviction" of triers of facts.
 
 
 ## A contested definition
@@ -195,13 +197,13 @@ We give here a few relevant citations from the adherents' medical literature, il
 
 ## Contested topics, open questions
 
-We propose some open debated questions and links to scientific references below.
+We propose some open debated questions, with links to scientific references below.
 
 * What are the pathophysiological mechanisms of subdural and retinal hemorrhage in infants? See [Neuropathology](#sec-neuropathology), [Radiology](#sec-radiology), [Retinal hemorrhage](#sec-rh).
 * What are the medical causes and risk factors of subdural and retinal hemorrhage in infants? See [Benign external hydrocephalus](#sec-beh), [Differential diagnoses](#sec-dd), [Short falls](#sec-falls).
 * With no satisfactory experimental model of shaking, what evidence do we have that traumatic shaking alone (without impact) can rupture bridging veins and cause subdural and retinal hemorrhage? What is the temporal evolution of symptoms after trauma? See [History](#sec-history), [Animal models](#sec-animal), [Biomechanics and modeling](#sec-biomechanics), [Radiology](#sec-radiology).
 * How reliable are admissions of shaking obtained after medical determinations of SBS/AHT? What scientific evidence can we infer from the rare described cases of witnessed and videotaped shaking? See [Confessions](#sec-confessions), [Medical ethics, medicolegal issues, cognitive biases](#sec-ethics).
-* How severe is the issue of circular reasoning arising in the clinical literature, where medical determinations of SBS/AHT are made based on the same findings that are being studied? See [Systematic reviews](#sec-systematic), [Opiniated reviews](#sec-opiniated), [Epidemiology and prevention](#sec-epidemiology).
+* What is the scientific impact of the circular reasoning issue that arises in the clinical literature (where medical determinations of SBS/AHT are made based on the very same findings that are being studied)? See [Systematic reviews](#sec-systematic), [Opiniated reviews](#sec-opiniated), [Epidemiology and prevention](#sec-epidemiology).
 * What are the psychological, societal, ethical implications of medical determinations of child abuse? See [Medical ethics, medicolegal issues, cognitive biases](#sec-ethics).
 
 
@@ -219,7 +221,7 @@ We propose some open debated questions and links to scientific references below.
 
 # Selected bibliography
 
-In the remainder of this post, we will give many references to learn more about the controversy.
+In the remainder of this post, we will give references to learn more about the controversy.
 
 **Notes**
 
@@ -246,7 +248,7 @@ In the remainder of this post, we will give many references to learn more about 
     * [Benign external hydrocephalus](#sec-beh)
     * [Differential diagnoses](#sec-dd)
     * [Animal models](#sec-animal)
-    * [Biomechanics and modeling](#sec-biomechanics)
+    * [Biomechanics and numerical modeling](#sec-biomechanics)
     * [Short falls](#sec-falls)
     * [Confessions](#sec-confessions)
     * [Epidemiology and prevention](#sec-epidemiology)
@@ -258,27 +260,27 @@ In the remainder of this post, we will give many references to learn more about 
 
 #### SBS/AHT adherents
 
-* [**Palusci, Lazoritz 2001.** The Shaken Baby Syndrome: A Multidisciplinary Approach](https://www.routledge.com/The-Shaken-Baby-Syndrome-A-Multidisciplinary-Approach/Palusci-Lazoritz/p/book/9780429235979)
-
 * [**Reece 2015.** To Tell the Truth: Based on the Author's Forty Years of Clinical and Trial Experiences in Abusive Head Trauma - Shaken Baby Syndrome Cases](https://books.google.co.uk/books?id=mMoirgEACAAJ)
+
+* [**Palusci, Lazoritz 2001.** The Shaken Baby Syndrome: A Multidisciplinary Approach](https://www.routledge.com/The-Shaken-Baby-Syndrome-A-Multidisciplinary-Approach/Palusci-Lazoritz/p/book/9780429235979)
 
 * 🇫🇷&nbsp;&nbsp;[**Renier 2000.** Le bébé secoué : Traumatisme crânien du nourrisson](https://books.google.co.uk/books/about/Le_b%C3%A9b%C3%A9_secou%C3%A9.html?id=FBepDwAAQBAJ)
 
 
 #### Agnostics
 
+* 🇫🇷&nbsp;&nbsp;[**Echenne 2020.** Le syndrome du bébé secoué. Hématomes sous-duraux et collections péri-cérébrales du petit nourrisson](https://www.livres-medicaux.com/neurologie-pediatrique/19983-syndrome-du-bebe-secoue.html)
+
 * [**Papetti 2018.** The Forensic Unreliability of the Shaken Baby Syndrome](https://www.sbsbook.com/)
 
 * [**Tuerkheimer 2014.** Flawed Convictions: "Shaken Baby Syndrome" and the Inertia of Injustice](https://global.oup.com/academic/product/flawed-convictions-9780190233617)
-
-* 🇫🇷&nbsp;&nbsp;[**Echenne 2020.** Le syndrome du bébé secoué. Hématomes sous-duraux et collections péri-cérébrales du petit nourrisson](https://www.livres-medicaux.com/neurologie-pediatrique/19983-syndrome-du-bebe-secoue.html)
 
 
 
 
 ## <a id="sec-press"></a>Press investigations
 
-In this section we mostly give references to press investigations covering specifically the scientific and legal controversy.
+In this section, we give references to press investigations specifically covering the scientific and legal controversy.
 
 #### SBS/AHT adherents
 
@@ -308,7 +310,10 @@ In this section we mostly give references to press investigations covering speci
 
 * [**NPR 2011.** Rethinking Shaken Baby Syndrome](https://www.npr.org/2011/06/29/137471992/rethinking-shaken-baby-syndrome)
 
-#### Waney Squier
+
+#### The Waney Squier case
+
+[Waney Squier](https://en.wikipedia.org/wiki/Waney_Squier), a pediatric neuropathologist from Oxford University, UK, changed her mind about the scientific reliability of SBS/AHT in the early 2000's. She was struck off the General Medical Council (GMC) in March 2016, reinstated in appeal in November 2016, but she was not allowed to give expert evidence in court for three years.
 
 * [**Macdonald 2019.** Prometheus shaken baby debate](https://www.researchgate.net/publication/331963471_Prometheus_shaken_baby_debate)
 
@@ -879,11 +884,15 @@ Obviously, shaking cannot be reproduced in infants in an experimental setting. R
 
 
 
-### <a id="sec-biomechanics"></a>Biomechanics and modeling
+### <a id="sec-biomechanics"></a>Biomechanics and numerical modeling
 
-Biomechanics is another research avenue, where physical or virtual models of a baby's head are developed and subject to various traumatic conditions. Kinematics and materials deformations can be measured and compared to known or estimated tissue injury thresholds. Understanding of biomechanical properties of pediatric tissues remains elusive, while scaling of injury thresholds from animal models or adults to human infants is challenging.
+Biomechanics is another research avenue, where physical or virtual models of a baby's head are developed and subject to various traumatic conditions. Kinematics and materials deformations can be measured and compared to known or estimated tissue injury thresholds.
 
-Results have been inconclusive so far, and it remains unclear whether shaking alone can generate sufficient forces to cause traumatic rupture of bridging veins, subdural hemorrhage, and retinal hemorrhage. On the other hand, forces generated during impacts have been found to be consistently larger than with shaking alone.
+Understanding of biomechanical properties of pediatric tissues remains elusive, whereas scaling of injury thresholds from animal models or adults to human infants is challenging.
+
+Results have been inconclusive so far, and it remains unclear whether shaking alone can generate sufficient forces to cause traumatic rupture of bridging veins, subdural hemorrhage, and retinal hemorrhage. Forensic implications of such negative findings are also unclear due to intrinsic limitations of biomechanical and finite element models.
+
+ On the other hand, forces generated during impacts have been found to be consistently larger than with shaking alone.
 
 > "Although only Cory and Jones reported rotational head accelerations in excess of predicted injury thresholds for concussion, no study has to date demonstrated that shaking alone, without an associated impact, exceeds the injury thresholds associated with SDH." <span class="ref">(<a href="https://journals.sagepub.com/doi/full/10.1177/0025802414564495">Jones 2015</a>, p. 292)</span>
 
@@ -982,7 +991,7 @@ Results have been inconclusive so far, and it remains unclear whether shaking al
 
 ### <a id="sec-falls"></a>Short falls
 
-Severe injuries following short falls are rare, but how rare they are is controversial. To some authors, they are so exceptional that histories of short falls can be considered to be falsified in almost all severe or fatal cases. To others, these statistical arguments are not correct, and short falls should be considered as an important differential diagnosis of subdural and retinal hemorrhage in infants.
+Severe injuries following short falls are rare, but how rare they are is controversial. To some authors, they are so exceptional that histories of short falls can be considered to be falsified in almost all severe or fatal cases. To other authors, these statistical arguments are not correct, and short falls should be considered as an important differential diagnosis of subdural and retinal hemorrhage in infants.
 
 
 #### SBS/AHT adherents
