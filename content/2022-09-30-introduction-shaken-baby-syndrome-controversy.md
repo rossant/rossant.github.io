@@ -206,7 +206,31 @@ In the remainder of this post, we will give many references to learn more about 
 - This bibliography will be completed over time. Contact me by email (see website sidebar/footer) to propose any corrections or additions.
 
 
-## Books
+### Table of contents
+
+* [Books](#sec-books)
+* [Press investigations](#sec-press)
+* [Opinion pieces](#sec-opinion)
+* [Films, documentaries, talks](#sec-films)
+* [Governmental reports](#sec-gov)
+* [Academic publications](#sec-academic)
+    * [History](#sec-history)
+    * [Opiniated reviews](#sec-opiniated)
+    * [Systematic reviews](#sec-systematic)
+    * [Neuropathology](#sec-neuropathology)
+    * [Radiology](#sec-radiology)
+    * [Retinal hemorrhage](#sec-rh)
+    * [Benign external hydrocephalus](#sec-beh)
+    * [Differential diagnoses](#sec-dd)
+    * [Animal models](#sec-animal)
+    * [Biomechanics and modeling](#sec-biomechanics)
+    * [Short falls](#sec-falls)
+    * [Confessions](#sec-confessions)
+    * [Epidemiology and prevention](#sec-epidemiology)
+
+
+
+## <a id="sec-books"></a>Books
 
 #### SBS/AHT adherents
 
@@ -228,7 +252,7 @@ In the remainder of this post, we will give many references to learn more about 
 
 
 
-## Press investigations
+## <a id="sec-press"></a>Press investigations
 
 In this section we mostly give references to press investigations covering specifically the scientific and legal controversy.
 
@@ -286,7 +310,7 @@ Syndrome/Abusive Head Trauma](https://ncip.org/wp-content/uploads/2019/12/STATEM
 
 
 
-## Films, documentaries, talks
+## <a id="sec-films"></a>Films, documentaries, talks
 
 #### Agnostics
 
@@ -299,7 +323,7 @@ Syndrome/Abusive Head Trauma](https://ncip.org/wp-content/uploads/2019/12/STATEM
 
 
 
-## Governmental reports
+## <a id="sec-gov"></a>Governmental reports
 
 We give references to official position papers, organized by countries rather than by side.
 
@@ -333,13 +357,13 @@ We give references to official position papers, organized by countries rather th
 
 
 
-## Academic publications
+## <a id="sec-academic"></a>Academic publications
 
 In this section, we give some of the main references to medical, scientific, and legal academic publications, sorted by category and date of publication. There are about ten times more publications in the literature. We try to give references from both sides of the controversy, when this distinction makes sense.
 
-* [**XXX 2000.**]()
+<!-- * [**XXX 2000.**]() -->
 
-### History
+### <a id="sec-history"></a>History
 
 These historical publications are considered as the seminal works leading to the recognition of shaken baby syndrome. The two main figures are **John Caffey** (1895-1978), American pediatric radiologist, and **Norman Guthkelch** (1915-2016), British pediatric neurosurgeon. Note that, in the last few years of his life, the latter has criticized the way medical determinations of SBS were made.
 
@@ -361,7 +385,7 @@ These historical publications are considered as the seminal works leading to the
 
 
 
-### Opiniated reviews
+### <a id="sec-opiniated"></a>Opiniated reviews
 
 We give here references to reviews that clearly present a bias toward one side of the controversy.
 
@@ -415,7 +439,7 @@ We give here references to reviews that clearly present a bias toward one side o
 * [**Tuerkheimer 2009.** The Next Innocence Project: Shaken Baby Syndrome and the Criminal Courts](https://heinonline.org/HOL/Page?handle=hein.journals/walq87&id=3&collection=journals&index=)
 
 
-### Systematic reviews
+### <a id="sec-systematic"></a>Systematic reviews
 
 * [**Lynøe 2017.** Insufficient evidence for 'shaken baby syndrome'—a systematic review](https://onlinelibrary.wiley.com/doi/abs/10.1111/apa.13760)
 
@@ -423,7 +447,8 @@ We give here references to reviews that clearly present a bias toward one side o
 
 
 
-### Neuropathology
+
+### <a id="sec-neuropathology"></a>Neuropathology
 
 We now move to more technical references.
 
@@ -489,7 +514,7 @@ Similar discussions also exist regarding bridging veins, subdural, and retinal h
 
 
 
-### Radiology
+### <a id="sec-radiology"></a>Radiology
 
 We refer to the introduction of the _Neuropathology_ section above.
 
@@ -547,7 +572,7 @@ Some authors remind that radiology alone may not yield a reliable medical determ
 
 
 
-### Retinal hemorrhage
+### <a id="sec-rh"></a>Retinal hemorrhage
 
 The pathophysiological mechanisms of retinal hemorrhage is incompletely understood. As a first approximation, SBS/AHT adherents believe they occur due to the vitreo-retinal traction during traumatic shaking, whereas agnostics believe they occur as a consequence of raised intracranial pressure and/or intracranial hemorrhage.
 
@@ -613,7 +638,7 @@ The pathophysiological mechanisms of retinal hemorrhage is incompletely understo
 * [**Clarke 2009.** Vitreoretinal traction is a major factor in causing the haemorrhagic retinopathy of abusive head injury? – No](https://www.nature.com/articles/eye2009200)
 
 
-### Birth
+### <a id="sec-birth"></a>Birth
 
 Between a quarter and a half of all asymptomatic neonates present subdural and/or retinal hemorrhage in their first days of life. Although they typically cause no symptoms and resolve in a few days, they may persist and cause complications in a small proportion of cases.
 
@@ -664,7 +689,8 @@ An often-cited study is [Rooks 2008](http://www.ajnr.org/content/29/6/1082) who 
 
 
 
-### Benign external hydrocephalus
+
+### <a id="sec-beh"></a>Benign external hydrocephalus
 
 Benign external hydrocephalus (BEH), also known as enlarged extraaxial spaces, enlargement of subarachnoid spaces, or many other terms, is a medical condition _"associating a rapid increase in head circumference, combined with enlarged subarachnoid spaces as seen on neuroimaging—especially overlying the frontal lobes—and normal or only moderately enlarged ventricles_" ([Zahl 2011](https://link.springer.com/article/10.1007/s10143-011-0327-4)). It is often considered as a risk factor for the development of quasi-spontaneous subdural hemorrhage and retinal hemorrhage, although not by part of the SBS/AHT adherents.
 
@@ -717,7 +743,7 @@ Benign external hydrocephalus (BEH), also known as enlarged extraaxial spaces, e
 
 
 
-### Differential diagnoses
+### <a id="sec-dd"></a>Differential diagnoses
 
 * [**Anderst 2021.** Subdural hemorrhage in a cohort with cerebral sinovenous thrombosis: Application to abusive head trauma](https://www.sciencedirect.com/science/article/pii/S0145213421001927)
 
@@ -734,7 +760,7 @@ Benign external hydrocephalus (BEH), also known as enlarged extraaxial spaces, e
 
 
 
-### Animal models
+### <a id="sec-animal"></a>Animal models
 
 Obviously, shaking cannot be reproduced in infants in an experimental setting. Researchers have instead investigated shaking in animal models. To date, results have been inconclusive: the characteristic features of the triad, including bridging vein rupture, subdural hematoma, and retinal hemorrhage, have not yet been observed in animal models of shaking. On the other hand, traumatic cervical and brain injuries have been described.
 
@@ -778,11 +804,12 @@ Obviously, shaking cannot be reproduced in infants in an experimental setting. R
 
 
 
-### Biomechanics and modeling
+### <a id="sec-biomechanics"></a>Biomechanics and modeling
 
 Biomechanics is another research avenue, where physical or virtual models of a baby's head are developed and subject to various traumatic conditions. Kinematics and materials deformations can be measured and compared to known or estimated tissue injury thresholds. Results have been inconclusive so far, and it remains unclear whether shaking alone can generate sufficient forces to cause traumatic rupture of bridging veins, subdural hemorrhage, and retinal hemorrhage.
 
 > Although only Cory and Jones reported rotational head accelerations in excess of predicted injury thresholds for concussion, no study has to date demonstrated that shaking alone, without an associated impact, exceeds the injury thresholds associated with SDH. <span class="ref">(<a href="https://journals.sagepub.com/doi/full/10.1177/0025802414564495">Jones 2015</a>, p. 292)</span>
+
 
 #### SBS/AHT adherents
 
@@ -861,8 +888,7 @@ Biomechanics is another research avenue, where physical or virtual models of a b
 
 * [**Goriely 2015.** Mechanics of the brain: perspectives, challenges, and opportunities](https://link.springer.com/article/10.1007/s10237-015-0662-4)
 
-Lloyd 2011
-* [**Biomechanical Evaluation of Head Kinematics During Infant Shaking.** Versus Pediatric Activities of Daily Living](https://www.walshmedicalmedia.com/open-access/biomechanical-evaluation-of-head-kinematics-during-infant-shaking-versus-pediatric-activities-of-daily-living-2090-2697-2-109.pdf)
+* [**Lloyd 2011.** Biomechanical Evaluation of Head Kinematics During Infant Shaking Versus Pediatric Activities of Daily Living](https://www.walshmedicalmedia.com/open-access/biomechanical-evaluation-of-head-kinematics-during-infant-shaking-versus-pediatric-activities-of-daily-living-2090-2697-2-109.pdf)
 
 * [**Ibrahim 2010.** Biomechanics of the toddler head during low-height falls: an anthropomorphic dummy analysis](https://thejns.org/pediatrics/view/journals/j-neurosurg-pediatr/6/1/article-p57.xml)
 
@@ -877,7 +903,7 @@ Lloyd 2011
 
 
 
-### Short falls
+### <a id="sec-falls"></a>Short falls
 
 Severe injuries following short falls are rare, but how rare they are is controversial. To some authors, they are so exceptional that histories of short falls can be considered to be falsified in almost all severe or fatal cases. To others, these statistical arguments are not correct, and short falls should be considered as an important differential diagnosis of subdural and retinal hemorrhage in infants.
 
@@ -927,68 +953,8 @@ Severe injuries following short falls are rare, but how rare they are is controv
 
 
 
-### Epidemiology and prevention
 
-Epidemiological studies investigate the demographics of children diagnosed with SBS/AHT, the incidence of these medical determinations, and the impact of prevention programs on the global incidence of determinations of abuse.
-
-
-#### SBS/AHT adherents
-
-* [**Lãzãrescu 2022.** Abusive Head Trauma in Infants During the COVID-19 Pandemic in the Paris Metropolitan Area](https://jamanetwork.com/journals/jamanetworkopen/article-abstract/2795760)
-
-* [**Caron 2022.** Incidence of child abuse with subdural hemorrhage during the first year of the COVID-19 pandemic: a nationwide study in France](https://link.springer.com/article/10.1007/s00431-022-04387-x)
-
-* [**Dias 2021.** Preventing abusive head trauma: can educating parents reduce the incidence?](https://link.springer.com/article/10.1007/s00247-020-04819-6)
-
-* [**Sidpra 2020.** Rise in the incidence of abusive head trauma during the COVID-19 pandemic](https://adc.bmj.com/content/106/3/e14.abstract)
-
-* [**Rey-Salmon 2020.** Abusive Head Trauma in Day Care Centers](https://publications.aap.org/pediatrics/article/146/6/e2020013771/33566/Abusive-Head-Trauma-in-Day-Care-Centers)
-
-* [**Rebbe 2020.** Incidence and Risk Factors for Abusive Head Trauma: A Population-Based Study](https://onlinelibrary.wiley.com/doi/full/10.1002/car.2630)
-
-* [**Barr 2018.** Eight-year outcome of implementation of abusive head trauma prevention](https://www.sciencedirect.com/science/article/pii/S0145213418302734)
-
-* [**Duzinski 2018.** Effectiveness of a Pediatric Abusive Head Trauma Prevention Program Among Spanish-Speaking Mothers](https://journals.sagepub.com/doi/full/10.1177/1540415318756859)
-
-* [**Dias 2017.** Association of a Postnatal Parent Education Program for Abusive Head Trauma With Subsequent Pediatric Abusive Head Trauma Hospitalization Rates](https://jamanetwork.com/journals/jamapediatrics/article-abstract/2599005)
-
-* [**Lopes 2016.** Pediatric Abusive Head Trauma Prevention Initiatives: A Literature Review](https://journals.sagepub.com/doi/full/10.1177/1524838016675479)
-
-* [**Ornstein 2016.** The impact of an educational intervention on knowledge about infant crying and abusive head trauma](https://academic.oup.com/pch/article/21/2/74/2647365?login=true)
-
-* [**Cowley 2015.** Validation of a Prediction Tool for Abusive Head Trauma](https://publications.aap.org/pediatrics/article-abstract/136/2/290/33803/Validation-of-a-Prediction-Tool-for-Abusive-Head)
-
-* [**Fujiwara 2015.** Effectiveness of public health practices against shaken baby syndrome/abusive head trauma in Japan](https://www.sciencedirect.com/science/article/pii/S0033350615000372)
-
-* [**Zolotor 2015.** Effectiveness of a Statewide Abusive Head Trauma Prevention Program in North Carolina](https://jamanetwork.com/journals/jamapediatrics/article-abstract/2463125)
-
-* [**Shanahan 2013.** National, Regional, and State Abusive Head Trauma: Application of the CDC Algorithm](https://publications.aap.org/pediatrics/article/132/6/e1546/30504/National-Regional-and-State-Abusive-Head-Trauma)
-
-* [**Liley 2012.** Infant abusive head trauma: Incidence, outcomes and awareness](https://search.informit.org/doi/abs/10.3316/INFORMIT.806368705909212)
-
-* [**Maguire 2011.** Estimating the Probability of Abusive Head Trauma: A Pooled Analysis](https://publications.aap.org/pediatrics/article-abstract/128/3/e550/30708/Estimating-the-Probability-of-Abusive-Head-Trauma)
-
-* [**Runyan 2008.** The Challenges of Assessing the Incidence of Inflicted Traumatic Brain Injury: A World Perspective](https://www.sciencedirect.com/science/article/pii/S0749379708000639)
-
-* [**Dias 2005.** Preventing Abusive Head Trauma Among Infants and Young Children: A Hospital-Based, Parent Education Program](https://publications.aap.org/pediatrics/article/115/4/e470/67684/Preventing-Abusive-Head-Trauma-Among-Infants-and)
-
-* [**Jenny 1999.** Analysis of Missed Cases of Abusive Head Trauma](https://jamanetwork.com/journals/jama/article-abstract/188786)
-
-
-#### Agnostics
-
-* [**Lynøe 2021.** Why Programs for Managing Colicky Crying Fail to Prevent Abusive Head Trauma and Suggestions for Improvement](https://jamanetwork.com/journals/jamapediatrics/article-abstract/2779394)
-
-* [**Högberg 2018.** Infant abuse diagnosis associated with abusive head trauma criteria: incidence increase due to overdiagnosis?](https://academic.oup.com/eurpub/article/28/4/641/4974823?login=true)
-
-* [**Högberg 2018.** Epidemiology of subdural haemorrhage during infancy: A population-based register study](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0206340)
-
-* [**Andersson 2017.** National study shows that abusive head trauma mortality in Sweden was at least 10 times lower than in other Western countries](https://onlinelibrary.wiley.com/doi/full/10.1111/apa.14138)
-
-
-
-
-### Confessions
+### <a id="sec-confessions"></a>Confessions
 
 Many authors from both sides agree that, since experiments cannot be conducted on babies, and since videotaped and witnessed shaking events are vanishingly rare, confessions are the main evidentiary basis of SBS/AHT. Adherents believe in the validity of most confessions of shaking, while agnostics claim they are unreliable due to the existence of guilty pleas and false confessions during police interrogation.
 
@@ -999,8 +965,6 @@ For a SBS/AHT adherent:
 For agnostics:
 
 > Moreover, (...) it is unsettling that physicians would rely so heavily on purported perpetrator confessions as somehow validating questionable SBS/AHT beliefs. Approximately twenty-five percent of the DNA exonerations in this country were in cases where the innocent defendant had allegedly confessed (...). Many purported SBS "confessions" are obtained pursuant to plea agreements; or as a requirement to retain or regain parental rights in dependency proceedings; or the confession was merely to shaking the child in an effort to resuscitate after the child had already collapsed; or the confession was induced by law enforcement through suggestion that confessing to shaking would allow the child to receive important medical treatment or was the “only” possible explanation for the child’s condition. <span class="ref">(<a href="https://heinonline.org/HOL/Page?collection=journals&handle=hein.journals/saclr59&id=299&men_tab=srchresults">Papetti 2019</a>, pp. 342-343)</span>
-
-
 
 
 #### SBS/AHT adherents
@@ -1087,3 +1051,63 @@ For agnostics:
 * [**Kassin 1996.** The Social Psychology of False Confessions: Compliance, Internalization, and Confabulation](https://journals.sagepub.com/doi/abs/10.1111/j.1467-9280.1996.tb00344.x)
 
 * [**Gudjonsson 1990.** A Proven Case of False Confession: Psychological Aspects of the Coerced-Compliant Type](https://journals.sagepub.com/doi/abs/10.1177/106002809003000409)
+
+
+
+### <a id="sec-epidemiology"></a>Epidemiology and prevention
+
+Epidemiological studies investigate the demographics of children diagnosed with SBS/AHT, the incidence of these medical determinations, and the impact of prevention programs on the global incidence of determinations of abuse.
+
+
+#### SBS/AHT adherents
+
+* [**Lãzãrescu 2022.** Abusive Head Trauma in Infants During the COVID-19 Pandemic in the Paris Metropolitan Area](https://jamanetwork.com/journals/jamanetworkopen/article-abstract/2795760)
+
+* [**Caron 2022.** Incidence of child abuse with subdural hemorrhage during the first year of the COVID-19 pandemic: a nationwide study in France](https://link.springer.com/article/10.1007/s00431-022-04387-x)
+
+* [**Dias 2021.** Preventing abusive head trauma: can educating parents reduce the incidence?](https://link.springer.com/article/10.1007/s00247-020-04819-6)
+
+* [**Sidpra 2020.** Rise in the incidence of abusive head trauma during the COVID-19 pandemic](https://adc.bmj.com/content/106/3/e14.abstract)
+
+* [**Rey-Salmon 2020.** Abusive Head Trauma in Day Care Centers](https://publications.aap.org/pediatrics/article/146/6/e2020013771/33566/Abusive-Head-Trauma-in-Day-Care-Centers)
+
+* [**Rebbe 2020.** Incidence and Risk Factors for Abusive Head Trauma: A Population-Based Study](https://onlinelibrary.wiley.com/doi/full/10.1002/car.2630)
+
+* [**Barr 2018.** Eight-year outcome of implementation of abusive head trauma prevention](https://www.sciencedirect.com/science/article/pii/S0145213418302734)
+
+* [**Duzinski 2018.** Effectiveness of a Pediatric Abusive Head Trauma Prevention Program Among Spanish-Speaking Mothers](https://journals.sagepub.com/doi/full/10.1177/1540415318756859)
+
+* [**Dias 2017.** Association of a Postnatal Parent Education Program for Abusive Head Trauma With Subsequent Pediatric Abusive Head Trauma Hospitalization Rates](https://jamanetwork.com/journals/jamapediatrics/article-abstract/2599005)
+
+* [**Lopes 2016.** Pediatric Abusive Head Trauma Prevention Initiatives: A Literature Review](https://journals.sagepub.com/doi/full/10.1177/1524838016675479)
+
+* [**Ornstein 2016.** The impact of an educational intervention on knowledge about infant crying and abusive head trauma](https://academic.oup.com/pch/article/21/2/74/2647365?login=true)
+
+* [**Cowley 2015.** Validation of a Prediction Tool for Abusive Head Trauma](https://publications.aap.org/pediatrics/article-abstract/136/2/290/33803/Validation-of-a-Prediction-Tool-for-Abusive-Head)
+
+* [**Fujiwara 2015.** Effectiveness of public health practices against shaken baby syndrome/abusive head trauma in Japan](https://www.sciencedirect.com/science/article/pii/S0033350615000372)
+
+* [**Zolotor 2015.** Effectiveness of a Statewide Abusive Head Trauma Prevention Program in North Carolina](https://jamanetwork.com/journals/jamapediatrics/article-abstract/2463125)
+
+* [**Shanahan 2013.** National, Regional, and State Abusive Head Trauma: Application of the CDC Algorithm](https://publications.aap.org/pediatrics/article/132/6/e1546/30504/National-Regional-and-State-Abusive-Head-Trauma)
+
+* [**Liley 2012.** Infant abusive head trauma: Incidence, outcomes and awareness](https://search.informit.org/doi/abs/10.3316/INFORMIT.806368705909212)
+
+* [**Maguire 2011.** Estimating the Probability of Abusive Head Trauma: A Pooled Analysis](https://publications.aap.org/pediatrics/article-abstract/128/3/e550/30708/Estimating-the-Probability-of-Abusive-Head-Trauma)
+
+* [**Runyan 2008.** The Challenges of Assessing the Incidence of Inflicted Traumatic Brain Injury: A World Perspective](https://www.sciencedirect.com/science/article/pii/S0749379708000639)
+
+* [**Dias 2005.** Preventing Abusive Head Trauma Among Infants and Young Children: A Hospital-Based, Parent Education Program](https://publications.aap.org/pediatrics/article/115/4/e470/67684/Preventing-Abusive-Head-Trauma-Among-Infants-and)
+
+* [**Jenny 1999.** Analysis of Missed Cases of Abusive Head Trauma](https://jamanetwork.com/journals/jama/article-abstract/188786)
+
+
+#### Agnostics
+
+* [**Lynøe 2021.** Why Programs for Managing Colicky Crying Fail to Prevent Abusive Head Trauma and Suggestions for Improvement](https://jamanetwork.com/journals/jamapediatrics/article-abstract/2779394)
+
+* [**Högberg 2018.** Infant abuse diagnosis associated with abusive head trauma criteria: incidence increase due to overdiagnosis?](https://academic.oup.com/eurpub/article/28/4/641/4974823?login=true)
+
+* [**Högberg 2018.** Epidemiology of subdural haemorrhage during infancy: A population-based register study](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0206340)
+
+* [**Andersson 2017.** National study shows that abusive head trauma mortality in Sweden was at least 10 times lower than in other Western countries](https://onlinelibrary.wiley.com/doi/full/10.1111/apa.14138)

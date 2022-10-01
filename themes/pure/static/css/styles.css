@@ -309,8 +309,12 @@ code {
     margin: 1em 0;
 }
 
+#post ul {
+    margin-top: 5px;
+}
+
 #post ul li {
-    margin: 0 auto 10px 0;
+    margin: 0 auto 8px 0;
 }
 
 #post ul li p {
@@ -478,7 +482,7 @@ h2 {
     font-size: 1.75em;
     margin: 1.75em 0 .5em 0;
     padding: 0 0 .25em 0;
-    border-bottom: 1px solid #ddd;
+    border-bottom: 1px solid #ccc;
 }
 
 #content .sub-header-2 {
@@ -493,6 +497,8 @@ h3 {
     margin: 1.25em 0 .75em 0;
     font-size: 1.45em;
     color: #555;
+    padding: 0 0 .20em 0;
+    border-bottom: 1px solid #eee;
 }
 
 #content .sub-header-3 {
@@ -503,7 +509,7 @@ h3 {
 
 
 h4 {
-    margin: 1.2em 0 .5em 0;
+    margin: 1.5em 0 1em 0;
     font-size: 1.25em;
     color: #777;
 }
