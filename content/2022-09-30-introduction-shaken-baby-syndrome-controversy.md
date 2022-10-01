@@ -267,6 +267,8 @@ In this section we mostly give references to press investigations covering speci
 
 * 🇫🇷&nbsp;&nbsp;[**Heidi 2022.** Bébés secoués: la contre-enquête](https://www.heidi.news/explorations/bebes-secoues-la-contre-enquete)
 
+* 🇫🇷&nbsp;&nbsp;[**Le Monde 2021.** Faux aveux : le cas des bébés secoués](https://www.lemonde.fr/sciences/article/2021/11/15/faux-aveux-le-cas-des-bebes-secoues_6102166_1650684.html)
+
 * [**The Appeal 2020.** How Dubious Science Helped Put A New Jersey Woman In Prison For Killing A Baby In Her Care](https://theappeal.org/new-jersey-woman-prison-shaken-baby-syndrome/)
 
 * 🇫🇷&nbsp;&nbsp;[**Le Monde 2019.** Le diagnostic du syndrome du bébé secoué donne lieu à une guerre d'experts](https://www.lemonde.fr/sciences/article/2019/01/07/le-diagnostic-du-syndrome-du-bebe-secoue-donne-lieu-a-une-guerre-d-experts_5406046_1650684.html)
@@ -283,6 +285,37 @@ In this section we mostly give references to press investigations covering speci
 
 * [**NPR 2011.** Rethinking Shaken Baby Syndrome](https://www.npr.org/2011/06/29/137471992/rethinking-shaken-baby-syndrome)
 
+#### Waney Squier
+
+* [**Macdonald 2019.** Prometheus shaken baby debate](https://www.researchgate.net/publication/331963471_Prometheus_shaken_baby_debate)
+
+The Justice Gap 2018
+Waney Squier: 'Science is not a democracy'
+https://www.thejusticegap.com/waney-squier-what-we-have-is-a-hypothesis-that-isnt-fit-for-use-as-a-diagnosis-or-in-our-courts/
+
+The Times 2016
+Why I denied shaken baby syndrome
+https://www.thetimes.co.uk/article/why-i-denied-shaken-baby-syndrome-x8nql2dzn
+
+The Guardian 2016
+Doctor wins appeal over shaken baby syndrome trials evidence
+https://www.theguardian.com/society/2016/nov/04/doctor-waney-squier-wins-appeal-shaken-baby-syndrome-trials-evidence
+
+The Guardian 2016, Clive Stafford Smith
+The science of shaken baby syndrome
+https://www.theguardian.com/society/2016/mar/25/science-shaken-baby-syndrome
+
+The Guardian 2016
+Why the shaken baby syndrome tribunal led to Dr Waney Squier being struck off
+https://www.theguardian.com/society/2016/mar/22/why-the-shaken-baby-syndrome-tribunal-led-to-dr-waney-squier-being-struck-off
+
+BBC 2016
+Should Waney Squier have been struck off over shaken baby syndrome?
+https://www.bbc.com/news/health-37672451
+
+The Guardian 2008
+Beyond reasonable doubt
+https://www.theguardian.com/commentisfree/2008/mar/13/beyondreasonabledoubt
 
 
 
