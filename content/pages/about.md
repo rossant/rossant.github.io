@@ -30,7 +30,7 @@ Title: About
 
 * 2012: **PhD in neuroscience** at the ENS and UPMC with highest honors
 * 2008: **Master's Degree in computer science** ([MPRI](https://wikimpri.dptinfo.ens-cachan.fr/doku.php)) at the ENS with highest honors
-* 2005: **Bachelor's Degree in mathematics** ([FIMFA](https://www.math.ens.fr/enseignement/Presentation,7.html)) at the ENS with highest honors
+* 2005: **Bachelor's Degree in mathematics** ([FIMFA](https://www.math.ens.psl.eu/lenseignement/)) at the ENS with highest honors
 * 2005: Entry to the **&Eacute;cole Normale Supérieure** (ENS) through competitive examinations in maths and physics
 * 2002: Preparatory classes (MPSI/MP*) at Lycée Masséna, Nice
 * 2002: High school diploma (A-level equivalent) with highest honors
@@ -135,3 +135,9 @@ Title: About
 * 2009-2012: **Teacher assistant** in mathematics and computer science at ENS and UPMC (Bachelor and Master levels): probability theory, measure theory, statistics, calculus, real analysis, dynamical systems, signal processing, scientific Python
 * 2009-2012: Private lessons in mathematics to students in high school and preparatory classes
 * 2008-2009: Voluntary teaching to high school students at [TALENS](http://pesu.ens.fr/talens/) association
+
+
+## Popular press
+
+* 2022: 🇫🇷&nbsp;&nbsp;article in French newspaper <a href="https://www.lemonde.fr/sciences/article/2022/10/01/cyrille-rossant-un-matheux-face-a-la-justice_6144010_1650684.html">**Le Monde**</a>. Cyrille Rossant, un matheux face à la justice.
+* 2022: 🇫🇷&nbsp;&nbsp;article in French quarterly journal <a href="http://xxi.adikia.fr">**Revue XXI**</a>. Contre-enquête sur les bébés secoués.

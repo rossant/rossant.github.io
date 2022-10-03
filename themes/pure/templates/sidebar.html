@@ -1,11 +1,11 @@
 <section>
     <div class="portrait">
-        <img src="/theme/images/cr.jpg" />
+        <img src="{{ SIDEBAR_PIC }}" />
     </div>
     <div class="name-cv">
         <div class="name">{{ SIDEBAR_NAME }}</div>
         <div class="cv">
-            <a href="/pdfs/cv.pdf"><i class="fa fa-file-pdf-o"></i> CV</a>
+            <a href="{{ SIDEBAR_CV }}"><i class="fa fa-file-pdf-o"></i> CV</a>
         </div>
     </div>
     <div class="clear"></div>
@@ -29,6 +29,21 @@
         <li class="post"><a href="/{{ post.url }}/">{{ post.name }}</a></li>
         {% endfor %}
     </ul>
+</section>
+
+
+<section class="medias">
+    <header>
+        <h3>press</h3>
+    </header>
+    <div>
+        <div class="media-pic">
+            <a href="{{ SIDEBAR_PRESS_URL }}"><img src="{{ SIDEBAR_PRESS_PIC }}"></a>
+        </div>
+        <div class="media-title">
+            <a href="{{ SIDEBAR_PRESS_URL }}">{{ SIDEBAR_PRESS_TITLE }}</a>
+        </div>
+    </div>
 </section>
 
 

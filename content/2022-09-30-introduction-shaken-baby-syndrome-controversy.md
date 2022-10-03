@@ -3,7 +3,7 @@ tags: sbs
 
 The scientific controversy over the so-called **Shaken Baby Syndrome (SBS)** (also known, with a few key differences indicated later, as **Abusive Head Trauma, AHT**) is a rich and highly complex multifaceted topic.
 
-It involves a wide range of academic disciplines: pediatrics, neurology, neuropathology, hematology, evidence-based medicine, biomechanics, statistics, epidemiology, psychology, among others. There are also ramifications in epistemology, medical ethics, criminal law, sociology...
+It involves a wide range of academic disciplines: pediatrics, neurology, neuropathology, radiology, hematology, obstetrics, evidence-based medicine, biomechanics, statistics, epidemiology, psychology, among others. There are also ramifications in epistemology, medical ethics, criminal law, sociology...
 
 
 <!-- PELICAN_END_SUMMARY -->
@@ -293,7 +293,7 @@ In this section, we give references to press investigations specifically coverin
 
 * [**The Appeal 2022.** A Judge Finally Called Bs On ‘Shaken Baby Syndrome'](https://theappeal.org/new-jersey-shaken-baby-syndrome-bs/)
 
-* 🇫🇷&nbsp;&nbsp;[**Heidi 2022.** Bébés secoués: la contre-enquête](https://www.heidi.news/explorations/bebes-secoues-la-contre-enquete)
+* 🇫🇷&nbsp;&nbsp;[**Revue XXI 2022.** Contre-enquête sur les bébés secoués](http://xxi.adikia.fr)
 
 * 🇫🇷&nbsp;&nbsp;[**Le Monde 2021.** Faux aveux : le cas des bébés secoués](https://www.lemonde.fr/sciences/article/2021/11/15/faux-aveux-le-cas-des-bebes-secoues_6102166_1650684.html)
 

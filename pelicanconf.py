@@ -8,6 +8,8 @@ SITEURL = ''
 PATH = 'content'
 
 SIDEBAR_NAME = 'Cyrille Rossant, PhD'
+SIDEBAR_PIC = '/theme/images/cr22.jpg'
+SIDEBAR_CV = '/pdfs/cv.pdf'
 SIDEBAR_SUBNAME = '''Neuroscience researcher and <br>
 software engineer at IBL and UCL<br>
 &nbsp;▸ IBL: <a href="https://www.internationalbrainlab.com/">International Brain Laboratory</a><br>
@@ -27,6 +29,9 @@ SIDEBAR_POSTS = [
         'name': 'An Introduction to the Scientific Controversy over Shaken Baby Syndrome'
     }
 ]
+SIDEBAR_PRESS_URL = "https://www.lemonde.fr/sciences/article/2022/10/01/cyrille-rossant-un-matheux-face-a-la-justice_6144010_1650684.html"
+SIDEBAR_PRESS_PIC = "https://img.lemde.fr/2022/09/29/0/0/4480/6720/1328/0/45/0/484be2e_1664454843616-t6a9856.jpg"
+SIDEBAR_PRESS_TITLE = "🇫🇷&nbsp;&nbsp;Article in Le Monde (10/2022)"
 
 DEFAULT_DATE = 'fs'
 WITH_FUTURE_DATES = True
