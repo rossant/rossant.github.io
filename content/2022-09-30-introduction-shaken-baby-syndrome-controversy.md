@@ -233,6 +233,7 @@ In the remainder of this post, we will give references to learn more about the c
 - References only available in French are indicated with a flag&nbsp;&nbsp;🇫🇷.
 - Important references are <span class="highlight">highlighted in yellow</span>. This selection is subjective and also open to discussion.
 - This bibliography will be completed over time. Contact me by email (see sidebar/footer on this page) to propose any corrections or additions.
+- Many articles are behind a paywall. Older articles may also be hard to find. Contact me if you need the PDF of some articles.
 
 
 ### Table of contents
