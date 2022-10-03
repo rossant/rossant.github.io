@@ -8,6 +8,10 @@
         content="Cyrille Rossant, ">
     <link href="/favicon.png" rel="icon">
 
+    <link rel="alternate" href="https://cyrille.rossant.net/feeds/all.atom.xml" type="application/atom+xml"
+        title="Cyrille Rossant Full Atom Feed" />
+    <link rel="alternate" href="https://cyrille.rossant.net/feeds/atom.xml" type="application/atom+xml"
+        title="Cyrille Rossant Atom Feed" />
 
     <title>Cyrille Rossant - NumPy in the browser: proof of concept with Numba, LLVM, and emscripten</title>
 
@@ -59,7 +63,7 @@
         <li><a href="https://twitter.com/cyrillerossant"><i class="fa fa-twitter"></i></a></li>
         <li><a href="https://github.com/rossant"><i class="fa fa-github"></i></a></li>
         <li><a href="https://www.linkedin.com/in/crossant"><i class="fa fa-linkedin"></i></a></li>
-        <li><a href="/None"><i class="fa fa-rss"></i></a></li>
+        <li><a href="https://cyrille.rossant.net/feeds/all.atom.xml"><i class="fa fa-rss"></i></a></li>
 </ul>                </div>
             </div>
         </div>
@@ -85,7 +89,7 @@
     </header>
 
     <section id="post">
-        <p>It's been a while since I wanted to try to bring some of NumPy to the browser. I've already discussed the motivations for this <a href="/scientific-python-in-the-browser-its-coming/">in a previous post last year</a>. As far as I'm concerned, the main use case would be to enable interactive data visualization in offline notebooks (including nbviewer), which often require client-based array operations for interactivity. In this post, I'll describe a proof-of-concept of compiling NumPy-aware Python functions to JavaScript using Numba, LLVM, and emscripten.</p>
+        <p>It's been a while since I wanted to try to bring some of NumPy to the browser. I've already discussed the motivations for this <a href="https://cyrille.rossant.net/scientific-python-in-the-browser-its-coming/">in a previous post last year</a>. As far as I'm concerned, the main use case would be to enable interactive data visualization in offline notebooks (including nbviewer), which often require client-based array operations for interactivity. In this post, I'll describe a proof-of-concept of compiling NumPy-aware Python functions to JavaScript using Numba, LLVM, and emscripten.</p>
 
 
 <h2>How to bring NumPy to the browser?</h2>
@@ -575,12 +579,12 @@
 <nav class="pagination-wrapper">
     <div class="pagination">
         <div class="pagination-left">
-                <a href="/compiler-data-visualization/">
+                <a href="https://cyrille.rossant.net/compiler-data-visualization/">
                     &larr; previous
                 </a>
         </div>
         <div class="pagination-right">
-                <a href="/big-data-visualization-webgl-part2/">
+                <a href="https://cyrille.rossant.net/big-data-visualization-webgl-part2/">
                     next&nbsp;&rarr;
                 </a>
         </div>
@@ -596,7 +600,7 @@
      */
 
     var disqus_config = function () {
-        this.page.url = "/numpy-browser-llvm/";  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.url = "https://cyrille.rossant.net/numpy-browser-llvm/";  // Replace PAGE_URL with your page's canonical URL variable
         this.page.identifier = "numpy-browser-llvm"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
     };
 
@@ -701,7 +705,7 @@ software engineer at IBL and UCL<br>
         <footer id="footer" class="pure-u-1 pure-u-md-3-4">
             <div class="l-box">
                 <div>
-                    <p>&copy; <a href="">Cyrille Rossant</a> &ndash;
+                    <p>&copy; <a href="https://cyrille.rossant.net">Cyrille Rossant</a> &ndash;
                         Built with <a href="https://github.com/PurePelicanTheme/pure-single">Pure Theme</a>
                         for <a href="http://blog.getpelican.com/">Pelican</a>
                     </p>

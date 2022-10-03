@@ -228,7 +228,7 @@ iframe {
 
 #sidebar .medias img {
     width: 100%;
-    height: 100px;
+    height: 130px;
     object-fit: cover;
     object-position: 0 28%;
 }
@@ -652,4 +652,9 @@ h4 {
     #footer .l-box {
         padding-right: 0;
     }
+
+    #sidebar .medias img {
+        object-position: 0 30.5%;
+    }
+
 }
