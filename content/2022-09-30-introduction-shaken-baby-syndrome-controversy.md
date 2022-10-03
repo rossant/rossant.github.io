@@ -228,10 +228,10 @@ In the remainder of this post, we will give references to learn more about the c
 
 **Notes**
 
-- We classified references between "SBS/AHT adherents" and "agnostics" when this distinction was relevant.
+- We classified references between "SBS/AHT adherents" and "agnostics" when relevant. This distinction is not always clear and it is open to discussion.
 - Some references may appear multiple times in different categories.
 - References only available in French are indicated with a flag&nbsp;&nbsp;🇫🇷.
-- Important references are <span class="highlight">highlighted in yellow</span>
+- Important references are <span class="highlight">highlighted in yellow</span>. This selection is subjective and also open to discussion.
 - This bibliography will be completed over time. Contact me by email (see sidebar/footer on this page) to propose any corrections or additions.
 
 
@@ -564,21 +564,21 @@ Similar discussions also exist regarding bridging veins, subdural, and retinal h
 
 * <span class="highlight">[**Squier 2016**. Infants dying suddenly and unexpectedly share demographic features with infants who die with retinal and dural bleeding: a review of neural mechanisms](https://onlinelibrary.wiley.com/doi/full/10.1111/dmcn.13202)</span>
 
-* [**Scheimberg 2013.** Nontraumatic Intradural and Subdural Hemorrhage and Hypoxic Ischemic Encephalopathy in Fetuses, Infants, and Children up to Three Years of Age: Analysis of Two Audits of 636 Cases from Two Referral Centers in the United Kingdom](https://journals.sagepub.com/doi/full/10.2350/12-08-1232-OA.1)
+* <span class="highlight">[**Scheimberg 2013.** Nontraumatic Intradural and Subdural Hemorrhage and Hypoxic Ischemic Encephalopathy in Fetuses, Infants, and Children up to Three Years of Age: Analysis of Two Audits of 636 Cases from Two Referral Centers in the United Kingdom](https://journals.sagepub.com/doi/full/10.2350/12-08-1232-OA.1)</span>
 
 * [**Squier 2012.** The pathophysiology of brain swelling associated with subdural hemorrhage: the role of the trigeminovascular system](https://link.springer.com/article/10.1007/s00381-012-1870-1)
 
 * <span class="highlight">[**Squier 2011.** The “Shaken Baby” syndrome: pathology and mechanisms](https://link.springer.com/article/10.1007/s00401-011-0875-2)</span>
 
-* [**Cohen 2010.** Subdural hemorrhage, intradural hemorrhage and hypoxia in the pediatric and perinatal post mortem: Are they related? An observational study combining the use of post mortem pathology and magnetic resonance imaging](https://www.sciencedirect.com/science/article/pii/S0379073810001490)
+* <span class="highlight">[**Cohen 2010.** Subdural hemorrhage, intradural hemorrhage and hypoxia in the pediatric and perinatal post mortem: Are they related? An observational study combining the use of post mortem pathology and magnetic resonance imaging](https://www.sciencedirect.com/science/article/pii/S0379073810001490)</span>
 
 * <span class="highlight">[**Mack 2009.** Anatomy and development of the meninges: implications for subdural collections and CSF circulation](https://link.springer.com/article/10.1007/s00247-008-1084-6)</span>
 
 * <span class="highlight">[**Squier 2009.** The neuropathology of infant subdural haemorrhage](https://www.sciencedirect.com/science/article/pii/S0379073809000796)</span>
 
-* [**Cohen 2009.** Evidence of Occurrence of Intradural and Subdural Hemorrhage in the Perinatal and Neonatal Period in the Context of Hypoxic Ischemic Encephalopathy: An Observational Study from Two Referral Institutions in the United Kingdom](https://journals.sagepub.com/doi/full/10.2350/08-08-0509.1)
+* <span class="highlight">[**Cohen 2009.** Evidence of Occurrence of Intradural and Subdural Hemorrhage in the Perinatal and Neonatal Period in the Context of Hypoxic Ischemic Encephalopathy: An Observational Study from Two Referral Institutions in the United Kingdom](https://journals.sagepub.com/doi/full/10.2350/08-08-0509.1)</span>
 
-* [**Geddes 2004.** Inflicted head injury in infants](https://www.sciencedirect.com/science/article/pii/S0379073803002834)
+* </span>[**Geddes 2004.** Inflicted head injury in infants](https://www.sciencedirect.com/science/article/pii/S0379073803002834)</span>
 
 * <span class="highlight">[**Geddes 2003.** Dural haemorrhage in non-traumatic infant deaths: does it explain the bleeding in ‘shaken baby syndrome'?](https://onlinelibrary.wiley.com/doi/full/10.1046/j.1365-2990.2003.00434.x)</span>
 
@@ -706,7 +706,7 @@ The pathophysiological mechanisms of retinal hemorrhage is incompletely understo
 
 * <span class="highlight">[**Thiblin 2021.** Retinal haemorrhage in infants investigated for suspected maltreatment is strongly correlated with intracranial pathology](https://onlinelibrary.wiley.com/doi/full/10.1111/apa.16139)</span>
 
-* [**Shuman 2017.** Severe Retinal Hemorrhages with Retinoschisis in Infants are Not Pathognomonic for Abusive Head Trauma](https://onlinelibrary.wiley.com/doi/full/10.1111/1556-4029.13336)
+* <span class="highlight">[**Shuman 2017.** Severe Retinal Hemorrhages with Retinoschisis in Infants are Not Pathognomonic for Abusive Head Trauma](https://onlinelibrary.wiley.com/doi/full/10.1111/1556-4029.13336)</span>
 
 * [**Gabaeff 2011.** Challenging the Pathophysiologic Connection between Subdural Hematoma, Retinal Hemorrhage and Shaken Baby Syndrome](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3099599/)
 
@@ -783,22 +783,28 @@ Left: Fig. 2b from <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4814308
 
 #### SBS/AHT adherents
 
+* [**Caré 2021.** Macrocephaly and subdural collections](https://link.springer.com/article/10.1007/s00247-020-04848-1)
+
 * <span class="highlight">[**Hansen 2017.** Evaluations for abuse in young children with subdural hemorrhages: findings based on symptom severity and benign enlargement of the subarachnoid spaces](https://thejns.org/pediatrics/view/journals/j-neurosurg-pediatr/21/1/article-p31.xml)</span>
 
 * [**Fingarson 2016.** Enlarged subarachnoid spaces and intracranial hemorrhage in children with accidental head trauma](https://thejns.org/pediatrics/view/journals/j-neurosurg-pediatr/19/2/article-p254.xml)
 
 * [**Wittschieber 2015.** Subdural Hygromas in Abusive Head Trauma: Pathogenesis, Diagnosis, and Forensic Implications](http://www.ajnr.org/content/36/3/432)
 
+* [**Greiner 2013.** Prevalence of Subdural Collections in Children with Macrocrania](http://www.ajnr.org/content/34/12/2373)
+
+* <span class="highlight">[**McKeag 2012.** Subdural hemorrhage in pediatric patients with enlargement of the subarachnoid spaces](https://thejns.org/pediatrics/view/journals/j-neurosurg-pediatr/11/4/article-p438.xml)</span>
+
+* <span class="highlight">[**Vinchon 2010.** Subdural hematoma in infants: can it occur spontaneously? Data from a prospective series and critical review of the literature](https://link.springer.com/article/10.1007/s00381-010-1105-2)</span>
+
 * <span class="highlight">[**Raul 2008.** Influence of the benign enlargement of the subarachnoid space on the bridging veins strain during a shaking event: a finite element study](https://link.springer.com/article/10.1007/s00414-008-0242-6)</span>
 
 
-#### Agnostics
+#### Neutral/agnostics
 
 * [**Alshareef 2022.** Prevalence of Visible Subdural Spaces in Benign Enlargement of Subarachnoid Spaces in Infancy: A Retrospective Analysis Utilizing Magnetic Resonance Imaging](https://www.sciencedirect.com/science/article/abs/pii/S1878875022007197)
 
 * <span class="highlight">[**Andersson 2022.** External Hydrocephalus as a Cause of Infant Subdural Hematoma: Epidemiological and Radiological Investigations of Infants Suspected of Being Abused](https://www.sciencedirect.com/science/article/pii/S0887899421002125)</span>
-
-* [**Caré 2021.** Macrocephaly and subdural collections](https://link.springer.com/article/10.1007/s00247-020-04848-1)
 
 * <span class="highlight">[**Scheller 2021.** Is external hydrocephalus a possible differential diagnosis when child abuse is suspected?](https://link.springer.com/article/10.1007/s00701-021-04786-3)</span>
 
@@ -810,15 +816,9 @@ Left: Fig. 2b from <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4814308
 
 * <span class="highlight">[**Tucker 2015.** Macrocephaly in infancy: benign enlargement of the subarachnoid spaces and subdural collections](https://thejns.org/pediatrics/view/journals/j-neurosurg-pediatr/18/1/article-p16.xml)</span>
 
-* [**Greiner 2013.** Prevalence of Subdural Collections in Children with Macrocrania](http://www.ajnr.org/content/34/12/2373)
-
-* [**McKeag 2012.** Subdural hemorrhage in pediatric patients with enlargement of the subarachnoid spaces](https://thejns.org/pediatrics/view/journals/j-neurosurg-pediatr/11/4/article-p438.xml)
-
 * <span class="highlight">[**Zahl 2011.** Benign external hydrocephalus: a review, with emphasis on management](https://link.springer.com/article/10.1007/s10143-011-0327-4)</span>
 
 * [**Ghosh 2011.** Subdural Hematoma in Infants Without Accidental or Nonaccidental Injury: Benign External Hydrocephalus, a Risk Factor](https://journals.sagepub.com/doi/full/10.1177/0009922811406435)
-
-* <span class="highlight">[**Vinchon 2010.** Subdural hematoma in infants: can it occur spontaneously? Data from a prospective series and critical review of the literature](https://link.springer.com/article/10.1007/s00381-010-1105-2)</span>
 
 * [**Pittman 2003.** Significance of a Subdural Hematoma in a Child with External Hydrocephalus](https://www.proquest.com/docview/224150969?pq-origsite=gscholar&fromopenview=true)
 
