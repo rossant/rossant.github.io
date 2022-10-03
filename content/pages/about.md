@@ -139,5 +139,5 @@ Title: About
 
 ## Popular press
 
-* 2022: 🇫🇷&nbsp;&nbsp;article in French newspaper <a href="https://www.lemonde.fr/sciences/article/2022/10/01/cyrille-rossant-un-matheux-face-a-la-justice_6144010_1650684.html">**Le Monde**</a>. Cyrille Rossant, un matheux face à la justice.
-* 2022: 🇫🇷&nbsp;&nbsp;article in French quarterly journal <a href="http://xxi.adikia.fr">**Revue XXI**</a>. Contre-enquête sur les bébés secoués.
+* 2022: 🇫🇷&nbsp;article in French newspaper [**Le Monde**](https://www.lemonde.fr/sciences/article/2022/10/01/cyrille-rossant-un-matheux-face-a-la-justice_6144010_1650684.html). _"Cyrille Rossant, un matheux face à la justice."_
+* 2022: 🇫🇷&nbsp;article in French quarterly journal [**Revue XXI**](https://resources.adikia.fr/xxi.pdf). _"Contre-enquête sur les bébés secoués."_

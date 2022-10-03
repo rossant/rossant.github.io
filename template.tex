@@ -14,6 +14,8 @@ $endif$
 \ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
   \usepackage[$if(fontenc)$$fontenc$$else$T1$endif$]{fontenc}
   \usepackage[utf8]{inputenc}
+  \DeclareUnicodeCharacter{1F1EB }{(in French)}
+  \DeclareUnicodeCharacter{1F1F7 }{}
 $if(euro)$
   \usepackage{eurosym}
 $endif$
