@@ -342,6 +342,12 @@ code {
     padding: 10px;
 }
 
+#post div.box {
+    border: 1px solid #999;
+    padding: 3px 10px;
+    margin: 20px 0;
+}
+
 #post>p {
     margin-bottom: 1.2em;
 }

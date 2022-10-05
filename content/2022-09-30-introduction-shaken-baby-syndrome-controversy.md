@@ -3,7 +3,7 @@ tags: sbs
 
 The scientific controversy over the so-called **Shaken Baby Syndrome (SBS)** (also known, with a few key differences indicated later, as **Abusive Head Trauma, AHT**) is a rich and highly complex multifaceted topic.
 
-It involves a wide range of academic disciplines: pediatrics, neurology, neuropathology, radiology, hematology, obstetrics, evidence-based medicine, biomechanics, statistics, epidemiology, psychology, among others. There are also ramifications in epistemology, medical ethics, criminal law, sociology...
+It involves a wide range of academic disciplines: pediatrics, neonatology, obstetrics, neurology, neuropathology, radiology, hematology, evidence-based medicine, biomechanics, statistics, epidemiology, psychology, among others. There are also ramifications in epistemology, medical ethics, criminal law, sociology...
 
 
 <!-- PELICAN_END_SUMMARY -->
@@ -20,8 +20,29 @@ This post provides a few pointers to anyone interested in understanding the most
 
 > **Post updates**
 >
+> - 2022-10-05 : added summary
 > - 2022-10-03 : highlighted references
 > - 2022-09-30 : initial version
+
+# Summary
+
+<div class="box">
+<p><strong>tl;dr</strong> :
+Summary of the current state of scientific knowledge at the time of writing (October 2022):</p>
+<ul>
+<li><strong>Inflicted head trauma</strong> may cause a constellation of extracranial and cranial injuries in infants, including intracranial and ocular hemorrhage.</li>
+<li><strong>Accidental and non-accidental impact to the head</strong> may cause subdural and retinal hemorrhage in infants.</li>
+<li>Whether <strong>shaking alone</strong>, without impact, may cause rupture of bridging veins, subdural hemorrhage, and retinal hemorrhage in healthy infants, without causing additional traumatic injuries to the neck and other parts of the body, remains controversial.</li>
+<li>Whether <strong>the sole observation of subdural hemorrhage, bridging vein rupture, and retinal hemorrhage in infants</strong>, without additional pointers to abuse, can lead to a near-certain medical determination of abusive head trauma, remains controversial.</li>
+<li>There is general agreement that brain injuries in SBS/AHT are <strong>hypoxic</strong> in nature and not traumatic.</li>
+<li>The scientific value of <strong>confessions of shaking</strong> obtained after medical determinations of SBS/AHT is debated, and whether they offer a posteriori validation of these determinations remains controversial.</li>
+<li>There is general scientific agreement that <strong>biomechanical and animal models</strong> have so far failed to reproduce the cardinal findings associated to SBS/AHT, but whether this weakens the SBS/AHT hypotheses, or whether it reflects failure of the models to accurately reproduce pediatric traumatic brain injuries, remains controversial.</li>
+<li>There is general scientific agreement that <strong>benign external hydrocephalus</strong> may sometimes be associated with isolated subdural and retinal hemorrhage in infants, without major trauma.</li>
+<li>There is general agreement that <strong>short falls</strong> may rarely cause severe intracranial injuries, including subdural and retinal hemorrhage, and/or death, although the exact frequency of occurrence remains debated.</li>
+<li>There is universal agreement that shaking and other forms of inflicted head trauma and child abuse are dangerous and justify criminal prosecutions. Public policies focusing on prevention are warranted.</li>
+</ul>
+</div>
+
 
 # Overview
 
@@ -416,7 +437,9 @@ In this section, we give some of the main references to medical, scientific, and
 
 ### <a id="sec-history" href="#sec-history">History</a>
 
-These historical publications are considered as the seminal works leading to the recognition of shaken baby syndrome. The two main figures are **John Caffey** (1895-1978), American pediatric radiologist, and **Norman Guthkelch** (1915-2016), British pediatric neurosurgeon. Note that, in the last few years of his life, the latter has criticized the way medical determinations of SBS were made.
+The publications below are considered as the seminal works leading to the recognition of shaken baby syndrome. The two main figures are [**John Caffey**](https://en.wikipedia.org/wiki/John_Caffey) (1895-1978), American pediatric radiologist, and [**Norman Guthkelch**](https://en.wikipedia.org/wiki/Norman_Guthkelch) (1915-2016), British pediatric neurosurgeon.
+
+Agnostics claim that initial works on SBS were based on anecdotal evidence and misunderstandings, notably misinterpretation of the study by Pakistani American neurosurgeon [**Ayub Ommaya**](https://en.wikipedia.org/wiki/Ayub_Ommaya) in 1968 on whiplash injuries in monkeys. For them, SBS was applied in court before it was ever validated by robust scientific studies. In the last few years of his life, Norman Guthkelch has also criticized the way medical determinations of SBS were made.
 
 * [**Lazoritz 1997**. The whiplash shaken infant syndrome: Has Caffey's syndrome changed or have we changed his syndrome?](https://www.sciencedirect.com/science/article/pii/S0145213497000616)
 
