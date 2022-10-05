@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom"><title>Cyrille Rossant</title><link href="https://cyrille.rossant.net/" rel="alternate"></link><link href="https://cyrille.rossant.net/feeds/all.atom.xml" rel="self"></link><id>https://cyrille.rossant.net/</id><updated>2022-09-30T00:00:00+02:00</updated><entry><title>An Introduction to the Scientific Controversy over Shaken Baby Syndrome</title><link href="https://cyrille.rossant.net/introduction-shaken-baby-syndrome-controversy/" rel="alternate"></link><published>2022-09-30T00:00:00+02:00</published><updated>2022-09-30T00:00:00+02:00</updated><author><name>Cyrille Rossant</name></author><id>tag:cyrille.rossant.net,2022-09-30:/introduction-shaken-baby-syndrome-controversy/</id><summary type="html">&lt;p&gt;The scientific controversy over the so-called &lt;strong&gt;Shaken Baby Syndrome (SBS)&lt;/strong&gt; (also known, with a few key differences indicated later, as &lt;strong&gt;Abusive Head Trauma, AHT&lt;/strong&gt;) is a rich and highly complex multifaceted topic.&lt;/p&gt;
-&lt;p&gt;It involves a wide range of academic disciplines: pediatrics, neurology, neuropathology, radiology, hematology, obstetrics, evidence-based medicine, biomechanics, statistics, epidemiology, psychology, among others. There are also ramifications in epistemology, medical ethics, criminal law, sociology...&lt;/p&gt;
+&lt;p&gt;It involves a wide range of academic disciplines: pediatrics, neonatology, obstetrics, neurology, neuropathology, radiology, hematology, evidence-based medicine, biomechanics, statistics, epidemiology, psychology, among others. There are also ramifications in epistemology, medical ethics, criminal law, sociology...&lt;/p&gt;
 </summary><content type="html">&lt;p&gt;The scientific controversy over the so-called &lt;strong&gt;Shaken Baby Syndrome (SBS)&lt;/strong&gt; (also known, with a few key differences indicated later, as &lt;strong&gt;Abusive Head Trauma, AHT&lt;/strong&gt;) is a rich and highly complex multifaceted topic.&lt;/p&gt;
-&lt;p&gt;It involves a wide range of academic disciplines: pediatrics, neurology, neuropathology, radiology, hematology, obstetrics, evidence-based medicine, biomechanics, statistics, epidemiology, psychology, among others. There are also ramifications in epistemology, medical ethics, criminal law, sociology...&lt;/p&gt;
+&lt;p&gt;It involves a wide range of academic disciplines: pediatrics, neonatology, obstetrics, neurology, neuropathology, radiology, hematology, evidence-based medicine, biomechanics, statistics, epidemiology, psychology, among others. There are also ramifications in epistemology, medical ethics, criminal law, sociology...&lt;/p&gt;
 
 
 &lt;p&gt;As such, the mass of data and information collected in the past half-century is phenomenal. There has been hundreds of popular press articles and documentaries in the past decades, while the academic publications number in the thousands.&lt;/p&gt;
@@ -13,10 +13,29 @@
 &lt;blockquote&gt;
 &lt;p&gt;&lt;strong&gt;Post updates&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
+&lt;li&gt;2022-10-05 : added summary&lt;/li&gt;
 &lt;li&gt;2022-10-03 : highlighted references&lt;/li&gt;
 &lt;li&gt;2022-09-30 : initial version&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/blockquote&gt;
+&lt;h1&gt;Summary&lt;/h1&gt;
+&lt;div class="box"&gt;
+&lt;p&gt;&lt;strong&gt;tl;dr&lt;/strong&gt; :
+Summary of the current state of scientific knowledge at the time of writing (October 2022):&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Inflicted head trauma&lt;/strong&gt; may cause a constellation of extracranial and cranial injuries in infants, including intracranial and ocular hemorrhage.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Accidental and non-accidental impact to the head&lt;/strong&gt; may cause subdural and retinal hemorrhage in infants.&lt;/li&gt;
+&lt;li&gt;Whether &lt;strong&gt;shaking alone&lt;/strong&gt;, without impact, may cause rupture of bridging veins, subdural hemorrhage, and retinal hemorrhage in healthy infants, without causing additional traumatic injuries to the neck and other parts of the body, remains controversial.&lt;/li&gt;
+&lt;li&gt;Whether &lt;strong&gt;the sole observation of subdural hemorrhage, bridging vein rupture, and retinal hemorrhage in infants&lt;/strong&gt;, without additional pointers to abuse, can lead to a near-certain medical determination of abusive head trauma, remains controversial.&lt;/li&gt;
+&lt;li&gt;There is general agreement that brain injuries in SBS/AHT are &lt;strong&gt;hypoxic&lt;/strong&gt; in nature and not traumatic.&lt;/li&gt;
+&lt;li&gt;The scientific value of &lt;strong&gt;confessions of shaking&lt;/strong&gt; obtained after medical determinations of SBS/AHT is debated, and whether they offer a posteriori validation of these determinations remains controversial.&lt;/li&gt;
+&lt;li&gt;There is general scientific agreement that &lt;strong&gt;biomechanical and animal models&lt;/strong&gt; have so far failed to reproduce the cardinal findings associated to SBS/AHT, but whether this weakens the SBS/AHT hypotheses, or whether it reflects failure of the models to accurately reproduce pediatric traumatic brain injuries, remains controversial.&lt;/li&gt;
+&lt;li&gt;There is general scientific agreement that &lt;strong&gt;benign external hydrocephalus&lt;/strong&gt; may sometimes be associated with isolated subdural and retinal hemorrhage in infants, without major trauma.&lt;/li&gt;
+&lt;li&gt;There is general agreement that &lt;strong&gt;short falls&lt;/strong&gt; may rarely cause severe intracranial injuries, including subdural and retinal hemorrhage, and/or death, although the exact frequency of occurrence remains debated.&lt;/li&gt;
+&lt;li&gt;There is universal agreement that shaking and other forms of inflicted head trauma and child abuse are dangerous and justify criminal prosecutions. Public policies focusing on prevention are warranted.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+
 &lt;h1&gt;Overview&lt;/h1&gt;
 &lt;p&gt;Before presenting some of the most important references on the subject, we will indicate the caution required when investigating the subject, and we will try to clarify the definitions and the most contentious points.&lt;/p&gt;
 &lt;h2&gt;Caution to reader&lt;/h2&gt;
@@ -384,7 +403,8 @@ Syndrome/Abusive Head Trauma&lt;/a&gt;&lt;/p&gt;
 &lt;h2&gt;&lt;a id="sec-academic" href="#sec-academic"&gt;Academic publications&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;In this section, we give some of the main references to medical, scientific, and legal academic publications, sorted by category and date of publication. There are about ten times more publications in the literature. We try to give references from both sides of the controversy, when this distinction makes sense.&lt;/p&gt;
 &lt;h3&gt;&lt;a id="sec-history" href="#sec-history"&gt;History&lt;/a&gt;&lt;/h3&gt;
-&lt;p&gt;These historical publications are considered as the seminal works leading to the recognition of shaken baby syndrome. The two main figures are &lt;strong&gt;John Caffey&lt;/strong&gt; (1895-1978), American pediatric radiologist, and &lt;strong&gt;Norman Guthkelch&lt;/strong&gt; (1915-2016), British pediatric neurosurgeon. Note that, in the last few years of his life, the latter has criticized the way medical determinations of SBS were made.&lt;/p&gt;
+&lt;p&gt;The publications below are considered as the seminal works leading to the recognition of shaken baby syndrome. The two main figures are &lt;a href="https://en.wikipedia.org/wiki/John_Caffey"&gt;&lt;strong&gt;John Caffey&lt;/strong&gt;&lt;/a&gt; (1895-1978), American pediatric radiologist, and &lt;a href="https://en.wikipedia.org/wiki/Norman_Guthkelch"&gt;&lt;strong&gt;Norman Guthkelch&lt;/strong&gt;&lt;/a&gt; (1915-2016), British pediatric neurosurgeon.&lt;/p&gt;
+&lt;p&gt;Agnostics claim that initial works on SBS were based on anecdotal evidence and misunderstandings, notably misinterpretation of the study by Pakistani American neurosurgeon &lt;a href="https://en.wikipedia.org/wiki/Ayub_Ommaya"&gt;&lt;strong&gt;Ayub Ommaya&lt;/strong&gt;&lt;/a&gt; in 1968 on whiplash injuries in monkeys. For them, SBS was applied in court before it was ever validated by robust scientific studies. In the last few years of his life, Norman Guthkelch has also criticized the way medical determinations of SBS were made.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;
 &lt;p&gt;&lt;a href="https://www.sciencedirect.com/science/article/pii/S0145213497000616"&gt;&lt;strong&gt;Lazoritz 1997&lt;/strong&gt;. The whiplash shaken infant syndrome: Has Caffey's syndrome changed or have we changed his syndrome?&lt;/a&gt;&lt;/p&gt;
