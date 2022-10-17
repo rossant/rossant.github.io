@@ -422,6 +422,7 @@ code {
 
 
 
+#post h1 a:hover::after,
 #post h2 a:hover::after,
 #post h3 a:hover::after {
     display: inline-block;
@@ -440,6 +441,7 @@ code {
     height: 15px;
 }
 
+#post h1 a,
 #post h2 a,
 #post h3 a {
     color: #555;

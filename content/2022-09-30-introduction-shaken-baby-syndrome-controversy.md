@@ -18,15 +18,17 @@ This task is not even reserved to doctors and researchers. With enough time and 
 
 This post provides a few pointers to anyone interested in understanding the most pressing issues around SBS. It is by no means exhaustive. It suggests a bare minimum of essential resources one should look at before delving into more specific aspects of the controversy.
 
+
 > **Post updates**
 >
+> - 2022-10-17 : minor updates
 > - 2022-10-05 : added summary
 > - 2022-10-03 : highlighted references
 > - 2022-09-30 : initial version
 
-# Summary
+# <a id="sec-summary" href="#sec-summary">Summary</a>
 
-<div class="box">
+<div class="box tldr">
 <p><strong>tl;dr</strong> :
 Summary of the current state of scientific knowledge at the time of writing (October 2022):</p>
 <ul>
@@ -36,6 +38,7 @@ Summary of the current state of scientific knowledge at the time of writing (Oct
 <li>Whether <strong>the sole observation of subdural hemorrhage, bridging vein rupture, and retinal hemorrhage in infants</strong>, without additional pointers to abuse, can lead to a near-certain medical determination of abusive head trauma, remains controversial.</li>
 <li>There is general agreement that brain injuries in SBS/AHT are <strong>hypoxic</strong> in nature and not traumatic.</li>
 <li>The scientific value of <strong>confessions of shaking</strong> obtained after medical determinations of SBS/AHT is debated, and whether they offer a posteriori validation of these determinations remains controversial.</li>
+<li>There is general scientific agreement that <strong>videotaped and witnessed cases of shaking</strong> are extremely rare, and that most of these rare cases do not appear to result in intracranial and retinal hemorrhage. The scientific and forensic significance of this observation is debated.</li>
 <li>There is general scientific agreement that <strong>biomechanical and animal models</strong> have so far failed to reproduce the cardinal findings associated to SBS/AHT, but whether this weakens the SBS/AHT hypotheses, or whether it reflects failure of the models to accurately reproduce pediatric traumatic brain injuries, remains controversial.</li>
 <li>There is general scientific agreement that <strong>benign external hydrocephalus</strong> may sometimes be associated with isolated subdural and retinal hemorrhage in infants, without major trauma.</li>
 <li>There is general agreement that <strong>short falls</strong> may rarely cause severe intracranial injuries, including subdural and retinal hemorrhage, and/or death, although the exact frequency of occurrence remains debated.</li>
@@ -44,12 +47,12 @@ Summary of the current state of scientific knowledge at the time of writing (Oct
 </div>
 
 
-# Overview
+# <a id="sec-overview" href="#sec-overview">Overview</a>
 
 Before presenting some of the most important references on the subject, we will indicate the caution required when investigating the subject, and we will try to clarify the definitions and the most contentious points.
 
 
-## Caution to reader
+## <a id="sec-caution" href="#sec-caution">Caution to reader</a>
 
 It is crucially important to understand that SBS/AHT is not an academic subject like others, for reasons listed here:
 
@@ -61,22 +64,24 @@ It is crucially important to understand that SBS/AHT is not an academic subject 
 
 4. There is a significant amount of confusion and even obfuscation in the literature regarding terminology and definitions. The meaning of commonly-used terms has slowly, and often implicitly, evolved over the course of decades. Discrepancies only appear when confronting literature decades apart.
 
-5. The degree of polarization in this area is extreme. As a first approximation, one may consider a currently dominant view, supported by what we may call "SBS/AHT adherents", and a different view supported by "agnostics". Even the very existence of a legitimate controversy is denied by most adherents. We will discuss these terms later in this post.
+5. Terminology is often vague, unclear, and imprecise. Descriptions are often qualitative rather than quantitative. For example, the degree of force associated to an act of shaking is not described in terms of velocity or acceleration, but as an act _"so violent that individuals observing it would recognize it as dangerous and likely to kill the child"_ ([AAP 2001](https://publications.aap.org/pediatrics/article/108/1/206/66723/Shaken-Baby-Syndrome-Rotational-Cranial-Injuries)). These descriptions render scientific investigations difficult while making it clear they are designed for legal purposes.
 
-6. The adherent side is presented as having near-universal institutional support. It is fundamentally important that, for the sake of making a robust, evidence-based scientific opinion, one must make a sustained effort to move beyond any argument from authority. The reader should not substitute collective certainty with scientific evidence. Although in general, institutional support may be expected to follow scientific evidence, this is not strictly guaranteed, particularly when there are major non-scientific (political, financial, societal...) ramifications. Thus, one should not rely on one's natural confidence in scientific authority; rather, the reader should keep an open mind and exercise critical thinking at all times, and never hesitate to question or double-check any explicit or implicit assumption.
+6. The degree of polarization in this area is extreme. As a first approximation, one may consider a currently dominant view, supported by what we may call "SBS/AHT adherents", and a different view supported by "agnostics". Even the very existence of a legitimate controversy is denied by most adherents. We will discuss these terms later in this post.
 
-7. As a corollary to this extremely polarized dispute, the field is replete with violent personal attacks, insults, ad-hominem arguments, straw-man arguments, misstatements, and misrepresentations. The reader needs to keep a calm, objective, rational mind and concentrate on nothing other than robust methodology and sound scientific evidence, leaving all emotion aside.
+7. The adherent side is presented as having near-universal institutional support. It is fundamentally important that, for the sake of making a robust, evidence-based scientific opinion, one must make a sustained effort to move beyond any argument from authority. The reader should not substitute collective certainty with scientific evidence. Although in general, institutional support may be expected to follow scientific evidence, this is not strictly guaranteed, particularly when there are major non-scientific (political, financial, societal...) ramifications. Thus, one should not rely on one's natural confidence in scientific authority; rather, the reader should keep an open mind and exercise critical thinking at all times, and never hesitate to question or double-check any explicit or implicit assumption.
 
-8. A superficial read of the SBS/AHT academic literature, especially reviews, is far from sufficient to gain a deep understanding of the issues at play. One has to comprehend their historical context and evolution over periods spanning many decades. It is often necessary to look up and read cited references repeatedly.
+8.  As a corollary to this extremely polarized dispute, the field is replete with violent personal attacks, insults, ad-hominem arguments, straw-man arguments, misstatements, and misrepresentations. The reader needs to keep a calm, objective, rational mind and concentrate on nothing other than robust methodology and sound scientific evidence, leaving all emotion aside.
 
-9. One must develop the unnatural habit of checking every cited and seemingly literature-supported item of information. It has been shown on multiple occasions that certain assertions cannot be accepted at face value, even when references are proposed. Examples may be given later.
+9.  A superficial read of the SBS/AHT academic literature, especially reviews, is far from sufficient to gain a deep understanding of the issues at play. One has to comprehend their historical context and evolution over periods spanning many decades. It is often necessary to look up and read cited references repeatedly.
 
-10. Contrary to the philosophy of the open science movement, anonymized data on which medical studies are based is almost never available. This is partly explained by obvious issues related to the medical and judicial confidentiality of child abuse cases. For example, when a clinical study includes cases that received a medical determination of child abuse, the exact medical information used by researchers to make these determinations is not accessible, or in an extremely limited form (as a table or a graph in the publication). When cases are selected based on the existence of confessions obtained during police interrogation, the context and specifics of the interrogation are not available. Since independent verification is impossible, the scientific value of most studies is limited by the opacity of the data they rely on. In this context, testimonies of individuals relating personal or professional experience of these cases may sometimes bring valuable insight.
+10. One must develop the unnatural habit of checking every cited and seemingly literature-supported item of information. It has been shown on multiple occasions that certain assertions cannot be accepted at face value, even when references are proposed. Examples may be given later.
 
-11. When writing about this topic, it is often necessary to make obvious statements explicit, such as recalling that shaking a baby must be strictly avoided, that severe injuries are to be expected after inflicted head trauma in children, and that child abusers must be criminally prosecuted. The reason for stating the obvious is that SBS/AHT agnostics are often accused, without any supporting evidence, of "denying" the existence of child abuse, or pretending that "shaking is safe". In reality, the controversy pertains uniquely to the reliability with which child abuse can be inferred with a high degree of certainty based on a few medical findings alone.
+11. Contrary to the philosophy of the open science movement, anonymized data on which medical studies are based is almost never available. This is partly explained by obvious issues related to the medical and judicial confidentiality of child abuse cases. For example, when a clinical study includes cases that received a medical determination of child abuse, the exact medical information used by researchers to make these determinations is not accessible, or in an extremely limited form (as a table or a graph in the publication). When cases are selected based on the existence of confessions obtained during police interrogation, the context and specifics of the interrogation are not available. Since independent verification is impossible, the scientific value of most studies is limited by the opacity of the data they rely on. In this context, testimonies of individuals relating personal or professional experience of these cases may sometimes bring valuable insight.
+
+12. When writing about this topic, it is often necessary to make obvious statements explicit, such as recalling that shaking a baby must be strictly avoided, that severe injuries are to be expected after inflicted head trauma in children, and that child abusers must be criminally prosecuted. The reason for stating the obvious is that SBS/AHT agnostics are often accused, without any supporting evidence, of "denying" the existence of child abuse, or pretending that "shaking is safe". In reality, the controversy pertains uniquely to the reliability with which child abuse can be inferred with a high degree of certainty based on a few medical findings alone.
 
 
-## "Adherents" vs "agnostics"
+## <a id="sec-adherents" href="#sec-adherents">"Adherents" vs "agnostics"</a>
 
 We will refer to both sides of the controversy as "SBS/AHT adherents" and "agnostics". This is not a perfect denomination, and in any case any choice of denomination can be considered biased by one side or another. We intend these terms to be understood precisely according to their definitions of the Collins dictionary:
 
@@ -91,7 +96,7 @@ On the other side, whereas a very small number of authors may deny the "existenc
 > "Today, we are still seeking answers to the questions that we have been asking for 40 years or longer—questions such as, why do some infants or toddlers suddenly collapse or die? Why do some of these children have subdural hemorrhages while others do not? What does the presence of the triad (or some elements of the triad) tell us about the cause of the collapse or death? And are there any findings that can accurately distinguish between accidents, abuse and natural causes? For decades, we thought we had answers to some of these questions: we thought that the presence of the triad, or some of its elements, proved that the child had been shaken. Today, the correct answer to these questions is, **'we don't know.'** And, until we do know, we are, in Dr. Duhaime's words, simply 'shooting in the dark.'" <span class="ref">(<a href="https://heinonline.org/hol-cgi-bin/get_pdf.cgi?handle=hein.journals/hhpol12&section=15">Findley 2011</a>, pp. 261-262, emphasis ours)</span>
 
 
-## A tentative definition
+## <a id="sec-definition" href="#sec-definition">A tentative definition</a>
 
 A required first step when investigating such a subject is to be clear on definitions. The SBS/AHT controversy is so intense that even the most basic definitions are vigorously debated. The term "Shaken Baby Syndrome" has actually several totally different meanings, which is a major reason for the high degree of confusion and obfuscation surrounding this issue.
 
@@ -115,7 +120,7 @@ Surprisingly, a clear definition of SBS/AHT such as ours is rarely found in this
 
 Before we pursue, we must give some basic medical terminology.
 
-### Some medical terminology
+### <a id="sec-medical" href="#sec-medical">Some medical terminology</a>
 
 - The brain is surrounded by three **meningeal membranes**: the pia, the arachnoid, and the dura mater.
 - The space between the pia and the arachnoid is the **subarachnoid space**. It is filled with cerebrospinal fluid. The arachnoid and the dura mater are in continuity with one another, forming the **subdural compartment** which may contain fluid or blood.
@@ -130,7 +135,7 @@ An **intracranial hemorrhage** occurs when blood is found in any of the tissues 
 </figure>
 
 
-## Legal implications
+## <a id="sec-legal" href="#sec-legal">Legal implications</a>
 
 Our tentative definition of SBS has clear legal implications. Infantile subdural and retinal hemorrhage are considered to be so specific for violent child abuse that their sole presence in an infant, even with no sign of trauma on the body and no suspicion of abuse in the child's environment, constitutes an almost irrefutable proof that a criminal offence has occurred and, as such, justifies drastic child protection procedures, criminal prosecutions, and convictions.
 
@@ -145,7 +150,7 @@ The degree of certainty with which medical experts determine the occurrence of a
 At the time of writing, the [National Registry of Exonerations](https://www.law.umich.edu/special/exoneration/Pages/detaillist.aspx?View=%7BFAF6EDDB-5A68-4F8F-8A52-2C61F5BF9EA7%7D&FilterField1=Group&FilterValue1=SBS) has identified 27 of exonerations of past convictions in SBS/AHT cases in the United States.
 
 
-## A contested definition
+## <a id="sec-contested" href="#sec-contested">A contested definition</a>
 
 [Norman Guthkelch](https://en.wikipedia.org/wiki/Norman_Guthkelch), the British neurosurgeon who first evoked a possible causal link between shaking and infant subdural hemorrhage, has criticized the very term Shaken Baby Syndrome:
 
@@ -166,7 +171,7 @@ This change of definition only adds to the confusion, since it abandons the kern
 Agnostics also criticize the term Abusive Head Trauma on the basis that this term continues to conflate an intention (abuse) with a medical diagnosis. They contend that abuse is a legal determination, not a medical one ([Findley 2019](https://heinonline.org/HOL/Page?handle=hein.journals/wlr2019&div=41&g_sent=1&collection=journals)).
 
 
-## The "triad"
+## <a id="sec-triad" href="#sec-triad">The "triad"</a>
 
 Alongside this shift of terminology, the **SBS Definition** indicated above was abandoned.
 
@@ -189,7 +194,7 @@ Yet, even though the SBS Definition above has been officially renounced by sever
 It should also be noted that, in the past ten years, the strong association of retinal hemorrhage with abuse has been slowly replaced by an association with _severe_ retinal hemorrhage.
 
 
-### Citations from the medical literature, old and new
+### <a id="sec-old-new" href="#sec-old-new">Citations from the medical literature, old and new</a>
 
 We give here a few relevant citations from the adherents' medical literature, illustrating a paradigm shift about the existence and validity of "triad"-based medical determinations of abuse between the late 1990's and the late 2010's. These citations are by no means exhaustive.
 
@@ -202,18 +207,18 @@ We give here a few relevant citations from the adherents' medical literature, il
 
 <p>"The shaken baby syndrome (with or without evidence of impact) is now a well-characterized clinical and pathological entity with <strong>diagnostic features in severe cases virtually unique to this type of injury</strong>—[1] swelling of the brain (cerebral edema) secondary to severe brain injury, [2] bleeding within the head (subdural hemorrhage), and [3] bleeding in the interior linings of the eyes (retinal hemorrhages). Let those who would challenge these diagnostic features first do so in the peer-reviewed literature, before speculating on other causes in court." <span class="ref">(<a href="https://publications.aap.org/pediatrics/article-abstract/101/2/321/61769">Chadwick 1998</a>, emphasis ours)</span></p>
 
-<p>"The expert who acknowledges the classic findings of SBS include subdural hematoma, retinal hemorrhage and edema, but chooses to ignore this constellation in favor of an alternative hypothesis will appear foolish." <span class="ref">(<a href="https://www.tandfonline.com/doi/pdf/10.1300/J146v05n01_15">Holmgren 2001</a>, page 319)</span></p>
+<p>"The expert who acknowledges the classic findings of SBS include subdural hematoma, retinal hemorrhage and edema, but chooses to ignore this constellation in favor of an alternative hypothesis will appear foolish." <span class="ref">(<a href="https://www.tandfonline.com/doi/pdf/10.1300/J146v05n01_15">Holmgren 2001</a>, p. 319)</span></p>
 
   </div>
   <div class="right">
 
 <h4>Newer literature</h4>
 
-<p>"<strong>AHT is not a diagnosis that is made, or excluded, based only on the presence of the three 'triad' factors</strong>, namely retinal haemorrhage, subdural haematoma and encephalopathy. Although these findings are commonly seen in AHT cases, to suggest that diagnostic processes simply rest on the presence or absence of the ‘triad', without regard to the specific features and clinical circumstances of the findings, is, at best, misleading. (...) We maintain that <strong>the term 'triad' carries no value for clinicians experienced in evaluating suspected AHT.</strong>" <span class="ref">(<a href="https://onlinelibrary.wiley.com/doi/pdf/10.1111/apa.13840">Lucas 2017</a>, page 1033, emphases ours)</span></p>
+<p>"<strong>AHT is not a diagnosis that is made, or excluded, based only on the presence of the three 'triad' factors</strong>, namely retinal haemorrhage, subdural haematoma and encephalopathy. Although these findings are commonly seen in AHT cases, to suggest that diagnostic processes simply rest on the presence or absence of the ‘triad', without regard to the specific features and clinical circumstances of the findings, is, at best, misleading. (...) We maintain that <strong>the term 'triad' carries no value for clinicians experienced in evaluating suspected AHT.</strong>" <span class="ref">(<a href="https://onlinelibrary.wiley.com/doi/pdf/10.1111/apa.13840">Lucas 2017</a>, p. 1033, emphases ours)</span></p>
 
-<p>"The diagnosis of abusive head trauma in children is not solely based on the findings of subdural hematoma, hypoxic–ischemic encephalopathy and retinal hemorrhage – <strong>it never has been</strong>." <span class="ref">(<a href="https://link.springer.com/article/10.1007/s00247-018-4158-0">Strouse 2018</a>, page 1045)</span></p>
+<p>"The diagnosis of abusive head trauma in children is not solely based on the findings of subdural hematoma, hypoxic–ischemic encephalopathy and retinal hemorrhage – <strong>it never has been</strong>." <span class="ref">(<a href="https://link.springer.com/article/10.1007/s00247-018-4158-0">Strouse 2018</a>, p. 1045)</span></p>
 
-<p>"Efforts to create doubt about AHT include the deliberate mischaracterization and replacement of the complex and multifaceted diagnostic process by a near-mechanical determination based on the "triad" – the findings of subdural hemorrhage, retinal hemorrhage and encephalopathy." <span class="ref">(<a href="https://link.springer.com/article/10.1007/s00247-018-4149-1">Choudhary 2018</a>, page 1050)</span></p>
+<p>"Efforts to create doubt about AHT include the deliberate mischaracterization and replacement of the complex and multifaceted diagnostic process by a near-mechanical determination based on the "triad" – the findings of subdural hemorrhage, retinal hemorrhage and encephalopathy." <span class="ref">(<a href="https://link.springer.com/article/10.1007/s00247-018-4149-1">Choudhary 2018</a>, p. 1050)</span></p>
 
   </div>
 </div>
@@ -243,7 +248,7 @@ We propose some open debated questions, with links to scientific references belo
 
 
 
-# Selected bibliography
+# <a id="sec-biblio" href="#sec-biblio">Selected bibliography</a>
 
 In the remainder of this post, we will give references to learn more about the controversy.
 
@@ -257,7 +262,7 @@ In the remainder of this post, we will give references to learn more about the c
 - Many articles are behind a paywall. Older articles may also be hard to find. Contact me if you need the PDF of some articles.
 
 
-### Table of contents
+### <a id="sec-toc" href="#sec-toc">Table of contents</a>
 
 * [Books](#sec-books)
 * [Press investigations](#sec-press)
