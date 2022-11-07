@@ -373,6 +373,25 @@ code {
     font-style: italic;
 }
 
+#post details.post-updates {
+    background: #fafafa;
+    border: 1px solid #999;
+    padding: 5px 3px;
+}
+
+#post details.post-updates summary {
+    cursor: pointer;
+    font-weight: 500;
+    padding: 5px 0 5px 5px;
+}
+
+#post details.post-updates summary::marker {
+    display: block;
+}
+
+#post details.post-updates table td {
+    padding: 5px 15px 5px 5px;
+}
 
 
 #post .side-by-side {

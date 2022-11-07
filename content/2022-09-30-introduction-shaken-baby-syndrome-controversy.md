@@ -19,21 +19,29 @@ This task is not even reserved to doctors and researchers. With enough time and 
 This post provides a few pointers to anyone interested in understanding the most pressing issues around SBS. It is by no means exhaustive. It suggests a bare minimum of essential resources one should look at before delving into more specific aspects of the controversy.
 
 
-> **Post updates**
->
-> - 2022-10-17 : minor updates
-> - 2022-10-05 : added summary
-> - 2022-10-03 : highlighted references
-> - 2022-09-30 : initial version
+<figure>
+<details class="post-updates">
+<summary>Post updates</summary>
+<table>
+<tr><td>2022-11-07</td><td>added citations</td></tr>
+<tr><td>2022-10-17</td><td>minor updates</td></tr>
+<tr><td>2022-10-05</td><td>added summary</td></tr>
+<tr><td>2022-10-03</td><td>highlighted references</td></tr>
+<tr><td>2022-09-30</td><td>initial version</td></tr>
+</table>
+</details>
+</figure>
+
 
 # <a id="sec-summary" href="#sec-summary">Summary</a>
 
 <div class="box tldr">
 <p><strong>tl;dr</strong> :
-Summary of the current state of scientific knowledge at the time of writing (October 2022):</p>
+Summary of the current state of scientific knowledge at the time of writing (November 2022):</p>
 <ul>
 <li><strong>Inflicted head trauma</strong> may cause a constellation of extracranial and cranial injuries in infants, including intracranial and ocular hemorrhage.</li>
 <li><strong>Accidental and non-accidental impact to the head</strong> may cause subdural and retinal hemorrhage in infants.</li>
+<li>The presence of <strong>multiple traumatic injuries</strong> on various part of an infant's body raises suspicions of abuse.</li>
 <li>Whether <strong>shaking alone</strong>, without impact, may cause rupture of bridging veins, subdural hemorrhage, and retinal hemorrhage in healthy infants, without causing additional traumatic injuries to the neck and other parts of the body, remains controversial.</li>
 <li>Whether <strong>the sole observation of subdural hemorrhage, bridging vein rupture, and retinal hemorrhage in infants</strong>, without additional pointers to abuse, can lead to a near-certain medical determination of abusive head trauma, remains controversial.</li>
 <li>There is general agreement that brain injuries in SBS/AHT are <strong>hypoxic</strong> in nature and not traumatic.</li>
@@ -196,7 +204,7 @@ It should also be noted that, in the past ten years, the strong association of r
 
 ### <a id="sec-old-new" href="#sec-old-new">Citations from the medical literature, old and new</a>
 
-We give here a few relevant citations from the adherents' medical literature, illustrating a paradigm shift about the existence and validity of "triad"-based medical determinations of abuse between the late 1990's and the late 2010's. These citations are by no means exhaustive.
+We give here a few relevant citations from the **adherents' medical literature**, illustrating a paradigm shift about the existence and validity of "triad"-based medical determinations of abuse between the late 1990's and the late 2010's. These citations are by no means exhaustive.
 
 <div class="side-by-side">
   <div class="left">
@@ -207,18 +215,22 @@ We give here a few relevant citations from the adherents' medical literature, il
 
 <p>"The shaken baby syndrome (with or without evidence of impact) is now a well-characterized clinical and pathological entity with <strong>diagnostic features in severe cases virtually unique to this type of injury</strong>—[1] swelling of the brain (cerebral edema) secondary to severe brain injury, [2] bleeding within the head (subdural hemorrhage), and [3] bleeding in the interior linings of the eyes (retinal hemorrhages). Let those who would challenge these diagnostic features first do so in the peer-reviewed literature, before speculating on other causes in court." <span class="ref">(<a href="https://publications.aap.org/pediatrics/article-abstract/101/2/321/61769">Chadwick 1998</a>, emphasis ours)</span></p>
 
-<p>"The expert who acknowledges the classic findings of SBS include subdural hematoma, retinal hemorrhage and edema, but chooses to ignore this constellation in favor of an alternative hypothesis will appear foolish." <span class="ref">(<a href="https://www.tandfonline.com/doi/pdf/10.1300/J146v05n01_15">Holmgren 2001</a>, p. 319)</span></p>
+<p>"The expert who acknowledges the classic findings of SBS include subdural hematoma, retinal hemorrhage and edema, but chooses to ignore this constellation in favor of an alternative hypothesis will appear <strong>foolish</strong>." <span class="ref">(<a href="https://www.tandfonline.com/doi/pdf/10.1300/J146v05n01_15">Holmgren 2001</a>, p. 319, emphasis ours)</span></p>
+
+<p>"Often referred to as the <strong>"triad"</strong>, the consensus continues to be that a collection of (1) damage to the brain, evidenced by severe brain swelling and/or diffuse traumatic axonal injury; (2) bleeding under the membranes which cover the brain, usually subdural and/or subarachnoid bleeding; and, (3) bleeding in the layers of the retina, often accompanied by other ocular damage, when seen in young children or infants, is <strong>virtually diagnostic</strong> of severe, whiplash shaking of the head." <span class="ref">(<a href="https://www.dontshake.org/media/k2/attachments/2000-SaltLakeCityProgram.pdf">Parrish 2000</a>, p. 1, emphases ours)</span></p>
 
   </div>
   <div class="right">
 
 <h4>Newer literature</h4>
 
+<p>"Physicians experienced in the clinical evaluation of paediatric traumatic brain injury and AHT <strong><emph>do not</emph> diagnose SBS by a ‘triad’</strong>. That is a ‘strawman’ created for legal purposes and legal recourse. (...) We know of no guideline or reputable paediatric treatise that recommends SBS/AHT be diagnosed by a ‘triad’." <span class="ref">(<a href="https://onlinelibrary.wiley.com/doi/full/10.1111/apa.13858">Narang 2017</a>, p. 1047-8, emphasis ours)</span></p>
+
 <p>"<strong>AHT is not a diagnosis that is made, or excluded, based only on the presence of the three 'triad' factors</strong>, namely retinal haemorrhage, subdural haematoma and encephalopathy. Although these findings are commonly seen in AHT cases, to suggest that diagnostic processes simply rest on the presence or absence of the ‘triad', without regard to the specific features and clinical circumstances of the findings, is, at best, misleading. (...) We maintain that <strong>the term 'triad' carries no value for clinicians experienced in evaluating suspected AHT.</strong>" <span class="ref">(<a href="https://onlinelibrary.wiley.com/doi/pdf/10.1111/apa.13840">Lucas 2017</a>, p. 1033, emphases ours)</span></p>
 
 <p>"The diagnosis of abusive head trauma in children is not solely based on the findings of subdural hematoma, hypoxic–ischemic encephalopathy and retinal hemorrhage – <strong>it never has been</strong>." <span class="ref">(<a href="https://link.springer.com/article/10.1007/s00247-018-4158-0">Strouse 2018</a>, p. 1045)</span></p>
 
-<p>"Efforts to create doubt about AHT include the deliberate mischaracterization and replacement of the complex and multifaceted diagnostic process by a near-mechanical determination based on the "triad" – the findings of subdural hemorrhage, retinal hemorrhage and encephalopathy." <span class="ref">(<a href="https://link.springer.com/article/10.1007/s00247-018-4149-1">Choudhary 2018</a>, p. 1050)</span></p>
+<p>"Efforts to create doubt about AHT include the <strong>deliberate mischaracterization</strong> and replacement of the complex and multifaceted diagnostic process by a near-mechanical determination based on the "triad" – the findings of subdural hemorrhage, retinal hemorrhage and encephalopathy." <span class="ref">(<a href="https://link.springer.com/article/10.1007/s00247-018-4149-1">Choudhary 2018</a>, p. 1050, emphasis ours)</span></p>
 
   </div>
 </div>
@@ -581,7 +593,7 @@ Similar discussions also exist regarding bridging veins, subdural, and retinal h
 
 * <span class="highlight">[**Case 2008.** Inflicted Traumatic Brain Injury in Infants and Young Children](https://onlinelibrary.wiley.com/doi/full/10.1111/j.1750-3639.2008.00204.x)</span>
 
-* [**Duhaime 2007.** Traumatic brain injury in infants: the phenomenon of subdural hemorrhage with hemispheric hypodensity (“Big Black Brain”)](https://www.sciencedirect.com/science/article/pii/S0079612306610200)
+* [**Duhaime 2007.** Traumatic brain injury in infants: the phenomenon of subdural hemorrhage with hemispheric hypodensity ("Big Black Brain")](https://www.sciencedirect.com/science/article/pii/S0079612306610200)
 
 * <span class="highlight">[**Byard 2007.** Lack of Evidence for a Causal Relationship between Hypoxic-Ischemic Encephalopathy and Subdural Hemorrhage in Fetal Life, Infancy, and Early Childhood](https://journals.sagepub.com/doi/full/10.2350/06-08-0154.1)</span>
 
@@ -597,7 +609,7 @@ Similar discussions also exist regarding bridging veins, subdural, and retinal h
 
 * [**Squier 2012.** The pathophysiology of brain swelling associated with subdural hemorrhage: the role of the trigeminovascular system](https://link.springer.com/article/10.1007/s00381-012-1870-1)
 
-* <span class="highlight">[**Squier 2011.** The “Shaken Baby” syndrome: pathology and mechanisms](https://link.springer.com/article/10.1007/s00401-011-0875-2)</span>
+* <span class="highlight">[**Squier 2011.** The "Shaken Baby" syndrome: pathology and mechanisms](https://link.springer.com/article/10.1007/s00401-011-0875-2)</span>
 
 * <span class="highlight">[**Cohen 2010.** Subdural hemorrhage, intradural hemorrhage and hypoxia in the pediatric and perinatal post mortem: Are they related? An observational study combining the use of post mortem pathology and magnetic resonance imaging](https://www.sciencedirect.com/science/article/pii/S0379073810001490)</span>
 
@@ -645,7 +657,7 @@ Some authors remind that radiology alone may not yield a reliable medical determ
 
 * [**Girard 2015.** Neuroimaging differential diagnoses to abusive head trauma](https://link.springer.com/article/10.1007/s00247-015-3509-3)
 
-* [**Hahnemann 2014.** Imaging of bridging vein thrombosis in infants with abusive head trauma: the “Tadpole Sign”.](https://link.springer.com/article/10.1007/s00330-014-3443-z)
+* [**Hahnemann 2014.** Imaging of bridging vein thrombosis in infants with abusive head trauma: the "Tadpole Sign".](https://link.springer.com/article/10.1007/s00330-014-3443-z)
 
 * <span class="highlight">[**Stoodley 2014**. Controversies in non-accidental head injury in infants](https://www.birpublications.org/doi/full/10.1259/bjr/23921951)</span>
 
@@ -1120,7 +1132,7 @@ For a SBS/AHT adherent:
 
 For agnostics:
 
-> "Moreover, (...) it is unsettling that physicians would rely so heavily on purported perpetrator confessions as somehow validating questionable SBS/AHT beliefs. Approximately twenty-five percent of the DNA exonerations in this country were in cases where the innocent defendant had allegedly confessed (...). Many purported SBS "confessions" are obtained pursuant to plea agreements; or as a requirement to retain or regain parental rights in dependency proceedings; or the confession was merely to shaking the child in an effort to resuscitate after the child had already collapsed; or the confession was induced by law enforcement through suggestion that confessing to shaking would allow the child to receive important medical treatment or was the “only” possible explanation for the child's condition." <span class="ref">(<a href="https://heinonline.org/HOL/Page?collection=journals&handle=hein.journals/saclr59&id=299&men_tab=srchresults">Papetti 2019</a>, pp. 342-343)</span>
+> "Moreover, (...) it is unsettling that physicians would rely so heavily on purported perpetrator confessions as somehow validating questionable SBS/AHT beliefs. Approximately twenty-five percent of the DNA exonerations in this country were in cases where the innocent defendant had allegedly confessed (...). Many purported SBS "confessions" are obtained pursuant to plea agreements; or as a requirement to retain or regain parental rights in dependency proceedings; or the confession was merely to shaking the child in an effort to resuscitate after the child had already collapsed; or the confession was induced by law enforcement through suggestion that confessing to shaking would allow the child to receive important medical treatment or was the "only" possible explanation for the child's condition." <span class="ref">(<a href="https://heinonline.org/HOL/Page?collection=journals&handle=hein.journals/saclr59&id=299&men_tab=srchresults">Papetti 2019</a>, pp. 342-343)</span>
 
 
 #### SBS/AHT adherents
@@ -1194,7 +1206,7 @@ For agnostics:
 
 * [**Kassin 2005.** On the Psychology of Confessions: Does Innocence Put Innocents at Risk?](https://psycnet.apa.org/buy/2005-03019-002)
 
-* [**Kassin 2005.** “I'd Know a False Confession if I Saw One”: A Comparative Study of College Students and Police Investigators](https://link.springer.com/article/10.1007/s10979-005-2416-9)
+* [**Kassin 2005.** "I'd Know a False Confession if I Saw One": A Comparative Study of College Students and Police Investigators](https://link.springer.com/article/10.1007/s10979-005-2416-9)
 
 * [**Henkel 2004.** Memory distortions in coerced false confessions: a source monitoring framework analysis](https://onlinelibrary.wiley.com/doi/abs/10.1002/acp.1026)
 
@@ -1283,7 +1295,7 @@ Epidemiological studies investigate the demographics of children diagnosed with 
 
 * <span class="highlight">[**Narang 2016**. Acceptance of Shaken Baby Syndrome and Abusive Head Trauma as Medical Diagnoses](https://www.sciencedirect.com/science/article/pii/S0022347616304024)</span>
 
-* [**Albert 2012**. Ensuring Appropriate Expert Testimony for Cases Involving the “Shaken Baby”](https://jamanetwork.com/journals/jama/article-abstract/1212315)
+* [**Albert 2012**. Ensuring Appropriate Expert Testimony for Cases Involving the "Shaken Baby"](https://jamanetwork.com/journals/jama/article-abstract/1212315)
 
 * [**Holmgren 2013**. Ethical Issues in Forensic Testimony Involving Abusive Head Trauma](https://journals.sagepub.com/doi/full/10.23907/2013.042)
 
@@ -1311,7 +1323,7 @@ Epidemiological studies investigate the demographics of children diagnosed with 
 
 * [**Lynøe 2020**. The Unspoken Shaken Baby Lie Detector Algorithm—An Analysis of Diagnostic Procedures in Cases of Allegedly Abusive Head Trauma without External Signs of Trauma](https://www.researchgate.net/profile/Anders-Eriksson-12/publication/344572138_The_Unspoken_Shaken_Baby_Lie_Detector_Algorithm-An_Analysis_of_Diagnostic_Procedures_in_Cases_of_Allegedly_Abusive_Head_Trauma_without_External_Signs_of_Trauma/links/5fbe7e8fa6fdcc6cc6689b23/The-Unspoken-Shaken-Baby-Lie-Detector-Algorithm-An-Analysis-of-Diagnostic-Procedures-in-Cases-of-Allegedly-Abusive-Head-Trauma-without-External-Signs-of-Trauma.pdf)
 
-* [**Lynøe 2020**. Do Child Abuse Pediatricians Search for a “Pediatric Vulcan Planet”? Comparison of Controversies about the Vulcan-Must-Exist-Theory and the Infant-Must-Have-Been-Shaken-Theory](https://www.researchgate.net/profile/C-Brook/publication/346005323_Do_Child_Abuse_Pediatricians_Search_for_a_Pediatric_Vulcan_Planet_Comparison_of_Controversies_about_the_Vulcan-Must-Exist-Theory_and_the_Infant-Must-Have-Been-Shaken-Theory/links/5fbc3244299bf104cf6e752e/Do-Child-Abuse-Pediatricians-Search-for-a-Pediatric-Vulcan-Planet-Comparison-of-Controversies-about-the-Vulcan-Must-Exist-Theory-and-the-Infant-Must-Have-Been-Shaken-Theory.pdf)
+* [**Lynøe 2020**. Do Child Abuse Pediatricians Search for a "Pediatric Vulcan Planet"? Comparison of Controversies about the Vulcan-Must-Exist-Theory and the Infant-Must-Have-Been-Shaken-Theory](https://www.researchgate.net/profile/C-Brook/publication/346005323_Do_Child_Abuse_Pediatricians_Search_for_a_Pediatric_Vulcan_Planet_Comparison_of_Controversies_about_the_Vulcan-Must-Exist-Theory_and_the_Infant-Must-Have-Been-Shaken-Theory/links/5fbc3244299bf104cf6e752e/Do-Child-Abuse-Pediatricians-Search-for-a-Pediatric-Vulcan-Planet-Comparison-of-Controversies-about-the-Vulcan-Must-Exist-Theory-and-the-Infant-Must-Have-Been-Shaken-Theory.pdf)
 
 * <span class="highlight">[**Lynøe 2019**. Hidden clinical values and overestimation of shaken baby cases](https://journals.sagepub.com/doi/full/10.1177/1477750919851048)</span>
 
