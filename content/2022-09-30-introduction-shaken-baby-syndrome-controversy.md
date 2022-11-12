@@ -19,20 +19,6 @@ This task is not even reserved to doctors and researchers. With enough time and 
 This post provides a few pointers to anyone interested in understanding the most pressing issues around SBS. It is by no means exhaustive. It suggests a bare minimum of essential resources one should look at before delving into more specific aspects of the controversy.
 
 
-<figure>
-<details class="post-updates">
-<summary>Post updates</summary>
-<table>
-<tr><td>2022-11-07</td><td>added citations</td></tr>
-<tr><td>2022-10-17</td><td>minor updates</td></tr>
-<tr><td>2022-10-05</td><td>added summary</td></tr>
-<tr><td>2022-10-03</td><td>highlighted references</td></tr>
-<tr><td>2022-09-30</td><td>initial version</td></tr>
-</table>
-</details>
-</figure>
-
-
 # <a id="sec-summary" href="#sec-summary">Summary</a>
 
 <div class="box tldr">
@@ -53,6 +39,59 @@ Summary of the current state of scientific knowledge at the time of writing (Nov
 <li>There is universal agreement that shaking and other forms of inflicted head trauma and child abuse are dangerous and justify criminal prosecutions. Public policies focusing on prevention are warranted.</li>
 </ul>
 </div>
+
+
+
+<figure>
+<details class="post-updates">
+<summary>Post updates</summary>
+<table>
+<tr><td>2022-11-07</td><td>added citations</td></tr>
+<tr><td>2022-10-17</td><td>minor updates</td></tr>
+<tr><td>2022-10-05</td><td>added summary</td></tr>
+<tr><td>2022-10-03</td><td>highlighted references</td></tr>
+<tr><td>2022-09-30</td><td>initial version</td></tr>
+</table>
+</details>
+</figure>
+
+
+
+### <a id="sec-toc" href="#sec-toc">Table of contents</a>
+
+* [Summary](#sec-summary)
+* [Overview](#sec-overview)
+    * [Caution to reader](#sec-caution)
+    * ["Adherents" vs "agnostics"](#sec-adherents)
+    * [A tentative definition](#sec-definition)
+        * [Some medical terminology](#sec-medical)
+    * [Legal implications](#sec-legal)
+    * [A contested definition](#sec-contested)
+    * [The "triad"](#sec-triad)
+        * [Citations from the medical literature, old and new](#sec-old-new)
+    * [Contested topics, open questions](#sec-topics)
+* [Selected bibliography](#sec-biblio)
+    * [Books](#sec-books)
+    * [Press investigations](#sec-press)
+    * [Opinion pieces](#sec-opinion)
+    * [Films, documentaries, talks](#sec-films)
+    * [Governmental reports](#sec-gov)
+    * [Academic publications](#sec-academic)
+        * [History](#sec-history)
+        * [Opiniated reviews](#sec-opiniated)
+        * [Systematic reviews](#sec-systematic)
+        * [Neuropathology](#sec-neuropathology)
+        * [Radiology](#sec-radiology)
+        * [Retinal hemorrhage](#sec-rh)
+        * [Benign external hydrocephalus](#sec-beh)
+        * [Differential diagnoses](#sec-dd)
+        * [Animal models](#sec-animal)
+        * [Biomechanics and numerical modeling](#sec-biomechanics)
+        * [Short falls](#sec-falls)
+        * [Confessions](#sec-confessions)
+        * [Epidemiology and prevention](#sec-epidemiology)
+        * [Medical ethics, medicolegal issues, cognitive biases](#sec-ethics)
+
 
 
 # <a id="sec-overview" href="#sec-overview">Overview</a>
@@ -236,7 +275,8 @@ We give here a few relevant citations from the **adherents' medical literature**
 </div>
 
 
-## Contested topics, open questions
+
+# <a id="sec-topics" href="#sec-topics">Contested topics, open questions</a>
 
 We propose some open debated questions, with links to scientific references below.
 
@@ -246,17 +286,6 @@ We propose some open debated questions, with links to scientific references belo
 * How reliable are admissions of shaking obtained after medical determinations of SBS/AHT? What scientific evidence can we infer from the rare described cases of witnessed and videotaped shaking? See [Confessions](#sec-confessions), [Medical ethics, medicolegal issues, cognitive biases](#sec-ethics).
 * What is the scientific impact of the circular reasoning issue that arises in the clinical literature (where medical determinations of SBS/AHT are made based on the very same findings that are being studied)? See [Systematic reviews](#sec-systematic), [Opiniated reviews](#sec-opiniated), [Epidemiology and prevention](#sec-epidemiology).
 * What are the psychological, societal, ethical implications of medical determinations of child abuse? See [Medical ethics, medicolegal issues, cognitive biases](#sec-ethics).
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -272,31 +301,6 @@ In the remainder of this post, we will give references to learn more about the c
 - Important references are <span class="highlight">highlighted in yellow</span>. This selection is subjective and also open to discussion.
 - This bibliography will be completed over time. Contact me by email (see sidebar/footer on this page) to propose any corrections or additions.
 - Many articles are behind a paywall. Older articles may also be hard to find. Contact me if you need the PDF of some articles.
-
-
-### <a id="sec-toc" href="#sec-toc">Table of contents</a>
-
-* [Books](#sec-books)
-* [Press investigations](#sec-press)
-* [Opinion pieces](#sec-opinion)
-* [Films, documentaries, talks](#sec-films)
-* [Governmental reports](#sec-gov)
-* [Academic publications](#sec-academic)
-    * [History](#sec-history)
-    * [Opiniated reviews](#sec-opiniated)
-    * [Systematic reviews](#sec-systematic)
-    * [Neuropathology](#sec-neuropathology)
-    * [Radiology](#sec-radiology)
-    * [Retinal hemorrhage](#sec-rh)
-    * [Benign external hydrocephalus](#sec-beh)
-    * [Differential diagnoses](#sec-dd)
-    * [Animal models](#sec-animal)
-    * [Biomechanics and numerical modeling](#sec-biomechanics)
-    * [Short falls](#sec-falls)
-    * [Confessions](#sec-confessions)
-    * [Epidemiology and prevention](#sec-epidemiology)
-    * [Medical ethics, medicolegal issues, cognitive biases](#sec-ethics)
-
 
 
 
