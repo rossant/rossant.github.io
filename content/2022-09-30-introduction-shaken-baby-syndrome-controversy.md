@@ -76,6 +76,8 @@ Summary of the current state of scientific knowledge at the time of writing (Nov
     * [Opinion pieces](#sec-opinion)
     * [Films, documentaries, talks](#sec-films)
     * [Governmental reports](#sec-gov)
+    * [Blog posts](#sec-blog)
+    * [PubPeer comments](#sec-pubpeer)
     * [Academic publications](#sec-academic)
         * [History](#sec-history)
         * [Opiniated reviews](#sec-opiniated)
@@ -340,6 +342,10 @@ In this section, we give references to press investigations specifically coverin
 
 * <span class="highlight">🇫🇷&nbsp;&nbsp;[**Revue XXI 2022.** Contre-enquête sur les bébés secoués](http://xxi.adikia.fr)</span>
 
+* 🇫🇷&nbsp;&nbsp;[**Le Figaro 2022.** Bébés secoués : quand des parents crient à l'erreur de diagnostic](https://www.lefigaro.fr/sciences/bebes-secoues-quand-des-parents-crient-a-l-erreur-de-diagnostic-20221021)
+
+* 🇫🇷&nbsp;&nbsp;[**Causette 2022.** Placements abusifs d'enfants : le calvaire des familles](https://adikia.fr/2022/01/une-enquete-du-magazine-causette-sur-les-placements-abusifs/)
+
 * 🇫🇷&nbsp;&nbsp;[**Le Monde 2021.** Faux aveux : le cas des bébés secoués](https://www.lemonde.fr/sciences/article/2021/11/15/faux-aveux-le-cas-des-bebes-secoues_6102166_1650684.html)
 
 * [**The Appeal 2020.** How Dubious Science Helped Put A New Jersey Woman In Prison For Killing A Baby In Her Care](https://theappeal.org/new-jersey-woman-prison-shaken-baby-syndrome/)
@@ -408,12 +414,45 @@ Syndrome/Abusive Head Trauma](https://ncip.org/wp-content/uploads/2019/12/STATEM
 
 ## <a id="sec-films" href="#sec-films">Films, documentaries, talks</a>
 
+### Documentaries
+
+* 🇫🇷&nbsp;&nbsp;[Jusqu'à l'appel 2022]()
+
 * [**Retro report 2015.** The Nanny Murder Case: Shaken Baby Syndrome on Trial](https://www.retroreport.org/video/a-syndrome-on-trial/)
 
 * [**The Syndrome 2015.**](https://www.thesyndromefilm.com/)
 
+
+### Video interviews
+
+* [A 22-minute videotaped interview with Norman Guthkelch, 2013](https://onsbs.com/2014/08/20/conversations-with-dr-a-norman-guthkelch/)
+
+* [A 2-minute video excerpt of an interview with Norman Guthkelch, 2015](https://www.retroreport.org/video/mini-doc/the-doctor/)
+
+* [A 26-second video excerpt of an interview with Norman Guthkelch, 2015](https://www.youtube.com/watch?v=jlIs3Kn45GY)
+
+
+
+### Conferences
+
 * [**TEDxWandsworth, Waney Squier 2016.** I believed in Shaken Baby Syndrome until science showed I was wrong](https://www.ted.com/talks/waney_squier_i_believed_in_shaken_baby_syndrome_until_science_showed_i_was_wrong)
 
+* [**TEDxButler, Jessica Henry, 2021** No-Crime Wrongful Convictions](https://www.youtube.com/watch?v=f42eXvvxK9g)
+
+
+
+
+## <a id="sec-blog" href="#sec-blog">Blog posts</a>
+
+* 🇫🇷&nbsp;&nbsp;[List of witnessed or videotaped shaking incidents](https://adikia.fr/des-secouements-filmes-ou-observes-par-des-temoins/)
+
+* 🇫🇷&nbsp;&nbsp;[False allegations of conflicts of interest between the Swedish (SBU) report and a Swedish radiologist, Peter Aspelin](https://adikia.fr/2018/01/conflit-dinteret/)
+
+
+
+## <a id="sec-pubpeer" href="#sec-pubpeer">PubPeer comments</a>
+
+* [PubPeer comment about an article on SBS in daycare centers, 2020](https://pubpeer.com/publications/5981C32FF7BFD42A2C28C5CC3BF33B)
 
 
 
@@ -443,10 +482,15 @@ We give references to official position papers, or "consensus" papers, organized
 
 * <span class="highlight">[**SBU 2016.** Traumatic shaking – The role of the triad in medical investigations of suspected traumatic shaking](https://www.sbu.se/en/publications/sbu-assesses/traumatic-shaking--the-role-of-the-triad-in-medical-investigations-of-suspected-traumatic-shaking/)</span>
 
+* [Debate after the publication of the SBU report (2016-2019)](https://github.com/association-adikia/resources/raw/master/sbu.zip)
+
+
 
 #### France
 
 * 🇫🇷&nbsp;&nbsp;[**HAS 2017.** Syndrome du bébé secoué ou traumatisme crânien non accidentel par secouement](https://www.has-sante.fr/jcms/c_2794425/fr/syndrome-du-bebe-secoue-ou-traumatisme-cranien-non-accidentel-par-secouement)
+
+* 🇫🇷&nbsp;&nbsp;[**HAS 2011.** Syndrome du bébé secoué : Rapport d’orientation de la commission d’audition](https://www.has-sante.fr/upload/docs/application/pdf/2016-01/syndrome_du_bebe_secoue_-_rapport_dorientation_de_la_commission_daudition.pdf)
 
 
 
