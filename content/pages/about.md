@@ -135,9 +135,3 @@ Title: About
 * 2009-2012: **Teacher assistant** in mathematics and computer science at ENS and UPMC (Bachelor and Master levels): probability theory, measure theory, statistics, calculus, real analysis, dynamical systems, signal processing, scientific Python
 * 2009-2012: Private lessons in mathematics to students in high school and preparatory classes
 * 2008-2009: Voluntary teaching to high school students at [TALENS](http://pesu.ens.fr/talens/) association
-
-
-## Popular press
-
-* 2022: 🇫🇷&nbsp;article in French newspaper [**Le Monde**](https://www.lemonde.fr/sciences/article/2022/10/01/cyrille-rossant-un-matheux-face-a-la-justice_6144010_1650684.html). _"Cyrille Rossant, un matheux face à la justice."_
-* 2022: 🇫🇷&nbsp;article in French quarterly journal [**Revue XXI**](https://resources.adikia.fr/xxi.pdf). _"Contre-enquête sur les bébés secoués."_
