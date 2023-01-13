@@ -23,7 +23,7 @@ This post provides a few pointers to anyone interested in understanding the most
 
 <div class="box tldr">
 <p><strong>tl;dr</strong> :
-Summary of the current state of scientific knowledge at the time of writing (November 2022):</p>
+Summary of the current state of scientific knowledge at the time of writing (January 2023):</p>
 <ul>
 <li><strong>Inflicted head trauma</strong> may cause a constellation of extracranial and cranial injuries in infants, including intracranial and ocular hemorrhage.</li>
 <li><strong>Accidental and non-accidental impact to the head</strong> may cause subdural and retinal hemorrhage in infants.</li>
@@ -46,6 +46,7 @@ Summary of the current state of scientific knowledge at the time of writing (Nov
 <details class="post-updates">
 <summary>Post updates</summary>
 <table>
+<tr><td>2023-01-13</td><td>added citations</td></tr>
 <tr><td>2022-11-07</td><td>added citations</td></tr>
 <tr><td>2022-10-17</td><td>minor updates</td></tr>
 <tr><td>2022-10-05</td><td>added summary</td></tr>
@@ -1209,6 +1210,8 @@ For agnostics:
 
 
 #### Agnostics
+
+* <span class="highlight">[**Rossant 2023.** Why admitted cases of AHT make a low quality reference standard: A survey of people accused of AHT in France](https://www.sciencedirect.com/science/article/pii/S2589871X22000973)</span>
 
 * <span class="highlight">[**Lynøe 2022.** Circular reasoning, confessions and abusive head trauma: A critical analysis of Edwards et al.](https://onlinelibrary.wiley.com/doi/full/10.1002/car.2777)</span>
 
