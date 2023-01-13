@@ -13,7 +13,7 @@
 &lt;h1&gt;&lt;a id="sec-summary" href="#sec-summary"&gt;Summary&lt;/a&gt;&lt;/h1&gt;
 &lt;div class="box tldr"&gt;
 &lt;p&gt;&lt;strong&gt;tl;dr&lt;/strong&gt; :
-Summary of the current state of scientific knowledge at the time of writing (November 2022):&lt;/p&gt;
+Summary of the current state of scientific knowledge at the time of writing (January 2023):&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;Inflicted head trauma&lt;/strong&gt; may cause a constellation of extracranial and cranial injuries in infants, including intracranial and ocular hemorrhage.&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Accidental and non-accidental impact to the head&lt;/strong&gt; may cause subdural and retinal hemorrhage in infants.&lt;/li&gt;
@@ -34,6 +34,7 @@ Summary of the current state of scientific knowledge at the time of writing (Nov
 &lt;details class="post-updates"&gt;
 &lt;summary&gt;Post updates&lt;/summary&gt;
 &lt;table&gt;
+&lt;tr&gt;&lt;td&gt;2023-01-13&lt;/td&gt;&lt;td&gt;added citations&lt;/td&gt;&lt;/tr&gt;
 &lt;tr&gt;&lt;td&gt;2022-11-07&lt;/td&gt;&lt;td&gt;added citations&lt;/td&gt;&lt;/tr&gt;
 &lt;tr&gt;&lt;td&gt;2022-10-17&lt;/td&gt;&lt;td&gt;minor updates&lt;/td&gt;&lt;/tr&gt;
 &lt;tr&gt;&lt;td&gt;2022-10-05&lt;/td&gt;&lt;td&gt;added summary&lt;/td&gt;&lt;/tr&gt;
@@ -1394,6 +1395,9 @@ Left: Fig. 2b from &lt;a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4814
 &lt;/ul&gt;
 &lt;h4&gt;Agnostics&lt;/h4&gt;
 &lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;span class="highlight"&gt;&lt;a href="https://www.sciencedirect.com/science/article/pii/S2589871X22000973"&gt;&lt;strong&gt;Rossant 2022.&lt;/strong&gt; Why admitted cases of AHT make a low quality reference standard: A survey of people accused of AHT in France&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;&lt;span class="highlight"&gt;&lt;a href="https://onlinelibrary.wiley.com/doi/full/10.1002/car.2777"&gt;&lt;strong&gt;Lynøe 2022.&lt;/strong&gt; Circular reasoning, confessions and abusive head trauma: A critical analysis of Edwards et al.&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;
 &lt;/li&gt;

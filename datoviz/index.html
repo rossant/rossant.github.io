@@ -8,10 +8,6 @@
         content="Cyrille Rossant, ">
     <link href="/favicon.png" rel="icon">
 
-    <link rel="alternate" href="https://cyrille.rossant.net/feeds/all.atom.xml" type="application/atom+xml"
-        title="Cyrille Rossant Full Atom Feed" />
-    <link rel="alternate" href="https://cyrille.rossant.net/feeds/atom.xml" type="application/atom+xml"
-        title="Cyrille Rossant Atom Feed" />
 
     <title>Cyrille Rossant - Datoviz: ultra-fast GPU scientific visualization with Vulkan</title>
 
@@ -63,7 +59,7 @@
         <li><a href="https://twitter.com/cyrillerossant"><i class="fa fa-twitter"></i></a></li>
         <li><a href="https://github.com/rossant"><i class="fa fa-github"></i></a></li>
         <li><a href="https://www.linkedin.com/in/crossant"><i class="fa fa-linkedin"></i></a></li>
-        <li><a href="https://cyrille.rossant.net/feeds/all.atom.xml"><i class="fa fa-rss"></i></a></li>
+        <li><a href="/None"><i class="fa fa-rss"></i></a></li>
 </ul>                </div>
             </div>
         </div>
@@ -113,7 +109,7 @@
 <p>This project is the culmination of <strong>a decade of personal interests, research, and development in this field</strong>. Frustrated by the poor performance of existing visualization libraries, I started to investigate using the GPU for fast 2D visualization in 2011. I released the experimental Galry project in 2012.</p>
 <p>The next year, I was approached by other Python developers who each had created their own library. We decided to <strong>join forces to create a single library, <a href="http://vispy.org/">VisPy</a></strong>, in 2013. Today, VisPy is maintained by David Hoese and others. It got recent funding from the <a href="https://chanzuckerberg.com/eoss/proposals/rebuilding-the-community-behind-vispys-fast-interactive-visualizations/">Chan Zuckerberg Initiative</a>. VisPy underlies <a href="https://napari.org/">napari</a>, a popular imaging software developed by Nicholas Sofroniew et al.</p>
 <p>Based on Python and OpenGL, VisPy is a very complex piece of software, in large part because of the quirks and limitations of OpenGL (especially when it's used from Python). I felt we had reached the limits of this technology but then, OpenGL's successor was announced: <strong>Vulkan</strong>.</p>
-<p>I was very excited by this announcement and thought it could be a perfect technology for the next generation of GPU visualization software. In 2015, before the API was even released, <a href="https://cyrille.rossant.net/compiler-data-visualization/">I wrote a blog post with a few ideas</a> in this respect. It took me more nearly four years after the release of Vulkan in 2016 to find the time to experiment with it.</p>
+<p>I was very excited by this announcement and thought it could be a perfect technology for the next generation of GPU visualization software. In 2015, before the API was even released, <a href="/compiler-data-visualization/">I wrote a blog post with a few ideas</a> in this respect. It took me more nearly four years after the release of Vulkan in 2016 to find the time to experiment with it.</p>
 <h2>Vulkan for scientific visualization</h2>
 <p><strong>Vulkan is a great technology for modern scientific visualization</strong>. Of course, that conclusion probably applies to other low-level graphics APIs like Metal, DirectX 12, WebGPU which all share a lot of principles (I have no experience with those — but WebGPU looks so promising). It's worth nothing that Khronos and the industry are starting to work in this direction too with <a href="https://www.khronos.org/anari">the ANARI project</a>.</p>
 <p><strong>The complexity of Vulkan is probably well beyond what about any scientist might want to deal with</strong>. In the last few years, I regularly tried to read tutorials and specifications but it seemed daunting and impenetrable. Eventually, I started to connect the dots.</p>
@@ -135,12 +131,12 @@
 <nav class="pagination-wrapper">
     <div class="pagination">
         <div class="pagination-left">
-                <a href="https://cyrille.rossant.net/introduction-shaken-baby-syndrome-controversy/">
+                <a href="/introduction-shaken-baby-syndrome-controversy/">
                     &larr; previous
                 </a>
         </div>
         <div class="pagination-right">
-                <a href="https://cyrille.rossant.net/ibl/">
+                <a href="/ibl/">
                     next&nbsp;&rarr;
                 </a>
         </div>
@@ -156,7 +152,7 @@
      */
 
     var disqus_config = function () {
-        this.page.url = "https://cyrille.rossant.net/datoviz/";  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.url = "/datoviz/";  // Replace PAGE_URL with your page's canonical URL variable
         this.page.identifier = "datoviz"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
     };
 
@@ -261,7 +257,7 @@ software engineer at IBL and UCL<br>
         <footer id="footer" class="pure-u-1 pure-u-md-3-4">
             <div class="l-box">
                 <div>
-                    <p>&copy; <a href="https://cyrille.rossant.net">Cyrille Rossant</a> &ndash;
+                    <p>&copy; <a href="">Cyrille Rossant</a> &ndash;
                         Built with <a href="https://github.com/PurePelicanTheme/pure-single">Pure Theme</a>
                         for <a href="http://blog.getpelican.com/">Pelican</a>
                     </p>

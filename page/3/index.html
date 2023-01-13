@@ -8,10 +8,6 @@
         content="Cyrille Rossant, ">
     <link href="/favicon.png" rel="icon">
 
-    <link rel="alternate" href="https://cyrille.rossant.net/feeds/all.atom.xml" type="application/atom+xml"
-        title="Cyrille Rossant Full Atom Feed" />
-    <link rel="alternate" href="https://cyrille.rossant.net/feeds/atom.xml" type="application/atom+xml"
-        title="Cyrille Rossant Atom Feed" />
 
     <title>Cyrille Rossant</title>
 
@@ -57,7 +53,7 @@
         <li><a href="https://twitter.com/cyrillerossant"><i class="fa fa-twitter"></i></a></li>
         <li><a href="https://github.com/rossant"><i class="fa fa-github"></i></a></li>
         <li><a href="https://www.linkedin.com/in/crossant"><i class="fa fa-linkedin"></i></a></li>
-        <li><a href="https://cyrille.rossant.net/feeds/all.atom.xml"><i class="fa fa-rss"></i></a></li>
+        <li><a href="/None"><i class="fa fa-rss"></i></a></li>
 </ul>                </div>
             </div>
         </div>
@@ -76,13 +72,15 @@
 
     <section class="post">
         <header class="post-header">
-            <h3><a href="https://cyrille.rossant.net/new-year/">New year</a></h3>
-            <p class="sub-header-3">2016-01-01</p>
-            <p class="post-summary"><p>I didn't write a lot lately: only 2 posts in 2015! I'll try to do better this year: more and shorter posts about programming, technology, and science. There's no shortage of topics to discuss.</p>
-<p>Happy New Year.</p></p>
+            <h3><a href="/moving-away-hdf5/">Moving away from HDF5</a></h3>
+            <p class="sub-header-3">2016-01-06</p>
+            <p class="post-summary"><p><strong>Update [2016-01-30]: <a href="/should-you-use-hdf5/">I wrote a follow-up here</a></strong></p>
+<p>In the research lab where I work, we've been developing a data processing pipeline for several years. This includes not only a program but also a new file format based on <strong>HDF5</strong> for a specific type of data. While the choice of HDF5 was looking compelling on paper, we found many issues with it. <strong>Recently, despite the high costs, we decided to abandon this format in our software</strong>.</p>
+<p>In this post, I'll describe what is HDF5 and what are the issues that made us move away from it.</p>
+</p>
         </header>
         <div class="read-more">
-            <a class="pure-button" href="https://cyrille.rossant.net/new-year/">
+            <a class="pure-button" href="/moving-away-hdf5/">
                 read on
             </a>
         </div>
@@ -90,7 +88,21 @@
         <hr />
     <section class="post">
         <header class="post-header">
-            <h3><a href="https://cyrille.rossant.net/compiler-data-visualization/">A compiler infrastructure for data visualization</a></h3>
+            <h3><a href="/new-year/">New year</a></h3>
+            <p class="sub-header-3">2016-01-01</p>
+            <p class="post-summary"><p>I didn't write a lot lately: only 2 posts in 2015! I'll try to do better this year: more and shorter posts about programming, technology, and science. There's no shortage of topics to discuss.</p>
+<p>Happy New Year.</p></p>
+        </header>
+        <div class="read-more">
+            <a class="pure-button" href="/new-year/">
+                read on
+            </a>
+        </div>
+    </section>
+        <hr />
+    <section class="post">
+        <header class="post-header">
+            <h3><a href="/compiler-data-visualization/">A compiler infrastructure for data visualization</a></h3>
             <p class="sub-header-3">2015-07-24</p>
             <p class="post-summary"><p>There are many data visualization tools out there. Yet, I believe we're still lacking a robust, scalable, and cross-platform visualization toolkit that can handle today's massive datasets.</p>
 <p>Most existing tools target simple plots with a few hundreds or thousands of points: bar plots, scatter plots, histograms and the like. Typically, these figures represent aggregated statistical quantities. Maps are also particularly popular, and there are now really great open source tools.</p>
@@ -98,7 +110,7 @@
 </p>
         </header>
         <div class="read-more">
-            <a class="pure-button" href="https://cyrille.rossant.net/compiler-data-visualization/">
+            <a class="pure-button" href="/compiler-data-visualization/">
                 read on
             </a>
         </div>
@@ -106,13 +118,13 @@
         <hr />
     <section class="post">
         <header class="post-header">
-            <h3><a href="https://cyrille.rossant.net/numpy-browser-llvm/">NumPy in the browser: proof of concept with Numba, LLVM, and emscripten</a></h3>
+            <h3><a href="/numpy-browser-llvm/">NumPy in the browser: proof of concept with Numba, LLVM, and emscripten</a></h3>
             <p class="sub-header-3">2015-02-18</p>
-            <p class="post-summary"><p>It's been a while since I wanted to try to bring some of NumPy to the browser. I've already discussed the motivations for this <a href="https://cyrille.rossant.net/scientific-python-in-the-browser-its-coming/">in a previous post last year</a>. As far as I'm concerned, the main use case would be to enable interactive data visualization in offline notebooks (including nbviewer), which often require client-based array operations for interactivity. In this post, I'll describe a proof-of-concept of compiling NumPy-aware Python functions to JavaScript using Numba, LLVM, and emscripten.</p>
+            <p class="post-summary"><p>It's been a while since I wanted to try to bring some of NumPy to the browser. I've already discussed the motivations for this <a href="/scientific-python-in-the-browser-its-coming/">in a previous post last year</a>. As far as I'm concerned, the main use case would be to enable interactive data visualization in offline notebooks (including nbviewer), which often require client-based array operations for interactivity. In this post, I'll describe a proof-of-concept of compiling NumPy-aware Python functions to JavaScript using Numba, LLVM, and emscripten.</p>
 </p>
         </header>
         <div class="read-more">
-            <a class="pure-button" href="https://cyrille.rossant.net/numpy-browser-llvm/">
+            <a class="pure-button" href="/numpy-browser-llvm/">
                 read on
             </a>
         </div>
@@ -120,27 +132,13 @@
         <hr />
     <section class="post">
         <header class="post-header">
-            <h3><a href="https://cyrille.rossant.net/big-data-visualization-webgl-part2/">Big Data visualization with WebGL, part 2: VisPy</a></h3>
+            <h3><a href="/big-data-visualization-webgl-part2/">Big Data visualization with WebGL, part 2: VisPy</a></h3>
             <p class="sub-header-3">2014-12-11</p>
             <p class="post-summary"><p>In this post series, I'm describing the big data visualization platform I'm currently developing with WebGL. I'll detail in this second post the <a href="http://vispy.org">VisPy library</a> which is the basis of the project.</p>
 </p>
         </header>
         <div class="read-more">
-            <a class="pure-button" href="https://cyrille.rossant.net/big-data-visualization-webgl-part2/">
-                read on
-            </a>
-        </div>
-    </section>
-        <hr />
-    <section class="post">
-        <header class="post-header">
-            <h3><a href="https://cyrille.rossant.net/writing-ipython-cookbook/">Writing the IPython Cookbook</a></h3>
-            <p class="sub-header-3">2014-10-30</p>
-            <p class="post-summary"><p>My latest book was released a few weeks ago. This project has been one of the most challenging projects I've ever done, and not necessarily for the reasons I would have originally thought. Here is a little story of those fifteen months writing the IPython cookbook.</p>
-</p>
-        </header>
-        <div class="read-more">
-            <a class="pure-button" href="https://cyrille.rossant.net/writing-ipython-cookbook/">
+            <a class="pure-button" href="/big-data-visualization-webgl-part2/">
                 read on
             </a>
         </div>
@@ -149,11 +147,11 @@
 <nav class="pagination-wrapper">
     <div class="pagination">
         <div class="pagination-left">
-                <a href="https://cyrille.rossant.net/page/2/"><span>&larr; previous</span></a>
+                <a href="/page/2/"><span>&larr; previous</span></a>
         </div>
-        <span>Page 3 / 10 &nbsp; (<a href="https://cyrille.rossant.net/archives/">all</a>)</span>
+        <span>Page 3 / 10 &nbsp; (<a href="/archives/">all</a>)</span>
         <div class="pagination-right">
-                <a href="https://cyrille.rossant.net/page/4/">next&nbsp;&rarr;</a>
+                <a href="/page/4/">next&nbsp;&rarr;</a>
         </div>
     </div>
 </nav>    </section>
@@ -245,7 +243,7 @@ software engineer at IBL and UCL<br>
         <footer id="footer" class="pure-u-1 pure-u-md-3-4">
             <div class="l-box">
                 <div>
-                    <p>&copy; <a href="https://cyrille.rossant.net">Cyrille Rossant</a> &ndash;
+                    <p>&copy; <a href="">Cyrille Rossant</a> &ndash;
                         Built with <a href="https://github.com/PurePelicanTheme/pure-single">Pure Theme</a>
                         for <a href="http://blog.getpelican.com/">Pelican</a>
                     </p>
