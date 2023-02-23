@@ -1229,9 +1229,13 @@ For agnostics:
 
 * [**Shaw 2015.** Constructing Rich False Memories of Committing Crime](https://journals.sagepub.com/doi/full/10.1177/0956797614562862)
 
+* [**Tuerkheimer 2014.** Flawed Convictions: "Shaken Baby Syndrome" and the Inertia of Injustice](https://global.oup.com/academic/product/flawed-convictions-9780190233617)
+
 * [**Cutler 2014.** Interrogations and False Confessions: A Psychological Perspective](https://www.proquest.com/docview/1535666192?pq-origsite=gscholar&fromopenview=true)
 
 * [**Kassin 2012.** Why confessions trump innocence](https://psycnet.apa.org/doiLanding?doi=10.1037%2Fa0028212)
+
+* [**Findley 2012.** Shaken Baby Syndrome, Abusive Head Trauma, and Actual Innocence: Getting It Right](https://heinonline.org/hol-cgi-bin/get_pdf.cgi?handle=hein.journals/hhpol12&section=15)
 
 * <span class="highlight">[**Gudjonsson 2011.** Suspect Interviews and False Confessions](https://journals.sagepub.com/doi/full/10.1177/0963721410396824)</span>
 
