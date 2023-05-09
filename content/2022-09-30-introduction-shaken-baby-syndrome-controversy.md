@@ -1042,7 +1042,9 @@ Results have been inconclusive so far, and it remains unclear whether shaking al
 
 * [**Pierce 2008.** Injury Biomechanics and Child Abuse](https://www.researchgate.net/profile/Gina-Bertocci/publication/6325079_Injury_Biomechanics_and_Child_Abuse/links/595d121245851524687a57d6/Injury-Biomechanics-and-Child-Abuse.pdf)
 
-* [**Bertocci 2006.** Applications of Biomechanics Aiding in the Diagnosis of Child Abus](https://www.sciencedirect.com/science/article/pii/S1522840106000498)
+* [**Bertocci 2006.** Applications of Biomechanics Aiding in the Diagnosis of Child Abuse](https://www.sciencedirect.com/science/article/pii/S1522840106000498)
+
+* [**Cirovic 2005.** Mechanistic hypothesis for eye injury in infant shaking](https://link.springer.com/article/10.1385/FSMP:1:1:053)
 
 * [**Oehmichen 2005.** Fall or Shaken: Traumatic Brain Injury in Children Caused by Falls or Abuse at Home - A Review on Biomechanics and Diagnosis](https://www.thieme-connect.com/products/ejournals/html/10.1055/s-2005-872812)
 

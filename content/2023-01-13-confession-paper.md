@@ -3,7 +3,7 @@ tags: sbs
 
 Chris Brook and I have just published an [article in _Forensic Science International: Synergy_](https://www.sciencedirect.com/science/article/pii/S2589871X22000973) presenting the results of a survey of parents and caretakers who claim to have been wrongly accused of child abuse after a medical determination of shaken baby syndrome/abusive head trauma (SBS/AHT).
 
-[![]({filename}/images/rossant-brook-23.png)]({filename}/2023-01-13-confession-paper.md)
+[![]({filename}/images/rossant-brook-23.png)]({filename}2023-01-13-confession-paper.md)
 
 <!-- PELICAN_END_SUMMARY -->
 
