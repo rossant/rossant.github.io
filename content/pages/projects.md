@@ -35,9 +35,10 @@ This personal experience led me to investigate this subject in depth from an aca
 
 In fact, even the causal link between impact-free traumatic shaking and isolated retino-dural hemorrhage has a weak scientific evidence base, as shown by a [2017 systematic review performed by the Swedish governmental health agency](https://www.sbu.se/en/publications/sbu-assesses/traumatic-shaking--the-role-of-the-triad-in-medical-investigations-of-suspected-traumatic-shaking/). A systematic diagnosis process relying exclusively on these two signs comes with a great risk of missing other medical explanations, notably due to cognitive biases among clinicians and medical experts.
 
-Since 2020, I'm the president of a French association, [Adikia](https://adikia.fr/), who provides moral supports to victims of such misdiagnoses. I'm also working with medical, scientific, and legal experts around the world to investigate the global extent of these medical errors and miscarriages of justice, to better understand the root causes of this possible societal failure, and to find ways to better differentiate non-traumatic from traumatic medical findings in young infants.
+Since 2020, I'm the president of a French association, [Adikia](https://adikia.fr/), who provides support groups to victims of such misdiagnoses. I'm also working with medical, scientific, and legal experts around the world to investigate the global extent of these medical errors and miscarriages of justice, to better understand the root causes of this possible societal failure, and to find ways to better differentiate non-traumatic from traumatic medical findings in young infants.
 
 Some references:
 
+* 2023: academic textbook [**Shaken Baby Syndrome: Investigating the Abusive Head Trauma Controversy**](https://shakenbaby.science/), Findley et al. 2023, Cambridge University Press.
 * 2022: 🇫🇷&nbsp;article in French newspaper [**Le Monde**](https://www.lemonde.fr/sciences/article/2022/10/01/cyrille-rossant-un-matheux-face-a-la-justice_6144010_1650684.html). _"Cyrille Rossant, un matheux face à la justice."_
 * 2022: 🇫🇷&nbsp;article in French quarterly journal [**Revue XXI**](https://resources.adikia.fr/xxi.pdf). _"Contre-enquête sur les bébés secoués."_

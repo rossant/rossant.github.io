@@ -1,6 +1,26 @@
 Title: Books
 
-I've written two books on Python for data science.
+
+<a name="sbsbook"></a>
+## Shaken Baby Syndrome: Investigating the Abusive Head Trauma Controversy
+<div class="sub-header-2">june 2023</div>
+
+<div class="pure-g">
+    <div class="book-cover pure-u-1 pure-u-sm-1-3">
+        <a href="/sbsbook/"><img src="https://m.media-amazon.com/images/I/41s6VVOYlnL._AC_UF1000,1000_QL80_.jpg" class="book-cover" alt="Shaken Baby Syndrome: Investigating the Abusive Head Trauma Controversy" /></a>
+    </div>
+
+    <div class="book-descr pure-u-1 pure-u-sm-2-3">
+        <h3><a href="/sbsbook/">Shaken Baby Syndrome: Investigating the Abusive Head Trauma Controversy</a></h3>
+        <div class="sub-header-3">Findley K, Rossant C, Sasakura K, Schneps L, Squier W, Wester K</div>
+        <div class="sub-header-4">Cambridge University Press (464 pages, 65$)</div>
+
+        <p>
+            The first collaborative, multidisciplinary <strong>academic textbook</strong> to tackle the scientific reliability of medical determinations of abusive head injuries in infants, a highly controversial subject at the intersection of medicine, science, and law.
+        </p>
+    </div>
+</div>
+
 
 
 <a name="cookbook"></a>
@@ -28,7 +48,6 @@ I've written two books on Python for data science.
         </ul>
     </div>
 </div>
-
 
 
 <a name="minibook"></a>
