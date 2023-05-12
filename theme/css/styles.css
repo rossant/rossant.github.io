@@ -18,7 +18,7 @@ textarea,
 
 p,
 li {
-    line-height: 1.6;
+    line-height: 1.5;
 }
 
 strong {
@@ -208,7 +208,7 @@ iframe {
 }
 
 #sidebar .books img {
-    width: 95%;
+    height: 160px;
 }
 
 #sidebar .search {
@@ -326,6 +326,10 @@ code {
 
 #post ul li {
     margin: 0 auto 8px 0;
+}
+
+#page ul li {
+    margin-bottom: 10px;
 }
 
 #post ul li p {
