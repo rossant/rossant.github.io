@@ -13,7 +13,7 @@
     <link rel="alternate" href="https://cyrille.rossant.net/feeds/atom.xml" type="application/atom+xml"
         title="Cyrille Rossant Atom Feed" />
 
-    <title>Cyrille Rossant</title>
+    <title>Cyrille Rossant - PyKidos, Teach Your Kid Python In The Browser</title>
 
     <link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/pure/0.3.0/pure-min.css">
@@ -32,6 +32,12 @@
 
 
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/fitvids/1.0.1/jquery.fitvids.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $(".content").fitVids();
+        });
+    </script>
 </head>
 
 <body>
@@ -68,99 +74,106 @@
     <div id="layout" class="pure-g">
         <section id="content" class="pure-u-1 pure-u-md-3-4">
             <div class="l-box">
-    <section id="posts">
 
-        <header id="posts-header">
-            <h1>Cyrille Rossant</h1>
-        </header>
+    <header id="post-header">
+        <h1>PyKidos, Teach Your Kid Python In The Browser</h1>
+            <div class="post-meta">
+                March 14, 2024
+            </div>
+            <div class="post-tags">
+                <ul>
+                    <li>tags:</li>
+                    <li><a href="/tag/software/">software</a></li>
+                </ul>
+            </div>
+    </header>
 
-    <section class="post">
-        <header class="post-header">
-            <h3><a href="https://cyrille.rossant.net/pykidos/">PyKidos, Teach Your Kid Python In The Browser</a></h3>
-            <p class="sub-header-3">2024-03-14</p>
-            <p class="post-summary"><p><a href="https://pykidos.github.io/"><strong>PyKidos</strong></a> is a minimal web application I built in a few days to teach my 8-year-old basic programming concepts using Python.</p>
+    <section id="post">
+        <p><a href="https://pykidos.github.io/"><strong>PyKidos</strong></a> is a minimal web application I built in a few days to teach my 8-year-old basic programming concepts using Python.</p>
 <p><a href="https://cyrille.rossant.net/pykidos/"><img alt="PyKidos" src="https://github.com/pykidos/pykidos.github.io/assets/1942359/7974ace5-aeb6-4a6c-8678-c40ed5eb0af0" /></a></p>
-</p>
-        </header>
-        <div class="read-more">
-            <a class="pure-button" href="https://cyrille.rossant.net/pykidos/">
-                read on
-            </a>
-        </div>
+
+
+<p>I had tried several existing apps but couldn't find one that met all my criteria:</p>
+<ul>
+<li>Fully browser-based, no need to install anything</li>
+<li>Supports Python</li>
+<li>Open-source and customizable</li>
+<li>Simple UI/UX</li>
+<li>Includes simple graphical elements like a grid (my kid thought my plain IPython terminal was too "boring")</li>
+</ul>
+<p>So I just built my own.</p>
+<p>PyKidos offers a playground where you can introduce various programming and math concepts to your child, such as:</p>
+<ul>
+<li>Variables</li>
+<li>Basic mathematical operations</li>
+<li>Loops</li>
+<li>Conditional statements</li>
+<li>Modular arithmetic</li>
+<li>Vectors</li>
+<li>Functions</li>
+<li>Coordinate systems</li>
+<li>Color systems</li>
+<li>Trigonometric functions</li>
+<li>Matrices</li>
+<li>And more.</li>
+</ul>
+<p>Features:</p>
+<ul>
+<li>Completely client-side: data is stored only in your browser (localStorage).</li>
+<li>Utilizes <a href="https://pyodide.org/en/stable/">Pyodide</a>, a CPython port to WebAssembly, with support for NumPy and other scientific libraries.</li>
+<li>Includes a Unicode emoji picker and color picker.</li>
+<li>Allows manipulation of a grid (cell colors and text, including Unicode emojis) using Python.</li>
+<li>Reacts to click and keyboard events within the grid.</li>
+<li>Supports animations.</li>
+<li>Enables local download of your Python scripts.</li>
+<li>Facilitates code sharing through a URL containing the entire code and data.</li>
+</ul>
+<p>PyKidos is still quite rough around the edges since I primarily built it for my own needs, but I hope it proves helpful to others. In particular, I didn't take the time to ensure it runs smoothly on mobile devices, different browsers, or operating systems.</p>
+<ul>
+<li><a href="https://pykidos.github.io/">PyKidos</a></li>
+<li><a href="https://github.com/pykidos/pykidos.github.io">GitHub repository</a></li>
+</ul>
     </section>
-        <hr />
-    <section class="post">
-        <header class="post-header">
-            <h3><a href="https://cyrille.rossant.net/sbsbook/">New book on the scientific controversy surrounding Shaken Baby Syndrome</a></h3>
-            <p class="sub-header-3">2023-05-16</p>
-            <p class="post-summary"><p>I'm delighted to present the book I've been working on for the past few years with several colleagues, which is just being published by <strong>Cambridge University Press</strong>: <a href="https://shakenbaby.science"><strong>Shaken Baby Syndrome: Investigating the Abusive Head Trauma Controversy</strong></a>.</p>
-<p><a href="https://cyrille.rossant.net/sbsbook/"><img alt="" src="https://raw.githubusercontent.com/sbs-book/sbs-book.github.io/d59f01a0a5b945a61388484329abb80ec2e5919c/resources/social-media-2560.jpg" /></a></p>
-</p>
-        </header>
-        <div class="read-more">
-            <a class="pure-button" href="https://cyrille.rossant.net/sbsbook/">
-                read on
-            </a>
-        </div>
-    </section>
-        <hr />
-    <section class="post">
-        <header class="post-header">
-            <h3><a href="https://cyrille.rossant.net/confession-paper/">New paper on the scientific reliability of confessions of SBS/AHT</a></h3>
-            <p class="sub-header-3">2023-01-13</p>
-            <p class="post-summary"><p>Chris Brook and I have just published an <a href="https://www.sciencedirect.com/science/article/pii/S2589871X22000973">article in <em>Forensic Science International: Synergy</em></a> presenting the results of a survey of parents and caretakers who claim to have been wrongly accused of child abuse after a medical determination of shaken baby syndrome/abusive head trauma (SBS/AHT).</p>
-<p><a href="https://cyrille.rossant.net/confession-paper/"><img alt="" src="https://cyrille.rossant.net/images/rossant-brook-23.png" /></a></p>
-</p>
-        </header>
-        <div class="read-more">
-            <a class="pure-button" href="https://cyrille.rossant.net/confession-paper/">
-                read on
-            </a>
-        </div>
-    </section>
-        <hr />
-    <section class="post">
-        <header class="post-header">
-            <h3><a href="https://cyrille.rossant.net/introduction-shaken-baby-syndrome-controversy/">An Introduction to the Scientific Controversy over Shaken Baby Syndrome</a></h3>
-            <p class="sub-header-3">2022-09-30</p>
-            <p class="post-summary"><p>The scientific controversy over the so-called <strong>Shaken Baby Syndrome (SBS)</strong> (also known, with a few key differences indicated later, as <strong>Abusive Head Trauma, AHT</strong>) is a rich and highly complex multifaceted topic.</p>
-<p>It involves a wide range of academic disciplines: pediatrics, neonatology, obstetrics, neurology, neuropathology, radiology, hematology, evidence-based medicine, biomechanics, statistics, epidemiology, psychology, among others. There are also ramifications in epistemology, medical ethics, criminal law, sociology...</p>
-</p>
-        </header>
-        <div class="read-more">
-            <a class="pure-button" href="https://cyrille.rossant.net/introduction-shaken-baby-syndrome-controversy/">
-                read on
-            </a>
-        </div>
-    </section>
-        <hr />
-    <section class="post">
-        <header class="post-header">
-            <h3><a href="https://cyrille.rossant.net/datoviz/">Datoviz: ultra-fast GPU scientific visualization with Vulkan</a></h3>
-            <p class="sub-header-3">2021-02-16</p>
-            <p class="post-summary"><p>I'm excited to present the project I've been working on at the <a href="http://internationalbrainlab.org/">International Brain Laboratory (IBL)</a>. <a href="https://datoviz.org"><strong>Datoviz</strong></a> is an early-stage open-source <strong>high-performance GPU scientific visualization library based on <a href="https://www.khronos.org/vulkan/">Vulkan</a></strong>, the Khronos cross-platform low-level graphics API, which is 5 years old today!</p>
-<p><a href="https://datoviz.org"><img alt="Datoviz screenshots" src="https://raw.githubusercontent.com/datoviz/data/master/screenshots/datoviz.jpg" /></a></p>
-<p>Datoviz aims at providing a <strong>unified, language-agnostic platform for interactive visualization</strong> in both 2D and 3D, with support for GUIs and general-purpose GPU compute.</p>
-</p>
-        </header>
-        <div class="read-more">
-            <a class="pure-button" href="https://cyrille.rossant.net/datoviz/">
-                read on
-            </a>
-        </div>
-    </section>
+
 
 <nav class="pagination-wrapper">
     <div class="pagination">
         <div class="pagination-left">
-                &nbsp;
         </div>
-        <span>Page 1 / 10 &nbsp; (<a href="https://cyrille.rossant.net/archives/">all</a>)</span>
         <div class="pagination-right">
-                <a href="https://cyrille.rossant.net/page/2/">next&nbsp;&rarr;</a>
+                <a href="https://cyrille.rossant.net/sbsbook/">
+                    next&nbsp;&rarr;
+                </a>
         </div>
     </div>
-</nav>    </section>
+</nav>
+    <aside class="comments">
+
+<div id="disqus_thread"></div>
+<script>
+    /**
+     *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+     *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
+     */
+
+    var disqus_config = function () {
+        this.page.url = "https://cyrille.rossant.net/pykidos/";  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = "pykidos"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+
+    (function() {  // DON'T EDIT BELOW THIS LINE
+        var d = document, s = d.createElement('script');
+
+        s.src = '//rossant.disqus.com/embed.js';
+
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+
+    </aside>
+
             </div>
         </section>
 
