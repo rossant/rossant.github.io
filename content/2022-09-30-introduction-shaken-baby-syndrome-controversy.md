@@ -1142,6 +1142,8 @@ Severe injuries following short falls are rare, but how rare they are is controv
 
 #### Agnostics/neutral
 
+* <span class="highlight">[**Rossant 2024.** Statistical models of hospital patient fatality rates after accidental falls in children](https://www.sciencedirect.com/science/article/pii/S0096300324001504)</span>
+
 * [**Akutsu 2022.** Infantile subdural hematoma in Japan: A multicenter, retrospective study by the J-HITs (Japanese head injury of infants and toddlers study) group](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0264396)
 
 * <span class="highlight">[**Schneps 2020.** Short falls and shaken baby syndrome: numerical and reasoning errors](https://hal.archives-ouvertes.fr/hal-02994294/document)</span>
