@@ -134,6 +134,12 @@ Title: About
 * Brette R, Stimberg M, Benichoux V, **Rossant C**, Goodman D, Fontaine B **(2013)**. Advanced modelling of spiking neural networks with Brian. Organization for Computational Neuroscience Meeting, Paris (tutorial)
 * **Rossant C**, Harris K **(2013)**. Next-generation software for spike sorting with large multi-electrode probes. Janelia Spike Sorting Workshop, Janelia Farm Research Campus, Ashburn, USA (invited talk)
 
+### French conferences
+
+* Puech L, Gaillard N, **Rossant C** **(2024)**. [Panel discussion: Le travail social manque-t-il d'esprit critique ?](https://rec-toulouse.fr/wp-content/uploads/2024/04/PROGRAMMATION-REC-2024-WEB-au-24-04-24.pdf) **Rencontres Esprit Critiques, Toulouse.**
+* **Rossant C** **(2023)**. *L'affaire Kathleen Folbigg : un cas réellement rarissime ?*. **Colloque Maladies rares et accusations de maltraitance, Paris.**
+* Sochard L, **Rossant C** **(2023)**, et al. [Panel discussion: *Parents et aide sociale à l'enfance : comment sortir des incompréhensions ?*](https://assisesprotectionenfance.fr/wp-content/uploads/2023/05/PROGRAMME-ASSISES-2023-V20-MD.pdf) **XVIe Assises de la protection de l'enfance, Nantes.**
+
 
 ## Grants and awards
 
