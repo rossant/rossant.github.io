@@ -275,6 +275,10 @@ section:last-of-type {
     justify-content: flex-start;
 }
 
+.card.more {
+    justify-content: space-around;
+}
+
 .card-link {
     display: flex;
     flex-direction: column;
@@ -513,7 +517,7 @@ section:last-of-type {
 }
 
 .intro {
-    font-size: 1.05rem;
+    font-size: 1rem;
     color: var(--muted);
 }
 
